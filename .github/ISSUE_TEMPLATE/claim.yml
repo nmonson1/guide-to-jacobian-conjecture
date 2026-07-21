@@ -1,0 +1,40 @@
+name: Mathematical claim
+description: Propose a new claim, proof, consequence, or open question
+title: "[Claim]: "
+labels: [mathematics, needs-review]
+body:
+  - type: textarea
+    id: statement
+    attributes:
+      label: Exact statement
+      description: Include every relevant field, dimension, degree, and hypothesis.
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Proposed evidence status
+      options:
+        - PUBLIC-SOURCE
+        - CLASSICAL
+        - EXACT-CERTIFICATE
+        - FORMALIZED
+        - UNDER-REVIEW
+        - OPEN
+    validations:
+      required: true
+  - type: textarea
+    id: support
+    attributes:
+      label: Source or certificate
+      description: Link primary sources and give exact reproduction commands.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Boundary of the claim
+      description: What does the evidence not prove? Is priority unverified?
+    validations:
+      required: true
+

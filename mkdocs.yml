@@ -1,0 +1,84 @@
+site_name: Guide to the Jacobian Conjecture
+site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
+site_description: An evidence-labeled guide to the 2026 counterexample, its geometry, formal verification, and the surviving plane problem.
+repo_name: nmonson1/guide-to-jacobian-conjecture
+repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  logo: assets/images/mark.svg
+  favicon: assets/images/mark.svg
+  font: false
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: jacobian-light
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: jacobian-dark
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Read the guide:
+      - The conjecture: guide.md
+      - The counterexample: counterexample.md
+      - The geometry: geometry.md
+      - What remains open: open-questions.md
+  - Evidence:
+      - Status of claims: status.md
+      - Formal verification: formalization.md
+      - Sources: resources.md
+  - Contribute: contribute.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+
+plugins:
+  - search
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  status_date: 21 July 2026
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/nmonson1/guide-to-jacobian-conjecture
+
+copyright: Evidence-labeled and current as of 21 July 2026. Corrections are welcome.
+

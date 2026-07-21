@@ -1,0 +1,27 @@
+name: Correction
+description: Report a mathematical, sourcing, or presentation error
+title: "[Correction]: "
+labels: [correction]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Page and passage
+      placeholder: URL, heading, or quoted sentence
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: Be as precise as possible about the failed implication or wording.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction and evidence
+      description: Include primary sources or an exact countercalculation where possible.
+    validations:
+      required: true
+

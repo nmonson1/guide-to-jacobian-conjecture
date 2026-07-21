@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block announce %}
+<span class="announce-copy">
+  Current as of 21 July 2026 · The result is fast-moving ·
+  <a href="{{ 'status/' | url }}">See the evidence ledger</a>
+</span>
+{% endblock %}
+
+{% block extrahead %}
+  {{ super() }}
+  <meta name="theme-color" content="#123a3b">
+  <meta name="author" content="Guide to the Jacobian Conjecture contributors">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Guide to the Jacobian Conjecture">
+  <meta property="og:description" content="An evidence-labeled guide to the 2026 counterexample, its geometry, formal verification, and the surviving plane problem.">
+  <meta property="og:url" content="https://nmonson1.github.io/guide-to-jacobian-conjecture/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Guide to the Jacobian Conjecture",
+    "url": "https://nmonson1.github.io/guide-to-jacobian-conjecture/",
+    "description": "An evidence-labeled guide to the 2026 counterexample, its geometry, formal verification, and the surviving plane problem."
+  }
+  </script>
+{% endblock %}
+

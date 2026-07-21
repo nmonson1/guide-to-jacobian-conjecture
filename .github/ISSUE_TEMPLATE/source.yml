@@ -1,0 +1,27 @@
+name: Source improvement
+description: Add, replace, or correct a reference
+title: "[Source]: "
+labels: [sources]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Primary source
+      placeholder: DOI, arXiv, repository, or stable URL
+    validations:
+      required: true
+  - type: textarea
+    id: support
+    attributes:
+      label: What does it support?
+      description: Name the exact theorem, calculation, or historical fact.
+    validations:
+      required: true
+  - type: textarea
+    id: relation
+    attributes:
+      label: Relation to existing sources
+      description: Does this confirm, supersede, contradict, or merely complement them?
+    validations:
+      required: true
+
