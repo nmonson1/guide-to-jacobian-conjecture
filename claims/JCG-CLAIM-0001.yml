@@ -1,0 +1,21 @@
+schema_version: 1
+id: JCG-CLAIM-0001
+statement: >-
+  Every polynomial map from complex affine n-space to itself whose Jacobian
+  determinant is a nonzero constant is a polynomial automorphism.
+posture: conjecture
+introduced_by: JCG-C-0001
+dependencies: []
+claimed_implications: []
+does_not_establish:
+  - Any fixed-dimensional case without a separate proof.
+evidence_present:
+  - type: classical-source
+    url: https://doi.org/10.1007/BF01695502
+    version: DOI:10.1007/BF01695502
+assessment_actions: []
+publication_state: classical-literature
+dispute_state: refuted-for-n-at-least-3-and-open-for-n-equals-2
+guide_relation: indexed-only
+as_of: 2026-07-21
+last_assessed: null

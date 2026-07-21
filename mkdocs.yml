@@ -1,6 +1,6 @@
 site_name: Guide to the Jacobian Conjecture
 site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
-site_description: An evidence-labeled guide to the 2026 counterexample, its geometry, formal verification, and the surviving plane problem.
+site_description: A chronological, versioned record of Jacobian-conjecture contributions and claims.
 repo_name: nmonson1/guide-to-jacobian-conjecture
 repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
 edit_uri: edit/main/docs/
@@ -36,16 +36,9 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Home: index.md
-  - Read the guide:
-      - The conjecture: guide.md
-      - The counterexample: counterexample.md
-      - The geometry: geometry.md
-      - What remains open: open-questions.md
-  - Evidence:
-      - Status of claims: status.md
-      - Formal verification: formalization.md
-      - Sources: resources.md
+  - Start: index.md
+  - Contributions: chronology.md
+  - Claims: claims.md
   - Contribute: contribute.md
 
 markdown_extensions:
@@ -80,5 +73,4 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/nmonson1/guide-to-jacobian-conjecture
 
-copyright: Evidence-labeled and current as of 21 July 2026. Corrections are welcome.
-
+copyright: Chronological baseline recorded as of 21 July 2026. Corrections are welcome.

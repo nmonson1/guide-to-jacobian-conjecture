@@ -1,7 +1,7 @@
 name: Correction
 description: Report a mathematical, sourcing, or presentation error
 title: "[Correction]: "
-labels: [correction]
+labels: [correction, records]
 body:
   - type: input
     id: location
@@ -24,4 +24,9 @@ body:
       description: Include primary sources or an exact countercalculation where possible.
     validations:
       required: true
-
+  - type: input
+    id: record
+    attributes:
+      label: Contribution or claim ID
+      description: If applicable, identify the JCG-C or JCG-CLAIM record.
+      placeholder: JCG-CLAIM-0002

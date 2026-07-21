@@ -1,27 +1,31 @@
-## Mathematical change
+## Record changed
 
-What claim, explanation, source, certificate, or formalization does this change?
+Which contribution, claim, assessment, or infrastructure object changes?
 
-## Evidence
+## Source and version
 
-- **Status:** `FORMALIZED` / `EXACT-CERTIFICATE` / `PUBLIC-SOURCE` / `CLASSICAL` / `UNDER-REVIEW` / `OPEN`
-- **Primary source or certificate:**
-- **Reproduction command, if applicable:**
+- **Primary source:**
+- **Pinned revision, hash, DOI, or retrieval date:**
+
+## Exact effect
+
+What field or assertion changes, and why?
 
 ## Boundary
 
-What does this contribution not establish? Has novelty or priority been checked?
+What does this change not establish? Does it make any claim about priority?
 
-## Credit
+## Credit and assessment
 
-Who supplied the idea, proof, implementation, checking, and review? Describe any
-AI assistance and the independent checks applied to it.
+Who supplied the source, correction, implementation, and checking? Describe AI
+assistance. Do not call evidence an assessment unless the assessor, method,
+scope, and reviewed version are recorded.
 
 ## Checklist
 
-- [ ] I used precise hypotheses and did not strengthen the source.
-- [ ] I linked primary sources where possible.
-- [ ] I separated exact verification from broader interpretation.
+- [ ] Contribution, claim, assessment, and exposition remain distinct.
+- [ ] Source and evidence versions are pinned where possible.
+- [ ] I did not silently adjudicate authorship or priority.
+- [ ] `scripts/validate_records.py` passes.
 - [ ] `scripts/check_public_site.py` passes.
 - [ ] `mkdocs build --strict` passes.
-

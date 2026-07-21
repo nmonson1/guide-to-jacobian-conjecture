@@ -1,0 +1,25 @@
+schema_version: 1
+id: JCG-CLAIM-0003
+statement: >-
+  The three distinct rational points (0,0,-1/4), (1,-3/2,13/2), and
+  (-1,3/2,13/2) have the common image (-1/4,0,0) under the map in JCG-C-0002.
+posture: unconditional-theorem-claim
+introduced_by: JCG-C-0002
+dependencies: []
+claimed_implications:
+  - The displayed map is not injective.
+does_not_establish:
+  - The constant-Jacobian property without a separate determinant calculation.
+evidence_present:
+  - type: exact-certificate
+    url: https://www.ulam.ai/research/jacobian.pdf
+    version: sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2
+  - type: formalization
+    url: https://github.com/deancureton/jacobian/tree/0d4a9212d874226ad81ce5a926becddfa94e6a88
+    version: 0d4a9212d874226ad81ce5a926becddfa94e6a88
+assessment_actions: []
+publication_state: public-working-note
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-21
+last_assessed: null

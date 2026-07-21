@@ -1,0 +1,22 @@
+schema_version: 1
+id: JCG-CLAIM-0004
+statement: The Jacobian conjecture is false in every dimension n at least 3.
+posture: refutation
+introduced_by: JCG-C-0002
+dependencies:
+  - JCG-CLAIM-0002
+  - JCG-CLAIM-0003
+claimed_implications:
+  - The unrestricted all-dimensional conjecture is false.
+does_not_establish:
+  - Failure of the conjecture in dimension 2.
+evidence_present:
+  - type: proof-by-counterexample-and-stabilization
+    url: https://www.ulam.ai/research/jacobian.pdf
+    version: sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2
+assessment_actions: []
+publication_state: public-working-note
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-21
+last_assessed: null

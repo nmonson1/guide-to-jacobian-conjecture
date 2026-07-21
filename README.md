@@ -1,39 +1,47 @@
 # Guide to the Jacobian Conjecture
 
-Source repository for an English-language, evidence-labeled guide to the 2026
-Jacobian-conjecture counterexample, its geometry, formal verification, and the
-surviving two-dimensional problem.
+Source repository for a chronological, versioned record of contributions and
+claims concerning the Jacobian conjecture.
 
-The published site will be:
+Published site: <https://nmonson1.github.io/guide-to-jacobian-conjecture/>
 
-<https://nmonson1.github.io/guide-to-jacobian-conjecture/>
+## Record-first rebuild
 
-## Editorial boundary
+The first public exposition has been unpublished from the current build. It
+remains recoverable from Git history at commit `a96286c`. The replacement
+begins with:
 
-This is a curated public guide, not a mirror of private research conversations
-or recovered working archives. Every mathematical assertion published here
-should carry a source and an evidence status. Lean is welcome but optional.
+1. `JCG-C-0001`: the historical source of the Jacobian conjecture;
+2. `JCG-C-0002`: the 2026 counterexample record;
+3. normalized records for the former core ledger's mathematical claims and the
+   properness theorem already used by the site.
+
+Exposition will be added only after the relevant contribution, claim, and
+assessment records exist. Sequence numbers record entry into this repository;
+they do not by themselves establish historical priority.
+
+## Repository objects
+
+- `contributions/`: attributed works or historical imports;
+- `claims/`: normalized mathematical assertions and questions;
+- `assessments/`: named, version-specific checks performed for this project;
+- `docs/`: the sparse public index of those records.
+
+The project currently records external proof, computation, and formalization as
+evidence. It does not call that material a project assessment until a named
+reviewer records exactly what was checked against a pinned version.
 
 ## Build locally
 
 With [`uv`](https://docs.astral.sh/uv/) installed:
 
 ```bash
-uv run --with-requirements requirements.txt mkdocs serve
-```
-
-Run the same checks used by continuous integration:
-
-```bash
-uv run python scripts/check_public_site.py
+uv run --with-requirements requirements.txt python scripts/validate_records.py
 uv run --with-requirements requirements.txt mkdocs build --strict
 ```
 
-## Contributing
+## Intake status
 
-English exposition, corrections, source improvements, exact computations, and
-formalizations are all in scope. See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-No content license has been selected yet. A license must be chosen before
-accepting third-party prose contributions.
-
+Corrections and source improvements are welcome. New third-party prose and
+mathematical submissions will not be listed until a content license and
+editorial charter have been selected.

@@ -1,0 +1,46 @@
+schema_version: 1
+id: JCG-C-0002
+sequence: 2
+title: A Counterexample to the Jacobian Conjecture
+origin: historical-import
+kind: mathematical-note
+source_date: 2026-07-20
+recorded_on: 2026-07-21
+lifecycle: listed
+publication_state: public-working-note
+contributors: []
+reported_attribution:
+  formula_announced_by: Levent Alpöge
+  question_credited_to: Akhil Mathew
+  work_leading_to_example_credited_to: Fable
+artifacts:
+  - type: public-note-pdf
+    title: A Counterexample to the Jacobian Conjecture
+    url: https://www.ulam.ai/research/jacobian.pdf
+    version: sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2
+    retrieved_on: 2026-07-21
+  - type: public-announcement
+    title: Hello there the Jacobian conjecture is false
+    url: https://x.com/__alpoge__/status/2079028340955197566
+addresses_claims:
+  - JCG-CLAIM-0002
+  - JCG-CLAIM-0003
+  - JCG-CLAIM-0004
+  - JCG-CLAIM-0005
+  - JCG-CLAIM-0006
+  - JCG-CLAIM-0007
+  - JCG-CLAIM-0008
+  - JCG-CLAIM-0009
+guide_relation: indexed-only
+attribution_note: >-
+  The retrieved PDF has no visible author byline. Its introduction says that
+  the formula was announced by Levent Alpöge and that the cited announcement
+  credits Akhil Mathew for asking the question and Fable for the work leading
+  to the example. This record preserves that wording without independently
+  deciding authorship or historical priority.
+ai_assistance:
+  used: true
+  systems:
+    - name: Fable
+      purpose: work leading to the example, as reported by the source
+  responsibility_note: No project assessment of the human-AI work split has been made.

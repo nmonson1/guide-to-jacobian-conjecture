@@ -1,42 +1,47 @@
 # Contributing
 
-This project accepts English-language mathematical contributions through
-GitHub pull requests. Lean is useful but not required.
+The repository is in a record-first baseline phase.
 
-## Good contributions
+## Currently accepted
 
-- correct or clarify an existing claim;
-- add a primary source and explain precisely what it supports;
-- improve an exposition without strengthening its mathematical conclusion;
-- add an exact, reproducible computational certificate;
-- link or contribute a Lean formalization;
-- turn an unresolved assertion into a clearly scoped open question.
+- corrections to contribution metadata;
+- corrections to normalized claim statements or boundaries;
+- primary-source improvements;
+- corrections to attribution or source versions;
+- improvements to record validation and site accessibility.
 
-## Claim discipline
+New third-party mathematical submissions will not be assigned a sequence
+number until the project publishes its content license and editorial charter.
 
-Every substantive new claim should state:
+## Record discipline
 
-1. the exact assertion and hypotheses;
-2. its evidence status;
-3. the source or certificate supporting it;
-4. its boundary—what it does **not** establish;
-5. whether novelty or priority has actually been checked.
+A contribution, claim, assessment, and explanatory page are different objects:
 
-Use one of the site's evidence labels: `FORMALIZED`, `EXACT-CERTIFICATE`,
-`PUBLIC-SOURCE`, `CLASSICAL`, `UNDER-REVIEW`, or `OPEN`.
+- a **contribution** is an attributed work or historical import;
+- a **claim** is a normalized mathematical assertion or question;
+- an **assessment** says who checked what, by which method, against which
+  version;
+- **exposition** explains integrated claims to readers.
 
-Do not present numerical evidence as an exact proof, a successful script as a
-proof of surrounding prose, or a same-day calculation as historically new.
+`listed` means that a contribution is in scope, attributable, intelligible, and
+legally publishable. It does not mean that the project endorses its claims.
+`integrated` is a separate editorial decision and requires a named assessment.
 
-## Pull-request process
+## Pull requests
 
-1. Open or claim an issue for a substantial contribution.
-2. Keep each pull request focused on one mathematical change.
-3. Include links to primary sources and reproducible commands where relevant.
-4. Ensure `scripts/check_public_site.py` and `mkdocs build --strict` pass.
-5. Respond to mathematical and editorial review.
+1. Keep a pull request focused on one record or one infrastructure change.
+2. Preserve source versions, dates, and attribution exactly.
+3. State what the change does not establish.
+4. Do not populate an `assessment_actions` field without naming the assessor,
+   method, scope, and reviewed version.
+5. Run:
 
-Authorship and intellectual credit should be described in the pull request,
-not inferred from line counts. AI-assisted work must identify what was checked
-independently and by whom.
+   ```bash
+   uv run --with-requirements requirements.txt python scripts/validate_records.py
+   uv run python scripts/check_public_site.py
+   uv run --with-requirements requirements.txt mkdocs build --strict
+   ```
+
+AI-assisted work must identify the tool and purpose. A human contributor
+remains responsible for every submitted assertion.
 

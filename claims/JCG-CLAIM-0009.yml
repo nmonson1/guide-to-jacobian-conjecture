@@ -1,0 +1,24 @@
+schema_version: 1
+id: JCG-CLAIM-0009
+statement: >-
+  For a Keller map over the complex numbers, polynomial invertibility,
+  properness, emptiness of the nonproperness set, and codimension at least 2 of
+  that set are equivalent, with the empty set assigned infinite codimension.
+posture: unconditional-theorem-claim
+introduced_by: JCG-C-0002
+dependencies: []
+claimed_implications:
+  - A proper Keller map over the complex numbers is a polynomial automorphism.
+does_not_establish:
+  - Properness of every Keller map.
+  - The Jacobian conjecture in dimension 2.
+evidence_present:
+  - type: proof-with-classical-dependency
+    url: https://www.ulam.ai/research/jacobian.pdf
+    version: sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2
+assessment_actions: []
+publication_state: public-working-note
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-21
+last_assessed: null

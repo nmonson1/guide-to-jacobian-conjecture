@@ -1,0 +1,28 @@
+schema_version: 1
+id: JCG-C-0001
+sequence: 1
+title: The Jacobian conjecture
+origin: historical-import
+kind: conjecture-source
+source_date: "1939"
+recorded_on: 2026-07-21
+lifecycle: listed
+publication_state: refereed-publication
+contributors:
+  - name: O.-H. Keller
+    roles:
+      - original-source-author
+artifacts:
+  - type: journal-article
+    title: Ganze Cremona-Transformationen
+    url: https://doi.org/10.1007/BF01695502
+    version: DOI:10.1007/BF01695502
+addresses_claims:
+  - JCG-CLAIM-0001
+guide_relation: indexed-only
+attribution_note: >-
+  This is an imported historical record, not a submission by Keller. The
+  normalized claim uses the modern complex formulation and is not represented
+  as a verbatim translation of the 1939 paper.
+ai_assistance:
+  used: false

@@ -1,0 +1,28 @@
+schema_version: 1
+id: JCG-CLAIM-0002
+statement: >-
+  The polynomial map displayed in JCG-C-0002 has Jacobian determinant equal to
+  the constant -2.
+posture: unconditional-theorem-claim
+introduced_by: JCG-C-0002
+dependencies: []
+claimed_implications:
+  - The displayed map satisfies the Keller-map hypothesis.
+does_not_establish:
+  - Noninjectivity or failure of polynomial invertibility without a separate argument.
+evidence_present:
+  - type: proof
+    url: https://www.ulam.ai/research/jacobian.pdf
+    version: sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2
+  - type: formalization
+    url: https://github.com/deancureton/jacobian/tree/0d4a9212d874226ad81ce5a926becddfa94e6a88
+    version: 0d4a9212d874226ad81ce5a926becddfa94e6a88
+  - type: formalization
+    url: https://github.com/alerad/alpoge-lean/tree/b39e3bf3493939db11b0f78c5b369dd028093f0f
+    version: b39e3bf3493939db11b0f78c5b369dd028093f0f
+assessment_actions: []
+publication_state: public-working-note
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-21
+last_assessed: null

@@ -1,7 +1,7 @@
 name: Source improvement
 description: Add, replace, or correct a reference
 title: "[Source]: "
-labels: [sources]
+labels: [sources, records]
 body:
   - type: input
     id: source
@@ -24,4 +24,3 @@ body:
       description: Does this confirm, supersede, contradict, or merely complement them?
     validations:
       required: true
-

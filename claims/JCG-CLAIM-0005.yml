@@ -1,0 +1,20 @@
+schema_version: 1
+id: JCG-CLAIM-0005
+statement: The Jacobian conjecture in dimension 2 remains open.
+posture: open-question
+introduced_by: JCG-C-0002
+dependencies: []
+claimed_implications: []
+does_not_establish:
+  - That the conjecture is true in dimension 2.
+  - That the three-dimensional mechanism cannot be adapted in any way.
+evidence_present:
+  - type: source-status-statement
+    url: https://www.ulam.ai/research/jacobian.pdf
+    version: sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2
+assessment_actions: []
+publication_state: active-open-problem
+dispute_state: no-recorded-resolution
+guide_relation: indexed-only
+as_of: 2026-07-21
+last_assessed: null

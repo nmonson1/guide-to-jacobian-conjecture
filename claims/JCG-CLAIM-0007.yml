@@ -1,0 +1,24 @@
+schema_version: 1
+id: JCG-CLAIM-0007
+statement: >-
+  The image of the map in JCG-C-0002 is complex affine 3-space minus the
+  triple-root curve Gamma, while its nonproperness set is the discriminant
+  hypersurface V(Delta).
+posture: unconditional-theorem-claim
+introduced_by: JCG-C-0002
+dependencies:
+  - JCG-CLAIM-0006
+claimed_implications: []
+does_not_establish:
+  - That omitted loci and nonproperness sets coincide for Keller maps.
+  - A classification of nonproperness sets.
+evidence_present:
+  - type: proof-and-exact-formulas
+    url: https://www.ulam.ai/research/jacobian.pdf
+    version: sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2
+assessment_actions: []
+publication_state: public-working-note
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-21
+last_assessed: null
