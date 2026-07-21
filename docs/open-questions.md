@@ -58,8 +58,7 @@ variation in broader families. Those must be kept separate.
 
 Classical implication chains relate finite-dimensional Jacobian statements to
 Poisson and Dixmier conjectures. Precise per-dimension formulations are being
-developed in [Formal Conjectures issue
-#4489](https://github.com/google-deepmind/formal-conjectures/issues/4489), with
+developed in [Formal Conjectures issue #4489](https://github.com/google-deepmind/formal-conjectures/issues/4489), with
 the associated pull requests still under review at this guide’s status date.
 
 The useful work is not merely to repeat “there are consequences,” but to state
@@ -90,4 +89,3 @@ An open question should identify its exact hypotheses, explain its relation to
 known results, and name the smallest certificate that would materially advance
 it. Use the [mathematical claim issue template](https://github.com/nmonson1/guide-to-jacobian-conjecture/issues/new?template=claim.yml)
 or read [how to contribute](contribute.md).
-
