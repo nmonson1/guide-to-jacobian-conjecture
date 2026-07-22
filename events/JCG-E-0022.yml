@@ -1,0 +1,26 @@
+schema_version: 1
+id: JCG-E-0022
+sequence: 22
+event_date: "2026-07-21"
+sort_date: "2026-07-21"
+date_precision: day
+title: Reference works and news media begin incorporating the result
+category: social-uptake
+summary: >-
+  MathWorld and several news outlets update their coverage. This records public
+  uptake only; it supplies no additional mathematical evidence, and some
+  coverage retains the Keller-centric 87-year dating.
+sources:
+  - type: reference-work
+    title: MathWorld — Jacobian Conjecture
+    url: https://mathworld.wolfram.com/JacobianConjecture.html
+  - type: news-report
+    title: The Times coverage
+    url: https://www.thetimes.com/uk/technology-uk/article/harvard-mathematician-uses-ai-to-crack-87-year-old-riddle-2s589kt5r
+  - type: news-report
+    title: Fortune coverage
+    url: https://fortune.com/2026/07/21/ai-solves-jacobian-conjecture-levant-alpoge-claude-fable-5/
+related_contributions: []
+related_claims: []
+record_status: social-observation-not-mathematical-evidence
+as_of: 2026-07-22

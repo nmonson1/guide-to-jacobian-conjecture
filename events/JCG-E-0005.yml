@@ -1,0 +1,22 @@
+schema_version: 1
+id: JCG-E-0005
+sequence: 5
+event_date: "2026-06-05"
+sort_date: "2026-06-05"
+date_precision: day
+title: The Kraus-origin study is published
+category: historical-reassessment
+summary: >-
+  Rodríguez Díaz publishes the refereed study that moves the exact plane
+  statement back to 1884 and diagnoses Kraus's error at infinity.
+sources:
+  - type: journal-article
+    title: On the origin of the Jacobian conjecture
+    url: https://doi.org/10.5802/crmath.831
+related_contributions:
+  - JCG-C-0003
+related_claims:
+  - JCG-CLAIM-0010
+  - JCG-CLAIM-0011
+record_status: source-audited
+as_of: 2026-07-22

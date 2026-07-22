@@ -1,0 +1,23 @@
+schema_version: 1
+id: JCG-E-0017
+sequence: 17
+event_date: "2026-07-21"
+sort_date: "2026-07-21"
+date_precision: day
+title: A second Formal Conjectures pull request is closed unmerged
+category: formalization
+summary: >-
+  PR 4486 supplies a separate sorry-free refutation over Q. It is closed
+  without merge; that repository outcome is not a mathematical objection to
+  the formal certificate.
+sources:
+  - type: pull-request
+    title: Formal Conjectures PR 4486
+    url: https://github.com/google-deepmind/formal-conjectures/pull/4486
+    version: head:a5123f4b84f19568737a71b7497c508cb19cf5f3
+related_contributions:
+  - JCG-C-0012
+related_claims:
+  - JCG-CLAIM-0004
+record_status: closed-unmerged-status-checked-2026-07-22
+as_of: 2026-07-22

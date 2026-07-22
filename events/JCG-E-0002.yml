@@ -1,0 +1,21 @@
+schema_version: 1
+id: JCG-E-0002
+sequence: 2
+event_date: "1939"
+sort_date: "1939-01-01"
+date_precision: year
+title: Keller publishes Ganze Cremona-Transformationen
+category: historical-source
+summary: >-
+  Keller's paper became the standard source for the conjecture and the origin
+  of its usual 1939 dating.
+sources:
+  - type: journal-article
+    title: Ganze Cremona-Transformationen
+    url: https://doi.org/10.1007/BF01695502
+related_contributions:
+  - JCG-C-0001
+related_claims:
+  - JCG-CLAIM-0001
+record_status: bibliographic-source-recorded
+as_of: 2026-07-22

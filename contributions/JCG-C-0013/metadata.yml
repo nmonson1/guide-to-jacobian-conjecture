@@ -1,0 +1,33 @@
+schema_version: 1
+id: JCG-C-0013
+sequence: 13
+title: An explicit 24-variable cubic-homogeneous Jacobian counterexample
+origin: historical-import
+kind: computational-certificate
+source_date: 2026-07-21
+recorded_on: 2026-07-22
+lifecycle: listed
+publication_state: public-repository-and-archive
+contributors:
+  - name: William Thompson
+    roles:
+      - preparer
+artifacts:
+  - type: source-repository
+    title: explicit-cubic-homogeneous-jacobian-counterexample
+    url: https://github.com/wtho704/explicit-cubic-homogeneous-jacobian-counterexample/tree/45a7616fdf5a20c065564f2676190093722696b9
+    version: 45a7616fdf5a20c065564f2676190093722696b9
+  - type: archival-record
+    title: Zenodo record 21466221
+    url: https://zenodo.org/records/21466221
+    version: record:21466221
+addresses_claims:
+  - JCG-CLAIM-0021
+guide_relation: indexed-only
+attribution_note: >-
+  The repository describes an explicit Bass–Connell–Wright reduction with two
+  exact verifier implementations. It makes no priority or minimality claim.
+ai_assistance:
+  used: true
+  responsibility_note: >-
+    The repository says it was prepared by William Thompson with AI assistance.

@@ -1,0 +1,28 @@
+schema_version: 1
+id: JCG-E-0011
+sequence: 11
+event_date: "2026-07-20"
+sort_date: "2026-07-20"
+date_precision: day
+title: Public working seminars analyze the geometry and function field
+category: public-working-analysis
+summary: >-
+  A MathOverflow post proposes an explicit cubic function-field model, S3
+  monodromy, and trivial deck group. The Secret Blogging Seminar thread becomes
+  the main collaborative venue for geometric interpretations and corrections.
+sources:
+  - type: closed-mathoverflow-question
+    title: Galois structure of the new counterexample
+    url: https://mathoverflow.net/questions/513387/
+  - type: seminar-thread
+    title: The new counterexample to the Jacobian conjecture
+    url: https://sbseminar.wordpress.com/2026/07/20/the-new-counterexample-to-the-jacobian-conjecture/
+related_contributions:
+  - JCG-C-0006
+related_claims:
+  - JCG-CLAIM-0006
+  - JCG-CLAIM-0007
+  - JCG-CLAIM-0013
+  - JCG-CLAIM-0014
+record_status: mixed-working-analysis-no-project-assessment
+as_of: 2026-07-22

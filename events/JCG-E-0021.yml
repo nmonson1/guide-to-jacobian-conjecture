@@ -1,0 +1,23 @@
+schema_version: 1
+id: JCG-E-0021
+sequence: 21
+event_date: "2026-07-21"
+sort_date: "2026-07-21"
+date_precision: day
+title: An explicit fixed-dimensional Dixmier consequence is posted
+category: downstream-counterexample
+summary: >-
+  Mayner circulates a Fable-prepared note constructing an injective,
+  nonsurjective Weyl-algebra endomorphism in dimension three and stabilizing it
+  to every n at least three. The note gives the dimension-preserving argument
+  rather than relying on stable equivalence in the opposite direction.
+sources:
+  - type: mathematical-note-and-audit-code
+    title: The Dixmier conjecture fails for A_n, n at least 3
+    url: https://github.com/wmayner/dixmier-counterexample/tree/475cea2a7449230e7d493ff29ea94fc22ce81e61
+related_contributions:
+  - JCG-C-0010
+related_claims:
+  - JCG-CLAIM-0019
+record_status: artifact-audited-no-project-assessment
+as_of: 2026-07-22

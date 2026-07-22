@@ -1,0 +1,25 @@
+schema_version: 1
+id: JCG-CLAIM-0014
+statement: >-
+  The displayed three-variable map has trivial rational deck group over its
+  target: a rational self-map sigma satisfying F composed with sigma equals F
+  must be the identity.
+posture: working-analysis-claim
+introduced_by: JCG-C-0006
+dependencies:
+  - JCG-CLAIM-0013
+claimed_implications:
+  - The generic three-to-one behavior is not a quotient by a nontrivial deck group.
+does_not_establish:
+  - That every nonproper Keller map has trivial deck group.
+  - That the argument has received independent expert review.
+evidence_present:
+  - type: public-function-field-argument
+    url: https://mathoverflow.net/questions/513387/
+    version: question:513387-retrieved-2026-07-22
+assessment_actions: []
+publication_state: closed-mathoverflow-question
+dispute_state: unreviewed-no-answer
+guide_relation: indexed-only
+as_of: 2026-07-22
+last_assessed: null

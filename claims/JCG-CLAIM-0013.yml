@@ -1,0 +1,26 @@
+schema_version: 1
+id: JCG-CLAIM-0013
+statement: >-
+  The function-field extension induced by the displayed three-variable map has
+  degree 3 and an S3 Galois closure, as described by the explicit cubic model
+  in JCG-C-0006.
+posture: working-analysis-claim
+introduced_by: JCG-C-0006
+dependencies:
+  - JCG-CLAIM-0002
+  - JCG-CLAIM-0006
+claimed_implications:
+  - The generic three-sheeted cover is non-normal.
+does_not_establish:
+  - That the derivation has received independent expert review.
+  - Historical priority for the cubic model or monodromy description.
+evidence_present:
+  - type: exact-public-derivation
+    url: https://mathoverflow.net/questions/513387/
+    version: question:513387-retrieved-2026-07-22
+assessment_actions: []
+publication_state: closed-mathoverflow-question
+dispute_state: unreviewed-no-answer
+guide_relation: indexed-only
+as_of: 2026-07-22
+last_assessed: null

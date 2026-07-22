@@ -1,0 +1,34 @@
+schema_version: 1
+id: JCG-C-0011
+sequence: 11
+title: Small Counterexamples to the Gaussian Moments Conjecture
+origin: historical-import
+kind: mathematical-preprint
+source_date: 2026-07-20
+recorded_on: 2026-07-22
+lifecycle: listed
+publication_state: arxiv-preprint-v1
+contributors:
+  - name: Christopher D. Long
+    roles:
+      - author
+artifacts:
+  - type: preprint
+    title: Small Counterexamples to the Gaussian Moments Conjecture
+    url: https://arxiv.org/abs/2607.18186v1
+    version: sha256:ca5d36529019375cede8dc6a7765430681751c4e587dc2122f37f21f05cdc42c
+    retrieved_on: 2026-07-22
+addresses_claims:
+  - JCG-CLAIM-0020
+guide_relation: indexed-only
+attribution_note: >-
+  The paper says the search was prompted by the Jacobian announcement but the
+  small explicit examples were not derived from that map.
+ai_assistance:
+  used: true
+  systems:
+    - name: ChatGPT 5.6 Sol Pro
+      purpose: four-variable construction
+    - name: Claude Fable 5
+      purpose: three-variable construction and checks
+  responsibility_note: The human author accepts full responsibility in the paper.

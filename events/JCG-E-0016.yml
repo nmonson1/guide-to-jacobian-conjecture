@@ -1,0 +1,21 @@
+schema_version: 1
+id: JCG-E-0016
+sequence: 16
+event_date: "2026-07-20"
+sort_date: "2026-07-20"
+date_precision: day
+title: A scalar-field-theory application is posted
+category: downstream-application
+summary: >-
+  Zhu interprets the map as a locally nonsingular but globally noninjective
+  field redefinition, producing distinct vacua in a three-scalar model. The
+  application is indexed here but has not yet been normalized as a guide claim.
+sources:
+  - type: arxiv-preprint
+    title: Non-injective field redefinitions and quantum inequivalence in scalar theories
+    url: https://arxiv.org/abs/2607.18166v1
+    version: sha256:15f2f6b5705a3e51acdd2b9b2ea0947fa3fba51a9f92006b1db281d1492cb5df
+related_contributions: []
+related_claims: []
+record_status: artifact-indexed-no-normalized-claim
+as_of: 2026-07-22

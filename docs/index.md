@@ -1,6 +1,6 @@
 ---
 title: Guide to the Jacobian Conjecture
-description: A chronological, versioned record of contributions and claims.
+description: A chronological, versioned record of events, contributions, and claims.
 hide:
   - navigation
   - toc
@@ -9,18 +9,19 @@ hide:
 # Building the record before the exposition
 
 This project is being rebuilt chronologically. The published object is currently
-a **record of contributions and claims**, not a finished mathematical guide.
+a **record of events, contributions, and claims**, not a finished mathematical
+guide.
 
-The sequence begins with the historical source of the Jacobian conjecture and
-then records the 2026 counterexample. Every mathematical claim from the former
-core ledger, together with the properness theorem already used by the site, has
-been assigned a stable identifier. Narrative exposition will be added later
-and will cite those records.
+The current baseline contains 22 dated events, 13 accessioned contributions,
+and 21 normalized claims. It now reaches from Kraus's 1884 plane statement
+through the first formalizations, normal-form reductions, and downstream
+consequences posted by 22 July 2026. Narrative exposition will be added later
+and will cite these records.
 
 ## The publication order
 
-1. [Contributions](chronology.md) are recorded with attribution and source
-   versions.
+1. [Events and contributions](chronology.md) are recorded with dates,
+   attribution, source versions, and source-status caveats.
 2. [Claims](claims.md) are normalized separately from the works that contain or
    support them.
 3. Assessments will say who checked what, by which method, against which
@@ -28,9 +29,10 @@ and will cite those records.
 4. Exposition will be added only after the underlying records exist.
 
 !!! note "Sequence is not priority"
-    The project sequence records when an item entered this repository. It does
-    not by itself establish historical authorship or priority. Historical
-    imports are marked explicitly.
+    Event dates determine the displayed historical order. Accession numbers
+    record when an item entered this repository and never establish authorship
+    or priority. This is why Kraus can appear first historically without
+    renumbering the stable Keller record `JCG-C-0001`.
 
-[Read the chronological record](chronology.md){ .md-button .md-button--primary }
+[Read the chronology](chronology.md){ .md-button .md-button--primary }
 [Inspect the claim inventory](claims.md){ .md-button }

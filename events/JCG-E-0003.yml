@@ -1,0 +1,20 @@
+schema_version: 1
+id: JCG-E-0003
+sequence: 3
+event_date: "1982"
+sort_date: "1982-01-01"
+date_precision: year
+title: Bass, Connell, and Wright publish the stable degree reduction
+category: classical-reduction
+summary: >-
+  Their reduction theorem makes the cubic-homogeneous form a central normal
+  form for the conjecture after stabilization and coordinate changes.
+sources:
+  - type: journal-article
+    title: The Jacobian conjecture — reduction of degree and formal expansion of the inverse
+    url: https://doi.org/10.1090/S0273-0979-1982-15032-7
+related_contributions: []
+related_claims:
+  - JCG-CLAIM-0021
+record_status: source-identified-theorem-normalization-pending
+as_of: 2026-07-22

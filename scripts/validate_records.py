@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the chronological contribution and claim records."""
+"""Validate the chronological event, contribution, and claim records."""
 
 from __future__ import annotations
 
@@ -13,6 +13,8 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 CONTRIBUTION_ID = re.compile(r"JCG-C-(\d{4})$")
 CLAIM_ID = re.compile(r"JCG-CLAIM-(\d{4})$")
+EVENT_ID = re.compile(r"JCG-E-(\d{4})$")
+SORT_DATE = re.compile(r"\d{4}-\d{2}-\d{2}$")
 
 CONTRIBUTION_FIELDS = {
     "schema_version",
@@ -48,6 +50,23 @@ CLAIM_FIELDS = {
     "guide_relation",
     "as_of",
     "last_assessed",
+}
+
+EVENT_FIELDS = {
+    "schema_version",
+    "id",
+    "sequence",
+    "event_date",
+    "sort_date",
+    "date_precision",
+    "title",
+    "category",
+    "summary",
+    "sources",
+    "related_contributions",
+    "related_claims",
+    "record_status",
+    "as_of",
 }
 
 
@@ -162,8 +181,49 @@ def main() -> int:
                     f"{path.relative_to(ROOT)}: unknown addressed claim {claim_id!r}"
                 )
 
+    events: dict[str, dict] = {}
+    event_paths: dict[str, Path] = {}
+    for path in sorted((ROOT / "events").glob("JCG-E-*.yml")):
+        data = read_yaml(path, failures)
+        require_fields(path, data, EVENT_FIELDS, failures)
+        record_id = data.get("id")
+        if not isinstance(record_id, str) or not EVENT_ID.fullmatch(record_id):
+            failures.append(f"{path.relative_to(ROOT)}: invalid event id")
+            continue
+        if path.stem != record_id:
+            failures.append(f"{path.relative_to(ROOT)}: id does not match filename")
+        if record_id in events:
+            failures.append(f"duplicate event id {record_id}")
+        events[record_id] = data
+        event_paths[record_id] = path
+
+    event_numbers = sorted(int(EVENT_ID.fullmatch(key).group(1)) for key in events)
+    if event_numbers != list(range(1, len(event_numbers) + 1)):
+        failures.append(f"event ids must be consecutive from 1; found {event_numbers}")
+    for record_id, data in events.items():
+        path = event_paths[record_id]
+        match = EVENT_ID.fullmatch(record_id)
+        if match and data.get("sequence") != int(match.group(1)):
+            failures.append(f"{record_id}: sequence does not match id")
+        sort_date = data.get("sort_date")
+        if not isinstance(sort_date, str) or not SORT_DATE.fullmatch(sort_date):
+            failures.append(f"{path.relative_to(ROOT)}: sort_date must be YYYY-MM-DD")
+        for field in ("sources", "related_contributions", "related_claims"):
+            if not isinstance(data.get(field), list):
+                failures.append(f"{path.relative_to(ROOT)}: {field} must be a list")
+        for contribution_id in data.get("related_contributions", []):
+            if contribution_id not in contributions:
+                failures.append(
+                    f"{path.relative_to(ROOT)}: unknown contribution {contribution_id!r}"
+                )
+        for claim_id in data.get("related_claims", []):
+            if claim_id not in claims:
+                failures.append(
+                    f"{path.relative_to(ROOT)}: unknown claim {claim_id!r}"
+                )
+
     page_expectations = {
-        ROOT / "docs" / "chronology.md": contributions,
+        ROOT / "docs" / "chronology.md": contributions | events,
         ROOT / "docs" / "claims.md": claims,
     }
     for path, records in page_expectations.items():
@@ -181,7 +241,8 @@ def main() -> int:
         return 1
 
     print(
-        f"Validated {len(contributions)} contributions and {len(claims)} claims."
+        f"Validated {len(events)} events, {len(contributions)} contributions, "
+        f"and {len(claims)} claims."
     )
     return 0
 

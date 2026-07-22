@@ -14,9 +14,15 @@ evidence_present:
   - type: proof-by-counterexample-and-stabilization
     url: https://www.ulam.ai/research/jacobian.pdf
     version: sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2
+  - type: lean-formalization
+    url: https://github.com/google-deepmind/formal-conjectures/pull/4474
+    version: head:759b8027588fd9c8d8bf8b1fea57dcb2439ca677
+  - type: independent-lean-formalization
+    url: https://github.com/google-deepmind/formal-conjectures/pull/4486
+    version: head:a5123f4b84f19568737a71b7497c508cb19cf5f3
 assessment_actions: []
 publication_state: public-working-note
 dispute_state: no-recorded-objection
 guide_relation: indexed-only
-as_of: 2026-07-21
+as_of: 2026-07-22
 last_assessed: null

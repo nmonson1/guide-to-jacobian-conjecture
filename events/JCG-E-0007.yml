@@ -1,0 +1,24 @@
+schema_version: 1
+id: JCG-E-0007
+sequence: 7
+event_date: "2026-07-19 Pacific / 2026-07-20 UTC"
+sort_date: "2026-07-20"
+date_precision: day-with-time-zone-boundary
+title: Alpöge posts the explicit three-variable counterexample
+category: public-announcement
+summary: >-
+  The post displays the map, states its constant determinant, and gives a
+  three-point collision. It credits Akhil for the question and Fable for the
+  work leading to the example.
+sources:
+  - type: public-announcement
+    title: Hello there the Jacobian conjecture is false
+    url: https://x.com/__alpoge__/status/2079028340955197566
+related_contributions:
+  - JCG-C-0002
+related_claims:
+  - JCG-CLAIM-0002
+  - JCG-CLAIM-0003
+  - JCG-CLAIM-0004
+record_status: exact-certificate-publicly-announced
+as_of: 2026-07-22

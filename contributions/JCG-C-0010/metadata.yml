@@ -1,0 +1,37 @@
+schema_version: 1
+id: JCG-C-0010
+sequence: 10
+title: The Dixmier conjecture fails for A_n, n at least 3
+origin: historical-import
+kind: mathematical-note-and-audit-code
+source_date: 2026-07-21
+recorded_on: 2026-07-22
+lifecycle: listed
+publication_state: public-working-note
+contributors:
+  - name: Claude Fable 5
+    roles:
+      - mathematics-as-credited-by-source
+  - name: William G. P. Mayner
+    roles:
+      - circulator
+artifacts:
+  - type: source-repository
+    title: dixmier-counterexample
+    url: https://github.com/wmayner/dixmier-counterexample/tree/475cea2a7449230e7d493ff29ea94fc22ce81e61
+    version: 475cea2a7449230e7d493ff29ea94fc22ce81e61
+addresses_claims:
+  - JCG-CLAIM-0019
+guide_relation: indexed-only
+attribution_note: >-
+  The note gives a dimension-preserving proof and an exact description of the
+  induced Weyl-algebra endomorphism. It says the implication is classical and
+  that novelty of this explicit application remains uncertain.
+ai_assistance:
+  used: true
+  systems:
+    - name: Claude Fable 5
+      purpose: mathematical argument in a directed session
+  responsibility_note: >-
+    The circulating person states that he is not a specialist and invites
+    corrections and prior-art references.

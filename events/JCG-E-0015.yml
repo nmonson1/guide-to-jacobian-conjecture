@@ -1,0 +1,24 @@
+schema_version: 1
+id: JCG-E-0015
+sequence: 15
+event_date: "2026-07-20"
+sort_date: "2026-07-20"
+date_precision: day
+title: Small explicit Gaussian Moments counterexamples are posted
+category: downstream-counterexample
+summary: >-
+  Long gives a five-term quartic witness in three real Gaussian variables and
+  a six-term cubic witness in four variables, proving failure in every
+  dimension at least three. The paper says these examples were motivated by,
+  but not mechanically derived from, the Jacobian map.
+sources:
+  - type: arxiv-preprint
+    title: Small Counterexamples to the Gaussian Moments Conjecture
+    url: https://arxiv.org/abs/2607.18186v1
+    version: sha256:ca5d36529019375cede8dc6a7765430681751c4e587dc2122f37f21f05cdc42c
+related_contributions:
+  - JCG-C-0011
+related_claims:
+  - JCG-CLAIM-0020
+record_status: artifact-audited-no-project-assessment
+as_of: 2026-07-22

@@ -1,0 +1,27 @@
+schema_version: 1
+id: JCG-CLAIM-0015
+statement: >-
+  The explicit map in JCG-C-0008 from complex affine 11-space to itself has
+  total degree 3, 52 nonzero monomial terms, constant Jacobian determinant -2,
+  and three displayed distinct rational inputs with one common image.
+posture: unconditional-theorem-claim
+introduced_by: JCG-C-0008
+dependencies:
+  - JCG-CLAIM-0002
+  - JCG-CLAIM-0003
+claimed_implications:
+  - A total-degree-three counterexample exists in dimension 11.
+does_not_establish:
+  - A cubic-homogeneous counterexample in dimension 11.
+  - Minimality of the dimension or term count.
+  - An independent project assessment of the executable certificate.
+evidence_present:
+  - type: exact-executable-certificate
+    url: https://gist.github.com/Spacerat/08b4a43f6b6ca57178efabc220170ce8/2224dace71e8763a8621a7f557bbc545a53aa820
+    version: gist-revision:2224dace71e8763a8621a7f557bbc545a53aa820
+assessment_actions: []
+publication_state: public-gist
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-22
+last_assessed: null

@@ -1,0 +1,23 @@
+schema_version: 1
+id: JCG-E-0019
+sequence: 19
+event_date: "2026-07-21"
+sort_date: "2026-07-21"
+date_precision: day
+title: The first geometric fiber-count description is corrected
+category: public-correction
+summary: >-
+  The seminar discussion corrects an early claim of two finite preimages on a
+  generic discriminant point: there is one finite preimage, while the other
+  generic sheets escape to infinity. The current core claim record already
+  uses the corrected 3/1/0 fiber counts.
+sources:
+  - type: seminar-comment
+    title: Secret Blogging Seminar correction thread
+    url: https://sbseminar.wordpress.com/2026/07/20/the-new-counterexample-to-the-jacobian-conjecture/#comment-27960
+related_contributions:
+  - JCG-C-0002
+related_claims:
+  - JCG-CLAIM-0006
+record_status: correction-recorded
+as_of: 2026-07-22

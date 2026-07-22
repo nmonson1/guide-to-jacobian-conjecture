@@ -1,0 +1,26 @@
+schema_version: 1
+id: JCG-CLAIM-0012
+statement: >-
+  For every field k, the determinant-one rescaled construction formalized in
+  JCG-C-0005 gives a polynomial map from k^3 to k^3 that is not injective.
+posture: unconditional-theorem-claim
+introduced_by: JCG-C-0005
+dependencies: []
+claimed_implications:
+  - The analogous unrestricted Jacobian statement over arbitrary fields fails in dimension 3.
+does_not_establish:
+  - That the original determinant-minus-two map is a Keller map in characteristic 2.
+  - A single characteristic-independent pair of colliding points.
+evidence_present:
+  - type: lean-formalization
+    url: https://github.com/deancureton/jacobian/tree/0d4a9212d874226ad81ce5a926becddfa94e6a88
+    version: 0d4a9212d874226ad81ce5a926becddfa94e6a88
+    note: >-
+      The source uses one collision when the characteristic is not two and a
+      separate collision in characteristic two.
+assessment_actions: []
+publication_state: public-repository
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-22
+last_assessed: null

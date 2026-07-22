@@ -1,0 +1,28 @@
+schema_version: 1
+id: JCG-C-0005
+sequence: 5
+title: Lean counterexamples to the Jacobian conjecture over all fields
+origin: historical-import
+kind: lean-formalization
+source_date: 2026-07-20
+recorded_on: 2026-07-22
+lifecycle: listed
+publication_state: public-repository
+contributors:
+  - name: deancureton
+    roles:
+      - repository-author
+artifacts:
+  - type: source-repository
+    title: jacobian
+    url: https://github.com/deancureton/jacobian/tree/0d4a9212d874226ad81ce5a926becddfa94e6a88
+    version: 0d4a9212d874226ad81ce5a926becddfa94e6a88
+addresses_claims:
+  - JCG-CLAIM-0012
+guide_relation: indexed-only
+attribution_note: >-
+  This standalone Lean development is distinct from Formal Conjectures PR
+  4474. It uses a determinant-one rescaling and separate collision witnesses
+  in characteristic two and characteristic not two.
+ai_assistance:
+  used: unknown

@@ -15,9 +15,12 @@ evidence_present:
   - type: explicit-family-construction
     url: https://www.ulam.ai/research/jacobian.pdf
     version: sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2
+  - type: independent-uniform-construction-and-exact-atlas
+    url: https://github.com/algal/jacobianfun/tree/0a73d4c75bed60660c6e91a56f1595be756cbd59
+    version: 0a73d4c75bed60660c6e91a56f1595be756cbd59
 assessment_actions: []
 publication_state: public-working-note
 dispute_state: no-recorded-objection
 guide_relation: indexed-only
-as_of: 2026-07-21
+as_of: 2026-07-22
 last_assessed: null

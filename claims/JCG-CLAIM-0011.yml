@@ -1,0 +1,25 @@
+schema_version: 1
+id: JCG-CLAIM-0011
+statement: >-
+  The final step of Kraus's claimed proof is invalid because the chosen
+  parametrization does not justify the required derivative conclusion at
+  infinity; the unresolved issue is control of ramification at infinity.
+posture: historical-proof-audit-claim
+introduced_by: JCG-C-0003
+dependencies:
+  - JCG-CLAIM-0010
+claimed_implications:
+  - Kraus's paper does not settle the plane Jacobian conjecture.
+does_not_establish:
+  - That every failed approach to the Jacobian conjecture has the same defect.
+  - That the 2026 counterexample directly descends from Kraus's argument.
+evidence_present:
+  - type: refereed-line-by-line-historical-analysis
+    url: https://comptes-rendus.academie-sciences.fr/mathematique/item/10.5802/crmath.831.pdf
+    version: sha256:1be1f3a0092e2b26b47671d49cd765d04d5f468b14831a4fe9c8f1ad81ece00f
+assessment_actions: []
+publication_state: refereed-publication
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-22
+last_assessed: null

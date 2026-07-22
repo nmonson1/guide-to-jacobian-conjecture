@@ -1,0 +1,27 @@
+schema_version: 1
+id: JCG-CLAIM-0021
+statement: >-
+  The explicit map in JCG-C-0013 has the form G(U)=U+H(U) over Q^24, with
+  every nonzero component of H homogeneous cubic, determinant 1, 54 nonzero
+  cubic monomials, and a displayed collision of two distinct rational points.
+posture: unconditional-theorem-claim
+introduced_by: JCG-C-0013
+dependencies:
+  - JCG-CLAIM-0002
+  - JCG-CLAIM-0003
+claimed_implications:
+  - A counterexample exists in the strict cubic-homogeneous Bass–Connell–Wright normal form.
+does_not_establish:
+  - Minimality of dimension, support, or nilpotency index.
+  - The stronger Druzkowski cubic-linear normal form.
+  - An independent project assessment of either verifier.
+evidence_present:
+  - type: explicit-map-derivation-and-two-verifier-implementations
+    url: https://github.com/wtho704/explicit-cubic-homogeneous-jacobian-counterexample/tree/45a7616fdf5a20c065564f2676190093722696b9
+    version: 45a7616fdf5a20c065564f2676190093722696b9
+assessment_actions: []
+publication_state: public-repository-and-archive
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-22
+last_assessed: null

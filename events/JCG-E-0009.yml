@@ -1,0 +1,22 @@
+schema_version: 1
+id: JCG-E-0009
+sequence: 9
+event_date: "2026-07-20"
+sort_date: "2026-07-20"
+date_precision: day
+title: Formal Conjectures PR 4474 opens
+category: formalization
+summary: >-
+  Paul Lezeau submits a Lean formalization of a determinant-one rescaling and a
+  characteristic-zero collision. The PR is open at the 22 July cutoff.
+sources:
+  - type: pull-request
+    title: Formal Conjectures PR 4474
+    url: https://github.com/google-deepmind/formal-conjectures/pull/4474
+    version: head:759b8027588fd9c8d8bf8b1fea57dcb2439ca677
+related_contributions:
+  - JCG-C-0004
+related_claims:
+  - JCG-CLAIM-0004
+record_status: open-pr-status-checked-2026-07-22
+as_of: 2026-07-22

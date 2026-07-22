@@ -1,0 +1,24 @@
+schema_version: 1
+id: JCG-CLAIM-0020
+statement: >-
+  The Gaussian Moments Conjecture is false in every dimension n at least 3:
+  JCG-C-0011 gives a five-term quartic witness in three real Gaussian variables
+  and a six-term cubic witness in four variables.
+posture: unconditional-theorem-claim
+introduced_by: JCG-C-0011
+dependencies: []
+claimed_implications:
+  - A fixed mixed moment is nonzero for every positive exponent in the displayed examples.
+does_not_establish:
+  - Failure of the Gaussian Moments Conjecture in dimension 2.
+  - That the small examples were obtained by translating the Jacobian counterexample.
+evidence_present:
+  - type: arxiv-proof-with-explicit-formulas
+    url: https://arxiv.org/abs/2607.18186v1
+    version: sha256:ca5d36529019375cede8dc6a7765430681751c4e587dc2122f37f21f05cdc42c
+assessment_actions: []
+publication_state: arxiv-preprint-v1
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-22
+last_assessed: null

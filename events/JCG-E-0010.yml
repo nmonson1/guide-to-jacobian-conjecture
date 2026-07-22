@@ -1,0 +1,22 @@
+schema_version: 1
+id: JCG-E-0010
+sequence: 10
+event_date: "2026-07-20"
+sort_date: "2026-07-20"
+date_precision: day
+title: A public search prompt is posted
+category: provenance
+summary: >-
+  The prompt requests a complete resolution, allows up to 64 agents, specifies
+  adversarial validation and at least eight hours, and forbids searching for an
+  existing answer. It is not a transcript and does not reveal the complete
+  search trace, interventions, or discovery path.
+sources:
+  - type: prompt-pdf
+    title: Jacobian Conjecture Prompt
+    url: https://aaronlou.com/jacobian_counterexample_prompt.pdf
+    version: sha256:49c43ed410dc19ad9bd5ec252451d09b1a892efdcc95bd72ccd6c593a1cd3fa1
+related_contributions: []
+related_claims: []
+record_status: provenance-artifact-audited-not-a-transcript
+as_of: 2026-07-22

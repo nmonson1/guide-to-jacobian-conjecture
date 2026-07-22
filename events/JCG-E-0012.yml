@@ -1,0 +1,22 @@
+schema_version: 1
+id: JCG-E-0012
+sequence: 12
+event_date: "2026-07-20"
+sort_date: "2026-07-20"
+date_precision: day
+title: Uniform fixed-dimension families of every generic degree are posted
+category: explicit-family-construction
+summary: >-
+  JacobianFun gives an independent weighted-lift construction of determinant-one
+  maps in dimension three for every generic degree at least three, plus an exact
+  finite atlas for degrees 3 through 100.
+sources:
+  - type: public-repository-note
+    title: Weighted lifts from the Jacobian counterexample
+    url: https://github.com/algal/jacobianfun/blob/0a73d4c75bed60660c6e91a56f1595be756cbd59/RESEARCH.md
+related_contributions:
+  - JCG-C-0007
+related_claims:
+  - JCG-CLAIM-0008
+record_status: exact-public-construction-no-project-assessment
+as_of: 2026-07-22

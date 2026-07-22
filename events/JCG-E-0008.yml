@@ -1,0 +1,28 @@
+schema_version: 1
+id: JCG-E-0008
+sequence: 8
+event_date: "2026-07-20"
+sort_date: "2026-07-20"
+date_precision: day
+title: A technical note gives exact checks and the binary-cubic model
+category: proof-and-structural-analysis
+summary: >-
+  The Ulam note verifies the determinant and collision and develops the
+  binary-cubic description of fibers, image, nonproperness, and families of
+  every generic degree at least three.
+sources:
+  - type: public-note-pdf
+    title: A Counterexample to the Jacobian Conjecture
+    url: https://www.ulam.ai/research/jacobian.pdf
+    version: sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2
+related_contributions:
+  - JCG-C-0002
+related_claims:
+  - JCG-CLAIM-0002
+  - JCG-CLAIM-0003
+  - JCG-CLAIM-0006
+  - JCG-CLAIM-0007
+  - JCG-CLAIM-0008
+  - JCG-CLAIM-0009
+record_status: artifact-audited-no-project-assessment
+as_of: 2026-07-22

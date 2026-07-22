@@ -1,0 +1,19 @@
+schema_version: 1
+id: JCG-E-0004
+sequence: 4
+event_date: "1983"
+sort_date: "1983-01-01"
+date_precision: year
+title: Drużkowski publishes the cubic-linear reduction
+category: classical-reduction
+summary: >-
+  Drużkowski's work further reduces the conjecture to maps whose nonlinear
+  coordinates are cubes of linear forms, at the cost of increased dimension.
+sources:
+  - type: journal-article
+    title: An Effective Approach to Keller's Jacobian Conjecture
+    url: https://eudml.org/doc/163789
+related_contributions: []
+related_claims: []
+record_status: source-identified-theorem-normalization-pending
+as_of: 2026-07-22

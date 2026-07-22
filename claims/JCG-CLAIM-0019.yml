@@ -1,0 +1,26 @@
+schema_version: 1
+id: JCG-CLAIM-0019
+statement: >-
+  The Dixmier conjecture is false for the complex Weyl algebra A_n for every
+  n at least 3.
+posture: unconditional-theorem-claim
+introduced_by: JCG-C-0010
+dependencies:
+  - JCG-CLAIM-0002
+  - JCG-CLAIM-0003
+  - JCG-CLAIM-0004
+claimed_implications:
+  - There are explicit injective, nonsurjective endomorphisms of A_n for n at least 3.
+does_not_establish:
+  - Failure of the Dixmier conjecture for A_1 or A_2.
+  - Historical novelty of the classical dimension-preserving transfer.
+evidence_present:
+  - type: public-proof-and-exact-audit-package
+    url: https://github.com/wmayner/dixmier-counterexample/tree/475cea2a7449230e7d493ff29ea94fc22ce81e61
+    version: 475cea2a7449230e7d493ff29ea94fc22ce81e61
+assessment_actions: []
+publication_state: public-working-note
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-22
+last_assessed: null

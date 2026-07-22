@@ -1,0 +1,23 @@
+schema_version: 1
+id: JCG-CLAIM-0010
+statement: >-
+  Ludwig Kraus's 1884 paper states, as its main result, the modern plane
+  Jacobian conjecture rather than merely an earlier adjacent problem.
+posture: historical-attribution-claim
+introduced_by: JCG-C-0003
+dependencies: []
+claimed_implications:
+  - The mathematical problem predates Keller's 1939 paper.
+does_not_establish:
+  - That Kraus proved the plane Jacobian conjecture.
+  - That the modern name or standard Keller attribution was historically unreasonable.
+evidence_present:
+  - type: refereed-history-of-mathematics-analysis
+    url: https://doi.org/10.5802/crmath.831
+    version: DOI:10.5802/crmath.831
+assessment_actions: []
+publication_state: refereed-publication
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-22
+last_assessed: null

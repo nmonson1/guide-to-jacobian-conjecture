@@ -1,0 +1,23 @@
+schema_version: 1
+id: JCG-E-0018
+sequence: 18
+event_date: "2026-07-20 (repository commit)"
+sort_date: "2026-07-20"
+date_precision: day
+title: A standalone Lean development covers all characteristics
+category: formalization-and-extension
+summary: >-
+  A separate Lean repository proves a determinant-one related construction is
+  noninjective over every field, using different witnesses in characteristic
+  two and characteristic not two. This result is not in the current PR 4474
+  head.
+sources:
+  - type: source-repository
+    title: deancureton/jacobian
+    url: https://github.com/deancureton/jacobian/tree/0d4a9212d874226ad81ce5a926becddfa94e6a88
+related_contributions:
+  - JCG-C-0005
+related_claims:
+  - JCG-CLAIM-0012
+record_status: pinned-formalization-source-audited
+as_of: 2026-07-22

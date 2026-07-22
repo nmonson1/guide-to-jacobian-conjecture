@@ -1,0 +1,34 @@
+schema_version: 1
+id: JCG-C-0006
+sequence: 6
+title: Galois structure of the new counterexample
+origin: historical-import
+kind: public-working-analysis
+source_date: 2026-07-20
+recorded_on: 2026-07-22
+lifecycle: listed-with-caveat
+publication_state: closed-mathoverflow-question
+contributors:
+  - name: dorky
+    roles:
+      - MathOverflow-question-author
+artifacts:
+  - type: mathoverflow-question
+    title: >-
+      Galois structure of the new counterexample to the Jacobian conjecture:
+      an explicit cubic model with S3 monodromy — is this known?
+    url: https://mathoverflow.net/questions/513387/
+    version: question:513387-retrieved-2026-07-22
+addresses_claims:
+  - JCG-CLAIM-0013
+  - JCG-CLAIM-0014
+guide_relation: indexed-only
+attribution_note: >-
+  The post presents exact identities and asks whether the analysis is correct
+  and known. It received no answer and was closed as off-topic. The guide
+  therefore records its new assertions as working, unreviewed claims.
+ai_assistance:
+  used: true
+  responsibility_note: >-
+    The author discloses some AI assistance and states that they checked and
+    take responsibility for the mathematics.

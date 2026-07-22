@@ -1,0 +1,34 @@
+schema_version: 1
+id: JCG-C-0003
+sequence: 3
+title: On the origin of the Jacobian conjecture
+origin: historical-import
+kind: history-of-mathematics-article
+source_date: 2026-06-05
+recorded_on: 2026-07-22
+lifecycle: listed
+publication_state: refereed-publication
+contributors:
+  - name: Lázaro Orlando Rodríguez Díaz
+    roles:
+      - author
+artifacts:
+  - type: journal-article
+    title: On the origin of the Jacobian conjecture
+    url: https://doi.org/10.5802/crmath.831
+    version: DOI:10.5802/crmath.831
+  - type: article-pdf
+    title: On the origin of the Jacobian conjecture
+    url: https://comptes-rendus.academie-sciences.fr/mathematique/item/10.5802/crmath.831.pdf
+    version: sha256:1be1f3a0092e2b26b47671d49cd765d04d5f468b14831a4fe9c8f1ad81ece00f
+    retrieved_on: 2026-07-22
+addresses_claims:
+  - JCG-CLAIM-0010
+  - JCG-CLAIM-0011
+guide_relation: indexed-only
+attribution_note: >-
+  This record concerns the 2026 historical study. Its conclusions about
+  Kraus's 1884 paper are normalized as historical-attribution claims, not as
+  new proofs of the plane Jacobian conjecture.
+ai_assistance:
+  used: false

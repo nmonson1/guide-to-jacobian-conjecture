@@ -1,0 +1,28 @@
+schema_version: 1
+id: JCG-C-0012
+sequence: 12
+title: Formal Conjectures PR 4486 — sorry-free refutation over Q
+origin: historical-import
+kind: lean-formalization
+source_date: 2026-07-21
+recorded_on: 2026-07-22
+lifecycle: externally-closed
+publication_state: closed-unmerged-pull-request
+contributors:
+  - name: techno-optimist
+    roles:
+      - pull-request-author
+artifacts:
+  - type: pull-request
+    title: "feat(JacobianConjecture): sorry-free refutation at n = 3 over Q"
+    url: https://github.com/google-deepmind/formal-conjectures/pull/4486
+    version: head:a5123f4b84f19568737a71b7497c508cb19cf5f3
+    retrieved_on: 2026-07-22
+addresses_claims:
+  - JCG-CLAIM-0004
+guide_relation: indexed-only
+attribution_note: >-
+  The pull request was closed without merge on 21 July. Its closure is a
+  repository event, not a mathematical refutation of the formal certificate.
+ai_assistance:
+  used: unknown

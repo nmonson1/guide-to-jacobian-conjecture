@@ -1,0 +1,22 @@
+schema_version: 1
+id: JCG-E-0013
+sequence: 13
+event_date: "2026-07-20"
+sort_date: "2026-07-20"
+date_precision: day
+title: An explicit total-degree-three map in 11 variables is posted
+category: stable-degree-reduction
+summary: >-
+  An executable gist gives a factor-aware stable reduction with 52 monomial
+  terms, determinant -2, and a rational three-point collision. It is not the
+  stricter cubic-homogeneous normal form.
+sources:
+  - type: executable-gist
+    title: 11 variable cubic jacobian conjecture counterexample
+    url: https://gist.github.com/Spacerat/08b4a43f6b6ca57178efabc220170ce8/2224dace71e8763a8621a7f557bbc545a53aa820
+related_contributions:
+  - JCG-C-0008
+related_claims:
+  - JCG-CLAIM-0015
+record_status: exact-public-certificate-no-project-assessment
+as_of: 2026-07-22

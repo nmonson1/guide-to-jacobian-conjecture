@@ -1,0 +1,31 @@
+schema_version: 1
+id: JCG-C-0009
+sequence: 9
+title: Direct consequences of the three-dimensional counterexample
+origin: historical-import
+kind: public-research-note
+source_date: 2026-07-20
+recorded_on: 2026-07-22
+lifecycle: listed-with-caveat
+publication_state: public-web-note
+contributors:
+  - name: Zihan Zhang
+    roles:
+      - author
+artifacts:
+  - type: web-note
+    title: Direct Consequences of the Three-Dimensional Counterexample to the Jacobian Conjecture
+    url: https://zzhang-iu.github.io/papers/direct-consequences-jacobian/
+    version: sha256:8cb11c875ade239a609189fd317dc58ea328e4710072611daf20806fea47f1d9
+    retrieved_on: 2026-07-22
+addresses_claims:
+  - JCG-CLAIM-0016
+  - JCG-CLAIM-0017
+  - JCG-CLAIM-0018
+guide_relation: indexed-only
+attribution_note: >-
+  The guide has inspected this note but has not yet audited every cited
+  historical implication or equivalence in its primary source. The resulting
+  records are therefore consequence claims, not project-assessed theorems.
+ai_assistance:
+  used: unknown

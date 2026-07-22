@@ -1,0 +1,23 @@
+schema_version: 1
+id: JCG-E-0001
+sequence: 1
+event_date: "1884"
+sort_date: "1884-01-01"
+date_precision: year
+title: Kraus states the plane problem
+category: historical-source
+summary: >-
+  Rodríguez Díaz's 2026 historical study identifies Ludwig Kraus's paper as an
+  exact statement of the plane Jacobian conjecture and finds a flaw in its
+  final step at infinity.
+sources:
+  - type: refereed-historical-study
+    title: On the origin of the Jacobian conjecture
+    url: https://doi.org/10.5802/crmath.831
+related_contributions:
+  - JCG-C-0003
+related_claims:
+  - JCG-CLAIM-0010
+  - JCG-CLAIM-0011
+record_status: audited-through-refereed-historical-study
+as_of: 2026-07-22

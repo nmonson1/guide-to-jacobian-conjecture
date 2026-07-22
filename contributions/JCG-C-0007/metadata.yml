@@ -1,0 +1,29 @@
+schema_version: 1
+id: JCG-C-0007
+sequence: 7
+title: Weighted lifts from the Jacobian counterexample
+origin: historical-import
+kind: computational-research-note
+source_date: 2026-07-20
+recorded_on: 2026-07-22
+lifecycle: listed
+publication_state: public-repository-note
+contributors:
+  - name: algal
+    roles:
+      - GitHub-repository-publisher
+artifacts:
+  - type: source-repository
+    title: jacobianfun — RESEARCH.md and exact checkers
+    url: https://github.com/algal/jacobianfun/tree/0a73d4c75bed60660c6e91a56f1595be756cbd59
+    version: 0a73d4c75bed60660c6e91a56f1595be756cbd59
+addresses_claims:
+  - JCG-CLAIM-0008
+guide_relation: indexed-only
+attribution_note: >-
+  The public repository does not state a full author name in the inspected
+  research note, so this record uses the GitHub account name. The note supplies
+  an independent uniform construction and a finite exact atlas and expressly
+  makes no claim of literature priority.
+ai_assistance:
+  used: unknown

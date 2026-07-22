@@ -1,6 +1,6 @@
 site_name: Guide to the Jacobian Conjecture
 site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
-site_description: A chronological, versioned record of Jacobian-conjecture contributions and claims.
+site_description: A chronological, versioned record of Jacobian-conjecture events, contributions, and claims.
 repo_name: nmonson1/guide-to-jacobian-conjecture
 repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
 edit_uri: edit/main/docs/
@@ -68,9 +68,9 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra:
-  status_date: 21 July 2026
+  status_date: 22 July 2026
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/nmonson1/guide-to-jacobian-conjecture
 
-copyright: Chronological baseline recorded as of 21 July 2026. Corrections are welcome.
+copyright: Chronological baseline recorded as of 22 July 2026. Corrections are welcome.

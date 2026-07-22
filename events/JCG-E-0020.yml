@@ -1,0 +1,25 @@
+schema_version: 1
+id: JCG-E-0020
+sequence: 20
+event_date: "2026-07-21"
+sort_date: "2026-07-21"
+date_precision: day
+title: An explicit cubic-homogeneous normal form is posted in 24 variables
+category: stable-degree-reduction
+summary: >-
+  Thompson posts a rational map G=U+H with H cubic homogeneous, determinant 1,
+  a rational collision, 54 nonzero cubic monomials, and two verifier
+  implementations. The package makes no minimality or priority claim.
+sources:
+  - type: source-repository
+    title: explicit-cubic-homogeneous-jacobian-counterexample
+    url: https://github.com/wtho704/explicit-cubic-homogeneous-jacobian-counterexample/tree/45a7616fdf5a20c065564f2676190093722696b9
+  - type: archival-record
+    title: Zenodo record 21466221
+    url: https://zenodo.org/records/21466221
+related_contributions:
+  - JCG-C-0013
+related_claims:
+  - JCG-CLAIM-0021
+record_status: exact-public-package-no-project-assessment
+as_of: 2026-07-22

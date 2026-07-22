@@ -1,0 +1,21 @@
+schema_version: 1
+id: JCG-CLAIM-0018
+statement: The all-dimensional Image Conjecture is false in some finite dimension.
+posture: claimed-consequence
+introduced_by: JCG-C-0009
+dependencies:
+  - JCG-CLAIM-0017
+claimed_implications: []
+does_not_establish:
+  - The least dimension in which the Image Conjecture fails.
+  - That this project has audited the cited implication to the Vanishing Conjecture in its primary source.
+evidence_present:
+  - type: public-consequence-note-with-literature-citations
+    url: https://zzhang-iu.github.io/papers/direct-consequences-jacobian/
+    version: sha256:8cb11c875ade239a609189fd317dc58ea328e4710072611daf20806fea47f1d9
+assessment_actions: []
+publication_state: public-web-note
+dispute_state: no-recorded-objection
+guide_relation: indexed-only
+as_of: 2026-07-22
+last_assessed: null

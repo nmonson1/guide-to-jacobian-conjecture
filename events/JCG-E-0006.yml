@@ -1,0 +1,21 @@
+schema_version: 1
+id: JCG-E-0006
+sequence: 6
+event_date: "2026-07-07 through 2026-07-11"
+sort_date: "2026-07-07"
+date_precision: range-of-days
+title: Counterexample-searching prelude at the formalization workshop
+category: social-and-methodological-context
+summary: >-
+  Kevin Buzzard's contemporaneous account connects an AI-assisted group-scheme
+  counterexample exercise at the Formalizing Fermat workshop to later
+  discussions about searching for algebraic-geometric counterexamples. This is
+  context for problem selection, not evidence for the Jacobian result.
+sources:
+  - type: contemporaneous-blog-account
+    title: Human mathematicians are being outcounterexampled
+    url: https://xenaproject.wordpress.com/2026/07/20/human-mathematicians-are-being-outcounterexampled/
+related_contributions: []
+related_claims: []
+record_status: reported-context-not-proof-evidence
+as_of: 2026-07-22

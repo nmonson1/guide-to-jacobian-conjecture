@@ -1,0 +1,34 @@
+schema_version: 1
+id: JCG-C-0004
+sequence: 4
+title: Formal Conjectures PR 4474 — Jacobian disproof
+origin: historical-import
+kind: lean-formalization
+source_date: 2026-07-20
+recorded_on: 2026-07-22
+lifecycle: under-external-review
+publication_state: open-pull-request
+contributors:
+  - name: Paul Lezeau
+    roles:
+      - formalizer
+artifacts:
+  - type: pull-request
+    title: "feat: add Jacobian disproof"
+    url: https://github.com/google-deepmind/formal-conjectures/pull/4474
+    version: head:759b8027588fd9c8d8bf8b1fea57dcb2439ca677
+    retrieved_on: 2026-07-22
+addresses_claims:
+  - JCG-CLAIM-0004
+guide_relation: indexed-only
+attribution_note: >-
+  The pull request was open at the recorded cutoff. Its current head proves a
+  determinant-one rescaling and a characteristic-zero collision. Review
+  discussion mentions other witnesses, but those comments are not represented
+  here as code already present in the PR head.
+ai_assistance:
+  used: false
+  responsibility_note: >-
+    Kevin Buzzard's contemporaneous account says Lezeau produced the Lean
+    formalization manually; the underlying counterexample has separately
+    reported AI provenance.
