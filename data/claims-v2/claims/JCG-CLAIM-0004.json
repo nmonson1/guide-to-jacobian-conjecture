@@ -1,0 +1,241 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-906b8c367b86",
+      "evidence-b4331e678d8f",
+      "evidence-58edbbf46c89"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "formal-verification"
+  ],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-bb1fe05e436d",
+      "entity": {
+        "entity_type": "person",
+        "name": "Akhil Mathew"
+      },
+      "id": "credit-919d376172c1",
+      "roles": [
+        "problem_suggestion"
+      ],
+      "scope": "problem suggestion as reported by the source"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-bb1fe05e436d",
+      "entity": {
+        "entity_type": "ai_system",
+        "name": "Fable"
+      },
+      "id": "credit-e7a1dae9bce0",
+      "roles": [
+        "research_assistance"
+      ],
+      "scope": "work leading to the example as reported by the source"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-bb1fe05e436d",
+      "entity": {
+        "entity_type": "person",
+        "name": "Levent Alpöge"
+      },
+      "id": "credit-6072d27b26b7",
+      "roles": [
+        "discovery",
+        "construction"
+      ],
+      "scope": "formula announced by the named person"
+    },
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-076623081a03",
+      "entity": {
+        "entity_type": "person",
+        "name": "Paul Lezeau"
+      },
+      "id": "credit-f64f9965bc87",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "Contribution recorded in Formal Conjectures PR 4474 — Jacobian disproof."
+    },
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-22f02c48dbd5",
+      "entity": {
+        "entity_type": "person",
+        "name": "techno-optimist"
+      },
+      "id": "credit-eb9d94418da1",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "Contribution recorded in Formal Conjectures PR 4486 — sorry-free refutation over Q."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Proof by counterexample and stabilization",
+          "url": "https://www.ulam.ai/research/jacobian.pdf",
+          "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+        }
+      ],
+      "id": "evidence-906b8c367b86",
+      "kind": "counterexample",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0004.",
+      "source_ids": [
+        "source-bb1fe05e436d"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Proof by counterexample and stabilization.",
+      "uses_claim_ids": []
+    },
+    {
+      "artifacts": [
+        {
+          "label": "Lean formalization",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4474",
+          "version": "head:759b8027588fd9c8d8bf8b1fea57dcb2439ca677"
+        }
+      ],
+      "id": "evidence-b4331e678d8f",
+      "kind": "formalization",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0004.",
+      "source_ids": [
+        "source-076623081a03"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Lean formalization.",
+      "uses_claim_ids": []
+    },
+    {
+      "artifacts": [
+        {
+          "label": "Independent lean formalization",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4486",
+          "version": "head:a5123f4b84f19568737a71b7497c508cb19cf5f3"
+        }
+      ],
+      "id": "evidence-58edbbf46c89",
+      "kind": "formalization",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0004.",
+      "source_ids": [
+        "source-22f02c48dbd5"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Independent lean formalization.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-20",
+  "id": "JCG-CLAIM-0004",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "Failure of the conjecture in dimension 2."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "jacobian-conjecture-false-dimension-at-least-three",
+  "sources": [
+    {
+      "authors": [],
+      "id": "source-bb1fe05e436d",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf",
+      "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+    },
+    {
+      "authors": [],
+      "id": "source-a8ed4b6018bd",
+      "primary_for_display": false,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Paul Lezeau"
+        }
+      ],
+      "id": "source-076623081a03",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source",
+        "formalization"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "formalization",
+      "title": "feat: add Jacobian disproof",
+      "url": "https://github.com/google-deepmind/formal-conjectures/pull/4474",
+      "version": "head:759b8027588fd9c8d8bf8b1fea57dcb2439ca677"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "techno-optimist"
+        }
+      ],
+      "id": "source-22f02c48dbd5",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source",
+        "formalization"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "formalization",
+      "title": "feat(JacobianConjecture): sorry-free refutation at n = 3 over Q",
+      "url": "https://github.com/google-deepmind/formal-conjectures/pull/4486",
+      "version": "head:a5123f4b84f19568737a71b7497c508cb19cf5f3"
+    }
+  ],
+  "statement": "The Jacobian conjecture is false in every dimension n at least 3.",
+  "statement_version": 1,
+  "storyline": "counterexample-and-global-geometry",
+  "title": "Failure of the Jacobian conjecture in dimensions at least three",
+  "verification": []
+}

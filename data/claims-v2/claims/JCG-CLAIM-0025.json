@@ -1,0 +1,86 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-b44fc5856612"
+    ],
+    "basis_verification_ids": [],
+    "label": "Open",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "open",
+    "summary": "No qualifying full proof or refutation is recorded."
+  },
+  "collections": [],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-5e9f5531e3b5",
+      "entity": {
+        "entity_type": "person",
+        "name": "garylangford"
+      },
+      "id": "credit-bc33f338e3a3",
+      "roles": [
+        "conjecture_statement"
+      ],
+      "scope": "posed invariant-triangularization question"
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [],
+      "id": "evidence-b44fc5856612",
+      "kind": "status_report",
+      "limitations": [],
+      "relation": "context",
+      "scope": "The three PGL2 orbits of dual binary-cubic hyperplanes.",
+      "source_ids": [
+        "source-5e9f5531e3b5"
+      ],
+      "statement_version": 1,
+      "sufficiency": "no_proof_claim",
+      "summary": "The question was posed in the public discussion and remained unanswered as of 22 July 2026.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-21",
+  "id": "JCG-CLAIM-0025",
+  "page": {
+    "commentary": [],
+    "limitations": [],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "goal",
+  "schema_version": 2,
+  "scope": "The three PGL2 orbits of dual binary-cubic hyperplanes.",
+  "sequence": null,
+  "slug": "double-root-orbit-invariant-triangularization-question",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "garylangford"
+        }
+      ],
+      "id": "source-5e9f5531e3b5",
+      "primary_for_display": true,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "public_comment",
+      "title": "garylangford's comment",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693540"
+    }
+  ],
+  "statement": "Is the double-root orbit invariantly the unique orbit whose constraint fiber admits a global polynomial triangularization or trivialization?",
+  "statement_version": 1,
+  "storyline": "counterexample-and-global-geometry",
+  "title": "Invariant characterization of the double-root orbit",
+  "verification": []
+}

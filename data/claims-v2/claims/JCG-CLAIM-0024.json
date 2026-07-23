@@ -1,0 +1,125 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-61317312e8f6"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "chronology-people-and-provenance"
+  ],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-398dde83b651",
+      "entity": {
+        "display_name": "Anonymous commenter",
+        "entity_type": "person",
+        "name": "Anonymous commenter 693534"
+      },
+      "id": "credit-7a8efeda7eca",
+      "roles": [
+        "research_assistance"
+      ],
+      "scope": "pointed to Vitushkin's 1999 example"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-398dde83b651",
+      "entity": {
+        "entity_type": "person",
+        "name": "Terence Tao"
+      },
+      "id": "credit-6818844d9e96",
+      "roles": [
+        "derivation",
+        "exposition"
+      ],
+      "scope": "worked out and stated the multiplication-map comparison"
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [],
+      "id": "evidence-61317312e8f6",
+      "kind": "literature_result",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Tao's comparison with the rational example identified in the comment thread.",
+      "source_ids": [
+        "source-e12594135317",
+        "source-398dde83b651"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Tao works out the explicit mechanistic comparison after a commenter points to Vitushkin.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-21",
+  "id": "JCG-CLAIM-0024",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "The underlying 1999 paper has not yet received a direct paper-level audit for this guide."
+    ],
+    "notes": [
+      "Historical comparison pending a direct audit of the 1999 paper."
+    ]
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": "Tao's comparison with the rational example identified in the comment thread.",
+  "sequence": null,
+  "slug": "vitushkin-rational-example-comparison",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Anonymous"
+        }
+      ],
+      "id": "source-e12594135317",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "public_comment",
+      "title": "Anonymous's comment",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693534"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Terence Tao"
+        }
+      ],
+      "id": "source-398dde83b651",
+      "primary_for_display": true,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "public_comment",
+      "title": "Terence Tao's comment",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693536"
+    }
+  ],
+  "statement": "Vitushkin's 1999 rational example has an analogous multiplication-map presentation and is generically two-to-one, but its source is a punctured plane, so the resulting map has a pole.",
+  "statement_version": 1,
+  "storyline": "counterexample-and-global-geometry",
+  "title": "Comparison with Vitushkin's 1999 rational example",
+  "verification": []
+}

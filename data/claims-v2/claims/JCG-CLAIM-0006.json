@@ -1,0 +1,285 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-b1702ecab167",
+      "evidence-26c7081866ca"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "formal-verification"
+  ],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-c6dcf20e7f73",
+      "entity": {
+        "entity_type": "person",
+        "name": "Alejandro Radisic"
+      },
+      "id": "credit-b8e1f0dc729a",
+      "note": "The same README expressly excludes S3 monodromy/irreducibility, the properness identification, scheme-level factorization, the cohomological torsor proof, and analytic derivative identification.",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "author and maintainer of the pinned Lean development"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-87a27c1b0882",
+      "entity": {
+        "entity_type": "person",
+        "name": "Andy Jiang"
+      },
+      "id": "credit-edf0a1b8c476",
+      "note": "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority.",
+      "roles": [
+        "problem_suggestion"
+      ],
+      "scope": "prompted the ChatGPT run that Sawin credits for the geometric construction"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-87a27c1b0882",
+      "entity": {
+        "entity_type": "ai_system",
+        "name": "ChatGPT"
+      },
+      "id": "credit-426ceab8c4bb",
+      "note": "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority.",
+      "roles": [
+        "research_assistance"
+      ],
+      "scope": "AI system credited by Sawin for the geometric construction and initial chart calculation"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-87a27c1b0882",
+      "entity": {
+        "entity_type": "person",
+        "name": "Levent Alpöge"
+      },
+      "id": "credit-8a69591b7b81",
+      "note": "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority.",
+      "roles": [
+        "construction"
+      ],
+      "scope": "underlying counterexample map"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-87a27c1b0882",
+      "entity": {
+        "entity_type": "person",
+        "name": "Terence Tao"
+      },
+      "id": "credit-d01d50304384",
+      "note": "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority.",
+      "roles": [
+        "proof",
+        "exposition"
+      ],
+      "scope": "expository proof and explicit coordinate digestion"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-107a324384f0",
+      "entity": {
+        "entity_type": "person",
+        "name": "Will Sawin"
+      },
+      "id": "credit-fc5b5c4cb577",
+      "note": "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority.",
+      "roles": [
+        "construction"
+      ],
+      "scope": "reported the geometric construction and affine-chart calculation publicly"
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Proof and explicit inverse formulas",
+          "url": "https://www.ulam.ai/research/jacobian.pdf",
+          "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+        }
+      ],
+      "id": "evidence-b1702ecab167",
+      "kind": "proof",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0006.",
+      "source_ids": [
+        "source-bb1fe05e436d"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Proof and explicit inverse formulas.",
+      "uses_claim_ids": []
+    },
+    {
+      "artifacts": [],
+      "id": "evidence-26c7081866ca",
+      "kind": "formalization",
+      "limitations": [
+        "The same README expressly excludes S3 monodromy/irreducibility, the properness identification, scheme-level factorization, the cohomological torsor proof, and analytic derivative identification."
+      ],
+      "relation": "supports",
+      "scope": "The portion of JCG-CLAIM-0006 addressed by RAD-L01.",
+      "source_ids": [
+        "source-a98346f497f7",
+        "source-c6dcf20e7f73"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "The pinned README identifies the relevant Lean theorems and reports no `sorry` and no axioms beyond Mathlib. No fresh `lake build` was run for this guide.",
+      "uses_claim_ids": []
+    },
+    {
+      "artifacts": [],
+      "id": "evidence-933d1f2aa141",
+      "kind": "proof",
+      "limitations": [
+        "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority."
+      ],
+      "relation": "supports",
+      "scope": "The portion of JCG-CLAIM-0006 addressed by TAO-G01.",
+      "source_ids": [
+        "source-87a27c1b0882",
+        "source-107a324384f0"
+      ],
+      "statement_version": 1,
+      "sufficiency": "partial_support",
+      "summary": "Tao's post proves the fiber analysis, while the linked public discussion develops the affine-three-space step.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-20",
+  "id": "JCG-CLAIM-0006",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "A classification of all three-sheeted Keller maps."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "counterexample-fiber-stratification",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-c6dcf20e7f73",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "repository",
+      "title": "alpoge-lean v0.4.0 documentation",
+      "url": "https://github.com/alerad/alpoge-lean/blob/95897469d48ba97f1a80a2db6553fd2f0f43834b/README.md",
+      "version": "commit:95897469d48ba97f1a80a2db6553fd2f0f43834b"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-a98346f497f7",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "repository",
+      "title": "alpoge-lean v0.4.0",
+      "url": "https://github.com/alerad/alpoge-lean/releases/tag/v0.4.0",
+      "version": "tag:v0.4.0"
+    },
+    {
+      "authors": [],
+      "id": "source-bb1fe05e436d",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf",
+      "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+    },
+    {
+      "authors": [],
+      "id": "source-a8ed4b6018bd",
+      "primary_for_display": false,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Will Sawin"
+        }
+      ],
+      "id": "source-107a324384f0",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_comment",
+      "title": "Will Sawin's comment",
+      "url": "https://sbseminar.wordpress.com/2026/07/20/the-new-counterexample-to-the-jacobian-conjecture/#comment-27948"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Terence Tao"
+        }
+      ],
+      "id": "source-87a27c1b0882",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "public_post",
+      "title": "A digestion of the Jacobian conjecture counterexample",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/"
+    }
+  ],
+  "statement": "The Alpöge map has generic degree 3, with affine fiber cardinality 3 off the cubic discriminant, 1 on the discriminant away from the triple-root curve, and 0 on the triple-root curve.",
+  "statement_version": 1,
+  "storyline": "finite-normalization-and-defect",
+  "title": "Generic degree and fiber stratification of the counterexample",
+  "verification": []
+}

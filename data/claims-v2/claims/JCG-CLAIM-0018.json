@@ -1,0 +1,128 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-552274911ce0"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "neighboring-consequences"
+  ],
+  "credited_to": [
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-6cc44213dfb5",
+      "entity": {
+        "entity_type": "person",
+        "name": "Zihan Zhang"
+      },
+      "id": "credit-9aa8638f21d6",
+      "roles": [
+        "derivation",
+        "exposition"
+      ],
+      "scope": "Contribution recorded in Direct consequences of the three-dimensional counterexample."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Public consequence note with literature citations",
+          "url": "https://zzhang-iu.github.io/papers/direct-consequences-jacobian/",
+          "version": "sha256:8cb11c875ade239a609189fd317dc58ea328e4710072611daf20806fea47f1d9"
+        }
+      ],
+      "id": "evidence-552274911ce0",
+      "kind": "literature_result",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0018.",
+      "source_ids": [
+        "source-6cc44213dfb5"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Public consequence note with literature citations.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2011",
+  "id": "JCG-CLAIM-0018",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "The least dimension in which the Image Conjecture fails.",
+      "An independent verification of the published implication proof."
+    ],
+    "notes": [
+      "Consequence record: the published Image Conjecture paper states the implication to the Vanishing Conjecture. This guide checked that source statement, but has not retraced the full proof."
+    ]
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "all-dimensional-image-conjecture-false",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Arno van den Essen"
+        },
+        {
+          "entity_type": "person",
+          "name": "David Wright"
+        },
+        {
+          "entity_type": "person",
+          "name": "Wenhua Zhao"
+        }
+      ],
+      "id": "source-6313888596f4",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2011",
+      "source_type": "paper",
+      "title": "On the Image Conjecture",
+      "url": "https://doi.org/10.1016/j.jalgebra.2011.04.036",
+      "version": "J. Algebra 340 (2011), 211–224"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Zihan Zhang"
+        }
+      ],
+      "id": "source-6cc44213dfb5",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "Direct Consequences of the Three-Dimensional Counterexample to the Jacobian Conjecture",
+      "url": "https://zzhang-iu.github.io/papers/direct-consequences-jacobian/",
+      "version": "sha256:8cb11c875ade239a609189fd317dc58ea328e4710072611daf20806fea47f1d9"
+    }
+  ],
+  "statement": "The all-dimensional Image Conjecture is false in some finite dimension.",
+  "statement_version": 1,
+  "storyline": null,
+  "title": "Failure of the all-dimensional Image Conjecture",
+  "verification": []
+}

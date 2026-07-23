@@ -9,14 +9,27 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TEXT_SUFFIXES = {".md", ".yml", ".yaml", ".html", ".css", ".js", ".txt"}
+TEXT_SUFFIXES = {".md", ".yml", ".yaml", ".json", ".html", ".css", ".js", ".txt"}
 FORBIDDEN = {
     "/fss/monson/",
+    "/home/monson/",
+    "https://chatgpt.com/share/",
     "sources/chatgpt-",
     "conversation-turn-index",
     "reproductions/v1/packages",
+    "JC-CAN-",
+    "SRC-JCG-C-",
+    '"message_id":',
+    '"occurrence_id":',
+    '"private_locator":',
+    '"archive_locator":',
     "6a5f33",
     "6a5f34",
+}
+
+FORBIDDEN_PATTERNS = {
+    "private archive snapshot": re.compile(r"\bsnapshot [0-9a-f]{12,}", re.I),
+    "private comment index": re.compile(r"\bcomments\.json;\s*comment\b", re.I),
 }
 
 
@@ -38,6 +51,9 @@ def main() -> int:
         for needle in FORBIDDEN:
             if needle in text:
                 failures.append(f"{relative}: forbidden internal marker {needle!r}")
+        for label, pattern in FORBIDDEN_PATTERNS.items():
+            if pattern.search(text):
+                failures.append(f"{relative}: {label}")
 
         if path.suffix == ".md":
             for match in re.finditer(r"\[[^\]]+\]\(([^)]+)\)", text):

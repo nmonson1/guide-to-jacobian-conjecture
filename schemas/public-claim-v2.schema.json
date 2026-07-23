@@ -1,0 +1,453 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/gjc/schemas/public-claim-v2.json",
+  "title": "GJC public claim v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "slug",
+    "title",
+    "statement",
+    "statement_version",
+    "role",
+    "parent_claim_id",
+    "sequence",
+    "record_state",
+    "replacement_claim_ids",
+    "scope",
+    "sources",
+    "credited_to",
+    "evidence",
+    "verification",
+    "assessment",
+    "storyline",
+    "collections",
+    "page",
+    "first_reported_on",
+    "as_of"
+  ],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "id": { "$ref": "#/$defs/publicClaimId" },
+    "slug": { "$ref": "#/$defs/slug" },
+    "title": { "$ref": "#/$defs/nonemptyString" },
+    "statement": { "$ref": "#/$defs/nonemptyString" },
+    "statement_version": { "type": "integer", "minimum": 1 },
+    "role": { "enum": ["goal", "standalone", "supporting"] },
+    "parent_claim_id": {
+      "oneOf": [
+        { "$ref": "#/$defs/publicClaimId" },
+        { "type": "null" }
+      ]
+    },
+    "sequence": {
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+    "record_state": {
+      "enum": ["active", "superseded", "merged", "retired"]
+    },
+    "replacement_claim_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/publicClaimId" }
+    },
+    "scope": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/publicSource" }
+    },
+    "credited_to": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/credit" }
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/publicEvidence" }
+    },
+    "verification": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/verification" }
+    },
+    "assessment": { "$ref": "#/$defs/assessment" },
+    "storyline": {
+      "oneOf": [
+        { "$ref": "#/$defs/slug" },
+        { "type": "null" }
+      ]
+    },
+    "collections": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/slug" }
+    },
+    "page": { "$ref": "#/$defs/page" },
+    "first_reported_on": { "$ref": "#/$defs/sourceDate" },
+    "as_of": { "$ref": "#/$defs/date" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "role": { "const": "supporting" } },
+        "required": ["role"]
+      },
+      "then": {
+        "properties": {
+          "parent_claim_id": { "$ref": "#/$defs/publicClaimId" },
+          "sequence": { "type": "integer", "minimum": 1 }
+        }
+      },
+      "else": {
+        "properties": {
+          "parent_claim_id": { "type": "null" },
+          "sequence": { "type": "null" }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "nonemptyString": { "type": "string", "minLength": 1 },
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "publicClaimId": {
+      "type": "string",
+      "pattern": "^JCG-CLAIM-[0-9]{4,}$"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "date": { "type": "string", "format": "date" },
+    "sourceDate": {
+      "type": "string",
+      "pattern": "^[0-9]{4}(?:-[0-9]{2}(?:-[0-9]{2})?)?$"
+    },
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "entity_type"],
+      "properties": {
+        "name": { "$ref": "#/$defs/nonemptyString" },
+        "entity_type": { "enum": ["person", "ai_system", "group"] },
+        "display_name": { "$ref": "#/$defs/nonemptyString" },
+        "provider": { "$ref": "#/$defs/nonemptyString" },
+        "model": { "$ref": "#/$defs/nonemptyString" }
+      }
+    },
+    "sourceType": {
+      "enum": [
+        "paper",
+        "preprint",
+        "book",
+        "public_post",
+        "public_comment",
+        "forum_post",
+        "repository",
+        "formalization",
+        "project_note",
+        "research_conversation",
+        "news_report",
+        "other"
+      ]
+    },
+    "sourceRelation": {
+      "enum": [
+        "first_report",
+        "original_statement",
+        "proof_source",
+        "evidence_source",
+        "independent_report",
+        "synthesis",
+        "formalization",
+        "correction",
+        "historical_source"
+      ]
+    },
+    "publicSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "source_type",
+        "relations",
+        "authors",
+        "primary_for_display"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "title": { "$ref": "#/$defs/nonemptyString" },
+        "source_type": { "$ref": "#/$defs/sourceType" },
+        "relations": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/sourceRelation" }
+        },
+        "authors": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/entity" }
+        },
+        "source_date": { "$ref": "#/$defs/sourceDate" },
+        "url": { "type": "string", "format": "uri" },
+        "citation": { "$ref": "#/$defs/nonemptyString" },
+        "version": { "$ref": "#/$defs/nonemptyString" },
+        "primary_for_display": { "type": "boolean" },
+        "note": { "$ref": "#/$defs/nonemptyString" }
+      },
+      "anyOf": [
+        { "required": ["url"] },
+        { "required": ["citation"] }
+      ]
+    },
+    "creditRole": {
+      "enum": [
+        "discovery",
+        "conjecture_statement",
+        "proof",
+        "derivation",
+        "computation",
+        "construction",
+        "formalization",
+        "verification",
+        "exposition",
+        "research_assistance",
+        "problem_suggestion",
+        "unspecified"
+      ]
+    },
+    "creditBasis": {
+      "enum": [
+        "explicit_self_credit",
+        "presumed_from_source",
+        "attributed_by_source",
+        "documented_authorship",
+        "unknown"
+      ]
+    },
+    "credit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "entity", "roles", "basis", "basis_source_id"],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "entity": { "$ref": "#/$defs/entity" },
+        "roles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/creditRole" }
+        },
+        "basis": { "$ref": "#/$defs/creditBasis" },
+        "basis_source_id": { "$ref": "#/$defs/identifier" },
+        "scope": { "$ref": "#/$defs/nonemptyString" },
+        "note": { "$ref": "#/$defs/nonemptyString" }
+      }
+    },
+    "evidenceKind": {
+      "enum": [
+        "proof",
+        "counterexample",
+        "exact_certificate",
+        "computation",
+        "formalization",
+        "literature_result",
+        "status_report"
+      ]
+    },
+    "publicArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "url"],
+      "properties": {
+        "label": { "$ref": "#/$defs/nonemptyString" },
+        "url": { "type": "string", "format": "uri" },
+        "version": { "$ref": "#/$defs/nonemptyString" }
+      }
+    },
+    "publicEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "relation",
+        "sufficiency",
+        "statement_version",
+        "source_ids",
+        "scope",
+        "summary",
+        "uses_claim_ids",
+        "artifacts",
+        "limitations"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "kind": { "$ref": "#/$defs/evidenceKind" },
+        "relation": { "enum": ["supports", "refutes", "context"] },
+        "sufficiency": {
+          "enum": ["claims_full_proof", "partial_support", "no_proof_claim"]
+        },
+        "statement_version": { "type": "integer", "minimum": 1 },
+        "source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "scope": { "$ref": "#/$defs/nonemptyString" },
+        "summary": { "$ref": "#/$defs/nonemptyString" },
+        "uses_claim_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/publicClaimId" }
+        },
+        "artifacts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/publicArtifact" }
+        },
+        "version": { "$ref": "#/$defs/nonemptyString" },
+        "limitations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonemptyString" }
+        }
+      }
+    },
+    "verificationMethod": {
+      "enum": [
+        "expert_review",
+        "peer_review",
+        "lean_check",
+        "exact_computation_reproduced",
+        "independent_reproduction"
+      ]
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "method",
+        "outcome",
+        "full_claim_scope",
+        "statement_version",
+        "evidence_ids",
+        "scope",
+        "checked_version",
+        "checked_on",
+        "checked_by",
+        "source_ids"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "method": { "$ref": "#/$defs/verificationMethod" },
+        "outcome": { "enum": ["passed", "failed", "partial"] },
+        "full_claim_scope": { "type": "boolean" },
+        "statement_version": { "type": "integer", "minimum": 1 },
+        "evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "scope": { "$ref": "#/$defs/nonemptyString" },
+        "checked_version": { "$ref": "#/$defs/nonemptyString" },
+        "checked_on": { "$ref": "#/$defs/date" },
+        "checked_by": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/entity" }
+        },
+        "source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "theorem_names": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonemptyString" }
+        },
+        "url": { "type": "string", "format": "uri" },
+        "note": { "$ref": "#/$defs/nonemptyString" }
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "label",
+        "policy_version",
+        "reviewed_on",
+        "basis_evidence_ids",
+        "basis_verification_ids",
+        "summary"
+      ],
+      "properties": {
+        "state": {
+          "enum": ["open", "proof_offered", "verified", "disproved"]
+        },
+        "label": { "$ref": "#/$defs/nonemptyString" },
+        "policy_version": { "const": "gjc-assessment-v1" },
+        "reviewed_on": { "$ref": "#/$defs/date" },
+        "basis_evidence_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "basis_verification_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "summary": { "$ref": "#/$defs/nonemptyString" }
+      }
+    },
+    "commentary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "by", "date", "source_ids"],
+      "properties": {
+        "text": { "$ref": "#/$defs/nonemptyString" },
+        "by": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/entity" }
+        },
+        "date": { "$ref": "#/$defs/date" },
+        "source_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        }
+      }
+    },
+    "page": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["limitations", "notes", "commentary"],
+      "properties": {
+        "limitations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonemptyString" }
+        },
+        "notes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonemptyString" }
+        },
+        "commentary": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/commentary" }
+        }
+      }
+    }
+  }
+}

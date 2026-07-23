@@ -1,0 +1,99 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-0204bd507fde"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [],
+  "credited_to": [
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-369edcb9ce10",
+      "entity": {
+        "entity_type": "person",
+        "name": "dorky"
+      },
+      "id": "credit-297a3c63ca4b",
+      "roles": [
+        "derivation"
+      ],
+      "scope": "Contribution recorded in Galois structure of the new counterexample."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Public function field argument",
+          "url": "https://mathoverflow.net/questions/513387/",
+          "version": "question:513387-retrieved-2026-07-22"
+        }
+      ],
+      "id": "evidence-0204bd507fde",
+      "kind": "proof",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0014.",
+      "source_ids": [
+        "source-369edcb9ce10"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Public function field argument.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-20",
+  "id": "JCG-CLAIM-0014",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "That every nonproper Keller map has trivial deck group.",
+      "That the argument has received independent expert review."
+    ],
+    "notes": [
+      "Working claim: the linked post offers an argument, but no independent expert review is recorded."
+    ]
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "counterexample-trivial-rational-deck-group",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "dorky"
+        }
+      ],
+      "id": "source-369edcb9ce10",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "forum_post",
+      "title": "Galois structure of the new counterexample to the Jacobian conjecture: an explicit cubic model with S3 monodromy — is this known?",
+      "url": "https://mathoverflow.net/questions/513387/",
+      "version": "question:513387-retrieved-2026-07-22"
+    }
+  ],
+  "statement": "The displayed three-variable map has trivial rational deck group over its target: a rational self-map sigma satisfying F composed with sigma equals F must be the identity.",
+  "statement_version": 1,
+  "storyline": "finite-normalization-and-defect",
+  "title": "Trivial rational deck group",
+  "verification": []
+}

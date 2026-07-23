@@ -1,0 +1,91 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-7b5e4bdfa09c"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [],
+  "credited_to": [],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Proof with classical dependency",
+          "url": "https://www.ulam.ai/research/jacobian.pdf",
+          "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+        }
+      ],
+      "id": "evidence-7b5e4bdfa09c",
+      "kind": "literature_result",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0009.",
+      "source_ids": [
+        "source-bb1fe05e436d"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Proof with classical dependency.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-20",
+  "id": "JCG-CLAIM-0009",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "Properness of every Keller map.",
+      "The Jacobian conjecture in dimension 2."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "keller-map-invertibility-properness-equivalence",
+  "sources": [
+    {
+      "authors": [],
+      "id": "source-bb1fe05e436d",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf",
+      "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+    },
+    {
+      "authors": [],
+      "id": "source-a8ed4b6018bd",
+      "primary_for_display": false,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    }
+  ],
+  "statement": "For a Keller map over the complex numbers, polynomial invertibility, properness, emptiness of the nonproperness set, and codimension at least 2 of that set are equivalent, with the empty set assigned infinite codimension.",
+  "statement_version": 1,
+  "storyline": "counterexample-and-global-geometry",
+  "title": "Invertibility and properness for complex Keller maps",
+  "verification": []
+}

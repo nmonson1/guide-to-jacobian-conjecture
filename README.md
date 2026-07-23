@@ -12,8 +12,8 @@ remains recoverable from Git history at commit `a96286c`. The replacement now
 contains:
 
 1. 22 dated event records from 1884 through 21 July 2026;
-2. 13 stable contribution accessions;
-3. 21 normalized mathematical and historical claims.
+2. 13 stable contribution records;
+3. 28 source-linked public claim pages generated from validated JSON records.
 
 Exposition will be added only after the relevant contribution, claim, and
 assessment records exist. Sequence numbers record entry into this repository;
@@ -23,9 +23,11 @@ they do not by themselves establish historical priority.
 
 - `events/`: dated developments, source-status observations, and corrections;
 - `contributions/`: attributed works or historical imports;
-- `claims/`: normalized mathematical assertions and questions;
+- `claims/`: the original chronological claim-record baseline;
+- `data/claims-v2/`: the promoted, sanitized public claim records;
 - `assessments/`: named, version-specific checks performed for this project;
-- `docs/`: the sparse public index of those records.
+- `docs/claim/`: generated page-per-claim views;
+- `scripts/generate_claim_pages.py`: the deterministic public renderer.
 
 Event dates and contribution accessions are independent. The project records
 external proof, computation, and formalization as evidence, but does not call
@@ -38,6 +40,9 @@ With [`uv`](https://docs.astral.sh/uv/) installed:
 
 ```bash
 uv run --with-requirements requirements.txt python scripts/validate_records.py
+uv run --with-requirements requirements.txt python scripts/validate_public_claims_v2.py
+uv run --with-requirements requirements.txt python scripts/generate_claim_pages.py
+uv run --with-requirements requirements.txt python scripts/check_public_site.py
 uv run --with-requirements requirements.txt mkdocs build --strict
 ```
 

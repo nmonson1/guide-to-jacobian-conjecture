@@ -1,0 +1,141 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-57a459120c74"
+    ],
+    "basis_verification_ids": [
+      "check-32a0cd38ef40"
+    ],
+    "label": "Verified",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "verified",
+    "summary": "A qualifying full-scope check validates supporting evidence."
+  },
+  "collections": [
+    "chronology-people-and-provenance"
+  ],
+  "credited_to": [
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-a7113b9bd59d",
+      "entity": {
+        "entity_type": "person",
+        "name": "Lázaro Orlando Rodríguez Díaz"
+      },
+      "id": "credit-064cc14efc59",
+      "roles": [
+        "proof",
+        "exposition"
+      ],
+      "scope": "Contribution recorded in On the origin of the Jacobian conjecture."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Refereed line by line historical analysis",
+          "url": "https://comptes-rendus.academie-sciences.fr/mathematique/item/10.5802/crmath.831.pdf",
+          "version": "sha256:1be1f3a0092e2b26b47671d49cd765d04d5f468b14831a4fe9c8f1ad81ece00f"
+        }
+      ],
+      "id": "evidence-57a459120c74",
+      "kind": "proof",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0011.",
+      "source_ids": [
+        "source-2e07ac6c7a9f"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Refereed line by line historical analysis.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-06-05",
+  "id": "JCG-CLAIM-0011",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "That every failed approach to the Jacobian conjecture has the same defect.",
+      "That the 2026 counterexample directly descends from Kraus's argument."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "kraus-proof-gap-at-infinity",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Lázaro Orlando Rodríguez Díaz"
+        }
+      ],
+      "id": "source-a7113b9bd59d",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "historical_source"
+      ],
+      "source_date": "2026-06-05",
+      "source_type": "paper",
+      "title": "On the origin of the Jacobian conjecture",
+      "url": "https://doi.org/10.5802/crmath.831",
+      "version": "DOI:10.5802/crmath.831"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Lázaro Orlando Rodríguez Díaz"
+        }
+      ],
+      "id": "source-2e07ac6c7a9f",
+      "primary_for_display": false,
+      "relations": [
+        "original_statement",
+        "historical_source"
+      ],
+      "source_date": "2026-06-05",
+      "source_type": "paper",
+      "title": "On the origin of the Jacobian conjecture",
+      "url": "https://comptes-rendus.academie-sciences.fr/mathematique/item/10.5802/crmath.831.pdf",
+      "version": "sha256:1be1f3a0092e2b26b47671d49cd765d04d5f468b14831a4fe9c8f1ad81ece00f"
+    }
+  ],
+  "statement": "The final step of Kraus's claimed proof is invalid because the chosen parametrization does not justify the required derivative conclusion at infinity; the unresolved issue is control of ramification at infinity.",
+  "statement_version": 1,
+  "storyline": "two-dimensional-problem",
+  "title": "The gap in Kraus's proposed proof",
+  "verification": [
+    {
+      "checked_by": [],
+      "checked_on": "2026-07-22",
+      "checked_version": "DOI:10.5802/crmath.831",
+      "evidence_ids": [
+        "evidence-57a459120c74"
+      ],
+      "full_claim_scope": true,
+      "id": "check-32a0cd38ef40",
+      "method": "peer_review",
+      "note": "The source is a refereed publication; this records publication review, not a new GJC expert audit.",
+      "outcome": "passed",
+      "scope": "The exact historical claim as stated in the refereed source.",
+      "source_ids": [
+        "source-a7113b9bd59d"
+      ],
+      "statement_version": 1,
+      "url": "https://doi.org/10.5802/crmath.831"
+    }
+  ]
+}

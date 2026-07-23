@@ -18,6 +18,7 @@
   --md-default-bg-color: var(--jacobian-paper);
   --md-default-fg-color: var(--jacobian-ink);
   --md-default-fg-color--light: #536768;
+  --md-typeset-color: var(--jacobian-ink);
   --md-typeset-a-color: #087477;
   --md-code-bg-color: #eee9df;
   --md-footer-bg-color: #123a3b;
@@ -37,6 +38,7 @@
   --md-default-bg-color: var(--jacobian-paper);
   --md-default-fg-color: var(--jacobian-ink);
   --md-default-fg-color--light: #b7c3c0;
+  --md-typeset-color: var(--jacobian-ink);
   --md-typeset-a-color: #71c9c7;
   --md-code-bg-color: #183536;
   --md-footer-bg-color: #0b2526;
@@ -511,3 +513,64 @@ input {
   }
 }
 
+@media screen and (max-width: 700px) {
+  .claim-table .md-typeset__scrollwrap,
+  .claim-table .md-typeset__table {
+    display: block;
+    margin: 0;
+    overflow: visible;
+    width: 100%;
+  }
+
+  .claim-table table,
+  .claim-table tbody,
+  .claim-table tr,
+  .claim-table td {
+    display: block !important;
+    width: auto !important;
+  }
+
+  .claim-table table {
+    border-radius: 0.7rem !important;
+    overflow: hidden;
+    width: 100% !important;
+  }
+
+  .claim-table thead {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .claim-table tr {
+    border-bottom: 1px solid var(--jacobian-line);
+    padding: 0.75rem 0;
+  }
+
+  .claim-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .claim-table td {
+    border: 0 !important;
+    padding: 0.35rem 1rem !important;
+  }
+
+  .claim-table td::before {
+    color: var(--jacobian-muted);
+    display: block;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.12rem;
+    text-transform: uppercase;
+  }
+
+  .claim-table td:nth-child(2)::before { content: "Primary source"; }
+  .claim-table td:nth-child(3)::before { content: "Credited to"; }
+  .claim-table td:nth-child(4)::before { content: "Status"; }
+}

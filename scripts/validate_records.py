@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the chronological event, contribution, and claim records."""
+"""Validate the legacy chronological event, contribution, and claim records."""
 
 from __future__ import annotations
 
@@ -222,10 +222,8 @@ def main() -> int:
                     f"{path.relative_to(ROOT)}: unknown claim {claim_id!r}"
                 )
 
-    page_expectations = {
-        ROOT / "docs" / "chronology.md": contributions | events,
-        ROOT / "docs" / "claims.md": claims,
-    }
+    # Event IDs are intentionally not part of the reader-facing chronology.
+    page_expectations = {ROOT / "docs" / "chronology.md": contributions}
     for path, records in page_expectations.items():
         text = path.read_text(encoding="utf-8")
         for record_id in records:
@@ -242,7 +240,7 @@ def main() -> int:
 
     print(
         f"Validated {len(events)} events, {len(contributions)} contributions, "
-        f"and {len(claims)} claims."
+        f"and {len(claims)} legacy claim records."
     )
     return 0
 

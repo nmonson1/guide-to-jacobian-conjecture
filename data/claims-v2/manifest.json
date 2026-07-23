@@ -1,0 +1,139 @@
+{
+  "as_of": "2026-07-22",
+  "assessment_policy": "gjc-assessment-v1",
+  "claim_schema": "public-claim-v2",
+  "content_digest": "sha256:7159849e6d232d1929cb602c154dcf75098a7186ea01c22fb33f1d7c9858b5e1",
+  "counts": {
+    "by_assessment": {
+      "disproved": 0,
+      "open": 2,
+      "proof_offered": 24,
+      "verified": 2
+    },
+    "by_role": {
+      "goal": 3,
+      "standalone": 25,
+      "supporting": 0
+    },
+    "total": 28
+  },
+  "export_id": "2026-07-22-pilot-v2",
+  "files": [
+    {
+      "path": "claims/JCG-CLAIM-0001.json",
+      "sha256": "032425318f14776b62a1b2bc7a88996bb83e436a4d8ec7fc8aa0dfbdcda64c4f"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0002.json",
+      "sha256": "4122d902c93bfc960519ff204c8cedca0d31c7890aa366a050b7f9d70d10414f"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0003.json",
+      "sha256": "78dc8d17914dc11129a531fa078d58a2b1a9bfd733df9785d4479a62fd757c0e"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0004.json",
+      "sha256": "8e2862b90196062608002e19b3939e64215852717ebefeb2458e304b2469226d"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0005.json",
+      "sha256": "329c043c804bdd6c0280b18818127627780e8b628cab8ed53efb5aac4d3812b9"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0006.json",
+      "sha256": "7ca6d4ce151dbccf0fce8d154d3234160b3dd3d19a07e0423e7e7424bf7f382d"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0007.json",
+      "sha256": "01e2a70cf9f00b46f6dcc185285d5d25c77e4d7b37026a9ee6fac2e8c4846827"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0008.json",
+      "sha256": "6bc057904df1523301360fe0dce4cf56889038dba081db65d64177df7549f275"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0009.json",
+      "sha256": "15e1fd064bda710a08e33c1bf8ab965674b1394cfe07604990073482ac8855ef"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0010.json",
+      "sha256": "0b8d7631febbf8ca933095c9bf0d7a9aac77f8b636b6306c8b437be77bdb0975"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0011.json",
+      "sha256": "a992bf1173b463f0f03d0cd9269b9f84f7174800816b71d9aab2ced3c3626278"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0012.json",
+      "sha256": "4776138c7c07e86134959275022a4bb66fc20feb9fadbb25b918da2aed150d30"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0013.json",
+      "sha256": "cccb61171c72338ee00b63bef853a23f4e0d63c2c0a5fda740a9030717188106"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0014.json",
+      "sha256": "0cafa9c571dd418ecac44ea4eb783466c24e335c6836c09ff1a9d21ffa9191e9"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0015.json",
+      "sha256": "c9c31004abfab4ba3d18d887f2cd6d95c1b0c48aa5f9fe49a4bee81824fc2b72"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0017.json",
+      "sha256": "c299a40d0d7342eeaa5b64f4ca0709c5145193a0fb333206874d359cfe3aff72"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0018.json",
+      "sha256": "257977dc7fc87163974b1455f23674ed3c88113a2b201d4ce041a1240bbb3e63"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0019.json",
+      "sha256": "9f4632410fe15fcb4e5e8889fb3c5f2f9053d5c732861229ca2a60b7b5b8e119"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0020.json",
+      "sha256": "746100bacbba8d2ff3e6cd45055348157e2dc9cf507ccc695bec343c3634bc1f"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0021.json",
+      "sha256": "ab1c80e7dd71f941bbd1126ee5a5589d1ad7c9e2ae74b06191f8aecdd74660e9"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0022.json",
+      "sha256": "edf28bf5c3036d9325f524c73faa0eba42c10ac4bc0df937d226f708074be4bc"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0023.json",
+      "sha256": "58effc1b382a91d1294c4b4348fbe013c739766614dc9aadb112976ffb4ff0b4"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0024.json",
+      "sha256": "1b1cc51f9e30a8d5dfd0ac609b02f6cdc11854bf41a44ae065238b07a6fde4fe"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0025.json",
+      "sha256": "b6d4c6e0f78a0fdf9c6584217a45bb9496d090c5144a9303ccd32c536160c267"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0026.json",
+      "sha256": "e6b1f8ee43770824e85f86dbb7e9578abcf755c3fbcd21cce295747de59c6efc"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0027.json",
+      "sha256": "4c306cbd6218e259b5136daac7b8851b3a945cba105106b92a245b04816d7252"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0028.json",
+      "sha256": "dd7e03b4762cfc5bfc9f815f8e774b8567e9ed124ae47205a0e110dd56ec4fd4"
+    },
+    {
+      "path": "claims/JCG-CLAIM-0029.json",
+      "sha256": "27cbeb1d4c1aa44b0a652302b22de0feeb30cd6892309ff07cd225fc09eb2b7c"
+    }
+  ],
+  "generated_at": "2026-07-22T12:00:00-07:00",
+  "note": "Deterministic staging export; the public GJC repository was not modified.",
+  "schema_version": 2,
+  "timezone": "America/Los_Angeles"
+}

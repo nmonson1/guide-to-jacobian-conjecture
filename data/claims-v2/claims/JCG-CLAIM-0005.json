@@ -1,0 +1,91 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-52b453febd40"
+    ],
+    "basis_verification_ids": [],
+    "label": "Open",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "open",
+    "summary": "No qualifying full proof or refutation is recorded."
+  },
+  "collections": [],
+  "credited_to": [],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Source status statement",
+          "url": "https://www.ulam.ai/research/jacobian.pdf",
+          "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+        }
+      ],
+      "id": "evidence-52b453febd40",
+      "kind": "status_report",
+      "limitations": [],
+      "relation": "context",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0005.",
+      "source_ids": [
+        "source-bb1fe05e436d"
+      ],
+      "statement_version": 1,
+      "sufficiency": "no_proof_claim",
+      "summary": "Source status statement.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-20",
+  "id": "JCG-CLAIM-0005",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "That the conjecture is true in dimension 2.",
+      "That the three-dimensional mechanism cannot be adapted in any way."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "goal",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "plane-jacobian-conjecture-open",
+  "sources": [
+    {
+      "authors": [],
+      "id": "source-bb1fe05e436d",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf",
+      "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+    },
+    {
+      "authors": [],
+      "id": "source-a8ed4b6018bd",
+      "primary_for_display": false,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    }
+  ],
+  "statement": "The Jacobian conjecture in dimension 2 remains open.",
+  "statement_version": 1,
+  "storyline": "two-dimensional-problem",
+  "title": "The plane Jacobian conjecture remains open",
+  "verification": []
+}

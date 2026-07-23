@@ -1,0 +1,117 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-014ce22009f7"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [],
+  "credited_to": [
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-5b60553d7eb9",
+      "entity": {
+        "entity_type": "person",
+        "name": "William Thompson"
+      },
+      "id": "credit-48f3f9ca4360",
+      "roles": [
+        "computation"
+      ],
+      "scope": "Contribution recorded in An explicit 24-variable cubic-homogeneous Jacobian counterexample."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Explicit map derivation and two verifier implementations",
+          "url": "https://github.com/wtho704/explicit-cubic-homogeneous-jacobian-counterexample/tree/45a7616fdf5a20c065564f2676190093722696b9",
+          "version": "commit:45a7616fdf5a20c065564f2676190093722696b9"
+        }
+      ],
+      "id": "evidence-014ce22009f7",
+      "kind": "computation",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0021.",
+      "source_ids": [
+        "source-5b60553d7eb9"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Explicit map derivation and two verifier implementations.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-21",
+  "id": "JCG-CLAIM-0021",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "Minimality of dimension, support, or nilpotency index.",
+      "The stronger Druzkowski cubic-linear normal form.",
+      "An independent project assessment of either verifier."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "cubic-homogeneous-counterexample-24-variables",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "William Thompson"
+        }
+      ],
+      "id": "source-5b60553d7eb9",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "repository",
+      "title": "explicit-cubic-homogeneous-jacobian-counterexample",
+      "url": "https://github.com/wtho704/explicit-cubic-homogeneous-jacobian-counterexample/tree/45a7616fdf5a20c065564f2676190093722696b9",
+      "version": "commit:45a7616fdf5a20c065564f2676190093722696b9"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "William Thompson"
+        }
+      ],
+      "id": "source-9ceec74dfe84",
+      "primary_for_display": false,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "other",
+      "title": "Zenodo record 21466221",
+      "url": "https://zenodo.org/records/21466221",
+      "version": "record:21466221"
+    }
+  ],
+  "statement": "The cited explicit map has the form G(U)=U+H(U) over Q^24, with every nonzero component of H homogeneous cubic, determinant 1, 54 nonzero cubic monomials, and a displayed collision of two distinct rational points.",
+  "statement_version": 1,
+  "storyline": "reductions-to-special-forms",
+  "title": "An explicit cubic-homogeneous counterexample in 24 variables",
+  "verification": []
+}

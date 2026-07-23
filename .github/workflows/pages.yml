@@ -31,11 +31,17 @@ jobs:
       - name: Install the pinned site dependencies
         run: pip install -r requirements.txt
 
-      - name: Check the publication boundary
-        run: python scripts/check_public_site.py
-
       - name: Validate the chronological records
         run: python scripts/validate_records.py
+
+      - name: Validate the promoted claim records
+        run: python scripts/validate_public_claims_v2.py
+
+      - name: Check generated claim pages
+        run: python scripts/generate_claim_pages.py
+
+      - name: Check the publication boundary
+        run: python scripts/check_public_site.py
 
       - name: Build the site
         run: mkdocs build --strict

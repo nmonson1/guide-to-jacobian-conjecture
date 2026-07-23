@@ -1,0 +1,114 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-848337b2de91"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "arithmetic-and-characteristic-p",
+    "formal-verification"
+  ],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-c3c0968b6fda",
+      "entity": {
+        "entity_type": "person",
+        "name": "Alejandro Radisic"
+      },
+      "id": "credit-ca6d91e4900f",
+      "note": "The limit agrees with an S3/Chebotarev heuristic, but the pinned repository explicitly does not formalize irreducibility or S3 monodromy.",
+      "roles": [
+        "derivation",
+        "formalization"
+      ],
+      "scope": "finite-field count and S3 fixed-point interpretation"
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [],
+      "id": "evidence-848337b2de91",
+      "kind": "formalization",
+      "limitations": [
+        "The limit agrees with an S3/Chebotarev heuristic, but the pinned repository explicitly does not formalize irreducibility or S3 monodromy."
+      ],
+      "relation": "supports",
+      "scope": "The asymptotic consequence of the exact finite-field formulas as q grows through odd prime powers.",
+      "source_ids": [
+        "source-2687d34ad177",
+        "source-c3c0968b6fda"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "The exact formalized counts imply the limit; the S3 fixed-point match is an arithmetic interpretation.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-22",
+  "id": "JCG-CLAIM-0027",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "The pinned repository does not formalize irreducibility or S3 monodromy."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": "The asymptotic consequence of the exact finite-field formulas as q grows through odd prime powers.",
+  "sequence": null,
+  "slug": "finite-field-s3-fiber-distribution",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-c3c0968b6fda",
+      "primary_for_display": false,
+      "relations": [
+        "formalization"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "formalization",
+      "title": "Counting.lean (Lean source)",
+      "url": "https://github.com/alerad/alpoge-lean/blob/95897469d48ba97f1a80a2db6553fd2f0f43834b/Alpoge/Counting.lean",
+      "version": "commit:95897469d48ba97f1a80a2db6553fd2f0f43834b"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-2687d34ad177",
+      "primary_for_display": true,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "public_comment",
+      "title": "Alejandro Radisic's comment",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693559"
+    }
+  ],
+  "statement": "The normalized finite-field fiber-count distribution (N_0,N_1,N_3)/q^3 tends to (1/3,1/2,1/6), matching the proportions of elements of S3 with 0, 1, and 3 fixed points.",
+  "statement_version": 1,
+  "storyline": "finite-normalization-and-defect",
+  "title": "Asymptotic S3 fiber distribution",
+  "verification": []
+}

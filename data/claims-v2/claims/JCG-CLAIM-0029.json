@@ -1,0 +1,114 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-fee47f9fac41"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "arithmetic-and-characteristic-p"
+  ],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-c6dcf20e7f73",
+      "entity": {
+        "entity_type": "person",
+        "name": "Alejandro Radisic"
+      },
+      "id": "credit-ecf1b1472414",
+      "note": "Do not label the full surjectivity statement machine-verified at v0.4.0.",
+      "roles": [
+        "derivation"
+      ],
+      "scope": "stated the consequence and disclosed its formalization boundary"
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [],
+      "id": "evidence-fee47f9fac41",
+      "kind": "proof",
+      "limitations": [
+        "Do not label the full surjectivity statement machine-verified at v0.4.0."
+      ],
+      "relation": "supports",
+      "scope": "The determinant-one counterexample over algebraically closed fields of characteristic 3.",
+      "source_ids": [
+        "source-2687d34ad177",
+        "source-c6dcf20e7f73"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Radisic gives the deduction from the characteristic-three normal form and explicitly marks the final surjectivity step as not yet formalized.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-22",
+  "id": "JCG-CLAIM-0029",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "The full surjectivity statement is not machine-verified in alpoge-lean v0.4.0."
+    ],
+    "notes": [
+      "The final surjectivity deduction is offered in the repository documentation but is not part of the pinned Lean formalization."
+    ]
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": "The determinant-one counterexample over algebraically closed fields of characteristic 3.",
+  "sequence": null,
+  "slug": "characteristic-three-surjective-etale-noninjective",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-c6dcf20e7f73",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "repository",
+      "title": "alpoge-lean v0.4.0 documentation",
+      "url": "https://github.com/alerad/alpoge-lean/blob/95897469d48ba97f1a80a2db6553fd2f0f43834b/README.md",
+      "version": "commit:95897469d48ba97f1a80a2db6553fd2f0f43834b"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-2687d34ad177",
+      "primary_for_display": true,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "public_comment",
+      "title": "Alejandro Radisic's comment",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693559"
+    }
+  ],
+  "statement": "Over an algebraically closed field of characteristic 3, the map is surjective while remaining étale and noninjective.",
+  "statement_version": 1,
+  "storyline": "finite-normalization-and-defect",
+  "title": "Surjectivity in algebraically closed characteristic three",
+  "verification": []
+}

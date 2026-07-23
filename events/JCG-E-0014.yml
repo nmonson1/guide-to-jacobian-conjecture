@@ -7,9 +7,10 @@ date_precision: day
 title: Direct logical consequences are catalogued
 category: downstream-consequences
 summary: >-
-  Zhang records consequences for the Mathieu conjecture for SU(3), Zhao's
-  Vanishing Conjecture, and the Image Conjecture. The latter two conclusions
-  are initially existential in dimension.
+  Zhang records proposed consequences for the Mathieu conjecture for SU(3),
+  Zhao's Vanishing Conjecture, and the Image Conjecture. The fixed-dimensional
+  SU(3) inference is not justified by the cited dimension-varying implication;
+  the latter two conclusions are existential in dimension.
 sources:
   - type: public-web-note
     title: Direct Consequences of the Three-Dimensional Counterexample to the Jacobian Conjecture
@@ -21,5 +22,5 @@ related_claims:
   - JCG-CLAIM-0016
   - JCG-CLAIM-0017
   - JCG-CLAIM-0018
-record_status: source-note-audited-primary-dependencies-pending
+record_status: source-note-audited-su3-inference-withheld
 as_of: 2026-07-22

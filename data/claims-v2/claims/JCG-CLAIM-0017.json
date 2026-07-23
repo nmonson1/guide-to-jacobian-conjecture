@@ -1,0 +1,120 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-7f36bf2921aa"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "neighboring-consequences"
+  ],
+  "credited_to": [
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-6cc44213dfb5",
+      "entity": {
+        "entity_type": "person",
+        "name": "Zihan Zhang"
+      },
+      "id": "credit-0deda3faf776",
+      "roles": [
+        "derivation",
+        "exposition"
+      ],
+      "scope": "Contribution recorded in Direct consequences of the three-dimensional counterexample."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Public consequence note with literature citations",
+          "url": "https://zzhang-iu.github.io/papers/direct-consequences-jacobian/",
+          "version": "sha256:8cb11c875ade239a609189fd317dc58ea328e4710072611daf20806fea47f1d9"
+        }
+      ],
+      "id": "evidence-7f36bf2921aa",
+      "kind": "literature_result",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0017.",
+      "source_ids": [
+        "source-6cc44213dfb5"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Public consequence note with literature citations.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2007",
+  "id": "JCG-CLAIM-0017",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "The least dimension in which the Vanishing Conjecture fails.",
+      "An independent verification of the published equivalence proof."
+    ],
+    "notes": [
+      "Consequence record: Zhao's published paper states the all-dimensional equivalence. This guide checked that source statement, but has not retraced the full proof."
+    ]
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "all-dimensional-vanishing-conjecture-false",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Wenhua Zhao"
+        }
+      ],
+      "id": "source-f8fb6705d239",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2007",
+      "source_type": "paper",
+      "title": "Hessian Nilpotent Polynomials and the Jacobian Conjecture",
+      "url": "https://arxiv.org/abs/math/0409534v2",
+      "version": "arXiv:math/0409534v2; Trans. Amer. Math. Soc. 359 (2007), 249–274"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Zihan Zhang"
+        }
+      ],
+      "id": "source-6cc44213dfb5",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "Direct Consequences of the Three-Dimensional Counterexample to the Jacobian Conjecture",
+      "url": "https://zzhang-iu.github.io/papers/direct-consequences-jacobian/",
+      "version": "sha256:8cb11c875ade239a609189fd317dc58ea328e4710072611daf20806fea47f1d9"
+    }
+  ],
+  "statement": "Zhao's all-dimensional Vanishing Conjecture is false in some finite dimension.",
+  "statement_version": 1,
+  "storyline": null,
+  "title": "Failure of the all-dimensional Vanishing Conjecture",
+  "verification": []
+}

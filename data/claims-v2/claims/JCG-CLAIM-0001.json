@@ -1,0 +1,183 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-5955060b69a7"
+    ],
+    "basis_verification_ids": [],
+    "label": "Refutation offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full refutation, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "chronology-people-and-provenance"
+  ],
+  "credited_to": [
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-73626721a1fd",
+      "entity": {
+        "entity_type": "person",
+        "name": "O.-H. Keller"
+      },
+      "id": "credit-e3b5fe7bbf96",
+      "roles": [
+        "conjecture_statement"
+      ],
+      "scope": "Contribution recorded in The Jacobian conjecture."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Classical source",
+          "url": "https://doi.org/10.1007/BF01695502",
+          "version": "DOI:10.1007/BF01695502"
+        }
+      ],
+      "id": "evidence-ef7840bcbb80",
+      "kind": "literature_result",
+      "limitations": [],
+      "relation": "context",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0001.",
+      "source_ids": [
+        "source-73626721a1fd"
+      ],
+      "statement_version": 1,
+      "sufficiency": "no_proof_claim",
+      "summary": "Classical source.",
+      "uses_claim_ids": []
+    },
+    {
+      "artifacts": [],
+      "id": "evidence-5955060b69a7",
+      "kind": "counterexample",
+      "limitations": [
+        "No qualifying independent full-scope check is recorded in this pilot."
+      ],
+      "relation": "refutes",
+      "scope": "The all-dimensional statement, refuted by a three-dimensional counterexample and stabilization.",
+      "source_ids": [
+        "source-bb1fe05e436d",
+        "source-a8ed4b6018bd",
+        "source-076623081a03",
+        "source-22f02c48dbd5"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "The explicit counterexample in dimension three, extended by identity coordinates, refutes the displayed all-dimensional conjecture.",
+      "uses_claim_ids": [
+        "JCG-CLAIM-0004"
+      ]
+    }
+  ],
+  "first_reported_on": "1939",
+  "id": "JCG-CLAIM-0001",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "Any fixed-dimensional case without a separate proof."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "goal",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "the-jacobian-conjecture",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "O.-H. Keller"
+        }
+      ],
+      "id": "source-73626721a1fd",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "historical_source"
+      ],
+      "source_date": "1939",
+      "source_type": "paper",
+      "title": "Ganze Cremona-Transformationen",
+      "url": "https://doi.org/10.1007/BF01695502",
+      "version": "DOI:10.1007/BF01695502"
+    },
+    {
+      "authors": [],
+      "id": "source-bb1fe05e436d",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf",
+      "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+    },
+    {
+      "authors": [],
+      "id": "source-a8ed4b6018bd",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Paul Lezeau"
+        }
+      ],
+      "id": "source-076623081a03",
+      "primary_for_display": false,
+      "relations": [
+        "formalization",
+        "evidence_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "formalization",
+      "title": "feat: add Jacobian disproof",
+      "url": "https://github.com/google-deepmind/formal-conjectures/pull/4474",
+      "version": "head:759b8027588fd9c8d8bf8b1fea57dcb2439ca677"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "techno-optimist"
+        }
+      ],
+      "id": "source-22f02c48dbd5",
+      "primary_for_display": false,
+      "relations": [
+        "formalization",
+        "evidence_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "formalization",
+      "title": "feat(JacobianConjecture): sorry-free refutation at n = 3 over Q",
+      "url": "https://github.com/google-deepmind/formal-conjectures/pull/4486",
+      "version": "head:a5123f4b84f19568737a71b7497c508cb19cf5f3"
+    }
+  ],
+  "statement": "Every polynomial map from complex affine n-space to itself whose Jacobian determinant is a nonzero constant is a polynomial automorphism.",
+  "statement_version": 1,
+  "storyline": "counterexample-and-global-geometry",
+  "title": "The Jacobian conjecture",
+  "verification": []
+}

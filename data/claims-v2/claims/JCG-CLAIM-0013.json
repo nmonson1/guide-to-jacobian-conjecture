@@ -1,0 +1,99 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-5dc1dd7cf4e5"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [],
+  "credited_to": [
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-369edcb9ce10",
+      "entity": {
+        "entity_type": "person",
+        "name": "dorky"
+      },
+      "id": "credit-561661c23a14",
+      "roles": [
+        "derivation"
+      ],
+      "scope": "Contribution recorded in Galois structure of the new counterexample."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Exact public derivation",
+          "url": "https://mathoverflow.net/questions/513387/",
+          "version": "question:513387-retrieved-2026-07-22"
+        }
+      ],
+      "id": "evidence-5dc1dd7cf4e5",
+      "kind": "proof",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0013.",
+      "source_ids": [
+        "source-369edcb9ce10"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Exact public derivation.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-20",
+  "id": "JCG-CLAIM-0013",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "That the derivation has received independent expert review.",
+      "Historical priority for the cubic model or monodromy description."
+    ],
+    "notes": [
+      "Working claim: the linked post offers an exact derivation, but no independent expert review is recorded."
+    ]
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "counterexample-s3-galois-closure",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "dorky"
+        }
+      ],
+      "id": "source-369edcb9ce10",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "forum_post",
+      "title": "Galois structure of the new counterexample to the Jacobian conjecture: an explicit cubic model with S3 monodromy — is this known?",
+      "url": "https://mathoverflow.net/questions/513387/",
+      "version": "question:513387-retrieved-2026-07-22"
+    }
+  ],
+  "statement": "The function-field extension induced by the Alpöge map has degree 3 and an S3 Galois closure, as described by the cited explicit cubic model.",
+  "statement_version": 1,
+  "storyline": "finite-normalization-and-defect",
+  "title": "Degree-three function-field extension with S3 Galois closure",
+  "verification": []
+}

@@ -1,0 +1,114 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-6c0edd188d87"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "arithmetic-and-characteristic-p",
+    "formal-verification"
+  ],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-c3c0968b6fda",
+      "entity": {
+        "entity_type": "person",
+        "name": "Alejandro Radisic"
+      },
+      "id": "credit-286297ed0c67",
+      "note": "The repository reports an AI-assisted development. Credit here follows the signed public comment and repository authorship; no more granular human/AI labor split is public.",
+      "roles": [
+        "proof",
+        "formalization"
+      ],
+      "scope": "stated and formalized the exact finite-field counts"
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [],
+      "id": "evidence-6c0edd188d87",
+      "kind": "formalization",
+      "limitations": [
+        "The repository reports an AI-assisted development. Credit here follows the signed public comment and repository authorship; no more granular human/AI labor split is public."
+      ],
+      "relation": "supports",
+      "scope": "The determinant-one rescaling of the counterexample over finite fields of odd cardinality.",
+      "source_ids": [
+        "source-2687d34ad177",
+        "source-c3c0968b6fda"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Radisic states the exact formulas and supplies a pinned Lean formalization in Counting.lean.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-22",
+  "id": "JCG-CLAIM-0026",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "The pinned theorem inventory was inspected, but no fresh Lean build was run for this guide."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": "The determinant-one rescaling of the counterexample over finite fields of odd cardinality.",
+  "sequence": null,
+  "slug": "exact-finite-field-fiber-counts",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-c3c0968b6fda",
+      "primary_for_display": false,
+      "relations": [
+        "formalization"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "formalization",
+      "title": "Counting.lean (Lean source)",
+      "url": "https://github.com/alerad/alpoge-lean/blob/95897469d48ba97f1a80a2db6553fd2f0f43834b/Alpoge/Counting.lean",
+      "version": "commit:95897469d48ba97f1a80a2db6553fd2f0f43834b"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-2687d34ad177",
+      "primary_for_display": true,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "public_comment",
+      "title": "Alejandro Radisic's comment",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693559"
+    }
+  ],
+  "statement": "Over every finite field F_q of odd order, every rational fiber has size 0, 1, or 3; writing N_j for the number of targets with j rational preimages, N_1+3N_3=q^3 and N_0=2N_3, with 6N_3=(q-1)(q^2+2) outside characteristic 3 and 6N_3=q^2(q-1) in characteristic 3.",
+  "statement_version": 1,
+  "storyline": "finite-normalization-and-defect",
+  "title": "Exact finite-field fiber counts",
+  "verification": []
+}

@@ -1,0 +1,128 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-57d26c570e12"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "neighboring-consequences"
+  ],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-b476dc8e2703",
+      "entity": {
+        "entity_type": "ai_system",
+        "name": "ChatGPT 5.6 Sol Pro"
+      },
+      "id": "credit-622e99d2697a",
+      "note": "The human author accepts full responsibility in the paper.",
+      "roles": [
+        "research_assistance"
+      ],
+      "scope": "four-variable construction"
+    },
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-b476dc8e2703",
+      "entity": {
+        "entity_type": "person",
+        "name": "Christopher D. Long"
+      },
+      "id": "credit-d77d99c76c14",
+      "roles": [
+        "proof",
+        "construction"
+      ],
+      "scope": "Contribution recorded in Small Counterexamples to the Gaussian Moments Conjecture."
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-b476dc8e2703",
+      "entity": {
+        "entity_type": "ai_system",
+        "name": "Claude Fable 5"
+      },
+      "id": "credit-a16f9863e461",
+      "note": "The human author accepts full responsibility in the paper.",
+      "roles": [
+        "research_assistance"
+      ],
+      "scope": "three-variable construction and checks"
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Arxiv proof with explicit formulas",
+          "url": "https://arxiv.org/abs/2607.18186v1",
+          "version": "sha256:ca5d36529019375cede8dc6a7765430681751c4e587dc2122f37f21f05cdc42c"
+        }
+      ],
+      "id": "evidence-57d26c570e12",
+      "kind": "proof",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0020.",
+      "source_ids": [
+        "source-b476dc8e2703"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Arxiv proof with explicit formulas.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-20",
+  "id": "JCG-CLAIM-0020",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "Failure of the Gaussian Moments Conjecture in dimension 2.",
+      "That the small examples were obtained by translating the Jacobian counterexample."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "gaussian-moments-conjecture-counterexamples",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Christopher D. Long"
+        }
+      ],
+      "id": "source-b476dc8e2703",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "preprint",
+      "title": "Small Counterexamples to the Gaussian Moments Conjecture",
+      "url": "https://arxiv.org/abs/2607.18186v1",
+      "version": "sha256:ca5d36529019375cede8dc6a7765430681751c4e587dc2122f37f21f05cdc42c"
+    }
+  ],
+  "statement": "The Gaussian Moments Conjecture is false in every dimension n at least 3: the cited preprint gives a five-term quartic witness in three real Gaussian variables and a six-term cubic witness in four variables.",
+  "statement_version": 1,
+  "storyline": null,
+  "title": "Small counterexamples to the Gaussian Moments Conjecture",
+  "verification": []
+}

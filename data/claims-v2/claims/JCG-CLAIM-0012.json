@@ -1,0 +1,100 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-9f6866b00d40"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "arithmetic-and-characteristic-p",
+    "formal-verification"
+  ],
+  "credited_to": [
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-f1e4608d26d3",
+      "entity": {
+        "entity_type": "person",
+        "name": "deancureton"
+      },
+      "id": "credit-a3e72a3bf4dd",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "Contribution recorded in Lean counterexamples to the Jacobian conjecture over all fields."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Lean formalization",
+          "url": "https://github.com/deancureton/jacobian/tree/0d4a9212d874226ad81ce5a926becddfa94e6a88",
+          "version": "commit:0d4a9212d874226ad81ce5a926becddfa94e6a88"
+        }
+      ],
+      "id": "evidence-9f6866b00d40",
+      "kind": "formalization",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0012.",
+      "source_ids": [
+        "source-f1e4608d26d3"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "The source uses one collision when the characteristic is not two and a separate collision in characteristic two.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-20",
+  "id": "JCG-CLAIM-0012",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "That the original determinant-minus-two map is a Keller map in characteristic 2.",
+      "A single characteristic-independent pair of colliding points."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "determinant-one-counterexample-every-field",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "deancureton"
+        }
+      ],
+      "id": "source-f1e4608d26d3",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "formalization"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "repository",
+      "title": "jacobian",
+      "url": "https://github.com/deancureton/jacobian/tree/0d4a9212d874226ad81ce5a926becddfa94e6a88",
+      "version": "commit:0d4a9212d874226ad81ce5a926becddfa94e6a88"
+    }
+  ],
+  "statement": "For every field k, the determinant-one rescaled construction formalized by Dean Cureton gives a polynomial map from k^3 to k^3 that is not injective.",
+  "statement_version": 1,
+  "storyline": "counterexample-and-global-geometry",
+  "title": "A determinant-one counterexample over every field",
+  "verification": []
+}

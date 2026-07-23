@@ -1,0 +1,119 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-3f7a03ea2056"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "neighboring-consequences"
+  ],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-1b9cd6ea578c",
+      "entity": {
+        "entity_type": "ai_system",
+        "name": "Claude Fable 5"
+      },
+      "id": "credit-e09a6f8f5728",
+      "roles": [
+        "proof",
+        "research_assistance"
+      ],
+      "scope": "Contribution recorded in The Dixmier conjecture fails for A_n, n at least 3.; mathematical argument in a directed session"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-1b9cd6ea578c",
+      "entity": {
+        "entity_type": "person",
+        "name": "William G. P. Mayner"
+      },
+      "id": "credit-9152d72f35b1",
+      "roles": [
+        "exposition"
+      ],
+      "scope": "Contribution recorded in The Dixmier conjecture fails for A_n, n at least 3."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Public proof and exact audit package",
+          "url": "https://github.com/wmayner/dixmier-counterexample/tree/475cea2a7449230e7d493ff29ea94fc22ce81e61",
+          "version": "commit:475cea2a7449230e7d493ff29ea94fc22ce81e61"
+        }
+      ],
+      "id": "evidence-3f7a03ea2056",
+      "kind": "proof",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0019.",
+      "source_ids": [
+        "source-1b9cd6ea578c"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Public proof and exact audit package.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-21",
+  "id": "JCG-CLAIM-0019",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "Failure of the Dixmier conjecture for A_1 or A_2.",
+      "Historical novelty of the classical dimension-preserving transfer."
+    ],
+    "notes": [
+      "Working consequence: the linked note offers a dimension-preserving argument and exact audit code; an independent specialist review is not yet recorded."
+    ]
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "dixmier-conjecture-false-dimension-at-least-three",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "ai_system",
+          "name": "Claude Fable 5"
+        },
+        {
+          "entity_type": "person",
+          "name": "William G. P. Mayner"
+        }
+      ],
+      "id": "source-1b9cd6ea578c",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "repository",
+      "title": "dixmier-counterexample",
+      "url": "https://github.com/wmayner/dixmier-counterexample/tree/475cea2a7449230e7d493ff29ea94fc22ce81e61",
+      "version": "commit:475cea2a7449230e7d493ff29ea94fc22ce81e61"
+    }
+  ],
+  "statement": "The Dixmier conjecture is false for the complex Weyl algebra A_n for every n at least 3.",
+  "statement_version": 1,
+  "storyline": null,
+  "title": "Failure of the Dixmier conjecture in dimensions at least three",
+  "verification": []
+}

@@ -1,0 +1,146 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-0e9d90e4ad14",
+      "evidence-fe685a150b99"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [],
+  "credited_to": [
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-2997ddef8a49",
+      "entity": {
+        "entity_type": "person",
+        "name": "algal"
+      },
+      "id": "credit-66b803bf8fa3",
+      "roles": [
+        "construction",
+        "computation"
+      ],
+      "scope": "Contribution recorded in Weighted lifts from the Jacobian counterexample."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Explicit family construction",
+          "url": "https://www.ulam.ai/research/jacobian.pdf",
+          "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+        }
+      ],
+      "id": "evidence-0e9d90e4ad14",
+      "kind": "proof",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0008.",
+      "source_ids": [
+        "source-bb1fe05e436d"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Explicit family construction.",
+      "uses_claim_ids": []
+    },
+    {
+      "artifacts": [
+        {
+          "label": "Independent uniform construction and exact atlas",
+          "url": "https://github.com/algal/jacobianfun/tree/0a73d4c75bed60660c6e91a56f1595be756cbd59",
+          "version": "commit:0a73d4c75bed60660c6e91a56f1595be756cbd59"
+        }
+      ],
+      "id": "evidence-fe685a150b99",
+      "kind": "proof",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0008.",
+      "source_ids": [
+        "source-2997ddef8a49"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Independent uniform construction and exact atlas.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-20",
+  "id": "JCG-CLAIM-0008",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "Historical priority over constructions not compared in the source.",
+      "Any analogous result in dimension 2."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "keller-maps-every-generic-degree",
+  "sources": [
+    {
+      "authors": [],
+      "id": "source-bb1fe05e436d",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf",
+      "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+    },
+    {
+      "authors": [],
+      "id": "source-a8ed4b6018bd",
+      "primary_for_display": false,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "algal"
+        }
+      ],
+      "id": "source-2997ddef8a49",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "repository",
+      "title": "jacobianfun — RESEARCH.md and exact checkers",
+      "url": "https://github.com/algal/jacobianfun/tree/0a73d4c75bed60660c6e91a56f1595be756cbd59",
+      "version": "commit:0a73d4c75bed60660c6e91a56f1595be756cbd59"
+    }
+  ],
+  "statement": "For every integer d at least 3, there is a nonproper Keller map from complex affine 3-space to itself with generic degree d.",
+  "statement_version": 1,
+  "storyline": "deformations-families-and-equivalence",
+  "title": "Three-dimensional Keller maps of every generic degree",
+  "verification": []
+}

@@ -1,0 +1,141 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-0c396f5d53ca"
+    ],
+    "basis_verification_ids": [
+      "check-02b24db65773"
+    ],
+    "label": "Verified",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "verified",
+    "summary": "A qualifying full-scope check validates supporting evidence."
+  },
+  "collections": [
+    "chronology-people-and-provenance"
+  ],
+  "credited_to": [
+    {
+      "basis": "documented_authorship",
+      "basis_source_id": "source-a7113b9bd59d",
+      "entity": {
+        "entity_type": "person",
+        "name": "Lázaro Orlando Rodríguez Díaz"
+      },
+      "id": "credit-2f45463dc81d",
+      "roles": [
+        "proof",
+        "exposition"
+      ],
+      "scope": "Contribution recorded in On the origin of the Jacobian conjecture."
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Refereed history of mathematics analysis",
+          "url": "https://doi.org/10.5802/crmath.831",
+          "version": "DOI:10.5802/crmath.831"
+        }
+      ],
+      "id": "evidence-0c396f5d53ca",
+      "kind": "literature_result",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0010.",
+      "source_ids": [
+        "source-a7113b9bd59d"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Refereed history of mathematics analysis.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-06-05",
+  "id": "JCG-CLAIM-0010",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "That Kraus proved the plane Jacobian conjecture.",
+      "That the modern name or standard Keller attribution was historically unreasonable."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "kraus-1884-plane-jacobian-conjecture",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Lázaro Orlando Rodríguez Díaz"
+        }
+      ],
+      "id": "source-a7113b9bd59d",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "historical_source"
+      ],
+      "source_date": "2026-06-05",
+      "source_type": "paper",
+      "title": "On the origin of the Jacobian conjecture",
+      "url": "https://doi.org/10.5802/crmath.831",
+      "version": "DOI:10.5802/crmath.831"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Lázaro Orlando Rodríguez Díaz"
+        }
+      ],
+      "id": "source-2e07ac6c7a9f",
+      "primary_for_display": false,
+      "relations": [
+        "original_statement",
+        "historical_source"
+      ],
+      "source_date": "2026-06-05",
+      "source_type": "paper",
+      "title": "On the origin of the Jacobian conjecture",
+      "url": "https://comptes-rendus.academie-sciences.fr/mathematique/item/10.5802/crmath.831.pdf",
+      "version": "sha256:1be1f3a0092e2b26b47671d49cd765d04d5f468b14831a4fe9c8f1ad81ece00f"
+    }
+  ],
+  "statement": "Ludwig Kraus's 1884 paper states, as its main result, the modern plane Jacobian conjecture rather than merely an earlier adjacent problem.",
+  "statement_version": 1,
+  "storyline": "two-dimensional-problem",
+  "title": "Kraus stated the plane conjecture in 1884",
+  "verification": [
+    {
+      "checked_by": [],
+      "checked_on": "2026-07-22",
+      "checked_version": "DOI:10.5802/crmath.831",
+      "evidence_ids": [
+        "evidence-0c396f5d53ca"
+      ],
+      "full_claim_scope": true,
+      "id": "check-02b24db65773",
+      "method": "peer_review",
+      "note": "The source is a refereed publication; this records publication review, not a new GJC expert audit.",
+      "outcome": "passed",
+      "scope": "The exact historical claim as stated in the refereed source.",
+      "source_ids": [
+        "source-a7113b9bd59d"
+      ],
+      "statement_version": 1,
+      "url": "https://doi.org/10.5802/crmath.831"
+    }
+  ]
+}

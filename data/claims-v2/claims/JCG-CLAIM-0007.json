@@ -1,0 +1,162 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-7ce73df0e1d6"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "formal-verification"
+  ],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-c6dcf20e7f73",
+      "entity": {
+        "entity_type": "person",
+        "name": "Alejandro Radisic"
+      },
+      "id": "credit-b2d320dd56fe",
+      "note": "The same README expressly excludes S3 monodromy/irreducibility, the properness identification, scheme-level factorization, the cohomological torsor proof, and analytic derivative identification.",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "author and maintainer of the pinned Lean development"
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [
+        {
+          "label": "Proof and exact formulas",
+          "url": "https://www.ulam.ai/research/jacobian.pdf",
+          "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+        }
+      ],
+      "id": "evidence-7ce73df0e1d6",
+      "kind": "proof",
+      "limitations": [],
+      "relation": "supports",
+      "scope": "Evidence offered for the exact displayed statement in JCG-CLAIM-0007.",
+      "source_ids": [
+        "source-bb1fe05e436d"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Proof and exact formulas.",
+      "uses_claim_ids": []
+    },
+    {
+      "artifacts": [],
+      "id": "evidence-4d6214672fb8",
+      "kind": "formalization",
+      "limitations": [
+        "The same README expressly excludes S3 monodromy/irreducibility, the properness identification, scheme-level factorization, the cohomological torsor proof, and analytic derivative identification."
+      ],
+      "relation": "supports",
+      "scope": "The portion of JCG-CLAIM-0007 addressed by RAD-L01.",
+      "source_ids": [
+        "source-a98346f497f7",
+        "source-c6dcf20e7f73"
+      ],
+      "statement_version": 1,
+      "sufficiency": "partial_support",
+      "summary": "The pinned README identifies the relevant Lean theorems and reports no `sorry` and no axioms beyond Mathlib. No fresh `lake build` was run for this guide.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-20",
+  "id": "JCG-CLAIM-0007",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "That omitted loci and nonproperness sets coincide for Keller maps.",
+      "A classification of nonproperness sets."
+    ],
+    "notes": []
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": null,
+  "sequence": null,
+  "slug": "counterexample-image-and-nonproperness",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-c6dcf20e7f73",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "repository",
+      "title": "alpoge-lean v0.4.0 documentation",
+      "url": "https://github.com/alerad/alpoge-lean/blob/95897469d48ba97f1a80a2db6553fd2f0f43834b/README.md",
+      "version": "commit:95897469d48ba97f1a80a2db6553fd2f0f43834b"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-a98346f497f7",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "repository",
+      "title": "alpoge-lean v0.4.0",
+      "url": "https://github.com/alerad/alpoge-lean/releases/tag/v0.4.0",
+      "version": "tag:v0.4.0"
+    },
+    {
+      "authors": [],
+      "id": "source-bb1fe05e436d",
+      "primary_for_display": true,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf",
+      "version": "sha256:fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2"
+    },
+    {
+      "authors": [],
+      "id": "source-a8ed4b6018bd",
+      "primary_for_display": false,
+      "relations": [
+        "original_statement",
+        "proof_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_post",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    }
+  ],
+  "statement": "The image of the Alpöge map is complex affine 3-space minus the triple-root curve Gamma, while its nonproperness set is the discriminant hypersurface V(Delta).",
+  "statement_version": 1,
+  "storyline": "finite-normalization-and-defect",
+  "title": "Image and nonproperness set of the counterexample",
+  "verification": []
+}
