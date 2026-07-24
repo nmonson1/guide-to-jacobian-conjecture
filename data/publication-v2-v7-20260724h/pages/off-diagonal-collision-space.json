@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "base-map-fibers-image-and-nonproperness"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "The off-diagonal collision space is a smooth factorial affine threefold with trivial Picard group and unit group modulo constants \\(\\mathbb Z\\).",
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "members": [
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The off-diagonal collision space is a smooth factorial affine threefold with trivial Picard group and unit group modulo constants \\(\\mathbb Z\\).",
+      "technical_slug": "technical-claim-e1f739d1",
+      "title": "Technical claim"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 7,
+    "member_count": 1
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "cubic-marked-root-incidence-geometry"
+  ],
+  "schema_version": 2,
+  "slug": "off-diagonal-collision-space",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The public working manuscript is the current source for this draft result.",
+  "statement": "The off-diagonal collision space is a smooth factorial affine threefold with trivial Picard group and unit group modulo constants \\(\\mathbb Z\\).",
+  "title": "The Off-Diagonal Collision Space",
+  "visibility": "catalogued"
+}

@@ -15,6 +15,8 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
+PUBLIC_DOCS_DIR = "docs-v2-20260724d"
+PUBLICATION_DATA_DIR = "publication-v2-v7-20260724h"
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\((https?://[^)]+)\)")
 BLOCKED_CODES = {401, 403, 429}
 
@@ -37,9 +39,11 @@ def json_urls(value: Any) -> list[str]:
 
 def collect_urls(root: Path) -> list[str]:
     urls: set[str] = set()
-    for path in sorted((root / "docs").rglob("*.md")):
+    for path in sorted((root / PUBLIC_DOCS_DIR).rglob("*.md")):
         urls.update(MARKDOWN_LINK.findall(path.read_text(encoding="utf-8")))
-    for path in sorted((root / "data/claims-v2").rglob("*.json")):
+    for path in sorted(
+        (root / "data" / PUBLICATION_DATA_DIR).rglob("*.json")
+    ):
         urls.update(json_urls(json.loads(path.read_text(encoding="utf-8"))))
     return sorted(urls)
 

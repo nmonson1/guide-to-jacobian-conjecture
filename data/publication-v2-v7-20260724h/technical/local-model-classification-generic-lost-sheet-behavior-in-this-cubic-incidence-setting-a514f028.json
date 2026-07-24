@@ -1,0 +1,46 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "lost-sheet-local-models",
+      "page_title": "Lost Sheet Local Models",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "normalized-cubic-family-open-problems",
+      "page_title": "Open Problems in the Normalized Cubic Families",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "local-model-classification-generic-lost-sheet-behavior-in-this-cubic-incidence-setting-a514f028",
+  "source": [],
+  "statement": "Generic lost-sheet behavior in this cubic-incidence setting separates into ramified U1, unramified U2, and boundary B models.",
+  "title": "Local Model Classification: Generic lost-sheet behavior in this cubic-incidence setting separates into ramified U1, unram…",
+  "visibility": "technical"
+}

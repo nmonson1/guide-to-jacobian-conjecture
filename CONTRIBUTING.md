@@ -1,47 +1,56 @@
 # Contributing
 
-The repository is in a record-first baseline phase.
+This is an unannounced public working draft. The most useful contributions
+right now are:
 
-## Currently accepted
+- a better primary source;
+- a correction to a statement or its scope;
+- a correction to role-specific credit;
+- a more precise description of what a proof, computation, or formalization
+  checks;
+- an accessibility or presentation fix.
 
-- corrections to contribution metadata;
-- corrections to normalized claim statements or boundaries;
-- primary-source improvements;
-- corrections to attribution or source versions;
-- improvements to record validation and site accessibility.
+Use the
+[source-improvement form](https://github.com/nmonson1/guide-to-jacobian-conjecture/issues/new?template=source.yml)
+or open a focused issue.
 
-New third-party mathematical submissions will not be assigned a sequence
-number until the project publishes its content license and editorial charter.
+## Keep the publication concepts separate
 
-## Record discipline
+- `source` records where a statement, proof, exposition, formalization, or
+  check was encountered;
+- `credited_to` records a person and role, together with the basis for that
+  attribution;
+- `ai_assistance` records the system, purpose, role, and responsible human;
+- `evidence_present` records the kind and scope of available evidence;
+- `source_form` distinguishes announcements, working manuscripts, preprints,
+  repositories, and refereed publications;
+- `independent_review` records exactly what, if anything, was independently
+  checked.
 
-A contribution, claim, assessment, and explanatory page are different objects:
+Please do not compress these fields into one confidence or publication-status
+label.
 
-- a **contribution** is an attributed work or historical import;
-- a **claim** is a normalized mathematical assertion or question;
-- an **assessment** says who checked what, by which method, against which
-  version;
-- **exposition** explains integrated claims to readers.
+## Public-boundary rules
 
-`listed` means that a contribution is in scope, attributable, intelligible, and
-legally publishable. It does not mean that the project endorses its claims.
-`integrated` is a separate editorial decision and requires a named assessment.
+Do not add raw conversations, ChatGPT share links, private filesystem paths,
+internal archive locators, private record identifiers, working TeX trees, or
+unsanitized computational artifacts. Public code and formalizations should be
+linked at stable public revisions.
 
-## Pull requests
-
-1. Keep a pull request focused on one record or one infrastructure change.
-2. Preserve source versions, dates, and attribution exactly.
-3. State what the change does not establish.
-4. Do not populate an `assessment_actions` field without naming the assessor,
-   method, scope, and reviewed version.
-5. Run:
-
-   ```bash
-   uv run --with-requirements requirements.txt python scripts/validate_records.py
-   uv run python scripts/check_public_site.py
-   uv run --with-requirements requirements.txt mkdocs build --strict
-   ```
-
-AI-assisted work must identify the tool and purpose. A human contributor
+AI-assisted work must identify the system and purpose. A human contributor
 remains responsible for every submitted assertion.
 
+## Before opening a pull request
+
+Run:
+
+```bash
+uv run --with-requirements requirements.txt python scripts/generate_living_guide_v1.py
+uv run --with-requirements requirements.txt python scripts/generate_compatibility_stubs_v1.py
+uv run --with-requirements requirements.txt python scripts/check_public_site.py
+uv run --with-requirements requirements.txt mkdocs build --strict --site-dir /tmp/jacobian-guide-preview
+uv run --with-requirements requirements.txt python scripts/check_built_site.py /tmp/jacobian-guide-preview
+```
+
+Keep a pull request focused, preserve exact source versions and dates, and say
+what the proposed change does not establish.

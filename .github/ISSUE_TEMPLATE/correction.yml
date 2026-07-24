@@ -27,6 +27,6 @@ body:
   - type: input
     id: record
     attributes:
-      label: Contribution or claim ID
-      description: If applicable, identify the JCG-C or JCG-CLAIM record.
-      placeholder: JCG-CLAIM-0002
+      label: Public result or open-problem page
+      description: If applicable, give the page title or public URL.
+      placeholder: The Three-Dimensional Counterexample

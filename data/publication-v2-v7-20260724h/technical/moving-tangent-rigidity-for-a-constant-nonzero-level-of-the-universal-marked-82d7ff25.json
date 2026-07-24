@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "moving-tangent-rigidity",
+      "page_title": "Moving Tangent Rigidity",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "moving-tangent-rigidity-for-a-constant-nonzero-level-of-the-universal-marked-82d7ff25",
+  "source": [],
+  "statement": "For a constant nonzero level of the universal marked incidence, a moving tangent hyperplane that remains tangent but nonosculating is polynomially gauge-equivalent to the fixed public hyperplane.",
+  "title": "Moving Tangent Rigidity: For a constant nonzero level of the universal marked incidence, a moving tangent hyperplane t…",
+  "visibility": "technical"
+}

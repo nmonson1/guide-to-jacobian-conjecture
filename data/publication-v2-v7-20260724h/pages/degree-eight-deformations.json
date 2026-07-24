@@ -1,0 +1,104 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "degree-seven-local-affine-rigidity"
+    ],
+    "shares_claims_with": []
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "For the degree-eight local Kuranishi problem, the residual 28-dimensional slice reduces to weights -2 and -1; weight -2 is eliminated over Q, while weight -1 survives to fourth order and has only modular death evidence at order six.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "members": [
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "At degree eight, the determinant linearization has kernel dimension 44, hence 33 directions after the same eleven-dimensional affine orbit, and at least five explicit coordinate families occur (three source quadratic z-shears and two target shears).",
+      "technical_slug": "degree-eight-tangent-jump-at-degree-eight-the-determinant-linearization-has-kernel-891b0275",
+      "title": "Degree Eight Tangent Jump: At degree eight, the determinant linearization has kernel dimension 44, hence 33 directions a…"
+    },
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "On the five explicit degree-eight coordinate directions, the corrected quadratic/cubic equations lift precisely along the pure source-shear or pure target-shear sectors; a residual four-dimensional tangent survives to order three in a larger complement, and the full degree-four modular calculation remains exploratory.",
+      "technical_slug": "degree-eight-kuranishi-on-the-five-explicit-degree-eight-coordinate-directions-the-0632b2b1",
+      "title": "Degree Eight Kuranishi: On the five explicit degree-eight coordinate directions, the corrected quadratic/cubic equati…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Degree-eight affine rigidity fails: composing G with z -> z+f(x,y) for quadratic f gives a three-parameter source-shear family, and F_f and F_g are affinely equivalent exactly when g(x,y)=tau^2 f(tau x,tau^-1 y) within this family.",
+      "technical_slug": "degree-eight-shear-moduli-degree-eight-affine-rigidity-fails-composing-g-with-ecf242ab",
+      "title": "Degree Eight Shear Moduli: Degree-eight affine rigidity fails: composing G with z -> z+f(x,y) for quadratic f gives a th…"
+    },
+    {
+      "assessment": "evidence only",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "For the degree-eight local Kuranishi problem, the residual 28-dimensional slice reduces to weights -2 and -1; weight -2 is eliminated over Q, while weight -1 survives to fourth order and has only modular death evidence at order six.",
+      "technical_slug": "degree-eight-local-reduction-for-the-degree-eight-local-kuranishi-problem-the-d3f76ebc",
+      "title": "Degree Eight Local Reduction: For the degree-eight local Kuranishi problem, the residual 28-dimensional slice reduces to we…"
+    },
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "At the degree-eight base point, after quotienting the affine orbit and the known quadratic source-shear and target-shear components, no additional formal branch has a first nonzero normal term transverse to those two components.",
+      "technical_slug": "degree-eight-transverse-branch-obstruction-at-the-degree-eight-base-point-after-24c82405",
+      "title": "Degree Eight Transverse Branch Obstruction: At the degree-eight base point, after quotienting the affine orbit and the known quadratic so…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 7,
+    "member_count": 5
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "local-rigidity-and-deformation-algebra"
+  ],
+  "schema_version": 2,
+  "slug": "degree-eight-deformations",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The public working manuscript is the current source for this draft result.",
+  "statement": "For the degree-eight local Kuranishi problem, the residual 28-dimensional slice reduces to weights -2 and -1; weight -2 is eliminated over Q, while weight -1 survives to fourth order and has only modular death evidence at order six.",
+  "title": "Degree Eight Deformations",
+  "visibility": "catalogued"
+}

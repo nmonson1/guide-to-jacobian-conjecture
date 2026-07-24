@@ -31,50 +31,26 @@ jobs:
       - name: Install the pinned site dependencies
         run: pip install -r requirements.txt
 
-      - name: Validate the chronological records
-        run: python scripts/validate_records.py
+      - name: Check generated Living Guide pages
+        run: python scripts/generate_living_guide_v1.py
 
-      - name: Validate the promoted claim records
-        run: python scripts/validate_public_claims_v2.py
-
-      - name: Check generated claim pages
-        run: python scripts/generate_claim_pages.py
-
-      - name: Validate the promoted v3 claim records
-        run: python scripts/validate_public_claims_v3.py
-
-      - name: Check generated v3 claim pages
-        run: python scripts/generate_claim_pages_v3.py
-
-      - name: Check generated chronology
-        run: python scripts/generate_chronology_v2.py
-
-      - name: Check generated overview and certificate
-        run: python scripts/generate_overview_v2.py
-
-      - name: Validate the promoted topic packages
-        run: python scripts/validate_public_packages_v1.py
-
-      - name: Check generated topic pages
-        run: python scripts/generate_topic_pages_v1.py
-
-      - name: Validate the promoted v1.2 topic packages
-        run: python scripts/validate_public_packages_v1.py --package-version v1.2
-
-      - name: Check generated v1.2 topic pages
-        run: python scripts/generate_topic_pages_v1.py --package-version v1.2 --topic-version v1.2
-
-      - name: Validate the featured story records
-        run: python scripts/validate_public_stories_v1.py
-
-      - name: Check generated story pages
-        run: python scripts/generate_story_pages_v1.py
+      - name: Check compatibility routes
+        run: python scripts/generate_compatibility_stubs_v1.py
 
       - name: Check the publication boundary
         run: python scripts/check_public_site.py
 
       - name: Build the site
         run: mkdocs build --strict
+
+      - name: Check the built site
+        run: python scripts/check_built_site.py site
+
+      - name: Install the pinned browser
+        run: python -m playwright install --with-deps chromium
+
+      - name: Test desktop, mobile, themes, math, PDFs, and accessibility
+        run: python scripts/browser_smoke_v1.py --site-dir site
 
       - name: Configure GitHub Pages
         if: github.event_name != 'pull_request'

@@ -1,0 +1,68 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "certificate offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "quartic-rational-cubic-leading-image-exclusion",
+      "page_title": "Excluding Rational-Cubic Leading Images in Degree Four",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "unrestricted-quartic-open-package",
+      "page_title": "Unrestricted Quartic Open Package",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "rational-cubic-image-exclusion-no-quartic-keller-map-in-three-variables-has-916d6a51",
+  "source": [],
+  "statement": "No quartic Keller map in three variables has a nondegenerate rational cubic as the projective image of its highest homogeneous part.",
+  "title": "Rational Cubic Image Exclusion: No quartic Keller map in three variables has a nondegenerate rational cubic as the projective…",
+  "visibility": "technical"
+}

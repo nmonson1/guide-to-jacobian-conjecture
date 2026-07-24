@@ -1,0 +1,152 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "root-slope-and-cubic-cover-geometry"
+    ],
+    "shares_claims_with": [
+      "all-generic-degrees-family",
+      "quartic-boundary-torelli",
+      "unrestricted-quartic-open-package"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    },
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "algal",
+      "roles": [
+        "construction",
+        "computation"
+      ],
+      "scope": "Contribution recorded in Weighted lifts from the Jacobian counterexample."
+    }
+  ],
+  "description": "Modulo triangular target shears, all polynomial root-slope frame potentials admit the stated unique torus-weight normal form, with necessary and sufficient layer conditions at weights m<0, m=0, m=1, and m>=2.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Modulo triangular target shears, all polynomial root-slope frame potentials admit the stated unique torus-weight normal form, with necessary and sufficient layer conditions at weights m<0, m=0, m=1, and m>=2.",
+      "technical_slug": "complete-frame-normal-form-modulo-triangular-target-shears-all-polynomial-root-slope-30497402",
+      "title": "Complete Frame Normal Form: Modulo triangular target shears, all polynomial root-slope frame potentials admit the stated…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "A reduced frame potential of root degree n>=4 has leading coefficient vanishing to order at least floor(n/2)+1 at the retained infinity point; the bound is sharp and yields component degrees (3n+4,3n+3,4) for even n and (3n+2,3n+1,4) for odd n.",
+      "technical_slug": "sharp-frame-degree-bound-a-reduced-frame-potential-of-root-degree-n-7c0cf125",
+      "title": "Sharp Frame Degree Bound: A reduced frame potential of root degree n>=4 has leading coefficient vanishing to order at l…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For every n>=3 the displayed explicit frame potential defines a three-variable polynomial Keller map of generic degree n and determinant -2, attaining the sharp frame-degree bound.",
+      "technical_slug": "explicit-all-generic-degrees-family-for-every-n-3-the-displayed-explicit-12ebb4bd",
+      "title": "Explicit All Generic Degrees Family: For every n>=3 the displayed explicit frame potential defines a three-variable polynomial Kel…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Every quartic frame has T^4 coefficient divisible by c^3 and first jet satisfying delta+4gamma+12kappa=0; the displayed quartic realizes these conditions with determinant -2, generic degree four, and component degrees (16,15,4).",
+      "technical_slug": "quartic-frame-obstruction-and-example-every-quartic-frame-has-t-4-coefficient-9e1e87ca",
+      "title": "Quartic Frame Obstruction And Example: Every quartic frame has T^4 coefficient divisible by c^3 and first jet satisfying delta+4gamm…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "For every integer d at least 3, there is a nonproper Keller map from complex affine 3-space to itself with generic degree d.",
+      "technical_slug": "three-dimensional-keller-maps-of-every-generic-degree-d739c229",
+      "title": "Three-dimensional Keller maps of every generic degree"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 7,
+    "member_count": 5
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "cubic-marked-root-incidence-geometry"
+  ],
+  "schema_version": 2,
+  "slug": "higher-degree-frame-calculus",
+  "source": [
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf"
+    },
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    },
+    {
+      "authors": [
+        "algal"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "evidence source"
+      ],
+      "source_form": "repository",
+      "title": "jacobianfun — RESEARCH.md and exact checkers",
+      "url": "https://github.com/algal/jacobianfun/tree/0a73d4c75bed60660c6e91a56f1595be756cbd59"
+    }
+  ],
+  "source_form": [
+    "announcement",
+    "repository",
+    "working manuscript"
+  ],
+  "source_treatment": "Public sources are linked below.",
+  "statement": "Modulo triangular target shears, all polynomial root-slope frame potentials admit the stated unique torus-weight normal form, with necessary and sufficient layer conditions at weights m<0, m=0, m=1, and m>=2.",
+  "title": "The Higher-Degree Root-Slope Frame Calculus",
+  "visibility": "catalogued"
+}

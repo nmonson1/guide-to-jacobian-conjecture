@@ -1,80 +1,90 @@
-# Guide to the Jacobian Conjecture
+# The Jacobian Conjecture: A Living Guide
 
-Source repository for a chronological, versioned record of events,
-contributions, and claims concerning the Jacobian conjecture.
+Source repository for the public working draft at
+<https://nmonson1.github.io/guide-to-jacobian-conjecture/>.
 
-Published site: <https://nmonson1.github.io/guide-to-jacobian-conjecture/>
+The site is accessible but deliberately unannounced. Every rendered page
+currently carries `noindex, nofollow`, and `robots.txt` asks crawlers not to
+index the site. Those measures reduce discoverability; they do not provide
+privacy.
 
-## Publication layers
+## Public structure
 
-The site now contains:
+The visible guide has six reader-facing sections:
 
-1. 22 dated event records from 1884 through 21 July 2026;
-2. 13 stable contribution records;
-3. six featured mathematical stories for ordinary readers;
-4. 17 externally sourced result and open-problem pages;
-5. 28 source-linked technical claim records generated from validated JSON.
+1. Start;
+2. Counterexample;
+3. Geometry;
+4. Plane Case;
+5. Research;
+6. About.
 
-The stories are the main reading surface. The result catalogue is the
-secondary scholarly surface. Claim records preserve exact scope, evidence,
-and provenance, but are excluded from ordinary navigation, site search, and
-search-engine indexing.
+The Research section contains six Nathaniel Monson-led program summaries and
+dated PDFs, followed by the complete generated catalogue:
 
-A short overview and exact counterexample certificate are built on the same
-records. Publication visibility is independent of mathematical assessment:
-making a page prominent does not strengthen its evidence status, and a
-technically hidden record is not thereby less credible.
-Sequence numbers record entry into this repository; they do not by themselves
-establish historical priority.
+- 71 result pages;
+- 16 open-problem pages;
+- 307 deeper technical records, excluded from navigation and search;
+- 21 context-only private records, not exported.
 
-## Repository objects
+Seventeen grouped pages are stable external public records. The other 70 are
+explicitly labeled working drafts. Release state does not encode proof
+strength, review, machine checking, attribution, or source form.
 
-- `events/`: dated developments, source-status observations, and corrections;
-- `contributions/`: attributed works or historical imports;
-- `claims/`: the original chronological claim-record baseline;
-- `data/claims-v2/`: the preserved first promoted claim export;
-- `data/claims-v3/`: the current scoped, dependency-linked public claim export;
-- `data/packages-v1/`: the preserved first mathematical-package export;
-- `data/packages-v1.2/`: the current reviewed mathematical-package export;
-- `data/stories-v1/`: the six featured reader-story records;
-- `assessments/`: named, version-specific checks performed for this project;
-- `docs/story-v1/`: generated reader-facing story pages;
-- `docs/claim-v3/`: current generated page-per-claim views;
-- `scripts/generate_claim_pages_v3.py`: the current deterministic claim renderer;
-- `scripts/generate_chronology_v2.py`: the deterministic chronology renderer;
-- `scripts/generate_overview_v2.py`: the overview and certificate renderer;
-- `scripts/generate_story_pages_v1.py`: the featured-story renderer;
-- `scripts/generate_topic_pages_v1.py`: the versioned guided-topic renderer.
+## Publication boundary
 
-Event dates and contribution accessions are independent. The project records
-external proof, computation, and formalization as evidence, but does not call
-that material a project assessment until a named reviewer records exactly what
-was checked against a pinned version.
+The private Jacobian research repository is authoritative. This repository
+contains only its deterministic sanitized publication export, reader-facing
+prose, versioned PDFs, and build machinery.
 
-## Build locally
+The active inputs are:
+
+- `data/publication-v2-v7-20260724h/`: sanitized schema-v2 export pinned to
+  canonical registry v7;
+- `data/manuscripts-v1/`: hashes, dates, titles, and page counts for the six
+  public manuscripts;
+- `docs-v2-20260724d/`: the versioned MkDocs source tree;
+- `scripts/generate_living_guide_v1.py`: deterministic renderer for grouped,
+  technical, program, and catalogue pages;
+- `scripts/generate_compatibility_stubs_v1.py`: noindex compatibility pages
+  for earlier public routes.
+
+The exporter and site checks reject private filesystem paths, ChatGPT share
+links, conversation/message locators, internal record IDs, and UUIDs. PDF
+text and metadata are scanned through the same boundary.
+
+Earlier repository layers remain as historical public construction records;
+they are not part of the active MkDocs source tree.
+
+## Build and validate
 
 With [`uv`](https://docs.astral.sh/uv/) installed:
 
 ```bash
-uv run --with-requirements requirements.txt python scripts/validate_records.py
-uv run --with-requirements requirements.txt python scripts/validate_public_claims_v2.py
-uv run --with-requirements requirements.txt python scripts/generate_claim_pages.py
-uv run --with-requirements requirements.txt python scripts/validate_public_claims_v3.py
-uv run --with-requirements requirements.txt python scripts/generate_claim_pages_v3.py
-uv run --with-requirements requirements.txt python scripts/generate_chronology_v2.py
-uv run --with-requirements requirements.txt python scripts/generate_overview_v2.py
-uv run --with-requirements requirements.txt python scripts/validate_public_packages_v1.py
-uv run --with-requirements requirements.txt python scripts/generate_topic_pages_v1.py
-uv run --with-requirements requirements.txt python scripts/validate_public_packages_v1.py --package-version v1.2
-uv run --with-requirements requirements.txt python scripts/generate_topic_pages_v1.py --package-version v1.2 --topic-version v1.2
-uv run --with-requirements requirements.txt python scripts/validate_public_stories_v1.py
-uv run --with-requirements requirements.txt python scripts/generate_story_pages_v1.py
+uv run --with-requirements requirements.txt python scripts/generate_living_guide_v1.py
+uv run --with-requirements requirements.txt python scripts/generate_compatibility_stubs_v1.py
 uv run --with-requirements requirements.txt python scripts/check_public_site.py
-uv run --with-requirements requirements.txt mkdocs build --strict
+uv run --with-requirements requirements.txt mkdocs build --strict --site-dir /tmp/jacobian-guide-preview
+uv run --with-requirements requirements.txt python scripts/check_built_site.py /tmp/jacobian-guide-preview
 ```
 
-## Intake status
+For browser coverage:
 
-Corrections and source improvements are welcome. New third-party prose and
-mathematical submissions will not be listed until a content license and
-editorial charter have been selected.
+```bash
+uv run --with-requirements requirements.txt python -m playwright install chromium
+uv run --with-requirements requirements.txt python scripts/browser_smoke_v1.py \
+  --site-dir /tmp/jacobian-guide-preview
+```
+
+The browser suite covers desktop and mobile navigation, both color schemes,
+MathJax, PDF downloads, noindex, heading structure, landmarks, link labels,
+contrast, keyboard focus, reduced motion, and horizontal overflow.
+
+## Current publication policy
+
+Source and attribution improvements are welcome. The guide can be corrected
+directly while it remains unannounced. A durable public corrections ledger
+will begin only when readers are deliberately invited to use the site.
+
+No announcement, release tag, DOI, or manuscript submission is part of this
+working-draft deployment.

@@ -1,9 +1,10 @@
-site_name: Guide to the Jacobian Conjecture
+site_name: "The Jacobian Conjecture: A Living Guide"
 site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
-site_description: A reader guide and source-linked record of the Jacobian conjecture, its counterexample, and the questions that follow.
+site_description: A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened.
+docs_dir: docs-v2-20260724d
 repo_name: nmonson1/guide-to-jacobian-conjecture
 repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
-edit_uri: edit/main/docs/
+edit_uri: edit/main/docs-v2-20260724d/
 
 theme:
   name: material
@@ -36,11 +37,11 @@ theme:
 
 nav:
   - Start: index.md
-  - Stories: stories-v1.md
-  - Certificate: certificate.md
-  - Contributions: chronology-v2.md
-  - Results: topics-v1.2.md
-  - Contribute: contribute.md
+  - Counterexample: counterexample.md
+  - Geometry: geometry.md
+  - Plane Case: plane-case.md
+  - Research: research.md
+  - About: about.md
 
 markdown_extensions:
   - admonition
@@ -66,12 +67,12 @@ extra_css:
 
 extra_javascript:
   - assets/javascripts/mathjax.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 
 extra:
-  status_date: 24 July 2026
+  status_date: 24 July 2026, Pacific time
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/nmonson1/guide-to-jacobian-conjecture
 
-copyright: Record current through 24 July 2026, Pacific time.
+copyright: Working draft updated 24 July 2026, Pacific time.

@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "normalized-cubic-family-classification",
+      "page_title": "Normalized Cubic Family Classification",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "component-construction-within-the-a-b-family-the-nonproperness-set-can-have-f5e7f90c",
+  "source": [],
+  "statement": "Within the A,B family, the nonproperness set can have arbitrarily many components, with discriminant and unramified-loss components controlled by the roots of explicit coefficient polynomials.",
+  "title": "Component Construction: Within the A,B family, the nonproperness set can have arbitrarily many components, with discr…",
+  "visibility": "technical"
+}

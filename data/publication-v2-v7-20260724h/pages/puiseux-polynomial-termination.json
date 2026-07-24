@@ -1,0 +1,79 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "puiseux-obstruction-and-failed-extension"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "Can the all-orders nodal local solution be ruled out by a finite-support or global one-double-point theorem?",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "open_problem",
+  "members": [
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Can the all-orders nodal local solution be ruled out by a finite-support or global one-double-point theorem?",
+      "technical_slug": "open-question-can-the-all-orders-nodal-local-solution-be-ruled-out-b1adee63",
+      "title": "Open Question: Can the all-orders nodal local solution be ruled out by a finite-support or global one-double…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "The finite-dicritical Newton-Puiseux chart satisfies an exact coefficient recurrence; an exact two-level expansion forces a smooth embedded A1 component and hence cannot occur for a plane Keller counterexample.",
+      "technical_slug": "puiseux-recurrence-the-finite-dicritical-newton-puiseux-chart-satisfies-an-exact-coefficient-fcd5a80b",
+      "title": "Puiseux Recurrence: The finite-dicritical Newton-Puiseux chart satisfies an exact coefficient recurrence; an exac…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "failed_lemma_and_correction",
+      "statement": "The proposed finite-order three-level 2:3 Puiseux rigidity lemma is false: for every immersed limit parametrization the recurrence extends at each finite order, and the nodal model (xi^2,xi^3-xi) has an explicit all-orders algebraic-series solution.",
+      "technical_slug": "failed-lemma-and-correction-the-proposed-finite-order-three-level-2-3-fd5c0c60",
+      "title": "Failed Lemma And Correction: The proposed finite-order three-level 2:3 Puiseux rigidity lemma is false: for every immersed…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 7,
+    "member_count": 3
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "plane-boundary-obstructions"
+  ],
+  "schema_version": 2,
+  "slug": "puiseux-polynomial-termination",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The public working manuscript is the current source for this draft result.",
+  "statement": "Can the all-orders nodal local solution be ruled out by a finite-support or global one-double-point theorem?",
+  "title": "Can the Nodal Puiseux Solution Be Ruled Out Globally?",
+  "visibility": "catalogued"
+}

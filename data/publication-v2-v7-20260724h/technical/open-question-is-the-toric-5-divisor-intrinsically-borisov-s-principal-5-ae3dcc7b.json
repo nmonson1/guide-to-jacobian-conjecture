@@ -1,0 +1,34 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "open",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "valuation-and-three-dessin-exclusion",
+      "page_title": "Valuation And Three Dessin Exclusion",
+      "role": "open_question"
+    }
+  ],
+  "noindex": true,
+  "record_type": "question",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "open-question-is-the-toric-5-divisor-intrinsically-borisov-s-principal-5-ae3dcc7b",
+  "source": [],
+  "statement": "Is the toric -5 divisor intrinsically Borisov's principal -5 divisor?",
+  "title": "Open Question: Is the toric -5 divisor intrinsically Borisov's principal -5 divisor?",
+  "visibility": "technical"
+}

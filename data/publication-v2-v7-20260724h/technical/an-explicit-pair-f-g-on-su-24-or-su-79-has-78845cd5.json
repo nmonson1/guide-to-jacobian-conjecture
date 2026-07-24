@@ -1,0 +1,34 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "reported",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "mathieu-correction-and-valid-consequence",
+      "page_title": "Mathieu Correction And Valid Consequence",
+      "role": "provenance_or_history"
+    }
+  ],
+  "noindex": true,
+  "record_type": "editorial_history",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "an-explicit-pair-f-g-on-su-24-or-su-79-has-78845cd5",
+  "source": [],
+  "statement": "An explicit pair \\(f,g\\) on \\(SU(24)\\) or \\(SU(79)\\) has been written down.",
+  "title": "An explicit pair \\(f,g\\) on \\(SU(24)\\) or \\(SU(79)\\) has been written down.",
+  "visibility": "technical"
+}

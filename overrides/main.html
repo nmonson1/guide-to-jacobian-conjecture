@@ -2,29 +2,27 @@
 
 {% block announce %}
 <span class="announce-copy">
-  Current through {{ config.extra.status_date }} · Six mathematical stories ·
-  <a href="{{ 'stories-v1/' | url }}">Start reading</a>
+  Unannounced working draft · Noindex · Updated {{ config.extra.status_date }} ·
+  <a href="{{ 'about/' | url }}">What that means</a>
 </span>
 {% endblock %}
 
 {% block extrahead %}
   {{ super() }}
-  {% if page and page.meta and page.meta.robots %}
-  <meta name="robots" content="{{ page.meta.robots }}">
-  {% endif %}
+  <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#123a3b">
-  <meta name="author" content="Guide to the Jacobian Conjecture contributors">
+  <meta name="author" content="The Jacobian Conjecture: A Living Guide contributors">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Guide to the Jacobian Conjecture">
-  <meta property="og:description" content="A reader guide and source-linked record of the Jacobian conjecture, its counterexample, and the questions that follow.">
+  <meta property="og:title" content="The Jacobian Conjecture: A Living Guide">
+  <meta property="og:description" content="A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened.">
   <meta property="og:url" content="https://nmonson1.github.io/guide-to-jacobian-conjecture/">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Guide to the Jacobian Conjecture",
+    "name": "The Jacobian Conjecture: A Living Guide",
     "url": "https://nmonson1.github.io/guide-to-jacobian-conjecture/",
-    "description": "A reader guide and source-linked record of the Jacobian conjecture, its counterexample, and the questions that follow."
+    "description": "A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened."
   }
   </script>
 {% endblock %}
