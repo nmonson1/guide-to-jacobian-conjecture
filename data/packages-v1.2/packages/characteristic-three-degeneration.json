@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "characteristic-three-degeneration",
+  "slug": "characteristic-three-degeneration",
+  "title": "The Characteristic-Three Degeneration",
+  "kind": "result",
+  "statement": "Over an algebraically closed field of characteristic 3, the map is surjective while remaining étale and noninjective.",
+  "lead_public_claim_id": "JCG-CLAIM-0029",
+  "members": [
+    {
+      "public_claim_id": "JCG-CLAIM-0028",
+      "title": "Characteristic-three degeneration",
+      "statement": "In characteristic 3, the translation T=b+S puts the fiber cubic into the form cS^3+S^2+W; the missed curve is empty and the triple-root stratum disappears.",
+      "inclusion": "defining",
+      "role": "supporting_result"
+    },
+    {
+      "public_claim_id": "JCG-CLAIM-0029",
+      "title": "Surjectivity in algebraically closed characteristic three",
+      "statement": "Over an algebraically closed field of characteristic 3, the map is surjective while remaining étale and noninjective.",
+      "inclusion": "defining",
+      "role": "primary_statement"
+    }
+  ],
+  "related_package_slugs": [
+    "all-fields-counterexample",
+    "base-counterexample-and-immediate-consequences",
+    "base-map-fibers-image-and-nonproperness"
+  ]
+}

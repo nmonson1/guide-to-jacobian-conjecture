@@ -38,7 +38,7 @@ nav:
   - Start: overview-v2.md
   - Certificate: certificate.md
   - Contributions: chronology-v2.md
-  - Guided topics: topics-v1.md
+  - Guided topics: topics-v1.2.md
   - Claims: claims-v3.md
   - Contribute: contribute.md
 
@@ -69,9 +69,9 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra:
-  status_date: 22 July 2026
+  status_date: 24 July 2026
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/nmonson1/guide-to-jacobian-conjecture
 
-copyright: Record current through 22 July 2026, Pacific time.
+copyright: Record current through 24 July 2026, Pacific time.

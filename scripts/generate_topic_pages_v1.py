@@ -25,16 +25,18 @@ ROLE_LABEL = {
 }
 
 
-def load(root: Path) -> tuple[dict[str, dict], dict[str, dict]]:
+def load(
+    root: Path,
+    package_version: str,
+) -> tuple[dict[str, dict], dict[str, dict]]:
+    package_root = root / f"data/packages-{package_version}"
     manifest = json.loads(
-        (root / "data/packages-v1/manifest.json").read_text(encoding="utf-8")
+        (package_root / "manifest.json").read_text(encoding="utf-8")
     )
     packages = {}
     for entry in manifest["packages"]:
         package = json.loads(
-            (root / "data/packages-v1" / entry["file"]).read_text(
-                encoding="utf-8"
-            )
+            (package_root / entry["file"]).read_text(encoding="utf-8")
         )
         packages[package["slug"]] = package
 
@@ -52,7 +54,10 @@ def load(root: Path) -> tuple[dict[str, dict], dict[str, dict]]:
     return packages, claims
 
 
-def render_index(packages: dict[str, dict]) -> str:
+def render_index(
+    packages: dict[str, dict],
+    topic_version: str,
+) -> str:
     lines = [
         "---",
         "title: Guided topics",
@@ -65,9 +70,16 @@ def render_index(packages: dict[str, dict]) -> str:
         "A topic page is navigation and exposition: it does not add a claim or "
         "upgrade any claim's review status.",
         "",
-        "This first tranche contains only topics whose mathematical components "
-        "already have public claim records. More topics will appear as their "
-        "component claims are reviewed.",
+        (
+            "This first tranche contains only topics whose mathematical "
+            "components already have public claim records. More topics will "
+            "appear as their component claims are reviewed."
+            if topic_version == "v1"
+            else
+            "This release contains only topics whose mathematical components "
+            "already have public claim records. More topics will appear as "
+            "their component claims are reviewed."
+        ),
         "",
     ]
     for kind, heading in (
@@ -90,7 +102,7 @@ def render_index(packages: dict[str, dict]) -> str:
             noun = "claim" if count == 1 else "claims"
             lines.extend(
                 [
-                    f"### [{package['title']}](topic-v1/{package['slug']}.md)",
+                    f"### [{package['title']}](topic-{topic_version}/{package['slug']}.md)",
                     "",
                     package["statement"],
                     "",
@@ -105,6 +117,7 @@ def render_page(
     package: dict,
     packages: dict[str, dict],
     claims: dict[str, dict],
+    topic_version: str,
 ) -> str:
     lines = [
         "---",
@@ -127,14 +140,23 @@ def render_page(
             member["role"],
             member["role"].replace("_", " ").title(),
         )
+        if topic_version == "v1":
+            assessment_lines = [
+                f"**Role here:** {role}.  ",
+                f"**Claim status:** {claim['assessment']['label']}.",
+            ]
+        else:
+            assessment_lines = [
+                f"**Role here:** {role}. "
+                f"**Claim status:** {claim['assessment']['label']}."
+            ]
         lines.extend(
             [
                 f"### [{claim['title']}](../claim-v3/{claim['slug']}.md)",
                 "",
                 claim["statement"],
                 "",
-                f"**Role here:** {role}.  ",
-                f"**Claim status:** {claim['assessment']['label']}.",
+                *assessment_lines,
                 "",
             ]
         )
@@ -154,7 +176,7 @@ def render_page(
             "Credit, evidence, limitations, and sources remain attached to "
             "the individual claim pages linked above.",
             "",
-            "[Back to guided topics](../topics-v1.md)",
+            f"[Back to guided topics](../topics-{topic_version}.md)",
             "",
         ]
     )
@@ -165,12 +187,16 @@ def expected_outputs(
     root: Path,
     packages: dict[str, dict],
     claims: dict[str, dict],
+    topic_version: str,
 ) -> dict[Path, str]:
-    outputs = {root / "docs/topics-v1.md": render_index(packages)}
+    outputs = {
+        root / f"docs/topics-{topic_version}.md":
+            render_index(packages, topic_version)
+    }
     for package in packages.values():
         outputs[
-            root / "docs/topic-v1" / f"{package['slug']}.md"
-        ] = render_page(package, packages, claims)
+            root / f"docs/topic-{topic_version}" / f"{package['slug']}.md"
+        ] = render_page(package, packages, claims, topic_version)
     return outputs
 
 
@@ -182,6 +208,16 @@ def main() -> int:
         default=Path(__file__).resolve().parents[1],
     )
     parser.add_argument(
+        "--package-version",
+        default="v1",
+        help="version suffix under data/packages-* (default: v1)",
+    )
+    parser.add_argument(
+        "--topic-version",
+        default="v1",
+        help="version suffix under docs/topic-* (default: v1)",
+    )
+    parser.add_argument(
         "--write",
         action="store_true",
         help="write generated Markdown instead of checking it",
@@ -189,8 +225,13 @@ def main() -> int:
     args = parser.parse_args()
     root = args.root.resolve()
     try:
-        packages, claims = load(root)
-        outputs = expected_outputs(root, packages, claims)
+        packages, claims = load(root, args.package_version)
+        outputs = expected_outputs(
+            root,
+            packages,
+            claims,
+            args.topic_version,
+        )
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
         parser.error(str(exc))
 
@@ -214,11 +255,13 @@ def main() -> int:
                 f"stale generated file: {path.relative_to(root)}"
             )
     expected_pages = {
-        path for path in outputs if path.parent == root / "docs/topic-v1"
+        path
+        for path in outputs
+        if path.parent == root / f"docs/topic-{args.topic_version}"
     }
     actual_pages = (
-        set((root / "docs/topic-v1").glob("*.md"))
-        if (root / "docs/topic-v1").is_dir()
+        set((root / f"docs/topic-{args.topic_version}").glob("*.md"))
+        if (root / f"docs/topic-{args.topic_version}").is_dir()
         else set()
     )
     for path in sorted(actual_pages - expected_pages):
@@ -230,7 +273,10 @@ def main() -> int:
         for failure in failures:
             print(f"- {failure}", file=sys.stderr)
         return 1
-    print(f"Generated-topic check passed for {len(packages)} topics.")
+    print(
+        f"Generated-topic check passed for {len(packages)} topics "
+        f"in topic-{args.topic_version}."
+    )
     return 0
 
 

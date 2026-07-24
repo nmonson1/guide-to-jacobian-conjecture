@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "original-jacobian-conjecture",
+  "slug": "original-jacobian-conjecture",
+  "title": "The Original Jacobian Conjecture",
+  "kind": "result",
+  "statement": "Every polynomial map from complex affine n-space to itself whose Jacobian determinant is a nonzero constant is a polynomial automorphism.",
+  "lead_public_claim_id": "JCG-CLAIM-0001",
+  "members": [
+    {
+      "public_claim_id": "JCG-CLAIM-0001",
+      "title": "The Jacobian conjecture",
+      "statement": "Every polynomial map from complex affine n-space to itself whose Jacobian determinant is a nonzero constant is a polynomial automorphism.",
+      "inclusion": "defining",
+      "role": "primary_statement"
+    }
+  ],
+  "related_package_slugs": [
+    "all-fields-counterexample",
+    "base-counterexample-and-immediate-consequences",
+    "consequences-for-neighboring-conjectures"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "eleven-dimensional-cubic-counterexample",
+  "slug": "eleven-dimensional-cubic-counterexample",
+  "title": "The Explicit Eleven-Dimensional Cubic Counterexample",
+  "kind": "result",
+  "statement": "The cited map from complex affine 11-space to itself has total degree 3, 52 nonzero monomial terms, constant Jacobian determinant -2, and three displayed distinct rational inputs with one common image.",
+  "lead_public_claim_id": "JCG-CLAIM-0015",
+  "members": [
+    {
+      "public_claim_id": "JCG-CLAIM-0015",
+      "title": "An explicit degree-three counterexample in 11 variables",
+      "statement": "The cited map from complex affine 11-space to itself has total degree 3, 52 nonzero monomial terms, constant Jacobian determinant -2, and three displayed distinct rational inputs with one common image.",
+      "inclusion": "defining",
+      "role": "primary_statement"
+    }
+  ],
+  "related_package_slugs": []
+}

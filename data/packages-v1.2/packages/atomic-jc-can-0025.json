@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "atomic-jc-can-0025",
+  "slug": "atomic-jc-can-0025",
+  "title": "What Characterizes the Double-Root Orbit?",
+  "kind": "open_problem",
+  "statement": "Is the double-root orbit invariantly the unique orbit whose constraint fiber admits a global polynomial triangularization or trivialization?",
+  "lead_public_claim_id": "JCG-CLAIM-0025",
+  "members": [
+    {
+      "public_claim_id": "JCG-CLAIM-0025",
+      "title": "Invariant characterization of the double-root orbit",
+      "statement": "Is the double-root orbit invariantly the unique orbit whose constraint fiber admits a global polynomial triangularization or trivialization?",
+      "inclusion": "defining",
+      "role": "primary_statement"
+    }
+  ],
+  "related_package_slugs": [
+    "double-root-affine-source"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "id": "kraus-statement-and-proof-gap",
+  "slug": "kraus-statement-and-proof-gap",
+  "title": "Kraus's 1884 Conjecture and the Gap in His Proof",
+  "kind": "result",
+  "statement": "Ludwig Kraus's 1884 paper states, as its main result, the modern plane Jacobian conjecture rather than merely an earlier adjacent problem.",
+  "lead_public_claim_id": "JCG-CLAIM-0010",
+  "members": [
+    {
+      "public_claim_id": "JCG-CLAIM-0010",
+      "title": "Kraus stated the plane conjecture in 1884",
+      "statement": "Ludwig Kraus's 1884 paper states, as its main result, the modern plane Jacobian conjecture rather than merely an earlier adjacent problem.",
+      "inclusion": "defining",
+      "role": "primary_statement"
+    },
+    {
+      "public_claim_id": "JCG-CLAIM-0011",
+      "title": "The gap in Kraus's proposed proof",
+      "statement": "The final step of Kraus's claimed proof is invalid because the chosen parametrization does not justify the required derivative conclusion at infinity; the unresolved issue is control of ramification at infinity.",
+      "inclusion": "defining",
+      "role": "supporting_result"
+    }
+  ],
+  "related_package_slugs": []
+}

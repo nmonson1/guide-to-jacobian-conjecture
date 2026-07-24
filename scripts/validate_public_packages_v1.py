@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -13,7 +14,6 @@ from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_ROOT = ROOT / "data/packages-v1"
 FORBIDDEN = {
     "private filesystem path": re.compile(r"/(?:fss|home)/monson/"),
     "ChatGPT share URL": re.compile(r"https?://chatgpt\.com/share/", re.I),
@@ -34,9 +34,18 @@ def schema_errors(schema: dict, value: dict) -> list[str]:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--package-version",
+        default="v1",
+        help="version suffix under data/packages-* (default: v1)",
+    )
+    args = parser.parse_args()
+    data_root = ROOT / f"data/packages-{args.package_version}"
+
     failures: list[str] = []
     manifest = json.loads(
-        (DATA_ROOT / "manifest.json").read_text(encoding="utf-8")
+        (data_root / "manifest.json").read_text(encoding="utf-8")
     )
     schema = json.loads(
         (ROOT / "schemas/public-package-v1.schema.json").read_text(
@@ -52,7 +61,7 @@ def main() -> int:
 
     packages: dict[str, dict] = {}
     for entry in manifest.get("packages", []):
-        path = DATA_ROOT / entry["file"]
+        path = data_root / entry["file"]
         if not path.is_file():
             failures.append(f"missing package file: {path.relative_to(ROOT)}")
             continue
@@ -87,9 +96,9 @@ def main() -> int:
     if manifest.get("package_count") != len(packages):
         failures.append("manifest package_count does not match loaded files")
     expected_files = {
-        DATA_ROOT / entry["file"] for entry in manifest.get("packages", [])
+        data_root / entry["file"] for entry in manifest.get("packages", [])
     }
-    actual_files = set((DATA_ROOT / "packages").glob("*.json"))
+    actual_files = set((data_root / "packages").glob("*.json"))
     for path in sorted(actual_files - expected_files):
         failures.append(f"unmanifested package file: {path.relative_to(ROOT)}")
 
@@ -142,7 +151,10 @@ def main() -> int:
         f"{kind_counts[key]} {key.replace('_', ' ')}"
         for key in ("result", "open_problem")
     )
-    print(f"Validated {len(packages)} public topics ({counts}).")
+    print(
+        f"Validated {len(packages)} public topics "
+        f"in packages-{args.package_version} ({counts})."
+    )
     return 0
 
 

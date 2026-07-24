@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "plane-jacobian-conjecture",
+  "slug": "plane-jacobian-conjecture",
+  "title": "The Plane Jacobian Conjecture Remains Open",
+  "kind": "open_problem",
+  "statement": "The Jacobian conjecture in dimension 2 remains open.",
+  "lead_public_claim_id": "JCG-CLAIM-0005",
+  "members": [
+    {
+      "public_claim_id": "JCG-CLAIM-0005",
+      "title": "The plane Jacobian conjecture remains open",
+      "statement": "The Jacobian conjecture in dimension 2 remains open.",
+      "inclusion": "defining",
+      "role": "primary_statement"
+    }
+  ],
+  "related_package_slugs": []
+}

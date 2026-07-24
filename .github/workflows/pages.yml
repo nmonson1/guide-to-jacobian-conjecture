@@ -58,6 +58,12 @@ jobs:
       - name: Check generated topic pages
         run: python scripts/generate_topic_pages_v1.py
 
+      - name: Validate the promoted v1.2 topic packages
+        run: python scripts/validate_public_packages_v1.py --package-version v1.2
+
+      - name: Check generated v1.2 topic pages
+        run: python scripts/generate_topic_pages_v1.py --package-version v1.2 --topic-version v1.2
+
       - name: Check the publication boundary
         run: python scripts/check_public_site.py
 

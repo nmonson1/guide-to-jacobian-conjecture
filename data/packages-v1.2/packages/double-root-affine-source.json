@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "id": "double-root-affine-source",
+  "slug": "double-root-affine-source",
+  "title": "Why the Double-Root Slice Is Affine Three-Space",
+  "kind": "result",
+  "statement": "In the binary-form multiplication model of the counterexample, the resultant-one double-root slice is polynomially isomorphic to affine three-space.",
+  "lead_public_claim_id": "JCG-CLAIM-0022",
+  "members": [
+    {
+      "public_claim_id": "JCG-CLAIM-0022",
+      "title": "The double-root resultant slice is affine three-space",
+      "statement": "In the binary-form multiplication model of the counterexample, the resultant-one double-root slice is polynomially isomorphic to affine three-space.",
+      "inclusion": "defining",
+      "role": "primary_statement"
+    },
+    {
+      "public_claim_id": "JCG-CLAIM-0023",
+      "title": "Three symmetry orbits of dual binary-cubic hyperplanes",
+      "statement": "Under the projective linear action, dual binary-cubic hyperplanes have three orbits, indexed by the root partitions (3), (2,1), and (1,1,1).",
+      "inclusion": "defining",
+      "role": "supporting_result"
+    },
+    {
+      "public_claim_id": "JCG-CLAIM-0024",
+      "title": "Comparison with Vitushkin's 1999 rational example",
+      "statement": "Vitushkin's 1999 rational example has an analogous multiplication-map presentation and is generically two-to-one, but its source is a punctured plane, so the resulting map has a pole.",
+      "inclusion": "shared",
+      "role": "supporting_result"
+    }
+  ],
+  "related_package_slugs": []
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "consequences-for-neighboring-conjectures",
+  "slug": "consequences-for-neighboring-conjectures",
+  "title": "Consequences for Neighboring Conjectures",
+  "kind": "result",
+  "statement": "The Dixmier conjecture is false for the complex Weyl algebra A_n for every n at least 3.",
+  "lead_public_claim_id": "JCG-CLAIM-0019",
+  "members": [
+    {
+      "public_claim_id": "JCG-CLAIM-0017",
+      "title": "Failure of the all-dimensional Vanishing Conjecture",
+      "statement": "Zhao's all-dimensional Vanishing Conjecture is false in some finite dimension.",
+      "inclusion": "defining",
+      "role": "immediate_corollary"
+    },
+    {
+      "public_claim_id": "JCG-CLAIM-0018",
+      "title": "Failure of the all-dimensional Image Conjecture",
+      "statement": "The all-dimensional Image Conjecture is false in some finite dimension.",
+      "inclusion": "defining",
+      "role": "immediate_corollary"
+    },
+    {
+      "public_claim_id": "JCG-CLAIM-0019",
+      "title": "Failure of the Dixmier conjecture in dimensions at least three",
+      "statement": "The Dixmier conjecture is false for the complex Weyl algebra A_n for every n at least 3.",
+      "inclusion": "defining",
+      "role": "primary_statement"
+    },
+    {
+      "public_claim_id": "JCG-CLAIM-0004",
+      "title": "Failure of the Jacobian conjecture in dimensions at least three",
+      "statement": "The Jacobian conjecture is false in every dimension n at least 3.",
+      "inclusion": "shared",
+      "role": "supporting_result"
+    },
+    {
+      "public_claim_id": "JCG-CLAIM-0020",
+      "title": "Small counterexamples to the Gaussian Moments Conjecture",
+      "statement": "The Gaussian Moments Conjecture is false in every dimension n at least 3: the cited preprint gives a five-term quartic witness in three real Gaussian variables and a six-term cubic witness in four variables.",
+      "inclusion": "shared",
+      "role": "supporting_result"
+    }
+  ],
+  "related_package_slugs": [
+    "all-fields-counterexample",
+    "base-counterexample-and-immediate-consequences"
+  ]
+}
