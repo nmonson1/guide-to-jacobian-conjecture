@@ -1,6 +1,11 @@
 ---
 title: "Constant Jacobian determinant of the Alpöge map"
 description: "The displayed Alpöge polynomial map has Jacobian determinant equal to the constant -2."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Constant Jacobian determinant of the Alpöge map

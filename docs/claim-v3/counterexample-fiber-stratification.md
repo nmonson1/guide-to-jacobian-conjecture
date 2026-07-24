@@ -1,6 +1,11 @@
 ---
 title: "Generic degree and fiber stratification of the counterexample"
 description: "The Alpöge map has generic degree 3, with affine fiber cardinality 3 off the cubic discriminant, 1 on the discriminant away from the triple-root curve, and 0 on the triple-root curve."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Generic degree and fiber stratification of the counterexample

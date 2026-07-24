@@ -1,6 +1,11 @@
 ---
 title: "Failure of the Jacobian conjecture in dimensions at least three"
 description: "The Jacobian conjecture is false in every dimension n at least 3."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Failure of the Jacobian conjecture in dimensions at least three

@@ -31,6 +31,8 @@ FORBIDDEN_PATTERNS = {
     "private archive snapshot": re.compile(r"\bsnapshot [0-9a-f]{12,}", re.I),
     "private comment index": re.compile(r"\bcomments\.json;\s*comment\b", re.I),
 }
+TECHNICAL_RECORD_PREFIXES = ("docs/claim/", "docs/claim-v3/")
+TECHNICAL_RECORD_INDEXES = {"docs/claims.md", "docs/claims-v3.md"}
 
 
 def main() -> int:
@@ -55,6 +57,20 @@ def main() -> int:
             if pattern.search(text):
                 failures.append(f"{relative}: {label}")
 
+        relative_text = relative.as_posix()
+        if (
+            relative_text.startswith(TECHNICAL_RECORD_PREFIXES)
+            or relative_text in TECHNICAL_RECORD_INDEXES
+        ):
+            if "robots: noindex, nofollow" not in text:
+                failures.append(
+                    f"{relative}: technical record is missing robots noindex"
+                )
+            if "search:\n  exclude: true" not in text:
+                failures.append(
+                    f"{relative}: technical record is not excluded from site search"
+                )
+
         if path.suffix == ".md":
             for match in re.finditer(r"\[[^\]]+\]\(([^)]+)\)", text):
                 target = match.group(1).split("#", 1)[0]
@@ -63,6 +79,17 @@ def main() -> int:
                 candidate = (path.parent / target).resolve()
                 if not candidate.exists():
                     failures.append(f"{relative}: missing local link target {target!r}")
+
+    mkdocs_text = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+    if re.search(r"^\s*-\s+Claims\s*:", mkdocs_text, re.MULTILINE):
+        failures.append("mkdocs.yml: technical claim inventory appears in navigation")
+    for required_nav in ("Stories", "Results"):
+        if not re.search(
+            rf"^\s*-\s+{required_nav}\s*:", mkdocs_text, re.MULTILINE
+        ):
+            failures.append(
+                f"mkdocs.yml: required {required_nav!r} navigation layer is missing"
+            )
 
     if failures:
         print("Public-site checks failed:", file=sys.stderr)

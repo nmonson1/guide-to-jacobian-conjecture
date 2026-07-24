@@ -1,6 +1,11 @@
 ---
 title: "Failure of the Dixmier conjecture in dimensions at least three"
 description: "The Dixmier conjecture is false for the complex Weyl algebra A_n for every n at least 3."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Failure of the Dixmier conjecture in dimensions at least three

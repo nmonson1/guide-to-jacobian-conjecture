@@ -1,6 +1,11 @@
 ---
 title: "An explicit degree-three counterexample in 11 variables"
 description: "The cited map from complex affine 11-space to itself has total degree 3, 52 nonzero monomial terms, constant Jacobian determinant -2, and three displayed distinct rational inputs with one common image."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # An explicit degree-three counterexample in 11 variables

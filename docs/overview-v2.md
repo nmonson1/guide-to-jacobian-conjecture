@@ -1,6 +1,11 @@
 ---
 title: Guide to the Jacobian Conjecture
 description: The conjecture, the three-dimensional counterexample, and a source-linked claim record.
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Guide to the Jacobian Conjecture
@@ -10,8 +15,8 @@ The classical Jacobian conjecture asked whether a polynomial self-map of complex
 ## Status by dimension
 
 - **Dimension 1:** true. A one-variable polynomial with nonzero constant derivative is linear.
-- **Dimension 2:** [open](claim-v3/plane-jacobian-conjecture-open.md).
-- **Dimensions 3 and above:** [false](claim-v3/jacobian-conjecture-false-dimension-at-least-three.md).
+- **Dimension 2:** [open](story-v1/plane-case.md).
+- **Dimensions 3 and above:** [false](story-v1/conjecture-and-counterexample.md).
 
 ## The counterexample in one screen
 
@@ -23,13 +28,13 @@ R=2x-3x^2y-x^3z.
 \]
 This is the map referred to below.
 
-Two exact facts do the work: [the Jacobian determinant is the constant −2](claim-v3/alpoge-map-constant-jacobian.md), and [three distinct rational points have one common image](claim-v3/alpoge-map-triple-collision.md). The second fact prevents injectivity; the first satisfies the Keller hypothesis. Adding identity coordinates gives counterexamples in every higher dimension.
+Two exact facts do the work: the Jacobian determinant is the constant −2, and three distinct rational points have one common image. The second fact prevents injectivity; the first satisfies the Keller hypothesis. Adding identity coordinates gives counterexamples in every higher dimension.
 
 [Read the exact certificate](certificate.md){ .md-button .md-button--primary }
-[Browse the claim inventory](claims-v3.md){ .md-button }
+[Explore the mathematical stories](stories-v1.md){ .md-button }
 
 ## What this site records
 
-The guide separates mathematical claims from the sources that state or support them, the people credited for specific roles, and any independent review or machine check. **Proof offered** means that a linked source supplies an argument. It does not mean this project has independently verified the whole statement.
+The guide begins with six mathematical stories. Externally sourced theorems and open problems appear in the result catalogue beneath them. Precise claim records preserve sources, credit, evidence, and limitations, but remain technical records rather than ordinary navigation.
 
-The [chronology](chronology-v2.md) links dated events, contribution records, and claims in both directions. Longer methodology and mathematical storylines are intentionally deferred until the underlying record has settled.
+The [chronology](chronology-v2.md) links dated events and contributions to the mathematical record. Readers who want exact statements can follow a result page into its deeper technical records.

@@ -1,6 +1,11 @@
 ---
 title: "Small counterexamples to the Gaussian Moments Conjecture"
 description: "The Gaussian Moments Conjecture is false in every dimension n at least 3: the cited preprint gives a five-term quartic witness in three real Gaussian variables and a six-term cubic witness in four variables."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Small counterexamples to the Gaussian Moments Conjecture

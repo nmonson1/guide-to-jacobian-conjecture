@@ -1,6 +1,11 @@
 ---
 title: "An explicit triple collision"
 description: "The three distinct rational points (0,0,-1/4), (1,-3/2,13/2), and (-1,3/2,13/2) have the common image (-1/4,0,0) under the Alpöge map."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # An explicit triple collision

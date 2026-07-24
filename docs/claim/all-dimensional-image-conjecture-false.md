@@ -1,6 +1,11 @@
 ---
 title: "Failure of the all-dimensional Image Conjecture"
 description: "The all-dimensional Image Conjecture is false in some finite dimension."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Failure of the all-dimensional Image Conjecture

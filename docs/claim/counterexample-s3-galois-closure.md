@@ -1,6 +1,11 @@
 ---
 title: "Degree-three function-field extension with S3 Galois closure"
 description: "The function-field extension induced by the Alpöge map has degree 3 and an S3 Galois closure, as described by the cited explicit cubic model."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Degree-three function-field extension with S3 Galois closure

@@ -1,6 +1,11 @@
 ---
 title: "Failure of the all-dimensional Vanishing Conjecture"
 description: "Zhao's all-dimensional Vanishing Conjecture is false in some finite dimension."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Failure of the all-dimensional Vanishing Conjecture

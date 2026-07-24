@@ -1,6 +1,11 @@
 ---
 title: "The gap in Kraus's proposed proof"
 description: "The final step of Kraus's claimed proof is invalid because the chosen parametrization does not justify the required derivative conclusion at infinity; the unresolved issue is control of ramification at infinity."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # The gap in Kraus's proposed proof

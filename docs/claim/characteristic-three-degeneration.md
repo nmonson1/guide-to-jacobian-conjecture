@@ -1,6 +1,11 @@
 ---
 title: "Characteristic-three degeneration"
 description: "In characteristic 3, the translation T=b+S puts the fiber cubic into the form cS^3+S^2+W; the missed curve is empty and the triple-root stratum disappears."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Characteristic-three degeneration

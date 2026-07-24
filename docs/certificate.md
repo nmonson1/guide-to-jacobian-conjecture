@@ -42,4 +42,4 @@ See the normalized dimensional claim: [Failure of the Jacobian conjecture in dim
 - It does not establish every geometric, arithmetic, or downstream claim associated with the counterexample.
 - Source proofs, executable checks, and Lean formalizations are listed on the individual claim pages. Their presence is distinct from an independent full-scope project verification.
 
-[Back to the overview](overview-v2.md)
+[Back to the overview](index.md)

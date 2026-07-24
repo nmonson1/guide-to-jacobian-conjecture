@@ -1,6 +1,11 @@
 ---
 title: "Comparison with Vitushkin's 1999 rational example"
 description: "Vitushkin's 1999 rational example has an analogous multiplication-map presentation and is generically two-to-one, but its source is a punctured plane, so the resulting map has a pole."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Comparison with Vitushkin's 1999 rational example

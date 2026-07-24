@@ -1,6 +1,11 @@
 ---
 title: "Exact finite-field fiber counts"
 description: "Over every finite field F_q of odd order, every rational fiber has size 0, 1, or 3; writing N_j for the number of targets with j rational preimages, N_1+3N_3=q^3 and N_0=2N_3, with 6N_3=(q-1)(q^2+2) outside characteristic 3 and 6N_3=q^2(q-1) in characteristic 3."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Exact finite-field fiber counts

@@ -1,6 +1,11 @@
 ---
 title: "Three-dimensional Keller maps of every generic degree"
 description: "For every integer d at least 3, there is a nonproper Keller map from complex affine 3-space to itself with generic degree d."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Three-dimensional Keller maps of every generic degree

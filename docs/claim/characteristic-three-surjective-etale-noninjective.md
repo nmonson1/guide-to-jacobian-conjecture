@@ -1,6 +1,11 @@
 ---
 title: "Surjectivity in algebraically closed characteristic three"
 description: "Over an algebraically closed field of characteristic 3, the map is surjective while remaining étale and noninjective."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Surjectivity in algebraically closed characteristic three

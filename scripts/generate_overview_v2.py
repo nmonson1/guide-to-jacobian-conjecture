@@ -14,7 +14,15 @@ def claim_link(record: dict, label: str | None = None) -> str:
     return f"[{label or record['title']}](claim-v3/{record['slug']}.md)"
 
 
-def render_index(records: dict[str, dict]) -> str:
+def story_link(slug: str, label: str) -> str:
+    return f"[{label}](story-v1/{slug}.md)"
+
+
+def render_index(
+    records: dict[str, dict],
+    *,
+    legacy_alias: bool = False,
+) -> str:
     determinant = records["JCG-CLAIM-0002"]
     collision = records["JCG-CLAIM-0003"]
     dimensions = records["JCG-CLAIM-0004"]
@@ -22,11 +30,24 @@ def render_index(records: dict[str, dict]) -> str:
     context = determinant["page"].get("context")
     if not context:
         raise ValueError("the determinant claim lacks the displayed-map context")
+    frontmatter = [
+        "---",
+        "title: Guide to the Jacobian Conjecture",
+        "description: The conjecture, the three-dimensional counterexample, and a source-linked claim record.",
+    ]
+    if legacy_alias:
+        frontmatter.extend(
+            [
+                "hide:",
+                "  - navigation",
+                "search:",
+                "  exclude: true",
+                "robots: noindex, nofollow",
+            ]
+        )
     return "\n".join(
-        [
-            "---",
-            "title: Guide to the Jacobian Conjecture",
-            "description: The conjecture, the three-dimensional counterexample, and a source-linked claim record.",
+        frontmatter
+        + [
             "---",
             "",
             "# Guide to the Jacobian Conjecture",
@@ -36,23 +57,23 @@ def render_index(records: dict[str, dict]) -> str:
             "## Status by dimension",
             "",
             "- **Dimension 1:** true. A one-variable polynomial with nonzero constant derivative is linear.",
-            f"- **Dimension 2:** {claim_link(plane, 'open')}.",
-            f"- **Dimensions 3 and above:** {claim_link(dimensions, 'false')}.",
+            f"- **Dimension 2:** {story_link('plane-case', 'open')}.",
+            f"- **Dimensions 3 and above:** {story_link('conjecture-and-counterexample', 'false')}.",
             "",
             "## The counterexample in one screen",
             "",
             context,
             "",
-            f"Two exact facts do the work: {claim_link(determinant, 'the Jacobian determinant is the constant −2')}, and {claim_link(collision, 'three distinct rational points have one common image')}. The second fact prevents injectivity; the first satisfies the Keller hypothesis. Adding identity coordinates gives counterexamples in every higher dimension.",
+            "Two exact facts do the work: the Jacobian determinant is the constant −2, and three distinct rational points have one common image. The second fact prevents injectivity; the first satisfies the Keller hypothesis. Adding identity coordinates gives counterexamples in every higher dimension.",
             "",
             "[Read the exact certificate](certificate.md){ .md-button .md-button--primary }",
-            "[Browse the claim inventory](claims-v3.md){ .md-button }",
+            "[Explore the mathematical stories](stories-v1.md){ .md-button }",
             "",
             "## What this site records",
             "",
-            "The guide separates mathematical claims from the sources that state or support them, the people credited for specific roles, and any independent review or machine check. **Proof offered** means that a linked source supplies an argument. It does not mean this project has independently verified the whole statement.",
+            "The guide begins with six mathematical stories. Externally sourced theorems and open problems appear in the result catalogue beneath them. Precise claim records preserve sources, credit, evidence, and limitations, but remain technical records rather than ordinary navigation.",
             "",
-            "The [chronology](chronology-v2.md) links dated events, contribution records, and claims in both directions. Longer methodology and mathematical storylines are intentionally deferred until the underlying record has settled.",
+            "The [chronology](chronology-v2.md) links dated events and contributions to the mathematical record. Readers who want exact statements can follow a result page into its deeper technical records.",
             "",
         ]
     )
@@ -106,7 +127,7 @@ def render_certificate(records: dict[str, dict]) -> str:
             "- It does not establish every geometric, arithmetic, or downstream claim associated with the counterexample.",
             "- Source proofs, executable checks, and Lean formalizations are listed on the individual claim pages. Their presence is distinct from an independent full-scope project verification.",
             "",
-            "[Back to the overview](overview-v2.md)",
+            "[Back to the overview](index.md)",
             "",
         ]
     )
@@ -115,7 +136,11 @@ def render_certificate(records: dict[str, dict]) -> str:
 def expected_outputs(root: Path) -> dict[Path, str]:
     records = load_records(root)
     return {
-        root / "docs/overview-v2.md": render_index(records),
+        root / "docs/index.md": render_index(records),
+        root / "docs/overview-v2.md": render_index(
+            records,
+            legacy_alias=True,
+        ),
         root / "docs/certificate.md": render_certificate(records),
     }
 

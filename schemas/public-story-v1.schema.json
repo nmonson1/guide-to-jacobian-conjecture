@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nmonson1.github.io/guide-to-jacobian-conjecture/schemas/public-story-v1.schema.json",
+  "title": "GJC public story v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "slug",
+    "title",
+    "summary",
+    "release_state",
+    "visibility",
+    "package_slugs",
+    "related_story_slugs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "$ref": "#/$defs/slug"
+    },
+    "slug": {
+      "$ref": "#/$defs/slug"
+    },
+    "title": {
+      "$ref": "#/$defs/nonemptyString"
+    },
+    "summary": {
+      "$ref": "#/$defs/nonemptyString"
+    },
+    "release_state": {
+      "const": "public"
+    },
+    "visibility": {
+      "const": "featured"
+    },
+    "package_slugs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/slug"
+      }
+    },
+    "related_story_slugs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/slug"
+      }
+    }
+  },
+  "$defs": {
+    "nonemptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    }
+  }
+}

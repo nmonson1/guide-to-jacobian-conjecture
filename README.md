@@ -5,17 +5,25 @@ contributions, and claims concerning the Jacobian conjecture.
 
 Published site: <https://nmonson1.github.io/guide-to-jacobian-conjecture/>
 
-## Record-first guide
+## Publication layers
 
 The site now contains:
 
 1. 22 dated event records from 1884 through 21 July 2026;
 2. 13 stable contribution records;
-3. 28 source-linked public claim pages generated from validated JSON records;
-4. 17 guided topic pages assembled only from those public claims.
+3. six featured mathematical stories for ordinary readers;
+4. 17 externally sourced result and open-problem pages;
+5. 28 source-linked technical claim records generated from validated JSON.
 
-A short overview and exact counterexample certificate are built on those
-records. Longer methodology and mathematical storylines remain deferred.
+The stories are the main reading surface. The result catalogue is the
+secondary scholarly surface. Claim records preserve exact scope, evidence,
+and provenance, but are excluded from ordinary navigation, site search, and
+search-engine indexing.
+
+A short overview and exact counterexample certificate are built on the same
+records. Publication visibility is independent of mathematical assessment:
+making a page prominent does not strengthen its evidence status, and a
+technically hidden record is not thereby less credible.
 Sequence numbers record entry into this repository; they do not by themselves
 establish historical priority.
 
@@ -28,11 +36,14 @@ establish historical priority.
 - `data/claims-v3/`: the current scoped, dependency-linked public claim export;
 - `data/packages-v1/`: the preserved first mathematical-package export;
 - `data/packages-v1.2/`: the current reviewed mathematical-package export;
+- `data/stories-v1/`: the six featured reader-story records;
 - `assessments/`: named, version-specific checks performed for this project;
+- `docs/story-v1/`: generated reader-facing story pages;
 - `docs/claim-v3/`: current generated page-per-claim views;
 - `scripts/generate_claim_pages_v3.py`: the current deterministic claim renderer;
 - `scripts/generate_chronology_v2.py`: the deterministic chronology renderer;
-- `scripts/generate_overview_v2.py`: the overview and certificate renderer.
+- `scripts/generate_overview_v2.py`: the overview and certificate renderer;
+- `scripts/generate_story_pages_v1.py`: the featured-story renderer;
 - `scripts/generate_topic_pages_v1.py`: the versioned guided-topic renderer.
 
 Event dates and contribution accessions are independent. The project records
@@ -56,6 +67,8 @@ uv run --with-requirements requirements.txt python scripts/validate_public_packa
 uv run --with-requirements requirements.txt python scripts/generate_topic_pages_v1.py
 uv run --with-requirements requirements.txt python scripts/validate_public_packages_v1.py --package-version v1.2
 uv run --with-requirements requirements.txt python scripts/generate_topic_pages_v1.py --package-version v1.2 --topic-version v1.2
+uv run --with-requirements requirements.txt python scripts/validate_public_stories_v1.py
+uv run --with-requirements requirements.txt python scripts/generate_story_pages_v1.py
 uv run --with-requirements requirements.txt python scripts/check_public_site.py
 uv run --with-requirements requirements.txt mkdocs build --strict
 ```

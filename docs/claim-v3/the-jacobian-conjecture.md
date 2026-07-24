@@ -1,6 +1,11 @@
 ---
 title: "The Jacobian conjecture"
 description: "Every polynomial map from complex affine n-space to itself whose Jacobian determinant is a nonzero constant is a polynomial automorphism."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # The Jacobian conjecture

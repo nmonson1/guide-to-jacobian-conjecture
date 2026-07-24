@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "neighboring-consequences",
+  "slug": "neighboring-consequences",
+  "title": "What Else Changes After the Counterexample?",
+  "summary": "The counterexample alters several conjectures connected to the Jacobian problem through reductions, equivalences, and explicit constructions.",
+  "release_state": "public",
+  "visibility": "featured",
+  "package_slugs": [
+    "consequences-for-neighboring-conjectures",
+    "gaussian-moments-counterexamples"
+  ],
+  "related_story_slugs": [
+    "conjecture-and-counterexample",
+    "simplifying-counterexamples"
+  ]
+}

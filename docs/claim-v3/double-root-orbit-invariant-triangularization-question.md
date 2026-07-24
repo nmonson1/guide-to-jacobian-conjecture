@@ -1,6 +1,11 @@
 ---
 title: "Invariant characterization of the double-root orbit"
 description: "Is the double-root orbit invariantly the unique orbit whose constraint fiber admits a global polynomial triangularization or trivialization?"
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Invariant characterization of the double-root orbit

@@ -1,6 +1,11 @@
 ---
 title: "Kraus stated the plane conjecture in 1884"
 description: "Ludwig Kraus's 1884 paper states, as its main result, the modern plane Jacobian conjecture rather than merely an earlier adjacent problem."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Kraus stated the plane conjecture in 1884

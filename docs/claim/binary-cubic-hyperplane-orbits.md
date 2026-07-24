@@ -1,6 +1,11 @@
 ---
 title: "Three symmetry orbits of dual binary-cubic hyperplanes"
 description: "Under the projective linear action, dual binary-cubic hyperplanes have three orbits, indexed by the root partitions (3), (2,1), and (1,1,1)."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Three symmetry orbits of dual binary-cubic hyperplanes

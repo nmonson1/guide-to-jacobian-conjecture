@@ -1,6 +1,11 @@
 ---
 title: "Trivial rational deck group"
 description: "The displayed three-variable map has trivial rational deck group over its target: a rational self-map sigma satisfying F composed with sigma equals F must be the identity."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Trivial rational deck group

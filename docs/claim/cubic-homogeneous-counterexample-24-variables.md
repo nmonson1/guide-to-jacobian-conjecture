@@ -1,6 +1,11 @@
 ---
 title: "An explicit cubic-homogeneous counterexample in 24 variables"
 description: "The cited explicit map has the form G(U)=U+H(U) over Q^24, with every nonzero component of H homogeneous cubic, determinant 1, 54 nonzero cubic monomials, and a displayed collision of two distinct rational points."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # An explicit cubic-homogeneous counterexample in 24 variables

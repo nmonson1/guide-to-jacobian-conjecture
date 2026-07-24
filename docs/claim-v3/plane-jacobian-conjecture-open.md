@@ -1,6 +1,11 @@
 ---
 title: "The plane Jacobian conjecture remains open"
 description: "The Jacobian conjecture in dimension 2 remains open."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # The plane Jacobian conjecture remains open

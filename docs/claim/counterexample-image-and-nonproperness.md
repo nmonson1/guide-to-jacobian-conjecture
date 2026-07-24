@@ -1,6 +1,11 @@
 ---
 title: "Image and nonproperness set of the counterexample"
 description: "The image of the Alpöge map is complex affine 3-space minus the triple-root curve Gamma, while its nonproperness set is the discriminant hypersurface V(Delta)."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Image and nonproperness set of the counterexample

@@ -2,18 +2,21 @@
 
 {% block announce %}
 <span class="announce-copy">
-  Baseline as of {{ config.extra.status_date }} · Record first, exposition later ·
-  <a href="{{ 'chronology/' | url }}">See the chronology</a>
+  Current through {{ config.extra.status_date }} · Six mathematical stories ·
+  <a href="{{ 'stories-v1/' | url }}">Start reading</a>
 </span>
 {% endblock %}
 
 {% block extrahead %}
   {{ super() }}
+  {% if page and page.meta and page.meta.robots %}
+  <meta name="robots" content="{{ page.meta.robots }}">
+  {% endif %}
   <meta name="theme-color" content="#123a3b">
   <meta name="author" content="Guide to the Jacobian Conjecture contributors">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Guide to the Jacobian Conjecture">
-  <meta property="og:description" content="A chronological, versioned record of Jacobian-conjecture events, contributions, and claims.">
+  <meta property="og:description" content="A reader guide and source-linked record of the Jacobian conjecture, its counterexample, and the questions that follow.">
   <meta property="og:url" content="https://nmonson1.github.io/guide-to-jacobian-conjecture/">
   <script type="application/ld+json">
   {
@@ -21,7 +24,7 @@
     "@type": "WebSite",
     "name": "Guide to the Jacobian Conjecture",
     "url": "https://nmonson1.github.io/guide-to-jacobian-conjecture/",
-    "description": "A chronological, versioned record of Jacobian-conjecture events, contributions, and claims."
+    "description": "A reader guide and source-linked record of the Jacobian conjecture, its counterexample, and the questions that follow."
   }
   </script>
 {% endblock %}

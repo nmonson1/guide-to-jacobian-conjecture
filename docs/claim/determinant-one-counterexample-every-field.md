@@ -1,6 +1,11 @@
 ---
 title: "A determinant-one counterexample over every field"
 description: "For every field k, the determinant-one rescaled construction formalized by Dean Cureton gives a polynomial map from k^3 to k^3 that is not injective."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # A determinant-one counterexample over every field

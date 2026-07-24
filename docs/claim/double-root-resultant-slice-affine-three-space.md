@@ -1,6 +1,11 @@
 ---
 title: "The double-root resultant slice is affine three-space"
 description: "In the binary-form multiplication model of the counterexample, the resultant-one double-root slice is polynomially isomorphic to affine three-space."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # The double-root resultant slice is affine three-space

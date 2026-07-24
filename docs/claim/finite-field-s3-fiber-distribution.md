@@ -1,6 +1,11 @@
 ---
 title: "Asymptotic S3 fiber distribution"
 description: "The normalized finite-field fiber-count distribution (N_0,N_1,N_3)/q^3 tends to (1/3,1/2,1/6), matching the proportions of elements of S3 with 0, 1, and 3 fixed points."
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Asymptotic S3 fiber distribution

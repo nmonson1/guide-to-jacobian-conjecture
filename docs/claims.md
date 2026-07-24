@@ -1,6 +1,11 @@
 ---
 title: Claims
 description: A source-linked inventory of Jacobian-conjecture claims and questions.
+hide:
+  - navigation
+search:
+  exclude: true
+robots: noindex, nofollow
 ---
 
 # Claim inventory
