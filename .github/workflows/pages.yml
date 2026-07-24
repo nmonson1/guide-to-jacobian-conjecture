@@ -40,6 +40,24 @@ jobs:
       - name: Check generated claim pages
         run: python scripts/generate_claim_pages.py
 
+      - name: Validate the promoted v3 claim records
+        run: python scripts/validate_public_claims_v3.py
+
+      - name: Check generated v3 claim pages
+        run: python scripts/generate_claim_pages_v3.py
+
+      - name: Check generated chronology
+        run: python scripts/generate_chronology_v2.py
+
+      - name: Check generated overview and certificate
+        run: python scripts/generate_overview_v2.py
+
+      - name: Validate the promoted topic packages
+        run: python scripts/validate_public_packages_v1.py
+
+      - name: Check generated topic pages
+        run: python scripts/generate_topic_pages_v1.py
+
       - name: Check the publication boundary
         run: python scripts/check_public_site.py
 

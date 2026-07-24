@@ -1,8 +1,8 @@
 schema_version: 1
 id: JCG-E-0007
 sequence: 7
-event_date: "2026-07-19 Pacific / 2026-07-20 UTC"
-sort_date: "2026-07-20"
+event_date: "2026-07-19 Pacific"
+sort_date: "2026-07-19"
 date_precision: day-with-time-zone-boundary
 title: Alpöge posts the explicit three-variable counterexample
 category: public-announcement

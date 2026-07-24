@@ -1,0 +1,111 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-e05645f24197"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-87a27c1b0882",
+      "entity": {
+        "entity_type": "person",
+        "name": "Terence Tao"
+      },
+      "id": "credit-b86e55c40060",
+      "note": "Keep the verified double-root statement distinct from the stronger uniqueness/exclusion claim.",
+      "roles": [
+        "derivation",
+        "exposition"
+      ],
+      "scope": "public orbit formulation and calculation"
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [],
+      "id": "evidence-e05645f24197",
+      "kind": "proof",
+      "limitations": [
+        "Keep the verified double-root statement distinct from the stronger uniqueness/exclusion claim."
+      ],
+      "relation": "supports",
+      "scope": "The PGL2 action on the projective dual of binary cubic forms.",
+      "source_ids": [
+        "source-87a27c1b0882"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Tao states the orbit classification and explicitly analyzes the double-root case.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-21",
+  "id": "JCG-CLAIM-0023",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "The stronger assertion that only the double-root orbit can yield affine three-space is not included: the source does not give a full invariant exclusion of the other two cases."
+    ],
+    "notes": [
+      "Tao reports that he did not identify a known computable invariant forcing the special slice to be affine, while explicitly inviting a more authoritative algebraic-geometric answer. This is a qualified research assessment, not a nonexistence theorem. [Source](https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693529)"
+    ]
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": "The PGL2 action on the projective dual of binary cubic forms.",
+  "sequence": null,
+  "slug": "binary-cubic-hyperplane-orbits",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Terence Tao"
+        }
+      ],
+      "id": "source-31502c763fe6",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "public_comment",
+      "title": "Terence Tao's comment",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693529"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Terence Tao"
+        }
+      ],
+      "id": "source-87a27c1b0882",
+      "primary_for_display": true,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "public_post",
+      "title": "A digestion of the Jacobian conjecture counterexample",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/"
+    }
+  ],
+  "statement": "Under the projective linear action, dual binary-cubic hyperplanes have three orbits, indexed by the root partitions (3), (2,1), and (1,1,1).",
+  "statement_version": 1,
+  "storyline": "counterexample-and-global-geometry",
+  "title": "Three symmetry orbits of dual binary-cubic hyperplanes",
+  "verification": []
+}

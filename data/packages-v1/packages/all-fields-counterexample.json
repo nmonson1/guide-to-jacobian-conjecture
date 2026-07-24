@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "all-fields-counterexample",
+  "slug": "all-fields-counterexample",
+  "title": "A Counterexample Over Every Field",
+  "kind": "result",
+  "statement": "For every field k, the determinant-one rescaled construction formalized by Dean Cureton gives a polynomial map from k^3 to k^3 that is not injective.",
+  "lead_public_claim_id": "JCG-CLAIM-0012",
+  "members": [
+    {
+      "public_claim_id": "JCG-CLAIM-0012",
+      "title": "A determinant-one counterexample over every field",
+      "statement": "For every field k, the determinant-one rescaled construction formalized by Dean Cureton gives a polynomial map from k^3 to k^3 that is not injective.",
+      "inclusion": "defining",
+      "role": "primary_statement"
+    },
+    {
+      "public_claim_id": "JCG-CLAIM-0002",
+      "title": "Constant Jacobian determinant of the Alpöge map",
+      "statement": "The displayed Alpöge polynomial map has Jacobian determinant equal to the constant -2.",
+      "inclusion": "shared",
+      "role": "proof_lemma"
+    },
+    {
+      "public_claim_id": "JCG-CLAIM-0003",
+      "title": "An explicit triple collision",
+      "statement": "The three distinct rational points (0,0,-1/4), (1,-3/2,13/2), and (-1,3/2,13/2) have the common image (-1/4,0,0) under the Alpöge map.",
+      "inclusion": "shared",
+      "role": "proof_lemma"
+    },
+    {
+      "public_claim_id": "JCG-CLAIM-0004",
+      "title": "Failure of the Jacobian conjecture in dimensions at least three",
+      "statement": "The Jacobian conjecture is false in every dimension n at least 3.",
+      "inclusion": "shared",
+      "role": "supporting_result"
+    }
+  ],
+  "related_package_slugs": []
+}

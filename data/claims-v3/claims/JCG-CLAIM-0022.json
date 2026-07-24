@@ -1,0 +1,454 @@
+{
+  "as_of": "2026-07-22",
+  "assessment": {
+    "basis_evidence_ids": [
+      "evidence-0fa7e3373e03",
+      "evidence-19a5b4985558",
+      "evidence-faad8805b169"
+    ],
+    "basis_verification_ids": [],
+    "label": "Proof offered — review pending",
+    "policy_version": "gjc-assessment-v1",
+    "reviewed_on": "2026-07-22",
+    "state": "proof_offered",
+    "summary": "A source presents a full proof, but no qualifying full-scope check has passed."
+  },
+  "collections": [
+    "formal-verification"
+  ],
+  "credited_to": [
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-c6dcf20e7f73",
+      "entity": {
+        "entity_type": "person",
+        "name": "Alejandro Radisic"
+      },
+      "id": "credit-09d4f6f3a8a9",
+      "note": "This is K-point equivalence over fields with 2 invertible, not the full scheme/cohomological statement.",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "Lean formalization"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-87a27c1b0882",
+      "entity": {
+        "entity_type": "person",
+        "name": "Andy Jiang"
+      },
+      "id": "credit-3c4e253d180c",
+      "note": "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority.",
+      "roles": [
+        "problem_suggestion"
+      ],
+      "scope": "prompted the ChatGPT run that Sawin credits for the geometric construction; prompted the ChatGPT construction according to Sawin's earlier comment"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-87a27c1b0882",
+      "entity": {
+        "entity_type": "ai_system",
+        "name": "ChatGPT"
+      },
+      "id": "credit-f0368c90dc64",
+      "note": "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority.",
+      "roles": [
+        "research_assistance"
+      ],
+      "scope": "AI system credited by Sawin for the geometric construction and initial chart calculation; credited by Sawin in the linked earlier discussion for the initial calculation"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-49992568396f",
+      "entity": {
+        "entity_type": "person",
+        "name": "Daniel Litt"
+      },
+      "id": "credit-7e14f0b4378b",
+      "note": "Litt's credit is second-hand in this archived source; the linked X post is the direct source if a more exact priority record is later needed.",
+      "roles": [
+        "proof"
+      ],
+      "scope": "independent affine-line-bundle argument, as reported by Ravi Vakil"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-49992568396f",
+      "entity": {
+        "entity_type": "person",
+        "name": "David Speyer"
+      },
+      "id": "credit-34753a8df284",
+      "note": "Litt's credit is second-hand in this archived source; the linked X post is the direct source if a more exact priority record is later needed.",
+      "roles": [
+        "proof"
+      ],
+      "scope": "general iterated affine-line-bundle lemma and proof guidance"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-87a27c1b0882",
+      "entity": {
+        "entity_type": "person",
+        "name": "Levent Alpöge"
+      },
+      "id": "credit-b03634436930",
+      "note": "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority.",
+      "roles": [
+        "construction"
+      ],
+      "scope": "underlying counterexample map"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-8275d6d872d9",
+      "entity": {
+        "entity_type": "person",
+        "name": "Lillian Ryan Uhl"
+      },
+      "id": "credit-a94eaf6bc2de",
+      "note": "The WordPress API leaves the author-name field blank; the comment is signed 'Lillian Ryan Uhl', which is the basis for credit.",
+      "roles": [
+        "verification"
+      ],
+      "scope": "identified and supplied the corrected substitution"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-f7270f880406",
+      "entity": {
+        "entity_type": "person",
+        "name": "Ravi Vakil"
+      },
+      "id": "credit-ebe7300f608a",
+      "note": "Litt's credit is second-hand in this archived source; the linked X post is the direct source if a more exact priority record is later needed.",
+      "roles": [
+        "exposition"
+      ],
+      "scope": "public report of Litt's independent argument"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-87a27c1b0882",
+      "entity": {
+        "entity_type": "person",
+        "name": "Terence Tao"
+      },
+      "id": "credit-887354c33dab",
+      "note": "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority.",
+      "roles": [
+        "proof",
+        "exposition"
+      ],
+      "scope": "expository proof and explicit coordinate digestion; explicit polynomial chart formalized by the module"
+    },
+    {
+      "basis": "attributed_by_source",
+      "basis_source_id": "source-107a324384f0",
+      "entity": {
+        "entity_type": "person",
+        "name": "Will Sawin"
+      },
+      "id": "credit-8858ef10ff72",
+      "note": "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority.",
+      "roles": [
+        "proof"
+      ],
+      "scope": "reported the geometric construction and affine-chart calculation publicly; stated the reduction and affine-line fiber proof; public iterated affine-line-bundle argument; coordinate reduction credited in the pinned repository"
+    }
+  ],
+  "evidence": [
+    {
+      "artifacts": [],
+      "id": "evidence-5024d80e852f",
+      "kind": "formalization",
+      "limitations": [
+        "This is K-point equivalence over fields with 2 invertible, not the full scheme/cohomological statement."
+      ],
+      "relation": "supports",
+      "scope": "The portion of JCG-CLAIM-0022 addressed by RAD-L02.",
+      "source_ids": [
+        "source-85e2567e2a14",
+        "source-c6dcf20e7f73"
+      ],
+      "statement_version": 1,
+      "sufficiency": "partial_support",
+      "summary": "The pinned Lean module formalizes the coordinate content of the Tao–Sawin affine-slice proof; it does not claim a scheme-level isomorphism or formalize the cohomological torsor argument.",
+      "uses_claim_ids": []
+    },
+    {
+      "artifacts": [],
+      "id": "evidence-4ce3371fc5bd",
+      "kind": "exact_certificate",
+      "limitations": [
+        "The WordPress API leaves the author-name field blank; the comment is signed 'Lillian Ryan Uhl', which is the basis for credit."
+      ],
+      "relation": "context",
+      "scope": "The portion of JCG-CLAIM-0022 addressed by TAO-C01.",
+      "source_ids": [
+        "source-8275d6d872d9",
+        "source-87a27c1b0882"
+      ],
+      "statement_version": 1,
+      "sufficiency": "partial_support",
+      "summary": "Lillian Ryan Uhl identified the needed root-translating substitution; Tao's public post now uses the corrected translation.",
+      "uses_claim_ids": []
+    },
+    {
+      "artifacts": [],
+      "id": "evidence-0fa7e3373e03",
+      "kind": "proof",
+      "limitations": [
+        "The labor split before Sawin's public report cannot be reconstructed beyond Sawin's own attribution. This record does not convert an AI-system credit into human authorship or priority."
+      ],
+      "relation": "supports",
+      "scope": "The double-root hyperplane slice in the binary-linear-times-binary-quadratic multiplication model.",
+      "source_ids": [
+        "source-87a27c1b0882",
+        "source-107a324384f0"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Tao gives explicit coordinates; the linked public discussion gives coordinate and affine-bundle proofs.",
+      "uses_claim_ids": []
+    },
+    {
+      "artifacts": [],
+      "id": "evidence-19a5b4985558",
+      "kind": "proof",
+      "limitations": [
+        "The exact Tao-thread argument is Sawin's signed comment. The AI/Andy Jiang note records Sawin's own provenance statement and should not be sharpened further without a released transcript."
+      ],
+      "relation": "supports",
+      "scope": "The portion of JCG-CLAIM-0022 addressed by TAO-G03.",
+      "source_ids": [
+        "source-6e823ce7da6d",
+        "source-107a324384f0",
+        "source-b0a322453560"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "A concise proof of the affine-three-space chart, stated by Will Sawin in the Tao thread and consistent with the earlier linked construction.",
+      "uses_claim_ids": []
+    },
+    {
+      "artifacts": [],
+      "id": "evidence-faad8805b169",
+      "kind": "proof",
+      "limitations": [
+        "Litt's credit is second-hand in this archived source; the linked X post is the direct source if a more exact priority record is later needed."
+      ],
+      "relation": "supports",
+      "scope": "The portion of JCG-CLAIM-0022 addressed by TAO-G04.",
+      "source_ids": [
+        "source-49992568396f",
+        "source-b0a322453560",
+        "source-f7270f880406"
+      ],
+      "statement_version": 1,
+      "sufficiency": "claims_full_proof",
+      "summary": "Publicly argued in the linked Secret Blogging Seminar thread. David Speyer supplied the general iterated-affine-line-bundle lemma; Will Sawin developed the bundle structure; Ravi Vakil records an independent argument by Daniel Litt.",
+      "uses_claim_ids": []
+    }
+  ],
+  "first_reported_on": "2026-07-20",
+  "id": "JCG-CLAIM-0022",
+  "page": {
+    "commentary": [],
+    "limitations": [
+      "The pinned Lean development proves a field-valued polynomial bijection, not the full scheme-level or cohomological statement."
+    ],
+    "notes": [
+      "Felipe raised a coefficient-normalization question about the factorial convention for a differential operator. It does not challenge the explicit final map; the convention should be checked against the full coordinate equations before changing the exposition. [Source](https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693557)"
+    ]
+  },
+  "parent_claim_id": null,
+  "record_state": "active",
+  "replacement_claim_ids": [],
+  "role": "standalone",
+  "schema_version": 2,
+  "scope": "The double-root hyperplane slice in the binary-linear-times-binary-quadratic multiplication model.",
+  "sequence": null,
+  "slug": "double-root-resultant-slice-affine-three-space",
+  "sources": [
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-c6dcf20e7f73",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "repository",
+      "title": "alpoge-lean v0.4.0 documentation",
+      "url": "https://github.com/alerad/alpoge-lean/blob/95897469d48ba97f1a80a2db6553fd2f0f43834b/README.md",
+      "version": "commit:95897469d48ba97f1a80a2db6553fd2f0f43834b"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Alejandro Radisic"
+        }
+      ],
+      "id": "source-85e2567e2a14",
+      "primary_for_display": false,
+      "relations": [
+        "formalization"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "formalization",
+      "title": "Slice.lean (Lean source)",
+      "url": "https://github.com/alerad/alpoge-lean/blob/95897469d48ba97f1a80a2db6553fd2f0f43834b/Alpoge/Slice.lean",
+      "version": "commit:95897469d48ba97f1a80a2db6553fd2f0f43834b"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Will Sawin"
+        }
+      ],
+      "id": "source-107a324384f0",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_comment",
+      "title": "Will Sawin's comment",
+      "url": "https://sbseminar.wordpress.com/2026/07/20/the-new-counterexample-to-the-jacobian-conjecture/#comment-27948"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "David Speyer"
+        }
+      ],
+      "id": "source-49992568396f",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_comment",
+      "title": "David Speyer's comment",
+      "url": "https://sbseminar.wordpress.com/2026/07/20/the-new-counterexample-to-the-jacobian-conjecture/#comment-27951"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Will Sawin"
+        }
+      ],
+      "id": "source-b0a322453560",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-20",
+      "source_type": "public_comment",
+      "title": "Will Sawin's comment",
+      "url": "https://sbseminar.wordpress.com/2026/07/20/the-new-counterexample-to-the-jacobian-conjecture/#comment-27953"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Ravi Vakil"
+        }
+      ],
+      "id": "source-f7270f880406",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "public_comment",
+      "title": "Ravi Vakil's comment",
+      "url": "https://sbseminar.wordpress.com/2026/07/20/the-new-counterexample-to-the-jacobian-conjecture/#comment-27958"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Lillian Ryan Uhl"
+        }
+      ],
+      "id": "source-8275d6d872d9",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "public_comment",
+      "title": "Lillian Ryan Uhl's comment",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693549"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Will Sawin"
+        }
+      ],
+      "id": "source-6e823ce7da6d",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "public_comment",
+      "title": "Will Sawin's comment",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693551"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Felipe"
+        }
+      ],
+      "id": "source-314fcb4c507b",
+      "primary_for_display": false,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-22",
+      "source_type": "public_comment",
+      "title": "Felipe's comment",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/comment-page-1/#comment-693557"
+    },
+    {
+      "authors": [
+        {
+          "entity_type": "person",
+          "name": "Terence Tao"
+        }
+      ],
+      "id": "source-87a27c1b0882",
+      "primary_for_display": true,
+      "relations": [
+        "evidence_source"
+      ],
+      "source_date": "2026-07-21",
+      "source_type": "public_post",
+      "title": "A digestion of the Jacobian conjecture counterexample",
+      "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/"
+    }
+  ],
+  "statement": "In the binary-form multiplication model of the counterexample, the resultant-one double-root slice is polynomially isomorphic to affine three-space.",
+  "statement_version": 1,
+  "storyline": "counterexample-and-global-geometry",
+  "title": "The double-root resultant slice is affine three-space",
+  "verification": []
+}

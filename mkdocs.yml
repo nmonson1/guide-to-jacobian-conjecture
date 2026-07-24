@@ -21,7 +21,6 @@ theme:
     - toc.follow
     - search.suggest
     - search.highlight
-    - content.action.edit
     - content.code.copy
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -36,9 +35,11 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Start: index.md
-  - Contributions: chronology.md
-  - Claims: claims.md
+  - Start: overview-v2.md
+  - Certificate: certificate.md
+  - Contributions: chronology-v2.md
+  - Guided topics: topics-v1.md
+  - Claims: claims-v3.md
   - Contribute: contribute.md
 
 markdown_extensions:
@@ -73,4 +74,4 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/nmonson1/guide-to-jacobian-conjecture
 
-copyright: Record current through 21 July 2026, Pacific time.
+copyright: Record current through 22 July 2026, Pacific time.

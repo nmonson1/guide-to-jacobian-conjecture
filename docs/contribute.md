@@ -5,8 +5,8 @@ description: Current intake status for the chronological Jacobian record.
 
 # Contribute
 
-The project is currently recording its baseline. Corrections to the 22 event
-records, 13 contribution records, and 21 claim records are welcome.
+The project is currently recording its baseline. Corrections to the current
+event, contribution, and claim records are welcome.
 
 New third-party mathematical submissions will not be listed until the project
 has selected a content license and published its editorial charter. This keeps
