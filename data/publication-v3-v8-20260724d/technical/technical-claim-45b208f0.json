@@ -1,0 +1,41 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "base-cover-monodromy-and-deck-group",
+      "page_title": "Base Cover Monodromy And Deck Group",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "composition-primality",
+      "page_title": "The Counterexample Is Prime Under Polynomial Composition",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "technical-claim-45b208f0",
+  "source": [],
+  "statement": "The map is prime under polynomial composition.",
+  "title": "Technical claim",
+  "visibility": "technical"
+}

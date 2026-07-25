@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "dimension-descent-obstructions",
+      "page_title": "Why Direct Slicing Does Not Produce a Plane Counterexample",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "dimension-descent-obstructions-directly-slicing-or-graph-pulling-back-the-three-dimensional-f37d6027",
+  "source": [],
+  "statement": "Directly slicing or graph-pulling back the three-dimensional cubic mechanism does not produce a nontrivial plane Keller counterexample: fixed nonzero slices are G_m x A1, the zero slice splits off a trivial A2 sheet, degree-two/three A2 components are excluded, and the one-pole polynomial lift cannot have constant Jacobian.",
+  "title": "Dimension Descent Obstructions: Directly slicing or graph-pulling back the three-dimensional cubic mechanism does not produce…",
+  "visibility": "technical"
+}

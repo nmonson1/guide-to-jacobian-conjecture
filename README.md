@@ -22,8 +22,8 @@ The visible guide has six reader-facing sections:
 The Research section contains six Nathaniel Monson-led program summaries and
 dated PDFs, followed by the complete generated catalogue:
 
-- 71 result pages;
-- 16 open-problem pages;
+- 70 result pages;
+- 17 open-problem pages;
 - 307 deeper technical records, excluded from navigation and search;
 - 21 context-only private records, not exported.
 
@@ -39,11 +39,11 @@ prose, versioned PDFs, and build machinery.
 
 The active inputs are:
 
-- `data/publication-v2-v7-20260725b/`: sanitized schema-v2 export pinned to
-  canonical registry v7;
-- `data/manuscripts-v1/`: hashes, dates, titles, and page counts for the six
-  public manuscripts;
-- `docs-v2-20260724f/`: the versioned MkDocs source tree;
+- `data/publication-v3-v8-20260724d/`: sanitized schema-v2 export pinned to
+  canonical registry v8 and manuscript coverage v2;
+- `data/manuscripts-v3/`: hashes, dates, titles, and page counts for the six
+  integrated public manuscripts;
+- `docs-v3-20260724d/`: the versioned MkDocs source tree;
 - `scripts/generate_living_guide_v1.py`: deterministic renderer for grouped,
   technical, program, and catalogue pages;
 - `scripts/generate_compatibility_stubs_v1.py`: noindex compatibility pages

@@ -1,0 +1,73 @@
+{
+  "manuscript_count": 6,
+  "manuscripts": [
+    {
+      "author": "Nathaniel Monson",
+      "bytes": 278726,
+      "filename": "01-cubic-marked-root-covers-2026-07-22-v3.pdf",
+      "manuscript_date": "2026-07-22",
+      "pages": 27,
+      "sha256": "a4dbd1a7a99c5ff83268c6cc5aa5cf12b4c50b4c5509283e2d0a072f406e956c",
+      "text_sha256": "1bee2e5554931a84883325079dc04d1ddd2f591f4cd2184d43622f188d41dc8e",
+      "title": "Cubic Marked-Root Covers",
+      "version": 3
+    },
+    {
+      "author": "Nathaniel Monson",
+      "bytes": 196492,
+      "filename": "02-quartic-keller-maps-2026-07-22-v3.pdf",
+      "manuscript_date": "2026-07-22",
+      "pages": 17,
+      "sha256": "e887eb6a824bbecba64b2b027abfc26fe2770f509627ebf597a9b9c2009a18c5",
+      "text_sha256": "03aa8f7a3520a3db5c8ac97ef5c8896e258839baa9dc704d8599b89c997cf2ea",
+      "title": "Quartic Keller Maps and Leading Curves",
+      "version": 3
+    },
+    {
+      "author": "Nathaniel Monson",
+      "bytes": 197434,
+      "filename": "03-filtered-rigidity-2026-07-22-v3.pdf",
+      "manuscript_date": "2026-07-22",
+      "pages": 18,
+      "sha256": "78fea7b3ac4078b5c073eeae7d7539fccfba74532bc9e9175bbdeeebc85b0561",
+      "text_sha256": "c9cdfd87e14b0a113a990426eb39b7c99945ebcb9e2f3d4bf992ebd3eef43baf",
+      "title": "Filtered Rigidity of the Degree-Seven Jacobian Counterexample",
+      "version": 3
+    },
+    {
+      "author": "Nathaniel Monson",
+      "bytes": 260972,
+      "filename": "04-boundary-rigidity-stable-moduli-2026-07-22-v3.pdf",
+      "manuscript_date": "2026-07-22",
+      "pages": 27,
+      "sha256": "c8c5820075e1dbbd630961e4ea7aae83723681d6603551de4ab3e2402a3f29a7",
+      "text_sha256": "16b61c8c300b1ab61da2fdf3a2139eb52db787b62d9c0028016bf616cb607ebd",
+      "title": "Boundary Rigidity and Stable Moduli",
+      "version": 3
+    },
+    {
+      "author": "Nathaniel Monson",
+      "bytes": 233072,
+      "filename": "05-homogeneous-descendants-2026-07-22-v3.pdf",
+      "manuscript_date": "2026-07-22",
+      "pages": 23,
+      "sha256": "2e6d293f0f2a6bdf53b2d763ba23cb845b233d49c93d6b13576cdf287748415f",
+      "text_sha256": "3a6ab3b6acddc30dafd2d97d87b52648e09d05fb4941ca576e5131d46ffe1f3a",
+      "title": "Normal-Form Complexity of a Three-Sheeted Keller Map",
+      "version": 3
+    },
+    {
+      "author": "Nathaniel Monson",
+      "bytes": 281842,
+      "filename": "06-plane-boundary-obstructions-2026-07-22-v3.pdf",
+      "manuscript_date": "2026-07-22",
+      "pages": 28,
+      "sha256": "adfe6950c23ea1e0ff5bb5f45060f7442fb612672afab061b8b5c3e68561f7c7",
+      "text_sha256": "3baaa8290f55e611abbfddfc3336972f6fcc5d84aa0696d86b912a707480b936",
+      "title": "Boundary Belyi Covers and Normal Jets",
+      "version": 3
+    }
+  ],
+  "release_state": "draft_public",
+  "schema_version": 1
+}

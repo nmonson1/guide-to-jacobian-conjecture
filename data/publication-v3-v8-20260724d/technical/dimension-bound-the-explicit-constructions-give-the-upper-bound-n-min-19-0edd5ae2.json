@@ -1,0 +1,46 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "cubic-homogeneous-descendant-construction",
+      "page_title": "Cubic Homogeneous Descendant Construction",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "minimum-cubic-homogeneous-dimension",
+      "page_title": "The Minimum Dimension for a Cubic-Homogeneous Counterexample",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "dimension-bound-the-explicit-constructions-give-the-upper-bound-n-min-19-0edd5ae2",
+  "source": [],
+  "statement": "The explicit constructions give the upper bound N_min <= 19 for cubic-homogeneous counterexamples; the conversation uses the elementary no-collinear-collision argument for the lower bound N_min >= 5.",
+  "title": "Dimension Bound: The explicit constructions give the upper bound N_min <= 19 for cubic-homogeneous counterexam…",
+  "visibility": "technical"
+}

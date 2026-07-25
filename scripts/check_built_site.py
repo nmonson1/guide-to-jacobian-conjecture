@@ -12,7 +12,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-from generate_living_guide_v1 import PUBLIC_DOCS_DIR
+from generate_living_guide_v1 import MANUSCRIPTS_DATA_DIR, PUBLIC_DOCS_DIR
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -111,7 +111,9 @@ def main() -> int:
         failures.append("built robots.txt does not disallow crawling")
 
     manuscript_manifest = json.loads(
-        (ROOT / "data/manuscripts-v1/manifest.json").read_text(encoding="utf-8")
+        (ROOT / "data" / MANUSCRIPTS_DATA_DIR / "manifest.json").read_text(
+            encoding="utf-8"
+        )
     )
     for item in manuscript_manifest["manuscripts"]:
         path = site / "assets/manuscripts" / item["filename"]

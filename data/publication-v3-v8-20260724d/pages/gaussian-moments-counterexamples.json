@@ -1,0 +1,97 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Christopher D. Long"
+    ],
+    "systems": [
+      {
+        "purpose": "four-variable construction",
+        "roles": [
+          "research assistance"
+        ],
+        "system": "ChatGPT 5.6 Sol Pro"
+      },
+      {
+        "purpose": "three-variable construction and checks",
+        "roles": [
+          "research assistance"
+        ],
+        "system": "Claude Fable 5"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "consequences-for-neighboring-conjectures"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "Christopher D. Long",
+      "roles": [
+        "proof",
+        "construction"
+      ],
+      "scope": "Contribution recorded in Small Counterexamples to the Gaussian Moments Conjecture."
+    }
+  ],
+  "description": "The Gaussian Moments Conjecture is false in every dimension n at least 3: the cited preprint gives a five-term quartic witness in three real Gaussian variables and a six-term cubic witness in four variables.",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [],
+    "status": "not_applicable"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The Gaussian Moments Conjecture is false in every dimension n at least 3: the cited preprint gives a five-term quartic witness in three real Gaussian variables and a six-term cubic witness in four variables.",
+      "technical_slug": "small-counterexamples-to-the-gaussian-moments-conjecture-764375b6",
+      "title": "Small counterexamples to the Gaussian Moments Conjecture"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 8,
+    "member_count": 1
+  },
+  "release_state": "public",
+  "research_programs": [],
+  "schema_version": 2,
+  "slug": "gaussian-moments-counterexamples",
+  "source": [
+    {
+      "authors": [
+        "Christopher D. Long"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "preprint",
+      "title": "Small Counterexamples to the Gaussian Moments Conjecture",
+      "url": "https://arxiv.org/abs/2607.18186v1"
+    }
+  ],
+  "source_form": [
+    "preprint"
+  ],
+  "source_treatment": "Public sources are linked below. No claim is made that one of the six working manuscripts is the source for this page.",
+  "statement": "The Gaussian Moments Conjecture is false in every dimension n at least 3: the cited preprint gives a five-term quartic witness in three real Gaussian variables and a six-term cubic witness in four variables.",
+  "title": "Small Counterexamples to the Gaussian Moments Conjecture",
+  "visibility": "catalogued"
+}

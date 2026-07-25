@@ -1,0 +1,134 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [
+      "cubic-normalization-and-master-cover"
+    ],
+    "shares_claims_with": []
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "Keller hypotheses force the cubic normalization defect to vanish.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "open_problem",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 1,
+          "manuscript_attached": 7
+        },
+        "manuscript": "01-cubic-incidence-geometry",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "corrected",
+      "inclusion": "defining",
+      "role": "failed_lemma_counterexample",
+      "statement": "Normal cubic covers with S3 monodromy need not be flat: an explicit minimal nonflat normal cubic algebra supplies a countermodel outside the Keller setting.",
+      "technical_slug": "counterexample-to-an-intermediate-lemma-normal-cubic-covers-with-s3-monodromy-need-583da94a",
+      "title": "Counterexample To An Intermediate Lemma: Normal cubic covers with S3 monodromy need not be flat: an explicit minimal nonflat normal cu…"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Keller hypotheses force the cubic normalization defect to vanish.",
+      "technical_slug": "open-conjecture-keller-hypotheses-force-the-cubic-normalization-defect-to-vanish-138beda2",
+      "title": "Open Conjecture: Keller hypotheses force the cubic normalization defect to vanish."
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "partial_result",
+      "statement": "A minimal defect can only occur over an omitted singleton fiber of scheme length at least four.",
+      "technical_slug": "partial-defect-exclusion-theorem-a-minimal-defect-can-only-occur-over-an-dcdbdddb",
+      "title": "Partial Defect Exclusion Theorem: A minimal defect can only occur over an omitted singleton fiber of scheme length at least four."
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "partial_result",
+      "statement": "At the first possible defect stratum the discriminant has multiplicity at least six and the exceptional boundary has an elliptic-type constraint.",
+      "technical_slug": "partial-local-geometry-result-at-the-first-possible-defect-stratum-the-discriminant-f9f6311c",
+      "title": "Partial Local Geometry Result: At the first possible defect stratum the discriminant has multiplicity at least six and the e…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "partial_result",
+      "statement": "No algebraically homogeneous minimal defect can occur in a Keller normalization.",
+      "technical_slug": "partial-defect-exclusion-theorem-no-algebraically-homogeneous-minimal-defect-can-occur-in-62422786",
+      "title": "Partial Defect Exclusion Theorem: No algebraically homogeneous minimal defect can occur in a Keller normalization."
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "failed_route",
+      "statement": "The remaining minimal defect can be organized by a radial fibration and an E6-type boundary/discrepancy picture.",
+      "technical_slug": "structural-proposal-the-remaining-minimal-defect-can-be-organized-by-a-radial-d0fce306",
+      "title": "Structural Proposal: The remaining minimal defect can be organized by a radial fibration and an E6-type boundary/d…"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "open_question",
+      "statement": "Algebraize the formal/radial ruling strongly enough to exclude the remaining nonhomogeneous minimal defect.",
+      "technical_slug": "open-problem-algebraize-the-formal-radial-ruling-strongly-enough-to-exclude-the-5716ff00",
+      "title": "Open Problem: Algebraize the formal/radial ruling strongly enough to exclude the remaining nonhomogeneous m…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "failed_lemma_and_correction",
+      "statement": "Formal extension of the ruling can hold while Zariski-local algebraization of every lift fails; explicit rational threefold and same-incidence nonalgebraizable lifts refute the proposed general algebraization lemma.",
+      "technical_slug": "counterexample-and-correction-formal-extension-of-the-ruling-can-hold-while-zariski-ab9f57d0",
+      "title": "Counterexample And Correction: Formal extension of the ruling can hold while Zariski-local algebraization of every lift fail…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 8,
+    "member_count": 8
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "cubic-marked-root-incidence-geometry"
+  ],
+  "schema_version": 2,
+  "slug": "cubic-normalization-defect-open-package",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "Keller hypotheses force the cubic normalization defect to vanish.",
+  "title": "Cubic Normalization Defect Open Package",
+  "visibility": "catalogued"
+}

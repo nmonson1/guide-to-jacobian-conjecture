@@ -1,0 +1,82 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "Lázaro Orlando Rodríguez Díaz",
+      "roles": [
+        "proof",
+        "exposition"
+      ],
+      "scope": "Contribution recorded in On the origin of the Jacobian conjecture."
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "literature result",
+      "links": [
+        {
+          "label": "Refereed history of mathematics analysis",
+          "url": "https://doi.org/10.5802/crmath.831"
+        }
+      ],
+      "scope": "Refereed history of mathematics analysis."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "kraus-statement-and-proof-gap",
+      "page_title": "Kraus Statement And Proof Gap",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "public",
+  "schema_version": 2,
+  "slug": "kraus-stated-the-plane-conjecture-in-1884-049c83f7",
+  "source": [
+    {
+      "authors": [
+        "Lázaro Orlando Rodríguez Díaz"
+      ],
+      "date": "2026-06-05",
+      "relations": [
+        "historical source",
+        "original statement"
+      ],
+      "source_form": "refereed publication",
+      "title": "On the origin of the Jacobian conjecture",
+      "url": "https://doi.org/10.5802/crmath.831"
+    },
+    {
+      "authors": [
+        "Lázaro Orlando Rodríguez Díaz"
+      ],
+      "date": "2026-06-05",
+      "relations": [
+        "historical source",
+        "original statement"
+      ],
+      "source_form": "refereed publication",
+      "title": "On the origin of the Jacobian conjecture",
+      "url": "https://comptes-rendus.academie-sciences.fr/mathematique/item/10.5802/crmath.831.pdf"
+    }
+  ],
+  "statement": "Ludwig Kraus's 1884 paper states, as its main result, the modern plane Jacobian conjecture rather than merely an earlier adjacent problem.",
+  "title": "Kraus stated the plane conjecture in 1884",
+  "visibility": "technical"
+}

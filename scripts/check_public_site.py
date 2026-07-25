@@ -11,7 +11,11 @@ from pathlib import Path
 
 from pypdf import PdfReader
 
-from generate_living_guide_v1 import PUBLICATION_DATA_DIR, PUBLIC_DOCS_DIR
+from generate_living_guide_v1 import (
+    MANUSCRIPTS_DATA_DIR,
+    PUBLICATION_DATA_DIR,
+    PUBLIC_DOCS_DIR,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -96,8 +100,8 @@ def main() -> int:
     counts = export["counts"]
     expected_counts = {
         "grouped_pages": 87,
-        "results": 71,
-        "open_problems": 16,
+        "results": 70,
+        "open_problems": 17,
         "technical_records": 307,
         "context_only_private_records": 21,
         "memberships": 413,
@@ -115,11 +119,9 @@ def main() -> int:
     }:
         failures.append("publication manifest: release-state counts changed")
     if counts.get("pages_by_manuscript_coverage") != {
-        "complete": 2,
-        "locator_audit_needed": 45,
+        "complete": 10,
+        "manuscript_attached": 61,
         "not_applicable": 16,
-        "not_in_manuscript": 5,
-        "partial": 19,
     }:
         failures.append("publication manifest: manuscript-coverage counts changed")
 
@@ -189,7 +191,7 @@ def main() -> int:
         }
         program_manuscript_is_source = coverage.get("status") in {
             "complete",
-            "partial",
+            "manuscript_attached",
         }
         expected_working_manuscript = (
             "working manuscript" in source_forms
@@ -234,7 +236,7 @@ def main() -> int:
     scan_roots = (
         DOCS,
         DATA,
-        ROOT / "data/manuscripts-v1",
+        ROOT / "data" / MANUSCRIPTS_DATA_DIR,
         ROOT / "overrides",
     )
     scanned = 0
@@ -250,7 +252,9 @@ def main() -> int:
             )
 
     manuscript_manifest = json.loads(
-        (ROOT / "data/manuscripts-v1/manifest.json").read_text(encoding="utf-8")
+        (ROOT / "data" / MANUSCRIPTS_DATA_DIR / "manifest.json").read_text(
+            encoding="utf-8"
+        )
     )
     if manuscript_manifest.get("manuscript_count") != 6:
         failures.append("manuscript manifest: expected six manuscripts")

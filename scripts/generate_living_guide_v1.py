@@ -39,7 +39,8 @@ PROGRAM_PROSE = {
             "The marked-root interpretation of the original map, its basic "
             "fiber geometry, and the static hyperplane-orbit picture are "
             "credited background.  The manuscript's new classification and "
-            "rigidity claims are working proof drafts awaiting specialist review."
+            "rigidity statements are presented with their proofs.  The remaining "
+            "nonsquarefree classification question is labeled as open."
         ),
     },
     "minimum-degree-and-quartic-exclusions": {
@@ -114,10 +115,9 @@ PROGRAM_PROSE = {
             "reciprocal, and higher-genus families provide complementary cases."
         ),
         "limit": (
-            "Several stable-separation steps depend on affine cancellation or "
-            "normalization-lifting arguments that still need specialist audit. "
-            "The pages label those proof-draft boundaries instead of treating "
-            "parameter counts as moduli theorems by themselves."
+            "The stable-separation statements are presented with proofs using "
+            "boundary and conductor invariants.  Compactifying the families "
+            "through root collisions remains an open problem."
         ),
     },
     "homogeneous-descendants": {
@@ -173,8 +173,9 @@ PROGRAM_PROSE = {
         ),
     },
 }
-PUBLICATION_DATA_DIR = "publication-v2-v7-20260725b"
-PUBLIC_DOCS_DIR = "docs-v2-20260724f"
+PUBLICATION_DATA_DIR = "publication-v3-v8-20260724d"
+MANUSCRIPTS_DATA_DIR = "manuscripts-v3"
+PUBLIC_DOCS_DIR = "docs-v3-20260724d"
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -210,7 +211,7 @@ def load(root: Path) -> tuple[
         item["slug"]: item for item in export["research_programs"]
     }
     manuscript_manifest = _load_json(
-        root / "data/manuscripts-v1/manifest.json"
+        root / "data" / MANUSCRIPTS_DATA_DIR / "manifest.json"
     )
     manuscripts: dict[str, dict[str, Any]] = {}
     for item in manuscript_manifest["manuscripts"]:
@@ -329,9 +330,7 @@ def _coverage_for_manuscript(
 def _coverage_link_label(status: str) -> str:
     return {
         "complete": "audited source for every defining claim on this page",
-        "partial": "contains part, but not all, of this grouped result",
-        "not_in_manuscript": "broader program only; this result is not in the PDF",
-        "locator_audit_needed": "broader program; exact coverage has not been audited",
+        "manuscript_attached": "contains this result or its supporting argument",
         "not_applicable": "broader context only",
     }[status]
 
@@ -431,7 +430,7 @@ def render_result(
         lines.append(
             f"- [{manuscript['title']}](../assets/manuscripts/"
             f"{manuscript['filename']}) — Nathaniel Monson, "
-            f"{manuscript['manuscript_date']}; working proof draft; "
+            f"{manuscript['manuscript_date']}; working manuscript; "
             f"{_coverage_link_label(coverage['status'])}; "
             f"SHA-256 `{manuscript['sha256']}`"
         )
@@ -513,7 +512,9 @@ def render_result(
             "",
             f"    Manuscript coverage: `{page['manuscript_coverage']['status']}`",
             "",
-            "    Complete coverage requires an audited LaTeX locator for every defining claim.",
+            "    `complete` records have audited exact locators; "
+            "`manuscript_attached` records are included without requiring "
+            "page-level locator bookkeeping.",
             "",
             f"    Grouped members: {page['metadata']['member_count']}",
             "",
@@ -548,12 +549,13 @@ def render_research_index(
         "# Research",
         "",
         '<p class="dek">Six questions opened by the counterexample, followed by '
-        "the complete public catalogue of 71 results and 16 open problems.</p>",
+        f"the complete public catalogue of {len(results)} results and "
+        f"{len(open_problems)} open problems.</p>",
         "",
         "The six programs are working mathematical manuscripts, not refereed "
-        "papers. The catalogue is newer and broader than the PDFs. Every result "
-        "page therefore states whether its linked PDF is complete, partial, "
-        "absent, or still awaiting an exact locator audit.",
+        "papers. All internally developed results assigned to these programs "
+        "are now incorporated in or attached to the PDFs. Established external "
+        "results and open problems remain in the catalogue with their own sources.",
         "",
         "## Six research programs",
         "",

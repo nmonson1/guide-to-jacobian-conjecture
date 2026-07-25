@@ -1,0 +1,64 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "recorded",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "cubic-boundary-jets-and-moduli",
+      "page_title": "Boundary Jets and Stable Moduli in the Cubic Frame",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "normalized-cubic-family-classification",
+      "page_title": "Normalized Cubic Family Classification",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "infinitesimal-frame-deformations-inside-the-normalized-family-degree-jumping-first-order-deformations-69445e34",
+  "source": [],
+  "statement": "Inside the normalized family, degree-jumping first-order deformations of the base cubic have tangent quotient C[c]/(C plus Cc); imposing degree at most N gives dimension N-1.",
+  "title": "Infinitesimal Frame Deformations: Inside the normalized family, degree-jumping first-order deformations of the base cubic have…",
+  "visibility": "technical"
+}

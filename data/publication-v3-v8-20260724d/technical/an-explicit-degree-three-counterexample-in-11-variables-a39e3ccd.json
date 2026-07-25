@@ -1,0 +1,85 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Spacerat"
+    ],
+    "systems": [
+      {
+        "purpose": "explicit construction, simplification, and verification code",
+        "roles": [
+          "research assistance"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "Spacerat",
+      "roles": [
+        "computation"
+      ],
+      "scope": "Contribution recorded in An explicit degree-three Jacobian counterexample in 11 variables."
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "exact certificate",
+      "links": [
+        {
+          "label": "Exact executable certificate",
+          "url": "https://gist.github.com/Spacerat/08b4a43f6b6ca57178efabc220170ce8/2224dace71e8763a8621a7f557bbc545a53aa820"
+        }
+      ],
+      "scope": "Exact executable certificate."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "cubic-homogeneous-descendant-construction",
+      "page_title": "Cubic Homogeneous Descendant Construction",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "eleven-dimensional-cubic-counterexample",
+      "page_title": "The Explicit Eleven-Dimensional Cubic Counterexample",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "public",
+  "schema_version": 2,
+  "slug": "an-explicit-degree-three-counterexample-in-11-variables-a39e3ccd",
+  "source": [
+    {
+      "authors": [
+        "Spacerat"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "repository",
+      "title": "11 variable cubic jacobian conjecture counterexample",
+      "url": "https://gist.github.com/Spacerat/08b4a43f6b6ca57178efabc220170ce8/2224dace71e8763a8621a7f557bbc545a53aa820"
+    }
+  ],
+  "statement": "The cited map from complex affine 11-space to itself has total degree 3, 52 nonzero monomial terms, constant Jacobian determinant -2, and three displayed distinct rational inputs with one common image.",
+  "title": "An explicit degree-three counterexample in 11 variables",
+  "visibility": "technical"
+}

@@ -121,15 +121,15 @@ def run(
             )
             require(
                 desktop.locator(
-                    'a[href$="01-cubic-marked-root-covers-2026-07-22-v1.pdf"]'
+                    'a[href$="01-cubic-marked-root-covers-2026-07-22-v2.pdf"]'
                 ).count()
                 == 0,
-                "wrong manuscript surfaced on the counterexample page",
+                "superseded manuscript surfaced on the counterexample page",
             )
             pdf = desktop.context.request.get(
                 base
                 + "assets/manuscripts/"
-                + "01-cubic-marked-root-covers-2026-07-22-v1.pdf"
+                + "01-cubic-marked-root-covers-2026-07-22-v3.pdf"
             )
             require(pdf.ok, "versioned PDF is not downloadable")
 
