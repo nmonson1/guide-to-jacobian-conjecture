@@ -174,8 +174,8 @@ PROGRAM_PROSE = {
     },
 }
 PUBLICATION_DATA_DIR = "publication-v3-v8-20260724d"
-MANUSCRIPTS_DATA_DIR = "manuscripts-v3"
-PUBLIC_DOCS_DIR = "docs-v3-20260724d"
+MANUSCRIPTS_DATA_DIR = "manuscripts-v6"
+PUBLIC_DOCS_DIR = "docs-v3-20260725a"
 
 
 def _load_json(path: Path) -> dict[str, Any]:

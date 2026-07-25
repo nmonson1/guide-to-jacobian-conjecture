@@ -282,7 +282,7 @@ def main() -> int:
         failures.append("mkdocs.yml: deep registry layer appears in navigation")
     if "mathjax@3.2.2/es5/tex-mml-chtml.js" not in mkdocs_text:
         failures.append("mkdocs.yml: MathJax is not pinned to 3.2.2")
-    if "24 July 2026, Pacific time" not in mkdocs_text:
+    if "25 July 2026, Pacific time" not in mkdocs_text:
         failures.append("mkdocs.yml: Pacific-time update label is missing")
 
     override = (ROOT / "overrides/main.html").read_text(encoding="utf-8")

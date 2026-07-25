@@ -41,9 +41,9 @@ The active inputs are:
 
 - `data/publication-v3-v8-20260724d/`: sanitized schema-v2 export pinned to
   canonical registry v8 and manuscript coverage v2;
-- `data/manuscripts-v3/`: hashes, dates, titles, and page counts for the six
+- `data/manuscripts-v6/`: hashes, dates, titles, and page counts for the six
   integrated public manuscripts;
-- `docs-v3-20260724d/`: the versioned MkDocs source tree;
+- `docs-v3-20260725a/`: the versioned MkDocs source tree;
 - `scripts/generate_living_guide_v1.py`: deterministic renderer for grouped,
   technical, program, and catalogue pages;
 - `scripts/generate_compatibility_stubs_v1.py`: noindex compatibility pages
