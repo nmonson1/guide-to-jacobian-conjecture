@@ -1,0 +1,57 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "certificate offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "boundary-deformation-and-f2-correction",
+      "page_title": "Boundary Deformation And F2 Correction",
+      "role": "correction"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "f2-global-attachment-problem",
+      "page_title": "Can the Locally Consistent F2 Boundary Model Attach Globally?",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "f2-terminal-boundary-and-local-flexibility",
+      "page_title": "The F2 Terminal Boundary and Its Local Flexibility",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "f2-kuranishi-cancellation-the-apparent-f2-external-conditions-at-orders-510-and-2533e53c",
+  "source": [],
+  "statement": "The apparent F2 external conditions at orders 510 and 520 are slice-dependent and can both be cancelled exactly over Q by later kernel parameters; neither is a gauge-invariant terminal obstruction.",
+  "title": "F2 Kuranishi Cancellation: The apparent F2 external conditions at orders 510 and 520 are slice-dependent and can both be…",
+  "visibility": "technical"
+}

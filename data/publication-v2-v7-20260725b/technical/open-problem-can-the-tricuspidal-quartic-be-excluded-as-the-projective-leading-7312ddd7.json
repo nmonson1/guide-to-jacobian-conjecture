@@ -1,0 +1,64 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "research proposal"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "open",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "tricuspidal-quartic-leading-image-problem",
+      "page_title": "Can the Tricuspidal Quartic Be a Keller Leading Image?",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "unrestricted-quartic-open-package",
+      "page_title": "Unrestricted Quartic Open Package",
+      "role": "open_question"
+    }
+  ],
+  "noindex": true,
+  "record_type": "question",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "open-problem-can-the-tricuspidal-quartic-be-excluded-as-the-projective-leading-7312ddd7",
+  "source": [],
+  "statement": "Can the tricuspidal quartic be excluded as the projective leading image of a quartic Keller map by analyzing its explicit type-(1,2) tangent-syzygy basis?",
+  "title": "Open Problem: Can the tricuspidal quartic be excluded as the projective leading image of a quartic Keller m…",
+  "visibility": "technical"
+}

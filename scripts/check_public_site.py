@@ -114,6 +114,14 @@ def main() -> int:
         "public": 17,
     }:
         failures.append("publication manifest: release-state counts changed")
+    if counts.get("pages_by_manuscript_coverage") != {
+        "complete": 2,
+        "locator_audit_needed": 45,
+        "not_applicable": 16,
+        "not_in_manuscript": 5,
+        "partial": 19,
+    }:
+        failures.append("publication manifest: manuscript-coverage counts changed")
 
     for entry in manifest["files"]:
         path = DATA / entry["path"]
@@ -164,12 +172,38 @@ def main() -> int:
             "credited_to",
             "evidence_present",
             "source_treatment",
+            "manuscript_coverage",
             "connections",
         ):
             if field not in page:
                 failures.append(f"{slug}: missing publication field {field}")
         if not page.get("credited_to"):
             failures.append(f"{slug}: public credit treatment is empty")
+        if "The public working manuscript is the current source" in text:
+            failures.append(f"{slug}: legacy blanket manuscript-source claim remains")
+        coverage = page.get("manuscript_coverage", {})
+        source_forms = {
+            source.get("source_form")
+            for source in page.get("source", [])
+            if isinstance(source, dict)
+        }
+        program_manuscript_is_source = coverage.get("status") in {
+            "complete",
+            "partial",
+        }
+        expected_working_manuscript = (
+            "working manuscript" in source_forms
+            or program_manuscript_is_source
+        )
+        if (
+            "working manuscript" in page.get("source_form", [])
+        ) != expected_working_manuscript:
+            failures.append(
+                f"{slug}: working-manuscript source form disagrees with "
+                "its independent sources and audited program coverage"
+            )
+        if page.get("source_treatment") not in text:
+            failures.append(f"{slug}: source coverage treatment is not rendered")
         if (
             "assets/manuscripts/" not in text
             and "](http://" not in text

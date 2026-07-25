@@ -1,0 +1,103 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "computation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "filtered-regular-pencils-in-dimension-five",
+      "global-first-normal-obstruction-in-dimension-five"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "The everywhere-regular Jordan-type (5) collision-line equations in dimension five have a smooth one-dimensional characteristic-zero family, obtained from an explicit smooth F11 point and Hensel lift.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 2,
+          "not_in_manuscript": 1
+        },
+        "manuscript": "05-homogeneous-descendants",
+        "status": "partial"
+      }
+    ],
+    "status": "partial"
+  },
+  "members": [
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The everywhere-regular Jordan-type (5) collision-line equations in dimension five have a smooth one-dimensional characteristic-zero family, obtained from an explicit smooth F11 point and Hensel lift.",
+      "technical_slug": "regular-jordan-line-family-the-everywhere-regular-jordan-type-5-collision-line-ffbbd77b",
+      "title": "Regular Jordan Line Family: The everywhere-regular Jordan-type (5) collision-line equations in dimension five have a smoo…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Any global homogeneous quadratic nilpotent 5 by 5 Jacobian extending an everywhere-regular collision line must have a rank-at-most-three locus of codimension exactly two away from that line.",
+      "technical_slug": "global-rank-drop-constraint-any-global-homogeneous-quadratic-nilpotent-5-by-5-15d52c7b",
+      "title": "Global Rank Drop Constraint: Any global homogeneous quadratic nilpotent 5 by 5 Jacobian extending an everywhere-regular co…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "An explicit smooth Z11 residue disk in the regular Jordan-type-(5) collision-line locus cannot extend even to first normal order to a global homogeneous quadratic nilpotent 5 by 5 Jacobian; transformed and coordinate-free exact systems have ranks (60,61) and (125,126), respectively.",
+      "technical_slug": "dimension-five-first-normal-obstruction-an-explicit-smooth-z11-residue-disk-in-64e18df3",
+      "title": "Dimension Five First Normal Obstruction: An explicit smooth Z11 residue disk in the regular Jordan-type-(5) collision-line locus canno…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 7,
+    "member_count": 3
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "homogeneous-descendants"
+  ],
+  "schema_version": 2,
+  "slug": "dimension-five-regular-jordan-family",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript contains part of this grouped result, but it is not a complete source for every current defining claim.",
+  "statement": "The everywhere-regular Jordan-type (5) collision-line equations in dimension five have a smooth one-dimensional characteristic-zero family, obtained from an explicit smooth F11 point and Hensel lift.",
+  "title": "The Regular-Jordan Collision Family in Dimension Five",
+  "visibility": "catalogued"
+}

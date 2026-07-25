@@ -1,0 +1,115 @@
+---
+title: "Eta Family Stable Moduli"
+description: "The eta-family supplies stable moduli with boundary curves of arbitrary genus."
+---
+
+# Eta Family Stable Moduli
+
+<p class="dek">The eta-family supplies stable moduli with boundary curves of arbitrary genus.</p>
+
+<span class="status status-kind">Result</span> <span class="status status-draft">Working draft</span>
+
+**Credited to Nathaniel Monson (research direction, mathematical responsibility).**
+
+**Source coverage:** The linked working manuscript contains part of this grouped result, but it is not a complete source for every current defining claim.
+
+## The central idea
+
+The theorem-level package is centered on the following mechanism: In the analyzed cubic-incidence families, additional boundary roots yield infinitely many stably left-right inequivalent maps, detectable by omitted-boundary components and curve genera.  Its supporting records isolate the ingredients that establish the statement and the qualifications that control its scope.
+
+## For a first reading
+
+Begin with the precise statement, then use the component statements as a map of the argument.  They separate the main assertion from proof ingredients, examples, qualifications, and corrections without requiring the reader to reconstruct the development from a claim ledger.
+
+## Precise statement
+
+The eta-family supplies stable moduli with boundary curves of arbitrary genus.
+
+## Proof idea and technical structure
+
+### Derived Stable Variation Theorem: In the analyzed cubic-incidence families, additional boundary roots yield infinitely many sta…
+
+In the analyzed cubic-incidence families, additional boundary roots yield infinitely many stably left-right inequivalent maps, detectable by omitted-boundary components and curve genera.
+
+*Defining · Supporting Result · proof offered*
+
+[Open the deeper technical record](../technical/derived-stable-variation-theorem-in-the-analyzed-cubic-incidence-families-additional-boundary-2dcfc426.md)
+
+### Technical claim
+
+Replacing the linear parameter by an arbitrary polynomial eta yields a family G_eta with determinant -2, cubic generic degree, generic S3 monodromy, an exact Gamma/Lambda image complement, and boundary curves of arbitrarily large genus.
+
+*Defining · Supporting Result · proof offered*
+
+[Open the deeper technical record](../technical/technical-claim-77c618b1.md)
+
+### Technical claim
+
+A finite flat cubic completion identifies the reduced nonproperness locus as V(g times Delta).
+
+*Defining · Supporting Result · proof offered*
+
+[Open the deeper technical record](../technical/technical-claim-af23bccd.md)
+
+### Technical claim
+
+The reciprocal pole-cancellation calculation classifies the relevant denominator as g=1+p^2 eta.
+
+*Defining · Supporting Result · proof offered*
+
+[Open the deeper technical record](../technical/technical-claim-e16f7d80.md)
+
+### Technical claim
+
+The eta-family supplies stable moduli with boundary curves of arbitrary genus.
+
+*Defining · Primary Statement · proof offered*
+
+[Open the deeper technical record](../technical/technical-claim-47917d8b.md)
+
+### Partial Result: The absolute minimum degree for a positive-genus omitted component is bounded by 4 <= d <= 20…
+
+The absolute minimum degree for a positive-genus omitted component is bounded by 4 <= d <= 20, while the reciprocal class has exact minimum 20.
+
+*Defining · Partial Result · recorded*
+
+[Open the deeper technical record](../technical/partial-result-the-absolute-minimum-degree-for-a-positive-genus-omitted-component-1b74a298.md)
+
+## Manuscripts and external links
+
+- [Boundary Rigidity and Stable Moduli](../assets/manuscripts/04-boundary-rigidity-stable-moduli-2026-07-22-v1.pdf) — Nathaniel Monson, 2026-07-22; working proof draft; contains part, but not all, of this grouped result; SHA-256 `78eb0e83f8d759ff25c7a5e079e36891707b13ba17715075b232ad19fffd73bd`
+
+## Connects to
+
+- [Base Map Fibers Image And Nonproperness](base-map-fibers-image-and-nonproperness.md)
+- [Why the Double-Root Slice Is Affine Three-Space](double-root-affine-source.md)
+- [Uniqueness in the Multiplication-Incidence Construction](multiplication-incidence-uniqueness.md)
+
+## Evidence, review, and detailed credit
+
+**Evidence present:** computation, proof.
+
+**Independent review:**
+
+- None Recorded: No independent review is represented in this public record.
+
+**Detailed credit:**
+
+- Nathaniel Monson: research direction, mathematical responsibility; presumed same as source — author of the linked working research program
+
+??? info "Registry details"
+    Release state: `draft_public`
+
+    Visibility: `catalogued`
+
+    Source form: working manuscript
+
+    Manuscript coverage: `partial`
+
+    Complete coverage requires an audited LaTeX locator for every defining claim.
+
+    Grouped members: 6
+
+    Canonical registry: v7
+
+[Back to all results and open problems](../research.md)

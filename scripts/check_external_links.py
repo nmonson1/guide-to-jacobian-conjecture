@@ -15,8 +15,8 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC_DOCS_DIR = "docs-v2-20260724d"
-PUBLICATION_DATA_DIR = "publication-v2-v7-20260724h"
+PUBLIC_DOCS_DIR = "docs-v2-20260724f"
+PUBLICATION_DATA_DIR = "publication-v2-v7-20260725b"
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\((https?://[^)]+)\)")
 BLOCKED_CODES = {401, 403, 429}
 

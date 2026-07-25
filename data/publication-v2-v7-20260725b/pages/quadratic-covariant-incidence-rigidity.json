@@ -1,0 +1,122 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "moving-tangent-rigidity"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "For every product of evaluations at two distinct points, the quadratic target hypersurface A2+kappa E_xi E_eta=c is isomorphic to A3, but its full marked-root preimage is never A3; its compactly supported Euler characteristic is never one.",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "not_in_manuscript": 5
+        },
+        "manuscript": "01-cubic-incidence-geometry",
+        "status": "not_in_manuscript"
+      }
+    ],
+    "status": "not_in_manuscript"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Every nonzero quadratic Hessian contraction with nonzero coefficient is excluded from the cubic full-incidence construction: the target hypersurface and full marked-root incidence cannot both be isomorphic to A3.",
+      "technical_slug": "hessian-quadratic-exclusion-every-nonzero-quadratic-hessian-contraction-with-nonzero-coefficient-is-a844e87d",
+      "title": "Hessian Quadratic Exclusion: Every nonzero quadratic Hessian contraction with nonzero coefficient is excluded from the cub…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For rank-one pure-square quadratic covariants in the Cartan-square component, exactly one endpoint is gauge-equivalent to the base tangent-hyperplane construction and every other classified orbit fails to give a full incidence isomorphic to A3.",
+      "technical_slug": "rank-one-cartan-square-classification-for-rank-one-pure-square-quadratic-covariants-1b3c86d8",
+      "title": "Rank One Cartan Square Classification: For rank-one pure-square quadratic covariants in the Cartan-square component, exactly one end…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "For every product of evaluations at two distinct points, the quadratic target hypersurface A2+kappa E_xi E_eta=c is isomorphic to A3, but its full marked-root preimage is never A3; its compactly supported Euler characteristic is never one.",
+      "technical_slug": "product-of-evaluations-exclusion-for-every-product-of-evaluations-at-two-distinct-bbb01109",
+      "title": "Product Of Evaluations Exclusion: For every product of evaluations at two distinct points, the quadratic target hypersurface A2…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The pure Cartan projection C33 defines a nondegenerate affine quadric rather than A3; more generally, a nonzero catalecticant determinant excludes the quadratic target hypersurface from being A3.",
+      "technical_slug": "cartan-target-quadric-obstruction-the-pure-cartan-projection-c33-defines-a-nondegenerate-8c8ade4e",
+      "title": "Cartan Target Quadric Obstruction: The pure Cartan projection C33 defines a nondegenerate affine quadric rather than A3; more ge…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The first analyzed genuine rank-two Cartan endpoint, represented by A0^2+rho A3^2 with rho nonzero, cannot yield both an affine-three-space target and an affine-three-space full incidence.",
+      "technical_slug": "rank-two-cartan-endpoint-exclusion-the-first-analyzed-genuine-rank-two-cartan-61450efe",
+      "title": "Rank Two Cartan Endpoint Exclusion: The first analyzed genuine rank-two Cartan endpoint, represented by A0^2+rho A3^2 with rho no…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "If a moving-linear full simple-root incidence X_{lambda,f} is isomorphic to A3, then f is a nonzero constant, lambda(t) is everywhere tangent but nonosculating, and a polynomial SL2[t] gauge reduces it to the fixed tangent hyperplane; the induced map is left-right equivalent to the base counterexample.",
+      "technical_slug": "moving-hyperplane-rigidity-if-a-moving-linear-full-simple-root-incidence-x-9ff259ca",
+      "title": "Moving Hyperplane Rigidity: If a moving-linear full simple-root incidence X_{lambda,f} is isomorphic to A3, then f is a n…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 7,
+    "member_count": 6
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "cubic-marked-root-incidence-geometry"
+  ],
+  "schema_version": 2,
+  "slug": "quadratic-covariant-incidence-rigidity",
+  "source": [],
+  "source_form": [],
+  "source_treatment": "This grouped result is not incorporated in the linked manuscript PDF; that PDF belongs to the broader research program only.",
+  "statement": "For every product of evaluations at two distinct points, the quadratic target hypersurface A2+kappa E_xi E_eta=c is isomorphic to A3, but its full marked-root preimage is never A3; its compactly supported Euler characteristic is never one.",
+  "title": "Quadratic Covariant Rigidity in the Cubic Incidence Construction",
+  "visibility": "catalogued"
+}

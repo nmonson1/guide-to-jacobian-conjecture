@@ -173,8 +173,8 @@ PROGRAM_PROSE = {
         ),
     },
 }
-PUBLICATION_DATA_DIR = "publication-v2-v7-20260724h"
-PUBLIC_DOCS_DIR = "docs-v2-20260724d"
+PUBLICATION_DATA_DIR = "publication-v2-v7-20260725b"
+PUBLIC_DOCS_DIR = "docs-v2-20260724f"
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -317,6 +317,25 @@ def _manuscript_for_program(
     return manuscripts[sequence]
 
 
+def _coverage_for_manuscript(
+    page: dict[str, Any], manuscript_id: str
+) -> dict[str, Any]:
+    for item in page["manuscript_coverage"]["manuscripts"]:
+        if item["manuscript"] == manuscript_id:
+            return item
+    return {"manuscript": manuscript_id, "status": "not_applicable"}
+
+
+def _coverage_link_label(status: str) -> str:
+    return {
+        "complete": "audited source for every defining claim on this page",
+        "partial": "contains part, but not all, of this grouped result",
+        "not_in_manuscript": "broader program only; this result is not in the PDF",
+        "locator_audit_needed": "broader program; exact coverage has not been audited",
+        "not_applicable": "broader context only",
+    }[status]
+
+
 def _source_links(page: dict[str, Any]) -> list[str]:
     lines = []
     seen: set[str] = set()
@@ -369,6 +388,8 @@ def render_result(
         "",
         f"**{_credit_line(page)}**",
         "",
+        f"**Source coverage:** {page['source_treatment']}",
+        "",
         "## The central idea",
         "",
         _central_idea(page),
@@ -406,10 +427,12 @@ def render_result(
     for program_slug in page["research_programs"]:
         program = programs[program_slug]
         manuscript = _manuscript_for_program(program, manuscripts)
+        coverage = _coverage_for_manuscript(page, program["manuscript"])
         lines.append(
             f"- [{manuscript['title']}](../assets/manuscripts/"
             f"{manuscript['filename']}) — Nathaniel Monson, "
             f"{manuscript['manuscript_date']}; working proof draft; "
+            f"{_coverage_link_label(coverage['status'])}; "
             f"SHA-256 `{manuscript['sha256']}`"
         )
         linked = True
@@ -488,6 +511,10 @@ def render_result(
             "",
             f"    Source form: {', '.join(page['source_form']) or 'not yet assigned'}",
             "",
+            f"    Manuscript coverage: `{page['manuscript_coverage']['status']}`",
+            "",
+            "    Complete coverage requires an audited LaTeX locator for every defining claim.",
+            "",
             f"    Grouped members: {page['metadata']['member_count']}",
             "",
             f"    Canonical registry: v{page['metadata']['canonical_registry_version']}",
@@ -524,8 +551,9 @@ def render_research_index(
         "the complete public catalogue of 71 results and 16 open problems.</p>",
         "",
         "The six programs are working mathematical manuscripts, not refereed "
-        "papers. Each summary states the current proof boundary and links a "
-        "dated, versioned PDF.",
+        "papers. The catalogue is newer and broader than the PDFs. Every result "
+        "page therefore states whether its linked PDF is complete, partial, "
+        "absent, or still awaiting an exact locator audit.",
         "",
         "## Six research programs",
         "",
@@ -654,6 +682,12 @@ def render_program(
         for slug in program["page_slugs"]
         if pages[slug]["kind"] == "open_problem"
     ]
+    coverage_counts: dict[str, int] = defaultdict(int)
+    for page in result_pages + open_pages:
+        status = _coverage_for_manuscript(
+            page, program["manuscript"]
+        )["status"]
+        coverage_counts[status] += 1
     lines = [
         "---",
         f"title: {_yaml(program['title'])}",
@@ -689,6 +723,14 @@ def render_program(
         "",
         f"Nathaniel Monson · manuscript dated {manuscript['manuscript_date']} · "
         f"{manuscript['pages']} pages · SHA-256 `{manuscript['sha256']}`",
+        "",
+        "This PDF is a research manuscript, not a compendium of every catalogue "
+        "entry assigned to the program. Current page-level coverage: "
+        + ", ".join(
+            f"{status.replace('_', ' ')} {count}"
+            for status, count in sorted(coverage_counts.items())
+        )
+        + ".",
         "",
     ]
     for heading, selected in (

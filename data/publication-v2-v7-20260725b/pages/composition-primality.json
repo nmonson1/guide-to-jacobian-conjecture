@@ -1,0 +1,72 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "base-cover-monodromy-and-deck-group"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "The map is prime under polynomial composition.",
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "locator_audit_needed": 1
+        },
+        "manuscript": "01-cubic-incidence-geometry",
+        "status": "locator_audit_needed"
+      }
+    ],
+    "status": "locator_audit_needed"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The map is prime under polynomial composition.",
+      "technical_slug": "technical-claim-45b208f0",
+      "title": "Technical claim"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 7,
+    "member_count": 1
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "cubic-marked-root-incidence-geometry"
+  ],
+  "schema_version": 2,
+  "slug": "composition-primality",
+  "source": [],
+  "source_form": [],
+  "source_treatment": "This page belongs to a linked research program, but exact PDF coverage has not yet been audited; do not treat the PDF as the source for this page.",
+  "statement": "The map is prime under polynomial composition.",
+  "title": "The Counterexample Is Prime Under Polynomial Composition",
+  "visibility": "catalogued"
+}

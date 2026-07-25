@@ -39,11 +39,11 @@ prose, versioned PDFs, and build machinery.
 
 The active inputs are:
 
-- `data/publication-v2-v7-20260724h/`: sanitized schema-v2 export pinned to
+- `data/publication-v2-v7-20260725b/`: sanitized schema-v2 export pinned to
   canonical registry v7;
 - `data/manuscripts-v1/`: hashes, dates, titles, and page counts for the six
   public manuscripts;
-- `docs-v2-20260724d/`: the versioned MkDocs source tree;
+- `docs-v2-20260724f/`: the versioned MkDocs source tree;
 - `scripts/generate_living_guide_v1.py`: deterministic renderer for grouped,
   technical, program, and catalogue pages;
 - `scripts/generate_compatibility_stubs_v1.py`: noindex compatibility pages

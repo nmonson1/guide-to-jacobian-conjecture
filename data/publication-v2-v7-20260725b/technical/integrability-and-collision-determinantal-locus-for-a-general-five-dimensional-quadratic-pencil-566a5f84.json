@@ -1,0 +1,57 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "critique, derivation, and computation"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "recorded",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "filtered-regular-pencils-in-dimension-five",
+      "page_title": "Filtered Regular Nilpotent Pencils in Dimension Five",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "integrability-and-collision-determinantal-locus-for-a-general-five-dimensional-quadratic-pencil-566a5f84",
+  "source": [],
+  "statement": "For a general five-dimensional quadratic pencil, integrable markings lie on the proper discriminant det Phi_N=0, and normalized collisions lie on the determinantal locus rank Theta_N<=9 together with the open independence condition on the recovered marking vectors.",
+  "title": "Integrability And Collision Determinantal Locus: For a general five-dimensional quadratic pencil, integrable markings lie on the proper discri…",
+  "visibility": "technical"
+}

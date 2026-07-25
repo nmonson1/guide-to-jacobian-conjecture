@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "quartic-leading-curves-at-infinity",
+      "page_title": "Leading Curves and Normal Resonance at Infinity",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "characteristic-field-and-period-for-a-quartic-leading-map-of-generic-jacobian-d6da9b38",
+  "source": [],
+  "statement": "For a quartic leading map of generic Jacobian rank two, the kernel of its characteristic Jacobian derivation is the relative algebraic closure of the leading field; the scalar degrees in this field form qZ for a homogeneous period q dividing 4.",
+  "title": "Characteristic Field And Period: For a quartic leading map of generic Jacobian rank two, the kernel of its characteristic Jaco…",
+  "visibility": "technical"
+}

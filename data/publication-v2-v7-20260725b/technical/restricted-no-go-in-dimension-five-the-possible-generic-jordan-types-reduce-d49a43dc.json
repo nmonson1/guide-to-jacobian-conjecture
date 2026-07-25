@@ -1,0 +1,50 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "dimension-five-partial-classification",
+      "page_title": "Sparse Exclusions in Dimension Five",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "filtered-regular-pencils-in-dimension-five",
+      "page_title": "Filtered Regular Nilpotent Pencils in Dimension Five",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "restricted-no-go-in-dimension-five-the-possible-generic-jordan-types-reduce-d49a43dc",
+  "source": [],
+  "statement": "In dimension five the possible generic Jordan types reduce to (5), (4,1), and (3,2), and a tested sparse support-at-most-four ansatz has no counterexample.",
+  "title": "Restricted No Go: In dimension five the possible generic Jordan types reduce to (5), (4,1), and (3,2), and a te…",
+  "visibility": "technical"
+}

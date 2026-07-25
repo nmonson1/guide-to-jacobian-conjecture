@@ -1,0 +1,95 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "filtered-regular-pencils-in-dimension-five"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "In dimension five the possible generic Jordan types reduce to (5), (4,1), and (3,2), and a tested sparse support-at-most-four ansatz has no counterexample.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 1,
+          "locator_audit_needed": 1,
+          "partial": 1
+        },
+        "manuscript": "05-homogeneous-descendants",
+        "status": "partial"
+      }
+    ],
+    "status": "partial"
+  },
+  "members": [
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "In dimension five the possible generic Jordan types reduce to (5), (4,1), and (3,2), and a tested sparse support-at-most-four ansatz has no counterexample.",
+      "technical_slug": "restricted-no-go-in-dimension-five-the-possible-generic-jordan-types-reduce-d49a43dc",
+      "title": "Restricted No Go: In dimension five the possible generic Jordan types reduce to (5), (4,1), and (3,2), and a te…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "provenance_or_history",
+      "statement": "Within a zero-diagonal five-by-five sparse matrix ansatz with at most four nonzero entries, no Keller map in the specified H_C family realizes the normalized collision.",
+      "technical_slug": "restricted-no-go-within-a-zero-diagonal-five-by-five-sparse-matrix-0b4e8503",
+      "title": "Restricted No Go: Within a zero-diagonal five-by-five sparse matrix ansatz with at most four nonzero entries, n…"
+    },
+    {
+      "assessment": "corrected",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "No cover-all-five, three-row, one-off-diagonal-edge-per-row map in the specified coordinate-collision sparse N=5 ansatz is Keller.",
+      "technical_slug": "sparse-n5-exclusion-no-cover-all-five-three-row-one-off-diagonal-033b78bd",
+      "title": "Sparse N5 Exclusion: No cover-all-five, three-row, one-off-diagonal-edge-per-row map in the specified coordinate-c…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 7,
+    "member_count": 3
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "homogeneous-descendants"
+  ],
+  "schema_version": 2,
+  "slug": "dimension-five-partial-classification",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript contains part of this grouped result, but it is not a complete source for every current defining claim.",
+  "statement": "In dimension five the possible generic Jordan types reduce to (5), (4,1), and (3,2), and a tested sparse support-at-most-four ansatz has no counterexample.",
+  "title": "Sparse Exclusions in Dimension Five",
+  "visibility": "catalogued"
+}

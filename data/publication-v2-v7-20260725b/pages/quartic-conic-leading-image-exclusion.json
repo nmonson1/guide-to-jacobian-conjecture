@@ -1,0 +1,118 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "quartic-leading-curves-at-infinity",
+      "rank-one-quartic-theorem"
+    ],
+    "shares_claims_with": [
+      "unrestricted-quartic-open-package"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "No quartic Keller map in three variables has a nondegenerate conic as the projective image of its highest homogeneous part.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "locator_audit_needed": 4
+        },
+        "manuscript": "02-low-degree",
+        "status": "locator_audit_needed"
+      }
+    ],
+    "status": "locator_audit_needed"
+  },
+  "members": [
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "No quartic Keller map has leading form z^2(x^2,xy,y^2), despite the period-two binary-cubic resonance allowed in its second normal layer.",
+      "technical_slug": "period-two-conic-exclusion-no-quartic-keller-map-has-leading-form-z-4e87842f",
+      "title": "Period Two Conic Exclusion: No quartic Keller map has leading form z^2(x^2,xy,y^2), despite the period-two binary-cubic r…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "No quartic Keller map has leading form (A^2,AB,B^2) for coprime independent ternary quadratic forms A and B.",
+      "technical_slug": "quadratic-pencil-conic-exclusion-no-quartic-keller-map-has-leading-form-a-66943722",
+      "title": "Quadratic Pencil Conic Exclusion: No quartic Keller map has leading form (A^2,AB,B^2) for coprime independent ternary quadratic…"
+    },
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "No quartic Keller map has either remaining period-one scalar-conic leading form xy(x^2,xy,y^2) or x^2(x^2,xy,y^2).",
+      "technical_slug": "period-one-conic-exclusion-no-quartic-keller-map-has-either-remaining-period-244f8a2e",
+      "title": "Period One Conic Exclusion: No quartic Keller map has either remaining period-one scalar-conic leading form xy(x^2,xy,y^2…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "No quartic Keller map in three variables has a nondegenerate conic as the projective image of its highest homogeneous part.",
+      "technical_slug": "complete-conic-image-exclusion-no-quartic-keller-map-in-three-variables-has-24a6190a",
+      "title": "Complete Conic Image Exclusion: No quartic Keller map in three variables has a nondegenerate conic as the projective image of…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "No nonautomorphic quartic Keller map in three variables lies in the conic highest-form stratum H4=G(x,y,z)(x^2,xy,y^2): across all seven quadratic-factor orbits, five systems are inconsistent and the remaining cases yield automorphisms.",
+      "technical_slug": "complete-conic-stratum-exclusion-no-nonautomorphic-quartic-keller-map-in-three-variables-80f5587e",
+      "title": "Complete Conic Stratum Exclusion: No nonautomorphic quartic Keller map in three variables lies in the conic highest-form stratu…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 7,
+    "member_count": 5
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "minimum-degree-and-quartic-exclusions"
+  ],
+  "schema_version": 2,
+  "slug": "quartic-conic-leading-image-exclusion",
+  "source": [],
+  "source_form": [],
+  "source_treatment": "This page belongs to a linked research program, but exact PDF coverage has not yet been audited; do not treat the PDF as the source for this page.",
+  "statement": "No quartic Keller map in three variables has a nondegenerate conic as the projective image of its highest homogeneous part.",
+  "title": "Excluding Every Conic Leading Image in Degree Four",
+  "visibility": "catalogued"
+}
