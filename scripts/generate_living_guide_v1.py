@@ -40,10 +40,11 @@ PROGRAM_PROSE = {
         "limit": (
             "The marked-root interpretation of the original map, its basic "
             "fiber geometry, and the static hyperplane-orbit picture are "
-            "credited background.  The manuscript's new classification and "
-            "rigidity statements are presented with their proofs.  Formal "
-            "normal rigidity and the local sign-torsor calculation are proved; "
-            "extending a local torsor through the global boundary remains open."
+            "credited background.  The reader manuscript contains the cover "
+            "classification, equivalence, stable uniqueness, monodromy, and "
+            "omitted-value results.  Formal normal rigidity and the local "
+            "sign-torsor calculation remain proof-bearing companion "
+            "developments; extending a local torsor globally remains open."
         ),
     },
     "minimum-degree-and-quartic-exclusions": {
@@ -145,16 +146,18 @@ PROGRAM_PROSE = {
         "line": (
             "The same tensor is then studied through nilpotent Jordan type, "
             "Hessian constructions, square-zero pairings, Waring bounds, and "
-            "equivariant compression obstructions.  Collision minimality forces "
-            "a large monolith whose multiplication algebra lies in a "
-            "special-linear or symplectic prolongation."
+            "equivariant compression obstructions.  A companion development "
+            "asks how collision minimality produces a monolith whose "
+            "multiplication algebra lies in a special-linear or symplectic "
+            "prolongation."
         ),
         "limit": (
             "The manuscript credits the classical homogeneous reductions and "
             "the public low-dimensional inputs.  Its numerical bounds are for "
             "the displayed construction or stated symmetry class, not universal "
-            "minimality theorems.  Excluding the remaining low-dimensional "
-            "prolongation extensions is posed explicitly as E(N)."
+            "minimality theorems.  The five-dimensional frontier and "
+            "monolith/prolongation theory remain in the companion register; "
+            "the extension problem E(N) is open."
         ),
     },
     "plane-boundary-obstructions": {
@@ -341,8 +344,8 @@ def _coverage_for_manuscript(
 def _coverage_link_label(status: str) -> str:
     return {
         "complete": (
-            "records the current statement and evidence boundary for the "
-            "claims placed here"
+            "the version-9 reader-and-register release records the current "
+            "statement and evidence boundary for the claims placed here"
         ),
         "manuscript_attached": "contains this result or its supporting argument",
         "not_applicable": "broader context only",
@@ -437,6 +440,7 @@ def render_result(
         )
     lines.extend(["## Manuscripts and external links", ""])
     linked = False
+    register_linked = False
     for program_slug in page["research_programs"]:
         program = programs[program_slug]
         manuscript = _manuscript_for_program(program, manuscripts)
@@ -449,6 +453,18 @@ def render_result(
             f"SHA-256 `{manuscript['sha256']}`"
         )
         linked = True
+        if (
+            not register_linked
+            and coverage["status"] == "complete"
+            and "07" in manuscripts
+        ):
+            register = manuscripts["07"]
+            lines.append(
+                f"- [{register['title']}](../assets/manuscripts/"
+                f"{register['filename']}) — companion statement and "
+                f"evidence-boundary catalogue; SHA-256 `{register['sha256']}`"
+            )
+            register_linked = True
     source_lines = _source_links(page)
     lines.extend(source_lines)
     linked |= bool(source_lines)
@@ -571,9 +587,21 @@ def render_research_index(
         f"{len(open_problems)} open problems.</p>",
         "",
         "The six programs are working mathematical manuscripts, not refereed "
-        "papers. All internally developed results assigned to these programs "
-        "are now incorporated in or attached to the PDFs. Established external "
-        "results and open problems remain in the catalogue with their own sources.",
+        "papers. The shorter version-9 PDFs contain their selected theorem "
+        "spines. Secondary results, open problems, corrections, and research "
+        "leads are preserved in a separate companion register.",
+        "",
+        (
+            "[Download the Results and Research Register, v"
+            f"{manuscripts['07']['version']}](assets/manuscripts/"
+            f"{manuscripts['07']['filename']})"
+            "{ .md-button .md-button--primary }"
+        ),
+        "",
+        (
+            f"Companion register · {manuscripts['07']['pages']} pages · "
+            f"SHA-256 `{manuscripts['07']['sha256']}`"
+        ),
         "",
         "## Six research programs",
         "",
@@ -692,6 +720,7 @@ def render_program(
 ) -> str:
     prose = PROGRAM_PROSE[program["slug"]]
     manuscript = _manuscript_for_program(program, manuscripts)
+    register = manuscripts["07"]
     result_pages = [
         pages[slug]
         for slug in program["page_slugs"]
@@ -744,10 +773,14 @@ def render_program(
         f"Nathaniel Monson · manuscript dated {manuscript['manuscript_date']} · "
         f"{manuscript['pages']} pages · SHA-256 `{manuscript['sha256']}`",
         "",
-        "This PDF has a statement-level home for every program-relevant "
-        "registry claim assigned to it. Its main theorem spine remains "
-        "selective; secondary results, open problems, and corrections are "
-        "segregated in a supplementary catalogue. Current page-level coverage: "
+        f"[Open the companion Results and Research Register](../../assets/manuscripts/"
+        f"{register['filename']})",
+        "",
+        "The reader PDF contains this program's selected theorem spine. The "
+        "companion register preserves secondary results, open problems, "
+        "corrections, and evidence boundaries. Together with the version-8 "
+        "archival edition, it supplies statement-level coverage for every "
+        "program-relevant assigned record. Current page-level coverage: "
         + ", ".join(
             f"{status.replace('_', ' ')} {count}"
             for status, count in sorted(coverage_counts.items())

@@ -19,8 +19,9 @@ The visible guide has six reader-facing sections:
 5. Research;
 6. About.
 
-The Research section contains six Nathaniel Monson-led program summaries and
-dated PDFs, followed by the complete generated catalogue:
+The Research section contains six Nathaniel Monson-led program summaries,
+six reader-edition PDFs, and one companion Results and Research Register,
+followed by the complete generated catalogue:
 
 - 74 result pages;
 - 20 open-problem pages;
@@ -43,8 +44,9 @@ and Pacific-time release date. Generators and checks resolve their paths and
 counts from it.
 
 The selected inputs currently include the sanitized canonical/publication
-export, hashes and metadata for the six integrated manuscripts, and the
-versioned MkDocs source tree. The stable implementation surfaces are:
+export, hashes and metadata for six reader manuscripts and their companion
+register, and the versioned MkDocs source tree. The stable implementation
+surfaces are:
 
 - `site-state.json`: active release selection and counts;
 - `scripts/generate_living_guide_v1.py`: deterministic renderer for grouped,

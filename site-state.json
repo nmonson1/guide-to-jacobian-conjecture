@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
-  "release_id": "living-guide-public-v5-v9-manuscripts-v8",
-  "updated_at": "2026-07-26T01:53:05-07:00",
+  "release_id": "living-guide-public-v6-v9-reader-manuscripts",
+  "updated_at": "2026-07-26T14:17:09-07:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v5-v9-20260726a",
     "manifest_sha256": "153d152aa45a491b05fc0acff0b965e9657033733d312a192476898995d4d436"
   },
   "manuscripts": {
-    "data_dir": "manuscripts-v8",
-    "manifest_sha256": "78be297489c10c3c7dc2914e09fcd82bb850710d203bceb434fe7bdfdc05a9ad",
-    "expected_count": 6
+    "data_dir": "manuscripts-v9",
+    "manifest_sha256": "277c0dad7336c4e0a99178d1b2f7d91b04fcb41ac7b77201935e716f344b862d",
+    "expected_count": 7
   },
-  "docs_dir": "docs-v5-20260726a",
+  "docs_dir": "docs-v6-20260726b",
   "expected_counts": {
     "grouped_pages": 94,
     "results": 74,
