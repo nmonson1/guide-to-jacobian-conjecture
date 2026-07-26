@@ -1,0 +1,75 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "base-map-fibers-image-and-nonproperness",
+      "lost-sheet-local-models"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "Escape rates are \\(\\varepsilon^{-1/2}\\) near a smooth discriminant point and \\(\\varepsilon^{-2/3}\\) near the cusp, with more degenerate arcs allowing larger half-integral exponents.",
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 1
+        },
+        "manuscript": "01-cubic-incidence-geometry",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Escape rates are \\(\\varepsilon^{-1/2}\\) near a smooth discriminant point and \\(\\varepsilon^{-2/3}\\) near the cusp, with more degenerate arcs allowing larger half-integral exponents.",
+      "technical_slug": "technical-claim-914949bf",
+      "title": "Technical claim"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 8,
+    "member_count": 1
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "cubic-marked-root-incidence-geometry"
+  ],
+  "schema_version": 2,
+  "slug": "escape-rates-near-the-discriminant",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "Escape rates are \\(\\varepsilon^{-1/2}\\) near a smooth discriminant point and \\(\\varepsilon^{-2/3}\\) near the cusp, with more degenerate arcs allowing larger half-integral exponents.",
+  "title": "Escape Rates Near the Discriminant",
+  "visibility": "catalogued"
+}

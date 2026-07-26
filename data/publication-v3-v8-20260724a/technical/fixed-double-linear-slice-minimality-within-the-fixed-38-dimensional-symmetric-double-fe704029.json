@@ -1,0 +1,52 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "critique and derivation"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "recorded",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "symmetric-dilation-bounds",
+      "page_title": "Bounds and Obstructions for Symmetric Dilations",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "fixed-double-linear-slice-minimality-within-the-fixed-38-dimensional-symmetric-double-fe704029",
+  "source": [],
+  "statement": "Within the fixed 38-dimensional symmetric double, there is no proper nondegenerate invariant linear slice surjecting onto the original variables; any smaller realization must change the realization mechanism rather than delete such a slice.",
+  "title": "Fixed Double Linear Slice Minimality: Within the fixed 38-dimensional symmetric double, there is no proper nondegenerate invariant…",
+  "visibility": "technical"
+}

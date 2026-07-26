@@ -1,0 +1,82 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "dorky",
+      "roles": [
+        "derivation"
+      ],
+      "scope": "Contribution recorded in Galois structure of the new counterexample."
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "links": [
+        {
+          "label": "Exact public derivation",
+          "url": "https://mathoverflow.net/questions/513387/"
+        }
+      ],
+      "scope": "Exact public derivation."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "base-cover-monodromy-and-deck-group",
+      "page_title": "Base Cover Monodromy And Deck Group",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "common-cover-of-the-descendant-ladder",
+      "page_title": "The Common Cover of the Descendant Ladder",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "root-slope-and-cubic-cover-geometry",
+      "page_title": "The Root-Slope Mechanism and Cubic Cover Geometry",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "public",
+  "schema_version": 2,
+  "slug": "degree-three-function-field-extension-with-s3-galois-closure-1b137277",
+  "source": [
+    {
+      "authors": [
+        "dorky"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "Galois structure of the new counterexample to the Jacobian conjecture: an explicit cubic model with S3 monodromy — is this known?",
+      "url": "https://mathoverflow.net/questions/513387/"
+    }
+  ],
+  "statement": "The function-field extension induced by the Alpöge map has degree 3 and an S3 Galois closure, as described by the cited explicit cubic model.",
+  "title": "Degree-three function-field extension with S3 Galois closure",
+  "visibility": "technical"
+}

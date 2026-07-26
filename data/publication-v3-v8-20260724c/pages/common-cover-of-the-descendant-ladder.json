@@ -1,0 +1,149 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "base-map-fibers-image-and-nonproperness",
+      "double-root-affine-source",
+      "multiplication-incidence-uniqueness"
+    ],
+    "shares_claims_with": [
+      "base-cover-monodromy-and-deck-group",
+      "cubic-homogeneous-descendant-construction",
+      "druzkowski-pairing",
+      "hessian-quartic-five-attacks",
+      "root-slope-and-cubic-cover-geometry",
+      "symmetric-dilation-bounds"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    },
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "dorky",
+      "roles": [
+        "derivation"
+      ],
+      "scope": "Contribution recorded in Galois structure of the new counterexample."
+    }
+  ],
+  "description": "The original three-variable map has the displayed invariant quotient cubic theta^3-2theta^2+Btheta-2A, whose irreducibility and nonsquare discriminant give generic Galois group S3; the descendant ladder presents this same three-sheeted cover.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 1
+        },
+        "manuscript": "05-homogeneous-descendants",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The original three-variable map has the displayed invariant quotient cubic theta^3-2theta^2+Btheta-2A, whose irreducibility and nonsquare discriminant give generic Galois group S3; the descendant ladder presents this same three-sheeted cover.",
+      "technical_slug": "explicit-common-s3-cover-the-original-three-variable-map-has-the-displayed-8aa6a8c5",
+      "title": "Explicit Common S3 Cover: The original three-variable map has the displayed invariant quotient cubic theta^3-2theta^2+B…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "The function-field extension induced by the Alpöge map has degree 3 and an S3 Galois closure, as described by the cited explicit cubic model.",
+      "technical_slug": "degree-three-function-field-extension-with-s3-galois-closure-1b137277",
+      "title": "Degree-three function-field extension with S3 Galois closure"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "The rank-sensitive cubic suspension is triangularly left-right equivalent to (X,v,t) mapped by (t^{-1}K(tX),v,t); it preserves generic degree and the geometric Galois closure after adjoining transcendental variables.",
+      "technical_slug": "rees-suspension-equivalence-the-rank-sensitive-cubic-suspension-is-triangularly-left-right-d1eb696a",
+      "title": "Rees Suspension Equivalence: The rank-sensitive cubic suspension is triangularly left-right equivalent to (X,v,t) mapped b…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "For any Keller map F, the symmetric double (F(x),JF(x)^T y) is polynomially right-equivalent to F times the identity, so the 38-variable gradient descendant has the same generic degree and monodromy as the 19-variable cubic map.",
+      "technical_slug": "symmetric-double-stable-equivalence-for-any-keller-map-f-the-symmetric-double-301aae68",
+      "title": "Symmetric Double Stable Equivalence: For any Keller map F, the symmetric double (F(x),JF(x)^T y) is polynomially right-equivalent…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "A full-rank square-zero Gorni-Zampieri pairing H=B(Dz)^{*3}, BD=0, is triangularly right-equivalent to the paired cubic map times an identity factor; the 110-variable Druzkowski map is therefore a stable presentation of the 19-variable cubic map.",
+      "technical_slug": "square-zero-pairing-stable-equivalence-a-full-rank-square-zero-gorni-zampieri-99288d5e",
+      "title": "Square Zero Pairing Stable Equivalence: A full-rank square-zero Gorni-Zampieri pairing H=B(Dz)^{*3}, BD=0, is triangularly right-equi…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 8,
+    "member_count": 5
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "homogeneous-descendants"
+  ],
+  "schema_version": 2,
+  "slug": "common-cover-of-the-descendant-ladder",
+  "source": [
+    {
+      "authors": [
+        "dorky"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "Galois structure of the new counterexample to the Jacobian conjecture: an explicit cubic model with S3 monodromy — is this known?",
+      "url": "https://mathoverflow.net/questions/513387/"
+    }
+  ],
+  "source_form": [
+    "announcement",
+    "working manuscript"
+  ],
+  "source_treatment": "Public sources are linked below. The linked working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "The original three-variable map has the displayed invariant quotient cubic theta^3-2theta^2+Btheta-2A, whose irreducibility and nonsquare discriminant give generic Galois group S3; the descendant ladder presents this same three-sheeted cover.",
+  "title": "The Common Cover of the Descendant Ladder",
+  "visibility": "catalogued"
+}

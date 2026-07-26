@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "bounded-degree-keller-scheme",
+      "page_title": "Bounded Degree Keller Scheme",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "generic-degree-stratification-an-ordered-collision-incidence-construction-makes-the-locus-of-c76e1708",
+  "source": [],
+  "statement": "An ordered-collision incidence construction makes the locus of generic degree at least d open on the generically finite part; exact generic degree is locally closed and generic degree is lower semicontinuous in this setup.",
+  "title": "Generic Degree Stratification: An ordered-collision incidence construction makes the locus of generic degree at least d open…",
+  "visibility": "technical"
+}

@@ -1,0 +1,87 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "quartic-leading-curves-at-infinity"
+    ],
+    "shares_claims_with": [
+      "unrestricted-quartic-open-package"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "No quartic Keller map in three variables has a nondegenerate rational cubic as the projective image of its highest homogeneous part.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 1
+        },
+        "manuscript": "02-low-degree",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "No quartic Keller map in three variables has a nondegenerate rational cubic as the projective image of its highest homogeneous part.",
+      "technical_slug": "rational-cubic-image-exclusion-no-quartic-keller-map-in-three-variables-has-916d6a51",
+      "title": "Rational Cubic Image Exclusion: No quartic Keller map in three variables has a nondegenerate rational cubic as the projective…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 1
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "minimum-degree-and-quartic-exclusions"
+  ],
+  "schema_version": 2,
+  "slug": "quartic-rational-cubic-leading-image-exclusion",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "No quartic Keller map in three variables has a nondegenerate rational cubic as the projective image of its highest homogeneous part.",
+  "title": "Excluding Rational-Cubic Leading Images in Degree Four",
+  "visibility": "catalogued"
+}

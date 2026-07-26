@@ -1,0 +1,43 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "face-to-dessin-and-f2-first-face",
+      "page_title": "Face To Dessin And F2 First Face",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "face-to-dessin-theorem-a-primitive-monomial-newton-face-jacobian-equation-yields-9276a5db",
+  "source": [],
+  "statement": "A primitive monomial Newton-face Jacobian equation yields an exact logarithmic derivative; under the stated coprimality and endpoint hypotheses the induced rational map is Belyi and its passport is determined by the face exponents.",
+  "title": "Face To Dessin Theorem: A primitive monomial Newton-face Jacobian equation yields an exact logarithmic derivative; un…",
+  "visibility": "technical"
+}

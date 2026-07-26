@@ -1,0 +1,95 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [
+      "all-fields-counterexample",
+      "base-counterexample-and-immediate-consequences",
+      "consequences-for-neighboring-conjectures",
+      "plane-jacobian-conjecture"
+    ],
+    "shares_claims_with": []
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "Every formal polynomial Keller deformation of the fixed map is right-trivial as F composed with a formal source automorphism; bounded-degree obstructions come from the degree filtration, not unrestricted formal deformation theory.",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 3
+        },
+        "manuscript": "03-local-rigidity",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Every formal polynomial Keller deformation of the fixed map is right-trivial as F composed with a formal source automorphism; bounded-degree obstructions come from the degree filtration, not unrestricted formal deformation theory.",
+      "technical_slug": "formal-triviality-every-formal-polynomial-keller-deformation-of-the-fixed-map-is-30fc31cc",
+      "title": "Formal Triviality: Every formal polynomial Keller deformation of the fixed map is right-trivial as F composed wi…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For any Keller map F, the first-order kernel of the determinant equation consists of JF times divergence-free vector fields; with the correct output filtration the computed first-order quotient vanishes, source reparametrizations are formally trivial, and the calculation stabilizes in the tested range.",
+      "technical_slug": "technical-claim-41ffdbef",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "partial_result",
+      "statement": "The family is formally conjugate coefficient by coefficient while no conjugacy of uniformly bounded polynomial degree follows.",
+      "technical_slug": "partial-result-the-family-is-formally-conjugate-coefficient-by-coefficient-while-no-b3286203",
+      "title": "Partial Result: The family is formally conjugate coefficient by coefficient while no conjugacy of uniformly b…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 3
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "local-rigidity-and-deformation-algebra"
+  ],
+  "schema_version": 2,
+  "slug": "formal-right-triviality-and-degree-growth",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "Every formal polynomial Keller deformation of the fixed map is right-trivial as F composed with a formal source automorphism; bounded-degree obstructions come from the degree filtration, not unrestricted formal deformation theory.",
+  "title": "Formal Right Triviality And Degree Growth",
+  "visibility": "catalogued"
+}

@@ -1,0 +1,64 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "quartic-leading-line-reductions",
+      "page_title": "The Remaining Leading-Line Geometry in Degree Four",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "unrestricted-quartic-open-package",
+      "page_title": "Unrestricted Quartic Open Package",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "line-normal-degree-reduction-in-a-quartic-leading-line-counterexample-the-first-92bf786f",
+  "source": [],
+  "statement": "In a quartic leading-line counterexample the first nonzero normal layer must have degree three: degree one makes the normal coordinate linear, while degree two makes it a quadratic coordinate and reduces the remaining map to an excluded low-degree plane Keller map.",
+  "title": "Line Normal Degree Reduction: In a quartic leading-line counterexample the first nonzero normal layer must have degree thre…",
+  "visibility": "technical"
+}

@@ -1,0 +1,43 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "certificate offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "degree-seven-local-artin-algebra",
+      "page_title": "Degree Seven Local Artin Algebra",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "truncated-local-algebra-the-exact-rational-hilbert-samuel-data-through-order-six-d1903700",
+  "source": [],
+  "statement": "The exact rational Hilbert-Samuel data through order six are (1,10,44,108,157,145,86), with cumulative dimensions (1,11,55,163,320,465,551); exact order seven adds h7=30 and gives cumulative length 581 through order seven.",
+  "title": "Truncated Local Algebra: The exact rational Hilbert-Samuel data through order six are (1,10,44,108,157,145,86), with c…",
+  "visibility": "technical"
+}

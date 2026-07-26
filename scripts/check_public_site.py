@@ -7,6 +7,7 @@ import hashlib
 import json
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 from pypdf import PdfReader
@@ -15,6 +16,7 @@ from generate_living_guide_v1 import (
     MANUSCRIPTS_DATA_DIR,
     PUBLICATION_DATA_DIR,
     PUBLIC_DOCS_DIR,
+    SITE_STATE,
 )
 
 
@@ -99,13 +101,13 @@ def main() -> int:
     manifest = json.loads((DATA / "manifest.json").read_text(encoding="utf-8"))
     counts = export["counts"]
     expected_counts = {
-        "grouped_pages": 87,
-        "results": 70,
-        "open_problems": 17,
-        "technical_records": 307,
-        "context_only_private_records": 21,
-        "memberships": 413,
-        "research_programs": 6,
+        key: value
+        for key, value in SITE_STATE["expected_counts"].items()
+        if key
+        not in {
+            "pages_by_release_state",
+            "pages_by_manuscript_coverage",
+        }
     }
     for key, expected in expected_counts.items():
         if counts.get(key) != expected:
@@ -113,16 +115,13 @@ def main() -> int:
                 f"publication manifest: expected {key}={expected}, "
                 f"found {counts.get(key)!r}"
             )
-    if counts.get("pages_by_release_state") != {
-        "draft_public": 70,
-        "public": 17,
-    }:
+    if counts.get("pages_by_release_state") != SITE_STATE[
+        "expected_counts"
+    ]["pages_by_release_state"]:
         failures.append("publication manifest: release-state counts changed")
-    if counts.get("pages_by_manuscript_coverage") != {
-        "complete": 10,
-        "manuscript_attached": 61,
-        "not_applicable": 16,
-    }:
+    if counts.get("pages_by_manuscript_coverage") != SITE_STATE[
+        "expected_counts"
+    ]["pages_by_manuscript_coverage"]:
         failures.append("publication manifest: manuscript-coverage counts changed")
 
     for entry in manifest["files"]:
@@ -150,14 +149,24 @@ def main() -> int:
     result_files = sorted((DOCS / "results").glob("*.md"))
     technical_files = sorted((DOCS / "technical").glob("*.md"))
     program_files = sorted((DOCS / "research/programs").glob("*.md"))
-    if len(result_files) != 87:
-        failures.append(f"expected 87 generated result pages, found {len(result_files)}")
-    if len(technical_files) != 307:
+    expected_grouped = SITE_STATE["expected_counts"]["grouped_pages"]
+    expected_technical = SITE_STATE["expected_counts"]["technical_records"]
+    expected_programs = SITE_STATE["expected_counts"]["research_programs"]
+    if len(result_files) != expected_grouped:
         failures.append(
-            f"expected 307 generated technical pages, found {len(technical_files)}"
+            f"expected {expected_grouped} generated result pages, "
+            f"found {len(result_files)}"
         )
-    if len(program_files) != 6:
-        failures.append(f"expected 6 research-program pages, found {len(program_files)}")
+    if len(technical_files) != expected_technical:
+        failures.append(
+            f"expected {expected_technical} generated technical pages, "
+            f"found {len(technical_files)}"
+        )
+    if len(program_files) != expected_programs:
+        failures.append(
+            f"expected {expected_programs} research-program pages, "
+            f"found {len(program_files)}"
+        )
 
     for path in result_files:
         slug = path.stem
@@ -256,8 +265,11 @@ def main() -> int:
             encoding="utf-8"
         )
     )
-    if manuscript_manifest.get("manuscript_count") != 6:
-        failures.append("manuscript manifest: expected six manuscripts")
+    expected_manuscripts = SITE_STATE["manuscripts"]["expected_count"]
+    if manuscript_manifest.get("manuscript_count") != expected_manuscripts:
+        failures.append(
+            f"manuscript manifest: expected {expected_manuscripts} manuscripts"
+        )
     for item in manuscript_manifest["manuscripts"]:
         path = DOCS / "assets/manuscripts" / item["filename"]
         if not path.is_file() or _sha256(path) != item["sha256"]:
@@ -282,7 +294,13 @@ def main() -> int:
         failures.append("mkdocs.yml: deep registry layer appears in navigation")
     if "mathjax@3.2.2/es5/tex-mml-chtml.js" not in mkdocs_text:
         failures.append("mkdocs.yml: MathJax is not pinned to 3.2.2")
-    if "25 July 2026, Pacific time" not in mkdocs_text:
+    expected_date = (
+        datetime.fromisoformat(SITE_STATE["updated_at"])
+        .strftime("%d %B %Y")
+        .lstrip("0")
+        + ", Pacific time"
+    )
+    if expected_date not in mkdocs_text:
         failures.append("mkdocs.yml: Pacific-time update label is missing")
 
     override = (ROOT / "overrides/main.html").read_text(encoding="utf-8")

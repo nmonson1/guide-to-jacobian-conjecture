@@ -1,0 +1,123 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": []
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "All members of the lambda-family are pairwise stably inequivalent after separating the generic, zero, and -324 cases.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 7
+        },
+        "manuscript": "04-stable-moduli",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "A collision between two source points persists infinitesimally, and analytically under a small analytic deformation, when the two Jacobians remain invertible.",
+      "technical_slug": "technical-claim-efa8536b",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The displayed one-parameter family G_lambda has constant determinant, a persistent collision, cubic generic degree, and generic S3 monodromy.",
+      "technical_slug": "technical-claim-61073f6b",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Over the complex numbers, the omitted set of G_lambda is exactly the union of the Gamma and Lambda curves, including the p=0 chart.",
+      "technical_slug": "technical-claim-fbd62152",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "case",
+      "statement": "For generic lambda other than 0 and -324, the unique positive-genus omitted component and its birational/Albanese data distinguish stable equivalence classes.",
+      "technical_slug": "technical-claim-4522ad29",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "case",
+      "statement": "The lambda=0 member is stably distinct from the generic members by omitted-component count.",
+      "technical_slug": "technical-claim-da4a0f69",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "case",
+      "statement": "At lambda=-324 the boundary polynomial factors, the Lambda locus has two G_m components, Gamma is P1 minus six points, and the omitted locus has three components; the map still has generic degree three and S3 monodromy.",
+      "technical_slug": "technical-claim-63a2afb3",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "All members of the lambda-family are pairwise stably inequivalent after separating the generic, zero, and -324 cases.",
+      "technical_slug": "technical-claim-0c43f49b",
+      "title": "Technical claim"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 7
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "stable-moduli"
+  ],
+  "schema_version": 2,
+  "slug": "lambda-family-stable-inequivalence",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "All members of the lambda-family are pairwise stably inequivalent after separating the generic, zero, and -324 cases.",
+  "title": "Lambda Family Stable Inequivalence",
+  "visibility": "catalogued"
+}

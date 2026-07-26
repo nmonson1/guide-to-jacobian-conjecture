@@ -1,0 +1,64 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "critique and derivation"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "smaller-keller-symmetric-dilations",
+      "page_title": "Can the Symmetric Descendant Be Made Smaller and Keller?",
+      "role": "partial_result"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "symmetric-dilation-bounds",
+      "page_title": "Bounds and Obstructions for Symmetric Dilations",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "partial-gradient-compression-theorem-if-an-n-dimensional-homogeneous-map-has-a-0934e7c3",
+  "source": [],
+  "statement": "If an n-dimensional homogeneous map has a k-dimensional partial-gradient block, it admits a weak symmetric dilation in dimension at most 2n-k; in particular every polynomial map has weak symmetric-dilation dimension at most 2n-1.",
+  "title": "Partial Gradient Compression Theorem: If an n-dimensional homogeneous map has a k-dimensional partial-gradient block, it admits a w…",
+  "visibility": "technical"
+}

@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "lambda-family-stable-inequivalence",
+      "page_title": "Lambda Family Stable Inequivalence",
+      "role": "case"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "technical-claim-4522ad29",
+  "source": [],
+  "statement": "For generic lambda other than 0 and -324, the unique positive-genus omitted component and its birational/Albanese data distinguish stable equivalence classes.",
+  "title": "Technical claim",
+  "visibility": "technical"
+}

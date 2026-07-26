@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "cubic-normalization-and-master-cover",
+      "page_title": "Cubic Normalization And Master Cover",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "normalization-and-triple-cover-reduction-every-generic-degree-three-keller-map-factors-c04524cf",
+  "source": [],
+  "statement": "Every generic-degree-three Keller map factors through a finite normal cubic cover whose trace-zero module is rank-two reflexive and locally free away from finitely many target points.",
+  "title": "Normalization And Triple Cover Reduction: Every generic-degree-three Keller map factors through a finite normal cubic cover whose trace…",
+  "visibility": "technical"
+}

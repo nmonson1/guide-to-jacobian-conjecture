@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "finite-triple-covers-conductors-and-automorphisms",
+      "page_title": "Finite Triple Covers, Conductors, and Automorphisms",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "ordinary-automorphism-classification-for-positive-boundary-length-the-hidden-ordinary-complex-point-1fedd133",
+  "source": [],
+  "statement": "For positive boundary length, the hidden ordinary complex-point automorphism kernel vanishes and Aut_LR(G_{A,B}) is the finite stabilizer of the decorated boundary scheme (Z_A,B|Z_A).",
+  "title": "Ordinary Automorphism Classification: For positive boundary length, the hidden ordinary complex-point automorphism kernel vanishes…",
+  "visibility": "technical"
+}

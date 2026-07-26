@@ -1,0 +1,52 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and proof drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "open",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "cubic-frame-infinity-gluing",
+      "page_title": "Gluing Cubic-Frame Torelli at Infinity",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "open_problem",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "glue-cubic-frame-torelli-across-roots-escaping-to-infinity-4ee846cd",
+  "source": [],
+  "statement": "Extend the finite-root all-multiplicity classification across strata where deleted roots escape to c=infinity and the number of finite marked planes changes.",
+  "title": "Glue Cubic-Frame Torelli Across Roots Escaping to Infinity",
+  "visibility": "technical"
+}

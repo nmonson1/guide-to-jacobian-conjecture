@@ -1,0 +1,135 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "common-cover-of-the-descendant-ladder",
+      "cubic-homogeneous-descendant-construction",
+      "hessian-quartic-five-attacks",
+      "minimum-cubic-homogeneous-dimension",
+      "symmetric-dilation-bounds"
+    ],
+    "shares_claims_with": [
+      "base-cover-monodromy-and-deck-group",
+      "common-cover-of-the-descendant-ladder",
+      "cubic-homogeneous-descendant-construction",
+      "hessian-quartic-five-attacks",
+      "minimum-druzkowski-pairing-rank"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "The explicit pairing dictionary gives a 110D Druzkowski construction, while the derivative-space zero-block and equality-case argument give the model-relative bound 52 <= pairing rank <= 110 for the fixed 19D tensor.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 4
+        },
+        "manuscript": "05-homogeneous-descendants",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "An explicit square-zero Druzkowski pairing of the 19D cubic gives a 135D Druzkowski counterexample with collision.",
+      "technical_slug": "explicit-counterexample-an-explicit-square-zero-druzkowski-pairing-of-the-19d-cubic-0378b011",
+      "title": "Explicit Counterexample: An explicit square-zero Druzkowski pairing of the 19D cubic gives a 135D Druzkowski counterex…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The explicit pairing dictionary gives a 110D Druzkowski construction, while the derivative-space zero-block and equality-case argument give the model-relative bound 52 <= pairing rank <= 110 for the fixed 19D tensor.",
+      "technical_slug": "pairing-bounds-the-explicit-pairing-dictionary-gives-a-110d-druzkowski-construction-while-263402aa",
+      "title": "Pairing Bounds: The explicit pairing dictionary gives a 110D Druzkowski construction, while the derivative-sp…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "An exact row-defect theorem holds in the two-matrix square-zero family; the accompanying finite-field search found no better example in the tested range.",
+      "technical_slug": "two-matrix-family-an-exact-row-defect-theorem-holds-in-the-two-8f25fc7b",
+      "title": "Two Matrix Family: An exact row-defect theorem holds in the two-matrix square-zero family; the accompanying fini…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "A full-rank square-zero Gorni-Zampieri pairing H=B(Dz)^{*3}, BD=0, is triangularly right-equivalent to the paired cubic map times an identity factor; the 110-variable Druzkowski map is therefore a stable presentation of the 19-variable cubic map.",
+      "technical_slug": "square-zero-pairing-stable-equivalence-a-full-rank-square-zero-gorni-zampieri-99288d5e",
+      "title": "Square Zero Pairing Stable Equivalence: A full-rank square-zero Gorni-Zampieri pairing H=B(Dz)^{*3}, BD=0, is triangularly right-equi…"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "shared",
+      "role": "open_question",
+      "statement": "What is the exact minimal square-zero Druzkowski pairing rank for the 19D cubic?",
+      "technical_slug": "open-question-what-is-the-exact-minimal-square-zero-druzkowski-pairing-rank-72a99572",
+      "title": "Open Question: What is the exact minimal square-zero Druzkowski pairing rank for the 19D cubic?"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "The original three-variable map has the displayed invariant quotient cubic theta^3-2theta^2+Btheta-2A, whose irreducibility and nonsquare discriminant give generic Galois group S3; the descendant ladder presents this same three-sheeted cover.",
+      "technical_slug": "explicit-common-s3-cover-the-original-three-variable-map-has-the-displayed-8aa6a8c5",
+      "title": "Explicit Common S3 Cover: The original three-variable map has the displayed invariant quotient cubic theta^3-2theta^2+B…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 6
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "homogeneous-descendants"
+  ],
+  "schema_version": 2,
+  "slug": "druzkowski-pairing",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "The explicit pairing dictionary gives a 110D Druzkowski construction, while the derivative-space zero-block and equality-case argument give the model-relative bound 52 <= pairing rank <= 110 for the fixed 19D tensor.",
+  "title": "Drużkowski Pairing",
+  "visibility": "catalogued"
+}

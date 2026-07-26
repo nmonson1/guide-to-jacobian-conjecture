@@ -1,0 +1,34 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "rank-one-quartic-theorem",
+      "page_title": "Rank One Quartic Theorem",
+      "role": "proof_step"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "partial-result-for-the-triple-linear-top-form-h-x-3-y-cdf45174",
+  "source": [],
+  "statement": "For the triple-linear top form h=x^3 y, the generic charts reduce to two exceptional divisors denoted Delta_23 and Psi.",
+  "title": "Partial Result: For the triple-linear top form h=x^3 y, the generic charts reduce to two exceptional divisors…",
+  "visibility": "technical"
+}

@@ -1,0 +1,94 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and proof drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "all-multiplicity-cubic-frame-torelli"
+    ],
+    "shares_claims_with": [
+      "all-multiplicity-cubic-frame-torelli"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "The finite-root Torelli theorem is complete; the remaining compactification problem is to glue it across strata where deleted roots escape to infinity.",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "open_problem",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 1
+        },
+        "manuscript": "04-stable-moduli",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Extend the finite-root all-multiplicity classification across strata where deleted roots escape to c=infinity and the number of finite marked planes changes.",
+      "technical_slug": "glue-cubic-frame-torelli-across-roots-escaping-to-infinity-4ee846cd",
+      "title": "Glue Cubic-Frame Torelli Across Roots Escaping to Infinity"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "For admissible cubic frames with nonconstant A/c, stable left-right equivalence, ordinary left-right equivalence, and equality of the decorated Artin schemes (Spec C[c]/(A/c), B mod (A/c)) up to scaling are equivalent, without squarefreeness or coprimality assumptions.",
+      "technical_slug": "all-multiplicity-fixed-frame-torelli-e48f1ff0",
+      "title": "All-Multiplicity Fixed-Frame Torelli"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 2
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "stable-moduli"
+  ],
+  "schema_version": 2,
+  "slug": "cubic-frame-infinity-gluing",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "Compactify the all-multiplicity cubic-frame classification across degenerations in which deleted roots move to \\(c=\\infty\\), so the number of finite marked planes changes, and compare the resulting boundary with the \\(\\alpha=0\\) stratum.",
+  "title": "Gluing Cubic-Frame Torelli at Infinity",
+  "visibility": "catalogued"
+}

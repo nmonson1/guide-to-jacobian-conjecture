@@ -12,7 +12,11 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-from generate_living_guide_v1 import MANUSCRIPTS_DATA_DIR, PUBLIC_DOCS_DIR
+from generate_living_guide_v1 import (
+    MANUSCRIPTS_DATA_DIR,
+    PUBLIC_DOCS_DIR,
+    SITE_STATE,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -87,14 +91,22 @@ def main() -> int:
     result_pages = list((site / "results").glob("*/index.html"))
     technical_pages = list((site / "technical").glob("*/index.html"))
     program_pages = list((site / "research/programs").glob("*/index.html"))
-    if len(result_pages) != 87:
-        failures.append(f"built result routes: expected 87, found {len(result_pages)}")
-    if len(technical_pages) != 307:
+    expected = SITE_STATE["expected_counts"]
+    if len(result_pages) != expected["grouped_pages"]:
         failures.append(
-            f"built technical routes: expected 307, found {len(technical_pages)}"
+            "built result routes: expected "
+            f"{expected['grouped_pages']}, found {len(result_pages)}"
         )
-    if len(program_pages) != 6:
-        failures.append(f"built program routes: expected 6, found {len(program_pages)}")
+    if len(technical_pages) != expected["technical_records"]:
+        failures.append(
+            "built technical routes: expected "
+            f"{expected['technical_records']}, found {len(technical_pages)}"
+        )
+    if len(program_pages) != expected["research_programs"]:
+        failures.append(
+            "built program routes: expected "
+            f"{expected['research_programs']}, found {len(program_pages)}"
+        )
 
     search_path = site / "search/search_index.json"
     if not search_path.is_file():

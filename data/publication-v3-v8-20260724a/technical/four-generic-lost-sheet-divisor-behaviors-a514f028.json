@@ -1,0 +1,46 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "lost-sheet-local-models",
+      "page_title": "Lost Sheet Local Models",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "normalized-cubic-family-open-problems",
+      "page_title": "Open Problems in the Normalized Cubic Families",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "four-generic-lost-sheet-divisor-behaviors-a514f028",
+  "source": [],
+  "statement": "For the normalized cubic-frame maps, a divisor over a zero of A has one of four generic behaviors: one unramified sheet is deleted (U1), two unramified sheets are deleted (U2), a ramified pair is deleted (B), or the deleted sheets have generic three-cycle inertia. The last behavior is excluded in the polynomial Keller subfamily under study.",
+  "title": "Four Generic Lost-Sheet Divisor Behaviors",
+  "visibility": "technical"
+}

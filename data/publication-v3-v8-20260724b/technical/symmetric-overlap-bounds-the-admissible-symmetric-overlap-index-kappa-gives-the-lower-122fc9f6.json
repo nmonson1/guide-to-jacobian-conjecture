@@ -1,0 +1,64 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "critique and derivation"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "smaller-keller-symmetric-dilations",
+      "page_title": "Can the Symmetric Descendant Be Made Smaller and Keller?",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "symmetric-dilation-bounds",
+      "page_title": "Bounds and Obstructions for Symmetric Dilations",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "symmetric-overlap-bounds-the-admissible-symmetric-overlap-index-kappa-gives-the-lower-122fc9f6",
+  "source": [],
+  "statement": "The admissible symmetric-overlap index kappa gives the lower bound sigma_sym(H)>=2n-kappa_ov(H); when the overlap form is nondegenerate, the partial-gradient construction gives the matching upper bound 2n-kappa_nd(H).",
+  "title": "Symmetric Overlap Bounds: The admissible symmetric-overlap index kappa gives the lower bound sigma_sym(H)>=2n-kappa_ov(…",
+  "visibility": "technical"
+}

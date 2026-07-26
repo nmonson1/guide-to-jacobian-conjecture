@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "eta-family-stable-moduli",
+      "page_title": "Eta Family Stable Moduli",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "derived-stable-variation-theorem-in-the-analyzed-cubic-incidence-families-additional-boundary-2dcfc426",
+  "source": [],
+  "statement": "In the analyzed cubic-incidence families, additional boundary roots yield infinitely many stably left-right inequivalent maps, detectable by omitted-boundary components and curve genera.",
+  "title": "Derived Stable Variation Theorem: In the analyzed cubic-incidence families, additional boundary roots yield infinitely many sta…",
+  "visibility": "technical"
+}

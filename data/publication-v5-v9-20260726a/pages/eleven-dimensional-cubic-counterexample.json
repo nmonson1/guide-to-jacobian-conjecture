@@ -1,0 +1,100 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Spacerat"
+    ],
+    "systems": [
+      {
+        "purpose": "explicit construction, simplification, and verification code",
+        "roles": [
+          "research assistance"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "cubic-homogeneous-descendant-construction"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "Spacerat",
+      "roles": [
+        "computation"
+      ],
+      "scope": "Contribution recorded in An explicit degree-three Jacobian counterexample in 11 variables."
+    }
+  ],
+  "description": "The cited map from complex affine 11-space to itself has total degree 3, 52 nonzero monomial terms, constant Jacobian determinant -2, and three displayed distinct rational inputs with one common image.",
+  "evidence_present": [
+    "exact certificate"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 1
+        },
+        "manuscript": "05-homogeneous-descendants",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The cited map from complex affine 11-space to itself has total degree 3, 52 nonzero monomial terms, constant Jacobian determinant -2, and three displayed distinct rational inputs with one common image.",
+      "technical_slug": "an-explicit-degree-three-counterexample-in-11-variables-a39e3ccd",
+      "title": "An explicit degree-three counterexample in 11 variables"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 1
+  },
+  "release_state": "public",
+  "research_programs": [
+    "homogeneous-descendants"
+  ],
+  "schema_version": 2,
+  "slug": "eleven-dimensional-cubic-counterexample",
+  "source": [
+    {
+      "authors": [
+        "Spacerat"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "repository",
+      "title": "11 variable cubic jacobian conjecture counterexample",
+      "url": "https://gist.github.com/Spacerat/08b4a43f6b6ca57178efabc220170ce8/2224dace71e8763a8621a7f557bbc545a53aa820"
+    }
+  ],
+  "source_form": [
+    "repository",
+    "working manuscript"
+  ],
+  "source_treatment": "Public sources are linked below. The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "The cited map from complex affine 11-space to itself has total degree 3, 52 nonzero monomial terms, constant Jacobian determinant -2, and three displayed distinct rational inputs with one common image.",
+  "title": "The Explicit Eleven-Dimensional Cubic Counterexample",
+  "visibility": "catalogued"
+}

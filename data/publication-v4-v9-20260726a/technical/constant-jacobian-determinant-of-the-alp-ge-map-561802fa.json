@@ -1,0 +1,195 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Levent Alpöge"
+    ],
+    "systems": [
+      {
+        "purpose": "work leading to the example as reported by the source",
+        "roles": [
+          "research assistance"
+        ],
+        "system": "Fable"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Akhil Mathew",
+      "roles": [
+        "problem suggestion"
+      ],
+      "scope": "problem suggestion as reported by the source"
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Alejandro Radisic",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "author and maintainer of the pinned Lean development"
+    },
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "Dean Cureton",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "Contribution recorded in Lean counterexamples to the Jacobian conjecture over all fields."
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Levent Alpöge",
+      "roles": [
+        "discovery",
+        "construction"
+      ],
+      "scope": "formula announced by the named person"
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "links": [
+        {
+          "label": "Proof",
+          "url": "https://www.ulam.ai/research/jacobian.pdf"
+        }
+      ],
+      "scope": "Proof."
+    },
+    {
+      "kind": "formalization",
+      "links": [
+        {
+          "label": "Formalization",
+          "url": "https://github.com/deancureton/jacobian/tree/0d4a9212d874226ad81ce5a926becddfa94e6a88"
+        }
+      ],
+      "scope": "Formalization."
+    },
+    {
+      "kind": "formalization",
+      "links": [
+        {
+          "label": "Formalization",
+          "url": "https://github.com/alerad/alpoge-lean/tree/b39e3bf3493939db11b0f78c5b369dd028093f0f"
+        }
+      ],
+      "scope": "Formalization."
+    },
+    {
+      "kind": "formalization",
+      "scope": "The pinned README identifies the relevant Lean theorems and reports no `sorry` and no axioms beyond Mathlib. No fresh `lake build` was run for this guide."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "machine check",
+      "scope": "Formalization."
+    },
+    {
+      "level": "machine check",
+      "scope": "Formalization."
+    },
+    {
+      "level": "machine check",
+      "scope": "The pinned README identifies the relevant Lean theorems and reports no `sorry` and no axioms beyond Mathlib. No fresh `lake build` was run for this guide."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "all-fields-counterexample",
+      "page_title": "A Counterexample Over Every Field",
+      "role": "proof_lemma"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "base-counterexample-and-immediate-consequences",
+      "page_title": "The Three-Dimensional Counterexample",
+      "role": "proof_lemma"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "public",
+  "schema_version": 2,
+  "slug": "constant-jacobian-determinant-of-the-alp-ge-map-561802fa",
+  "source": [
+    {
+      "authors": [
+        "Alejandro Radisic"
+      ],
+      "date": "2026-07-22",
+      "relations": [
+        "evidence source"
+      ],
+      "source_form": "repository",
+      "title": "alpoge-lean v0.4.0 documentation",
+      "url": "https://github.com/alerad/alpoge-lean/blob/95897469d48ba97f1a80a2db6553fd2f0f43834b/README.md"
+    },
+    {
+      "authors": [
+        "Alejandro Radisic"
+      ],
+      "date": "2026-07-22",
+      "relations": [
+        "evidence source"
+      ],
+      "source_form": "repository",
+      "title": "alpoge-lean v0.4.0",
+      "url": "https://github.com/alerad/alpoge-lean/releases/tag/v0.4.0"
+    },
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf"
+    },
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    },
+    {
+      "authors": [
+        "deancureton"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "evidence source",
+        "formalization"
+      ],
+      "source_form": "repository",
+      "title": "jacobian",
+      "url": "https://github.com/deancureton/jacobian/tree/0d4a9212d874226ad81ce5a926becddfa94e6a88"
+    },
+    {
+      "date": "2026-07-22",
+      "relations": [
+        "evidence source"
+      ],
+      "source_form": "repository",
+      "title": "https://github.com/alerad/alpoge-lean/tree/b39e3bf3493939db11b0f78c5b369dd028093f0f",
+      "url": "https://github.com/alerad/alpoge-lean/tree/b39e3bf3493939db11b0f78c5b369dd028093f0f"
+    }
+  ],
+  "statement": "The displayed Alpöge polynomial map has Jacobian determinant equal to the constant -2.",
+  "title": "Constant Jacobian determinant of the Alpöge map",
+  "visibility": "technical"
+}

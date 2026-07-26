@@ -1,0 +1,80 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": []
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "Must every hypothetical six-sheet counterexample to the plane Jacobian conjecture have monodromy A6 or S6?",
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "open_problem",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 2
+        },
+        "manuscript": "06-plane-boundary",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Must every hypothetical six-sheet counterexample to the plane Jacobian conjecture have monodromy A6 or S6?",
+      "technical_slug": "six-sheet-monodromy-question-b79a737b",
+      "title": "Six-Sheet Monodromy Question"
+    },
+    {
+      "assessment": "evidence only",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "A dated synthesis reports eliminations of several conditional compactification strata for a six-sheet planar counterexample, but the underlying artifacts have not been audited in this project.",
+      "technical_slug": "provisional-six-sheet-compactification-exclusions-fe652bfc",
+      "title": "Provisional Six-Sheet Compactification Exclusions"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 2
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "plane-boundary-obstructions"
+  ],
+  "schema_version": 2,
+  "slug": "six-sheet-plane-constraints",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has audited locators for every defining claim on this page.",
+  "statement": "Must every hypothetical six-sheet counterexample to the plane Jacobian conjecture have monodromy A6 or S6?",
+  "title": "The Six-Sheet Monodromy Problem",
+  "visibility": "catalogued"
+}

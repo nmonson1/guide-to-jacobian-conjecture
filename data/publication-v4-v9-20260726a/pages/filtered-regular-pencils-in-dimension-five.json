@@ -1,0 +1,146 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "critique, derivation, and computation"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "dimension-five-regular-jordan-family",
+      "global-first-normal-obstruction-in-dimension-five"
+    ],
+    "shares_claims_with": [
+      "collision-monolith-and-prolongation",
+      "dimension-five-partial-classification",
+      "dimension-five-regular-jordan-family"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "An everywhere-regular five-dimensional quadratic nilpotent line pencil whose kernel map spans P4 has saturated filtration degrees (-4,-2,0,2,4); every successive map is an isomorphism and the kernel map is the rational normal quartic.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 6
+        },
+        "manuscript": "05-homogeneous-descendants",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For the principal sl2 conic on Sym^m(k^2), the integrability operator has determinant -m^{m+2}(m+2)^m; no direct sum of principal conics supports a noncollinear normalized collision.",
+      "technical_slug": "split-principal-pencil-obstruction-for-the-principal-sl2-conic-on-sym-m-b449567d",
+      "title": "Split Principal Pencil Obstruction: For the principal sl2 conic on Sym^m(k^2), the integrability operator has determinant -m^{m+2…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "An everywhere-regular five-dimensional quadratic nilpotent line pencil whose kernel map spans P4 has saturated filtration degrees (-4,-2,0,2,4); every successive map is an isomorphism and the kernel map is the rational normal quartic.",
+      "technical_slug": "regular-pencil-filtration-rigidity-an-everywhere-regular-five-dimensional-quadratic-nilpotent-line-3fb0b6bb",
+      "title": "Regular Pencil Filtration Rigidity: An everywhere-regular five-dimensional quadratic nilpotent line pencil whose kernel map spans…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Every quadratic matrix annihilating the Veronese kernel k_m factors uniquely as N=L_mS_m; iterated Hilbert-Burch descent preserves regular nilpotence, and a fully compatible canonical descent chain is necessarily a common scalar multiple of the principal chain.",
+      "technical_slug": "hilbert-burch-descent-rigidity-every-quadratic-matrix-annihilating-the-veronese-kernel-k-c992885c",
+      "title": "Hilbert Burch Descent Rigidity: Every quadratic matrix annihilating the Veronese kernel k_m factors uniquely as N=L_mS_m; ite…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "With the quartic kernel fixed at the principal point, the nilpotent-pencil tangent space has dimension 16 and sl2 type V0+V2+V4+V6; fixing the descended cubic kernel leaves only scalar rescaling, so the other 15 directions are exactly relative descended-cubic motion.",
+      "technical_slug": "regular-pencil-tangent-model-with-the-quartic-kernel-fixed-at-the-principal-154408d7",
+      "title": "Regular Pencil Tangent Model: With the quartic kernel fixed at the principal point, the nilpotent-pencil tangent space has…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For a general five-dimensional quadratic pencil, integrable markings lie on the proper discriminant det Phi_N=0, and normalized collisions lie on the determinantal locus rank Theta_N<=9 together with the open independence condition on the recovered marking vectors.",
+      "technical_slug": "integrability-and-collision-determinantal-locus-for-a-general-five-dimensional-quadratic-pencil-566a5f84",
+      "title": "Integrability And Collision Determinantal Locus: For a general five-dimensional quadratic pencil, integrable markings lie on the proper discri…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For a global regular-type five-dimensional nilpotent quadratic tensor with full-span collision-line kernel, the saturated rank-one defects are nested and have total codimension-two class 20H^2, combined Hilbert polynomial 10n^2+50n+81, and weighted effective increments 5Delta_1+4Delta_2+3Delta_3+2Delta_4+Delta_5=20H^2.",
+      "technical_slug": "global-degree-20-defect-theorem-for-a-global-regular-type-five-dimensional-a82581c7",
+      "title": "Global Degree 20 Defect Theorem: For a global regular-type five-dimensional nilpotent quadratic tensor with full-span collisio…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "In the five-dimensional square-zero two-matrix ansatz with a coordinate collision, exactly three active rows, one directed support edge in each active row, and all five vertices used by the three edges, the Keller equations have no solution.",
+      "technical_slug": "three-row-sparse-exclusion-in-dimension-five-d49a43dc",
+      "title": "Three-Row Sparse Exclusion in Dimension Five"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "Any global homogeneous quadratic nilpotent 5 by 5 Jacobian extending an everywhere-regular collision line must have a rank-at-most-three locus of codimension exactly two away from that line.",
+      "technical_slug": "global-rank-drop-constraint-any-global-homogeneous-quadratic-nilpotent-5-by-5-15d52c7b",
+      "title": "Global Rank Drop Constraint: Any global homogeneous quadratic nilpotent 5 by 5 Jacobian extending an everywhere-regular co…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 8
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "homogeneous-descendants"
+  ],
+  "schema_version": 2,
+  "slug": "filtered-regular-pencils-in-dimension-five",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "An everywhere-regular five-dimensional quadratic nilpotent line pencil whose kernel map spans P4 has saturated filtration degrees (-4,-2,0,2,4); every successive map is an isomorphism and the kernel map is the rational normal quartic.",
+  "title": "Filtered Regular Nilpotent Pencils in Dimension Five",
+  "visibility": "catalogued"
+}

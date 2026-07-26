@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "eta-family-stable-moduli",
+      "page_title": "Eta Family Stable Moduli",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "technical-claim-47917d8b",
+  "source": [],
+  "statement": "The eta-family supplies stable moduli with boundary curves of arbitrary genus.",
+  "title": "Technical claim",
+  "visibility": "technical"
+}

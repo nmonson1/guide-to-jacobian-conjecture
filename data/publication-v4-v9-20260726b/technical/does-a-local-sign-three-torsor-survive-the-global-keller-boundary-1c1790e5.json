@@ -1,0 +1,52 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and proof drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "open",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "cubic-normalization-defect-open-package",
+      "page_title": "Cubic Normalization Defect Open Package",
+      "role": "open_question"
+    }
+  ],
+  "noindex": true,
+  "record_type": "open_problem",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "does-a-local-sign-three-torsor-survive-the-global-keller-boundary-1c1790e5",
+  "source": [],
+  "statement": "Show that at least one nonzero class in the local F_3^2 sign-torsor space globalizes across the boundary; this would contradict the absence of nontrivial finite etale covers of affine three-space.",
+  "title": "Does a Local Sign-Three Torsor Survive the Global Keller Boundary?",
+  "visibility": "technical"
+}

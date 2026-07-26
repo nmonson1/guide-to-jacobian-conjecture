@@ -12,6 +12,8 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
+from site_state import load_site_state
+
 
 PROGRAM_PROSE = {
     "cubic-marked-root-incidence-geometry": {
@@ -39,8 +41,9 @@ PROGRAM_PROSE = {
             "The marked-root interpretation of the original map, its basic "
             "fiber geometry, and the static hyperplane-orbit picture are "
             "credited background.  The manuscript's new classification and "
-            "rigidity statements are presented with their proofs.  The remaining "
-            "nonsquarefree classification question is labeled as open."
+            "rigidity statements are presented with their proofs.  Formal "
+            "normal rigidity and the local sign-torsor calculation are proved; "
+            "extending a local torsor through the global boundary remains open."
         ),
     },
     "minimum-degree-and-quartic-exclusions": {
@@ -60,13 +63,14 @@ PROGRAM_PROSE = {
             "Keller-jet equations constrain the leading forms.  Geometric "
             "classification of the resulting projective curve then turns the "
             "Jacobian condition into finite divisibility, valuation, and "
-            "elimination problems.  Exact computations accompany the strata "
-            "where the reduction becomes finite."
+            "elimination problems.  The same invariant-gap method now excludes "
+            "several fixed-factor conic strata in degrees five and six."
         ),
         "limit": (
             "This is not yet an unrestricted proof that quartic counterexamples "
             "do not exist.  The page separates completed exclusions from the "
-            "balanced and tricuspidal quartic frontiers that remain open."
+            "balanced and tricuspidal quartic frontiers, the binary quintic "
+            "overlap, and the primitive sextic conic case that remain open."
         ),
     },
     "local-rigidity-and-deformation-algebra": {
@@ -86,13 +90,16 @@ PROGRAM_PROSE = {
             "A weighted transverse slice reduces the calculation to ten "
             "parameters.  Exact Kuranishi equations define a finite local Artin "
             "algebra; its Hilbert function, inverse system, socle, and minimal "
-            "equations encode the residual scheme-theoretic multiplicity."
+            "equations encode the residual scheme-theoretic multiplicity.  "
+            "Root coordinates identify the source-flow complex with a weighted "
+            "divergence operator."
         ),
         "limit": (
             "The claims concern a specified bounded-degree quotient and do not "
             "rule out degree-increasing or unrestricted polynomial deformations. "
             "The exact computations are internally reproduced but need an "
-            "independent computer-algebra implementation and expert review."
+            "independent computer-algebra implementation and expert review; a "
+            "different-filtered reconstruction remains an open target."
         ),
     },
     "stable-moduli": {
@@ -111,13 +118,15 @@ PROGRAM_PROSE = {
         "line": (
             "The program reconstructs decorated boundary schemes from the "
             "map, computes how the parameters transform, and tests which "
-            "features persist after affine stabilization.  Special quadratic, "
-            "reciprocal, and higher-genus families provide complementary cases."
+            "features persist after affine stabilization.  A relative-Jacobian "
+            "blowup now recovers arbitrary common-root multiplicities and gives "
+            "an all-multiplicity fixed-frame Torelli theorem."
         ),
         "limit": (
             "The stable-separation statements are presented with proofs using "
-            "boundary and conductor invariants.  Compactifying the families "
-            "through root collisions remains an open problem."
+            "boundary and conductor invariants.  The finite-root classification "
+            "now includes repeated roots; gluing it across strata where deleted "
+            "roots escape to infinity remains open."
         ),
     },
     "homogeneous-descendants": {
@@ -136,14 +145,16 @@ PROGRAM_PROSE = {
         "line": (
             "The same tensor is then studied through nilpotent Jordan type, "
             "Hessian constructions, square-zero pairings, Waring bounds, and "
-            "equivariant compression obstructions.  Five-dimensional sparse "
-            "and regular-Jordan models test possible further descent."
+            "equivariant compression obstructions.  Collision minimality forces "
+            "a large monolith whose multiplication algebra lies in a "
+            "special-linear or symplectic prolongation."
         ),
         "limit": (
             "The manuscript credits the classical homogeneous reductions and "
             "the public low-dimensional inputs.  Its numerical bounds are for "
             "the displayed construction or stated symmetry class, not universal "
-            "minimality theorems."
+            "minimality theorems.  Excluding the remaining low-dimensional "
+            "prolongation extensions is posed explicitly as E(N)."
         ),
     },
     "plane-boundary-obstructions": {
@@ -163,19 +174,23 @@ PROGRAM_PROSE = {
             "A primitive Newton face produces a quotient cover and a finite "
             "passport problem.  A universal linear boundary operator and its "
             "residue adjoint then propagate constraints through the normal "
-            "layers.  Exact arithmetic handles the terminal finite systems."
+            "layers.  Exact formal coordinates decouple the determinant equation "
+            "before the nonlinear Newton-support restriction is restored."
         ),
         "limit": (
             "The public degree-125 conclusion is credited to ratto3423, not "
             "claimed here.  The manuscript offers independently auditable "
-            "boundary descriptions and terminal certificates, while explicitly "
-            "retaining the upstream completeness and global-attachment gaps."
+            "boundary descriptions and terminal certificates.  Realizing the "
+            "needed finite jets inside the filtered approximate-root subgroup "
+            "and completing the global attachment remain open."
         ),
     },
 }
-PUBLICATION_DATA_DIR = "publication-v3-v8-20260724d"
-MANUSCRIPTS_DATA_DIR = "manuscripts-v6"
-PUBLIC_DOCS_DIR = "docs-v3-20260725a"
+ROOT = Path(__file__).resolve().parents[1]
+SITE_STATE = load_site_state(ROOT)
+PUBLICATION_DATA_DIR = SITE_STATE["publication"]["data_dir"]
+MANUSCRIPTS_DATA_DIR = SITE_STATE["manuscripts"]["data_dir"]
+PUBLIC_DOCS_DIR = SITE_STATE["docs_dir"]
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -279,19 +294,15 @@ def _grouped_credits(credits: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def _central_idea(page: dict[str, Any]) -> str:
-    defining = [
-        item for item in page["members"] if item["inclusion"] == "defining"
-    ]
-    lead = defining[0] if defining else page["members"][0]
     if page["kind"] == "open_problem":
         return (
             f"The problem is organized around one precise obstruction: "
-            f"{lead['statement']}  The supporting records separate known "
+            f"{page['statement']}  The supporting records separate known "
             "constraints from the remaining global step."
         )
     return (
         f"The theorem-level package is centered on the following mechanism: "
-        f"{lead['statement']}  Its supporting records isolate the ingredients "
+        f"{page['statement']}  Its supporting records isolate the ingredients "
         "that establish the statement and the qualifications that control its scope."
     )
 
@@ -329,7 +340,10 @@ def _coverage_for_manuscript(
 
 def _coverage_link_label(status: str) -> str:
     return {
-        "complete": "audited source for every defining claim on this page",
+        "complete": (
+            "records the current statement and evidence boundary for the "
+            "claims placed here"
+        ),
         "manuscript_attached": "contains this result or its supporting argument",
         "not_applicable": "broader context only",
     }[status]
@@ -458,7 +472,11 @@ def render_result(
         [
             "## Evidence, review, and detailed credit",
             "",
-            "**Evidence present:** "
+            (
+                "**Evidence present:** "
+                if page["kind"] == "result"
+                else "**Evidence for the known supporting results:** "
+            )
             + (
                 ", ".join(page["evidence_present"])
                 if page["evidence_present"]
@@ -512,9 +530,9 @@ def render_result(
             "",
             f"    Manuscript coverage: `{page['manuscript_coverage']['status']}`",
             "",
-            "    `complete` records have audited exact locators; "
-            "`manuscript_attached` records are included without requiring "
-            "page-level locator bookkeeping.",
+            "    `complete` means that every program-relevant defining claim "
+            "has an exact manuscript location. It does not mean independent "
+            "proof review or machine verification.",
             "",
             f"    Grouped members: {page['metadata']['member_count']}",
             "",
@@ -726,8 +744,10 @@ def render_program(
         f"Nathaniel Monson · manuscript dated {manuscript['manuscript_date']} · "
         f"{manuscript['pages']} pages · SHA-256 `{manuscript['sha256']}`",
         "",
-        "This PDF is a research manuscript, not a compendium of every catalogue "
-        "entry assigned to the program. Current page-level coverage: "
+        "This PDF has a statement-level home for every program-relevant "
+        "registry claim assigned to it. Its main theorem spine remains "
+        "selective; secondary results, open problems, and corrections are "
+        "segregated in a supplementary catalogue. Current page-level coverage: "
         + ", ".join(
             f"{status.replace('_', ' ')} {count}"
             for status, count in sorted(coverage_counts.items())

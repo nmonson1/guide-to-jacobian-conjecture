@@ -1,0 +1,43 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "degree-eight-deformations",
+      "page_title": "Degree Eight Deformations",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "degree-eight-shear-moduli-degree-eight-affine-rigidity-fails-composing-g-with-ecf242ab",
+  "source": [],
+  "statement": "Degree-eight affine rigidity fails: composing G with z -> z+f(x,y) for quadratic f gives a three-parameter source-shear family, and F_f and F_g are affinely equivalent exactly when g(x,y)=tau^2 f(tau x,tau^-1 y) within this family.",
+  "title": "Degree Eight Shear Moduli: Degree-eight affine rigidity fails: composing G with z -> z+f(x,y) for quadratic f gives a th…",
+  "visibility": "technical"
+}

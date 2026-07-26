@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "reported",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Angelo Vistoli",
+      "roles": [
+        "attributed contributor"
+      ]
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Levent Alpöge",
+      "roles": [
+        "attributed contributor"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "degree-seven-minimality-status",
+      "page_title": "Degree Seven Minimality Status",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "unrestricted-quartic-open-package",
+      "page_title": "Unrestricted Quartic Open Package",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "if-d-min-is-the-minimum-possible-maximum-ordinary-total-degree-of-6747671c",
+  "source": [],
+  "statement": "If D_min is the minimum possible maximum ordinary total degree of a coordinate of a complex polynomial Keller counterexample in dimension three, then 4 <= D_min <= 7.",
+  "title": "If D_min is the minimum possible maximum ordinary total degree of a coordinate of a complex p…",
+  "visibility": "technical"
+}

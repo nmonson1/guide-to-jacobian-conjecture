@@ -1,0 +1,168 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "base-map-fibers-image-and-nonproperness",
+      "common-cover-of-the-descendant-ladder",
+      "cubic-homogeneous-descendant-construction",
+      "double-root-affine-source",
+      "druzkowski-pairing",
+      "hessian-quartic-five-attacks",
+      "multiplication-incidence-uniqueness",
+      "root-slope-and-cubic-cover-geometry",
+      "symmetric-dilation-bounds"
+    ],
+    "shares_claims_with": [
+      "common-cover-of-the-descendant-ladder",
+      "composition-primality",
+      "cubic-homogeneous-descendant-construction",
+      "druzkowski-pairing",
+      "hessian-quartic-five-attacks",
+      "root-slope-and-cubic-cover-geometry"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    },
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "dorky",
+      "roles": [
+        "derivation"
+      ],
+      "scope": "Contribution recorded in Galois structure of the new counterexample."
+    }
+  ],
+  "description": "The function-field extension induced by the Alpöge map has degree 3 and an S3 Galois closure, as described by the cited explicit cubic model.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 1
+        },
+        "manuscript": "01-cubic-incidence-geometry",
+        "status": "manuscript_attached"
+      },
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 1
+        },
+        "manuscript": "05-homogeneous-descendants",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The function-field extension induced by the Alpöge map has degree 3 and an S3 Galois closure, as described by the cited explicit cubic model.",
+      "technical_slug": "degree-three-function-field-extension-with-s3-galois-closure-1b137277",
+      "title": "Degree-three function-field extension with S3 Galois closure"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The displayed three-variable map has trivial rational deck group over its target: a rational self-map sigma satisfying F composed with sigma equals F must be the identity.",
+      "technical_slug": "trivial-rational-deck-group-d8d0210f",
+      "title": "Trivial rational deck group"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For the base discriminant complement, the fundamental group is identified with the parity fiber product {(n,sigma) in Z x S3 : parity(n)=sign(sigma)}.",
+      "technical_slug": "topology-for-the-base-discriminant-complement-the-fundamental-group-is-identified-with-3c99797d",
+      "title": "Topology: For the base discriminant complement, the fundamental group is identified with the parity fib…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "The map is prime under polynomial composition.",
+      "technical_slug": "technical-claim-45b208f0",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "For every coprime normalized cubic-frame pair in the stated family, the inverse cubic is irreducible with nonsquare discriminant over C(a,b,c), so its generic Galois closure and geometric monodromy are S3.",
+      "technical_slug": "normalized-family-monodromy-for-every-coprime-normalized-cubic-frame-pair-in-the-504733cf",
+      "title": "Normalized Family Monodromy: For every coprime normalized cubic-frame pair in the stated family, the inverse cubic is irre…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "The original three-variable map has the displayed invariant quotient cubic theta^3-2theta^2+Btheta-2A, whose irreducibility and nonsquare discriminant give generic Galois group S3; the descendant ladder presents this same three-sheeted cover.",
+      "technical_slug": "explicit-common-s3-cover-the-original-three-variable-map-has-the-displayed-8aa6a8c5",
+      "title": "Explicit Common S3 Cover: The original three-variable map has the displayed invariant quotient cubic theta^3-2theta^2+B…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 6
+  },
+  "release_state": "public",
+  "research_programs": [],
+  "schema_version": 2,
+  "slug": "base-cover-monodromy-and-deck-group",
+  "source": [
+    {
+      "authors": [
+        "dorky"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "Galois structure of the new counterexample to the Jacobian conjecture: an explicit cubic model with S3 monodromy — is this known?",
+      "url": "https://mathoverflow.net/questions/513387/"
+    }
+  ],
+  "source_form": [
+    "announcement",
+    "working manuscript"
+  ],
+  "source_treatment": "Public sources are linked below. The linked working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "The function-field extension induced by the Alpöge map has degree 3 and an S3 Galois closure, as described by the cited explicit cubic model.",
+  "title": "Base Cover Monodromy And Deck Group",
+  "visibility": "catalogued"
+}

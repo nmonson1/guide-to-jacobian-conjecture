@@ -1,0 +1,41 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "open",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "puiseux-obstruction-and-failed-extension",
+      "page_title": "Puiseux Obstruction And Failed Extension",
+      "role": "open_question"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "puiseux-polynomial-termination",
+      "page_title": "Can the Nodal Puiseux Solution Be Ruled Out Globally?",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "question",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "open-question-can-the-all-orders-nodal-local-solution-be-ruled-out-b1adee63",
+  "source": [],
+  "statement": "Can the all-orders nodal local solution be ruled out by a finite-support or global one-double-point theorem?",
+  "title": "Open Question: Can the all-orders nodal local solution be ruled out by a finite-support or global one-double…",
+  "visibility": "technical"
+}

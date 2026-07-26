@@ -1,0 +1,43 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "certificate offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "degree-seven-local-affine-rigidity",
+      "page_title": "Degree Seven Local Affine Rigidity",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "reduced-affine-rigidity-a-torus-stable-337-dimensional-slice-has-ten-tangent-a6010d1b",
+  "source": [],
+  "statement": "A torus-stable 337-dimensional slice has ten tangent parameters of weights (-1,2,-3,-2,-1,0,1,1,2,3); exact positive, negative, and fixed-weight obstruction certificates plus a torus-nullcone lemma show that its reduced completed local ring is C. Thus G is reduced-affinely rigid in K_{3,7}, though the local ring is a nonreduced Artin thickening.",
+  "title": "Reduced Affine Rigidity: A torus-stable 337-dimensional slice has ten tangent parameters of weights (-1,2,-3,-2,-1,0,1…",
+  "visibility": "technical"
+}

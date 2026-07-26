@@ -1,0 +1,120 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "rank-one-quartic-theorem"
+    ],
+    "shares_claims_with": [
+      "quartic-leading-line-reductions",
+      "rank-one-quartic-theorem"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "For a quartic Keller deformation of a leading curve, the first nonzero normal coefficient below determinant order nine can occur only at an order divisible by the homogeneous period; in the primitive period-four case the first three normal coefficients vanish.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 4
+        },
+        "manuscript": "02-low-degree",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "If the projective image of the quartic leading form H4 is a curve of degree c, then H4 factors as G times a degree-c binary parametrization evaluated on a coprime source pencil (A,B), with the exact degree relation deg(G)+c deg(A)=4.",
+      "technical_slug": "leading-curve-factorization-if-the-projective-image-of-the-quartic-leading-form-f9a5b234",
+      "title": "Leading Curve Factorization: If the projective image of the quartic leading form H4 is a curve of degree c, then H4 factor…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For a quartic leading map of generic Jacobian rank two, the kernel of its characteristic Jacobian derivation is the relative algebraic closure of the leading field; the scalar degrees in this field form qZ for a homogeneous period q dividing 4.",
+      "technical_slug": "characteristic-field-and-period-for-a-quartic-leading-map-of-generic-jacobian-d6da9b38",
+      "title": "Characteristic Field And Period: For a quartic leading map of generic Jacobian rank two, the kernel of its characteristic Jaco…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "For a quartic Keller deformation of a leading curve, the first nonzero normal coefficient below determinant order nine can occur only at an order divisible by the homogeneous period; in the primitive period-four case the first three normal coefficients vanish.",
+      "technical_slug": "quartic-normal-resonance-for-a-quartic-keller-deformation-of-a-leading-curve-1035de2e",
+      "title": "Quartic Normal Resonance: For a quartic Keller deformation of a leading curve, the first nonzero normal coefficient bel…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The normal-resonance theorem extends to every degree d in dimension three, with determinant threshold 3(d-1); consequently no three-variable Keller map in any degree can have a primitive leading line.",
+      "technical_slug": "all-degree-normal-resonance-the-normal-resonance-theorem-extends-to-every-degree-235f8076",
+      "title": "All Degree Normal Resonance: The normal-resonance theorem extends to every degree d in dimension three, with determinant t…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "If the quartic highest homogeneous part of a degree-at-most-four three-variable Keller map has target span one, then the map is a polynomial automorphism.",
+      "technical_slug": "rank-one-quartic-theorem-if-the-quartic-highest-homogeneous-part-of-a-99911351",
+      "title": "Rank One Quartic Theorem: If the quartic highest homogeneous part of a degree-at-most-four three-variable Keller map ha…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 5
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "minimum-degree-and-quartic-exclusions"
+  ],
+  "schema_version": 2,
+  "slug": "quartic-leading-curves-at-infinity",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "For a quartic Keller deformation of a leading curve, the first nonzero normal coefficient below determinant order nine can occur only at an order divisible by the homogeneous period; in the primitive period-four case the first three normal coefficients vanish.",
+  "title": "Leading Curves and Normal Resonance at Infinity",
+  "visibility": "catalogued"
+}

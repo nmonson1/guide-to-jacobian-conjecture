@@ -1,0 +1,41 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "open",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "normalized-cubic-family-classification",
+      "page_title": "Normalized Cubic Family Classification",
+      "role": "open_question"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "normalized-cubic-family-open-problems",
+      "page_title": "Open Problems in the Normalized Cubic Families",
+      "role": "open_question"
+    }
+  ],
+  "noindex": true,
+  "record_type": "question",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "open-question-can-the-common-root-integral-closure-theorem-and-left-right-e9f3362d",
+  "source": [],
+  "statement": "Can the common-root integral-closure theorem and left-right equivalence result be independently proved or formalized?",
+  "title": "Open Question: Can the common-root integral-closure theorem and left-right equivalence result be independent…",
+  "visibility": "technical"
+}

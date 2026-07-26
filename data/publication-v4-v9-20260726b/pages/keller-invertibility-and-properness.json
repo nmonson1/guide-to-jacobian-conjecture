@@ -1,0 +1,94 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "base-map-fibers-image-and-nonproperness"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "Zbigniew Jelonek",
+      "roles": [
+        "nonproperness theorem"
+      ],
+      "scope": "the hypersurface theorem used in the properness equivalence"
+    },
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "The Stacks Project Authors",
+      "roles": [
+        "properness reference"
+      ],
+      "scope": "the properness input cited by the source note"
+    }
+  ],
+  "description": "For a Keller map over the complex numbers, polynomial invertibility, properness, emptiness of the nonproperness set, and codimension at least 2 of that set are equivalent, with the empty set assigned infinite codimension.",
+  "evidence_present": [
+    "literature result"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [],
+    "status": "not_applicable"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "For a Keller map over the complex numbers, polynomial invertibility, properness, emptiness of the nonproperness set, and codimension at least 2 of that set are equivalent, with the empty set assigned infinite codimension.",
+      "technical_slug": "invertibility-and-properness-for-complex-keller-maps-ed2c6665",
+      "title": "Invertibility and properness for complex Keller maps"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 1
+  },
+  "release_state": "public",
+  "research_programs": [],
+  "schema_version": 2,
+  "slug": "keller-invertibility-and-properness",
+  "source": [
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf"
+    },
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    }
+  ],
+  "source_form": [
+    "announcement"
+  ],
+  "source_treatment": "Public sources are linked below. No claim is made that one of the six working manuscripts is the source for this page.",
+  "statement": "For a Keller map over the complex numbers, polynomial invertibility, properness, emptiness of the nonproperness set, and codimension at least 2 of that set are equivalent, with the empty set assigned infinite codimension.",
+  "title": "Invertibility and Properness for Complex Keller Maps",
+  "visibility": "catalogued"
+}

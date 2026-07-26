@@ -1,0 +1,92 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "puiseux-polynomial-termination"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "The finite-dicritical Newton-Puiseux chart satisfies an exact coefficient recurrence; an exact two-level expansion forces a smooth embedded A1 component and hence cannot occur for a plane Keller counterexample.",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 2
+        },
+        "manuscript": "06-plane-boundary",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The finite-dicritical Newton-Puiseux chart satisfies an exact coefficient recurrence; an exact two-level expansion forces a smooth embedded A1 component and hence cannot occur for a plane Keller counterexample.",
+      "technical_slug": "puiseux-recurrence-the-finite-dicritical-newton-puiseux-chart-satisfies-an-exact-coefficient-fcd5a80b",
+      "title": "Puiseux Recurrence: The finite-dicritical Newton-Puiseux chart satisfies an exact coefficient recurrence; an exac…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "failed_lemma_and_correction",
+      "statement": "The proposed finite-order three-level 2:3 Puiseux rigidity lemma is false: for every immersed limit parametrization the recurrence extends at each finite order, and the nodal model (xi^2,xi^3-xi) has an explicit all-orders algebraic-series solution.",
+      "technical_slug": "failed-lemma-and-correction-the-proposed-finite-order-three-level-2-3-fd5c0c60",
+      "title": "Failed Lemma And Correction: The proposed finite-order three-level 2:3 Puiseux rigidity lemma is false: for every immersed…"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "shared",
+      "role": "open_question",
+      "statement": "Can the all-orders nodal local solution be ruled out by a finite-support or global one-double-point theorem?",
+      "technical_slug": "open-question-can-the-all-orders-nodal-local-solution-be-ruled-out-b1adee63",
+      "title": "Open Question: Can the all-orders nodal local solution be ruled out by a finite-support or global one-double…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 8,
+    "member_count": 3
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "plane-boundary-obstructions"
+  ],
+  "schema_version": 2,
+  "slug": "puiseux-obstruction-and-failed-extension",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked version-2 working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "The finite-dicritical Newton-Puiseux chart satisfies an exact coefficient recurrence; an exact two-level expansion forces a smooth embedded A1 component and hence cannot occur for a plane Keller counterexample.",
+  "title": "Puiseux Obstruction And Failed Extension",
+  "visibility": "catalogued"
+}

@@ -1,0 +1,133 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [
+      "all-fields-counterexample",
+      "base-counterexample-and-immediate-consequences",
+      "base-map-fibers-image-and-nonproperness"
+    ],
+    "shares_claims_with": [
+      "unrestricted-quartic-open-package"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Angelo Vistoli",
+      "roles": [
+        "attributed contributor"
+      ]
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Levent Alpöge",
+      "roles": [
+        "attributed contributor"
+      ]
+    }
+  ],
+  "description": "If D_min is the minimum possible maximum ordinary total degree of a coordinate of a complex polynomial Keller counterexample in dimension three, then 4 <= D_min <= 7.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 2
+        },
+        "manuscript": "02-low-degree",
+        "status": "manuscript_attached"
+      },
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 6
+        },
+        "manuscript": "04-stable-moduli",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "reported",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "If D_min is the minimum possible maximum ordinary total degree of a coordinate of a complex polynomial Keller counterexample in dimension three, then 4 <= D_min <= 7.",
+      "technical_slug": "if-d-min-is-the-minimum-possible-maximum-ordinary-total-degree-of-6747671c",
+      "title": "If D_min is the minimum possible maximum ordinary total degree of a coordinate of a complex p…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Within the affine source-target orbit of the public map, total degree seven is minimal.",
+      "technical_slug": "technical-claim-0b37d36f",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "superseded_computation",
+      "statement": "No target reparametrization of the tested bounded degree at most eight lowers the public map below degree seven.",
+      "technical_slug": "exact-computation-no-target-reparametrization-of-the-tested-bounded-degree-at-most-531601f7",
+      "title": "Exact Computation: No target reparametrization of the tested bounded degree at most eight lowers the public map…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The cubic-frame residual coefficient is gauge, every degree-at-most-seven member of that framed family is affinely equivalent to the base example, and degree seven is forced there.",
+      "technical_slug": "computer-assisted-proof-the-cubic-frame-residual-coefficient-is-gauge-every-degree-295eaac3",
+      "title": "Computer Assisted Proof: The cubic-frame residual coefficient is gauge, every degree-at-most-seven member of that fram…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The intersection C(P,Q,R) with polynomials of degree at most six is spanned by 1,Q,R, implying that no target automorphism of any degree lowers the public map below degree seven.",
+      "technical_slug": "computer-assisted-proof-the-intersection-c-p-q-r-with-polynomials-of-c9d20922",
+      "title": "Computer Assisted Proof: The intersection C(P,Q,R) with polynomials of degree at most six is spanned by 1,Q,R, implyin…"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Ordinary total degree \\(7\\) is not known to be minimal in dimension three.",
+      "technical_slug": "technical-claim-ca966bd6",
+      "title": "Technical claim"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 6
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "stable-moduli"
+  ],
+  "schema_version": 2,
+  "slug": "degree-seven-minimality-status",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "If D_min is the minimum possible maximum ordinary total degree of a coordinate of a complex polynomial Keller counterexample in dimension three, then 4 <= D_min <= 7.",
+  "title": "Degree Seven Minimality Status",
+  "visibility": "catalogued"
+}

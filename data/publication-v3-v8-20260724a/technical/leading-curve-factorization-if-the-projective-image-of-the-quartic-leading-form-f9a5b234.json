@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "quartic-leading-curves-at-infinity",
+      "page_title": "Leading Curves and Normal Resonance at Infinity",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "leading-curve-factorization-if-the-projective-image-of-the-quartic-leading-form-f9a5b234",
+  "source": [],
+  "statement": "If the projective image of the quartic leading form H4 is a curve of degree c, then H4 factors as G times a degree-c binary parametrization evaluated on a coprime source pencil (A,B), with the exact degree relation deg(G)+c deg(A)=4.",
+  "title": "Leading Curve Factorization: If the projective image of the quartic leading form H4 is a curve of degree c, then H4 factor…",
+  "visibility": "technical"
+}

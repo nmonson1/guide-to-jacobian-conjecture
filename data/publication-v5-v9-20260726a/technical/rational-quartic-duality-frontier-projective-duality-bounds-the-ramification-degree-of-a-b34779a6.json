@@ -1,0 +1,71 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "balanced-quartic-leading-image-problem",
+      "page_title": "The Balanced Rational-Quartic Leading-Image Problem",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "quartic-rational-quartic-frontier",
+      "page_title": "Ramification and the Rational-Quartic Frontier",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "unrestricted-quartic-open-package",
+      "page_title": "Unrestricted Quartic Open Package",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "rational-quartic-duality-frontier-projective-duality-bounds-the-ramification-degree-of-a-b34779a6",
+  "source": [],
+  "statement": "Projective duality bounds the ramification degree of a proper rational plane quartic by three; combined with the Keller exclusions, the only remaining rational-quartic leading strata are (deg gamma, tangent-syzygy type)=(2,(2,2)) and (3,(1,2)).",
+  "title": "Rational Quartic Duality Frontier: Projective duality bounds the ramification degree of a proper rational plane quartic by three…",
+  "visibility": "technical"
+}

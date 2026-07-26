@@ -1,0 +1,96 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting",
+          "research proposal"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "quartic-rational-quartic-frontier"
+    ],
+    "shares_claims_with": [
+      "quartic-rational-quartic-frontier",
+      "unrestricted-quartic-open-package"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "Can the balanced ramification-degree-two tangent-syzygy stratum (2,(2,2)) be excluded as a rational-quartic leading image of a quartic Keller map?",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "open_problem",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 1
+        },
+        "manuscript": "02-low-degree",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Can the balanced ramification-degree-two tangent-syzygy stratum (2,(2,2)) be excluded as a rational-quartic leading image of a quartic Keller map?",
+      "technical_slug": "open-problem-can-the-balanced-ramification-degree-two-tangent-syzygy-stratum-2-7374f3ae",
+      "title": "Open Problem: Can the balanced ramification-degree-two tangent-syzygy stratum (2,(2,2)) be excluded as a ra…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "Projective duality bounds the ramification degree of a proper rational plane quartic by three; combined with the Keller exclusions, the only remaining rational-quartic leading strata are (deg gamma, tangent-syzygy type)=(2,(2,2)) and (3,(1,2)).",
+      "technical_slug": "rational-quartic-duality-frontier-projective-duality-bounds-the-ramification-degree-of-a-b34779a6",
+      "title": "Rational Quartic Duality Frontier: Projective duality bounds the ramification degree of a proper rational plane quartic by three…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 2
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "minimum-degree-and-quartic-exclusions"
+  ],
+  "schema_version": 2,
+  "slug": "balanced-quartic-leading-image-problem",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "Can the balanced ramification-degree-two tangent-syzygy stratum (2,(2,2)) be excluded as a rational-quartic leading image of a quartic Keller map?",
+  "title": "The Balanced Rational-Quartic Leading-Image Problem",
+  "visibility": "catalogued"
+}

@@ -1,0 +1,46 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "three-dessin-uniqueness",
+      "page_title": "Is the Degree-Twenty-One Divisor Unique?",
+      "role": "immediate_corollary"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "valuation-and-three-dessin-exclusion",
+      "page_title": "Valuation And Three Dessin Exclusion",
+      "role": "immediate_corollary"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "generic-degree-corollary-any-plane-counterexample-of-maximum-coordinate-degree-below-125-3df84995",
+  "source": [],
+  "statement": "Any plane counterexample of maximum coordinate degree below 125 has generic degree at least 21.",
+  "title": "Generic Degree Corollary: Any plane counterexample of maximum coordinate degree below 125 has generic degree at least 21.",
+  "visibility": "technical"
+}

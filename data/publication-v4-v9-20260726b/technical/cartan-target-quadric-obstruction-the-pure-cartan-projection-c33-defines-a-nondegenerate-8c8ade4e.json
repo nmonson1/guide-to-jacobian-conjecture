@@ -1,0 +1,57 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "quadratic-covariant-incidence-rigidity",
+      "page_title": "Quadratic Covariant Rigidity in the Cubic Incidence Construction",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "cartan-target-quadric-obstruction-the-pure-cartan-projection-c33-defines-a-nondegenerate-8c8ade4e",
+  "source": [],
+  "statement": "The pure Cartan projection C33 defines a nondegenerate affine quadric rather than A3; more generally, a nonzero catalecticant determinant excludes the quadratic target hypersurface from being A3.",
+  "title": "Cartan Target Quadric Obstruction: The pure Cartan projection C33 defines a nondegenerate affine quadric rather than A3; more ge…",
+  "visibility": "technical"
+}

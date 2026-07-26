@@ -1,0 +1,292 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Levent Alpöge"
+    ],
+    "systems": [
+      {
+        "purpose": "work leading to the example as reported by the source",
+        "roles": [
+          "research assistance"
+        ],
+        "system": "Fable"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "all-fields-counterexample",
+      "base-map-fibers-image-and-nonproperness",
+      "consequences-for-neighboring-conjectures"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Akhil Mathew",
+      "roles": [
+        "problem suggestion"
+      ],
+      "scope": "problem suggestion as reported by the source"
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Alejandro Radisic",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "author and maintainer of the pinned Lean development"
+    },
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "Dean Cureton",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "Contribution recorded in Lean counterexamples to the Jacobian conjecture over all fields."
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Levent Alpöge",
+      "roles": [
+        "discovery",
+        "construction"
+      ],
+      "scope": "formula announced by the named person"
+    },
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "Paul Lezeau",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "Contribution recorded in Formal Conjectures PR 4474 — Jacobian disproof."
+    },
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "techno-optimist",
+      "roles": [
+        "formalization"
+      ],
+      "scope": "Contribution recorded in Formal Conjectures PR 4486 — sorry-free refutation over Q."
+    }
+  ],
+  "description": "The Jacobian conjecture is false in every dimension n at least 3.",
+  "evidence_present": [
+    "counterexample",
+    "exact certificate",
+    "formalization",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "machine check",
+      "scope": "Formalization."
+    },
+    {
+      "level": "machine check",
+      "scope": "The pinned README identifies the relevant Lean theorems and reports no `sorry` and no axioms beyond Mathlib. No fresh `lake build` was run for this guide."
+    },
+    {
+      "level": "machine check",
+      "scope": "Lean formalization."
+    },
+    {
+      "level": "machine check",
+      "scope": "Independent lean formalization."
+    },
+    {
+      "level": "machine check",
+      "scope": "The source uses one collision when the characteristic is not two and a separate collision in characteristic two."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [],
+    "status": "not_applicable"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "proof_lemma",
+      "statement": "The displayed Alpöge polynomial map has Jacobian determinant equal to the constant -2.",
+      "technical_slug": "constant-jacobian-determinant-of-the-alp-ge-map-561802fa",
+      "title": "Constant Jacobian determinant of the Alpöge map"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "proof_lemma",
+      "statement": "The three distinct rational points (0,0,-1/4), (1,-3/2,13/2), and (-1,3/2,13/2) have the common image (-1/4,0,0) under the Alpöge map.",
+      "technical_slug": "an-explicit-triple-collision-e4fa4cbb",
+      "title": "An explicit triple collision"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The Jacobian conjecture is false in every dimension n at least 3.",
+      "technical_slug": "failure-of-the-jacobian-conjecture-in-dimensions-at-least-three-d82b1d43",
+      "title": "Failure of the Jacobian conjecture in dimensions at least three"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The determinant \\(-2\\) has a conceptual rational-factorization explanation.",
+      "technical_slug": "technical-claim-015f97ff",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The real restriction is already a strong counterexample.",
+      "technical_slug": "technical-claim-c4dfaf31",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "strengthening",
+      "statement": "For every field k, the determinant-one rescaled construction formalized by Dean Cureton gives a polynomial map from k^3 to k^3 that is not injective.",
+      "technical_slug": "a-determinant-one-counterexample-over-every-field-b7122324",
+      "title": "A determinant-one counterexample over every field"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "The announced rational collision belongs to a one-parameter orbit of three-point fibers.",
+      "technical_slug": "technical-claim-610c33b2",
+      "title": "Technical claim"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 7
+  },
+  "release_state": "public",
+  "research_programs": [],
+  "schema_version": 2,
+  "slug": "base-counterexample-and-immediate-consequences",
+  "source": [
+    {
+      "authors": [
+        "Alejandro Radisic"
+      ],
+      "date": "2026-07-22",
+      "relations": [
+        "evidence source"
+      ],
+      "source_form": "repository",
+      "title": "alpoge-lean v0.4.0 documentation",
+      "url": "https://github.com/alerad/alpoge-lean/blob/95897469d48ba97f1a80a2db6553fd2f0f43834b/README.md"
+    },
+    {
+      "authors": [
+        "Alejandro Radisic"
+      ],
+      "date": "2026-07-22",
+      "relations": [
+        "evidence source"
+      ],
+      "source_form": "repository",
+      "title": "alpoge-lean v0.4.0",
+      "url": "https://github.com/alerad/alpoge-lean/releases/tag/v0.4.0"
+    },
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf"
+    },
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    },
+    {
+      "authors": [
+        "deancureton"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "evidence source",
+        "formalization"
+      ],
+      "source_form": "repository",
+      "title": "jacobian",
+      "url": "https://github.com/deancureton/jacobian/tree/0d4a9212d874226ad81ce5a926becddfa94e6a88"
+    },
+    {
+      "date": "2026-07-22",
+      "relations": [
+        "evidence source"
+      ],
+      "source_form": "repository",
+      "title": "https://github.com/alerad/alpoge-lean/tree/b39e3bf3493939db11b0f78c5b369dd028093f0f",
+      "url": "https://github.com/alerad/alpoge-lean/tree/b39e3bf3493939db11b0f78c5b369dd028093f0f"
+    },
+    {
+      "authors": [
+        "Paul Lezeau"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "evidence source",
+        "formalization"
+      ],
+      "source_form": "repository",
+      "title": "feat: add Jacobian disproof",
+      "url": "https://github.com/google-deepmind/formal-conjectures/pull/4474"
+    },
+    {
+      "authors": [
+        "techno-optimist"
+      ],
+      "date": "2026-07-21",
+      "relations": [
+        "evidence source",
+        "formalization"
+      ],
+      "source_form": "repository",
+      "title": "feat(JacobianConjecture): sorry-free refutation at n = 3 over Q",
+      "url": "https://github.com/google-deepmind/formal-conjectures/pull/4486"
+    },
+    {
+      "authors": [
+        "deancureton"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "formalization",
+        "original statement"
+      ],
+      "source_form": "repository",
+      "title": "jacobian",
+      "url": "https://github.com/deancureton/jacobian/tree/0d4a9212d874226ad81ce5a926becddfa94e6a88"
+    }
+  ],
+  "source_form": [
+    "announcement",
+    "repository"
+  ],
+  "source_treatment": "Public sources are linked below. No claim is made that one of the six working manuscripts is the source for this page.",
+  "statement": "The Jacobian conjecture is false in every dimension n at least 3.",
+  "title": "The Three-Dimensional Counterexample",
+  "visibility": "catalogued"
+}

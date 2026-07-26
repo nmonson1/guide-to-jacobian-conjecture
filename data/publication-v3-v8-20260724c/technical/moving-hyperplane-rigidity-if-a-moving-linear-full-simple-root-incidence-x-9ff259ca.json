@@ -1,0 +1,64 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "moving-tangent-rigidity",
+      "page_title": "Moving Tangent Rigidity",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "quadratic-covariant-incidence-rigidity",
+      "page_title": "Quadratic Covariant Rigidity in the Cubic Incidence Construction",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "moving-hyperplane-rigidity-if-a-moving-linear-full-simple-root-incidence-x-9ff259ca",
+  "source": [],
+  "statement": "If a moving-linear full simple-root incidence X_{lambda,f} is isomorphic to A3, then f is a nonzero constant, lambda(t) is everywhere tangent but nonosculating, and a polynomial SL2[t] gauge reduces it to the fixed tangent hyperplane; the induced map is left-right equivalent to the base counterexample.",
+  "title": "Moving Hyperplane Rigidity: If a moving-linear full simple-root incidence X_{lambda,f} is isomorphic to A3, then f is a n…",
+  "visibility": "technical"
+}

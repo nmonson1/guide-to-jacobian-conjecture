@@ -1,0 +1,34 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "corrected",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "degree-seven-local-affine-rigidity",
+      "page_title": "Degree Seven Local Affine Rigidity",
+      "role": "correction"
+    }
+  ],
+  "noindex": true,
+  "record_type": "correction",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "correction-the-earlier-inference-from-a-restricted-five-dimensional-slice-to-isolation-02c45eb8",
+  "source": [],
+  "statement": "The earlier inference from a restricted five-dimensional slice to isolation in the full transverse space is invalid because higher-order arcs can bend out of the slice.",
+  "title": "Correction: The earlier inference from a restricted five-dimensional slice to isolation in the full trans…",
+  "visibility": "technical"
+}

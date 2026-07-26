@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "degree-below-125-theorem",
+      "page_title": "Degree Below 125 Theorem",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "editorial_history",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "conditional-target-theorem-every-plane-keller-map-with-maximum-coordinate-degree-below-3d459190",
+  "source": [],
+  "statement": "Every plane Keller map with maximum coordinate degree below 125 is an automorphism.",
+  "title": "Conditional Target Theorem: Every plane Keller map with maximum coordinate degree below 125 is an automorphism.",
+  "visibility": "technical"
+}

@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "quartic-leading-curves-at-infinity",
+      "page_title": "Leading Curves and Normal Resonance at Infinity",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "quartic-normal-resonance-for-a-quartic-keller-deformation-of-a-leading-curve-1035de2e",
+  "source": [],
+  "statement": "For a quartic Keller deformation of a leading curve, the first nonzero normal coefficient below determinant order nine can occur only at an order divisible by the homogeneous period; in the primitive period-four case the first three normal coefficients vanish.",
+  "title": "Quartic Normal Resonance: For a quartic Keller deformation of a leading curve, the first nonzero normal coefficient bel…",
+  "visibility": "technical"
+}

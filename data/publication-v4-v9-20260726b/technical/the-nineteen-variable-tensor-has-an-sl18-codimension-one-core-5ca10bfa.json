@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and proof drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "collision-monolith-and-prolongation",
+      "page_title": "Collision Monoliths and Prolongation",
+      "role": "example"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "the-nineteen-variable-tensor-has-an-sl18-codimension-one-core-5ca10bfa",
+  "source": [],
+  "statement": "For the displayed 19-variable tensor A=U plus kt, A^3=U of dimension 18, U^3=W of dimension 7, mu(W,U,U)=0, the all-layer associative closure on U is M18, and the multiplication Lie algebra is sl18; the symplectic alternative is excluded by a full-rank 153-variable certificate.",
+  "title": "The Nineteen-Variable Tensor Has an sl18 Codimension-One Core",
+  "visibility": "technical"
+}

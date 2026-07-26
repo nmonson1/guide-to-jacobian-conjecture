@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "cubic-normalization-defect-open-package",
+      "page_title": "Cubic Normalization Defect Open Package",
+      "role": "partial_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "partial-local-geometry-result-at-the-first-possible-defect-stratum-the-discriminant-f9f6311c",
+  "source": [],
+  "statement": "At the first possible defect stratum the discriminant has multiplicity at least six and the exceptional boundary has an elliptic-type constraint.",
+  "title": "Partial Local Geometry Result: At the first possible defect stratum the discriminant has multiplicity at least six and the e…",
+  "visibility": "technical"
+}

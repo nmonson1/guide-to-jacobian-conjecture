@@ -1,0 +1,166 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation, computation, and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "degree-below-125-theorem",
+      "f2-global-attachment-problem",
+      "f2-terminal-boundary-and-local-flexibility",
+      "face-to-dessin-and-f2-first-face"
+    ],
+    "shares_claims_with": [
+      "degree-below-125-theorem",
+      "exact-boundary-normal-linearization",
+      "f2-global-attachment-problem",
+      "f2-terminal-boundary-and-local-flexibility",
+      "filtered-finite-jet-realization"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "The normal-boundary determinant equation has the displayed universal order-r linear deformation operator and residue adjoint, giving an intrinsic residue interpretation of the coefficient compatibility conditions.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 8
+        },
+        "manuscript": "06-plane-boundary",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The normal-boundary determinant equation has the displayed universal order-r linear deformation operator and residue adjoint, giving an intrinsic residue interpretation of the coefficient compatibility conditions.",
+      "technical_slug": "boundary-deformation-complex-the-normal-boundary-determinant-equation-has-the-displayed-universal-c4bfc4ff",
+      "title": "Boundary Deformation Complex: The normal-boundary determinant equation has the displayed universal order-r linear deformati…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Contact data (a,e) with e>a^2 force an explicit hypergeometric secondary boundary polynomial and a degree-e Belyi map with passport (a^a,e-a^2), (e), (a+1,1^(e-a-1)).",
+      "technical_slug": "secondary-belyi-transport-contact-data-a-e-with-e-a-2-force-11aa7a99",
+      "title": "Secondary Belyi Transport: Contact data (a,e) with e>a^2 force an explicit hypergeometric secondary boundary polynomial…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The complete-chain lattice gap quotients terminal primary covers to a finite Hurwitz problem; through maximum degree 128 the explicit reduced covers are isolated and infinitesimally rigid modulo source rescaling.",
+      "technical_slug": "terminal-primary-lattice-reduction-the-complete-chain-lattice-gap-quotients-terminal-primary-7a1c4b09",
+      "title": "Terminal Primary Lattice Reduction: The complete-chain lattice gap quotients terminal primary covers to a finite Hurwitz problem;…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "case_calculation",
+      "statement": "For the F2 chain (5,20)->(7/5,2) with (m,n)=(3,5), exact shear propagation gives 4433 and 12340 support positions, explicit C5-equivariant two-point windows, and the first missing linearized forcing coefficient at normal order 510.",
+      "technical_slug": "f2-support-window-calculation-for-the-f2-chain-5-20-7-5-66d861af",
+      "title": "F2 Support Window Calculation: For the F2 chain (5,20)->(7/5,2) with (m,n)=(3,5), exact shear propagation gives 4433 and 123…"
+    },
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "correction",
+      "statement": "The apparent F2 external conditions at orders 510 and 520 are slice-dependent and can both be cancelled exactly over Q by later kernel parameters; neither is a gauge-invariant terminal obstruction.",
+      "technical_slug": "f2-kuranishi-cancellation-the-apparent-f2-external-conditions-at-orders-510-and-2533e53c",
+      "title": "F2 Kuranishi Cancellation: The apparent F2 external conditions at orders 510 and 520 are slice-dependent and can both be…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The normal-layer operator has the logarithmic-connection form D_r(a,b)=AB nabla_r eta+((alpha+beta-r)/(alpha+beta))xi Omega and extends to a gauge complex whose resonant layer is an exact-differential problem.",
+      "technical_slug": "normal-layer-gauge-complex-the-normal-layer-operator-has-the-logarithmic-connection-3ae328d9",
+      "title": "Normal Layer Gauge Complex: The normal-layer operator has the logarithmic-connection form D_r(a,b)=AB nabla_r eta+((alpha…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For finite Newton/pole windows, the dual of the cokernel of the layer operator is represented by filtered principal parts satisfying the projected formal-adjoint conditions, and every coefficient-matrix left-null vector converts canonically to the corresponding residue functional.",
+      "technical_slug": "filtered-principal-part-adjoint-for-finite-newton-pole-windows-the-dual-of-d44f2b27",
+      "title": "Filtered Principal Part Adjoint: For finite Newton/pole windows, the dual of the cokernel of the layer operator is represented…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The exact layer replay identifies all fifteen archived normal-jet equations with filtered residue coordinates; the five layer-seven and six layer-eight tuples are complete pole-filtered frames, while the selected six equations are a decisive but not presently canonical coordinate projection.",
+      "technical_slug": "exact-residue-reconstruction-the-exact-layer-replay-identifies-all-fifteen-archived-normal-1303d646",
+      "title": "Exact Residue Reconstruction: The exact layer replay identifies all fifteen archived normal-jet equations with filtered res…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "The local F2 defect recurrence is integrable: for every m at least two it has an explicit nontrivial finite-support solution, so no obstruction based only on this local finite-order recurrence can eliminate the family.",
+      "technical_slug": "f2-local-defect-integrability-the-local-f2-defect-recurrence-is-integrable-for-c42d615f",
+      "title": "F2 Local Defect Integrability: The local F2 defect recurrence is integrable: for every m at least two it has an explicit non…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "The natural five-band global lift of the F2 terminal model is impossible under cyclic descent.",
+      "technical_slug": "f2-five-band-descent-no-go-the-natural-five-band-global-lift-42763317",
+      "title": "F2 Five Band Descent No Go: The natural five-band global lift of the F2 terminal model is impossible under cyclic descent."
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 10
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "plane-boundary-obstructions"
+  ],
+  "schema_version": 2,
+  "slug": "boundary-deformation-and-f2-correction",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "The normal-boundary determinant equation has the displayed universal order-r linear deformation operator and residue adjoint, giving an intrinsic residue interpretation of the coefficient compatibility conditions.",
+  "title": "Boundary Deformation And F2 Correction",
+  "visibility": "catalogued"
+}

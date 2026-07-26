@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "degree-below-125-theorem",
+      "page_title": "Degree Below 125 Theorem",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "boundary-geometric-interpretation-the-reduced-degree-21-and-degree-17-boundary-covers-b3a0b330",
+  "source": [],
+  "statement": "The reduced degree-21 and degree-17 boundary covers are mutually compatible, but none of their 296 virtual partial normal-jet gluings extends to a Newton-bounded Keller surface map.",
+  "title": "Boundary Geometric Interpretation: The reduced degree-21 and degree-17 boundary covers are mutually compatible, but none of thei…",
+  "visibility": "technical"
+}

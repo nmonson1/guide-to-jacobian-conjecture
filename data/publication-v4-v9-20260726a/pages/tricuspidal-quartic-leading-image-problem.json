@@ -1,0 +1,104 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "research proposal"
+        ],
+        "system": "ChatGPT"
+      },
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "balanced-quartic-leading-image-problem",
+      "quartic-rational-quartic-frontier",
+      "unrestricted-quartic-open-package"
+    ],
+    "shares_claims_with": [
+      "quartic-rational-quartic-frontier",
+      "unrestricted-quartic-open-package"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "Can the tricuspidal quartic be excluded as the projective leading image of a quartic Keller map by analyzing its explicit type-(1,2) tangent-syzygy basis?",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "open_problem",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 1
+        },
+        "manuscript": "02-low-degree",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Can the tricuspidal quartic be excluded as the projective leading image of a quartic Keller map by analyzing its explicit type-(1,2) tangent-syzygy basis?",
+      "technical_slug": "open-problem-can-the-tricuspidal-quartic-be-excluded-as-the-projective-leading-7312ddd7",
+      "title": "Open Problem: Can the tricuspidal quartic be excluded as the projective leading image of a quartic Keller m…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "A proper rational quartic with ramification degree three is projectively the tricuspidal quartic, because its dual is a rational nodal cubic; the displayed parametrization has ramification factor xy(x-y) and tangent-syzygy type (1,2).",
+      "technical_slug": "tricuspidal-quartic-identification-a-proper-rational-quartic-with-ramification-degree-three-is-f86f43ac",
+      "title": "Tricuspidal Quartic Identification: A proper rational quartic with ramification degree three is projectively the tricuspidal quar…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 2
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "minimum-degree-and-quartic-exclusions"
+  ],
+  "schema_version": 2,
+  "slug": "tricuspidal-quartic-leading-image-problem",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "Can the tricuspidal quartic be excluded as the projective leading image of a quartic Keller map by analyzing its explicit type-(1,2) tangent-syzygy basis?",
+  "title": "Can the Tricuspidal Quartic Be a Keller Leading Image?",
+  "visibility": "catalogued"
+}

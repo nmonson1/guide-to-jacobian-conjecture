@@ -1,0 +1,32 @@
+{
+  "author": "Nathaniel Monson",
+  "manuscript": "05-homogeneous-descendants",
+  "page_slugs": [
+    "hessian-quartic-five-attacks",
+    "cubic-jet-rank-obstruction",
+    "common-cover-of-the-descendant-ladder",
+    "cubic-homogeneous-descendant-construction",
+    "dimension-five-partial-classification",
+    "dimension-five-regular-jordan-family",
+    "druzkowski-pairing",
+    "eleven-dimensional-cubic-counterexample",
+    "filtered-regular-pencils-in-dimension-five",
+    "global-first-normal-obstruction-in-dimension-five",
+    "mathieu-correction-and-valid-consequence",
+    "minimum-cubic-homogeneous-dimension",
+    "minimum-druzkowski-pairing-rank",
+    "research-agenda",
+    "second-four-dimensional-counterexample",
+    "smaller-keller-symmetric-dilations",
+    "symmetric-dilation-bounds",
+    "collision-monolith-and-prolongation"
+  ],
+  "question": "The counterexample is not cubic-homogeneous; how efficiently can it be converted into one that is?",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "sequence": 5,
+  "slug": "homogeneous-descendants",
+  "summary": "Rank-sensitive suspensions, pairing constructions, sparse obstructions, and low-dimensional Jordan forms organize the search for smaller homogeneous descendants.",
+  "title": "Homogeneous Descendants",
+  "visibility": "featured"
+}

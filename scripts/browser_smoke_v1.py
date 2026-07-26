@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import functools
 import http.server
+import json
 import threading
 from pathlib import Path
 
@@ -85,6 +86,17 @@ def check_page(page: Page, url: str, mobile: bool = False) -> None:
 def run(
     site: Path, executable: str | None, screenshots: Path | None
 ) -> None:
+    root = Path(__file__).resolve().parents[1]
+    state = json.loads((root / "site-state.json").read_text(encoding="utf-8"))
+    manuscript_manifest = json.loads(
+        (
+            root
+            / "data"
+            / state["manuscripts"]["data_dir"]
+            / "manifest.json"
+        ).read_text(encoding="utf-8")
+    )
+    first_manuscript = manuscript_manifest["manuscripts"][0]["filename"]
     handler = functools.partial(
         QuietHandler,
         directory=str(site),
@@ -129,7 +141,7 @@ def run(
             pdf = desktop.context.request.get(
                 base
                 + "assets/manuscripts/"
-                + "01-cubic-marked-root-covers-2026-07-22-v6.pdf"
+                + first_manuscript
             )
             require(pdf.ok, "versioned PDF is not downloadable")
 
@@ -138,6 +150,15 @@ def run(
                 desktop.locator("html").evaluate(
                     "(el, scheme) => el.setAttribute('data-md-color-scheme', scheme)",
                     scheme,
+                )
+                desktop.wait_for_timeout(500)
+                require(
+                    desktop.locator(".md-header__title").is_visible(),
+                    f"header title disappeared in {scheme}",
+                )
+                require(
+                    desktop.locator(".md-tabs").is_visible(),
+                    f"desktop navigation disappeared in {scheme}",
                 )
                 require(contrast(desktop, ".formula-card") >= 4.5,
                         f"formula-card contrast failed in {scheme}")
@@ -164,6 +185,7 @@ def run(
                     "(el, scheme) => el.setAttribute('data-md-color-scheme', scheme)",
                     scheme,
                 )
+                desktop.wait_for_timeout(500)
                 require(contrast(desktop, ".status-kind") >= 4.5,
                         f"kind badge contrast failed in {scheme}")
                 require(contrast(desktop, ".status-draft") >= 4.5,

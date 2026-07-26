@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "recorded",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "cubic-boundary-jets-and-moduli",
+      "page_title": "Boundary Jets and Stable Moduli in the Cubic Frame",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "rigidified-boundary-moduli-stack-the-boundary-data-quotient-b-n-u-n-046e56a8",
+  "source": [],
+  "statement": "The boundary-data quotient B_N=[U_N/G_m] is a smooth Deligne-Mumford stack of dimension 2N-1 whose geometric points classify coprime admissible cubic-frame maps of boundary length N; it is a framed or rigidified boundary stack, not the full unrigidified left-right groupoid.",
+  "title": "Rigidified Boundary Moduli Stack: The boundary-data quotient B_N=[U_N/G_m] is a smooth Deligne-Mumford stack of dimension 2N-1…",
+  "visibility": "technical"
+}

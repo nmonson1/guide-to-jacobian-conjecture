@@ -1,0 +1,34 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "incomplete-inverse-jacobian-flows",
+      "page_title": "Incomplete Inverse-Jacobian Flows",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "technical-claim-87b4a2f9",
+  "source": [],
+  "statement": "Every nonzero constant combination of the inverse-Jacobian vector fields is incomplete.",
+  "title": "Technical claim",
+  "visibility": "technical"
+}

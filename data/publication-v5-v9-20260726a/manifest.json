@@ -1,0 +1,1770 @@
+{
+  "canonical_registry": {
+    "sha256": "9387ec432ab78ea8069a310c4a37ea3d5e64ef427a792b20f146feb103e14524",
+    "version": 9
+  },
+  "counts": {
+    "context_only_private_records": 21,
+    "grouped_pages": 94,
+    "memberships": 451,
+    "open_problems": 20,
+    "pages_by_manuscript_coverage": {
+      "complete": 81,
+      "not_applicable": 13
+    },
+    "pages_by_release_state": {
+      "draft_public": 77,
+      "public": 17
+    },
+    "research_programs": 6,
+    "results": 74,
+    "technical_records": 333
+  },
+  "files": [
+    {
+      "path": "pages/all-fields-counterexample.json",
+      "sha256": "8ca690716144ecd7aaa514bc2c49ab9cbab09e0656863009f28f44122b75863d"
+    },
+    {
+      "path": "pages/all-generic-degrees-family.json",
+      "sha256": "a1307b4d452e19bae9ae2175db799847e13311bbb6fbce3bf54222a27e9a62f4"
+    },
+    {
+      "path": "pages/all-multiplicity-cubic-frame-torelli.json",
+      "sha256": "76bb8bd954216f904290aaa966b554810ab32a6d5a242e4942c39044677136c1"
+    },
+    {
+      "path": "pages/balanced-quartic-leading-image-problem.json",
+      "sha256": "eabed2c29d90f84f68facfed4684892f5319d154f1556c0d4be2dae640483121"
+    },
+    {
+      "path": "pages/base-counterexample-and-immediate-consequences.json",
+      "sha256": "11e50c561b0e06742aac7e71a28a6ac06cbe15c4872f0aa5db23f653473863c7"
+    },
+    {
+      "path": "pages/base-cover-monodromy-and-deck-group.json",
+      "sha256": "a7efcd5685af8b48d610873c42a74e8b66659ed22467cb5dc7e0fafa2b760eb0"
+    },
+    {
+      "path": "pages/base-map-fibers-image-and-nonproperness.json",
+      "sha256": "85c96c4dd30edc0eaeb0dd505c932f77acc42e2cb5b26f9efd6c0ef936ae183c"
+    },
+    {
+      "path": "pages/boundary-deformation-and-f2-correction.json",
+      "sha256": "94cedc387949d1f5dd0c89e7fd630e7b2d2f2cb65771d21de6322af5356794cb"
+    },
+    {
+      "path": "pages/bounded-degree-keller-scheme.json",
+      "sha256": "7f6fe36ae9c8fe03219e095b8048441e7ad27579a3f78c43718e9db773d293d8"
+    },
+    {
+      "path": "pages/characteristic-three-degeneration.json",
+      "sha256": "1f6447d086e0502a82e3262d154c6e2e676285d2edb571eca0b223864d8f4705"
+    },
+    {
+      "path": "pages/collision-monolith-and-prolongation.json",
+      "sha256": "78c57feb83d0221d48fb848ce1d0e9f39c348ab7127963a742a7d89261138073"
+    },
+    {
+      "path": "pages/collision-normalized-finite-search.json",
+      "sha256": "a87255c846620ed6d05d0b93517322e34561227da4004237cc94f8a53527693a"
+    },
+    {
+      "path": "pages/common-cover-of-the-descendant-ladder.json",
+      "sha256": "2a7bb13f526591623e721b8d9378aed98d9675ba9dd57457ad5f828aaff120ac"
+    },
+    {
+      "path": "pages/composition-primality.json",
+      "sha256": "30ec36f58e72623302c2137da0c1357bc2bdc3255bfee6f26b91022e3c670d8f"
+    },
+    {
+      "path": "pages/conceptual-plane-obstruction.json",
+      "sha256": "cf1ffb5054768db4c0cbfb8b53df43ee0f574ca522529e7cb7d84dc4498edc68"
+    },
+    {
+      "path": "pages/consequences-for-neighboring-conjectures.json",
+      "sha256": "628ca0b92eb943a2516b7a894327d4f71c7cddd1dff161778eb9b189508ff214"
+    },
+    {
+      "path": "pages/corrected-log-geometry-at-infinity.json",
+      "sha256": "0825758b0ff33a0943f1c5ec5da812f9203e064f6e4623d3cc0cff8c7e1e6898"
+    },
+    {
+      "path": "pages/cubic-boundary-jets-and-moduli.json",
+      "sha256": "38acc842b22dc6d701526e8b24af47da1779baeeb3cdb70a1da60d412a230a24"
+    },
+    {
+      "path": "pages/cubic-frame-infinity-gluing.json",
+      "sha256": "45de070aac675e512a222a7a5f9e209575af8d9a62f79e4a0d9c9fe0c5c11d41"
+    },
+    {
+      "path": "pages/cubic-homogeneous-descendant-construction.json",
+      "sha256": "071dd6b2f7d8c89bec1e71318c0700809731906d12665e8ed40f5f0d554ce8a2"
+    },
+    {
+      "path": "pages/cubic-jet-rank-obstruction.json",
+      "sha256": "c769ea60ace77c2c04e6f33ae12033567dadf1235d0f2a55870488b26a5ff1cd"
+    },
+    {
+      "path": "pages/cubic-normalization-and-master-cover.json",
+      "sha256": "621844b459ff8aa36861dd52869ca2c097cde9efc680b30d2f58bcba47ecf108"
+    },
+    {
+      "path": "pages/cubic-normalization-defect-open-package.json",
+      "sha256": "d8f1fe4062b28bcda7dde839dcd8dd2b51a6c4c16e7ca636fea0acd0edff8b59"
+    },
+    {
+      "path": "pages/degree-below-125-theorem.json",
+      "sha256": "79e6a9ff1c9ca4060f49862f28c8a4d9669740b708055396dbc6e5d31e448acc"
+    },
+    {
+      "path": "pages/degree-eight-deformations.json",
+      "sha256": "8fc93e26a7e80ca68f30c47af5e93f8d6c072fb152eea5c2977492a5d758bb3d"
+    },
+    {
+      "path": "pages/degree-five-six-conic-frontier.json",
+      "sha256": "766973ce47f7dc1f3f9f61debde052308ae8c5853b9172b8989cfed3be2da7aa"
+    },
+    {
+      "path": "pages/degree-five-six-fixed-factor-conics.json",
+      "sha256": "8f549bbf9976cef7ee32a9d67fd35b2b1eb5a6aa6621ca6dad67ab1ad570c8c2"
+    },
+    {
+      "path": "pages/degree-seven-local-affine-rigidity.json",
+      "sha256": "d2ecbdb86beb714f9158697f775e291c83598433218f3080563c891ef5a146e8"
+    },
+    {
+      "path": "pages/degree-seven-local-artin-algebra.json",
+      "sha256": "6fe44f4c52369c6bb51527f8f657c2b74619819f9fbb547aa278fa94f1a48f7b"
+    },
+    {
+      "path": "pages/degree-seven-minimality-status.json",
+      "sha256": "0ae83059a5fb537bbc95a1785dcbe26c396899cfb332efad8b8657c231011526"
+    },
+    {
+      "path": "pages/dimension-descent-obstructions.json",
+      "sha256": "92dbed5d9ffc36007bbf85a181bae1ae76a184e53f359619f2753e60f7f92663"
+    },
+    {
+      "path": "pages/dimension-five-partial-classification.json",
+      "sha256": "a10da7ba0c0db56dc77c7d91cdc14eb6a4e5e7f46c381f14ab30efa1d75539a2"
+    },
+    {
+      "path": "pages/dimension-five-regular-jordan-family.json",
+      "sha256": "253d18b35f94d60ba6b32dd4a2f26f7adc0805ab29bcfd9ef366ae98ae12413b"
+    },
+    {
+      "path": "pages/double-root-affine-source.json",
+      "sha256": "243d6d9b5ca4f14f4f4a563742cfe2757bbca41bd59eb9826355af708b6c39af"
+    },
+    {
+      "path": "pages/double-root-orbit-characterization.json",
+      "sha256": "85fcb70660ba5f5a2f863c73be9b3667b4643bf4a3784fcca89a881ab5090218"
+    },
+    {
+      "path": "pages/druzkowski-pairing.json",
+      "sha256": "d7a88d8d373466ef0c37d88f56c1af1410a9e30b4880a04f3bb00ff18d698537"
+    },
+    {
+      "path": "pages/eleven-dimensional-cubic-counterexample.json",
+      "sha256": "20037021485bc436dd4f6db75b57f91387e1593ba68c3207277944dd1cd92fb3"
+    },
+    {
+      "path": "pages/equivariant-degree-five-moduli.json",
+      "sha256": "aafa7a79f90f200ecef523d1f44976a02aa4e803c6889ce823220cde4f27eea3"
+    },
+    {
+      "path": "pages/equivariant-low-degree-classification.json",
+      "sha256": "174977904fb0d6a8fa07b7db96c0964eddee2fca302babdf31c67a30eb8ffe03"
+    },
+    {
+      "path": "pages/escape-rates-near-the-discriminant.json",
+      "sha256": "a5f99a18e3f7789b3dff3dc4e2311ff78965833fc0f801860c07fb3c9bac7e90"
+    },
+    {
+      "path": "pages/eta-family-stable-moduli.json",
+      "sha256": "a330d47b3c123a7bcef4f7072bc6adc37f90a8cd78c70b6e1a0b355e1e088c82"
+    },
+    {
+      "path": "pages/exact-boundary-normal-linearization.json",
+      "sha256": "72e8e055ff8aa2a95a3be5c149fff1024434ac0db73ef6afc23eec20244f7a90"
+    },
+    {
+      "path": "pages/f2-global-attachment-problem.json",
+      "sha256": "31e4e0b01572ffecaeaaa509f86f8b3ee6b8b9d2ade0148f68b7c6ab79389686"
+    },
+    {
+      "path": "pages/f2-terminal-boundary-and-local-flexibility.json",
+      "sha256": "cdeb86c9929c940f86f4c217e60663b36cf16ca845d984225128dae66bf73c9c"
+    },
+    {
+      "path": "pages/face-to-dessin-and-f2-first-face.json",
+      "sha256": "9e6067e7aa24d6b46ddff7819ea355e7345c17ecc404eab790fdb05a446dbd7d"
+    },
+    {
+      "path": "pages/filtered-finite-jet-realization.json",
+      "sha256": "1e864eb5dddb6c360c4882059a63fe9a535366debce44e823ccd26097390ec71"
+    },
+    {
+      "path": "pages/filtered-regular-pencils-in-dimension-five.json",
+      "sha256": "97c7f31deebfd4dabd9ad27e5c127cab9116989eef8726e7b417fb579099dae4"
+    },
+    {
+      "path": "pages/finite-field-fibers.json",
+      "sha256": "a7de592d4aa5729ab4b53a78329d4fd11e0066017441fc2b98393c9c6a9b5f34"
+    },
+    {
+      "path": "pages/finite-triple-covers-conductors-and-automorphisms.json",
+      "sha256": "1a301ecab901af07d38e8d1385cd906bb818c7d84198ab5fddbe7e2723791b8c"
+    },
+    {
+      "path": "pages/formal-right-triviality-and-degree-growth.json",
+      "sha256": "2b2b0104f279832aed0b919eaea72d1fa7c05acaf43b316d72d25f89ffc53a73"
+    },
+    {
+      "path": "pages/gaussian-moments-counterexamples.json",
+      "sha256": "6330a9874f914e0e61a0645b0d639d7f10fbe0802bb5afa3db723e1aaa71905e"
+    },
+    {
+      "path": "pages/global-first-normal-obstruction-in-dimension-five.json",
+      "sha256": "389a36ebae5bbe5d52c3a3adbcd424f6f5e7fff9505df76bdbae72c6aa3727d4"
+    },
+    {
+      "path": "pages/hessian-quartic-five-attacks.json",
+      "sha256": "6da8d416ffa87fa862ad6844f29d295dfa4d1c230a8ff0ba66c589b68e4d8774"
+    },
+    {
+      "path": "pages/higher-degree-frame-calculus.json",
+      "sha256": "2c710b497dd96a59b4266266d265659eb157a20ebcfab5fc705b7c6c3a005c84"
+    },
+    {
+      "path": "pages/incomplete-inverse-jacobian-flows.json",
+      "sha256": "e86667707458d38e9aaef033fad7d07a48a8c4aec39b5626afaf1b7a5baf0514"
+    },
+    {
+      "path": "pages/keller-invertibility-and-properness.json",
+      "sha256": "8bbf5740e221432987057114dcf4b938bc2488521611573e8cf97cc9ff54dd30"
+    },
+    {
+      "path": "pages/kraus-statement-and-proof-gap.json",
+      "sha256": "b261b8ef24c19f24ecff61b08f330fddc9a24817835cf4bb1754363e34b284ca"
+    },
+    {
+      "path": "pages/lambda-family-stable-inequivalence.json",
+      "sha256": "2e1f250dad2a5f41f47b2d1b9db83ba10fddd3959d88eff34139017849c3e2dd"
+    },
+    {
+      "path": "pages/lost-sheet-local-models.json",
+      "sha256": "c7821d873ebf8faa93626ece8c75ece432702430ef4ffccd986f5c5c3daedc42"
+    },
+    {
+      "path": "pages/mathieu-correction-and-valid-consequence.json",
+      "sha256": "c02aa0fb4db50e598edba14db7b339829dd6fef60c3697b4d6abfa3cea19238d"
+    },
+    {
+      "path": "pages/minimum-cubic-homogeneous-dimension.json",
+      "sha256": "30ea73cfa1d6603b03d54d64c03cb65588f79409e01712287c269224fa082c09"
+    },
+    {
+      "path": "pages/minimum-druzkowski-pairing-rank.json",
+      "sha256": "983544496577b71fd8c0eccf68f51c09470fd6170f2a8fbe2fe72550651a156b"
+    },
+    {
+      "path": "pages/moving-tangent-rigidity.json",
+      "sha256": "68aef36fde08c6a814529de3e36b64f51e18ac9f036477afc19e74e7ca436ccc"
+    },
+    {
+      "path": "pages/multiplication-incidence-uniqueness.json",
+      "sha256": "b7350145ca20661a1a6e2bd7935b6ca9aafdada2453afbb1a0d257ff68ff4c78"
+    },
+    {
+      "path": "pages/normalized-cubic-family-classification.json",
+      "sha256": "3d55323ab8eddd2eae8968ff356611349a63e1a149cc5c0339cdf1d5966129ce"
+    },
+    {
+      "path": "pages/normalized-cubic-family-open-problems.json",
+      "sha256": "444d915c5984fe5105ae09ae8d4902a2519108aa73313fb6bd2aace53e4752aa"
+    },
+    {
+      "path": "pages/off-diagonal-collision-space.json",
+      "sha256": "3ea7afbc39b29737921c0237f758d7a4c03e5ac96a6e30c79cdabe648c57a5c7"
+    },
+    {
+      "path": "pages/omitted-locus-and-smoothness.json",
+      "sha256": "c1c35935c17a4cdbbd1fb37a3250d6e3666a9637fee0eb56308eac976c39664d"
+    },
+    {
+      "path": "pages/original-jacobian-conjecture.json",
+      "sha256": "5979c7da3dc5a4caad5d99fe78f7b3b9d110d7f16b58d7e0773befccce7bebd5"
+    },
+    {
+      "path": "pages/plane-jacobian-conjecture.json",
+      "sha256": "55329e79873a6271eaa37fd2c18dffa36ea589e581914e6bc66360a0f770d75f"
+    },
+    {
+      "path": "pages/puiseux-obstruction-and-failed-extension.json",
+      "sha256": "0522a9c45f6b4de32caa8ec61e712373ee2e757287a4cf7dd4a1ad84f5b1baed"
+    },
+    {
+      "path": "pages/puiseux-polynomial-termination.json",
+      "sha256": "aa6778a967d8f30f0a2ae022afa3d19236c2486bcd6150d351c4137991ca1bb7"
+    },
+    {
+      "path": "pages/quadratic-covariant-incidence-rigidity.json",
+      "sha256": "bfd4485059fc23bf9a742ce7190efde407ecabb1505bcdbb75d0f8d38d199dde"
+    },
+    {
+      "path": "pages/quartic-boundary-torelli.json",
+      "sha256": "3ff78c513f9bc0f37f6adff65b5f6cf6f8919d9db2056cbcd94ad9ce800216f3"
+    },
+    {
+      "path": "pages/quartic-conic-leading-image-exclusion.json",
+      "sha256": "7f52d2ba99cfcffd22640a29995e8ca7880d0c5c1172c00ef38479d129de0f67"
+    },
+    {
+      "path": "pages/quartic-leading-curves-at-infinity.json",
+      "sha256": "6dc7898d7a931104ea5643372163b5991cc6cb5d410f6e9cece2f4e6e120ec42"
+    },
+    {
+      "path": "pages/quartic-leading-line-reductions.json",
+      "sha256": "571d60e35ca86c6905eb5f162a49cc0c2dc9e752604aea2507df4d7bed9e8554"
+    },
+    {
+      "path": "pages/quartic-rational-cubic-leading-image-exclusion.json",
+      "sha256": "d97a1a7837480fb1112f8a638aea641d3f8ed83c841d03d55a1349af2f903df8"
+    },
+    {
+      "path": "pages/quartic-rational-quartic-frontier.json",
+      "sha256": "3648b3bdea02cdeb4e5bb65ff1c63bebc0dfd33337b320fe25edd95022b8ac89"
+    },
+    {
+      "path": "pages/rank-one-quartic-theorem.json",
+      "sha256": "c6130f5b7f18fb2663427f90ae8e8201a6d7e7e66a09757041f552427b78dba5"
+    },
+    {
+      "path": "pages/reciprocal-family-moduli.json",
+      "sha256": "55ba4b057939ae8e6eeb9190002ec27f717978cbb7e1abb848d2f4b4e277af29"
+    },
+    {
+      "path": "pages/research-agenda.json",
+      "sha256": "db114f093bb1fdd4871322723d527a9372300e1ab8fddbac1b0413815b394adf"
+    },
+    {
+      "path": "pages/root-slope-and-cubic-cover-geometry.json",
+      "sha256": "0bfa585a72d43af77245678756517e8efb8d48f71c5f3f4fc3a666750709b6c2"
+    },
+    {
+      "path": "pages/second-four-dimensional-counterexample.json",
+      "sha256": "e23b6b600cd5ad24393c7c1a022ac597345250b7e86c4be1f8874db7864a0a1c"
+    },
+    {
+      "path": "pages/six-sheet-plane-constraints.json",
+      "sha256": "8024c6b9eaa1e7ce3a91800799a023cfdccef17d40549365e11d5d8b2379852a"
+    },
+    {
+      "path": "pages/smaller-keller-symmetric-dilations.json",
+      "sha256": "8a6d64222332557e32c351b71c509b2bcea1e0ca954cc6dd1d09c1c9359c2161"
+    },
+    {
+      "path": "pages/stable-deformation-moduli.json",
+      "sha256": "98bffad89691e8b370ea74aa44a29cd957cba192233403ef7be59dbb227d3474"
+    },
+    {
+      "path": "pages/symmetric-dilation-bounds.json",
+      "sha256": "bf2131b5ad8b27ef3ca355ab87287347cc806a58dc94150bc9523c9def40a164"
+    },
+    {
+      "path": "pages/three-dessin-uniqueness.json",
+      "sha256": "c756d75c1804cbcd82e20b2e9614dc73e4ebc0692ccc4202927bc845fcad8a91"
+    },
+    {
+      "path": "pages/tricuspidal-quartic-leading-image-problem.json",
+      "sha256": "357959f323465ab6133995a8bf7e2d424ff4d2d94d97c1e50ee92027411253f9"
+    },
+    {
+      "path": "pages/unrestricted-quartic-open-package.json",
+      "sha256": "9d909ee296dc32a5a50f46b4c034b4246de2a12cd5424d942e3d729e095a6716"
+    },
+    {
+      "path": "pages/valuation-and-three-dessin-exclusion.json",
+      "sha256": "5a45addbcbc7d651851178b1762d02fe1e72e797683f341f77dfc4f9c699b7a3"
+    },
+    {
+      "path": "pages/vitushkin-rational-comparison.json",
+      "sha256": "e60184e6e3257385f5c4a18f2b977ba9d6fb94e6a3072191b06e5afb24804f84"
+    },
+    {
+      "path": "pages/weighted-lift-moduli-under-arbitrary-equivalence.json",
+      "sha256": "3379e8b75ec226b7e9ee6bc748b3747d6df57ebf38f43ed42eb8b279ddf63d87"
+    },
+    {
+      "path": "programs/cubic-marked-root-incidence-geometry.json",
+      "sha256": "3ca7d312b1798d6f8e68dc78f78d58565082c37fbcdd77ff9db8cdef869606ea"
+    },
+    {
+      "path": "programs/homogeneous-descendants.json",
+      "sha256": "1d0da2af295e155d3153e86fa5054fc017396b3eb2a415d0675269c593b0ed40"
+    },
+    {
+      "path": "programs/local-rigidity-and-deformation-algebra.json",
+      "sha256": "74054c5f7fc9d65f5a17117cb0f6eb2bd11361c3c42753a2034487742ce01f87"
+    },
+    {
+      "path": "programs/minimum-degree-and-quartic-exclusions.json",
+      "sha256": "d44f931e7ca601ffd4b22669b45550d12544200b1f3e095b421a3aefb6ef9fa9"
+    },
+    {
+      "path": "programs/plane-boundary-obstructions.json",
+      "sha256": "b6bc30cd17b66e7ce06176b45da330692b2e7c018200f9d24777f7badd4be5ad"
+    },
+    {
+      "path": "programs/stable-moduli.json",
+      "sha256": "2db3a154fc17a96892246f42da0bbc660fe06848fca7555b411385a3f20431c9"
+    },
+    {
+      "path": "public-export.json",
+      "sha256": "f68b868cfe76db20c8fdec72d51306f2f13cb573f65d4a31571c5966ed3c39fe"
+    },
+    {
+      "path": "registry.json",
+      "sha256": "e64230813e92657d7a86267e7200b8f702bb24a53c25e35cc2e782af1f3019a2"
+    },
+    {
+      "path": "technical/a-determinant-one-counterexample-over-every-field-b7122324.json",
+      "sha256": "78ed231053f00b3399adeab46783491b9b205ccc91723b25006d9f8046127f4e"
+    },
+    {
+      "path": "technical/a-second-counterexample-g-mathbb-c-4-to-mathbb-c-4-has-10bd21d3.json",
+      "sha256": "722b5acd9e78802e52d2b380f2665b5badc2c8c9a902f8870b8a77ee1ba22394"
+    },
+    {
+      "path": "technical/a-second-issue-occurs-in-zwart-s-fixed-highest-weight-vector-proof-e2f31533.json",
+      "sha256": "0b80639c6b348afa03b58f69d5188e8931d6d7d0e315c6dd299394b75320f813"
+    },
+    {
+      "path": "technical/a-straightforward-explicit-reduction-produced-a-cubic-homogeneous-map-in-79-variables-b7744f4c.json",
+      "sha256": "1a8bf877e2a9bad3c2add391f5c28f87b94f266962d03d862d876b1d929de74c"
+    },
+    {
+      "path": "technical/affine-rigidity-result-a-rank-three-affine-linear-family-whose-full-simple-dbb38171.json",
+      "sha256": "73a358388195fc604a216467a6da189f33ffe18f64623a0de6515afb4b1e6941"
+    },
+    {
+      "path": "technical/all-degree-normal-resonance-the-normal-resonance-theorem-extends-to-every-degree-235f8076.json",
+      "sha256": "3f9416eb67e842b6f9f953fc342aba4b355e451491de4626366b43f442710c2b"
+    },
+    {
+      "path": "technical/all-multiplicity-fixed-frame-torelli-e48f1ff0.json",
+      "sha256": "842d81371c0a091ca8ecc1bcc1e072819d20352dadd8a6de7fc8238951d809fa"
+    },
+    {
+      "path": "technical/all-order-laplacian-nonvanishing-for-the-fixed-38-variable-hessian-quartic-delta-d55d3d6a.json",
+      "sha256": "de0cbbc2ab117b65deab1c679a1b166276d0525f25aabeb2a6261a34783a6b7e"
+    },
+    {
+      "path": "technical/an-explicit-cubic-homogeneous-counterexample-in-24-variables-4bb50bb3.json",
+      "sha256": "a9773dc620bd6dd4b60b6f83fab833372a61f5af1292e93c5a2cd2ba4e8e7c21"
+    },
+    {
+      "path": "technical/an-explicit-degree-three-counterexample-in-11-variables-a39e3ccd.json",
+      "sha256": "c97f76ea4b56d0e67f672c72374bc588e88ebc0aa6afb18efec7d517432d6f78"
+    },
+    {
+      "path": "technical/an-explicit-pair-f-g-on-su-24-or-su-79-has-78845cd5.json",
+      "sha256": "c5a03cad9394cfa17553bb9128c55559f13457d387b1937b3672650659088a91"
+    },
+    {
+      "path": "technical/an-explicit-triple-collision-e4fa4cbb.json",
+      "sha256": "3dd95980488cbef9c333efa767fa552f96a8582a586c214cbace9db3ce7b773a"
+    },
+    {
+      "path": "technical/an-omitted-value-defines-a-smooth-direction-fibration-e82019d2.json",
+      "sha256": "65deb06ba49c437593267e6a96a1ee3bafc664954ff7c7b2811d046025e1b278"
+    },
+    {
+      "path": "technical/arbitrarily-long-single-point-jet-moduli-for-every-m-1-the-family-bad4b378.json",
+      "sha256": "d2d652cc0501f487374b2cce7cdb79bbe5e0b1c3e222db325642fee123cdeb7d"
+    },
+    {
+      "path": "technical/asymptotic-s3-fiber-distribution-689c15c4.json",
+      "sha256": "00a99ac330f35cfec2aeb4b88d7388a6a9d0bcdb4b1137fcb6403ae57601bea7"
+    },
+    {
+      "path": "technical/based-deformation-classification-the-based-w20-family-has-exactly-two-based-equivalence-10b255a3.json",
+      "sha256": "781251811224c064650bedd3872b226d5f8724cc758247c7488c27aea5ac3220"
+    },
+    {
+      "path": "technical/basepoint-free-fixed-factor-conic-strata-are-excluded-in-degrees-five-and-44542689.json",
+      "sha256": "ac3c6297a52756ba0ef46d16e35b68d457d1d1e30eab75c4d90a10bb5dcde44a"
+    },
+    {
+      "path": "technical/belyi-boundary-map-the-lower-face-of-either-newton-alternative-forces-a-34b30410.json",
+      "sha256": "74b2adaa71842924a47cd3692c9bfafac454c994cb84d1aa0810b0146c0f2020"
+    },
+    {
+      "path": "technical/block-tensor-dimension-36-dilation-for-the-displayed-19-dimensional-block-tensor-bc2fdb8e.json",
+      "sha256": "17b714a6d257b9dc4106effb33b241bf0a2964b456adcaa2e0d35a5185811294"
+    },
+    {
+      "path": "technical/boundary-deformation-complex-the-normal-boundary-determinant-equation-has-the-displayed-universal-c4bfc4ff.json",
+      "sha256": "1af192fb07199aaaab9212f74b3ce6db2328703790d92a4123b6f1b5670ce8b2"
+    },
+    {
+      "path": "technical/boundary-geometric-interpretation-the-reduced-degree-21-and-degree-17-boundary-covers-b3a0b330.json",
+      "sha256": "db40474d17c5ee31b10e2c531b202d61be1cd9b6feaa5c8ebc677bbefd66470a"
+    },
+    {
+      "path": "technical/cartan-target-quadric-obstruction-the-pure-cartan-projection-c33-defines-a-nondegenerate-8c8ade4e.json",
+      "sha256": "6513a3e90b32f8142f061cd00aa4e9c92bf33e65c1b4162eb5278e60577ec883"
+    },
+    {
+      "path": "technical/characteristic-field-and-period-for-a-quartic-leading-map-of-generic-jacobian-d6da9b38.json",
+      "sha256": "086fc033d2ac71546f68c7c0f1904108d474144cd9189a9ab2bf008092ff9adf"
+    },
+    {
+      "path": "technical/characteristic-three-degeneration-cc864a73.json",
+      "sha256": "a98b253f3f0f5c316f447343ffa59a2ec25ab76d8772002adb5554c7d6c61aed"
+    },
+    {
+      "path": "technical/characteristic-zero-nullstellensatz-certificates-e91a93eb.json",
+      "sha256": "64cd94383121fbcfaa0372ba9acdb1cc0575327160d3dacac30248594380c73e"
+    },
+    {
+      "path": "technical/claimed-failure-of-the-mathieu-conjecture-for-su-3-266d9e33.json",
+      "sha256": "251d9366fd167f0246ce2d1b1c25796a4053584d4a1d6ce485750a43bfeabfbc"
+    },
+    {
+      "path": "technical/coefficient-scheme-for-fixed-n-d-normalized-determinant-one-polynomial-maps-form-871b4f98.json",
+      "sha256": "7fc7202e18cc826a7b4a955015f6fbe74a8d3aae5ad2373d3cb3fc83580c4941"
+    },
+    {
+      "path": "technical/combined-support-exclusion-result-both-encoded-sparse-support-alternatives-are-empty-after-121331e0.json",
+      "sha256": "e7abf3fa4f3062329dc4ffc4a3a4241a7ad8f64b22e7609c74d7f16c07763be2"
+    },
+    {
+      "path": "technical/common-deleted-planes-are-intrinsic-075712b5.json",
+      "sha256": "e41ac95d983cabd1a9b30e60b7d4aea8746fc55018141a1abd1cef819b5fbdca"
+    },
+    {
+      "path": "technical/common-zero-maximal-order-normalization-12cff8c9.json",
+      "sha256": "b2a70e86aad6bc62e6d9821bf6218aa9c375f2da95d6e824b3e4c64572f12cec"
+    },
+    {
+      "path": "technical/compact-norm-certificate-five-selected-partial-gluing-equations-have-mixed-volume-296-8917ad05.json",
+      "sha256": "dabcf3a7ab14ad962dda17166cfb8d738bdc46b78af7f1476e0156e173adddfe"
+    },
+    {
+      "path": "technical/comparison-with-vitushkin-s-1999-rational-example-aa2df6f0.json",
+      "sha256": "4e89121dd4e32e84b2a243bd17e3acc9a56e184eefa94e9e60fcd1bb893104d8"
+    },
+    {
+      "path": "technical/complete-conic-image-exclusion-no-quartic-keller-map-in-three-variables-has-24a6190a.json",
+      "sha256": "b69c6583ae93644a01ae9d950d683ce574cf8283f6e69db2c75741ccd2afe208"
+    },
+    {
+      "path": "technical/complete-conic-stratum-exclusion-no-nonautomorphic-quartic-keller-map-in-three-variables-80f5587e.json",
+      "sha256": "a5052fda61fdfe6ee0e5bb6fa280095c79d155d88296516f891eaa52fd1c84ed"
+    },
+    {
+      "path": "technical/complete-frame-normal-form-modulo-triangular-target-shears-all-polynomial-root-slope-30497402.json",
+      "sha256": "53bd8d61820a0529fef8028ace7ed1b81c7497515d92cb3ff546a76a3033362f"
+    },
+    {
+      "path": "technical/component-construction-within-the-a-b-family-the-nonproperness-set-can-have-f5e7f90c.json",
+      "sha256": "033adfb65df6fda1e4dcbddd605d0b96f3c75dd32a793419ee321a3631bf6d60"
+    },
+    {
+      "path": "technical/component-structure-scaling-contracts-every-bounded-degree-normalized-keller-component-toward-the-d90a0ac4.json",
+      "sha256": "34b5a96671468edbf441c4fe31c79b215a2b707f04b7fcb7a89e3043caf0ac4b"
+    },
+    {
+      "path": "technical/computer-assisted-proof-every-degree-at-most-four-map-in-the-specified-6b34b866.json",
+      "sha256": "cfa1a384265c05a2f1d667260096988aa453b70380a4206ea34494b29e409ab4"
+    },
+    {
+      "path": "technical/computer-assisted-proof-every-equivariant-keller-map-of-degree-at-most-five-b8eb4a61.json",
+      "sha256": "319eeadcf4e9168d7fe3b4697e6a3e2165cfa9c9900c1be16b0f3ebaec2d6bc0"
+    },
+    {
+      "path": "technical/computer-assisted-proof-every-equivariant-keller-map-of-degree-at-most-six-ab6e23a3.json",
+      "sha256": "5d353bbd795c725d3ee4d16f9fe67e7985a9ea95c2c83bb0ab51f2959442bbb7"
+    },
+    {
+      "path": "technical/computer-assisted-proof-every-rank-one-quartic-map-with-top-form-v-66f97916.json",
+      "sha256": "1296b45b078febafa842c1a00075255fa54bf270c38baa195641cea0697ea638"
+    },
+    {
+      "path": "technical/computer-assisted-proof-for-a-fixed-target-and-marked-boundary-the-logarithmic-068e58b0.json",
+      "sha256": "b5b7358bda208ec04bfa19d40d7b3b42f43fcc5840b574c667675d55b429927e"
+    },
+    {
+      "path": "technical/computer-assisted-proof-if-the-quartic-top-form-is-rank-one-of-39c9cbaf.json",
+      "sha256": "b17706a5d877a5ed71a76627bd263ddd2c2a0f74692692f4b351f267f81cc023"
+    },
+    {
+      "path": "technical/computer-assisted-proof-in-the-primitive-linear-rho-cubic-ansatz-the-equations-9077fe2e.json",
+      "sha256": "7b9ba090bc33cc977d2a9ebfafdc12bb1776421df44a850dc74e5afa2f89b8a0"
+    },
+    {
+      "path": "technical/computer-assisted-proof-the-cubic-frame-residual-coefficient-is-gauge-every-degree-295eaac3.json",
+      "sha256": "07a75b7c7571b89f0e5aaad4dfac211d320010b2e91b9119f05127674c3e83c8"
+    },
+    {
+      "path": "technical/computer-assisted-proof-the-intersection-c-p-q-r-with-polynomials-of-c9d20922.json",
+      "sha256": "b923987b2f67f48f550c3d951dcc35d4ba1571165520e5e9e229bdba0605717c"
+    },
+    {
+      "path": "technical/computer-assisted-proof-the-reciprocal-boundary-stratum-has-the-stated-cubic-frame-b3cd96d4.json",
+      "sha256": "67a780cafd66a60118dd326e6f86b0472ab0d229ecdcbb7e3615772a6bafa8e5"
+    },
+    {
+      "path": "technical/computer-assisted-proof-the-unrestricted-ordinary-degree-four-keller-system-has-93-87229d8b.json",
+      "sha256": "6c3dbea541bcc1b7b1edae20edd29d31153d36f7e738d81663b08074cdc1b077"
+    },
+    {
+      "path": "technical/conditional-master-cover-theorem-if-the-cubic-normalization-is-flat-it-is-2e563312.json",
+      "sha256": "d63b3eccaeeba389b5747e73fa80670d8d91ed2f3fdceea2a62f8c50dbc59e96"
+    },
+    {
+      "path": "technical/conditional-smoothness-reduction-if-a-generic-degree-three-keller-map-had-smooth-bf1a2dbf.json",
+      "sha256": "d8bc04f53f334feca0e68efa43a3b1f99b6c85fd26bda304a11e7631bc848b59"
+    },
+    {
+      "path": "technical/conditional-target-theorem-every-plane-keller-map-with-maximum-coordinate-degree-below-3d459190.json",
+      "sha256": "187471774367e16bc01c7a4ba678d698b7535b5045061a24f5ccca45d7c7bc8a"
+    },
+    {
+      "path": "technical/constant-jacobian-determinant-of-the-alp-ge-map-561802fa.json",
+      "sha256": "5c286b5a3197c575b5c42ebf45fd1ad869d6ac4adb6f67fc2e39d36d8c54a41a"
+    },
+    {
+      "path": "technical/coordinate-free-reformulation-the-full-support-layer-equations-define-intrinsic-obstruction-classes-3ac3d679.json",
+      "sha256": "6b4d143a2559a80254e72cf217398f6b3e4590e38fe7b152285c38cb4b462d5c"
+    },
+    {
+      "path": "technical/correction-the-earlier-inference-from-a-restricted-five-dimensional-slice-to-isolation-02c45eb8.json",
+      "sha256": "b908a7360b345ec5baedfd378ac69fbbed0c9deed43622f298de6b9d95f08971"
+    },
+    {
+      "path": "technical/counterexample-and-correction-formal-extension-of-the-ruling-can-hold-while-zariski-ab9f57d0.json",
+      "sha256": "e3a9e3f9dffba63558e8a8bbd62fcc30da3ba74c82f050de7261b055bb50ac1f"
+    },
+    {
+      "path": "technical/counterexample-to-an-intermediate-lemma-normal-cubic-covers-with-s3-monodromy-need-583da94a.json",
+      "sha256": "46f2352b36f4f49e01dde8061c92bfe057fb607575cf39e1d5354985dab79132"
+    },
+    {
+      "path": "technical/cubic-frame-moduli-degree-threshold-within-the-full-cubic-frame-family-ordinary-ca01a7a7.json",
+      "sha256": "c21d5cc614c1d5ebe59ac4a90c5f325094439c6b9ec7b20e8aff9d7fc79e304c"
+    },
+    {
+      "path": "technical/defect-formulation-flatness-of-the-finite-cubic-normalization-is-equivalent-to-vanishing-248ad7b9.json",
+      "sha256": "ae48a2c6e91729eeb2ac52e421cdb210d0e9c98271198cfa4f4767f4b6d9d491"
+    },
+    {
+      "path": "technical/degree-bound-status-eliminating-both-normalized-8-28-alternatives-gives-the-conditional-9d0be662.json",
+      "sha256": "dd231308ff2ca76ce9eee5a64152abf169cd69288342e36d7d3c8efb2fd42f47"
+    },
+    {
+      "path": "technical/degree-eight-kuranishi-on-the-five-explicit-degree-eight-coordinate-directions-the-0632b2b1.json",
+      "sha256": "35ca0006cf13cb7defa831e02b9ab379acb6582d7c700264e279629fc4253a86"
+    },
+    {
+      "path": "technical/degree-eight-local-reduction-for-the-degree-eight-local-kuranishi-problem-the-d3f76ebc.json",
+      "sha256": "747066d26cad033814966d4f5f2b9fc75c8bf6723d5aa7255fb8a09e83409a64"
+    },
+    {
+      "path": "technical/degree-eight-shear-moduli-degree-eight-affine-rigidity-fails-composing-g-with-ecf242ab.json",
+      "sha256": "b3701d2f4850b3decb06ae3d1f42995cf284cd33f8a8d2d6443353f5eb822f95"
+    },
+    {
+      "path": "technical/degree-eight-tangent-jump-at-degree-eight-the-determinant-linearization-has-kernel-891b0275.json",
+      "sha256": "9c667c0c04dca961ea234f662b3acf1e114232036c5bd22901fc520d2d8638b6"
+    },
+    {
+      "path": "technical/degree-eight-transverse-branch-obstruction-at-the-degree-eight-base-point-after-24c82405.json",
+      "sha256": "e9be887a3484ef69f3c19fd7a3167d5bc1bfb13712bc15c1352db932e5cdfdbf"
+    },
+    {
+      "path": "technical/degree-three-function-field-extension-with-s3-galois-closure-1b137277.json",
+      "sha256": "e19244215e5dda9df44bd0918bbf2dce4e84a96b0eb0339bb3c26b43d61d6601"
+    },
+    {
+      "path": "technical/derived-stable-variation-theorem-in-the-analyzed-cubic-incidence-families-additional-boundary-2dcfc426.json",
+      "sha256": "e15213033a6aa212c89a790009fb29638a203362fdae746b4e4a28b52e149660"
+    },
+    {
+      "path": "technical/dessin-count-there-are-exactly-five-connected-dessin-isomorphism-classes-with-the-75ae985e.json",
+      "sha256": "837013417d2e745800e87a2112425615eb378b39e57f02a1b027b406fe50909d"
+    },
+    {
+      "path": "technical/dessin-reconstruction-the-five-degree-21-dessins-form-one-degree-five-galois-55f1ea60.json",
+      "sha256": "eb5d2e654d1782509a5b363fc315eebd50e646164a7b5d19f47170dfa1520719"
+    },
+    {
+      "path": "technical/dimension-35-linear-test-in-the-scalar-w-block-case-a-35-a7f02148.json",
+      "sha256": "91a960796722b886900fbe702202bf7e15671d179c45b0bd003b6c74ac8eddbb"
+    },
+    {
+      "path": "technical/dimension-bound-the-explicit-constructions-give-the-upper-bound-n-min-19-0edd5ae2.json",
+      "sha256": "1b51ac96e4e5254a2801b5b9a12578a8d1d0b0eb6c2de907fa52a51fd308228f"
+    },
+    {
+      "path": "technical/dimension-descent-obstructions-directly-slicing-or-graph-pulling-back-the-three-dimensional-f37d6027.json",
+      "sha256": "dff271c4948d37235de1413d82ac205f6ec80ad1bbdea65be4020d801ab74d78"
+    },
+    {
+      "path": "technical/dimension-five-first-normal-obstruction-an-explicit-smooth-z11-residue-disk-in-64e18df3.json",
+      "sha256": "1b6e2b6a88cda0931f4c82925a186d4852bc7ab736ac2e8216cade0df00b68ef"
+    },
+    {
+      "path": "technical/dimension-minimal-cubic-collision-algebras-are-monolithic-08ae5516.json",
+      "sha256": "1e301c9bde8d7326974ff1a2c820bbf0023c5d1b4c99b6543737dc86c0c56b09"
+    },
+    {
+      "path": "technical/discriminant-boundary-formula-at-a-target-dvr-the-invariant-discriminant-exponent-is-aa2591b9.json",
+      "sha256": "b1e8c91ed2716e53a861f0d02d21a953c442c20e73b96886f7c82ac902af7538"
+    },
+    {
+      "path": "technical/discriminant-complement-topology-over-a-c-nonzero-the-normalized-cubic-discriminant-complement-8ef344e1.json",
+      "sha256": "082b25358a50022d7d735f8930bed6aee112f3c984efc25fa3ea5cad2543f94d"
+    },
+    {
+      "path": "technical/does-a-local-sign-three-torsor-survive-the-global-keller-boundary-1c1790e5.json",
+      "sha256": "613bf9e15e3a6213f156399d3beef5cdfe6c31df5b2c4ef506d31960ce282e52"
+    },
+    {
+      "path": "technical/equivalence-classification-for-all-admissible-a-b-alpha-triples-polynomial-left-right-221985ff.json",
+      "sha256": "4467dfacb9d16cdca816b9e8a9d4fd7259e97c8e4a28bbdf4395c085cd98933a"
+    },
+    {
+      "path": "technical/equivalent-reformulation-the-defect-problem-admits-a-resolvent-maximal-cohen-macaulay-reformulation-ab57a9b2.json",
+      "sha256": "4f38ba7dfbfdbf3c47a03dc3279c828f7206c2e5ebeac24208d4aef546df5d4c"
+    },
+    {
+      "path": "technical/euclidean-completion-obstruction-the-direct-euclidean-36-dimensional-partial-gradient-potential-is-e1675edd.json",
+      "sha256": "df10a7cd7af9aa514fc24b0d2d5b7eae5aa04a1468e5954379cd3445b0529ffe"
+    },
+    {
+      "path": "technical/every-finite-area-preserving-jet-is-polynomially-realizable-d5d87491.json",
+      "sha256": "68738c03ebd93c025f2fd8c246e84cfd8281aa41cedcc253ad2de49212f9d916"
+    },
+    {
+      "path": "technical/exact-artin-algebra-completion-the-completed-local-artin-algebra-has-length-584-dd13ac0e.json",
+      "sha256": "31a202928b030c2269e3c1f9fbd94ce2821e6cdbf663a5ebf7ec34a7ebe2eff2"
+    },
+    {
+      "path": "technical/exact-artin-border-presentation-the-completed-local-algebra-at-the-affine-slice-f4c59fa0.json",
+      "sha256": "b960258e4834c99ecf6e0567af51dd0deb1ff48b493ea7c8f610ba61bdf8df6c"
+    },
+    {
+      "path": "technical/exact-belyi-reconstruction-the-degree-21-lower-face-equation-has-exactly-five-2b32290c.json",
+      "sha256": "37024bb358f34744f3071a645a555b0f460534de7b7cfd694136f1c273604aa8"
+    },
+    {
+      "path": "technical/exact-belyi-reconstruction-the-degree-21-passport-has-exactly-five-normalized-belyi-5a780be7.json",
+      "sha256": "06869df9aaf225741a9d24093fb4c3a77059dc495a3842ad1229b255b0027dec"
+    },
+    {
+      "path": "technical/exact-characteristic-zero-computer-assisted-theorem-the-six-selected-full-support-obstruction-8dd6ecb1.json",
+      "sha256": "39ab4d760923d6d925695f61b0c216b933a2a27afbc89e6ca54ea217d51a1b88"
+    },
+    {
+      "path": "technical/exact-computation-no-target-reparametrization-of-the-tested-bounded-degree-at-most-531601f7.json",
+      "sha256": "232d75628e409a8b74c5732e55e886616f1ab4f9fb5078690ddab81b812d47ed"
+    },
+    {
+      "path": "technical/exact-discriminant-conductor-for-the-discriminant-surface-of-a-c-t-3-ae66472a.json",
+      "sha256": "7b3f8cc73f6d664b15165b3d3978590c51e266549f1b9b2a3ea66086ea62bfbc"
+    },
+    {
+      "path": "technical/exact-finite-field-fiber-counts-859b7e20.json",
+      "sha256": "5799ff9d0f75e16b21d0af34f75b4c342610cf30e02754e15b249a81ffd863ec"
+    },
+    {
+      "path": "technical/exact-normal-coordinates-linearize-every-boundary-order-d5fd24e3.json",
+      "sha256": "11e5276d1e1b84e355f85ff560b949dab420c68883503b0f3f5073548adde871"
+    },
+    {
+      "path": "technical/exact-reduction-plus-modular-certificate-after-full-support-layer-elimination-and-normalization-637e8694.json",
+      "sha256": "ff53b60c6e3b5297f5739599dc3080a46106c894ea52959887115bf32bae97bc"
+    },
+    {
+      "path": "technical/exact-residue-reconstruction-the-exact-layer-replay-identifies-all-fifteen-archived-normal-1303d646.json",
+      "sha256": "ea2af1f48138b2a2c9567da0d6d69d46049d9c5359c75ebb7d028400180746a1"
+    },
+    {
+      "path": "technical/exact-secondary-boundary-theorem-after-a-canonical-target-shear-and-a-4-83b3e951.json",
+      "sha256": "74b541c37648684690620f1046f5b1fbdde4ee2a12cf5073a41c769bb28b14a0"
+    },
+    {
+      "path": "technical/exact-support-exclusion-theorem-the-vertex-saturated-truncated-newton-support-is-empty-427c7334.json",
+      "sha256": "135d4c0c356078b0e72ac7b73abfdd5f3761875db69427ec0ac52a86c29fe81d"
+    },
+    {
+      "path": "technical/exact-system-generation-the-two-surviving-normalized-8-28-newton-alternatives-are-f12e75d6.json",
+      "sha256": "051fbf5354176591eca9f802507a03023be39abcc7716c6a64be1e481038e457"
+    },
+    {
+      "path": "technical/exceptional-full-polygon-ideals-are-unit-ideals-ebe5d434.json",
+      "sha256": "eb3ace60852b12cf4bf80e2922a4e505b92fbe62f1fbb387f5bcf797d9a3c39b"
+    },
+    {
+      "path": "technical/exclude-low-dimensional-sl-and-sp-prolongation-extensions-35542bb2.json",
+      "sha256": "21c7b5f531e4cd646dc82d5249012a9dbd6bd23ef59bbd1c428afd5fe60154db"
+    },
+    {
+      "path": "technical/exclude-the-binary-quintic-cubic-factor-overlap-ae3c2e2b.json",
+      "sha256": "fef4d92f0ee1e41636d8276f73ce4c5124f6cd001b687d5943258afc2aa6892e"
+    },
+    {
+      "path": "technical/explicit-all-generic-degrees-family-for-every-n-3-the-displayed-explicit-12ebb4bd.json",
+      "sha256": "b7f6b90da94c819d18aa740b03407587a6b9879f69dfee76c08ec911accf5444"
+    },
+    {
+      "path": "technical/explicit-common-s3-cover-the-original-three-variable-map-has-the-displayed-8aa6a8c5.json",
+      "sha256": "f35c3d1099f38a79ca5dd3342efea793284b72cdc4784aa89be89e655903c2a9"
+    },
+    {
+      "path": "technical/explicit-counterexample-an-explicit-square-zero-druzkowski-pairing-of-the-19d-cubic-0378b011.json",
+      "sha256": "7b1f2ebfc896f9c0336b8bf44c9edd20118bb9e500a1ba8a0be87c3d4f67672e"
+    },
+    {
+      "path": "technical/explicit-counterexample-starting-from-the-public-11d-counterexample-rank-sensitive-cubic-suspension-38caab66.json",
+      "sha256": "46761e2025733bad6313f1e66d420261a2d8316421b8b82b199e2fbdd8788d95"
+    },
+    {
+      "path": "technical/explicit-family-a-c-c-1-2-b-2-c-1-gives-ff7a1933.json",
+      "sha256": "f0af3bcc1df5c315c0410086abe42268b2f0f13983e4eaea56db7fbad6461da9"
+    },
+    {
+      "path": "technical/explicit-family-the-choice-a-c-c-1-b-2-4c-produces-0a4d8c5b.json",
+      "sha256": "9634b6d86462235ef59f946110464d8ff37a58579ae02711d63dcf9f5afa401d"
+    },
+    {
+      "path": "technical/exploratory-evidence-the-recorded-degree-five-and-degree-six-finite-field-scans-68ee8395.json",
+      "sha256": "0add61fb5fe392ac987a39c83f82972bcda5142492fb28efc87c2c335e8e9278"
+    },
+    {
+      "path": "technical/f2-dessin-self-similarity-at-m-3-the-degree-six-final-face-4db63c3f.json",
+      "sha256": "ceeeb13b4111f094ea48fc23d04dc526e040f7f63d7c070938275f7da5f61faa"
+    },
+    {
+      "path": "technical/f2-final-face-and-dessin-classification-for-every-m-at-least-two-6c67ea4c.json",
+      "sha256": "352d08c63d806f49879a783435767df4557f9fb087c13f26a69d90048741b1cd"
+    },
+    {
+      "path": "technical/f2-five-band-descent-no-go-the-natural-five-band-global-lift-42763317.json",
+      "sha256": "c53eee92912136668685e420f19f59ee90d107d201287d12ab53416e98426f51"
+    },
+    {
+      "path": "technical/f2-global-attachment-problem-solve-the-two-sided-band-convolution-system-that-5d7e9fff.json",
+      "sha256": "69e8b8f511eff97d2842e9e5ff77b924f50ed6be461f8664464c7bc9b8503590"
+    },
+    {
+      "path": "technical/f2-kuranishi-cancellation-the-apparent-f2-external-conditions-at-orders-510-and-2533e53c.json",
+      "sha256": "69d318a9281a219cfc96268701be2443fea51dc9d43a1cae938d4390e5ab6c69"
+    },
+    {
+      "path": "technical/f2-local-defect-integrability-the-local-f2-defect-recurrence-is-integrable-for-c42d615f.json",
+      "sha256": "44626e093996fe9d86c98b2493dfc347063b2e334a52b21a00f415eaf38875df"
+    },
+    {
+      "path": "technical/f2-support-window-calculation-for-the-f2-chain-5-20-7-5-66d861af.json",
+      "sha256": "78b52a44ac1ea30c853da0fafcdd42862bd2524f2fb3bbea54eb72cbd694314c"
+    },
+    {
+      "path": "technical/face-to-dessin-theorem-a-primitive-monomial-newton-face-jacobian-equation-yields-9276a5db.json",
+      "sha256": "062ba0c4cbec77828b23fb9fd4d83604d34a189b85b1cd49dde55205257f12b0"
+    },
+    {
+      "path": "technical/failed-lemma-and-correction-the-proposed-finite-order-three-level-2-3-fd5c0c60.json",
+      "sha256": "37277b82eb65e257f5f9a04dda3545aa67f0ed50c3cd883dce8bbed78c5b0915"
+    },
+    {
+      "path": "technical/failure-of-the-all-dimensional-image-conjecture-b22a5ac8.json",
+      "sha256": "8bd50d2033c33d0f1fe25935bcae32e963ce54bbcbcc46884fb12a58d8a95a59"
+    },
+    {
+      "path": "technical/failure-of-the-all-dimensional-poisson-conjecture-720027d5.json",
+      "sha256": "81b1be23b2fb18008c00998e7f77e402fa41efebf1650e2f732fc27b112ecbeb"
+    },
+    {
+      "path": "technical/failure-of-the-all-dimensional-vanishing-conjecture-4aee4be5.json",
+      "sha256": "981c46c9a43f91a2575b3406b4feff8f6f0850663b2f07b8bbb6d0e1b6df1355"
+    },
+    {
+      "path": "technical/failure-of-the-dixmier-conjecture-in-dimensions-at-least-three-52c555e4.json",
+      "sha256": "ffd9b7941aa560a2d32924534d41b18b9594c0515c97fe18a7e8590224eb8c95"
+    },
+    {
+      "path": "technical/failure-of-the-jacobian-conjecture-in-dimensions-at-least-three-d82b1d43.json",
+      "sha256": "eff19e0d4b3a4c2967e9d2bcb8154c616cdd3c8005f8c75c1c23396b3c08b046"
+    },
+    {
+      "path": "technical/family-classification-for-the-normalized-cubic-pole-cancellation-family-determined-by-polynomials-df9f7a0e.json",
+      "sha256": "dd4389b4bc47ef69b4771e76d69c0daebf1df5cb0c43e34cd058801c46be2139"
+    },
+    {
+      "path": "technical/family-deck-group-triviality-for-every-coprime-admissible-cubic-frame-pair-the-5b09e55b.json",
+      "sha256": "7c15ea4594ee6a2d274115ac23425da9639fd3f1f976009ec9a397013a91c5a7"
+    },
+    {
+      "path": "technical/family-singularity-theorem-the-reduced-nonproperness-set-is-singular-for-every-admissible-be85cecb.json",
+      "sha256": "c5e6549549aee2c268ccb0a1a601438fd9699f9f33f69841f0aa6b54ef6f2343"
+    },
+    {
+      "path": "technical/fiber-and-nonproperness-classification-the-nonproperness-hypersurface-is-the-cubic-discriminant-its-a10c42ef.json",
+      "sha256": "cff702f306d1ca3077c4be4cba9f1665e87ee618543ac431283bcb2ee0a8fe0e"
+    },
+    {
+      "path": "technical/filtered-principal-part-adjoint-for-finite-newton-pole-windows-the-dual-of-d44f2b27.json",
+      "sha256": "54e56b37e735633b4f093d241b059d01ac3e8f96054e500e2032d35011809c69"
+    },
+    {
+      "path": "technical/filtered-tangent-table-exact-filtered-computations-for-degree-bounds-e-2-7-af5be0a3.json",
+      "sha256": "f680584412c74caf8dd349dc4b092ea416863ebc14bf52cf9f0e2ace7cc03768"
+    },
+    {
+      "path": "technical/finite-computation-design-after-collision-normalization-fixed-degree-keller-counterexample-searches-become-abaa3d1a.json",
+      "sha256": "5dfbc4ca390690ab9e8be664dd65c1c95048ac160d13eed7c3f169e6a7d9f4fa"
+    },
+    {
+      "path": "technical/finite-field-computation-for-the-full-newton-support-the-layer-five-through-bbadd594.json",
+      "sha256": "6100fc24710e264d3c71dcfe49fc901e48c931581f80d8fa6d15ee088f94e438"
+    },
+    {
+      "path": "technical/finite-flat-triple-completion-for-every-admissible-coprime-cubic-frame-pair-the-eb1b80e7.json",
+      "sha256": "da942d7693afff8245be5169e663455149027855be6c06984224e57004e888e3"
+    },
+    {
+      "path": "technical/first-transverse-hyperplane-obstruction-98e23b8a.json",
+      "sha256": "3efa1326b72808f8f49edf7ebfbd8267dcd6ddbe8390ef28cdded7709b20de08"
+    },
+    {
+      "path": "technical/fixed-double-linear-slice-minimality-within-the-fixed-38-dimensional-symmetric-double-fe704029.json",
+      "sha256": "4872c187b196db1857c61d3d572eedb7805c9299e55ae6e96394030ab2d00ef0"
+    },
+    {
+      "path": "technical/fixed-generic-degree-moduli-for-every-generic-fiber-degree-n-at-least-517c8b4b.json",
+      "sha256": "826b064e960c0465417315a607fd3d73acdd5abad5e5a92cd0dbd5679fff18ee"
+    },
+    {
+      "path": "technical/formal-arc-stable-modulus-separation-distinct-q-families-have-the-same-first-f7dc2c3b.json",
+      "sha256": "ebee52654ae9573cbc5c7c8c548a1261832bfbdbdf6b48ddd7e34263630d695a"
+    },
+    {
+      "path": "technical/formal-triviality-every-formal-polynomial-keller-deformation-of-the-fixed-map-is-30fc31cc.json",
+      "sha256": "8780d0cae27d9724b43ced8f4a6daa8fe0871dc7f05269ad229d3bbd3e467486"
+    },
+    {
+      "path": "technical/four-generic-lost-sheet-divisor-behaviors-a514f028.json",
+      "sha256": "bd422dc65dbb39f4a97bd453da798c1bb32f0264df0edfc5745a1b72555952a6"
+    },
+    {
+      "path": "technical/framework-calculation-a-scratch-calculation-for-borisov-s-first-framework-derives-cycle-0c788598.json",
+      "sha256": "8462890891610aa8844a1aaf8f88a1d8260e8f2d3c33220f3cfc7951fa342c60"
+    },
+    {
+      "path": "technical/framework-exclusion-the-forced-residue-degree-21-conflicts-with-the-degree-16-9345d4b1.json",
+      "sha256": "ff0c5b5a360fc29d0ce757dabd5e294201a462bd3b772cc253d686fca0511be9"
+    },
+    {
+      "path": "technical/full-stabilizer-the-full-normalized-affine-stabilizer-of-g-is-exactly-the-5284e9d8.json",
+      "sha256": "6541d8c61a4bb0fa59ab01b866840a895a87b02f216077324576b2cf9471d93e"
+    },
+    {
+      "path": "technical/future-work-top-priorities-are-independent-certificate-reproduction-the-full-bounded-degree-af04161c.json",
+      "sha256": "4c94e1eb2ef4395830aea1bd807b2843c4eeeb32927a86845a3ef09fab01892e"
+    },
+    {
+      "path": "technical/gauge-parameter-the-residual-cubic-coefficient-w20-lambda-in-the-chosen-birational-9e239454.json",
+      "sha256": "ccaae981946fe825d3ba765bd552695d1dd6afbc63720722d6786c30eaac9ded"
+    },
+    {
+      "path": "technical/general-omitted-locus-theorem-for-every-complex-polynomial-keller-map-the-omitted-0a41960d.json",
+      "sha256": "27dbfc8878540df3b9bd3b3070b30005fcd6fe1033b9ec0bbddcc83a38bfa20a"
+    },
+    {
+      "path": "technical/general-reduction-lemma-for-an-n-dimensional-degree-at-most-three-map-27af15aa.json",
+      "sha256": "246f806520673cff97289c712b7fb4162cdd360dc740ccbe0784fa18225be214"
+    },
+    {
+      "path": "technical/generic-degree-and-fiber-stratification-of-the-counterexample-55104ef2.json",
+      "sha256": "e3364533067553f25f184b6137e858744640b6ec36109480e3b759ef653effe4"
+    },
+    {
+      "path": "technical/generic-degree-corollary-any-plane-counterexample-of-maximum-coordinate-degree-below-125-3df84995.json",
+      "sha256": "52c69ac0fd9aabe99b5cbf6c8892a2694c111444944ba49fd425fc4612ecdff1"
+    },
+    {
+      "path": "technical/generic-degree-stratification-an-ordered-collision-incidence-construction-makes-the-locus-of-c76e1708.json",
+      "sha256": "632883542bc657f1c71baecd0e914611cca3b8dd1c69b730eaaab64e0b6a1116"
+    },
+    {
+      "path": "technical/global-cubic-conductor-formula-for-the-normalized-cubic-discriminant-with-h-3a-0759f9e6.json",
+      "sha256": "4583c047b56e5a9b86de60cf7154e828eed3663f92a90334b805ba015a2e8203"
+    },
+    {
+      "path": "technical/global-degree-20-defect-theorem-for-a-global-regular-type-five-dimensional-a82581c7.json",
+      "sha256": "a797ff69d28525edc038a8f038c8e70217460c0aea2d754ffedaaed5f8226aa6"
+    },
+    {
+      "path": "technical/global-rank-drop-constraint-any-global-homogeneous-quadratic-nilpotent-5-by-5-15d52c7b.json",
+      "sha256": "966371d3da76066c74262eabb983f9bafbc1820c28e770f6002c46b6145a4481"
+    },
+    {
+      "path": "technical/globalize-first-normal-obstruction-prove-that-the-first-normal-obstruction-covariant-omega-87a24226.json",
+      "sha256": "5e98944bdb5d4770a81a284254a7807bbadb65913144994b3f17b39b4de0e3fc"
+    },
+    {
+      "path": "technical/glue-cubic-frame-torelli-across-roots-escaping-to-infinity-4ee846cd.json",
+      "sha256": "ef2ae6e825d0babec5469c46c35a3bf2d54962a1040c9beef10e24bc3c4b39c6"
+    },
+    {
+      "path": "technical/growing-stable-moduli-in-the-cubic-frame-c8a7ef37.json",
+      "sha256": "080f83e9146691fe3d85644ebd215bbebd33f7ad4db0ce27e865a45c8c2c1ba5"
+    },
+    {
+      "path": "technical/hessian-construction-the-five-attacks-package-constructs-a-38d-hessian-quartic-with-57051b08.json",
+      "sha256": "c81829e9a9a34a860e36747dbae836437711d9b32571b2848e2d6ff617269032"
+    },
+    {
+      "path": "technical/hessian-quadratic-exclusion-every-nonzero-quadratic-hessian-contraction-with-nonzero-coefficient-is-a844e87d.json",
+      "sha256": "e8a64201ddcdfa0ed3dd71291babab78f6f032db5469618176429e1cb67ed68a"
+    },
+    {
+      "path": "technical/hilbert-burch-descent-rigidity-every-quadratic-matrix-annihilating-the-veronese-kernel-k-c992885c.json",
+      "sha256": "5d34bc0f343bd2685516c275df405386a93c1edb48136153f7dfea85a91af420"
+    },
+    {
+      "path": "technical/if-d-min-is-the-minimum-possible-maximum-ordinary-total-degree-of-6747671c.json",
+      "sha256": "f9f4498c0fa366cec693f67c00f481a69c66282ef3f4e695c85a3c8cae9cebb9"
+    },
+    {
+      "path": "technical/image-and-nonproperness-set-of-the-counterexample-173427e9.json",
+      "sha256": "77bb533271880aaaf292e2969ecd98a4c4e8bcc4b012644919ef6dc8915e6667"
+    },
+    {
+      "path": "technical/incidence-no-go-an-affine-root-incidence-component-of-degree-at-least-06efd647.json",
+      "sha256": "ee5aaabbcc80170224b431e85c72c57415de7560e37515df7de2abc73529be68"
+    },
+    {
+      "path": "technical/incidence-search-obstruction-for-multiplication-incidence-opens-from-p-a-x-p-292a9b9d.json",
+      "sha256": "dc5c13f6a1dd3f7644fccfba3abf8d9b240bab101fdef282a998f2db848a6a67"
+    },
+    {
+      "path": "technical/incidence-uniqueness-theorem-within-the-binary-two-block-multiplication-incidence-construction-u-517da8f4.json",
+      "sha256": "83715c22697a8597c414714de2cc2713ba6cbb8ed0396b780478f6e51ad4f7e6"
+    },
+    {
+      "path": "technical/infinitesimal-frame-deformations-inside-the-normalized-family-degree-jumping-first-order-deformations-69445e34.json",
+      "sha256": "8c5017f5dd11015312708d3e19a155b3c358b889adf8a712518803b1ee269487"
+    },
+    {
+      "path": "technical/initial-monomial-algebra-a-six-jet-initial-monomial-quotient-at-degree-seven-d4c5ad93.json",
+      "sha256": "f7631bbf89903a19d77b67cddffb2671229a01fa4a20006d0db273cdfb7b2cce"
+    },
+    {
+      "path": "technical/integrability-and-collision-determinantal-locus-for-a-general-five-dimensional-quadratic-pencil-566a5f84.json",
+      "sha256": "de01aa115dc0d391f0594b2d8092af8bbf5740d3a00ebdd2e0747647feed2e8a"
+    },
+    {
+      "path": "technical/intrinsic-critical-root-invariant-for-a-generic-weighted-lift-seed-p-the-0a4149fe.json",
+      "sha256": "4f8a5a68c6a673974abf2c8186a0dfccd20314568f267feea8458d7c7996e208"
+    },
+    {
+      "path": "technical/invariant-characterization-of-the-double-root-orbit-f8faadb9.json",
+      "sha256": "3d6f9a1cf913cfcdb745b91787a6be85449f414eafc2b75ba8886adeefe976f7"
+    },
+    {
+      "path": "technical/inverse-system-and-socle-the-inverse-system-has-60-minimal-contraction-generators-6fa7d42b.json",
+      "sha256": "f8c271bd03411db0574dd1bb3ca4b4a64808e9c920ba14c08748bb5de3b8e669"
+    },
+    {
+      "path": "technical/invertibility-and-properness-for-complex-keller-maps-ed2c6665.json",
+      "sha256": "f737a35a43fedc70f086731c27a03f578b5446ec52b3c2850ffd7377ade6c782"
+    },
+    {
+      "path": "technical/jet-obstruction-the-unique-scalar-monomial-quadratic-shift-lowering-the-cubic-jet-488ce7d0.json",
+      "sha256": "22a5d16915c8cdf85731f90385544f9b42a61501e27563cb82840356f84dbbfa"
+    },
+    {
+      "path": "technical/jordan-structure-for-the-19d-example-the-generic-jacobian-perturbation-jh-has-7affff85.json",
+      "sha256": "b00d554b9885e6a957cff12b536580d96b77c01da75bf245d0259a653022f63a"
+    },
+    {
+      "path": "technical/kraus-stated-the-plane-conjecture-in-1884-049c83f7.json",
+      "sha256": "7375d048aeac34780694654f5027e563fa4f21e3cefb669f25b55d8f16de02a7"
+    },
+    {
+      "path": "technical/leading-curve-factorization-if-the-projective-image-of-the-quartic-leading-form-f9a5b234.json",
+      "sha256": "520d7fe2f4db302bdcce8975fe1d34327469aa7e465b569b3da2b911ec12a868"
+    },
+    {
+      "path": "technical/left-right-inertia-correction-every-keller-map-has-an-infinite-dimensional-first-931c6d98.json",
+      "sha256": "d148ed14cd3ecaea72384b979f984d01542a15ff134d3ea9fa35fe7472fdf200"
+    },
+    {
+      "path": "technical/line-first-normal-extension-for-a-quartic-keller-map-with-leading-line-998aaf47.json",
+      "sha256": "53ab2da4622d5b09f60e97f4c55ed15f2a1468c3c5a9384b383cac1c40737428"
+    },
+    {
+      "path": "technical/line-image-alternatives-the-first-normal-analysis-reduces-quartic-leading-line-maps-91330017.json",
+      "sha256": "dd13eda4e7611701b765385314ba67c29fe0b951f7e800817778154ec3681a86"
+    },
+    {
+      "path": "technical/line-normal-degree-reduction-in-a-quartic-leading-line-counterexample-the-first-92bf786f.json",
+      "sha256": "21511518644d2ea8f8a7f81ca218de358ccf2924c9d9f5771b533f09a8c961fc"
+    },
+    {
+      "path": "technical/local-rigidity-a-local-standard-basis-computation-produces-pure-powers-u0-2-7a91920f.json",
+      "sha256": "36e686fdc4adcacd46b2c42ec4741dd5cc1870ec5dfb2a19e0032b317972cf21"
+    },
+    {
+      "path": "technical/log-geometry-the-initial-theorem-claiming-all-finite-quadratic-parameter-incidence-surfaces-099f60da.json",
+      "sha256": "0bafe84474f681b7386a1622e58cb8728d23710b5a2954b0f699124424a91bdf"
+    },
+    {
+      "path": "technical/low-ramification-quartic-exclusion-a-proper-basepoint-free-rational-quartic-leading-image-33d30102.json",
+      "sha256": "fd258caef7ef14ed143f0754961643316e4f3a1bc18994d8284088f158785ed2"
+    },
+    {
+      "path": "technical/mathrm-mc-su-79-is-false-d60ddf45.json",
+      "sha256": "6a976416190438b90e76d620b7f1228c0907434d2b59e8c89880dbc343e54fc4"
+    },
+    {
+      "path": "technical/minimal-collision-monoliths-are-sl-or-sp-prolongation-modules-30db849b.json",
+      "sha256": "6e8f205bef54d6a180966dbfe88d992853e3a84195c1a4f91a8739d572f71c6d"
+    },
+    {
+      "path": "technical/minimal-kuranishi-generators-the-minimal-kuranishi-ideal-has-exactly-36-generators-with-525a42db.json",
+      "sha256": "3e87ab672211d04de39939d600877db8e3210029859aed9f92f0261cfd161d9c"
+    },
+    {
+      "path": "technical/minimal-output-mode-suspension-the-n-r-1-cubic-suspension-is-coordinate-f701e994.json",
+      "sha256": "82873adeaf96ce0362134b8dd11a386ae7c7f4997b5b83e96e9ad13892521a96"
+    },
+    {
+      "path": "technical/module-structure-for-a-finite-normalization-of-the-cubic-cover-the-trace-a5938472.json",
+      "sha256": "f3d1d944eb31118857cca0fcce3cbd1f5d6ea54a4a17ecfbdff3120cfa4a4208"
+    },
+    {
+      "path": "technical/moving-hyperplane-rigidity-if-a-moving-linear-full-simple-root-incidence-x-9ff259ca.json",
+      "sha256": "ecba9a174486c7211b17a77ce8d70cd1876a9aa4883fc143b1a372aec4b6d072"
+    },
+    {
+      "path": "technical/moving-nilpotent-flag-certificate-although-every-jh-z-is-nilpotent-the-product-95f70298.json",
+      "sha256": "bdc6915bbd613186e70d26ada00c493bb573cd56dcf818daa81255722a9751f1"
+    },
+    {
+      "path": "technical/moving-tangent-rigidity-for-a-constant-nonzero-level-of-the-universal-marked-82d7ff25.json",
+      "sha256": "f5640264e4a635338b93b5a9672c2fb204522a5cd4fc7269e5a87b34b945cf4a"
+    },
+    {
+      "path": "technical/normal-layer-gauge-complex-the-normal-layer-operator-has-the-logarithmic-connection-3ae328d9.json",
+      "sha256": "802f48a52ec5e636fca74f67a3189635169df76febf443925f7ac908348b55e7"
+    },
+    {
+      "path": "technical/normalization-and-triple-cover-reduction-every-generic-degree-three-keller-map-factors-c04524cf.json",
+      "sha256": "b620fbba635f2555a038c5ea02d8e3eea24afe1982d69a321fbe1a9ce8692d31"
+    },
+    {
+      "path": "technical/normalized-family-monodromy-for-every-coprime-normalized-cubic-frame-pair-in-the-504733cf.json",
+      "sha256": "be9cab3699307a761aa31d54252fd794951de6186a1d2b4fc8bddaeef2390af8"
+    },
+    {
+      "path": "technical/open-conceptual-problem-recover-the-six-decisive-obstruction-components-canonically-from-the-5ea4baee.json",
+      "sha256": "b2a4d494ab49d5dd4240e3720c0cb8133dd0eba9113c032eb7dd2839cca4f32a"
+    },
+    {
+      "path": "technical/open-conjecture-keller-hypotheses-force-the-cubic-normalization-defect-to-vanish-138beda2.json",
+      "sha256": "9896c53d946761465a6d5023da326cb881ec6343f52efb5acf95beeb966e7948"
+    },
+    {
+      "path": "technical/open-problem-algebraize-the-formal-radial-ruling-strongly-enough-to-exclude-the-5716ff00.json",
+      "sha256": "5248c88b2c6bba304f3f39412c192439291742f9e3810e966fbaf18a72b21345"
+    },
+    {
+      "path": "technical/open-problem-can-the-balanced-ramification-degree-two-tangent-syzygy-stratum-2-7374f3ae.json",
+      "sha256": "bf75bfbd42682ed5bf4f7d3c69021bb2316f52d5fde04f68a932325f3a9d07a0"
+    },
+    {
+      "path": "technical/open-problem-can-the-tricuspidal-quartic-be-excluded-as-the-projective-leading-7312ddd7.json",
+      "sha256": "e322c23da3570f697300bdf1744ef61339abbb21302aa4ef17c10b3a70a48210"
+    },
+    {
+      "path": "technical/open-question-can-the-all-orders-nodal-local-solution-be-ruled-out-b1adee63.json",
+      "sha256": "41fc76bd0718ae32652c57e34e0b538d10a82b46d452cb6ffbf257725201820e"
+    },
+    {
+      "path": "technical/open-question-can-the-common-root-integral-closure-theorem-and-left-right-e9f3362d.json",
+      "sha256": "d99c5b036257b3a4c38db9cf84fb7e76bf11fe8050f1ec07100f4e595668e7a8"
+    },
+    {
+      "path": "technical/open-question-does-the-u1-u2-b-trichotomy-hold-in-the-claimed-89916a56.json",
+      "sha256": "81fa9a4dcfa7ec2432502a9845b7b974dddf605cca3642d85bc5c30db6eba779"
+    },
+    {
+      "path": "technical/open-question-is-the-toric-5-divisor-intrinsically-borisov-s-principal-5-ae3dcc7b.json",
+      "sha256": "04f3781a55b7a6c43fe5d1e221cc7ff4e3bee596ddc82d19a8911e38b0e37202"
+    },
+    {
+      "path": "technical/open-question-what-is-the-exact-minimal-square-zero-druzkowski-pairing-rank-72a99572.json",
+      "sha256": "8add2f7714ce766a684cc26c0f98399f7afbde2b92de74af24d0b08bb6b7af32"
+    },
+    {
+      "path": "technical/open-question-what-is-the-full-polynomial-left-right-quotient-in-the-3ace11e1.json",
+      "sha256": "37d89493454ad733d3aa19cd09bc4db53361b79f39d404c34f589b2918d51067"
+    },
+    {
+      "path": "technical/open-question-what-is-the-true-smallest-dimension-of-a-cubic-homogeneous-ddaf375f.json",
+      "sha256": "341ee78a299c133dc5de86e0b9efd3425a1b62ca5c79ba4decd0fa391be2d2bb"
+    },
+    {
+      "path": "technical/open-rational-betti-certification-it-remains-open-to-certify-the-intermediate-rational-cb4f1c73.json",
+      "sha256": "7ec246937fbc1250da2895e658b39de110b560cda16de0bac42560b04fbf4d8e"
+    },
+    {
+      "path": "technical/open-the-unrestricted-degree-four-problem-and-hence-the-exact-value-of-f4e9ffd4.json",
+      "sha256": "55411acc399f3513d2d30bde7d055f023fc01f67394265356e7dee1f7eeb0ce0"
+    },
+    {
+      "path": "technical/open-uniqueness-problem-the-identified-2-1-divisor-is-the-only-source-30aa88ce.json",
+      "sha256": "d279009444a5ea69c3a81eb02d13b4c69419aff8ec2c7e52cb4f9f63c4dbb009"
+    },
+    {
+      "path": "technical/order-eight-modular-prediction-at-two-primes-the-order-eight-quotient-contribution-6b717aa1.json",
+      "sha256": "9cf7def32bcd3cfa7ffdacfae8ea64893293fd550d83a8d7bc19e2e97014400c"
+    },
+    {
+      "path": "technical/ordinary-automorphism-classification-for-positive-boundary-length-the-hidden-ordinary-complex-point-1fedd133.json",
+      "sha256": "54ce09d79b6342eb58f6e52fe649aeef671e11db4f56fb439419d4c64bc76589"
+    },
+    {
+      "path": "technical/pairing-bounds-the-explicit-pairing-dictionary-gives-a-110d-druzkowski-construction-while-263402aa.json",
+      "sha256": "8dc2b83a865e245fa94d65b30b7f68cbdeeb40e2190e6ab62cbee3d49e733ff1"
+    },
+    {
+      "path": "technical/parametric-f2-first-face-reduction-for-the-infinite-f2-complete-chain-family-9369706b.json",
+      "sha256": "d19c7516e28a6a5ef42c8174b13b0f6e0d948c37ef074a14f082533203f6b3b3"
+    },
+    {
+      "path": "technical/partial-defect-exclusion-theorem-a-minimal-defect-can-only-occur-over-an-dcdbdddb.json",
+      "sha256": "290d0d76a41a85f4ec2d5e7076806029f22b95ce9315fb1b01509442fc362292"
+    },
+    {
+      "path": "technical/partial-defect-exclusion-theorem-no-algebraically-homogeneous-minimal-defect-can-occur-in-62422786.json",
+      "sha256": "90030d5127d64eb24b344bfab8c33ff5a4593485173c39fdc35f9180c23fdbf4"
+    },
+    {
+      "path": "technical/partial-exact-elimination-for-the-full-polygon-all-b-0-branches-and-5b07fe34.json",
+      "sha256": "0a91333e959030a57c822cca8ba02dd76a61f5b308e35cd91b39e954ecb2bfe0"
+    },
+    {
+      "path": "technical/partial-gradient-compression-theorem-if-an-n-dimensional-homogeneous-map-has-a-0934e7c3.json",
+      "sha256": "d1c8b317ed14a6d2ecef7b66f5084a63993fc233b90a77508fee1a7c1338abae"
+    },
+    {
+      "path": "technical/partial-local-geometry-result-at-the-first-possible-defect-stratum-the-discriminant-f9f6311c.json",
+      "sha256": "030b81160b04f67203915a8ac69bf63d6b4a58ab45df5cf4a182e6dd11197f2f"
+    },
+    {
+      "path": "technical/partial-result-a-generically-degree-three-keller-map-admits-a-useful-normalization-26fd089b.json",
+      "sha256": "bc9757ec48056f0cf8bc221d1af7387dfb34b767e8f903bd77e578e6fe0bbbf5"
+    },
+    {
+      "path": "technical/partial-result-for-h-x-2-y-2-the-normalized-main-chart-34460ce2.json",
+      "sha256": "f8ebf7d229949f3401c46e6c0fdc56a83c4d3f953dfcc474d87644028729d4d1"
+    },
+    {
+      "path": "technical/partial-result-for-the-triple-linear-top-form-h-x-3-y-cdf45174.json",
+      "sha256": "76da808b7a3f2173310276fbddacab64d7338f17c78dc6c0687aa8949bb6f847"
+    },
+    {
+      "path": "technical/partial-result-the-absolute-minimum-degree-for-a-positive-genus-omitted-component-1b74a298.json",
+      "sha256": "4776e692e4513c551eab42bc133b4a896fba77a31f37d1a4daf97085f68971e4"
+    },
+    {
+      "path": "technical/partial-result-the-degree-four-composite-pencil-analysis-gives-a-census-reduction-b57fac7a.json",
+      "sha256": "ee20059c826ed816384f0af3c49b18f2c130ba98cb7df5daffee672e29a2e3a6"
+    },
+    {
+      "path": "technical/partial-result-the-family-is-formally-conjugate-coefficient-by-coefficient-while-no-b3286203.json",
+      "sha256": "1def34fa54b09c6e39512c689549e6cecc4c91b870b1cb8f9016f85ace926433"
+    },
+    {
+      "path": "technical/period-one-conic-exclusion-no-quartic-keller-map-has-either-remaining-period-244f8a2e.json",
+      "sha256": "4c7982975290f2b3bd899f88f336d6e40f7865c53cd78e8d87dce1e89643585b"
+    },
+    {
+      "path": "technical/period-two-conic-exclusion-no-quartic-keller-map-has-leading-form-z-4e87842f.json",
+      "sha256": "454b78d61e220cbe5bef4a75f623520c650cde2bc1115651add84ee77b221db5"
+    },
+    {
+      "path": "technical/primitive-cubic-frame-discriminant-content-7220ce67.json",
+      "sha256": "2e31f7e6c2b77eaa5487f5d846efb29fcef00bcf10019fd8d77fa36cd013fa54"
+    },
+    {
+      "path": "technical/primitive-line-normal-form-in-the-primitive-coprime-quartic-leading-line-case-6e8356b3.json",
+      "sha256": "4303534e207271e16022b8385a58a2fd0f6914cce2f08bdae75f18f301246f31"
+    },
+    {
+      "path": "technical/product-of-evaluations-exclusion-for-every-product-of-evaluations-at-two-distinct-bbb01109.json",
+      "sha256": "987406c019eb8624d2965b12ea5f0799219c1675860fb9f8b5285fcc7c612f39"
+    },
+    {
+      "path": "technical/provisional-incidence-extension-the-proposed-extension-from-two-blocks-to-arbitrary-root-ec215023.json",
+      "sha256": "7858e57318af5014160e34d5109accd083c641da94ee91b2801c6c440a14b081"
+    },
+    {
+      "path": "technical/provisional-six-sheet-compactification-exclusions-fe652bfc.json",
+      "sha256": "43bc2e99d7f4639b2746f199986a13f3566014f58afcacb257f65e19b1274ebf"
+    },
+    {
+      "path": "technical/puiseux-recurrence-the-finite-dicritical-newton-puiseux-chart-satisfies-an-exact-coefficient-fcd5a80b.json",
+      "sha256": "10c690a07c3795c829eb70b2ea04bf1f0a1d6a1928a5427e47287ff8fd1d1659"
+    },
+    {
+      "path": "technical/quadratic-pencil-conic-exclusion-no-quartic-keller-map-has-leading-form-a-66943722.json",
+      "sha256": "d29b8b71e503513754ea34be5cff93e1acbbc18137327d73094b1b9bf3eabaa6"
+    },
+    {
+      "path": "technical/quartic-boundary-torelli-within-the-quartic-family-stable-left-right-equivalence-holds-6b08bde5.json",
+      "sha256": "3dfbcf5eca68b43fe674d89f4270590d6bd67fea301ec049e6ebca889cd541da"
+    },
+    {
+      "path": "technical/quartic-fixed-degree-family-the-displayed-two-parameter-quartic-frame-family-g-7926f911.json",
+      "sha256": "e3b7ff8001e145f35f7431de12090b27baf1a869ff29a524c7e62cd7530d0ddc"
+    },
+    {
+      "path": "technical/quartic-frame-obstruction-and-example-every-quartic-frame-has-t-4-coefficient-9e1e87ca.json",
+      "sha256": "a719c018205c6920cc6896dff71df80c3d8e73b45ef0e90c71ed308988fce502"
+    },
+    {
+      "path": "technical/quartic-normal-resonance-for-a-quartic-keller-deformation-of-a-leading-curve-1035de2e.json",
+      "sha256": "ce136cd1eced52a8f35f954fa8a91c626eebc5d306f3d40b4343b9c8dcb04802"
+    },
+    {
+      "path": "technical/quartic-type-13-exclusion-if-a-proper-rational-quartic-leading-image-has-b553e2a8.json",
+      "sha256": "f96cd5523b51a015fc1352e2716707f86227ae83577f2abdf75ef5ac79684ce0"
+    },
+    {
+      "path": "technical/ramified-boundary-discriminant-content-if-r-is-a-nonzero-boundary-point-with-fd846076.json",
+      "sha256": "de12b0ac7fbd6db57be81aadb9b8156a00d9e13a7adbf23ae4f217ad8cb66aa9"
+    },
+    {
+      "path": "technical/rank-one-cartan-square-classification-for-rank-one-pure-square-quadratic-covariants-1b3c86d8.json",
+      "sha256": "b97c0b2e374e01603a92a7d973e9626c332ae7d1049f60235b6c40146c0ca3f1"
+    },
+    {
+      "path": "technical/rank-one-quartic-theorem-if-the-quartic-highest-homogeneous-part-of-a-99911351.json",
+      "sha256": "5ac82107ddc738413bfaa47c85d86f36df2d3a5462e5158d7f8cc85b80bdd0f7"
+    },
+    {
+      "path": "technical/rank-two-cartan-endpoint-exclusion-the-first-analyzed-genuine-rank-two-cartan-61450efe.json",
+      "sha256": "9c74f487fa97c69e09346f4367e40dad6b580c47cbe09b343a46946edf82f511"
+    },
+    {
+      "path": "technical/rational-cubic-image-exclusion-no-quartic-keller-map-in-three-variables-has-916d6a51.json",
+      "sha256": "577376c613b9c5b6648ff467c6f105501234fd35469f6808472662b7243b3cf0"
+    },
+    {
+      "path": "technical/rational-quartic-duality-frontier-projective-duality-bounds-the-ramification-degree-of-a-b34779a6.json",
+      "sha256": "7fc9d2126816994f4b390acaaa873d3a8cad991f80f8c5ace27bca616ef7eefa"
+    },
+    {
+      "path": "technical/realize-complexity-lowering-jets-in-the-approximate-root-subgroup-63bf8ef3.json",
+      "sha256": "0e7ad7967e9ff17943a7fd6f0a9a9c5222a149c779bae416a91a70df4adb0912"
+    },
+    {
+      "path": "technical/recover-the-length-584-kuranishi-algebra-from-the-cubic-different-d9e57688.json",
+      "sha256": "717003284d1e36f552c9c52772e06fdba9ff1669465c26b35c2bc1e3f9fdaa6a"
+    },
+    {
+      "path": "technical/reduced-affine-rigidity-a-torus-stable-337-dimensional-slice-has-ten-tangent-a6010d1b.json",
+      "sha256": "f872c60715ffdfdd1e63b26df722488e2f02879533eac0d1fd17bea754c73034"
+    },
+    {
+      "path": "technical/rees-suspension-equivalence-the-rank-sensitive-cubic-suspension-is-triangularly-left-right-d1eb696a.json",
+      "sha256": "e597489e51f5edcaee1152eb2515aea3abe5d004b6d70f5bacd8189530ddc516"
+    },
+    {
+      "path": "technical/regular-jordan-line-family-the-everywhere-regular-jordan-type-5-collision-line-ffbbd77b.json",
+      "sha256": "6c1b210055a6d587f9fd0a34f868c94edac7a71e896c3387642c1fe60fc8c9de"
+    },
+    {
+      "path": "technical/regular-pencil-filtration-rigidity-an-everywhere-regular-five-dimensional-quadratic-nilpotent-line-3fb0b6bb.json",
+      "sha256": "f92fff45c362a39b8e93f613cca9981e7ad666910d0b78e5df41e23bbfbfa90b"
+    },
+    {
+      "path": "technical/regular-pencil-tangent-model-with-the-quartic-kernel-fixed-at-the-principal-154408d7.json",
+      "sha256": "0d742d1e298844947827179d09d3f2c1b81d5d6538928f152f1d9883f3fc0164"
+    },
+    {
+      "path": "technical/remaining-obstruction-both-exceptional-full-polygon-four-variable-ideals-are-unit-ideals-2e03d82b.json",
+      "sha256": "0f19523e8b8110f8f63944caedc091e91db12818988fa866f6aa05930a912df0"
+    },
+    {
+      "path": "technical/research-program-natural-next-problems-include-classification-of-generic-degree-three-examples-44729e0b.json",
+      "sha256": "e52c5e895f11f4a5994df1f4cac5af42121fe37b7e6d9b350a42825a95172e47"
+    },
+    {
+      "path": "technical/research-recommendation-the-highest-leverage-program-is-exact-reconstruction-of-the-five-48d5e369.json",
+      "sha256": "17347613c059bbd8e8533c49f7ef6a25537f29f84392de65e5252bad6a95d047"
+    },
+    {
+      "path": "technical/resolve-fixed-factor-basepoints-in-degree-five-f299193a.json",
+      "sha256": "77adac02fffdadefaadef9e333cd60ae2e2fb1123804a7bdc9bf6e5706bba2d3"
+    },
+    {
+      "path": "technical/resolve-the-sextic-no-fixed-factor-conic-stratum-df07974e.json",
+      "sha256": "9ef7976382a96fc4ea7f4218cd93de8b7279d93d8885930f70c69a325730ab7e"
+    },
+    {
+      "path": "technical/restricted-equivariant-moduli-at-fixed-generic-degree-five-the-analyzed-grading-equivariant-1183609d.json",
+      "sha256": "f43af79a87f9a4630dca934685a9551dde5461586e8abcd50d32291e94d75693"
+    },
+    {
+      "path": "technical/restricted-no-go-within-a-zero-diagonal-five-by-five-sparse-matrix-0b4e8503.json",
+      "sha256": "f6467c6f70b8db3730b74694dc562ed079d9a5c9e98b101bacdf13d1e56e4158"
+    },
+    {
+      "path": "technical/rigidified-boundary-moduli-stack-the-boundary-data-quotient-b-n-u-n-046e56a8.json",
+      "sha256": "25eadadcd37e37420faf71f1b6141a4dd36a43cbfab2091b986a148b2aeafd14"
+    },
+    {
+      "path": "technical/robust-quartic-compression-obstruction-the-equivariant-cubic-rank-six-compression-condition-has-978bc8d0.json",
+      "sha256": "b061c7df09d6d8a9896b72f1b30ee6048a1dd3286222776ae589896d67217ed1"
+    },
+    {
+      "path": "technical/root-collision-escape-formula-on-a-sheet-marked-by-a-simple-root-ada71038.json",
+      "sha256": "0fcb52160ae1a3b68fe347a1c8a56873c98076a85a0bc5a39434e85a999f17e7"
+    },
+    {
+      "path": "technical/root-coordinates-turn-source-volume-into-a-weighted-divergence-equation-2fcda5f0.json",
+      "sha256": "96801be2d0f24afbce46c8b80e768ae8b977bf3215bd53ba1695d812622c0aee"
+    },
+    {
+      "path": "technical/secondary-belyi-transport-contact-data-a-e-with-e-a-2-force-11aa7a99.json",
+      "sha256": "9cfc03491cd24fa6208814e1b30f5fd79252330c7cefbed4e36e4ab8d149de8c"
+    },
+    {
+      "path": "technical/sharp-frame-degree-bound-a-reduced-frame-potential-of-root-degree-n-7c0cf125.json",
+      "sha256": "9d155d23d81e1b044f15a745c6eb0beebb1f8cd22b30b2266252f7b15926e194"
+    },
+    {
+      "path": "technical/six-sheet-monodromy-question-b79a737b.json",
+      "sha256": "f3535641257607cfc385e7ec8023f3f71637565532254911542328ab6797c642"
+    },
+    {
+      "path": "technical/small-counterexamples-to-the-gaussian-moments-conjecture-764375b6.json",
+      "sha256": "08a22203171715997f3f111f793d68973eed7ceead3a289a838133ba1a938bed"
+    },
+    {
+      "path": "technical/small-scheme-example-k-2-2-is-after-linear-elimination-a-twisted-fa038812.json",
+      "sha256": "99b89a0704cd67002b03f414ea7b2c810dbebcc768f8424876058706fd17f181"
+    },
+    {
+      "path": "technical/smooth-arc-obstruction-in-a-degree-seven-transverse-deformation-tower-the-ten-e5d7c792.json",
+      "sha256": "6d975575b6dc9ee6dbd4b12e6ef2d3f1ff1308cf913bea7f4f4219f65ebefa85"
+    },
+    {
+      "path": "technical/smooth-leading-cubics-have-no-positive-first-normal-moduli-717b157d.json",
+      "sha256": "e3c49d8d07299201411d16d40be83e0e4c4f403dbd98a2c2d0303b8608379b6d"
+    },
+    {
+      "path": "technical/source-splitting-theorem-for-every-generic-degree-three-keller-normalization-base-change-bd8a0f77.json",
+      "sha256": "93b0e8f8309139b385f7a92d73cf6ecad0ce692842de4b737c0933d884d01bd2"
+    },
+    {
+      "path": "technical/sparse-n5-exclusion-no-cover-all-five-three-row-one-off-diagonal-033b78bd.json",
+      "sha256": "a9b7c5b4eb1b51a90e5297f8feadb9aa8f77b456e573bb876e2d185982fc1f86"
+    },
+    {
+      "path": "technical/split-principal-pencil-obstruction-for-the-principal-sl2-conic-on-sym-m-b449567d.json",
+      "sha256": "85a58c83cf25d99ea0c8c641f170a26aa9d4df79b463a03deb2b21ebb361cde1"
+    },
+    {
+      "path": "technical/square-zero-pairing-stable-equivalence-a-full-rank-square-zero-gorni-zampieri-99288d5e.json",
+      "sha256": "ff51b0c5f6da9781e9469f2e673aee0baeaba97c615e47b1a76be99d398b081a"
+    },
+    {
+      "path": "technical/stable-conductor-arrangement-classification-for-squarefree-a-and-marked-missing-infinity-roots-5542af40.json",
+      "sha256": "d3f6a6200e14bd3cd0c44df71342191d469d7901db19317d214f5b802ba39a76"
+    },
+    {
+      "path": "technical/stable-jet-residue-classification-for-every-coprime-admissible-cubic-frame-pair-without-b858c93e.json",
+      "sha256": "03122a9a4ec9ac09bd0ff719aa7105f45cbf8657bff36bbe2254ff8123d0b0c5"
+    },
+    {
+      "path": "technical/stable-moduli-classification-for-the-quadratic-cubic-frame-slice-with-alpha-nonzero-0f9a20c0.json",
+      "sha256": "81b21655369461a10f5b18b4dd199fc4e0b1883463cf6e89f115758cb4027e34"
+    },
+    {
+      "path": "technical/structural-proposal-the-remaining-minimal-defect-can-be-organized-by-a-radial-d0fce306.json",
+      "sha256": "7512acd586ea90eef33c95c8d646311158edbbc6f82b29b89c6e9e7b7dfbd01d"
+    },
+    {
+      "path": "technical/superseded-construction-the-earlier-26d-cubic-homogeneous-and-158d-druzkowski-constructions-remain-48d22f23.json",
+      "sha256": "90945a0fc05f3003fd434ab9ac9d35b9552cd3ef3da8ff7f5b039050c14dcddd"
+    },
+    {
+      "path": "technical/surjectivity-in-algebraically-closed-characteristic-three-eb33dc0c.json",
+      "sha256": "890ad9cdbc75a966952821bf7e4f823be54b2807e9375dc59b9743eec0c6b3bb"
+    },
+    {
+      "path": "technical/symmetric-double-stable-equivalence-for-any-keller-map-f-the-symmetric-double-301aae68.json",
+      "sha256": "093bebedcee32284e7f519cff9c5cb899312f05af939e13260f9886dcabaf06a"
+    },
+    {
+      "path": "technical/symmetric-overlap-bounds-the-admissible-symmetric-overlap-index-kappa-gives-the-lower-122fc9f6.json",
+      "sha256": "8d91cd20360f2c292921a0d0dd23eb7b9b1dcedae17a4ccc5539d013239ddb87"
+    },
+    {
+      "path": "technical/tangent-computation-for-the-normalized-degree-seven-map-the-exact-determinant-linearization-7f0d894d.json",
+      "sha256": "62f619bd285d77debf1ff71efbb1a7d42a68bce7f82653ddae65e62d993a2c12"
+    },
+    {
+      "path": "technical/target-span-two-reduction-the-target-span-two-quartic-leading-form-case-93a2594e.json",
+      "sha256": "8398d456659bc76b42c009985f96e5cb3bcb643a3e6be5a1048c2982a8f970b3"
+    },
+    {
+      "path": "technical/technical-claim-015f97ff.json",
+      "sha256": "b1bbffd6bbbd914eb56f1d5df373c9fa7b351b6fb913199a08681075a6436359"
+    },
+    {
+      "path": "technical/technical-claim-0b37d36f.json",
+      "sha256": "fb71b6838d7cda09861a5f1d1912db6347b306d018b41b2759f512e5d098930a"
+    },
+    {
+      "path": "technical/technical-claim-0c43f49b.json",
+      "sha256": "7c42248bca1471587c8946f9c31b584bfd501aa76f6b98558e702f7dab9af89f"
+    },
+    {
+      "path": "technical/technical-claim-1295a385.json",
+      "sha256": "1ee4645e0b6e31940d98d1744c233040ff10ad30c16e60ff95194a81664a54b6"
+    },
+    {
+      "path": "technical/technical-claim-30af091e.json",
+      "sha256": "b3e8fe66dfc3329bdfde1b90c618ef0d9f9620096273d462a20e3e4e46c99f46"
+    },
+    {
+      "path": "technical/technical-claim-35c86bca.json",
+      "sha256": "f27bbc6f0e906331cc2a416f53369395d63f040d817bbb29e1b1c274f1f813c2"
+    },
+    {
+      "path": "technical/technical-claim-41ffdbef.json",
+      "sha256": "b0a3fa66303c5308abf0d3266d411787a892101da3aa1ec3bfd948d143978b4e"
+    },
+    {
+      "path": "technical/technical-claim-4522ad29.json",
+      "sha256": "f14b33df2ca9609bf7b8399a5b11bc852a7062b5fd0a12a56e38f52b69e21d56"
+    },
+    {
+      "path": "technical/technical-claim-45b208f0.json",
+      "sha256": "058bad5733e153cdc88e68de055435e027e4a40b69b9466fa9069a2c27509450"
+    },
+    {
+      "path": "technical/technical-claim-47917d8b.json",
+      "sha256": "d9e32c43258ab4b562d091bd0131aabbcbb229faab0ab5c86f7c91291be613ae"
+    },
+    {
+      "path": "technical/technical-claim-61073f6b.json",
+      "sha256": "7a5df282440ab6340a7dd0d8e3d3621c59feee824bef2d718b717e3192b0467b"
+    },
+    {
+      "path": "technical/technical-claim-610c33b2.json",
+      "sha256": "25827c5ab988aee17ffed09eb8edfa18644e4edc63d1a52016dd08f694622c0b"
+    },
+    {
+      "path": "technical/technical-claim-63a2afb3.json",
+      "sha256": "90f90ddf60fdca10feaeace4283b98cf6ea833e7a9580c73a1cda23c538ee56d"
+    },
+    {
+      "path": "technical/technical-claim-7058a7c2.json",
+      "sha256": "2ffb62650ea809d7fb17d2772659a07422176f06196455224ee71eb49af2fe2a"
+    },
+    {
+      "path": "technical/technical-claim-77c618b1.json",
+      "sha256": "7b657d4f4eac812dbeee7be518b53bbbb059f5debacce82a52ccbc831030f3a4"
+    },
+    {
+      "path": "technical/technical-claim-7d6af6c6.json",
+      "sha256": "fef9af4e4297df7bbd93a1c5f5e9eeffe71c27fcaefffbc2dc96b3801d5a3e42"
+    },
+    {
+      "path": "technical/technical-claim-82044b17.json",
+      "sha256": "247c584ad95871676bc6ae1a9fb4c381e87a58e5af39e50abb00c7730981edab"
+    },
+    {
+      "path": "technical/technical-claim-87b4a2f9.json",
+      "sha256": "3ae2616f27317a5103be6ef45dab1ffd8b6258730ce79a8965320c53369055a6"
+    },
+    {
+      "path": "technical/technical-claim-8ff53fff.json",
+      "sha256": "4aa07f80ef2d5535a3016cb9aa476058f08c83b3386aa78a78a66e899e2e8133"
+    },
+    {
+      "path": "technical/technical-claim-914949bf.json",
+      "sha256": "25956bd2184d3ca200a790a0a593f9074cc4b772504468646a0b29c0a876e702"
+    },
+    {
+      "path": "technical/technical-claim-9b9e87f1.json",
+      "sha256": "8b07aa5ef76481cd1402b9b5cd766ae5e88ef94ba9e6ec7271fa6053aba7833f"
+    },
+    {
+      "path": "technical/technical-claim-af23bccd.json",
+      "sha256": "622ae72006e169eeafb8958d47586b6cc57382fb6381e8fd15075b8a3b02ba49"
+    },
+    {
+      "path": "technical/technical-claim-c4dfaf31.json",
+      "sha256": "f4a94c8f13768008a11dab4658474025312acd84d65b59876c8c1788e71c4b30"
+    },
+    {
+      "path": "technical/technical-claim-ca966bd6.json",
+      "sha256": "d0e3ab04fd125d1c80f02cd277eda7717eaada7b216a888b87b6ab1212990411"
+    },
+    {
+      "path": "technical/technical-claim-d10c308d.json",
+      "sha256": "2960ae106c9369ea3b06e436c44f7938790667d8c98eb4cf81b7ff2ae482b362"
+    },
+    {
+      "path": "technical/technical-claim-da4a0f69.json",
+      "sha256": "2725f245f538bb6c68cb98f72552bf4d3aa165118849f36f93750cd769f3d418"
+    },
+    {
+      "path": "technical/technical-claim-e16f7d80.json",
+      "sha256": "35e336cdc8ddfcbaa78d645bd2455970e63c445754a480f70813b067212353a3"
+    },
+    {
+      "path": "technical/technical-claim-e1f739d1.json",
+      "sha256": "00f102700cc6ccd74c5427de03e6943e0232a1aebcbcc68f24e0ad5a0d5da19f"
+    },
+    {
+      "path": "technical/technical-claim-efa8536b.json",
+      "sha256": "77278495f848486481c433afe9df23dedb26ecfc46707aafb136cacbfb6ca8f4"
+    },
+    {
+      "path": "technical/technical-claim-fbd62152.json",
+      "sha256": "3ed392d05442f45e431afb20b6cc05d12c25a418e117a0b699564de79a335756"
+    },
+    {
+      "path": "technical/terminal-primary-lattice-reduction-the-complete-chain-lattice-gap-quotients-terminal-primary-7a1c4b09.json",
+      "sha256": "a8ff705e3c9be177f6f319c46c61867774af388ddaf1100bde463f5e4e330f93"
+    },
+    {
+      "path": "technical/the-double-root-resultant-slice-is-affine-three-space-c5d74708.json",
+      "sha256": "95e803d415230eca52fa8a60e182a236dce4de92ba9cb379aa927cab9a00c2b0"
+    },
+    {
+      "path": "technical/the-exceptional-q-2-member-is-a-weighted-jacobian-stratum-7fb01bfa.json",
+      "sha256": "9dd98be83af4fb1eeae558af9e8e76ece2400de9aee86bbeee53a5d8c9edadeb"
+    },
+    {
+      "path": "technical/the-full-8-28-terminal-layer-maps-are-injective-79e508ce.json",
+      "sha256": "5a660c6456c639ea3d527243014e8da4c5c3c09bc3d2c701ab85608acad61b74"
+    },
+    {
+      "path": "technical/the-gap-in-kraus-s-proposed-proof-5458ce4b.json",
+      "sha256": "9203638e983a124a3c7ca1b8471ba9b3e222fd956a8d3acaa3a305c9af1c2c01"
+    },
+    {
+      "path": "technical/the-genuinely-three-variable-quintic-cubic-factor-stratum-is-empty-b1ff96fc.json",
+      "sha256": "f61f977a53e3462a8cf427b77494892689c7fc6ab61830ef06217e0f437ebd94"
+    },
+    {
+      "path": "technical/the-jacobian-conjecture-21418592.json",
+      "sha256": "85f6a9b116dad59a407ea26b8430734a6a7808c44689ea7bc6d31a037ce07da1"
+    },
+    {
+      "path": "technical/the-map-produces-locally-free-but-globally-inequivalent-scalar-field-theories-85cb8eaa.json",
+      "sha256": "7184286e194bd3b8d26426c64b2c4445c2da8c0972e0c858c992246b4e157b3e"
+    },
+    {
+      "path": "technical/the-minimal-smooth-defect-end-has-two-algebraic-sign-three-torsors-a9379d6c.json",
+      "sha256": "cbb6ea43ce3a95e42a2f7c8b901a2950ce9485b6e59bf44e92229b61463cf88b"
+    },
+    {
+      "path": "technical/the-new-24-variable-map-improves-this-to-mathrm-mc-su-n-9dc03a22.json",
+      "sha256": "9e586b9646a2884bb1a19f7d676aa1b48617cb303d250484976aef80acd7eddb"
+    },
+    {
+      "path": "technical/the-nineteen-variable-tensor-has-an-sl18-codimension-one-core-5ca10bfa.json",
+      "sha256": "be6c15fd33b939f450a32889618a849d47b54e741f01dca59612786c7537df31"
+    },
+    {
+      "path": "technical/the-plane-jacobian-conjecture-remains-open-aa953315.json",
+      "sha256": "11085176b455dd1d031fbbb82c180b2cac3663cee2c7bd145539909ef69c9b2c"
+    },
+    {
+      "path": "technical/the-relative-jacobian-blowup-recovers-the-finite-root-chart-24d147a4.json",
+      "sha256": "b880024f70557ad73af813015f6dd0386f0533d2b5ed8164772c6f2778a4ca66"
+    },
+    {
+      "path": "technical/the-weighted-relative-jacobian-recovers-every-common-factor-multiplicity-f9d9b3fa.json",
+      "sha256": "69763dc92f807ee63861c8bcd46e082474ad7a732613141f6863dce34833d445"
+    },
+    {
+      "path": "technical/three-dimensional-keller-maps-of-every-generic-degree-d739c229.json",
+      "sha256": "fa22420d778603a74f0c00726131ab8457b8a7abf91230a6a262e21f7823283e"
+    },
+    {
+      "path": "technical/three-prime-betti-profile-at-each-of-the-three-stated-good-primes-5d1c1ba6.json",
+      "sha256": "d4bf1adc29b952655da9b973eeece76b72b21fd364e1df403030d34fae4fc126"
+    },
+    {
+      "path": "technical/three-row-sparse-exclusion-in-dimension-five-d49a43dc.json",
+      "sha256": "7000a128c1acb400402d73b6639f1856aa0a84dc917e62733341dfe37eb64182"
+    },
+    {
+      "path": "technical/three-symmetry-orbits-of-dual-binary-cubic-hyperplanes-037f2bd5.json",
+      "sha256": "5339d9a9270ef100f8cba32bbd0e6de9f03c0e2a4af27f8e9b6626d681c4dd35"
+    },
+    {
+      "path": "technical/topology-for-the-base-discriminant-complement-the-fundamental-group-is-identified-with-3c99797d.json",
+      "sha256": "ecbb26fd36c64898a9426cf0023b3cab0350f52708e425e51f845b9a591af2d1"
+    },
+    {
+      "path": "technical/toric-saturation-lemma-a-finite-tale-torus-special-fiber-of-length-equal-1745e634.json",
+      "sha256": "2b09af7cc08ae446d6f295f6ad1175f3bb0bef7d8e940d2400800ad8d6f0a2ac"
+    },
+    {
+      "path": "technical/tricuspidal-quartic-identification-a-proper-rational-quartic-with-ramification-degree-three-is-f86f43ac.json",
+      "sha256": "9c0fd10e44890407d723cd050a7c553dddc87eb3f680248fb4ebe351067de6fa"
+    },
+    {
+      "path": "technical/trivial-rational-deck-group-d8d0210f.json",
+      "sha256": "a3312a19e41025cdad1d9b0e8edb6e96b65ec9d9042554b779f35aabab3021ee"
+    },
+    {
+      "path": "technical/truncated-local-algebra-the-exact-rational-hilbert-samuel-data-through-order-six-d1903700.json",
+      "sha256": "4b2fb26811c3eae0dfac184b45bc9b487bd5025fcd2d5980fc73034bf5508e70"
+    },
+    {
+      "path": "technical/two-matrix-family-an-exact-row-defect-theorem-holds-in-the-two-8f25fc7b.json",
+      "sha256": "6a0ba057998446b5b7c9c3ff803fc2d85364cfbb384afca66d88f3ac49dac3da"
+    },
+    {
+      "path": "technical/universal-marked-root-structure-the-resultant-one-factor-space-is-isomorphic-to-ecd1ca4e.json",
+      "sha256": "bfa9e923ea8af9d854fd35eadeb589455a01d260d1f9bd511fffc34c68d43df9"
+    },
+    {
+      "path": "technical/universal-root-slope-identity-for-any-polynomial-potential-h-t-c-the-0106262f.json",
+      "sha256": "fdc94081195ded6157a31aa481bb0799a522646b27340de8e22a0b597f4915d1"
+    },
+    {
+      "path": "technical/upper-face-obstruction-the-upper-face-has-common-approximate-root-r-y-1e683d42.json",
+      "sha256": "fa945896116f4a0e59fbc8807efb2c335c5982fbfd37def858ded71d8e4a29c4"
+    },
+    {
+      "path": "technical/valuation-identification-theorem-for-either-surviving-newton-support-the-2-1-source-ab20c3a8.json",
+      "sha256": "bb7a616d93d9a1824933ad21a4e214f2b2fc397f2e0ed89b15dc9927d0cb1451"
+    }
+  ],
+  "manuscript_coverage": {
+    "sha256": "30a8aa9355fa43ca214de3175062006ef62c37026f2c58d30892adf65febf23a",
+    "version": 4
+  },
+  "schema_version": 2
+}

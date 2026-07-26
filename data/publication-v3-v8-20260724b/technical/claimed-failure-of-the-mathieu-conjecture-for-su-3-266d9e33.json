@@ -1,0 +1,69 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "Zihan Zhang",
+      "roles": [
+        "derivation",
+        "exposition"
+      ],
+      "scope": "Contribution recorded in Direct consequences of the three-dimensional counterexample."
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "literature result",
+      "links": [
+        {
+          "label": "Public consequence note with literature citations",
+          "url": "https://zzhang-iu.github.io/papers/direct-consequences-jacobian/"
+        }
+      ],
+      "scope": "Public consequence note with literature citations."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "mathieu-correction-and-valid-consequence",
+      "page_title": "Mathieu Correction And Valid Consequence",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "claimed-failure-of-the-mathieu-conjecture-for-su-3-266d9e33",
+  "source": [
+    {
+      "authors": [
+        "Zihan Zhang"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "Direct Consequences of the Three-Dimensional Counterexample to the Jacobian Conjecture",
+      "url": "https://zzhang-iu.github.io/papers/direct-consequences-jacobian/"
+    }
+  ],
+  "statement": "The cited dimension-varying implication does not establish that the Mathieu conjecture for the fixed group SU(3) is false.",
+  "title": "Claimed failure of the Mathieu conjecture for SU(3)",
+  "visibility": "technical"
+}

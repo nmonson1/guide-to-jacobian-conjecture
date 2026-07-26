@@ -1,0 +1,50 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "dimension-five-regular-jordan-family",
+      "page_title": "The Regular-Jordan Collision Family in Dimension Five",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "global-first-normal-obstruction-in-dimension-five",
+      "page_title": "Can the Dimension-Five First-Normal Obstruction Be Globalized?",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "regular-jordan-line-family-the-everywhere-regular-jordan-type-5-collision-line-ffbbd77b",
+  "source": [],
+  "statement": "The everywhere-regular Jordan-type (5) collision-line equations in dimension five have a smooth one-dimensional characteristic-zero family, obtained from an explicit smooth F11 point and Hensel lift.",
+  "title": "Regular Jordan Line Family: The everywhere-regular Jordan-type (5) collision-line equations in dimension five have a smoo…",
+  "visibility": "technical"
+}

@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "degree-seven-local-affine-rigidity",
+      "page_title": "Degree Seven Local Affine Rigidity",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "computer-assisted-proof-the-reciprocal-boundary-stratum-has-the-stated-cubic-frame-b3cd96d4",
+  "source": [],
+  "statement": "The reciprocal boundary stratum has the stated cubic-frame normal form, with only the kappa coefficient before the residual y-translation is quotiented out.",
+  "title": "Computer Assisted Proof: The reciprocal boundary stratum has the stated cubic-frame normal form, with only the kappa c…",
+  "visibility": "technical"
+}

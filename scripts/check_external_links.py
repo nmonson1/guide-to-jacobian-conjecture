@@ -13,10 +13,13 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
+from site_state import load_site_state
+
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC_DOCS_DIR = "docs-v3-20260725a"
-PUBLICATION_DATA_DIR = "publication-v3-v8-20260724d"
+SITE_STATE = load_site_state(ROOT)
+PUBLIC_DOCS_DIR = SITE_STATE["docs_dir"]
+PUBLICATION_DATA_DIR = SITE_STATE["publication"]["data_dir"]
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\((https?://[^)]+)\)")
 BLOCKED_CODES = {401, 403, 429}
 

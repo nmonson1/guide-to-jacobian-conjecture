@@ -22,12 +22,12 @@ The visible guide has six reader-facing sections:
 The Research section contains six Nathaniel Monson-led program summaries and
 dated PDFs, followed by the complete generated catalogue:
 
-- 70 result pages;
-- 17 open-problem pages;
-- 307 deeper technical records, excluded from navigation and search;
+- 74 result pages;
+- 20 open-problem pages;
+- 333 deeper technical records, excluded from navigation and search;
 - 21 context-only private records, not exported.
 
-Seventeen grouped pages are stable external public records. The other 70 are
+Seventeen grouped pages are stable external public records. The other 77 are
 explicitly labeled working drafts. Release state does not encode proof
 strength, review, machine checking, attribution, or source form.
 
@@ -37,13 +37,16 @@ The private Jacobian research repository is authoritative. This repository
 contains only its deterministic sanitized publication export, reader-facing
 prose, versioned PDFs, and build machinery.
 
-The active inputs are:
+`site-state.json` is the single sanitized release pointer. It pins the active
+publication and manuscript manifests, generated docs tree, expected counts,
+and Pacific-time release date. Generators and checks resolve their paths and
+counts from it.
 
-- `data/publication-v3-v8-20260724d/`: sanitized schema-v2 export pinned to
-  canonical registry v8 and manuscript coverage v2;
-- `data/manuscripts-v6/`: hashes, dates, titles, and page counts for the six
-  integrated public manuscripts;
-- `docs-v3-20260725a/`: the versioned MkDocs source tree;
+The selected inputs currently include the sanitized canonical/publication
+export, hashes and metadata for the six integrated manuscripts, and the
+versioned MkDocs source tree. The stable implementation surfaces are:
+
+- `site-state.json`: active release selection and counts;
 - `scripts/generate_living_guide_v1.py`: deterministic renderer for grouped,
   technical, program, and catalogue pages;
 - `scripts/generate_compatibility_stubs_v1.py`: noindex compatibility pages

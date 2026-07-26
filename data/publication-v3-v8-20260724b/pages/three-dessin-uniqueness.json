@@ -1,0 +1,93 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "valuation-and-three-dessin-exclusion"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "The identified (-2,1) divisor is the only source divisor above the generic point of F_-5, so mu=21.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "open_problem",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "manuscript_attached": 1
+        },
+        "manuscript": "06-plane-boundary",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "The identified (-2,1) divisor is the only source divisor above the generic point of F_-5, so mu=21.",
+      "technical_slug": "open-uniqueness-problem-the-identified-2-1-divisor-is-the-only-source-30aa88ce",
+      "title": "Open Uniqueness Problem: The identified (-2,1) divisor is the only source divisor above the generic point of F_-5, so…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "For either surviving Newton support, the (-2,1) source valuation dominates Borisov's target F_-5 with normal ramification index one and residue degree 21, excluding Borisov's Three-dessin framework for those supports.",
+      "technical_slug": "valuation-identification-theorem-for-either-surviving-newton-support-the-2-1-source-ab20c3a8",
+      "title": "Valuation Identification Theorem: For either surviving Newton support, the (-2,1) source valuation dominates Borisov's target F…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "shared",
+      "role": "immediate_corollary",
+      "statement": "Any plane counterexample of maximum coordinate degree below 125 has generic degree at least 21.",
+      "technical_slug": "generic-degree-corollary-any-plane-counterexample-of-maximum-coordinate-degree-below-125-3df84995",
+      "title": "Generic Degree Corollary: Any plane counterexample of maximum coordinate degree below 125 has generic degree at least 21."
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 8,
+    "member_count": 3
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "plane-boundary-obstructions"
+  ],
+  "schema_version": 2,
+  "slug": "three-dessin-uniqueness",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked version-2 working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "The identified (-2,1) divisor is the only source divisor above the generic point of F_-5, so mu=21.",
+  "title": "Is the Degree-Twenty-One Divisor Unique?",
+  "visibility": "catalogued"
+}

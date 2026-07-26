@@ -1,0 +1,68 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "dorky",
+      "roles": [
+        "derivation"
+      ],
+      "scope": "Contribution recorded in Galois structure of the new counterexample."
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "links": [
+        {
+          "label": "Public function field argument",
+          "url": "https://mathoverflow.net/questions/513387/"
+        }
+      ],
+      "scope": "Public function field argument."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "base-cover-monodromy-and-deck-group",
+      "page_title": "Base Cover Monodromy And Deck Group",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "public",
+  "schema_version": 2,
+  "slug": "trivial-rational-deck-group-d8d0210f",
+  "source": [
+    {
+      "authors": [
+        "dorky"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "Galois structure of the new counterexample to the Jacobian conjecture: an explicit cubic model with S3 monodromy — is this known?",
+      "url": "https://mathoverflow.net/questions/513387/"
+    }
+  ],
+  "statement": "The displayed three-variable map has trivial rational deck group over its target: a rational self-map sigma satisfying F composed with sigma equals F must be the identity.",
+  "title": "Trivial rational deck group",
+  "visibility": "technical"
+}

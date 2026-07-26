@@ -1,0 +1,68 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "critique, derivation, and computation"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "recorded",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "collision-monolith-and-prolongation",
+      "page_title": "Collision Monoliths and Prolongation",
+      "role": "boundary_obstruction"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "filtered-regular-pencils-in-dimension-five",
+      "page_title": "Filtered Regular Nilpotent Pencils in Dimension Five",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "split-principal-pencil-obstruction-for-the-principal-sl2-conic-on-sym-m-b449567d",
+  "source": [],
+  "statement": "For the principal sl2 conic on Sym^m(k^2), the integrability operator has determinant -m^{m+2}(m+2)^m; no direct sum of principal conics supports a noncollinear normalized collision.",
+  "title": "Split Principal Pencil Obstruction: For the principal sl2 conic on Sym^m(k^2), the integrability operator has determinant -m^{m+2…",
+  "visibility": "technical"
+}

@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "recorded",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "cubic-jet-rank-obstruction",
+      "page_title": "A Cubic-Jet Rank Obstruction to Further Homogeneous Descent",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "robust-quartic-compression-obstruction-the-equivariant-cubic-rank-six-compression-condition-has-978bc8d0",
+  "source": [],
+  "statement": "The equivariant cubic rank-six compression condition has a 20-dimensional affine slice, and the quartic obstruction functional is identically one on that slice; modulo two target-row directions this is the natural transverse compression space.",
+  "title": "Robust Quartic Compression Obstruction: The equivariant cubic rank-six compression condition has a 20-dimensional affine slice, and t…",
+  "visibility": "technical"
+}

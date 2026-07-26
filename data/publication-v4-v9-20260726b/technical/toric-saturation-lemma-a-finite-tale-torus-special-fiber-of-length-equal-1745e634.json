@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation, computation, and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "certificate offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "degree-below-125-theorem",
+      "page_title": "Degree Below 125 Theorem",
+      "role": "proof_lemma"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "toric-saturation-lemma-a-finite-tale-torus-special-fiber-of-length-equal-1745e634",
+  "source": [],
+  "statement": "A finite étale torus special fiber of length equal to the mixed volume exhausts the complete toric intersection and lifts to a finite flat degree-296 partial-gluing scheme.",
+  "title": "Toric Saturation Lemma: A finite étale torus special fiber of length equal to the mixed volume exhausts the complete…",
+  "visibility": "technical"
+}

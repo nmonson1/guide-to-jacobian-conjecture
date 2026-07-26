@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "normalized-cubic-family-classification",
+      "page_title": "Normalized Cubic Family Classification",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "family-singularity-theorem-the-reduced-nonproperness-set-is-singular-for-every-admissible-be85cecb",
+  "source": [],
+  "statement": "The reduced nonproperness set is singular for every admissible map in the determinant-neutral A(C),B(C) cubic family.",
+  "title": "Family Singularity Theorem: The reduced nonproperness set is singular for every admissible map in the determinant-neutral…",
+  "visibility": "technical"
+}

@@ -1,0 +1,136 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "critique and derivation",
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": [
+      "common-cover-of-the-descendant-ladder",
+      "hessian-quartic-five-attacks",
+      "smaller-keller-symmetric-dilations"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "If an n-dimensional homogeneous map has a k-dimensional partial-gradient block, it admits a weak symmetric dilation in dimension at most 2n-k; in particular every polynomial map has weak symmetric-dilation dimension at most 2n-1.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 6
+        },
+        "manuscript": "05-homogeneous-descendants",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Within the fixed 38-dimensional symmetric double, there is no proper nondegenerate invariant linear slice surjecting onto the original variables; any smaller realization must change the realization mechanism rather than delete such a slice.",
+      "technical_slug": "fixed-double-linear-slice-minimality-within-the-fixed-38-dimensional-symmetric-double-fe704029",
+      "title": "Fixed Double Linear Slice Minimality: Within the fixed 38-dimensional symmetric double, there is no proper nondegenerate invariant…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "If an n-dimensional homogeneous map has a k-dimensional partial-gradient block, it admits a weak symmetric dilation in dimension at most 2n-k; in particular every polynomial map has weak symmetric-dilation dimension at most 2n-1.",
+      "technical_slug": "partial-gradient-compression-theorem-if-an-n-dimensional-homogeneous-map-has-a-0934e7c3",
+      "title": "Partial Gradient Compression Theorem: If an n-dimensional homogeneous map has a k-dimensional partial-gradient block, it admits a w…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For the displayed 19-dimensional block tensor H(X,w,t)=(tQ(X)+t^2Bw,-q(X),0), the weak symmetric-dilation invariant is at most 37-dim(w), hence at most 36.",
+      "technical_slug": "block-tensor-dimension-36-dilation-for-the-displayed-19-dimensional-block-tensor-bc2fdb8e",
+      "title": "Block Tensor Dimension 36 Dilation: For the displayed 19-dimensional block tensor H(X,w,t)=(tQ(X)+t^2Bw,-q(X),0), the weak symmet…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The admissible symmetric-overlap index kappa gives the lower bound sigma_sym(H)>=2n-kappa_ov(H); when the overlap form is nondegenerate, the partial-gradient construction gives the matching upper bound 2n-kappa_nd(H).",
+      "technical_slug": "symmetric-overlap-bounds-the-admissible-symmetric-overlap-index-kappa-gives-the-lower-122fc9f6",
+      "title": "Symmetric Overlap Bounds: The admissible symmetric-overlap index kappa gives the lower bound sigma_sym(H)>=2n-kappa_ov(…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "In the scalar-w block case, a 35-dimensional weak dilation extending the evident (w,t)-compression exists exactly when there is a nonzero vector a satisfying a^TB=0, a^TQ(X)=0, and D_a q(X)=0 identically.",
+      "technical_slug": "dimension-35-linear-test-in-the-scalar-w-block-case-a-35-a7f02148",
+      "title": "Dimension 35 Linear Test: In the scalar-w block case, a 35-dimensional weak dilation extending the evident (w,t)-compre…"
+    },
+    {
+      "assessment": "corrected",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The direct Euclidean 36-dimensional partial-gradient potential is not Keller when B is nonzero; obtaining a 36-dimensional Keller or cover-preserving realization is a separate self-adjoint nilpotent matrix-completion problem.",
+      "technical_slug": "euclidean-completion-obstruction-the-direct-euclidean-36-dimensional-partial-gradient-potential-is-e1675edd",
+      "title": "Euclidean Completion Obstruction: The direct Euclidean 36-dimensional partial-gradient potential is not Keller when B is nonzer…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "For any Keller map F, the symmetric double (F(x),JF(x)^T y) is polynomially right-equivalent to F times the identity, so the 38-variable gradient descendant has the same generic degree and monodromy as the 19-variable cubic map.",
+      "technical_slug": "symmetric-double-stable-equivalence-for-any-keller-map-f-the-symmetric-double-301aae68",
+      "title": "Symmetric Double Stable Equivalence: For any Keller map F, the symmetric double (F(x),JF(x)^T y) is polynomially right-equivalent…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 9,
+    "member_count": 7
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "homogeneous-descendants"
+  ],
+  "schema_version": 2,
+  "slug": "symmetric-dilation-bounds",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "If an n-dimensional homogeneous map has a k-dimensional partial-gradient block, it admits a weak symmetric dilation in dimension at most 2n-k; in particular every polynomial map has weak symmetric-dilation dimension at most 2n-1.",
+  "title": "Bounds and Obstructions for Symmetric Dilations",
+  "visibility": "catalogued"
+}

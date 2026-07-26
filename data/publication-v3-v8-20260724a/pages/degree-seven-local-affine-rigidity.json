@@ -1,0 +1,156 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [],
+    "shares_claims_with": []
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "A torus-stable 337-dimensional slice has ten tangent parameters of weights (-1,2,-3,-2,-1,0,1,1,2,3); exact positive, negative, and fixed-weight obstruction certificates plus a torus-nullcone lemma show that its reduced completed local ring is C. Thus G is reduced-affinely rigid in K_{3,7}, though the local ring is a nonreduced Artin thickening.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an audited LaTeX locator for every defining claim.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 1,
+          "manuscript_attached": 10
+        },
+        "manuscript": "03-local-rigidity",
+        "status": "manuscript_attached"
+      }
+    ],
+    "status": "manuscript_attached"
+  },
+  "members": [
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For the normalized degree-seven map, the exact determinant linearization has 348 variables, rank 327, kernel dimension 21; the normalized affine orbit has dimension 11, leaving ten transverse tangent directions.",
+      "technical_slug": "tangent-computation-for-the-normalized-degree-seven-map-the-exact-determinant-linearization-7f0d894d",
+      "title": "Tangent Computation: For the normalized degree-seven map, the exact determinant linearization has 348 variables, r…"
+    },
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "proof_step",
+      "statement": "In a degree-seven transverse deformation tower, the ten-dimensional tangent space reduces to a five-space at second order and a two-plane at third order; all nonzero first-order transverse directions are obstructed by order at most five.",
+      "technical_slug": "smooth-arc-obstruction-in-a-degree-seven-transverse-deformation-tower-the-ten-e5d7c792",
+      "title": "Smooth Arc Obstruction: In a degree-seven transverse deformation tower, the ten-dimensional tangent space reduces to…"
+    },
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "certificate",
+      "statement": "A local standard-basis computation produces pure powers u0^2,u1^4,u2^5,u3^2,u4^5,u5^4,u6^6,u7^3,u8^3,u9^2 in an initial ideal, making it m-primary and yielding set-theoretic formal/analytic isolation of the degree-seven transverse germ.",
+      "technical_slug": "local-rigidity-a-local-standard-basis-computation-produces-pure-powers-u0-2-7a91920f",
+      "title": "Local Rigidity: A local standard-basis computation produces pure powers u0^2,u1^4,u2^5,u3^2,u4^5,u5^4,u6^6,u7…"
+    },
+    {
+      "assessment": "corrected",
+      "inclusion": "defining",
+      "role": "correction",
+      "statement": "The earlier inference from a restricted five-dimensional slice to isolation in the full transverse space is invalid because higher-order arcs can bend out of the slice.",
+      "technical_slug": "correction-the-earlier-inference-from-a-restricted-five-dimensional-slice-to-isolation-02c45eb8",
+      "title": "Correction: The earlier inference from a restricted five-dimensional slice to isolation in the full trans…"
+    },
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "strengthening",
+      "statement": "Exact filtered computations for degree bounds E=2,...,7 give tangent/kernel/affine-orbit dimensions; at E=7 the ambient normalized dimension is 348, determinant rank 327, kernel 21, affine image 11, quotient tangent 10, and quadratic obstruction rank 11.",
+      "technical_slug": "filtered-tangent-table-exact-filtered-computations-for-degree-bounds-e-2-7-af5be0a3",
+      "title": "Filtered Tangent Table: Exact filtered computations for degree bounds E=2,...,7 give tangent/kernel/affine-orbit dime…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The full normalized affine stabilizer of G is exactly the torus diag(tau^-1,tau,tau^2), not merely its identity component.",
+      "technical_slug": "full-stabilizer-the-full-normalized-affine-stabilizer-of-g-is-exactly-the-5284e9d8",
+      "title": "Full Stabilizer: The full normalized affine stabilizer of G is exactly the torus diag(tau^-1,tau,tau^2), not m…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The residual cubic coefficient w20=lambda in the chosen birational-frame normal form is entirely affine gauge, with an explicit identity F_lambda = beta_lambda composed with F_0 composed with alpha_lambda.",
+      "technical_slug": "gauge-parameter-the-residual-cubic-coefficient-w20-lambda-in-the-chosen-birational-9e239454",
+      "title": "Gauge Parameter: The residual cubic coefficient w20=lambda in the chosen birational-frame normal form is entir…"
+    },
+    {
+      "assessment": "certificate offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "A torus-stable 337-dimensional slice has ten tangent parameters of weights (-1,2,-3,-2,-1,0,1,1,2,3); exact positive, negative, and fixed-weight obstruction certificates plus a torus-nullcone lemma show that its reduced completed local ring is C. Thus G is reduced-affinely rigid in K_{3,7}, though the local ring is a nonreduced Artin thickening.",
+      "technical_slug": "reduced-affine-rigidity-a-torus-stable-337-dimensional-slice-has-ten-tangent-a6010d1b",
+      "title": "Reduced Affine Rigidity: A torus-stable 337-dimensional slice has ten tangent parameters of weights (-1,2,-3,-2,-1,0,1…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The literal weight-20 coefficient in the public cubic boundary frame is moved by translation and is therefore gauge rather than a modulus.",
+      "technical_slug": "technical-claim-7058a7c2",
+      "title": "Technical claim"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The reciprocal boundary stratum has the stated cubic-frame normal form, with only the kappa coefficient before the residual y-translation is quotiented out.",
+      "technical_slug": "computer-assisted-proof-the-reciprocal-boundary-stratum-has-the-stated-cubic-frame-b3cd96d4",
+      "title": "Computer Assisted Proof: The reciprocal boundary stratum has the stated cubic-frame normal form, with only the kappa c…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The map has a weighted \\(\\mathbb C^\\times\\)-symmetry.",
+      "technical_slug": "technical-claim-d10c308d",
+      "title": "Technical claim"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 8,
+    "member_count": 11
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "local-rigidity-and-deformation-algebra"
+  ],
+  "schema_version": 2,
+  "slug": "degree-seven-local-affine-rigidity",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked version-2 working manuscript contains this research line. Exact private LaTeX locators are intentionally not part of the public presentation.",
+  "statement": "A torus-stable 337-dimensional slice has ten tangent parameters of weights (-1,2,-3,-2,-1,0,1,1,2,3); exact positive, negative, and fixed-weight obstruction certificates plus a torus-nullcone lemma show that its reduced completed local ring is C. Thus G is reduced-affinely rigid in K_{3,7}, though the local ring is a nonreduced Artin thickening.",
+  "title": "Degree Seven Local Affine Rigidity",
+  "visibility": "catalogued"
+}
