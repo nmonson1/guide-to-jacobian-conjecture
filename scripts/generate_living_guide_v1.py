@@ -126,8 +126,10 @@ PROGRAM_PROSE = {
         "limit": (
             "The stable-separation statements are presented with proofs using "
             "boundary and conductor invariants.  The finite-root classification "
-            "now includes repeated roots; gluing it across strata where deleted "
-            "roots escape to infinity remains open."
+            "now includes repeated roots, and the elementary one-root escape is "
+            "an explicit lower-length chart times a contracted gauge line.  "
+            "Simultaneous escapes, the nonunit resultant boundary, and full "
+            "relative-Jacobian gluing remain open."
         ),
     },
     "homogeneous-descendants": {
@@ -147,7 +149,9 @@ PROGRAM_PROSE = {
             "The same tensor is then studied through nilpotent Jordan type, "
             "Hessian constructions, square-zero pairings, Waring bounds, and "
             "equivariant compression obstructions.  A companion development "
-            "asks how collision minimality produces a monolith whose "
+            "gives the exact five-dimensional collision chart and asks whether "
+            "its first-normal cokernel obstruction is globally nonzero.  A "
+            "second development asks how collision minimality produces a monolith whose "
             "multiplication algebra lies in a special-linear or symplectic "
             "prolongation."
         ),
@@ -155,9 +159,11 @@ PROGRAM_PROSE = {
             "The manuscript credits the classical homogeneous reductions and "
             "the public low-dimensional inputs.  Its numerical bounds are for "
             "the displayed construction or stated symmetry class, not universal "
-            "minimality theorems.  The five-dimensional frontier and "
-            "monolith/prolongation theory remain in the companion register; "
-            "the extension problem E(N) is open."
+            "minimality theorems.  In dimension five, the fifteen chart "
+            "quintics and all seventeen sampled rank profiles are exact, but "
+            "global saturation and nowhere-solvability of the cokernel "
+            "obstruction remain open.  The monolith extension problem E(N) is "
+            "also open."
         ),
     },
     "plane-boundary-obstructions": {
@@ -374,7 +380,7 @@ def _coverage_for_manuscript(
 def _coverage_link_label(status: str) -> str:
     return {
         "complete": (
-            "the version-9 reader-and-register release records the current "
+            "the current reader-and-register release records the current "
             "statement and evidence boundary for the claims placed here"
         ),
         "manuscript_attached": "contains this result or its supporting argument",
@@ -630,7 +636,7 @@ def render_research_index(
         f"{len(open_problems)} open problems.</p>",
         "",
         "The six programs are working mathematical manuscripts, not refereed "
-        "papers. The shorter version-9 PDFs contain their selected theorem "
+        f"papers. The shorter version-{manuscripts['07']['version']} PDFs contain their selected theorem "
         "spines. Secondary results, open problems, corrections, and research "
         "leads are preserved in a separate companion register.",
         "",

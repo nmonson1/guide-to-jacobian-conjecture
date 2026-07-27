@@ -1,23 +1,23 @@
 {
   "schema_version": 1,
-  "release_id": "living-guide-public-v7-technical-materials-v1",
-  "updated_at": "2026-07-26T22:29:23-07:00",
+  "release_id": "living-guide-public-v8-post-v9-calculations",
+  "updated_at": "2026-07-27T00:20:53-07:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v5-v9-20260726a",
     "manifest_sha256": "153d152aa45a491b05fc0acff0b965e9657033733d312a192476898995d4d436"
   },
   "manuscripts": {
-    "data_dir": "manuscripts-v9",
-    "manifest_sha256": "277c0dad7336c4e0a99178d1b2f7d91b04fcb41ac7b77201935e716f344b862d",
+    "data_dir": "manuscripts-v10",
+    "manifest_sha256": "02b5a6a32a955290d369db2702b4ed5cefd792155b5d5f6da5d22a88855ed276",
     "expected_count": 7
   },
   "technical_materials": {
-    "data_dir": "technical-materials-v1-20260726c",
-    "manifest_sha256": "0090ca2c5b1737d7e7a1d41371eebc2b596170104affe2b4ba6358f0d9e743bb",
+    "data_dir": "technical-materials-v2-20260727a",
+    "manifest_sha256": "631828c77c508c53ff5cf40956574407068c1b3a6d9d96b0126538211322348a",
     "expected_count": 10
   },
-  "docs_dir": "docs-v7-20260726c",
+  "docs_dir": "docs-v8-20260727a",
   "expected_counts": {
     "grouped_pages": 94,
     "results": 74,

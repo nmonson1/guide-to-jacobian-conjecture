@@ -20,7 +20,7 @@ The visible guide has six reader-facing sections:
 6. About.
 
 The Research section contains six Nathaniel Monson-led program summaries,
-six reader-edition PDFs, their complete version-8 archival editions, one
+six version-10 reader PDFs, their complete version-8 archival editions, one
 companion Results and Research Register, and an immutable technical-material
 release, followed by the complete generated catalogue:
 
@@ -58,7 +58,10 @@ surfaces are:
 
 The technical-material release contains sanitized computational supplements
 for all six programs, two standalone Program 4 notes, their exact-check source
-bundle, and one focused Program 2 boundary calculation. It does not contain
+bundle, and one focused Program 2 boundary calculation.  The Program 4
+supplement includes the elementary one-root transition, and the Program 5
+supplement includes the global chart quintics and all seventeen sampled
+first-normal rank profiles. It does not contain
 raw conversations, internal evidence ledgers, private locators, or uncurated
 working trees. Every artifact is hash-pinned, and archive contents plus PDF
 text and metadata are inspected by the release and site checks.
