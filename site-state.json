@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release_id": "living-guide-public-v6-v9-reader-manuscripts",
-  "updated_at": "2026-07-26T14:17:09-07:00",
+  "release_id": "living-guide-public-v7-technical-materials-v1",
+  "updated_at": "2026-07-26T22:29:23-07:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v5-v9-20260726a",
@@ -12,7 +12,12 @@
     "manifest_sha256": "277c0dad7336c4e0a99178d1b2f7d91b04fcb41ac7b77201935e716f344b862d",
     "expected_count": 7
   },
-  "docs_dir": "docs-v6-20260726b",
+  "technical_materials": {
+    "data_dir": "technical-materials-v1-20260726c",
+    "manifest_sha256": "0090ca2c5b1737d7e7a1d41371eebc2b596170104affe2b4ba6358f0d9e743bb",
+    "expected_count": 10
+  },
+  "docs_dir": "docs-v7-20260726c",
   "expected_counts": {
     "grouped_pages": 94,
     "results": 74,

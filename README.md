@@ -20,8 +20,9 @@ The visible guide has six reader-facing sections:
 6. About.
 
 The Research section contains six Nathaniel Monson-led program summaries,
-six reader-edition PDFs, and one companion Results and Research Register,
-followed by the complete generated catalogue:
+six reader-edition PDFs, their complete version-8 archival editions, one
+companion Results and Research Register, and an immutable technical-material
+release, followed by the complete generated catalogue:
 
 - 74 result pages;
 - 20 open-problem pages;
@@ -36,12 +37,13 @@ strength, review, machine checking, attribution, or source form.
 
 The private Jacobian research repository is authoritative. This repository
 contains only its deterministic sanitized publication export, reader-facing
-prose, versioned PDFs, and build machinery.
+prose, versioned PDFs, selected immutable technical materials, and build
+machinery.
 
 `site-state.json` is the single sanitized release pointer. It pins the active
-publication and manuscript manifests, generated docs tree, expected counts,
-and Pacific-time release date. Generators and checks resolve their paths and
-counts from it.
+publication, manuscript, and technical-material manifests, generated docs
+tree, expected counts, and Pacific-time release date. Generators and checks
+resolve their paths and counts from it.
 
 The selected inputs currently include the sanitized canonical/publication
 export, hashes and metadata for six reader manuscripts and their companion
@@ -53,6 +55,13 @@ surfaces are:
   technical, program, and catalogue pages;
 - `scripts/generate_compatibility_stubs_v1.py`: noindex compatibility pages
   for earlier public routes.
+
+The technical-material release contains sanitized computational supplements
+for all six programs, two standalone Program 4 notes, their exact-check source
+bundle, and one focused Program 2 boundary calculation. It does not contain
+raw conversations, internal evidence ledgers, private locators, or uncurated
+working trees. Every artifact is hash-pinned, and archive contents plus PDF
+text and metadata are inspected by the release and site checks.
 
 The exporter and site checks reject private filesystem paths, ChatGPT share
 links, conversation/message locators, internal record IDs, and UUIDs. PDF

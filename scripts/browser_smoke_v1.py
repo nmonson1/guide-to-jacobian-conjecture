@@ -97,6 +97,15 @@ def run(
         ).read_text(encoding="utf-8")
     )
     first_manuscript = manuscript_manifest["manuscripts"][0]["filename"]
+    materials_manifest = json.loads(
+        (
+            root
+            / "data"
+            / state["technical_materials"]["data_dir"]
+            / "manifest.json"
+        ).read_text(encoding="utf-8")
+    )
+    first_material = materials_manifest["programs"][0]["artifacts"][0]["filename"]
     handler = functools.partial(
         QuietHandler,
         directory=str(site),
@@ -118,6 +127,7 @@ def run(
                 "geometry/",
                 "plane-case/",
                 "research/",
+                "research/materials/",
                 "about/",
                 "results/base-counterexample-and-immediate-consequences/",
                 "research/programs/cubic-marked-root-incidence-geometry/",
@@ -144,6 +154,10 @@ def run(
                 + first_manuscript
             )
             require(pdf.ok, "versioned PDF is not downloadable")
+            material = desktop.context.request.get(
+                base + "assets/technical-materials/" + first_material
+            )
+            require(material.ok, "technical-material archive is not downloadable")
 
             desktop.goto(base, wait_until="networkidle")
             for scheme in ("jacobian-light", "jacobian-dark"):

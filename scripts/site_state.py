@@ -22,6 +22,7 @@ def load_site_state(root: Path) -> dict[str, Any]:
         "timezone",
         "publication",
         "manuscripts",
+        "technical_materials",
         "docs_dir",
         "expected_counts",
     }
@@ -29,7 +30,7 @@ def load_site_state(root: Path) -> dict[str, Any]:
         raise ValueError(f"invalid site-state structure: {path}")
     if state["timezone"] != "America/Los_Angeles":
         raise ValueError("site-state dates must use America/Los_Angeles")
-    for key in ("publication", "manuscripts"):
+    for key in ("publication", "manuscripts", "technical_materials"):
         component = state[key]
         manifest = root / "data" / component["data_dir"] / "manifest.json"
         if not manifest.is_file():

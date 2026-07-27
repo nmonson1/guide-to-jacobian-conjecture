@@ -88,7 +88,7 @@ def _stub(relative: Path, target: str, title: str) -> str:
 
 
 def expected(root: Path) -> dict[Path, str]:
-    _, pages, _, _, _ = load(root)
+    _, pages, _, _, _, _ = load(root)
     docs = root / PUBLIC_DOCS_DIR
     old_docs = root / "docs"
     outputs: dict[Path, str] = {}

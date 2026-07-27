@@ -4,9 +4,11 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import re
 import sys
+import zipfile
 from datetime import datetime
 from pathlib import Path
 
@@ -17,6 +19,7 @@ from generate_living_guide_v1 import (
     PUBLICATION_DATA_DIR,
     PUBLIC_DOCS_DIR,
     SITE_STATE,
+    TECHNICAL_MATERIALS_DATA_DIR,
 )
 
 
@@ -93,6 +96,34 @@ def _check_local_links(path: Path, failures: list[str]) -> None:
             failures.append(
                 f"{path.relative_to(ROOT)}: missing local link target {target!r}"
             )
+
+
+def _pdf_text(reader: PdfReader) -> str:
+    metadata = " ".join(str(value) for value in (reader.metadata or {}).values())
+    return metadata + "\n" + "\n".join(
+        page.extract_text() or "" for page in reader.pages
+    )
+
+
+def _check_zip(path: Path, failures: list[str]) -> None:
+    with zipfile.ZipFile(path) as archive:
+        for member in archive.infolist():
+            member_path = Path(member.filename)
+            if member_path.is_absolute() or ".." in member_path.parts:
+                failures.append(f"{path.name}: unsafe archive member {member.filename!r}")
+                continue
+            if member.is_dir():
+                continue
+            payload = archive.read(member)
+            suffix = member_path.suffix.lower()
+            label = f"{path.name}:{member.filename}"
+            if suffix in TEXT_SUFFIXES or suffix in {".py", ".tex", ".sage", ".m2"}:
+                try:
+                    _check_sensitive(payload.decode("utf-8"), label, failures)
+                except UnicodeDecodeError:
+                    failures.append(f"{label}: text payload is not UTF-8")
+            elif suffix == ".pdf":
+                _check_sensitive(_pdf_text(PdfReader(io.BytesIO(payload))), label, failures)
 
 
 def main() -> int:
@@ -246,6 +277,7 @@ def main() -> int:
         DOCS,
         DATA,
         ROOT / "data" / MANUSCRIPTS_DATA_DIR,
+        ROOT / "data" / TECHNICAL_MATERIALS_DATA_DIR,
         ROOT / "overrides",
     )
     scanned = 0
@@ -278,11 +310,53 @@ def main() -> int:
         reader = PdfReader(path)
         if len(reader.pages) != item["pages"]:
             failures.append(f"manuscript page-count mismatch: {item['filename']}")
-        metadata = " ".join(str(value) for value in (reader.metadata or {}).values())
-        pdf_text = metadata + "\n" + "\n".join(
-            page.extract_text() or "" for page in reader.pages
-        )
-        _check_sensitive(pdf_text, item["filename"], failures)
+        _check_sensitive(_pdf_text(reader), item["filename"], failures)
+
+    materials_manifest = json.loads(
+        (
+            ROOT
+            / "data"
+            / TECHNICAL_MATERIALS_DATA_DIR
+            / "manifest.json"
+        ).read_text(encoding="utf-8")
+    )
+    if materials_manifest.get("artifact_count") != SITE_STATE[
+        "technical_materials"
+    ]["expected_count"]:
+        failures.append("technical-material manifest: artifact count changed")
+    materials_page = DOCS / "research/materials.md"
+    if not materials_page.is_file():
+        failures.append("technical-material landing page is missing")
+        materials_text = ""
+    else:
+        materials_text = materials_page.read_text(encoding="utf-8")
+    for program in materials_manifest["programs"]:
+        program_page = DOCS / "research/programs" / f"{program['slug']}.md"
+        program_text = program_page.read_text(encoding="utf-8")
+        for artifact in program["artifacts"]:
+            path = DOCS / "assets/technical-materials" / artifact["filename"]
+            if not path.is_file() or _sha256(path) != artifact["sha256"]:
+                failures.append(
+                    f"technical-material digest mismatch: {artifact['filename']}"
+                )
+                continue
+            if artifact["filename"] not in materials_text:
+                failures.append(
+                    f"technical-material landing page omits {artifact['filename']}"
+                )
+            if artifact["filename"] not in program_text:
+                failures.append(
+                    f"{program['slug']}: program page omits {artifact['filename']}"
+                )
+            if path.suffix.lower() == ".zip":
+                _check_zip(path, failures)
+            elif path.suffix.lower() == ".pdf":
+                reader = PdfReader(path)
+                if len(reader.pages) != artifact["pages"]:
+                    failures.append(
+                        f"technical-note page-count mismatch: {artifact['filename']}"
+                    )
+                _check_sensitive(_pdf_text(reader), artifact["filename"], failures)
 
     mkdocs_text = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
     if f"docs_dir: {PUBLIC_DOCS_DIR}" not in mkdocs_text:
@@ -330,6 +404,7 @@ def main() -> int:
         f"Public-site checks passed: {counts['grouped_pages']} grouped pages, "
         f"{counts['technical_records']} hidden technical records, "
         f"{len(manuscript_manifest['manuscripts'])} manuscripts, "
+        f"{materials_manifest['artifact_count']} technical artifacts, "
         f"{scanned} text files scanned."
     )
     return 0

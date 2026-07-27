@@ -16,6 +16,7 @@ from generate_living_guide_v1 import (
     MANUSCRIPTS_DATA_DIR,
     PUBLIC_DOCS_DIR,
     SITE_STATE,
+    TECHNICAL_MATERIALS_DATA_DIR,
 )
 
 
@@ -83,7 +84,15 @@ def main() -> int:
             if resolved is not None and not resolved.exists():
                 failures.append(f"{relative}: broken internal asset/link {target!r}")
 
-    for route in ("", "counterexample", "geometry", "plane-case", "research", "about"):
+    for route in (
+        "",
+        "counterexample",
+        "geometry",
+        "plane-case",
+        "research",
+        "research/materials",
+        "about",
+    ):
         path = site / route / "index.html" if route else site / "index.html"
         if not path.is_file():
             failures.append(f"missing main route: /{route}")
@@ -132,6 +141,20 @@ def main() -> int:
         if not path.is_file() or _sha256(path) != item["sha256"]:
             failures.append(f"built manuscript mismatch: {item['filename']}")
 
+    materials_manifest = json.loads(
+        (
+            ROOT
+            / "data"
+            / TECHNICAL_MATERIALS_DATA_DIR
+            / "manifest.json"
+        ).read_text(encoding="utf-8")
+    )
+    for program in materials_manifest["programs"]:
+        for item in program["artifacts"]:
+            path = site / "assets/technical-materials" / item["filename"]
+            if not path.is_file() or _sha256(path) != item["sha256"]:
+                failures.append(f"built technical material mismatch: {item['filename']}")
+
     source_docs = ROOT / PUBLIC_DOCS_DIR
     if not source_docs.is_dir():
         failures.append(f"configured source tree is missing: {source_docs}")
@@ -144,7 +167,8 @@ def main() -> int:
     print(
         f"Built-site checks passed for {len(html_files)} HTML pages, "
         f"{len(result_pages)} result routes, and {len(technical_pages)} "
-        "hidden technical routes."
+        f"hidden technical routes, with {materials_manifest['artifact_count']} "
+        "technical artifacts."
     )
     return 0
 

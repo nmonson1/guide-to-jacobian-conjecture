@@ -193,6 +193,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE_STATE = load_site_state(ROOT)
 PUBLICATION_DATA_DIR = SITE_STATE["publication"]["data_dir"]
 MANUSCRIPTS_DATA_DIR = SITE_STATE["manuscripts"]["data_dir"]
+TECHNICAL_MATERIALS_DATA_DIR = SITE_STATE["technical_materials"]["data_dir"]
 PUBLIC_DOCS_DIR = SITE_STATE["docs_dir"]
 
 
@@ -210,6 +211,7 @@ def load(root: Path) -> tuple[
     dict[str, dict[str, Any]],
     dict[str, dict[str, Any]],
     dict[str, dict[str, Any]],
+    dict[str, Any],
 ]:
     data_root = root / "data" / PUBLICATION_DATA_DIR
     export = _load_json(data_root / "public-export.json")
@@ -237,8 +239,36 @@ def load(root: Path) -> tuple[
         path = root / PUBLIC_DOCS_DIR / "assets/manuscripts" / item["filename"]
         if not path.is_file() or _sha256(path) != item["sha256"]:
             raise ValueError(f"manuscript digest mismatch: {item['filename']}")
+        if sequence != "07":
+            archival_filename = item["filename"].replace(
+                f"-v{item['version']}.pdf", "-v8.pdf"
+            )
+            archival_path = root / PUBLIC_DOCS_DIR / "assets/manuscripts" / archival_filename
+            if not archival_path.is_file():
+                raise ValueError(f"missing archival manuscript: {archival_filename}")
+            item["archival_filename"] = archival_filename
+            item["archival_sha256"] = _sha256(archival_path)
         manuscripts[sequence] = item
-    return export, pages, technical, programs, manuscripts
+    materials = _load_json(
+        root / "data" / TECHNICAL_MATERIALS_DATA_DIR / "manifest.json"
+    )
+    if materials.get("artifact_count") != SITE_STATE["technical_materials"][
+        "expected_count"
+    ]:
+        raise ValueError("technical-material count does not match site-state")
+    for program in materials["programs"]:
+        for artifact in program["artifacts"]:
+            path = (
+                root
+                / PUBLIC_DOCS_DIR
+                / "assets/technical-materials"
+                / artifact["filename"]
+            )
+            if not path.is_file() or _sha256(path) != artifact["sha256"]:
+                raise ValueError(
+                    f"technical-material digest mismatch: {artifact['filename']}"
+                )
+    return export, pages, technical, programs, manuscripts, materials
 
 
 def _yaml(value: str) -> str:
@@ -350,6 +380,18 @@ def _coverage_link_label(status: str) -> str:
         "manuscript_attached": "contains this result or its supporting argument",
         "not_applicable": "broader context only",
     }[status]
+
+
+def _human_bytes(value: int) -> str:
+    if value >= 1_000_000:
+        return f"{value / 1_000_000:.1f} MB"
+    if value >= 1_000:
+        return f"{value / 1_000:.1f} kB"
+    return f"{value} bytes"
+
+
+def _materials_by_slug(materials: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    return {program["slug"]: program for program in materials["programs"]}
 
 
 def _source_links(page: dict[str, Any]) -> list[str]:
@@ -565,6 +607,7 @@ def render_research_index(
     pages: dict[str, dict[str, Any]],
     programs: dict[str, dict[str, Any]],
     manuscripts: dict[str, dict[str, Any]],
+    materials: dict[str, Any],
 ) -> str:
     results = sorted(
         (page for page in pages.values() if page["kind"] == "result"),
@@ -602,6 +645,19 @@ def render_research_index(
             f"Companion register · {manuscripts['07']['pages']} pages · "
             f"SHA-256 `{manuscripts['07']['sha256']}`"
         ),
+        "",
+        "## Reproducible technical materials",
+        "",
+        "The exact scripts, machine-readable outputs, focused calculations, "
+        "and standalone technical notes that can be shared safely are now "
+        "available as one immutable, hash-pinned release.",
+        "",
+        "[Browse the technical materials](research/materials.md)"
+        "{ .md-button }",
+        "",
+        f"{materials['artifact_count']} artifacts across "
+        f"{materials['program_count']} programs · release "
+        f"`{materials['release_id']}`",
         "",
         "## Six research programs",
         "",
@@ -652,6 +708,61 @@ def render_research_index(
                 ]
             )
         lines.extend(["</div>", ""])
+    return "\n".join(lines)
+
+
+def render_materials_index(materials: dict[str, Any]) -> str:
+    lines = [
+        "---",
+        'title: "Technical materials"',
+        'description: "Sanitized, immutable computational supplements and technical notes for the six research programs."',
+        "---",
+        "",
+        "# Technical materials",
+        "",
+        '<p class="dek">Exact scripts, outputs, source bundles, and technical '
+        "notes that support the six research programs.</p>",
+        "",
+        "These are research artifacts, not substitutes for mathematical proof "
+        "or independent review. Each item states its scope and limitations. "
+        "The archives are immutable and identified by SHA-256 hashes.",
+        "",
+        f"Release `{materials['release_id']}` · "
+        f"{materials['created_at']} · {materials['artifact_count']} artifacts.",
+        "",
+    ]
+    for program in sorted(materials["programs"], key=lambda item: item["sequence"]):
+        lines.extend(
+            [
+                f"## {program['sequence']}. {program['title']}",
+                "",
+                program["scope"],
+                "",
+            ]
+        )
+        for artifact in program["artifacts"]:
+            details = []
+            if "pages" in artifact:
+                details.append(f"{artifact['pages']} pages")
+            if "payload_files" in artifact:
+                details.append(f"{artifact['payload_files']} payload files")
+            details.append(_human_bytes(artifact["bytes"]))
+            lines.extend(
+                [
+                    f"### [{artifact['title']}](../assets/technical-materials/"
+                    f"{artifact['filename']})",
+                    "",
+                    artifact["scope"],
+                    "",
+                    f"*{'; '.join(details)} · {artifact['kind'].replace('_', ' ')}*",
+                    "",
+                    f"**Boundary:** {artifact['limitations']}",
+                    "",
+                    f"SHA-256 `{artifact['sha256']}`",
+                    "",
+                ]
+            )
+    lines.extend(["[Back to Research](../research.md)", ""])
     return "\n".join(lines)
 
 
@@ -717,6 +828,7 @@ def render_program(
     program: dict[str, Any],
     pages: dict[str, dict[str, Any]],
     manuscripts: dict[str, dict[str, Any]],
+    material_program: dict[str, Any],
 ) -> str:
     prose = PROGRAM_PROSE[program["slug"]]
     manuscript = _manuscript_for_program(program, manuscripts)
@@ -773,6 +885,10 @@ def render_program(
         f"Nathaniel Monson · manuscript dated {manuscript['manuscript_date']} · "
         f"{manuscript['pages']} pages · SHA-256 `{manuscript['sha256']}`",
         "",
+        f"[Download the version-8 archival edition](../../assets/manuscripts/"
+        f"{manuscript['archival_filename']}) — complete pre-reader edition · "
+        f"SHA-256 `{manuscript['archival_sha256']}`",
+        "",
         f"[Open the companion Results and Research Register](../../assets/manuscripts/"
         f"{register['filename']})",
         "",
@@ -787,7 +903,27 @@ def render_program(
         )
         + ".",
         "",
+        "## Computational and technical materials",
+        "",
+        material_program["scope"],
+        "",
     ]
+    for artifact in material_program["artifacts"]:
+        lines.extend(
+            [
+                f"- [{artifact['title']}](../../assets/technical-materials/"
+                f"{artifact['filename']}) — {_human_bytes(artifact['bytes'])}; "
+                f"{artifact['scope']} Boundary: {artifact['limitations']} "
+                f"SHA-256 `{artifact['sha256']}`",
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "[Browse all technical materials](../materials.md)",
+            "",
+        ]
+    )
     for heading, selected in (
         ("Results in this program", result_pages),
         ("Open problems in this program", open_pages),
@@ -814,6 +950,7 @@ def expected_outputs(
     technical: dict[str, dict[str, Any]],
     programs: dict[str, dict[str, Any]],
     manuscripts: dict[str, dict[str, Any]],
+    materials: dict[str, Any],
 ) -> dict[Path, str]:
     outputs: dict[Path, str] = {}
     for page in pages.values():
@@ -826,16 +963,22 @@ def expected_outputs(
         outputs[
             root / PUBLIC_DOCS_DIR / "technical" / f"{record['slug']}.md"
         ] = render_technical(record, pages)
+    material_programs = _materials_by_slug(materials)
     for program in programs.values():
         outputs[
             root
             / PUBLIC_DOCS_DIR
             / "research/programs"
             / f"{program['slug']}.md"
-        ] = render_program(program, pages, manuscripts)
+        ] = render_program(
+            program, pages, manuscripts, material_programs[program["slug"]]
+        )
     outputs[root / PUBLIC_DOCS_DIR / "research.md"] = render_research_index(
-        pages, programs, manuscripts
+        pages, programs, manuscripts, materials
     )
+    outputs[
+        root / PUBLIC_DOCS_DIR / "research/materials.md"
+    ] = render_materials_index(materials)
     return outputs
 
 
@@ -850,9 +993,9 @@ def main() -> int:
     args = parser.parse_args()
     root = args.root.resolve()
     try:
-        _, pages, technical, programs, manuscripts = load(root)
+        _, pages, technical, programs, manuscripts, materials = load(root)
         outputs = expected_outputs(
-            root, pages, technical, programs, manuscripts
+            root, pages, technical, programs, manuscripts, materials
         )
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
         parser.error(str(exc))
