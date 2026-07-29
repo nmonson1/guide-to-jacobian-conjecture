@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release_id": "living-guide-public-v14c-quartic-endgame",
-  "updated_at": "2026-07-29T18:21:11+00:00",
+  "release_id": "living-guide-public-v16b-degree-three-handoff",
+  "updated_at": "2026-07-29T23:11:32+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,11 +22,11 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-briefs-v5-20260729a",
-    "manifest_sha256": "ce987c3129fbb5e55d8f20f62baf083ed575a251086a5c929db342e31d6e58a3",
+    "data_dir": "model-briefs-v7a-20260729a",
+    "manifest_sha256": "a1e316db4b01c9c86dec66028a959b90981539d9f0fdd14dc0d3e251cba2ee78",
     "expected_count": 7
   },
-  "docs_dir": "docs-v14c-20260729a",
+  "docs_dir": "docs-v16b-20260729a",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,

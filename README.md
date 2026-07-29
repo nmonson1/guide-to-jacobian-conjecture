@@ -27,7 +27,10 @@ The active local release candidate contains:
 - 534 many-to-many claim memberships across six research programs;
 - six version-13 reader PDFs and one companion Results and Research Register;
 - six self-contained, searchable program handoffs plus one cross-program
-  state page under `/research/handoffs/`;
+  state page with nine broad research-lane entry links under
+  `/research/handoffs/`; the Program 2 handoff records the exact replayed
+  nonresonant `F_3/F_4` exclusions while keeping branch exhaustiveness and
+  resonant charts visibly open;
 - 76 collections with complete manuscript coverage, nine with partial
   coverage, and 19 for which manuscript coverage is not applicable;
 - 21 context-only private records, not exported.
@@ -59,7 +62,7 @@ surfaces are:
   catalogue pages;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, and route validation;
-- `data/model-briefs-v5-20260729a/`: hash-pinned sanitized source for
+- `data/model-briefs-v7a-20260729a/`: hash-pinned sanitized source for
   model-ready HTML handoffs;
 - `scripts/generate_compatibility_stubs_v1.py`: historical noindex
   compatibility pages for earlier public routes (not part of the active

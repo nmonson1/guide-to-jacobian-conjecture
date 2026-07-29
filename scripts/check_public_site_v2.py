@@ -75,6 +75,20 @@ HANDOFF_STATUS_BUREAUCRACY = (
     "independent review",
     "independent specialist review",
 )
+STATE_LANE_ANCHORS = tuple(
+    f'<a id="{anchor}"></a>'
+    for anchor in (
+        "lane-1-cubic-flatness",
+        "lane-2-boundary-torelli",
+        "lane-3-deformation-moduli",
+        "lane-4-quartic-endgame",
+        "lane-5-degree-budgets",
+        "lane-6-homogeneous-compression",
+        "lane-7-collision-geometry",
+        "lane-8-plane-newton-queue",
+        "lane-9-plane-global-attachment",
+    )
+)
 
 
 def _sha(path: Path) -> str:
@@ -222,6 +236,25 @@ def main() -> int:
                     f"{brief['source']}: cross-program proof routes do not "
                     "reach all six handoffs"
                 )
+            lane_positions = [
+                source_text.find(anchor) for anchor in STATE_LANE_ANCHORS
+            ]
+            if any(position < 0 for position in lane_positions) or (
+                lane_positions != sorted(lane_positions)
+            ):
+                failures.append(
+                    f"{brief['source']}: missing or unordered nine-lane anchors"
+                )
+            for phrase in (
+                "attention coordinates, not cognitive silos",
+                "not a closed or exhaustive queue",
+                "optional on-ramps",
+            ):
+                if phrase not in source_text:
+                    failures.append(
+                        f"{brief['source']}: missing research-autonomy "
+                        f"language {phrase!r}"
+                    )
         else:
             proof_links = list(HANDOFF_PROOF_LINK.finditer(source_text))
             if len(proof_links) < 8:
@@ -250,7 +283,7 @@ def main() -> int:
         if brief["route"] in brief_routes:
             failures.append(f"duplicate model brief route: {brief['route']}")
         brief_routes.add(brief["route"])
-        lower, upper = ((1500, 2500) if brief.get("kind") == "cross_program" else (2000, 4000))
+        lower, upper = (2000, 4000)
         if not lower <= brief["words"] <= upper:
             failures.append(
                 f"model brief word count outside {lower}-{upper}: {brief['source']}"
@@ -271,7 +304,7 @@ def main() -> int:
             if heading not in rendered_text:
                 failures.append(f"{brief['route']}: missing {heading}")
         section_three = (
-            "## 3. Reusable anchors and proof routes"
+            "## 3. What is proved"
             if brief.get("kind") == "cross_program"
             else "## 3. Reusable inputs, exact scope, and proof access"
         )
