@@ -1,0 +1,71 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and proof drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "all-multiplicity-cubic-frame-torelli",
+      "page_title": "All-Multiplicity Torelli for Cubic Frames",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "categorical-cubic-frame-quotient",
+      "page_title": "The Categorical Quotient of Bounded Cubic Frames",
+      "role": "equivalence_input"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "cubic-frame-infinity-gluing",
+      "page_title": "Gluing Cubic-Frame Torelli at Infinity",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "all-multiplicity-fixed-frame-torelli-e48f1ff0",
+  "source": [],
+  "statement": "For admissible cubic frames with nonconstant A/c, stable left-right equivalence, ordinary left-right equivalence, and equality of the decorated Artin schemes (Spec C[c]/(A/c), B mod (A/c)) up to scaling are equivalent, without squarefreeness or coprimality assumptions.",
+  "title": "All-Multiplicity Fixed-Frame Torelli",
+  "visibility": "technical"
+}

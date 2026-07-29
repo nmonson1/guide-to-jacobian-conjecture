@@ -1,0 +1,54 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "categorical-cubic-frame-quotient",
+      "page_title": "The Categorical Quotient of Bounded Cubic Frames",
+      "role": "separated_replacement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "cubic-frame-infinity-gluing",
+      "page_title": "Gluing Cubic-Frame Torelli at Infinity",
+      "role": "partial_construction"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "weighted-graph-closures-give-separated-spaces-of-cubic-frame-degenerations-62905fd2",
+  "source": [],
+  "statement": "At a simple escape wall the graph closure is the blowup of the corresponding weighted ideal, and for an escape of length m the principal-part coordinates give a finite-type projective separated weighted degeneration space with weights (1,...,m,m+1,m,...,2).",
+  "title": "Weighted Graph Closures Give Separated Spaces of Cubic-Frame Degenerations",
+  "visibility": "technical"
+}

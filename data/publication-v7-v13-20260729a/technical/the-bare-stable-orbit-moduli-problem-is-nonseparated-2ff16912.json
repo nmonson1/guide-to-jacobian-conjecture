@@ -1,0 +1,54 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "categorical-cubic-frame-quotient",
+      "page_title": "The Categorical Quotient of Bounded Cubic Frames",
+      "role": "coarse_moduli_obstruction"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "stable-deformation-moduli",
+      "page_title": "Stable Deformation Moduli",
+      "role": "moduli_obstruction"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "the-bare-stable-orbit-moduli-problem-is-nonseparated-2ff16912",
+  "source": [],
+  "statement": "For the quadratic cubic-frame family A=c+alpha c^2 and B=-2-4alpha c+beta c^2, the arcs alpha=t and beta=q t^2 have constant stable class q away from t=0 and specialize to the base class at t=0. Consequently no separated algebraic space can functorially classify the bare stable left-right orbit set while distinguishing these geometric classes.",
+  "title": "The Bare Stable-Orbit Moduli Problem Is Nonseparated",
+  "visibility": "technical"
+}

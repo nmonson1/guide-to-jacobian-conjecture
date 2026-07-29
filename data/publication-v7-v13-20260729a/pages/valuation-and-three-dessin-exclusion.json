@@ -1,0 +1,135 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [
+      "degree-below-125-theorem"
+    ],
+    "shares_claims_with": [
+      "filtered-finite-jet-realization",
+      "stored-degree-twenty-one-terminal-no-gluing",
+      "three-dessin-uniqueness"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "description": "For either surviving Newton support, the (-2,1) source valuation dominates Borisov's target F_-5 with normal ramification index one and residue degree 21, excluding Borisov's Three-dessin framework for those supports.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 6
+        },
+        "manuscript": "06-plane-boundary",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "At a target DVR, the invariant discriminant exponent is sum f_i(e_i-1), while a monic integral primitive polynomial has exponent sum f_i(e_i-1)+2 iota_C; a reduced primitive discriminant component therefore forces one (e,f)=(2,1) ramified divisor and zero monogenic index.",
+      "technical_slug": "discriminant-boundary-formula-at-a-target-dvr-the-invariant-discriminant-exponent-is-aa2591b9",
+      "title": "Discriminant Boundary Formula: At a target DVR, the invariant discriminant exponent is sum f_i(e_i-1), while a monic integra…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "A scratch calculation for Borisov's First Framework derives cycle type 5 1^11, invariant discriminant order four, primitive exponent 4+2 iota, and provisional curve invariants C^2=13 and arithmetic genus seven.",
+      "technical_slug": "framework-calculation-a-scratch-calculation-for-borisov-s-first-framework-derives-cycle-0c788598",
+      "title": "Framework Calculation: A scratch calculation for Borisov's First Framework derives cycle type 5 1^11, invariant disc…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The forced residue degree 21 conflicts with the degree-16 map on Borisov's published principal -5 component, conditionally excluding Three-dessin if the toric and Borisov divisors are intrinsically the same valuation.",
+      "technical_slug": "framework-exclusion-the-forced-residue-degree-21-conflicts-with-the-degree-16-9345d4b1",
+      "title": "Framework Exclusion: The forced residue degree 21 conflicts with the degree-16 map on Borisov's published principa…"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "open_question",
+      "statement": "Is the toric -5 divisor intrinsically Borisov's principal -5 divisor?",
+      "technical_slug": "open-question-is-the-toric-5-divisor-intrinsically-borisov-s-principal-5-ae3dcc7b",
+      "title": "Open Question: Is the toric -5 divisor intrinsically Borisov's principal -5 divisor?"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "For either surviving Newton support, the (-2,1) source valuation dominates Borisov's target F_-5 with normal ramification index one and residue degree 21, excluding Borisov's Three-dessin framework for those supports.",
+      "technical_slug": "valuation-identification-theorem-for-either-surviving-newton-support-the-2-1-source-ab20c3a8",
+      "title": "Valuation Identification Theorem: For either surviving Newton support, the (-2,1) source valuation dominates Borisov's target F…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "immediate_corollary",
+      "statement": "Any plane counterexample of maximum coordinate degree below 125 has generic degree at least 21.",
+      "technical_slug": "generic-degree-corollary-any-plane-counterexample-of-maximum-coordinate-degree-below-125-3df84995",
+      "title": "Generic Degree Corollary: Any plane counterexample of maximum coordinate degree below 125 has generic degree at least 21."
+    },
+    {
+      "assessment": "open",
+      "inclusion": "shared",
+      "role": "open_question",
+      "statement": "The identified (-2,1) divisor is the only source divisor above the generic point of F_-5, so mu=21.",
+      "technical_slug": "open-uniqueness-problem-the-identified-2-1-divisor-is-the-only-source-30aa88ce",
+      "title": "Open Uniqueness Problem: The identified (-2,1) divisor is the only source divisor above the generic point of F_-5, so…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "terminal_strengthening",
+      "statement": "After the canonical k=4 rechart and forced adjacent-chart condition, the complete layer-five-through-seven support and chart-matching equations of the stored degree-21 full-support terminal specialization have no solution over the algebraic closure of its quintic coefficient field.",
+      "technical_slug": "the-stored-degree-21-terminal-model-is-excluded-through-layer-seven-bceb7f45",
+      "title": "The Stored Degree-21 Terminal Model Is Excluded Through Layer Seven"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 14,
+    "member_count": 8
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "plane-boundary-obstructions"
+  ],
+  "schema_version": 2,
+  "slug": "valuation-and-three-dessin-exclusion",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "For either surviving Newton support, the (-2,1) source valuation dominates Borisov's target F_-5 with normal ramification index one and residue degree 21, excluding Borisov's Three-dessin framework for those supports.",
+  "title": "Valuation And Three Dessin Exclusion",
+  "visibility": "catalogued"
+}

@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "critique, derivation, and computation"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "recorded",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "filtered-regular-pencils-in-dimension-five",
+      "page_title": "Filtered Regular Nilpotent Pencils in Dimension Five",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "global-degree-20-defect-theorem-for-a-global-regular-type-five-dimensional-a82581c7",
+  "source": [],
+  "statement": "For a global regular-type five-dimensional nilpotent quadratic tensor with full-span collision-line kernel, the saturated rank-one defects are nested and have total codimension-two class 20H^2, combined Hilbert polynomial 10n^2+50n+81, and weighted effective increments 5Delta_1+4Delta_2+3Delta_3+2Delta_4+Delta_5=20H^2.",
+  "title": "Global Degree 20 Defect Theorem: For a global regular-type five-dimensional nilpotent quadratic tensor with full-span collisio…",
+  "visibility": "technical"
+}

@@ -1,0 +1,43 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "boundary-deformation-and-f2-correction",
+      "page_title": "Boundary Deformation And F2 Correction",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "boundary-deformation-complex-the-normal-boundary-determinant-equation-has-the-displayed-universal-c4bfc4ff",
+  "source": [],
+  "statement": "The normal-boundary determinant equation has the displayed universal order-r linear deformation operator and residue adjoint, giving an intrinsic residue interpretation of the coefficient compatibility conditions.",
+  "title": "Boundary Deformation Complex: The normal-boundary determinant equation has the displayed universal order-r linear deformati…",
+  "visibility": "technical"
+}

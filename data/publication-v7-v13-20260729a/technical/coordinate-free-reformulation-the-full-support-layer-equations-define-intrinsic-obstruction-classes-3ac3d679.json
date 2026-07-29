@@ -1,0 +1,50 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "conceptual-plane-obstruction",
+      "page_title": "A Conceptual Form of the Plane Obstruction",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "degree-below-125-theorem",
+      "page_title": "Degree Below 125 Theorem",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "coordinate-free-reformulation-the-full-support-layer-equations-define-intrinsic-obstruction-classes-3ac3d679",
+  "source": [],
+  "statement": "The full-support layer equations define intrinsic obstruction classes in cokernels of differential operators on the marked lower boundary curve; the exact unit ideal is the nonvanishing of a Newton-bounded boundary-gluing Kuranishi section.",
+  "title": "Coordinate Free Reformulation: The full-support layer equations define intrinsic obstruction classes in cokernels of differe…",
+  "visibility": "technical"
+}

@@ -1,0 +1,68 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation, computation, and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "cubic-boundary-jets-and-moduli",
+      "page_title": "Boundary Jets and Stable Moduli in the Cubic Frame",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "stable-deformation-moduli",
+      "page_title": "Stable Deformation Moduli",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "growing-stable-moduli-in-the-cubic-frame-c8a7ef37",
+  "source": [],
+  "statement": "For every n at least two, the cubic-frame construction contains a (2n-3)-dimensional family of pairwise stably inequivalent generic-degree-three Keller maps of ordinary degree 4n+3. In particular, ordinary degree fifteen contains a three-dimensional stable-moduli family, modulo a finite involution.",
+  "title": "Growing Stable Moduli in the Cubic Frame",
+  "visibility": "technical"
+}

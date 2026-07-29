@@ -1,0 +1,54 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "filtered-finite-jet-realization",
+      "page_title": "Filtered Finite-Jet Realization at the Plane Boundary",
+      "role": "resolved_instance"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "stored-degree-twenty-one-terminal-no-gluing",
+      "page_title": "A Stored Degree-21 Terminal Model Does Not Glue",
+      "role": "chart_transition"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "the-missing-layer-four-operation-is-the-k-4-newton-chart-transition-9667172f",
+  "source": [],
+  "statement": "For the stored degree-21 terminal face, the one-dimensional layer-four residual kernel is not realized by a fixed-chart algebraic operation; it is the k=4 complete-chain rechart, after which the adjacent-chart Jacobian equations force L=0, F5=0, and a common approximate root P2=C R^2, Q3=G R^3.",
+  "title": "The Missing Layer-Four Operation Is the k=4 Newton-Chart Transition",
+  "visibility": "technical"
+}

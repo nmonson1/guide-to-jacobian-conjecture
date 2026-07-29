@@ -1,0 +1,323 @@
+# Program 4: Stable Moduli
+
+**Research state:** mathematical checkpoint 29 July 2026. Exact scope,
+dependencies, and direct proof-body links are stated per input below.
+
+**Actor guidance:** quotient, Torelli, and gluing arguments -> online model;
+low-length invariant modules and cocycle tests -> local symbolic system;
+core invariant reproduction -> independent CAS.
+
+This is the complete public handoff. The linked
+[working paper](../../assets/manuscripts/04-boundary-rigidity-stable-moduli-2026-07-29-v12.pdf),
+[claim graph](../../results/all-claims.md), and
+[Program 4 technical materials](../../evidence/materials.md#4-stable-moduli)
+provide deeper proof and replay access. No download bundle or private
+conversation is required to understand the tasks.
+
+## 1. Setup and notation
+
+The program studies when explicit nonproper Keller maps remain inequivalent
+after arbitrary polynomial source and target automorphisms and after adding
+identity coordinates. The central family is the normalized cubic frame
+
+```
+A_alpha(c) = c + alpha*c^2,
+B_alpha,beta(c) = -2 - 4*alpha*c + beta*c^2.
+```
+
+For `alpha != 0`, the ratio
+
+```
+q = beta / alpha^2
+```
+
+is a complete invariant under polynomial left-right equivalence and affine
+stabilization. The line `alpha=0` is one ordinary orbit and is stably
+distinct from every nonzero-`alpha` member. Thus the result concerns genuine
+fixed-generic-degree moduli, not merely the familiar fact that generic degree
+can vary.
+
+The general fixed-frame object is encoded by a pair of polynomials `A(c),
+B(c)` with a retained root at infinity. The finite boundary scheme is
+
+```
+Z_A = Spec C[c]/(A/c),
+```
+
+decorated by the residue class of `B`. Multiplicities and common roots are
+recorded by the weighted relative-Jacobian divisor. The all-multiplicity
+Torelli statement says that, for admissible cubic frames, equality of this
+decorated Artin data up to scaling is equivalent to ordinary and stable
+left-right equivalence. It is a theorem on the fixed-frame locus; it is not
+a classification of arbitrary Keller maps.
+
+At a coefficient bound `N`, root translations act through a bounded
+translation groupoid. A single polynomial map presents its kernel pair. The
+program distinguishes three quotient-like objects that must not be merged:
+
+1. the **categorical quotient**, whose invariant algebra is a differential
+   kernel and whose global functions are controlled by the one-root wall;
+2. the **fppf orbit quotient**, which is not algebraic along a rank-one wall;
+3. **weighted graph closures**, separated finite-type spaces that classify
+   degeneration directions near an escape wall.
+
+The third object is not a repaired orbit quotient. It records how an orbit
+degenerates, not all fppf equivalences. Likewise the boundary stack
+`[U_N/G_m]` is framed or rigidified; it is not automatically the full
+unrigidified left-right groupoid.
+
+When one root escapes to infinity, an explicit elementary transition relates
+the length-`N` chart to a lower-length chart plus a contracted weight-two
+gauge direction. Simultaneous escapes, the nonunit-resultant boundary,
+scaling compatibility, and intrinsic relative-Jacobian gluing remain open.
+
+### Coverage rule
+
+This page contains enough geometry to distinguish the interior Torelli
+theorem from the three boundary quotient objects and to assign a gluing
+task. Each numbered input states its exact scope, the proof-signature table
+records dependencies and exits, and the final column links directly to its
+proof body or, for the one explicitly proposed construction, its statement.
+
+### Compact glossary
+
+- **Decorated Artin boundary:** `(Spec C[c]/(A/c), B mod A)` with scaling;
+  multiplicities are retained, not reduced away.
+- **Relative-Jacobian blowup:** intrinsic modification of the discriminant
+  over the recovered `c`-line; its finite-root chart records the weighted
+  divisor used in all-multiplicity Torelli.
+- **Categorical quotient:** spectrum of invariant functions; it need not
+  represent or separate fppf orbits.
+- **fppf orbit sheaf:** sheafification of actual bounded translation orbits;
+  it is nonalgebraic at the rank-one wall.
+- **Weighted graph closure:** separated space of degeneration directions;
+  it is neither of the preceding quotients.
+
+### Case and dependency map
+
+```text
+cubic-frame boundary data
+├─ all deleted roots finite
+│  ├─ coprime/squarefree interior ── decorated-scheme Torelli
+│  └─ common roots/multiplicities ── relative-Jacobian Torelli
+└─ roots escape to infinity
+   ├─ one root ── lower-length chart × contracted gauge line (explicit)
+   └─ simultaneous roots / nonunit resultant ── gluing open
+
+bounded translations at a wall
+├─ invariant functions ── categorical differential kernel
+├─ actual fppf orbits ── nonalgebraic
+└─ degeneration directions ── weighted graph closure
+```
+
+## 2. Goal and payoff
+
+The immediate goal is to give the local weighted graph boundaries a global
+universal property. The theorem should specify a degeneration functor,
+prove that the local closures glue on overlaps, and state which information
+is retained: orbit class, categorical invariant, or degeneration direction.
+
+A successful gluing theorem would turn the current collection of explicit
+walls into a usable compactification of cubic-frame degeneration data. It
+would also clarify how the finite-root Torelli invariant behaves as roots
+escape to infinity and how different boundary lengths meet.
+
+The larger payoff is an intrinsic boundary-Torelli program. The current
+fixed-frame theorem shows that decorated finite boundary data classifies a
+large locus. Extending that result beyond the frame would make boundary data
+a genuine coordinate system on part of the Keller quotient. This is related
+to, but distinct from, recovering the open immersion of affine space from a
+finite cover. The latter is an affine-space recognition problem and should
+not be hidden inside the definition of a boundary object.
+
+A secondary payoff is the modulus-onset invariant `D_mod`: the least degree
+at which every neighborhood of the normalized counterexample meets
+infinitely many left-right classes. The public graph asserts a degree-eleven
+threshold inside the cubic-frame family, but that assertion needs a proof
+locator and targeted independent reproduction before it can support a paper.
+
+## 3. Reusable inputs, exact scope, and proof access
+
+| # | Exact input and hypotheses | Claim · direct proof body |
+| --- | --- | --- |
+| 1 | In the quadratic cubic-frame slice, for `alpha != 0`, `q=beta/alpha^2` is complete under arbitrary polynomial left-right equivalence and affine stabilization; the entire `alpha=0` line is one separate orbit. | [`JCG-0F9A20C0`](../../claims/JCG-0F9A20C0.md) · [proof](../../assets/manuscripts/04-boundary-rigidity-stable-moduli-2026-07-29-v12.pdf#page=2) |
+| 2 | For coprime admissible cubic frames with fixed finite boundary length, stable equivalence equals ordinary equivalence and is classified up to scaling by `(Z_A,B|Z_A)`; `A` need not be squarefree. | [`JCG-B858C93E`](../../claims/JCG-B858C93E.md) · [proof](../../assets/manuscripts/04-boundary-rigidity-stable-moduli-2026-07-29-v12.pdf#page=12) |
+| 3 | For admissible cubic frames with `A/c` nonconstant, the same fixed-frame Torelli conclusion holds across common roots and multiplicities, with the weighted relative-Jacobian divisor recovering the multiplicities. | [`JCG-E48F1FF0`](../../claims/JCG-E48F1FF0.md) · [proof](../../assets/manuscripts/04-boundary-rigidity-stable-moduli-2026-07-29-v12.pdf#page=16) |
+| 4 | Proposed rigidified model: `[U_N/G_m]` is a smooth Deligne--Mumford stack of dimension `2N-1` whose geometric points classify the stated coprime length-`N` boundary data. It is not the full unrigidified left-right groupoid and is not used as a proved gluing theorem. | [`JCG-046E56A8`](../../claims/JCG-046E56A8.md) · [exact recorded statement](../../assets/proof-archives/04-boundary-rigidity-stable-moduli-2026-07-22-v8.pdf#page=33) |
+| 5 | At a fixed coefficient bound `N`, the degree-preserving root-translation relation is the kernel pair of the single bounded map `Theta_N`; its quotient coordinates separate finite-root decoration from the principal part supported at infinity. | [`JCG-2F2C2F29`](../../claims/JCG-2F2C2F29.md) · [proof](../../assets/manuscripts/04-boundary-rigidity-stable-moduli-2026-07-29-v12.pdf#page=23) |
+| 6 | For a finite projective module `E` and translation kernel `K=ker V(M)`, the categorical invariant algebra is the relative differential kernel displayed in the paper; for the cubic-frame family its homogeneous functions are controlled by the single one-root wall. | [`JCG-66049841`](../../claims/JCG-66049841.md) · [proof](../../assets/manuscripts/04-boundary-rigidity-stable-moduli-2026-07-29-v12.pdf#page=23) |
+| 7 | Over a DVR, the rank-one wall `K_e=Spec R[s]/(pi^e s)` has nonalgebraic fppf orbit sheaf; consequently the bounded cubic-frame fppf quotient fails algebraicity along its generic one-root wall. This does not apply to the categorical quotient or graph closure. | [`JCG-4D953715`](../../claims/JCG-4D953715.md) · [proof](../../assets/manuscripts/04-boundary-rigidity-stable-moduli-2026-07-29-v12.pdf#page=24) |
+| 8 | The one-root quotient coordinate has graph closure `Bl_(epsilon^(N+2),y)`; an `m`-fold escape has the displayed weighted principal-part projectivization. These give separated finite-type local degeneration spaces, not an orbit quotient or a global simultaneous-escape compactification. | [`JCG-62905FD2`](../../claims/JCG-62905FD2.md) · [construction and boundary](../../assets/manuscripts/04-boundary-rigidity-stable-moduli-2026-07-29-v12.pdf#page=24) |
+| 9 | In the displayed quartic-frame family, the normalized residual discriminant and conductor recover `(rho,sigma)`; equality of these parameters is exactly stable left-right equivalence, giving an affine plane of fixed-degree stable moduli. This is restricted to that family. | [`JCG-6B08BDE5`](../../claims/JCG-6B08BDE5.md) · [proof record](../../assets/proof-archives/04-boundary-rigidity-stable-moduli-2026-07-22-v8.pdf#page=33) |
+| 10 | For the exceptional quadratic member `q=-2`, the weighted relative-Jacobian divisor has intrinsic vertical multiplicity exactly two, which separates the exceptional stratum uniformly. | [`JCG-7FB01BFA`](../../claims/JCG-7FB01BFA.md) · [proof](../../assets/manuscripts/04-boundary-rigidity-stable-moduli-2026-07-29-v12.pdf#page=17) |
+
+### Proof-signature index
+
+| Inputs | Proof signature / reusable output | Boundary exits |
+| --- | --- | --- |
+| 1, 10 | Compute the intrinsic nonproperness divisor `D_q ∪ P`; normalize `D_q` to `A^2_(c,t)` and mark its singular preimage `L_q` and plane intersection `M`. Unique factorization on every affine cylinder forces the pulled-back coordinates and recovers `q`; the `q=-2` incidence is separated by the singular intersection and then by vertical multiplicity two. Explicit source/target shears gauge `alpha=0`. **Output:** stable `q` invariant including the exceptional stratum. | This proves the quadratic slice, not all frames. |
+| 2–3 | Compactify roots in projective incidence and divide the cubic discriminant by its coefficient content. Blow up the relative Jacobian; its finite-root chart is `A^2_(c,t)` with divisor `rho(c)H_0(c,t)^3`. Horizontal order `p` and vertical order `d` recover the common multiplicity, then coefficient comparison recovers `A` and `B mod cA`; explicit root translation proves sufficiency. **Output:** all-multiplicity fixed-frame Torelli. | The number of finite roots is fixed; infinity transitions remain outside the theorem. |
+| 4 | Parameterize coprime length-`N` coefficient data and quotient the residual scaling action; smoothness and finite stabilizers give the stated rigidified Deligne--Mumford stack. **Output:** a fixed-length framed moduli chart. | It is not the unframed stable left-right quotient. |
+| 5 | Divide by the monic coefficient polynomial: uniquely write `P=z^m P_d+Q_d S`. Multiplication by `Z^N` kills exactly the principal part, so one bounded map presents the translation kernel pair. **Output:** finite-root decoration plus escaping principal-part coordinates. | Presentation of bounded translations does not supply a global compactification. |
+| 6 | Differentiate invariant polynomials and project to `coker(M^vee)`; conversely integrate coefficientwise along translations. A Cohen--Macaulay support/intersection argument shows the generic invariant algebra is controlled by the one height-one wall. **Output:** one finite syzygy map in every homogeneous degree. | Do not use the withdrawn reflexivity shortcut. |
+| 7 | Reduce the wall to `K_e=Spec R[s]/(pi^e s)` over a DVR. Its orbit functor is `B/Ann_B(pi^e)`; a standard fiber-product test maps diagonally rather than surjectively, violating strong Rim--Schlessinger. **Output:** a rank-one nonalgebraicity witness. | This says nothing against the categorical quotient or graph closure. |
+| 8 | Close the generic quotient coordinate as `Bl_(epsilon^(N+2),y)`; for an `m`-fold escape, projectivize the unique principal-part coordinates with weights `(1,...,m,m+1,m,...,2)`. **Output:** separated local degeneration charts. | Pairwise and triple overlaps, scaling, and nonunit resultants are not proved. |
+| 9 | Normalize the quartic-frame coefficients; singular/cusp and double-double strata of the residual discriminant and the conductor divisor `2L+Q` intrinsically recover `(rho,sigma)`. **Output:** an affine plane of fixed-degree stable moduli. | Restricted quartic family; no claim about the full Keller quotient or modulus-onset threshold. |
+
+## 4. The live frontier
+
+**(F1) Global gluing of weighted graph boundaries.** The one-root wall and
+length-`m` local principal-part models are explicit. Missing are overlap
+maps for simultaneous escapes, cocycle compatibility, the nonunit-resultant
+boundary, and scaling. A universal property must describe a functor of
+families and prove separatedness/properness claims only to the extent the
+construction warrants.
+
+**(F2) Intrinsic stable-equivalence gluing.** Coefficient-space orbit maps,
+categorical functions, and graph closures do not prove that stabilized
+relative-Jacobian geometry reconstructs equivalence across every infinity
+wall. The finite-root Torelli theorem supplies the interior classification;
+the frontier is compatibility across changing boundary length and
+multiplicity.
+
+**(F3) Low-length overlap tests.** Once a candidate transition law is
+written, compute invariant modules, Smith/Fitting data, and triple-overlap
+cocycles for small `N`. These tests can refute a proposed universal theorem
+quickly. They support a theorem but cannot replace the gluing proof.
+
+**(F4) Targeted verification for `D_mod`.** Independently expand the
+two-parameter family, verify its uniform ordinary degree, reproduce the
+`q`-separation invariant, and locate the proof of the asserted first
+degree-eleven stable modulus in the full cubic-frame family. The relevant
+local definition uses pointed curves through `G`; ordinary degree is not an
+invariant of an abstract left-right class.
+
+Dependencies: F1 supplies transition maps for F3. F2 then asks whether the
+coefficient compactification reflects intrinsic stable equivalence. F4 is a
+separate verification gate and should not be bundled into the global gluing
+theorem.
+
+## 5. Graveyard (causes of death — read before proposing routes)
+
+- **Reflexivity shortcut for the one-wall theorem.** The earlier inference
+  that the relevant module was controlled merely by reflexivity was
+  unsupported. The corrected proof uses a Cohen--Macaulay support argument.
+  Do not cite the withdrawn shortcut.
+- **Categorical quotient equals orbit space.** Invariants can fail to
+  separate fppf orbits, and the actual bounded fppf quotient is nonalgebraic
+  at the rank-one wall. The categorical quotient answers a functions
+  question, not the full moduli question.
+- **Graph closure repairs nonalgebraicity.** The graph closure parameterizes
+  degeneration directions. It does not become the fppf orbit sheaf by being
+  separated and finite type.
+- **Framed boundary data are the full LR quotient.** Keeping a marked frame
+  or `G_m` rigidification suppresses automorphisms. Any unframed conclusion
+  needs a Torelli theorem, not a change of terminology.
+- **One-root transition proves simultaneous gluing.** Several roots may
+  escape at comparable rates, creating higher overlap conditions absent
+  from the elementary wall.
+- **Dimension count proves moduli.** Orbit dimensions and coefficient counts
+  do not establish inequivalence. Stable separation requires an intrinsic
+  invariant such as `q`, decorated boundary data, or a positive-genus
+  boundary curve.
+
+## 6. Tasks
+
+Each item is a task capsule. T1 must define the functor before proposing a
+space; T2 must wait for explicit overlap maps. If a low-length test breaks a
+cocycle or separatedness claim, return the smallest exact counterexample and
+the specific failed property instead of patching the theorem informally.
+
+**P4-T1 — Give the weighted graph boundary a global universal property.**
+
+Actor: `online_model`. Status: ready.
+
+*Inputs:* this page; the [Program 4 paper](../../assets/manuscripts/04-boundary-rigidity-stable-moduli-2026-07-29-v12.pdf);
+the categorical quotient and infinity-gluing collections; the explicit
+one-root transition in the public technical materials.
+
+*Payoff:* replaces local wall charts with one representable degeneration
+object and makes cross-length Torelli a precise question.
+
+*Attack:* define the family-valued functor first; write overlap maps for
+ordered escape clusters; treat scaling and nonunit resultants; prove the
+cocycle before a universal property.
+
+*Done when:* the local closures glue, represent the stated degeneration
+functor, and the theorem explicitly says why it is not the fppf orbit
+quotient.
+
+**P4-T2 — Compute low-`N` invariant and overlap tests.**
+
+Actor: `local_symbolic`. Status: blocked until T1 proposes transitions.
+
+*Inputs:* the public categorical-wall checker and the exact transition maps
+from T1.
+
+*Done when:* Smith/Fitting invariants, double- and triple-overlap cocycles,
+and regression examples either support the maps or exhibit a counterexample,
+with exact inputs and hashes.
+
+**P4-T3 — Clear the modulus-onset verification gate.**
+
+Actor: `independent_cas` plus proof audit. Status: ready.
+
+*Done when:* the `q` invariant and uniform degree of the explicit family are
+independently reproduced, and the degree-eleven threshold claim has an exact
+public proof locator with its restricted-class scope visible.
+
+## 7. Evidence and replay index
+
+The Program 4 paper contains the `q` classification, general boundary
+Torelli statements, quotient distinctions, and conventional geometric
+arguments. The technical release contains exact checks for discriminants,
+normalizations, conductor gradients, the exceptional `q=-2` geometry,
+weighted-lift invariants, one-root transitions, differential-kernel
+formulas, and rank-one wall examples.
+
+Those calculations verify displayed formulas and low-dimensional examples.
+They do not replace normalization lifting, stable-cylinder rigidity,
+all-multiplicity component recognition, global gluing, or the
+Rim--Schlessinger and support arguments used in the proofs.
+
+Use the [all-multiplicity Torelli package](../../collections/all-multiplicity-cubic-frame-torelli.md),
+[categorical quotient package](../../collections/categorical-cubic-frame-quotient.md),
+and [infinity-gluing frontier](../../collections/cubic-frame-infinity-gluing.md)
+as the main proof-access route.
+
+A useful returned gluing proposal should be testable before it is accepted as
+a theorem. It should give coordinates on every local wall, explicit formulas
+on pairwise overlaps, the action of scaling and finite permutations, and at
+least one triple-overlap identity. It should also say which functorial base
+changes are allowed and what happens when a resultant becomes a nonunit.
+Without those data, “complete weighted collineations” is only an analogy.
+
+Conversely, a low-`N` counterexample should be treated as structural
+information: identify whether it breaks cocycle compatibility, separatedness,
+finite type, or the proposed relation to intrinsic stable equivalence. A
+repaired functor may still exist even when a particular compactification
+does not.
+
+The preferred output format is therefore a theorem/proposition pair: first a
+precise representability or gluing statement for the degeneration functor,
+then a comparison morphism to the categorical and orbit constructions with
+its injectivity, surjectivity, and separatedness properties stated
+independently. Include the one-root model as a worked local chart and at
+least one simultaneous two-root example. If a finite permutation or hidden
+automorphism changes the overlap, record it as stack structure rather than
+quotienting it away informally. The same discipline applies to `D_mod`:
+exhibit a pointed curve through the normalized map, verify its uniform degree,
+and prove that its punctured neighborhoods meet infinitely many classes.
+
+## 8. Do not do
+
+- Do not identify categorical, fppf, and graph-closure quotients.
+- Do not reuse the withdrawn reflexivity shortcut.
+- Do not call a framed boundary stack the full stable left-right quotient.
+- Do not infer simultaneous-escape gluing from the one-root chart.
+- Do not claim a universal property before defining the functor of families
+  and proving overlap cocycles.
+- Do not cite the degree-eleven threshold as verified until its locator and
+  independent reproduction gate are complete.
+- Do not represent symbolic sanity checks as proofs of the geometric gluing
+  or stable-cylinder arguments.

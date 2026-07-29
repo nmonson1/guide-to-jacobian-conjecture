@@ -1,0 +1,52 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and proof drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "open",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "degree-five-six-conic-frontier",
+      "page_title": "The Degree-Five and Degree-Six Conic Frontier",
+      "role": "open_question"
+    }
+  ],
+  "noindex": true,
+  "record_type": "open_problem",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "resolve-fixed-factor-basepoints-in-degree-five-f299193a",
+  "source": [],
+  "statement": "Analyze the residual degree-five fixed-factor conic branches where the basepoint lies on the fixed factor G=0.",
+  "title": "Resolve Fixed-Factor Basepoints in Degree Five",
+  "visibility": "technical"
+}

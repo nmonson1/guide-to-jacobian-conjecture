@@ -1,0 +1,42 @@
+---
+title: "The direct Euclidean 36-dimensional partial-gradient potential is not Keller when B is nonzero; obtaining a 36-dimensional Keller or cover-preserving realization is a separate self-adjoint nilpotent matrix-completion problem."
+description: "The direct Euclidean 36-dimensional partial-gradient potential is not Keller when B is nonzero; obtaining a 36-dimensional Keller or cover-preserving realization is a separate self-adjoint nilpotent matrix-completion problem."
+---
+
+<p class="claim-tag">JCG-E1675EDD</p>
+# The direct Euclidean 36-dimensional partial-gradient potential is not Keller when B is nonzero; obtaining a 36-dimensional Keller or cover-preserving realization is a separate self-adjoint nilpotent matrix-completion problem.
+
+<p class="dek">The direct Euclidean 36-dimensional partial-gradient potential is not Keller when B is nonzero; obtaining a 36-dimensional Keller or cover-preserving realization is a separate self-adjoint nilpotent matrix-completion problem.</p>
+
+<span class="status status-kind">Claim</span> <span class="status status-draft">Corrected</span> <span class="status">Core</span>
+
+## Exact statement
+
+The direct Euclidean 36-dimensional partial-gradient potential is not Keller when B is nonzero; obtaining a 36-dimensional Keller or cover-preserving realization is a separate self-adjoint nilpotent matrix-completion problem.
+
+Statement version `1`. The public tag is stable; statement revisions increment the version rather than replacing the tag.
+
+## Appears in
+
+- [Can the Symmetric Descendant Be Made Smaller and Keller?](../collections/smaller-keller-symmetric-dilations.md) — defining, primary statement
+- [Bounds and Obstructions for Symmetric Dilations](../collections/symmetric-dilation-bounds.md) — defining, supporting result
+
+## Proof access and evidence boundary
+
+- [Can the Symmetric Descendant Be Made Smaller and Keller?](../collections/smaller-keller-symmetric-dilations.md): **Exact manuscript location**
+- [Bounds and Obstructions for Symmetric Dilations](../collections/symmetric-dilation-bounds.md): **Exact manuscript location**
+
+**Independent review**
+
+- None Recorded: No independent review is represented in this public record.
+
+## Credit
+
+- Nathaniel Monson: research direction and mathematical responsibility; attributed by source
+
+## AI assistance
+
+- ChatGPT: critique and derivation; research assistance
+- Responsible human(s): Nathaniel Monson
+
+[Browse all claims](../results/all-claims.md)

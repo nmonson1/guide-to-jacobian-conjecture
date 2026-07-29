@@ -1,0 +1,155 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation, computation, and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "cubic-boundary-jets-and-moduli",
+      "degree-seven-local-affine-rigidity",
+      "finite-triple-covers-conductors-and-automorphisms"
+    ],
+    "shares_claims_with": [
+      "categorical-cubic-frame-quotient",
+      "cubic-boundary-jets-and-moduli",
+      "degree-seven-local-affine-rigidity",
+      "finite-triple-covers-conductors-and-automorphisms"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "For the quadratic cubic-frame slice with alpha nonzero, q=beta/alpha^2 is a complete invariant under arbitrary polynomial source-target equivalence and stabilization; the alpha=0 line is gauge-equivalent to the base map.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 2
+        },
+        "manuscript": "04-stable-moduli",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "subsumed_theorem",
+      "statement": "The based w20 family has exactly two based equivalence classes, k=0 and k nonzero, while its coefficientwise formal trivializations require unbounded spatial degree.",
+      "technical_slug": "based-deformation-classification-the-based-w20-family-has-exactly-two-based-equivalence-10b255a3",
+      "title": "Based Deformation Classification: The based w20 family has exactly two based equivalence classes, k=0 and k nonzero, while its…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "For the quadratic cubic-frame slice with alpha nonzero, q=beta/alpha^2 is a complete invariant under arbitrary polynomial source-target equivalence and stabilization; the alpha=0 line is gauge-equivalent to the base map.",
+      "technical_slug": "stable-moduli-classification-for-the-quadratic-cubic-frame-slice-with-alpha-nonzero-0f9a20c0",
+      "title": "Stable Moduli Classification: For the quadratic cubic-frame slice with alpha nonzero, q=beta/alpha^2 is a complete invarian…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "For squarefree A and marked missing-infinity roots, stabilized isomorphism classes of normalized conductor arrangements are exactly classified by affine changes of c, affine-linear changes of t over c, the affine root configuration of A, and the projective vector of conductor values B(rho) modulo induced finite permutations.",
+      "technical_slug": "stable-conductor-arrangement-classification-for-squarefree-a-and-marked-missing-infinity-roots-5542af40",
+      "title": "Stable Conductor Arrangement Classification: For squarefree A and marked missing-infinity roots, stabilized isomorphism classes of normali…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "For every n at least two, the cubic-frame construction contains a (2n-3)-dimensional family of pairwise stably inequivalent generic-degree-three Keller maps of ordinary degree 4n+3. In particular, ordinary degree fifteen contains a three-dimensional stable-moduli family, modulo a finite involution.",
+      "technical_slug": "growing-stable-moduli-in-the-cubic-frame-c8a7ef37",
+      "title": "Growing Stable Moduli in the Cubic Frame"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "Within the full cubic-frame family, ordinary degree eleven is the first degree at which a genuine positive-dimensional stable modulus can occur.",
+      "technical_slug": "cubic-frame-moduli-degree-threshold-within-the-full-cubic-frame-family-ordinary-ca01a7a7",
+      "title": "Cubic Frame Moduli Degree Threshold: Within the full cubic-frame family, ordinary degree eleven is the first degree at which a gen…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "Distinct q-families have the same first-order formal tangent and are source-trivial through the computed formal orders, while their punctured members remain stably inequivalent; the stable modulus is therefore invisible to this local formal deformation data.",
+      "technical_slug": "formal-arc-stable-modulus-separation-distinct-q-families-have-the-same-first-f7dc2c3b",
+      "title": "Formal Arc Stable Modulus Separation: Distinct q-families have the same first-order formal tangent and are source-trivial through t…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "moduli_obstruction",
+      "statement": "For the quadratic cubic-frame family A=c+alpha c^2 and B=-2-4alpha c+beta c^2, the arcs alpha=t and beta=q t^2 have constant stable class q away from t=0 and specialize to the base class at t=0. Consequently no separated algebraic space can functorially classify the bare stable left-right orbit set while distinguishing these geometric classes.",
+      "technical_slug": "the-bare-stable-orbit-moduli-problem-is-nonseparated-2ff16912",
+      "title": "The Bare Stable-Orbit Moduli Problem Is Nonseparated"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "rigidity_moduli_synthesis",
+      "statement": "Assuming the current reduced-rigidity and stable-classification theorems, the normalized degree-seven counterexample G is reduced-isolated in its degree-at-most-seven normalized affine slice but is the special fiber of an algebraic degree-eleven family whose general fibers vary in stable left-right class. Thus the pointed stable-moduli onset through G lies between 8 and 11, and equals 11 within the cubic-frame locus.",
+      "technical_slug": "the-degree-seven-rigid-point-is-a-degree-eleven-moduli-specialization-d1155e99",
+      "title": "The Degree-Seven Rigid Point Is a Degree-Eleven Moduli Specialization"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 14,
+    "member_count": 8
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "stable-moduli"
+  ],
+  "schema_version": 2,
+  "slug": "stable-deformation-moduli",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "For the quadratic cubic-frame slice with alpha nonzero, q=beta/alpha^2 is a complete invariant under arbitrary polynomial source-target equivalence and stabilization; the alpha=0 line is gauge-equivalent to the base map.",
+  "title": "Stable Deformation Moduli",
+  "visibility": "catalogued"
+}

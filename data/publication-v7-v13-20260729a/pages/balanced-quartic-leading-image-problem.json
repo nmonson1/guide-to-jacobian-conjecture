@@ -1,0 +1,96 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting",
+          "research proposal"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "quartic-rational-quartic-frontier"
+    ],
+    "shares_claims_with": [
+      "quartic-rational-quartic-frontier",
+      "unrestricted-quartic-open-package"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "A quartic Keller map cannot have a proper rational-quartic leading image with ramification degree two and tangent-syzygy type (2,2).",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 1
+        },
+        "manuscript": "02-low-degree",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "A quartic Keller map cannot have a proper rational-quartic leading image with ramification degree two and tangent-syzygy type (2,2).",
+      "technical_slug": "balanced-rational-quartic-leading-images-are-excluded-7374f3ae",
+      "title": "Balanced Rational-Quartic Leading Images Are Excluded"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "Before the final exclusions, projective duality and tangent-syzygy bounds reduce the proper rational-quartic leading-image frontier to the tricuspidal type (3,(1,2)) and the balanced type (2,(2,2)).",
+      "technical_slug": "duality-reduces-proper-rational-quartics-to-two-final-strata-b34779a6",
+      "title": "Duality Reduces Proper Rational Quartics to Two Final Strata"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 14,
+    "member_count": 2
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "minimum-degree-and-quartic-exclusions"
+  ],
+  "schema_version": 2,
+  "slug": "balanced-quartic-leading-image-problem",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "A quartic Keller map cannot have a proper rational-quartic leading image with ramification degree two and tangent-syzygy type (2,2).",
+  "title": "Excluding Balanced Rational-Quartic Leading Images",
+  "visibility": "catalogued"
+}

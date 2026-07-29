@@ -1,0 +1,54 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "quartic-fixed-component-exclusions",
+      "page_title": "Quartic Fixed-Component Exclusions",
+      "role": "valuation_input"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "quartic-target-span-two-ramification-filtration",
+      "page_title": "The Quartic Target-Span-Two Ramification Filtration",
+      "role": "fixed_component_input"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "corrected-valuation-identity-for-primitive-quartic-fixed-components-39a7571b",
+  "source": [],
+  "statement": "In the primitive fixed-component branch P=GA, Q=GB with gcd(A,B)=1 and R=(H3)_3, write t=A/B and R^4/Q^3=rho(t). If an irreducible component Gamma occurs in G with multiplicity s and in the reduced special fiber A-xi B with multiplicity m, define c_xi=ord_xi(rho) for finite xi and c_infinity=ord_infinity(rho)+3. Then 4 nu_Gamma(R)=3s+c_xi m and the coefficients satisfy sum c_xi=3.",
+  "title": "Corrected Valuation Identity for Primitive Quartic Fixed Components",
+  "visibility": "technical"
+}

@@ -1,0 +1,43 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "cubic-jet-rank-obstruction",
+      "page_title": "A Cubic-Jet Rank Obstruction to Further Homogeneous Descent",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "jet-obstruction-the-unique-scalar-monomial-quadratic-shift-lowering-the-cubic-jet-488ce7d0",
+  "source": [],
+  "statement": "The unique scalar-monomial quadratic shift lowering the cubic jet from rank seven to six is P2=-d^2 e_a, and its quartic error is detected by an exact 13-term functional outside the cubic homological image; the natural quadratic target cleanup also fails.",
+  "title": "Jet Obstruction: The unique scalar-monomial quadratic shift lowering the cubic jet from rank seven to six is P…",
+  "visibility": "technical"
+}

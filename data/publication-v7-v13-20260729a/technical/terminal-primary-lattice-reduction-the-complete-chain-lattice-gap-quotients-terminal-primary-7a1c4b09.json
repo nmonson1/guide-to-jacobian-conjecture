@@ -1,0 +1,43 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "boundary-deformation-and-f2-correction",
+      "page_title": "Boundary Deformation And F2 Correction",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "terminal-primary-lattice-reduction-the-complete-chain-lattice-gap-quotients-terminal-primary-7a1c4b09",
+  "source": [],
+  "statement": "The complete-chain lattice gap quotients terminal primary covers to a finite Hurwitz problem; through maximum degree 128 the explicit reduced covers are isolated and infinitesimally rigid modulo source rescaling.",
+  "title": "Terminal Primary Lattice Reduction: The complete-chain lattice gap quotients terminal primary covers to a finite Hurwitz problem;…",
+  "visibility": "technical"
+}

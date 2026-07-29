@@ -357,7 +357,10 @@ def render_collection(
     return "\n".join(lines)
 
 
-def render_results_index(collections: dict[str, dict[str, Any]]) -> str:
+def render_results_index(
+    collections: dict[str, dict[str, Any]],
+    claims: dict[str, dict[str, Any]],
+) -> str:
     highlights = [
         page
         for page in collections.values()
@@ -378,7 +381,7 @@ def render_results_index(collections: dict[str, dict[str, Any]]) -> str:
         "",
         f"- **{sum(p['kind'] == 'result' for p in collections.values())}** grouped results",
         f"- **{sum(p['kind'] == 'open_problem' for p in collections.values())}** open-problem packages",
-        "- **355** stable-tag atomic claims",
+        f"- **{len(claims)}** stable-tag atomic claims",
         "",
         "</div>",
         "",
@@ -587,6 +590,7 @@ def render_program(
 def render_research_index(
     programs: dict[str, dict[str, Any]],
     collections: dict[str, dict[str, Any]],
+    claims: dict[str, dict[str, Any]],
     briefs: dict[str, dict[str, Any]],
 ) -> str:
     lines = [
@@ -599,7 +603,10 @@ def render_research_index(
         "",
         '<p class="dek">The counterexample is settled; the surrounding classification, minimality, moduli, homogeneous reduction, and plane-boundary questions are not.</p>',
         "",
-        "The current candidate incorporates 102 grouped result/problem packages and 355 stable-tag atomic claims. Eight packages are new in this release. Manuscript coverage and independent verification are displayed separately from mathematical status.",
+        f"The current candidate incorporates {len(collections)} grouped "
+        f"result/problem packages and {len(claims)} stable-tag atomic claims. "
+        "Manuscript coverage and independent verification are displayed "
+        "separately from mathematical status.",
         "",
         "## Model-ready handoffs",
         "",
@@ -761,14 +768,16 @@ def expected_outputs(root: Path) -> dict[Path, str]:
         outputs[docs / brief["route"]] = render_model_brief(
             brief, source_path.read_text(encoding="utf-8")
         )
-    outputs[docs / "results/index.md"] = render_results_index(collections)
+    outputs[docs / "results/index.md"] = render_results_index(
+        collections, claims
+    )
     outputs[docs / "results/all-claims.md"] = render_all_claims(claims)
     outputs[docs / "results/open-problems.md"] = render_open_problems(
         collections, claims
     )
     outputs[docs / "results/corrections.md"] = render_corrections(claims)
     outputs[docs / "research/index.md"] = render_research_index(
-        programs, collections, briefs
+        programs, collections, claims, briefs
     )
     outputs[docs / "research/papers.md"] = render_papers(manuscripts)
     outputs[docs / "evidence/index.md"] = render_evidence_index(collections)

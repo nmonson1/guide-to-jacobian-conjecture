@@ -1,0 +1,68 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "certificate offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "degree-five-six-fixed-factor-conics",
+      "page_title": "Fixed-Factor Conic Exclusions in Degrees Five and Six",
+      "role": "historical_input"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "quartic-conic-leading-image-exclusion",
+      "page_title": "Excluding Every Conic Leading Image in Degree Four",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "period-two-conic-exclusion-no-quartic-keller-map-has-leading-form-z-4e87842f",
+  "source": [],
+  "statement": "No quartic Keller map has leading form z^2(x^2,xy,y^2), despite the period-two binary-cubic resonance allowed in its second normal layer.",
+  "title": "Period Two Conic Exclusion: No quartic Keller map has leading form z^2(x^2,xy,y^2), despite the period-two binary-cubic r…",
+  "visibility": "technical"
+}

@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "base-cover-monodromy-and-deck-group",
+      "page_title": "Base Cover Monodromy And Deck Group",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "topology-for-the-base-discriminant-complement-the-fundamental-group-is-identified-with-3c99797d",
+  "source": [],
+  "statement": "For the base discriminant complement, the fundamental group is identified with the parity fiber product {(n,sigma) in Z x S3 : parity(n)=sign(sigma)}.",
+  "title": "Topology: For the base discriminant complement, the fundamental group is identified with the parity fib…",
+  "visibility": "technical"
+}
