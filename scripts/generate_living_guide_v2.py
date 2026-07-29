@@ -131,6 +131,8 @@ def load(root: Path) -> tuple[
     brief_manifest = _load(
         root / "data" / state["model_briefs"]["data_dir"] / "manifest.json"
     )
+    if brief_manifest["brief_count"] != len(brief_manifest["briefs"]):
+        raise ValueError("model brief manifest count mismatch")
     briefs = {item["program_slug"]: item for item in brief_manifest["briefs"]}
     if len(briefs) != state["model_briefs"]["expected_count"]:
         raise ValueError("model brief count disagrees with site-state.json")
@@ -157,6 +159,18 @@ def load(root: Path) -> tuple[
 
 
 def render_model_brief(brief: dict[str, Any], source: str) -> str:
+    cross_program = brief.get("kind") == "cross_program"
+    label = (
+        "Model research brief · Cross-program"
+        if cross_program
+        else f'Model research brief · Program {brief["program_sequence"]}'
+    )
+    back_link = (
+        "[Back to the research overview](../index.md)"
+        if cross_program
+        else f'[Back to the Program {brief["program_sequence"]} overview]'
+        f'(../programs/{brief["program_slug"]}.md)'
+    )
     return "\n".join(
         [
             "---",
@@ -164,10 +178,10 @@ def render_model_brief(brief: dict[str, Any], source: str) -> str:
             "description: \"A self-contained mathematical handoff for a research model.\"",
             "---",
             "",
-            f'<p class="claim-tag">Model research brief · Program {brief["program_sequence"]}</p>',
+            f'<p class="claim-tag">{label}</p>',
             source.rstrip(),
             "",
-            "[Back to the Program 2 overview](../programs/minimum-degree-and-quartic-exclusions.md)",
+            back_link,
             "",
         ]
     )
@@ -593,9 +607,14 @@ def render_research_index(
         "",
     ]
     for brief in sorted(briefs.values(), key=lambda item: item["program_sequence"]):
+        label = (
+            brief["title"]
+            if brief.get("kind") == "cross_program"
+            else f"Program {brief['program_sequence']}: {brief['title']}"
+        )
         lines.extend(
             [
-                f"- [Program {brief['program_sequence']}: {brief['title']}](handoffs/{brief['program_slug']}.md) — {brief['words']} words; research state 29 July 2026.",
+                f"- [{label}](handoffs/{brief['program_slug']}.md) — {brief['words']} words; research state 29 July 2026.",
                 "",
             ]
         )

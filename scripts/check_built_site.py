@@ -14,6 +14,7 @@ from urllib.parse import unquote, urlparse
 
 from generate_living_guide_v2 import (
     MANUSCRIPTS_DATA_DIR,
+    MODEL_BRIEFS_DATA_DIR,
     PUBLIC_DOCS_DIR,
     SITE_STATE,
     TECHNICAL_MATERIALS_DATA_DIR,
@@ -91,7 +92,6 @@ def main() -> int:
         "plane-case",
         "research",
         "research/papers",
-        "research/handoffs/minimum-degree-and-quartic-exclusions",
         "results",
         "results/all-claims",
         "results/open-problems",
@@ -103,6 +103,17 @@ def main() -> int:
         path = site / route / "index.html" if route else site / "index.html"
         if not path.is_file():
             failures.append(f"missing main route: /{route}")
+
+    brief_manifest = json.loads(
+        (ROOT / "data" / MODEL_BRIEFS_DATA_DIR / "manifest.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    for brief in brief_manifest["briefs"]:
+        route = brief["route"].removesuffix(".md")
+        path = site / route / "index.html"
+        if not path.is_file():
+            failures.append(f"missing model handoff route: /{route}")
 
     result_pages = list((site / "collections").glob("*/index.html"))
     claim_pages = list((site / "claims").glob("*/index.html"))
@@ -138,8 +149,10 @@ def main() -> int:
         search_text = search_path.read_text(encoding="utf-8")
         if not re.search(r'"location"\s*:\s*"claims/JCG-', search_text):
             failures.append("stable-tag claim pages are missing from internal search")
-        if "research/handoffs/minimum-degree-and-quartic-exclusions/" not in search_text:
-            failures.append("model handoff is missing from internal search")
+        for brief in brief_manifest["briefs"]:
+            route = brief["route"].removesuffix(".md") + "/"
+            if route not in search_text:
+                failures.append(f"model handoff is missing from internal search: {route}")
 
     robots = site / "robots.txt"
     if not robots.is_file() or "Disallow: /" not in robots.read_text(encoding="utf-8"):

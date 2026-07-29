@@ -172,6 +172,9 @@ def main() -> int:
     )
     if brief_manifest["brief_count"] != SITE_STATE["model_briefs"]["expected_count"]:
         failures.append("model brief count changed")
+    if brief_manifest["brief_count"] != len(brief_manifest["briefs"]):
+        failures.append("model brief manifest count mismatch")
+    brief_routes: set[str] = set()
     for brief in brief_manifest["briefs"]:
         source = MODEL_BRIEF_DATA / brief["source"]
         rendered = DOCS / brief["route"]
@@ -183,6 +186,14 @@ def main() -> int:
             failures.append(f"model brief byte count mismatch: {brief['source']}")
         if len(source_text.split()) != brief["words"]:
             failures.append(f"model brief word count mismatch: {brief['source']}")
+        if brief["route"] in brief_routes:
+            failures.append(f"duplicate model brief route: {brief['route']}")
+        brief_routes.add(brief["route"])
+        lower, upper = ((1500, 2500) if brief.get("kind") == "cross_program" else (2000, 4000))
+        if not lower <= brief["words"] <= upper:
+            failures.append(
+                f"model brief word count outside {lower}-{upper}: {brief['source']}"
+            )
         if not rendered.is_file():
             failures.append(f"missing rendered model brief: {brief['route']}")
             continue
@@ -199,9 +210,14 @@ def main() -> int:
         ):
             if heading not in rendered_text:
                 failures.append(f"{brief['route']}: missing {heading}")
-        program_page = DOCS / "research/programs" / f"{brief['program_slug']}.md"
-        if brief["route"].split("/")[-1] not in program_page.read_text(encoding="utf-8"):
-            failures.append(f"program page does not link model brief: {brief['program_slug']}")
+        if brief.get("kind") == "cross_program":
+            index_page = DOCS / "research/index.md"
+            if brief["route"].split("/")[-1] not in index_page.read_text(encoding="utf-8"):
+                failures.append("research index does not link cross-program brief")
+        else:
+            program_page = DOCS / "research/programs" / f"{brief['program_slug']}.md"
+            if brief["route"].split("/")[-1] not in program_page.read_text(encoding="utf-8"):
+                failures.append(f"program page does not link model brief: {brief['program_slug']}")
 
     scan_roots = (
         DOCS,

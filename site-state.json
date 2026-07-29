@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release_id": "living-guide-public-v10-model-brief-v1",
-  "updated_at": "2026-07-29T15:00:00-07:00",
+  "release_id": "living-guide-public-v11-model-briefs-v2",
+  "updated_at": "2026-07-29T04:51:46+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v6-v11-20260729a",
@@ -22,11 +22,11 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-briefs-v1-20260729a",
-    "manifest_sha256": "89ec02da89f25e4af7195cf4d08f4b796878449ecc3d72a57534cb3729e1f023",
-    "expected_count": 1
+    "data_dir": "model-briefs-v2-20260729b",
+    "manifest_sha256": "44849872fbec97c51321841d78064cec017d218f8f7979d86c26a881f61ed513",
+    "expected_count": 7
   },
-  "docs_dir": "docs-v10-20260729a",
+  "docs_dir": "docs-v11-20260729b",
   "expected_counts": {
     "grouped_pages": 102,
     "results": 83,

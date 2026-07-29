@@ -1,10 +1,10 @@
 site_name: "The Jacobian Conjecture: A Living Guide"
 site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
 site_description: A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened.
-docs_dir: docs-v10-20260729a
+docs_dir: docs-v11-20260729b
 repo_name: nmonson1/guide-to-jacobian-conjecture
 repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
-edit_uri: edit/main/docs-v10-20260729a/
+edit_uri: edit/main/docs-v11-20260729b/
 
 theme:
   name: material
@@ -48,7 +48,14 @@ nav:
     - Corrections: results/corrections.md
   - Research:
     - State of the program: research/index.md
-    - Model research brief: research/handoffs/minimum-degree-and-quartic-exclusions.md
+    - Model-ready handoffs:
+      - Cross-program state: research/handoffs/state-of-the-program.md
+      - Cubic incidence: research/handoffs/cubic-marked-root-incidence-geometry.md
+      - Quartic exclusions: research/handoffs/minimum-degree-and-quartic-exclusions.md
+      - Local rigidity: research/handoffs/local-rigidity-and-deformation-algebra.md
+      - Stable moduli: research/handoffs/stable-moduli.md
+      - Homogeneous descendants: research/handoffs/homogeneous-descendants.md
+      - Plane boundary: research/handoffs/plane-boundary-obstructions.md
     - Programs:
       - Cubic incidence: research/programs/cubic-marked-root-incidence-geometry.md
       - Quartic exclusions: research/programs/minimum-degree-and-quartic-exclusions.md

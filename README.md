@@ -26,8 +26,8 @@ The active local release candidate contains:
   out of the main navigation;
 - 500 many-to-many claim memberships across six research programs;
 - six version-11 reader PDFs and one companion Results and Research Register;
-- one self-contained, searchable Program 2 model handoff at
-  `/research/handoffs/minimum-degree-and-quartic-exclusions/`;
+- six self-contained, searchable program handoffs plus one cross-program
+  state page under `/research/handoffs/`;
 - 74 collections with complete manuscript coverage, nine with partial
   coverage, and 19 for which manuscript coverage is not applicable;
 - 21 context-only private records, not exported.
@@ -59,7 +59,7 @@ surfaces are:
   catalogue pages;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, and route validation;
-- `data/model-briefs-v1-20260729a/`: hash-pinned sanitized source for
+- `data/model-briefs-v2-20260729b/`: hash-pinned sanitized source for
   model-ready HTML handoffs;
 - `scripts/generate_compatibility_stubs_v1.py`: historical noindex
   compatibility pages for earlier public routes (not part of the active

@@ -106,6 +106,14 @@ def run(
             / "manifest.json"
         ).read_text(encoding="utf-8")
     )
+    model_brief_manifest = json.loads(
+        (
+            root
+            / "data"
+            / state["model_briefs"]["data_dir"]
+            / "manifest.json"
+        ).read_text(encoding="utf-8")
+    )
     first_material = materials_manifest["programs"][0]["artifacts"][0]["filename"]
     handler = functools.partial(
         QuietHandler,
@@ -136,9 +144,12 @@ def run(
                 "about/",
                 "collections/base-counterexample-and-immediate-consequences/",
                 "research/programs/cubic-marked-root-incidence-geometry/",
-                "research/handoffs/minimum-degree-and-quartic-exclusions/",
                 "claims/JCG-E4FA4CBB/",
             ):
+                check_page(desktop, base + route)
+
+            for brief in model_brief_manifest["briefs"]:
+                route = brief["route"].removesuffix(".md") + "/"
                 check_page(desktop, base + route)
 
             desktop.goto(base + "counterexample/", wait_until="networkidle")
@@ -165,19 +176,18 @@ def run(
             )
             require(material.ok, "technical-material archive is not downloadable")
 
-            desktop.goto(
-                base + "research/handoffs/minimum-degree-and-quartic-exclusions/",
-                wait_until="networkidle",
-            )
-            require(
-                desktop.locator('main h2:has-text("The live frontier")').count()
-                == 1,
-                "model handoff lacks its live-frontier section",
-            )
-            require(
-                desktop.locator('a[href*="claims/JCG-99911351/"]').count() >= 1,
-                "model handoff lacks stable claim links",
-            )
+            for brief in model_brief_manifest["briefs"]:
+                route = brief["route"].removesuffix(".md") + "/"
+                desktop.goto(base + route, wait_until="networkidle")
+                require(
+                    desktop.locator('main h2:has-text("The live frontier")').count()
+                    == 1,
+                    f"model handoff lacks its live-frontier section: {route}",
+                )
+                require(
+                    desktop.locator('a[href*="claims/JCG-"]').count() >= 1,
+                    f"model handoff lacks stable claim links: {route}",
+                )
 
             desktop.goto(base, wait_until="networkidle")
             for scheme in ("jacobian-light", "jacobian-dark"):
