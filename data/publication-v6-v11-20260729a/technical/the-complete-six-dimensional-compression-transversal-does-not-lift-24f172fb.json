@@ -1,0 +1,47 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "nineteen-to-eighteen-compression-obstructions",
+      "page_title": "Why the Nineteen-Variable Descendant Resists Compression",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "the-complete-six-dimensional-compression-transversal-does-not-lift-24f172fb",
+  "source": [],
+  "statement": "In the displayed six-dimensional transversal, the exact rank-six cone is the reduced union V(u3,u5) union V(u0,u3) union V(u2,u5); every point integrates to an exact cubic rank-six jet, but the universal quartic cokernel functional Gamma_4 is identically -1, so no member lifts through quartic order.",
+  "title": "The Complete Six-Dimensional Compression Transversal Does Not Lift",
+  "visibility": "technical"
+}

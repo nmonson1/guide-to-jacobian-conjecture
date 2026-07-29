@@ -1,0 +1,54 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "quartic-target-span-two-ramification-filtration",
+      "page_title": "The Quartic Target-Span-Two Ramification Filtration",
+      "role": "entry_reduction"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "unrestricted-quartic-open-package",
+      "page_title": "Unrestricted Quartic Open Package",
+      "role": "entry_reduction"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "every-quartic-counterexample-has-leading-target-span-two-f13d186d",
+  "source": [],
+  "statement": "Subject to the leading-curve reductions in the Program 2 manuscript, any nonautomorphic quartic Keller map in three variables has leading target span exactly two.",
+  "title": "Every Quartic Counterexample Has Leading Target Span Two",
+  "visibility": "technical"
+}

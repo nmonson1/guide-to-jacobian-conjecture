@@ -1,0 +1,110 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and proof drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "filtered-finite-jet-realization"
+    ],
+    "shares_claims_with": [
+      "exact-boundary-normal-linearization",
+      "filtered-finite-jet-realization",
+      "valuation-and-three-dessin-exclusion"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "A missing layer-four operation is identified as a Newton-chart transition. In the stored specialization, the resulting layer-five-through-seven support and matching equations have no solution over the algebraic closure of the coefficient field.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [],
+    "status": "not_applicable"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "normal_coordinate_input",
+      "statement": "The formally invertible change W=M0/(AB), T=sW^(1/S), H=(alpha log(B/B0)-beta log(A/A0))/S converts the full single-component determinant equation into a linear equation in H and W and decouples all normal orders before support restrictions.",
+      "technical_slug": "exact-normal-coordinates-linearize-every-boundary-order-d5fd24e3",
+      "title": "Exact Normal Coordinates Linearize Every Boundary Order"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "layer_map_input",
+      "statement": "For every r at least 5 in the full (8,28) windows, the terminal layer operator is injective; for 5 at most r at most 11 its cokernel has dimension r-1.",
+      "technical_slug": "the-full-8-28-terminal-layer-maps-are-injective-79e508ce",
+      "title": "The Full (8,28) Terminal Layer Maps Are Injective"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "chart_transition",
+      "statement": "For the stored degree-21 terminal face, the one-dimensional layer-four residual kernel is not realized by a fixed-chart algebraic operation; it is the k=4 complete-chain rechart, after which the adjacent-chart Jacobian equations force L=0, F5=0, and a common approximate root P2=C R^2, Q3=G R^3.",
+      "technical_slug": "the-missing-layer-four-operation-is-the-k-4-newton-chart-transition-9667172f",
+      "title": "The Missing Layer-Four Operation Is the k=4 Newton-Chart Transition"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "After the canonical k=4 rechart and forced adjacent-chart condition, the complete layer-five-through-seven support and chart-matching equations of the stored degree-21 full-support terminal specialization have no solution over the algebraic closure of its quintic coefficient field.",
+      "technical_slug": "the-stored-degree-21-terminal-model-is-excluded-through-layer-seven-bceb7f45",
+      "title": "The Stored Degree-21 Terminal Model Is Excluded Through Layer Seven"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 11,
+    "member_count": 4
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "plane-boundary-obstructions"
+  ],
+  "schema_version": 2,
+  "slug": "stored-degree-twenty-one-terminal-no-gluing",
+  "source": [],
+  "source_form": [],
+  "source_treatment": "No claim is made that one of the six working manuscripts is the source for this page.",
+  "statement": "After the canonical k=4 rechart and forced adjacent-chart condition, the complete layer-five-through-seven support and chart-matching equations of the stored degree-21 full-support terminal specialization have no solution over the algebraic closure of its quintic coefficient field.",
+  "title": "A Stored Degree-21 Terminal Model Does Not Glue",
+  "visibility": "catalogued"
+}

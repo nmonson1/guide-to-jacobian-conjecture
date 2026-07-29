@@ -1,10 +1,10 @@
 site_name: "The Jacobian Conjecture: A Living Guide"
 site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
 site_description: A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened.
-docs_dir: docs-v8-20260727a
+docs_dir: docs-v10-20260729a
 repo_name: nmonson1/guide-to-jacobian-conjecture
 repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
-edit_uri: edit/main/docs-v8-20260727a/
+edit_uri: edit/main/docs-v10-20260729a/
 
 theme:
   name: material
@@ -37,12 +37,29 @@ theme:
 
 nav:
   - Start: index.md
-  - Counterexample: counterexample.md
-  - Geometry: geometry.md
-  - Plane Case: plane-case.md
+  - Understand:
+    - Counterexample: counterexample.md
+    - Geometry: geometry.md
+    - Plane Case: plane-case.md
+  - Results:
+    - Highlights: results/index.md
+    - All claims: results/all-claims.md
+    - Open problems: results/open-problems.md
+    - Corrections: results/corrections.md
   - Research:
-    - Research: research.md
-    - Technical materials: research/materials.md
+    - State of the program: research/index.md
+    - Model research brief: research/handoffs/minimum-degree-and-quartic-exclusions.md
+    - Programs:
+      - Cubic incidence: research/programs/cubic-marked-root-incidence-geometry.md
+      - Quartic exclusions: research/programs/minimum-degree-and-quartic-exclusions.md
+      - Local rigidity: research/programs/local-rigidity-and-deformation-algebra.md
+      - Stable moduli: research/programs/stable-moduli.md
+      - Homogeneous descendants: research/programs/homogeneous-descendants.md
+      - Plane boundary: research/programs/plane-boundary-obstructions.md
+    - Working papers: research/papers.md
+  - Evidence:
+    - Proof index: evidence/index.md
+    - Technical materials: evidence/materials.md
   - About: about.md
 
 markdown_extensions:
@@ -72,9 +89,9 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 
 extra:
-  status_date: 27 July 2026, Pacific time
+  status_date: 29 July 2026, Pacific time
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/nmonson1/guide-to-jacobian-conjecture
 
-copyright: Working draft updated 27 July 2026, Pacific time.
+copyright: Working draft updated 29 July 2026, Pacific time.

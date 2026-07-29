@@ -1,0 +1,48 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "base-map-fibers-image-and-nonproperness",
+      "page_title": "Base Map Fibers Image And Nonproperness",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "escape-rates-near-the-discriminant",
+      "page_title": "Escape Rates Near the Discriminant",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "lost-sheet-local-models",
+      "page_title": "Lost Sheet Local Models",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "technical-claim-914949bf",
+  "source": [],
+  "statement": "Escape rates are \\(\\varepsilon^{-1/2}\\) near a smooth discriminant point and \\(\\varepsilon^{-2/3}\\) near the cusp, with more degenerate arcs allowing larger half-integral exponents.",
+  "title": "Technical claim",
+  "visibility": "technical"
+}

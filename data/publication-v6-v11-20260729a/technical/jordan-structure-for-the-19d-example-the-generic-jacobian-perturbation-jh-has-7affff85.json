@@ -1,0 +1,43 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "cubic-homogeneous-descendant-construction",
+      "page_title": "Cubic Homogeneous Descendant Construction",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "jordan-structure-for-the-19d-example-the-generic-jacobian-perturbation-jh-has-7affff85",
+  "source": [],
+  "statement": "For the 19D example, the generic Jacobian perturbation JH has Jordan type (18,1); nonzero scalar fibers are conjugate and the zero fiber is an automorphism degeneration.",
+  "title": "Jordan Structure: For the 19D example, the generic Jacobian perturbation JH has Jordan type (18,1); nonzero sca…",
+  "visibility": "technical"
+}

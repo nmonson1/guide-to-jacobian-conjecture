@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "corrected-log-geometry-at-infinity",
+      "page_title": "Corrected Log Geometry at Parameter Infinity",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "log-geometry-the-initial-theorem-claiming-all-finite-quadratic-parameter-incidence-surfaces-099f60da",
+  "source": [],
+  "statement": "The initial theorem claiming all finite quadratic-parameter incidence surfaces are of log general type was overbroad because ramification over parameter infinity overlaps the reduced boundary. The retained theorem requires squarefree behavior at infinity or the corrected log-pair hypotheses.",
+  "title": "Log Geometry: The initial theorem claiming all finite quadratic-parameter incidence surfaces are of log gen…",
+  "visibility": "technical"
+}

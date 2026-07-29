@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "reported",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "bounded-degree-keller-scheme",
+      "page_title": "Bounded Degree Keller Scheme",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "component-structure-scaling-contracts-every-bounded-degree-normalized-keller-component-toward-the-d90a0ac4",
+  "source": [],
+  "statement": "Scaling contracts every bounded-degree normalized Keller component toward the identity; a component meeting the counterexample locus is generically counterexample, and invariant regular functions are constant along the contraction.",
+  "title": "Component Structure: Scaling contracts every bounded-degree normalized Keller component toward the identity; a com…",
+  "visibility": "technical"
+}

@@ -1,0 +1,61 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "filtered-finite-jet-realization",
+      "page_title": "Filtered Finite-Jet Realization at the Plane Boundary",
+      "role": "resolved_instance"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "stored-degree-twenty-one-terminal-no-gluing",
+      "page_title": "A Stored Degree-21 Terminal Model Does Not Glue",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "valuation-and-three-dessin-exclusion",
+      "page_title": "Valuation And Three Dessin Exclusion",
+      "role": "terminal_strengthening"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "the-stored-degree-21-terminal-model-is-excluded-through-layer-seven-bceb7f45",
+  "source": [],
+  "statement": "After the canonical k=4 rechart and forced adjacent-chart condition, the complete layer-five-through-seven support and chart-matching equations of the stored degree-21 full-support terminal specialization have no solution over the algebraic closure of its quintic coefficient field.",
+  "title": "The Stored Degree-21 Terminal Model Is Excluded Through Layer Seven",
+  "visibility": "technical"
+}

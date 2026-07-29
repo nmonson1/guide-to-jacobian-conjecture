@@ -1,0 +1,128 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [
+      "base-map-fibers-image-and-nonproperness"
+    ],
+    "shares_claims_with": [
+      "lost-sheet-local-models",
+      "normalized-cubic-family-classification"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "presumed_same_as_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction",
+        "mathematical responsibility"
+      ],
+      "scope": "author of the linked working research program"
+    }
+  ],
+  "description": "What is the full polynomial left-right quotient in the nonsquarefree common-root case?",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "open_problem",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 3
+        },
+        "manuscript": "01-cubic-incidence-geometry",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "open_question",
+      "statement": "Does the U1/U2/B trichotomy hold in the claimed generality beyond the normalized family?",
+      "technical_slug": "open-question-does-the-u1-u2-b-trichotomy-hold-in-the-claimed-89916a56",
+      "title": "Open Question: Does the U1/U2/B trichotomy hold in the claimed generality beyond the normalized family?"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "open_question",
+      "statement": "Can the common-root integral-closure theorem and left-right equivalence result be independently proved or formalized?",
+      "technical_slug": "open-question-can-the-common-root-integral-closure-theorem-and-left-right-e9f3362d",
+      "title": "Open Question: Can the common-root integral-closure theorem and left-right equivalence result be independent…"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "What is the full polynomial left-right quotient in the nonsquarefree common-root case?",
+      "technical_slug": "open-question-what-is-the-full-polynomial-left-right-quotient-in-the-3ace11e1",
+      "title": "Open Question: What is the full polynomial left-right quotient in the nonsquarefree common-root case?"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "For the normalized cubic-frame maps, a divisor over a zero of A has one of four generic behaviors: one unramified sheet is deleted (U1), two unramified sheets are deleted (U2), a ramified pair is deleted (B), or the deleted sheets have generic three-cycle inertia. The last behavior is excluded in the polynomial Keller subfamily under study.",
+      "technical_slug": "four-generic-lost-sheet-divisor-behaviors-a514f028",
+      "title": "Four Generic Lost-Sheet Divisor Behaviors"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "For the normalized cubic pole-cancellation family determined by polynomials A(C),B(C), all such maps arise from the stated cancellation equations; when gcd(A,B)=1 the finite-flat geometry, discriminant, nonproperness set, and omission locus admit a complete description.",
+      "technical_slug": "family-classification-for-the-normalized-cubic-pole-cancellation-family-determined-by-polynomials-df9f7a0e",
+      "title": "Family Classification: For the normalized cubic pole-cancellation family determined by polynomials A(C),B(C), all su…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "Let H be the largest monic polynomial such that H^2 divides A and H divides B. For the normalized cubic-frame extension, the integral closure is R plus R times (At/H) plus R times (At^2+Bt), it is finite flat of degree three, and its discriminant is the primitive discriminant divided by H^2.",
+      "technical_slug": "common-zero-maximal-order-normalization-12cff8c9",
+      "title": "Common-Zero Maximal-Order Normalization"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "supporting_result",
+      "statement": "For all admissible A,B,alpha triples, polynomial left-right equivalence is classified by an affine change of c, scalar equality of A, congruence of B modulo A, and preservation of the marked root; no squarefreeness hypothesis is needed.",
+      "technical_slug": "equivalence-classification-for-all-admissible-a-b-alpha-triples-polynomial-left-right-221985ff",
+      "title": "Equivalence Classification: For all admissible A,B,alpha triples, polynomial left-right equivalence is classified by an a…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 11,
+    "member_count": 7
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "cubic-marked-root-incidence-geometry"
+  ],
+  "schema_version": 2,
+  "slug": "normalized-cubic-family-open-problems",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "What is the full polynomial left-right quotient in the nonsquarefree common-root case?",
+  "title": "Open Problems in the Normalized Cubic Families",
+  "visibility": "catalogued"
+}

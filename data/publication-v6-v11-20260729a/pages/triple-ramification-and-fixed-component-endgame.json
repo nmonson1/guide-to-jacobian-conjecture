@@ -1,0 +1,85 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [
+      "quartic-target-span-two-ramification-filtration"
+    ],
+    "shares_claims_with": [
+      "quartic-target-span-two-ramification-filtration",
+      "unrestricted-quartic-open-package"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "description": "The generic first obstruction is now certified exactly, but exceptional rank-drop and resonant divisors, the later F4 compatibility check, higher ramification, and fixed-component boundaries remain open.",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "open_problem",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 1
+        },
+        "manuscript": "02-low-degree",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "partial_result",
+      "statement": "Assuming the Program 2 structural inputs, in the coprime binary-pencil locus with ramification divisor of degree three, the type-(2,5) and generic type-(3,4) Hilbert--Burch branches are automorphic or enter previously excluded cube, fourth-power, fixed-component, or source-shear boundaries; any remaining generic normal deformation lies on the explicit F4 weighted-inflection family.",
+      "technical_slug": "triple-binary-ramification-reduces-to-an-explicit-weighted-inflection-family-9d9c3df9",
+      "title": "Triple Binary Ramification Reduces to an Explicit Weighted-Inflection Family"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "After solving D6=0 over Q(tau)[d]/(q4(d,tau)), prove uniformly that lower binary terms cannot cancel the D5 obstruction on the explicit F4 weighted-inflection family, and then classify the remaining ramification-degree-at-least-four and fixed-component boundary cases.",
+      "technical_slug": "can-the-f4-compatibility-check-close-coprime-binary-quartic-pencils-21d61081",
+      "title": "Can the F4 Compatibility Check Close Coprime Binary Quartic Pencils?"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 11,
+    "member_count": 2
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "minimum-degree-and-quartic-exclusions"
+  ],
+  "schema_version": 2,
+  "slug": "triple-ramification-and-fixed-component-endgame",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "After solving D6=0 over Q(tau)[d]/(q4(d,tau)), prove uniformly that lower binary terms cannot cancel the D5 obstruction on the explicit F4 weighted-inflection family, and then classify the remaining ramification-degree-at-least-four and fixed-component boundary cases.",
+  "title": "The Triple-Ramification and Fixed-Component Endgame",
+  "visibility": "catalogued"
+}

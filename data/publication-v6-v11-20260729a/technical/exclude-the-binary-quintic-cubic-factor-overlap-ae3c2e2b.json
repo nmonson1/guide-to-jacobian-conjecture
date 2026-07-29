@@ -1,0 +1,52 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and proof drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "open",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "degree-five-six-conic-frontier",
+      "page_title": "The Degree-Five and Degree-Six Conic Frontier",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "open_problem",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "exclude-the-binary-quintic-cubic-factor-overlap-ae3c2e2b",
+  "source": [],
+  "statement": "Determine whether the remaining squarefree binary-cubic leading form G3(x,y)(x^2,xy,y^2) can satisfy the Keller equations.",
+  "title": "Exclude the Binary Quintic Cubic-Factor Overlap",
+  "visibility": "technical"
+}

@@ -1,0 +1,41 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "certificate offered",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "base-map-fibers-image-and-nonproperness",
+      "page_title": "Base Map Fibers Image And Nonproperness",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "off-diagonal-collision-space",
+      "page_title": "The Off-Diagonal Collision Space",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "technical-claim-e1f739d1",
+  "source": [],
+  "statement": "The off-diagonal collision space is a smooth factorial affine threefold with trivial Picard group and unit group modulo constants \\(\\mathbb Z\\).",
+  "title": "Technical claim",
+  "visibility": "technical"
+}

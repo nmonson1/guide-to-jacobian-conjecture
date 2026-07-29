@@ -1,0 +1,204 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and proof drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "cubic-normalization-and-master-cover"
+    ],
+    "shares_claims_with": [
+      "cubic-resolvent-defect-exclusions"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Hailong Dao",
+      "roles": [
+        "prior theorem used"
+      ]
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "jacobian-conjecture application and accountable author"
+      ]
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "Keller hypotheses force the cubic normalization defect to vanish.",
+  "evidence_present": [
+    "computation",
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "open_problem",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 11
+        },
+        "manuscript": "01-cubic-incidence-geometry",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "corrected",
+      "inclusion": "defining",
+      "role": "failed_lemma_counterexample",
+      "statement": "Normal cubic covers with S3 monodromy need not be flat: an explicit minimal nonflat normal cubic algebra supplies a countermodel outside the Keller setting.",
+      "technical_slug": "counterexample-to-an-intermediate-lemma-normal-cubic-covers-with-s3-monodromy-need-583da94a",
+      "title": "Counterexample To An Intermediate Lemma: Normal cubic covers with S3 monodromy need not be flat: an explicit minimal nonflat normal cu…"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Keller hypotheses force the cubic normalization defect to vanish.",
+      "technical_slug": "open-conjecture-keller-hypotheses-force-the-cubic-normalization-defect-to-vanish-138beda2",
+      "title": "Open Conjecture: Keller hypotheses force the cubic normalization defect to vanish."
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "partial_result",
+      "statement": "A minimal defect can only occur over an omitted singleton fiber of scheme length at least four.",
+      "technical_slug": "partial-defect-exclusion-theorem-a-minimal-defect-can-only-occur-over-an-dcdbdddb",
+      "title": "Partial Defect Exclusion Theorem: A minimal defect can only occur over an omitted singleton fiber of scheme length at least four."
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "partial_result",
+      "statement": "At the first possible defect stratum the discriminant has multiplicity at least six and the exceptional boundary has an elliptic-type constraint.",
+      "technical_slug": "partial-local-geometry-result-at-the-first-possible-defect-stratum-the-discriminant-f9f6311c",
+      "title": "Partial Local Geometry Result: At the first possible defect stratum the discriminant has multiplicity at least six and the e…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "partial_result",
+      "statement": "No algebraically homogeneous minimal defect can occur in a Keller normalization.",
+      "technical_slug": "partial-defect-exclusion-theorem-no-algebraically-homogeneous-minimal-defect-can-occur-in-62422786",
+      "title": "Partial Defect Exclusion Theorem: No algebraically homogeneous minimal defect can occur in a Keller normalization."
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "failed_route",
+      "statement": "The remaining minimal defect can be organized by a radial fibration and an E6-type boundary/discrepancy picture.",
+      "technical_slug": "structural-proposal-the-remaining-minimal-defect-can-be-organized-by-a-radial-d0fce306",
+      "title": "Structural Proposal: The remaining minimal defect can be organized by a radial fibration and an E6-type boundary/d…"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "open_question",
+      "statement": "Algebraize the formal/radial ruling strongly enough to exclude the remaining nonhomogeneous minimal defect.",
+      "technical_slug": "open-problem-algebraize-the-formal-radial-ruling-strongly-enough-to-exclude-the-5716ff00",
+      "title": "Open Problem: Algebraize the formal/radial ruling strongly enough to exclude the remaining nonhomogeneous m…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "failed_lemma_and_correction",
+      "statement": "Formal extension of the ruling can hold while Zariski-local algebraization of every lift fails; explicit rational threefold and same-incidence nonalgebraizable lifts refute the proposed general algebraization lemma.",
+      "technical_slug": "counterexample-and-correction-formal-extension-of-the-ruling-can-hold-while-zariski-ab9f57d0",
+      "title": "Counterexample And Correction: Formal extension of the ruling can hold while Zariski-local algebraization of every lift fail…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "partial_result",
+      "statement": "In the stated marked-incidence deformation problem with smooth leading plane cubic, every positive first-normal jet lies in the gauge image; the Hesse and Fermat model calculations give the exact determinant and rank certificates used by the global bundle argument.",
+      "technical_slug": "smooth-leading-cubics-have-no-positive-first-normal-moduli-717b157d",
+      "title": "Smooth Leading Cubics Have No Positive First-Normal Moduli"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "partial_result",
+      "statement": "For the analyzed minimal smooth defect end, the local sign-three torsor group is K_loc congruent to C[3] congruent to F_3^2, and its two nonzero directions are represented by algebraic finite covers over the henselian local end.",
+      "technical_slug": "the-minimal-smooth-defect-end-has-two-algebraic-sign-three-torsors-a9379d6c",
+      "title": "The Minimal Smooth Defect End Has Two Algebraic Sign-Three Torsors"
+    },
+    {
+      "assessment": "open",
+      "inclusion": "defining",
+      "role": "open_question",
+      "statement": "Show that at least one nonzero class in the local F_3^2 sign-torsor space globalizes across the boundary; this would contradict the absence of nontrivial finite etale covers of affine three-space.",
+      "technical_slug": "does-a-local-sign-three-torsor-survive-the-global-keller-boundary-1c1790e5",
+      "title": "Does a Local Sign-Three Torsor Survive the Global Keller Boundary?"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "partial_result",
+      "statement": "For the quadratic resolvent Q of a complex cubic Keller normalization, an isolated singularity cannot support a nonflat cubic defect; moreover, three-torsion in Cl(Q) is detected at the height-two singular primes.",
+      "technical_slug": "a-cubic-defect-forces-a-nonisolated-quadratic-resolvent-singularity-79bdb7f6",
+      "title": "A Cubic Defect Forces a Nonisolated Quadratic-Resolvent Singularity"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "shared",
+      "role": "partial_result",
+      "statement": "In the stated one-parameter smooth cubic-axis hypersurface model, when the transverse three-torsion class extends as a section of the relative three-torsion group scheme, its rank-one reflexive module is maximal Cohen-Macaulay and the associated cubic normalization is flat.",
+      "technical_slug": "the-smooth-cubic-axis-resolvent-model-is-flat-69028659",
+      "title": "The Smooth Cubic-Axis Resolvent Model Is Flat"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 11,
+    "member_count": 13
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "cubic-marked-root-incidence-geometry"
+  ],
+  "schema_version": 2,
+  "slug": "cubic-normalization-defect-open-package",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "Keller hypotheses force the cubic normalization defect to vanish.",
+  "title": "Cubic Normalization Defect Open Package",
+  "visibility": "catalogued"
+}

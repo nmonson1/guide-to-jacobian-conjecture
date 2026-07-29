@@ -1,0 +1,46 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "puiseux-obstruction-and-failed-extension",
+      "page_title": "Puiseux Obstruction And Failed Extension",
+      "role": "failed_lemma_and_correction"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "puiseux-polynomial-termination",
+      "page_title": "Can the Nodal Puiseux Solution Be Ruled Out Globally?",
+      "role": "failed_lemma_and_correction"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "failed-lemma-and-correction-the-proposed-finite-order-three-level-2-3-fd5c0c60",
+  "source": [],
+  "statement": "The proposed finite-order three-level 2:3 Puiseux rigidity lemma is false: for every immersed limit parametrization the recurrence extends at each finite order, and the nodal model (xi^2,xi^3-xi) has an explicit all-orders algebraic-series solution.",
+  "title": "Failed Lemma And Correction: The proposed finite-order three-level 2:3 Puiseux rigidity lemma is false: for every immersed…",
+  "visibility": "technical"
+}

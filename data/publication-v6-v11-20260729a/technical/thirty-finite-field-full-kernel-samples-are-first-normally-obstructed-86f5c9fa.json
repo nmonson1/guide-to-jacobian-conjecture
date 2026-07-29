@@ -1,0 +1,54 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "full-kernel-regular-pencil-geometry",
+      "page_title": "Regular Full-Kernel Pencils as Binary Sextics",
+      "role": "computational_evidence"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "global-first-normal-obstruction-in-dimension-five",
+      "page_title": "Can the Dimension-Five First-Normal Obstruction Be Globalized?",
+      "role": "computational_evidence"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "thirty-finite-field-full-kernel-samples-are-first-normally-obstructed-86f5c9fa",
+  "source": [],
+  "statement": "The normalized full-kernel collision system has 6, 11, and 13 rational points over F7, F11, and F13 respectively, and the computed first-normal obstruction is nonzero at all thirty points.",
+  "title": "Thirty Finite-Field Full-Kernel Samples Are First-Normally Obstructed",
+  "visibility": "technical"
+}

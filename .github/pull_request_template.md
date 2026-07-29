@@ -27,5 +27,5 @@ scope, and reviewed version are recorded.
 - [ ] Source and evidence versions are pinned where possible.
 - [ ] I did not silently adjudicate authorship or priority.
 - [ ] `scripts/validate_records.py` passes.
-- [ ] `scripts/check_public_site.py` passes.
+- [ ] `scripts/check_public_site_v2.py` passes.
 - [ ] `mkdocs build --strict` passes.

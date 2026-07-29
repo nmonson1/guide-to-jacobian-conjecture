@@ -1,0 +1,50 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "three-dessin-uniqueness",
+      "page_title": "Is the Degree-Twenty-One Divisor Unique?",
+      "role": "supporting_result"
+    },
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "valuation-and-three-dessin-exclusion",
+      "page_title": "Valuation And Three Dessin Exclusion",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "valuation-identification-theorem-for-either-surviving-newton-support-the-2-1-source-ab20c3a8",
+  "source": [],
+  "statement": "For either surviving Newton support, the (-2,1) source valuation dominates Borisov's target F_-5 with normal ramification index one and residue degree 21, excluding Borisov's Three-dessin framework for those supports.",
+  "title": "Valuation Identification Theorem: For either surviving Newton support, the (-2,1) source valuation dominates Borisov's target F…",
+  "visibility": "technical"
+}

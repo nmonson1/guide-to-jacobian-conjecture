@@ -1,0 +1,54 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "quartic-rational-quartic-frontier",
+      "page_title": "Excluding Proper Rational-Quartic Leading Images",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "unrestricted-quartic-open-package",
+      "page_title": "Unrestricted Quartic Open Package",
+      "role": "frontier_exclusion"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "no-proper-rational-quartic-is-a-quartic-keller-leading-image-90614345",
+  "source": [],
+  "statement": "Assuming the established frontier reduction to the tricuspidal type (3,(1,2)) and balanced type (2,(2,2)), no quartic Keller map in three variables has a proper rational quartic as the projective image of its highest homogeneous part.",
+  "title": "No Proper Rational Quartic Is a Quartic Keller Leading Image",
+  "visibility": "technical"
+}

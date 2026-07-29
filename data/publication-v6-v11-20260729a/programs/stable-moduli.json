@@ -1,0 +1,28 @@
+{
+  "author": "Nathaniel Monson",
+  "manuscript": "04-stable-moduli",
+  "page_slugs": [
+    "cubic-boundary-jets-and-moduli",
+    "degree-seven-minimality-status",
+    "equivariant-degree-five-moduli",
+    "equivariant-low-degree-classification",
+    "eta-family-stable-moduli",
+    "lambda-family-stable-inequivalence",
+    "quartic-boundary-torelli",
+    "reciprocal-family-moduli",
+    "research-agenda",
+    "stable-deformation-moduli",
+    "weighted-lift-moduli-under-arbitrary-equivalence",
+    "all-multiplicity-cubic-frame-torelli",
+    "cubic-frame-infinity-gluing",
+    "categorical-cubic-frame-quotient"
+  ],
+  "question": "The counterexample deforms; when do those deformations remain genuinely different after stabilization?",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "sequence": 4,
+  "slug": "stable-moduli",
+  "summary": "Several explicit families test how fixed-degree, affine, and stable equivalence interact, with boundary geometry providing computable invariants.",
+  "title": "Stable Moduli",
+  "visibility": "featured"
+}

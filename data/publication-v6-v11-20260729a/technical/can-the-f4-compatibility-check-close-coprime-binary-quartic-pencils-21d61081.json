@@ -1,0 +1,42 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "open",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "triple-ramification-and-fixed-component-endgame",
+      "page_title": "The Triple-Ramification and Fixed-Component Endgame",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "open_problem",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "can-the-f4-compatibility-check-close-coprime-binary-quartic-pencils-21d61081",
+  "source": [],
+  "statement": "After solving D6=0 over Q(tau)[d]/(q4(d,tau)), prove uniformly that lower binary terms cannot cancel the D5 obstruction on the explicit F4 weighted-inflection family, and then classify the remaining ramification-degree-at-least-four and fixed-component boundary cases.",
+  "title": "Can the F4 Compatibility Check Close Coprime Binary Quartic Pencils?",
+  "visibility": "technical"
+}

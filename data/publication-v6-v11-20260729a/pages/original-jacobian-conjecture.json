@@ -1,0 +1,128 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [
+      "all-fields-counterexample",
+      "base-counterexample-and-immediate-consequences",
+      "consequences-for-neighboring-conjectures"
+    ],
+    "shares_claims_with": []
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "O.-H. Keller",
+      "roles": [
+        "conjecture statement"
+      ],
+      "scope": "Contribution recorded in The Jacobian conjecture."
+    }
+  ],
+  "description": "Every polynomial map from complex affine n-space to itself whose Jacobian determinant is a nonzero constant is a polynomial automorphism.",
+  "evidence_present": [
+    "counterexample",
+    "literature result"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [],
+    "status": "not_applicable"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Every polynomial map from complex affine n-space to itself whose Jacobian determinant is a nonzero constant is a polynomial automorphism.",
+      "technical_slug": "the-jacobian-conjecture-21418592",
+      "title": "The Jacobian conjecture"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 11,
+    "member_count": 1
+  },
+  "release_state": "public",
+  "research_programs": [],
+  "schema_version": 2,
+  "slug": "original-jacobian-conjecture",
+  "source": [
+    {
+      "authors": [
+        "O.-H. Keller"
+      ],
+      "date": "1939",
+      "relations": [
+        "historical source",
+        "original statement"
+      ],
+      "source_form": "refereed publication",
+      "title": "Ganze Cremona-Transformationen",
+      "url": "https://doi.org/10.1007/BF01695502"
+    },
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "evidence source"
+      ],
+      "source_form": "announcement",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf"
+    },
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "evidence source"
+      ],
+      "source_form": "announcement",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    },
+    {
+      "authors": [
+        "Paul Lezeau"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "evidence source",
+        "formalization"
+      ],
+      "source_form": "repository",
+      "title": "feat: add Jacobian disproof",
+      "url": "https://github.com/google-deepmind/formal-conjectures/pull/4474"
+    },
+    {
+      "authors": [
+        "techno-optimist"
+      ],
+      "date": "2026-07-21",
+      "relations": [
+        "evidence source",
+        "formalization"
+      ],
+      "source_form": "repository",
+      "title": "feat(JacobianConjecture): sorry-free refutation at n = 3 over Q",
+      "url": "https://github.com/google-deepmind/formal-conjectures/pull/4486"
+    }
+  ],
+  "source_form": [
+    "announcement",
+    "refereed publication",
+    "repository"
+  ],
+  "source_treatment": "Public sources are linked below. No claim is made that one of the six working manuscripts is the source for this page.",
+  "statement": "Every polynomial map from complex affine n-space to itself whose Jacobian determinant is a nonzero constant is a polynomial automorphism.",
+  "title": "The Original Jacobian Conjecture",
+  "visibility": "catalogued"
+}

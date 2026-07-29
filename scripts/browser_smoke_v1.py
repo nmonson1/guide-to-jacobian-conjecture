@@ -67,6 +67,7 @@ def check_page(page: Page, url: str, mobile: bool = False) -> None:
         require(current <= previous + 1, f"heading level skipped on {url}")
     empty_links = page.locator("a[href]").evaluate_all(
         """links => links
+          .filter(a => !a.id.startsWith('__codelineno-'))
           .filter(a => !(a.innerText.trim() || a.getAttribute('aria-label')
             || a.getAttribute('title')))
           .map(a => a.getAttribute('href'))"""
@@ -127,11 +128,16 @@ def run(
                 "geometry/",
                 "plane-case/",
                 "research/",
-                "research/materials/",
+                "research/papers/",
+                "results/",
+                "results/all-claims/",
+                "evidence/",
+                "evidence/materials/",
                 "about/",
-                "results/base-counterexample-and-immediate-consequences/",
+                "collections/base-counterexample-and-immediate-consequences/",
                 "research/programs/cubic-marked-root-incidence-geometry/",
-                "technical/an-explicit-triple-collision-e4fa4cbb/",
+                "research/handoffs/minimum-degree-and-quartic-exclusions/",
+                "claims/JCG-E4FA4CBB/",
             ):
                 check_page(desktop, base + route)
 
@@ -158,6 +164,20 @@ def run(
                 base + "assets/technical-materials/" + first_material
             )
             require(material.ok, "technical-material archive is not downloadable")
+
+            desktop.goto(
+                base + "research/handoffs/minimum-degree-and-quartic-exclusions/",
+                wait_until="networkidle",
+            )
+            require(
+                desktop.locator('main h2:has-text("The live frontier")').count()
+                == 1,
+                "model handoff lacks its live-frontier section",
+            )
+            require(
+                desktop.locator('a[href*="claims/JCG-99911351/"]').count() >= 1,
+                "model handoff lacks stable claim links",
+            )
 
             desktop.goto(base, wait_until="networkidle")
             for scheme in ("jacobian-light", "jacobian-dark"):
@@ -191,7 +211,7 @@ def run(
                     )
 
             desktop.goto(
-                base + "results/base-counterexample-and-immediate-consequences/",
+                base + "collections/base-counterexample-and-immediate-consequences/",
                 wait_until="networkidle",
             )
             for scheme in ("jacobian-light", "jacobian-dark"):

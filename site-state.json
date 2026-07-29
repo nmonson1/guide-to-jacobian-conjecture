@@ -1,15 +1,19 @@
 {
   "schema_version": 1,
-  "release_id": "living-guide-public-v8-post-v9-calculations",
-  "updated_at": "2026-07-27T00:20:53-07:00",
+  "release_id": "living-guide-public-v10-model-brief-v1",
+  "updated_at": "2026-07-29T15:00:00-07:00",
   "timezone": "America/Los_Angeles",
   "publication": {
-    "data_dir": "publication-v5-v9-20260726a",
-    "manifest_sha256": "153d152aa45a491b05fc0acff0b965e9657033733d312a192476898995d4d436"
+    "data_dir": "publication-v6-v11-20260729a",
+    "manifest_sha256": "c807c92e7552a487d27f44d7772bfadaed8c74e1a289d1206fda35b615f0f06a"
+  },
+  "claim_graph": {
+    "data_dir": "claim-graph-v2-20260729a",
+    "manifest_sha256": "2cb39529dfe8063843547770b6fcc2ce7ac50f8b0f852b6e6d9b759997c36f85"
   },
   "manuscripts": {
-    "data_dir": "manuscripts-v10",
-    "manifest_sha256": "02b5a6a32a955290d369db2702b4ed5cefd792155b5d5f6da5d22a88855ed276",
+    "data_dir": "manuscripts-v11",
+    "manifest_sha256": "b94b7eb6ea993ff41ae075b7c4c94dfba4126895bdd36e71c0c96037ff9d5bc0",
     "expected_count": 7
   },
   "technical_materials": {
@@ -17,22 +21,28 @@
     "manifest_sha256": "631828c77c508c53ff5cf40956574407068c1b3a6d9d96b0126538211322348a",
     "expected_count": 10
   },
-  "docs_dir": "docs-v8-20260727a",
+  "model_briefs": {
+    "data_dir": "model-briefs-v1-20260729a",
+    "manifest_sha256": "89ec02da89f25e4af7195cf4d08f4b796878449ecc3d72a57534cb3729e1f023",
+    "expected_count": 1
+  },
+  "docs_dir": "docs-v10-20260729a",
   "expected_counts": {
-    "grouped_pages": 94,
-    "results": 74,
-    "open_problems": 20,
-    "technical_records": 333,
+    "grouped_pages": 102,
+    "results": 83,
+    "open_problems": 19,
+    "technical_records": 355,
     "context_only_private_records": 21,
-    "memberships": 451,
+    "memberships": 500,
     "research_programs": 6,
     "pages_by_release_state": {
-      "draft_public": 77,
+      "draft_public": 85,
       "public": 17
     },
     "pages_by_manuscript_coverage": {
-      "complete": 81,
-      "not_applicable": 13
+      "complete": 74,
+      "not_applicable": 19,
+      "partial": 9
     }
   }
 }

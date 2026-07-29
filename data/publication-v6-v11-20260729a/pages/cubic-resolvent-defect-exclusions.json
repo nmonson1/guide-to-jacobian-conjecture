@@ -1,0 +1,97 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [
+      "cubic-normalization-defect-open-package"
+    ],
+    "shares_claims_with": [
+      "base-cover-monodromy-and-deck-group",
+      "cubic-normalization-defect-open-package"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Hailong Dao",
+      "roles": [
+        "prior theorem used"
+      ]
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "jacobian-conjecture application and accountable author"
+      ]
+    },
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "description": "Divisorial sheet loss has only three allowed types, and the quadratic resolvent rules out isolated support for a nonflat cubic defect; a smooth-axis exclusion is conditional on extension of the transverse three-torsion class.",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [],
+    "status": "not_applicable"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For a complex generic-degree-three Keller map, every target prime divisor has a retained unramified sheet and hence only the U1, U2, or B deleted-sheet type; a deleted three-cycle is impossible, and the generic monodromy is S3.",
+      "technical_slug": "cubic-keller-maps-have-only-the-u1-u2-and-b-divisorial-types-1d7ef048",
+      "title": "Cubic Keller Maps Have Only the U1, U2, and B Divisorial Types"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "For the quadratic resolvent Q of a complex cubic Keller normalization, an isolated singularity cannot support a nonflat cubic defect; moreover, three-torsion in Cl(Q) is detected at the height-two singular primes.",
+      "technical_slug": "a-cubic-defect-forces-a-nonisolated-quadratic-resolvent-singularity-79bdb7f6",
+      "title": "A Cubic Defect Forces a Nonisolated Quadratic-Resolvent Singularity"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "local_model_exclusion",
+      "statement": "In the stated one-parameter smooth cubic-axis hypersurface model, when the transverse three-torsion class extends as a section of the relative three-torsion group scheme, its rank-one reflexive module is maximal Cohen-Macaulay and the associated cubic normalization is flat.",
+      "technical_slug": "the-smooth-cubic-axis-resolvent-model-is-flat-69028659",
+      "title": "The Smooth Cubic-Axis Resolvent Model Is Flat"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 11,
+    "member_count": 3
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "cubic-marked-root-incidence-geometry"
+  ],
+  "schema_version": 2,
+  "slug": "cubic-resolvent-defect-exclusions",
+  "source": [],
+  "source_form": [],
+  "source_treatment": "No claim is made that one of the six working manuscripts is the source for this page.",
+  "statement": "For the quadratic resolvent Q of a complex cubic Keller normalization, an isolated singularity cannot support a nonflat cubic defect; moreover, three-torsion in Cl(Q) is detected at the height-two singular primes.",
+  "title": "Resolvent Restrictions on a Cubic Normalization Defect",
+  "visibility": "catalogued"
+}

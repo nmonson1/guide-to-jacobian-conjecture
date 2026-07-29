@@ -10,26 +10,29 @@ privacy.
 
 ## Public structure
 
-The visible guide has six reader-facing sections:
+The candidate guide has five top-level reader paths:
 
 1. Start;
-2. Counterexample;
-3. Geometry;
-4. Plane Case;
-5. Research;
-6. About.
+2. Understand — the counterexample, its geometry, and the plane case;
+3. Results — highlights, the complete collection index, open problems, and
+   corrections;
+4. Research — current state, six programs, and seven papers; and
+5. Evidence — claim-level proof access and technical materials.
 
-The Research section contains six Nathaniel Monson-led program summaries,
-six version-10 reader PDFs, their complete version-8 archival editions, one
-companion Results and Research Register, and an immutable technical-material
-release, followed by the complete generated catalogue:
+The active local release candidate contains:
 
-- 74 result pages;
-- 20 open-problem pages;
-- 333 deeper technical records, excluded from navigation and search;
+- 83 result collections and 19 open-problem collections;
+- 355 stable-tagged atomic claim pages, all included in site search but kept
+  out of the main navigation;
+- 500 many-to-many claim memberships across six research programs;
+- six version-11 reader PDFs and one companion Results and Research Register;
+- one self-contained, searchable Program 2 model handoff at
+  `/research/handoffs/minimum-degree-and-quartic-exclusions/`;
+- 74 collections with complete manuscript coverage, nine with partial
+  coverage, and 19 for which manuscript coverage is not applicable;
 - 21 context-only private records, not exported.
 
-Seventeen grouped pages are stable external public records. The other 77 are
+Seventeen collections are stable external public records. The other 85 are
 explicitly labeled working drafts. Release state does not encode proof
 strength, review, machine checking, attribution, or source form.
 
@@ -40,10 +43,10 @@ contains only its deterministic sanitized publication export, reader-facing
 prose, versioned PDFs, selected immutable technical materials, and build
 machinery.
 
-`site-state.json` is the single sanitized release pointer. It pins the active
-publication, manuscript, and technical-material manifests, generated docs
-tree, expected counts, and Pacific-time release date. Generators and checks
-resolve their paths and counts from it.
+`site-state.json` is the single sanitized release pointer. It pins the
+publication, unified claim graph, manuscript and technical-material
+manifests, generated docs tree, expected counts, and Pacific-time release
+date. Generators and checks resolve their paths and counts from it.
 
 The selected inputs currently include the sanitized canonical/publication
 export, hashes and metadata for six reader manuscripts and their companion
@@ -51,10 +54,16 @@ register, and the versioned MkDocs source tree. The stable implementation
 surfaces are:
 
 - `site-state.json`: active release selection and counts;
-- `scripts/generate_living_guide_v1.py`: deterministic renderer for grouped,
-  technical, program, and catalogue pages;
-- `scripts/generate_compatibility_stubs_v1.py`: noindex compatibility pages
-  for earlier public routes.
+- `scripts/generate_living_guide_v2.py`: deterministic renderer for stable
+  claim pages, result/open-problem collections, programs, evidence, and
+  catalogue pages;
+- `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
+  search, and route validation;
+- `data/model-briefs-v1-20260729a/`: hash-pinned sanitized source for
+  model-ready HTML handoffs;
+- `scripts/generate_compatibility_stubs_v1.py`: historical noindex
+  compatibility pages for earlier public routes (not part of the active
+  renderer).
 
 The technical-material release contains sanitized computational supplements
 for all six programs, two standalone Program 4 notes, their exact-check source
@@ -78,9 +87,8 @@ they are not part of the active MkDocs source tree.
 With [`uv`](https://docs.astral.sh/uv/) installed:
 
 ```bash
-uv run --with-requirements requirements.txt python scripts/generate_living_guide_v1.py
-uv run --with-requirements requirements.txt python scripts/generate_compatibility_stubs_v1.py
-uv run --with-requirements requirements.txt python scripts/check_public_site.py
+uv run --with-requirements requirements.txt python scripts/generate_living_guide_v2.py
+uv run --with-requirements requirements.txt python scripts/check_public_site_v2.py
 uv run --with-requirements requirements.txt mkdocs build --strict --site-dir /tmp/jacobian-guide-preview
 uv run --with-requirements requirements.txt python scripts/check_built_site.py /tmp/jacobian-guide-preview
 ```

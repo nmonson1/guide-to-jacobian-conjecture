@@ -1,0 +1,68 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and proof drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "exact-boundary-normal-linearization",
+      "page_title": "Exact Normal Linearization at the Plane Boundary",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "stored-degree-twenty-one-terminal-no-gluing",
+      "page_title": "A Stored Degree-21 Terminal Model Does Not Glue",
+      "role": "normal_coordinate_input"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "exact-normal-coordinates-linearize-every-boundary-order-d5fd24e3",
+  "source": [],
+  "statement": "The formally invertible change W=M0/(AB), T=sW^(1/S), H=(alpha log(B/B0)-beta log(A/A0))/S converts the full single-component determinant equation into a linear equation in H and W and decouples all normal orders before support restrictions.",
+  "title": "Exact Normal Coordinates Linearize Every Boundary Order",
+  "visibility": "technical"
+}

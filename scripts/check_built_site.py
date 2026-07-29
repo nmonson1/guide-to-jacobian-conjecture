@@ -12,7 +12,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-from generate_living_guide_v1 import (
+from generate_living_guide_v2 import (
     MANUSCRIPTS_DATA_DIR,
     PUBLIC_DOCS_DIR,
     SITE_STATE,
@@ -90,15 +90,22 @@ def main() -> int:
         "geometry",
         "plane-case",
         "research",
-        "research/materials",
+        "research/papers",
+        "research/handoffs/minimum-degree-and-quartic-exclusions",
+        "results",
+        "results/all-claims",
+        "results/open-problems",
+        "results/corrections",
+        "evidence",
+        "evidence/materials",
         "about",
     ):
         path = site / route / "index.html" if route else site / "index.html"
         if not path.is_file():
             failures.append(f"missing main route: /{route}")
 
-    result_pages = list((site / "results").glob("*/index.html"))
-    technical_pages = list((site / "technical").glob("*/index.html"))
+    result_pages = list((site / "collections").glob("*/index.html"))
+    claim_pages = list((site / "claims").glob("*/index.html"))
     program_pages = list((site / "research/programs").glob("*/index.html"))
     expected = SITE_STATE["expected_counts"]
     if len(result_pages) != expected["grouped_pages"]:
@@ -106,15 +113,22 @@ def main() -> int:
             "built result routes: expected "
             f"{expected['grouped_pages']}, found {len(result_pages)}"
         )
-    if len(technical_pages) != expected["technical_records"]:
+    if len(claim_pages) != expected["technical_records"]:
         failures.append(
-            "built technical routes: expected "
-            f"{expected['technical_records']}, found {len(technical_pages)}"
+            "built claim routes: expected "
+            f"{expected['technical_records']}, found {len(claim_pages)}"
         )
     if len(program_pages) != expected["research_programs"]:
         failures.append(
             "built program routes: expected "
             f"{expected['research_programs']}, found {len(program_pages)}"
+        )
+    handoff_pages = list((site / "research/handoffs").glob("*/index.html"))
+    if len(handoff_pages) != SITE_STATE["model_briefs"]["expected_count"]:
+        failures.append(
+            "built model handoff routes: expected "
+            f"{SITE_STATE['model_briefs']['expected_count']}, found "
+            f"{len(handoff_pages)}"
         )
 
     search_path = site / "search/search_index.json"
@@ -122,10 +136,10 @@ def main() -> int:
         failures.append("search index is missing")
     else:
         search_text = search_path.read_text(encoding="utf-8")
-        if re.search(r'"location"\s*:\s*"technical/', search_text):
-            failures.append("technical pages leaked into internal search")
-        if re.search(r'"location"\s*:\s*"(?:claim|claim-v3|topic-v1|topic-v1\.2|story-v1)/', search_text):
-            failures.append("compatibility stubs leaked into internal search")
+        if not re.search(r'"location"\s*:\s*"claims/JCG-', search_text):
+            failures.append("stable-tag claim pages are missing from internal search")
+        if "research/handoffs/minimum-degree-and-quartic-exclusions/" not in search_text:
+            failures.append("model handoff is missing from internal search")
 
     robots = site / "robots.txt"
     if not robots.is_file() or "Disallow: /" not in robots.read_text(encoding="utf-8"):
@@ -166,8 +180,8 @@ def main() -> int:
         return 1
     print(
         f"Built-site checks passed for {len(html_files)} HTML pages, "
-        f"{len(result_pages)} result routes, and {len(technical_pages)} "
-        f"hidden technical routes, with {materials_manifest['artifact_count']} "
+        f"{len(result_pages)} result routes, and {len(claim_pages)} "
+        f"stable-tag claim routes, with {materials_manifest['artifact_count']} "
         "technical artifacts."
     )
     return 0
