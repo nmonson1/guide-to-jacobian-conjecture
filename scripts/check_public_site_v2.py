@@ -56,6 +56,15 @@ TEMPLATE_PHRASES = (
     "A proof is present in the working research record",
 )
 REQUIRED_NAV = ("Start", "Understand", "Results", "Research", "Evidence", "About")
+CLAIM_TAG_PATTERN = re.compile(r"JCG-[0-9A-F]{8}")
+HANDOFF_STRUCTURE = (
+    "### Coverage rule",
+    "### Compact glossary",
+    "### Case and dependency map",
+    "Proof signature",
+    "accepted as project input",
+    "independent review",
+)
 
 
 def _sha(path: Path) -> str:
@@ -182,6 +191,14 @@ def main() -> int:
             failures.append(f"model brief source mismatch: {brief['source']}")
             continue
         source_text = source.read_text(encoding="utf-8")
+        for marker in HANDOFF_STRUCTURE:
+            if marker.casefold() not in source_text.casefold():
+                failures.append(
+                    f"{brief['source']}: missing handoff semantic marker {marker!r}"
+                )
+        for tag in CLAIM_TAG_PATTERN.findall(source_text):
+            if tag not in claims:
+                failures.append(f"{brief['source']}: unknown claim tag {tag}")
         if len(source.read_bytes()) != brief["bytes"]:
             failures.append(f"model brief byte count mismatch: {brief['source']}")
         if len(source_text.split()) != brief["words"]:
@@ -210,6 +227,27 @@ def main() -> int:
         ):
             if heading not in rendered_text:
                 failures.append(f"{brief['route']}: missing {heading}")
+        if brief["program_slug"] == "minimum-degree-and-quartic-exclusions":
+            required_conic = (
+                "JCG-24A6190A",
+                "JCG-80F5587E",
+                "JCG-244F8A2E",
+                "all seven quadratic-factor orbits",
+            )
+            for marker in required_conic:
+                if marker not in source_text:
+                    failures.append(
+                        f"{brief['source']}: incomplete full-conic handoff; "
+                        f"missing {marker!r}"
+                    )
+        if brief["program_slug"] == "plane-boundary-obstructions":
+            if "JCG-9D0BE662" in source_text and (
+                "Open dependency—not an accepted result" not in source_text
+            ):
+                failures.append(
+                    f"{brief['source']}: open lower-bound dependency is not "
+                    "distinguished from accepted inputs"
+                )
         if brief.get("kind") == "cross_program":
             index_page = DOCS / "research/index.md"
             if brief["route"].split("/")[-1] not in index_page.read_text(encoding="utf-8"):

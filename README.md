@@ -59,7 +59,7 @@ surfaces are:
   catalogue pages;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, and route validation;
-- `data/model-briefs-v2-20260729b/`: hash-pinned sanitized source for
+- `data/model-briefs-v3-20260729a/`: hash-pinned sanitized source for
   model-ready HTML handoffs;
 - `scripts/generate_compatibility_stubs_v1.py`: historical noindex
   compatibility pages for earlier public routes (not part of the active

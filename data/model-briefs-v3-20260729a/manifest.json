@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release_id": "model-briefs-public-v3-20260729a",
+  "updated_at": "2026-07-29T05:22:04+00:00",
+  "brief_count": 7,
+  "briefs": [
+    {
+      "kind": "cross_program",
+      "program_sequence": 0,
+      "program_slug": "state-of-the-program",
+      "title": "State of the Jacobian Research Program",
+      "source": "state-of-the-program.md",
+      "sha256": "2f959db85f99e2e010176c0f739678966aafff1a01c9f571f1f2431e007ab31b",
+      "bytes": 18604,
+      "words": 2456,
+      "route": "research/handoffs/state-of-the-program.md"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 1,
+      "program_slug": "cubic-marked-root-incidence-geometry",
+      "title": "Cubic Marked-Root Incidence Geometry",
+      "source": "cubic-marked-root-incidence-geometry.md",
+      "sha256": "d61985b77db1701612edefb5b84ead198776b6231e21617c92392a16bfe1a840",
+      "bytes": 19595,
+      "words": 2720,
+      "route": "research/handoffs/cubic-marked-root-incidence-geometry.md"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 2,
+      "program_slug": "minimum-degree-and-quartic-exclusions",
+      "title": "Minimum Degree and Quartic Exclusions",
+      "source": "minimum-degree-and-quartic-exclusions.md",
+      "sha256": "03a296b0386dd37413797d764398c9087ec8dc4bbf8fbd900ef3520ebcd57abb",
+      "bytes": 22541,
+      "words": 3140,
+      "route": "research/handoffs/minimum-degree-and-quartic-exclusions.md"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 3,
+      "program_slug": "local-rigidity-and-deformation-algebra",
+      "title": "Local Rigidity and Deformation Algebra",
+      "source": "local-rigidity-and-deformation-algebra.md",
+      "sha256": "615e7c761445281d8f8f630168de61727600f0fe5efb8abf632a4ccb365e8da3",
+      "bytes": 19700,
+      "words": 2758,
+      "route": "research/handoffs/local-rigidity-and-deformation-algebra.md"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 4,
+      "program_slug": "stable-moduli",
+      "title": "Stable Moduli",
+      "source": "stable-moduli.md",
+      "sha256": "ac23a721d4c5b07191add3a1f9752ef3827c749784dc643068f5767f1215e67d",
+      "bytes": 20291,
+      "words": 2747,
+      "route": "research/handoffs/stable-moduli.md"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 5,
+      "program_slug": "homogeneous-descendants",
+      "title": "Homogeneous Descendants",
+      "source": "homogeneous-descendants.md",
+      "sha256": "937c86c03226dfccea8ea3e7055adb855097051fce4670dc0d5cfb2de3c0016f",
+      "bytes": 21022,
+      "words": 2837,
+      "route": "research/handoffs/homogeneous-descendants.md"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 6,
+      "program_slug": "plane-boundary-obstructions",
+      "title": "Plane Boundary Obstructions",
+      "source": "plane-boundary-obstructions.md",
+      "sha256": "5176201167c81ae27b5f501a9d81eacee0aae1513cf1f977cb825d624418b701",
+      "bytes": 21640,
+      "words": 2916,
+      "route": "research/handoffs/plane-boundary-obstructions.md"
+    }
+  ]
+}

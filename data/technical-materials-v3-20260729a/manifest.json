@@ -1,0 +1,171 @@
+{
+  "artifact_count": 10,
+  "created_at": "2026-07-27T00:07:46-07:00",
+  "format": 1,
+  "program_count": 6,
+  "programs": [
+    {
+      "artifacts": [
+        {
+          "bytes": 12246,
+          "filename": "01-cubic-incidence-computational-supplement.zip",
+          "kind": "computational_supplement",
+          "limitations": "The archive checks displayed identities; it does not replace the geometric classification proofs.",
+          "payload_files": 6,
+          "scope": "Exact marked-root, root-slope, and cubic-jet checks used by Program 1.",
+          "sha256": "4660bb57f89611df70c55d3d471f7da2aa13906511f7e64123480e08a647b65a",
+          "title": "Complete computational supplement"
+        }
+      ],
+      "limitations": "The archive checks displayed identities; it does not replace the geometric classification proofs.",
+      "paper": "01-cubic-incidence",
+      "scope": "Exact marked-root, root-slope, and cubic-jet checks used by Program 1.",
+      "sequence": 1,
+      "slug": "cubic-marked-root-incidence-geometry",
+      "title": "Cubic marked-root incidence geometry"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 119693,
+          "filename": "02-low-degree-computational-supplement.zip",
+          "kind": "computational_supplement",
+          "limitations": "Frozen 27 July archive: it predates the later balanced and tricuspidal exclusions and does not contain those proofs. The unrestricted quartic endgame remains outside this artifact.",
+          "payload_files": 69,
+          "scope": "Exact low-degree, conic, rank-one, fixed-factor, and equivariant calculations used by Program 2.",
+          "sha256": "7d99adca689debfeb9439e11d799bde9221301e307def200105b1cfba025c8fa",
+          "title": "Complete computational supplement"
+        },
+        {
+          "bytes": 14486,
+          "filename": "02-quartic-plucker-x2y2-boundary-2026-07-26-v1.zip",
+          "kind": "focused_computation",
+          "limitations": "The fixed-component boundary pencil remains unresolved.",
+          "payload_files": 7,
+          "scope": "Exact scripts, outputs, and notes for the x\u00b2y\u00b2 boundary calculation.",
+          "sha256": "88c69f53e11cc1f36a73333979e199f87d52e95d6589fe2de0cb747eb1ac4065",
+          "title": "Cubic-pencil and x\u00b2y\u00b2 Pl\u00fccker-boundary calculation"
+        }
+      ],
+      "limitations": "Frozen 27 July archive: it predates the later balanced and tricuspidal exclusions and does not contain those proofs. The unrestricted quartic endgame remains outside this artifact.",
+      "paper": "02-low-degree",
+      "scope": "Exact low-degree, conic, rank-one, fixed-factor, and equivariant calculations used by Program 2.",
+      "sequence": 2,
+      "slug": "minimum-degree-and-quartic-exclusions",
+      "title": "Minimum degree and quartic exclusions"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 5552923,
+          "filename": "03-local-rigidity-computational-supplement.zip",
+          "kind": "computational_supplement",
+          "limitations": "This concerns the stated bounded-degree filtered quotient and has not been independently reproduced in a second computer-algebra system.",
+          "payload_files": 786,
+          "scope": "Exact reduced-rigidity, border-basis, multiplication, inverse-system, and Koszul data used by Program 3.",
+          "sha256": "e2b0a05261d49497eda4d3ca856f948e3e2205768ef4d453a66e546653717782",
+          "title": "Complete computational supplement"
+        }
+      ],
+      "limitations": "This concerns the stated bounded-degree filtered quotient and has not been independently reproduced in a second computer-algebra system.",
+      "paper": "03-local-rigidity",
+      "scope": "Exact reduced-rigidity, border-basis, multiplication, inverse-system, and Koszul data used by Program 3.",
+      "sequence": 3,
+      "slug": "local-rigidity-and-deformation-algebra",
+      "title": "Local rigidity and deformation algebra"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 44131,
+          "filename": "04-stable-moduli-computational-supplement.zip",
+          "kind": "computational_supplement",
+          "limitations": "The elementary one-root transition is explicit; simultaneous escapes, the nonunit resultant boundary, and full relative-Jacobian gluing remain open.",
+          "payload_files": 27,
+          "scope": "Exact q-orbit, boundary-residue, conductor, formal-arc, weighted-moduli, and one-root cross-length boundary calculations used by Program 4.",
+          "sha256": "e031a33069d1f44814c7f907461f99104f5b725139c8ee231120b5d18238fc0b",
+          "title": "Complete computational supplement"
+        },
+        {
+          "bytes": 311415,
+          "filename": "04-finite-triple-covers-rigidified-moduli-2026-07-26-v1.pdf",
+          "kind": "technical_note",
+          "limitations": "Research draft; independent specialist review is not recorded.",
+          "pages": 7,
+          "scope": "Defines normalized framed cubic completions and proves their fixed-length quotient-stack presentation.",
+          "sha256": "1be4f79d04d026767f822678feb1aa92abae58f0d88a846a5cdd70d584d5603d",
+          "title": "Finite Triple Covers, Conductors, and Rigidified Moduli"
+        },
+        {
+          "bytes": 377170,
+          "filename": "04-jet-residues-collision-moduli-2026-07-26-v1.pdf",
+          "kind": "technical_note",
+          "limitations": "Research draft; independent specialist review is not recorded.",
+          "pages": 12,
+          "scope": "Develops the Hilbert-scheme boundary quotient and collision-as-jet interpretation.",
+          "sha256": "7a04cad117fa6e0e2f71ae9dc3810ec89717775d247a56c07072427fe11c96f2",
+          "title": "Jet Residues at Infinity and Collision Moduli"
+        },
+        {
+          "bytes": 28376,
+          "filename": "04-stable-moduli-framed-stack-source-2026-07-26-v1.zip",
+          "kind": "source_bundle",
+          "limitations": "No compactification or cross-length transition theorem is claimed.",
+          "payload_files": 7,
+          "scope": "Standalone TeX notes defining the fixed-length framed stack, with exact symbolic checks.",
+          "sha256": "96629a153af0156782fd842b90cc203994bc14215b1723dc3b3b499432d9c126",
+          "title": "Framed-stack notes and exact checks"
+        }
+      ],
+      "limitations": "The elementary one-root transition is explicit; simultaneous escapes, the nonunit resultant boundary, and full relative-Jacobian gluing remain open.",
+      "paper": "04-stable-moduli",
+      "scope": "Exact q-orbit, boundary-residue, conductor, formal-arc, weighted-moduli, and one-root cross-length boundary calculations used by Program 4.",
+      "sequence": 4,
+      "slug": "stable-moduli",
+      "title": "Stable moduli"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 206561,
+          "filename": "05-homogeneous-descendants-computational-supplement.zip",
+          "kind": "computational_supplement",
+          "limitations": "The global collision ideal has not been saturated or decomposed, and nowhere-solvability of the full cokernel obstruction in characteristic zero remains open.",
+          "payload_files": 82,
+          "scope": "Exact descendant tensors, pairings, compression checks, the regular-Jordan calculations, fifteen global chart quintics, and all seventeen sampled first-normal rank profiles used by Program 5.",
+          "sha256": "0570a676633bef822a67ca93f576a6cb4cb79bac3301a7f515881a612c77d866",
+          "title": "Complete computational supplement"
+        }
+      ],
+      "limitations": "The global collision ideal has not been saturated or decomposed, and nowhere-solvability of the full cokernel obstruction in characteristic zero remains open.",
+      "paper": "05-homogeneous-descendants",
+      "scope": "Exact descendant tensors, pairings, compression checks, the regular-Jordan calculations, fifteen global chart quintics, and all seventeen sampled first-normal rank profiles used by Program 5.",
+      "sequence": 5,
+      "slug": "homogeneous-descendants",
+      "title": "Homogeneous descendants"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 88506243,
+          "filename": "06-plane-boundary-computational-supplement.zip",
+          "kind": "computational_supplement",
+          "limitations": "The certificates apply to the displayed finite systems; the global completeness and attachment problems remain separate.",
+          "payload_files": 150,
+          "scope": "Exact residue tables, normal-layer matrices, toric data, unit-ideal certificates, scripts, and logs used by Program 6.",
+          "sha256": "4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585",
+          "title": "Complete computational supplement"
+        }
+      ],
+      "limitations": "The certificates apply to the displayed finite systems; the global completeness and attachment problems remain separate.",
+      "paper": "06-plane-boundary",
+      "scope": "Exact residue tables, normal-layer matrices, toric data, unit-ideal certificates, scripts, and logs used by Program 6.",
+      "sequence": 6,
+      "slug": "plane-boundary-obstructions",
+      "title": "Plane boundary obstructions"
+    }
+  ],
+  "release_id": "public-technical-materials-v2-20260727a",
+  "source_supplement_manifest_sha256": "38f46b2081a84793f6b120d128966d935483fea8607665bd642073b0fcb81f3b",
+  "timezone": "America/Los_Angeles"
+}
