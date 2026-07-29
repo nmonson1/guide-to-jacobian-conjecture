@@ -98,6 +98,9 @@ def run(
         ).read_text(encoding="utf-8")
     )
     first_manuscript = manuscript_manifest["manuscripts"][0]["filename"]
+    active_manuscripts = {
+        item["filename"] for item in manuscript_manifest["manuscripts"]
+    }
     materials_manifest = json.loads(
         (
             root
@@ -171,6 +174,17 @@ def run(
                 + first_manuscript
             )
             require(pdf.ok, "versioned PDF is not downloadable")
+            release_response = desktop.context.request.get(
+                base + "research/handoffs/release.json"
+            )
+            require(
+                release_response.ok,
+                "machine-readable handoff release is not downloadable",
+            )
+            require(
+                release_response.json()["site_release_id"] == state["release_id"],
+                "machine-readable handoff release names the wrong site release",
+            )
             material = desktop.context.request.get(
                 base + "assets/technical-materials/" + first_material
             )
@@ -179,6 +193,30 @@ def run(
             for brief in model_brief_manifest["briefs"]:
                 route = brief["route"].removesuffix(".md") + "/"
                 desktop.goto(base + route, wait_until="networkidle")
+                require(
+                    desktop.locator(".handoff-snapshot").count() == 1,
+                    f"model handoff lacks its canonical snapshot: {route}",
+                )
+                require(
+                    desktop.locator(
+                        'a.handoff-release[href$="release.json"]'
+                    ).count()
+                    == 1,
+                    f"model handoff lacks release metadata link: {route}",
+                )
+                linked_manuscripts = set(
+                    desktop.locator(
+                        'a[href*="assets/manuscripts/"]'
+                    ).evaluate_all(
+                        """links => links.map(link =>
+                          new URL(link.href).pathname.split('/').pop())"""
+                    )
+                )
+                require(
+                    linked_manuscripts <= active_manuscripts,
+                    f"model handoff links inactive manuscripts: {route}: "
+                    f"{sorted(linked_manuscripts - active_manuscripts)}",
+                )
                 require(
                     desktop.locator('main h2:has-text("The live frontier")').count()
                     == 1,
@@ -197,6 +235,10 @@ def run(
                         "cross-program handoff lacks all six proof routes",
                     )
                 else:
+                    require(
+                        bool(linked_manuscripts),
+                        f"model handoff lacks an active manuscript: {route}",
+                    )
                     require(
                         desktop.locator(
                             'a[href*="/assets/"][href*=".pdf#page="]'

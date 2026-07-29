@@ -49,7 +49,10 @@ machinery.
 `site-state.json` is the single sanitized release pointer. It pins the
 publication, unified claim graph, manuscript and technical-material
 manifests, generated docs tree, expected counts, and Pacific-time release
-date. Generators and checks resolve their paths and counts from it.
+date. Generators and checks resolve their paths and counts from it. Every
+model handoff also exposes the selected release as
+`/research/handoffs/release.json`; its visible snapshot, counts, and
+manuscript links are rendered from that same pointer.
 
 The selected inputs currently include the sanitized canonical/publication
 export, hashes and metadata for six reader manuscripts and their companion
@@ -59,11 +62,14 @@ surfaces are:
 - `site-state.json`: active release selection and counts;
 - `scripts/generate_living_guide_v2.py`: deterministic renderer for stable
   claim pages, result/open-problem collections, programs, evidence, and
-  catalogue pages;
+  catalogue pages, model handoffs, and machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
-  search, and route validation;
-- `data/model-briefs-v7a-20260729a/`: hash-pinned sanitized source for
-  model-ready HTML handoffs;
+  search, release-coherence, and route validation;
+- `data/model-briefs-v8-20260729a/`: hash-pinned sanitized source for
+  model-ready HTML handoffs; logical manuscript slots resolve against the
+  selected manuscript manifest, so a stale PDF version fails the build;
+- `scripts/check_deployed_site.py`: production verification that GitHub Pages
+  serves the exact selected handoff release after deployment;
 - `scripts/generate_compatibility_stubs_v1.py`: historical noindex
   compatibility pages for earlier public routes (not part of the active
   renderer).

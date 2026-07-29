@@ -14,12 +14,16 @@ from pypdf import PdfReader
 
 from generate_living_guide_v2 import (
     CLAIM_GRAPH_DATA_DIR,
+    LITERAL_MANUSCRIPT_LINK_RE,
     MANUSCRIPTS_DATA_DIR,
+    MANUSCRIPT_TOKEN_RE,
     MODEL_BRIEFS_DATA_DIR,
     PUBLICATION_DATA_DIR,
     PUBLIC_DOCS_DIR,
     SITE_STATE,
     TECHNICAL_MATERIALS_DATA_DIR,
+    build_release_metadata,
+    resolve_manuscript_links,
 )
 
 
@@ -203,6 +207,15 @@ def main() -> int:
     brief_manifest = json.loads(
         (MODEL_BRIEF_DATA / "manifest.json").read_text(encoding="utf-8")
     )
+    manuscript_manifest = json.loads(
+        (ROOT / "data" / MANUSCRIPTS_DATA_DIR / "manifest.json").read_text()
+    )
+    active_manuscripts = {
+        item["filename"] for item in manuscript_manifest["manuscripts"]
+    }
+    manuscripts_by_sequence = {
+        item["filename"][:2]: item for item in manuscript_manifest["manuscripts"]
+    }
     if brief_manifest["brief_count"] != SITE_STATE["model_briefs"]["expected_count"]:
         failures.append("model brief count changed")
     if brief_manifest["brief_count"] != len(brief_manifest["briefs"]):
@@ -215,6 +228,19 @@ def main() -> int:
             failures.append(f"model brief source mismatch: {brief['source']}")
             continue
         source_text = source.read_text(encoding="utf-8")
+        literal_links = LITERAL_MANUSCRIPT_LINK_RE.findall(source_text)
+        if literal_links:
+            failures.append(
+                f"{brief['source']}: literal manuscript filename(s) bypass "
+                f"the active manifest: {', '.join(sorted(set(literal_links)))}"
+            )
+        try:
+            resolved_source = resolve_manuscript_links(
+                source_text, manuscripts_by_sequence
+            )
+        except ValueError as exc:
+            failures.append(f"{brief['source']}: {exc}")
+            resolved_source = source_text
         for marker in HANDOFF_STRUCTURE:
             if marker.casefold() not in source_text.casefold():
                 failures.append(
@@ -256,12 +282,23 @@ def main() -> int:
                         f"language {phrase!r}"
                     )
         else:
-            proof_links = list(HANDOFF_PROOF_LINK.finditer(source_text))
+            if not MANUSCRIPT_TOKEN_RE.search(source_text):
+                failures.append(
+                    f"{brief['source']}: no active-manuscript token"
+                )
+            proof_links = list(HANDOFF_PROOF_LINK.finditer(resolved_source))
             if len(proof_links) < 8:
                 failures.append(
                     f"{brief['source']}: too few direct page-level proof links"
                 )
             for match in proof_links:
+                if "assets/manuscripts/" in match.group("path"):
+                    filename = Path(match.group("path")).name
+                    if filename not in active_manuscripts:
+                        failures.append(
+                            f"{brief['source']}: rendered proof link names "
+                            f"inactive manuscript {filename!r}"
+                        )
                 proof_pdf = (rendered.parent / match.group("path")).resolve()
                 page = int(match.group("page"))
                 if not proof_pdf.is_file():
@@ -292,6 +329,12 @@ def main() -> int:
             failures.append(f"missing rendered model brief: {brief['route']}")
             continue
         rendered_text = rendered.read_text(encoding="utf-8")
+        if "{{MANUSCRIPT_" in rendered_text:
+            failures.append(f"{brief['route']}: unresolved manuscript token")
+        if 'class="handoff-snapshot"' not in rendered_text:
+            failures.append(f"{brief['route']}: missing canonical snapshot")
+        if SITE_STATE["release_id"] not in rendered_text:
+            failures.append(f"{brief['route']}: snapshot names the wrong release")
         for heading in (
             "## 1. Setup and notation",
             "## 2. Goal and payoff",
@@ -355,9 +398,6 @@ def main() -> int:
             scanned += 1
             _sensitive(path.read_text(encoding="utf-8"), str(path.relative_to(ROOT)), failures)
 
-    manuscript_manifest = json.loads(
-        (ROOT / "data" / MANUSCRIPTS_DATA_DIR / "manifest.json").read_text()
-    )
     if manuscript_manifest["manuscript_count"] != SITE_STATE["manuscripts"]["expected_count"]:
         failures.append("manuscript count changed")
     for item in manuscript_manifest["manuscripts"]:
@@ -368,6 +408,57 @@ def main() -> int:
                 failures.append(f"manuscript digest mismatch: {path}")
         if public.is_file() and len(PdfReader(public).pages) != item["pages"]:
             failures.append(f"manuscript page count mismatch: {item['filename']}")
+
+    release_path = DOCS / "research/handoffs/release.json"
+    expected_release = build_release_metadata(ROOT)
+    if not release_path.is_file():
+        failures.append("machine-readable handoff release is missing")
+    else:
+        try:
+            found_release = json.loads(release_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            failures.append("machine-readable handoff release is invalid JSON")
+        else:
+            if found_release != expected_release:
+                failures.append(
+                    "machine-readable handoff release disagrees with site state"
+                )
+
+    manuscript_versions = {
+        item["version"] for item in manuscript_manifest["manuscripts"]
+    }
+    if len(manuscript_versions) != 1:
+        failures.append("selected manuscript release mixes versions")
+        manuscript_version = "mixed"
+    else:
+        manuscript_version = str(next(iter(manuscript_versions)))
+    home_text = (DOCS / "index.md").read_text(encoding="utf-8")
+    home_summary = (
+        f"Browse six working research programs, {expected['results']} result "
+        f"collections, {expected['open_problems']} open-problem collections, "
+        f"{expected['technical_records']} tagged claims, and seven dated "
+        "manuscripts."
+    )
+    if home_summary not in home_text:
+        failures.append("homepage summary counts disagree with site state")
+    home_update = (
+        f"sanitized {expected['technical_records']}-claim public graph, "
+        f"organizes it into {expected['grouped_pages']} grouped packages and "
+        f"{expected['memberships']} memberships, and publishes version "
+        f"{manuscript_version} of the six reader manuscripts and companion "
+        "register."
+    )
+    if home_update not in home_text:
+        failures.append("homepage update counts or manuscript version are stale")
+    about_text = (DOCS / "about.md").read_text(encoding="utf-8")
+    about_summary = (
+        f"six working research programs, {expected['results']} result "
+        f"collections, and {expected['open_problems']} open-problem collections."
+    )
+    if about_summary not in about_text:
+        failures.append("About-page counts disagree with site state")
+    if re.search(r"canonical registry version \d+", about_text):
+        failures.append("About page hard-codes a supersedable registry version")
 
     materials = json.loads(
         (

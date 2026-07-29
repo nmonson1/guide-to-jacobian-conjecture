@@ -6,8 +6,10 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sys
 from collections import Counter
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -22,6 +24,11 @@ PUBLICATION_DATA_DIR = SITE_STATE["publication"]["data_dir"]
 MANUSCRIPTS_DATA_DIR = SITE_STATE["manuscripts"]["data_dir"]
 TECHNICAL_MATERIALS_DATA_DIR = SITE_STATE["technical_materials"]["data_dir"]
 MODEL_BRIEFS_DATA_DIR = SITE_STATE["model_briefs"]["data_dir"]
+
+MANUSCRIPT_TOKEN_RE = re.compile(r"\{\{MANUSCRIPT_(?P<sequence>[0-9]{2})\}\}")
+LITERAL_MANUSCRIPT_LINK_RE = re.compile(
+    r"assets/manuscripts/(?P<filename>[^)\s]+\.pdf)"
+)
 
 NEW_COLLECTIONS = (
     "cubic-resolvent-defect-exclusions",
@@ -158,7 +165,102 @@ def load(root: Path) -> tuple[
     return graph, claims, collections, programs, manuscripts, materials, briefs
 
 
-def render_model_brief(brief: dict[str, Any], source: str) -> str:
+def resolve_manuscript_links(
+    source: str, manuscripts: dict[str, dict[str, Any]]
+) -> str:
+    literal = LITERAL_MANUSCRIPT_LINK_RE.search(source)
+    if literal:
+        raise ValueError(
+            "model brief source must use a logical manuscript token, not "
+            f"{literal.group('filename')}"
+        )
+
+    def replace(match: re.Match[str]) -> str:
+        sequence = match.group("sequence")
+        if sequence not in manuscripts:
+            raise ValueError(f"unknown model-brief manuscript token: {sequence}")
+        return manuscripts[sequence]["filename"]
+
+    rendered = MANUSCRIPT_TOKEN_RE.sub(replace, source)
+    if "{{MANUSCRIPT_" in rendered:
+        raise ValueError("malformed model-brief manuscript token")
+    return rendered
+
+
+def _version_label(release_id: str) -> str:
+    match = re.search(r"-v(?P<version>[0-9]+[a-z]?)-", release_id)
+    if not match:
+        raise ValueError(f"release ID has no version label: {release_id}")
+    return f"v{match.group('version')}"
+
+
+def build_release_metadata(root: Path) -> dict[str, Any]:
+    state = load_site_state(root)
+    manuscript_manifest = _load(
+        root / "data" / state["manuscripts"]["data_dir"] / "manifest.json"
+    )
+    brief_manifest = _load(
+        root / "data" / state["model_briefs"]["data_dir"] / "manifest.json"
+    )
+    versions = {item["version"] for item in manuscript_manifest["manuscripts"]}
+    if len(versions) != 1:
+        raise ValueError("selected manuscripts do not share one release version")
+    manuscripts = []
+    for item in manuscript_manifest["manuscripts"]:
+        manuscripts.append(
+            {
+                "sequence": item["filename"][:2],
+                "title": item["title"],
+                "filename": item["filename"],
+                "version": item["version"],
+                "pages": item["pages"],
+                "sha256": item["sha256"],
+            }
+        )
+    handoffs = []
+    for item in sorted(
+        brief_manifest["briefs"], key=lambda brief: brief["program_sequence"]
+    ):
+        handoffs.append(
+            {
+                "kind": item["kind"],
+                "program_sequence": item["program_sequence"],
+                "program_slug": item["program_slug"],
+                "title": item["title"],
+                "route": item["route"].removesuffix(".md") + "/",
+                "source_sha256": item["sha256"],
+                "source_words": item["words"],
+            }
+        )
+    return {
+        "schema_version": 1,
+        "site_release_id": state["release_id"],
+        "updated_at": state["updated_at"],
+        "timezone": state["timezone"],
+        "components": {
+            "claim_graph_manifest_sha256": state["claim_graph"]["manifest_sha256"],
+            "manuscript_manifest_sha256": state["manuscripts"]["manifest_sha256"],
+            "model_brief_manifest_sha256": state["model_briefs"]["manifest_sha256"],
+        },
+        "counts": state["expected_counts"],
+        "manuscript_version": next(iter(versions)),
+        "manuscripts": manuscripts,
+        "handoff_source": {
+            "release_id": brief_manifest["release_id"],
+            "version": _version_label(brief_manifest["release_id"]),
+            "count": brief_manifest["brief_count"],
+        },
+        "handoffs": handoffs,
+    }
+
+
+def render_model_brief(
+    brief: dict[str, Any],
+    source: str,
+    manuscripts: dict[str, dict[str, Any]],
+    release: dict[str, Any],
+) -> str:
+    source = resolve_manuscript_links(source, manuscripts)
     cross_program = brief.get("kind") == "cross_program"
     label = (
         "Model research brief · Cross-program"
@@ -179,6 +281,19 @@ def render_model_brief(brief: dict[str, Any], source: str) -> str:
             "---",
             "",
             f'<p class="claim-tag">{label}</p>',
+            (
+                '<p class="handoff-snapshot"><strong>Snapshot:</strong> '
+                f'{datetime.fromisoformat(release["updated_at"]).strftime("%-d %B %Y")} '
+                f'· {release["counts"]["technical_records"]} public claim records '
+                f'· {release["counts"]["grouped_pages"]} grouped packages '
+                f'· manuscripts v{release["manuscript_version"]} '
+                f'· handoff source {release["handoff_source"]["version"]} '
+                f'· site release <code>{release["site_release_id"]}</code>.</p>'
+            ),
+            (
+                "[Machine-readable release metadata](release.json)"
+                "{ .handoff-release }"
+            ),
             source.rstrip(),
             "",
             back_link,
@@ -749,6 +864,7 @@ def render_materials(materials: dict[str, Any]) -> str:
 
 def expected_outputs(root: Path) -> dict[Path, str]:
     _, claims, collections, programs, manuscripts, materials, briefs = load(root)
+    release = build_release_metadata(root)
     docs = root / PUBLIC_DOCS_DIR
     outputs: dict[Path, str] = {}
     for claim in claims.values():
@@ -766,8 +882,14 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     for brief in briefs.values():
         source_path = root / "data" / MODEL_BRIEFS_DATA_DIR / brief["source"]
         outputs[docs / brief["route"]] = render_model_brief(
-            brief, source_path.read_text(encoding="utf-8")
+            brief,
+            source_path.read_text(encoding="utf-8"),
+            manuscripts,
+            release,
         )
+    outputs[docs / "research/handoffs/release.json"] = (
+        json.dumps(release, indent=2, sort_keys=True) + "\n"
+    )
     outputs[docs / "results/index.md"] = render_results_index(
         collections, claims
     )

@@ -18,6 +18,7 @@ from generate_living_guide_v2 import (
     PUBLIC_DOCS_DIR,
     SITE_STATE,
     TECHNICAL_MATERIALS_DATA_DIR,
+    build_release_metadata,
 )
 
 
@@ -109,11 +110,54 @@ def main() -> int:
             encoding="utf-8"
         )
     )
+    manuscript_manifest = json.loads(
+        (ROOT / "data" / MANUSCRIPTS_DATA_DIR / "manifest.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    active_manuscripts = {
+        item["filename"] for item in manuscript_manifest["manuscripts"]
+    }
     for brief in brief_manifest["briefs"]:
         route = brief["route"].removesuffix(".md")
         path = site / route / "index.html"
         if not path.is_file():
             failures.append(f"missing model handoff route: /{route}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        if 'class="handoff-snapshot"' not in text:
+            failures.append(f"model handoff lacks canonical snapshot: /{route}")
+        if SITE_STATE["release_id"] not in text:
+            failures.append(f"model handoff names the wrong release: /{route}")
+        parser_links = Links()
+        parser_links.feed(text)
+        linked_manuscripts = {
+            Path(urlparse(target).path).name
+            for target in parser_links.targets
+            if "assets/manuscripts/" in urlparse(target).path
+        }
+        inactive = linked_manuscripts - active_manuscripts
+        if inactive:
+            failures.append(
+                f"model handoff links inactive manuscript(s): /{route}: "
+                f"{', '.join(sorted(inactive))}"
+            )
+        if brief.get("kind") == "program" and not linked_manuscripts:
+            failures.append(f"model handoff lacks an active manuscript: /{route}")
+
+    release_path = site / "research/handoffs/release.json"
+    if not release_path.is_file():
+        failures.append("built machine-readable handoff release is missing")
+    else:
+        try:
+            found_release = json.loads(release_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            failures.append("built machine-readable handoff release is invalid JSON")
+        else:
+            if found_release != build_release_metadata(ROOT):
+                failures.append(
+                    "built machine-readable handoff release disagrees with site state"
+                )
 
     result_pages = list((site / "collections").glob("*/index.html"))
     claim_pages = list((site / "claims").glob("*/index.html"))
@@ -158,11 +202,6 @@ def main() -> int:
     if not robots.is_file() or "Disallow: /" not in robots.read_text(encoding="utf-8"):
         failures.append("built robots.txt does not disallow crawling")
 
-    manuscript_manifest = json.loads(
-        (ROOT / "data" / MANUSCRIPTS_DATA_DIR / "manifest.json").read_text(
-            encoding="utf-8"
-        )
-    )
     for item in manuscript_manifest["manuscripts"]:
         path = site / "assets/manuscripts" / item["filename"]
         if not path.is_file() or _sha256(path) != item["sha256"]:
