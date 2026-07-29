@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release_id": "living-guide-public-v12-model-briefs-v3",
-  "updated_at": "2026-07-29T05:22:04+00:00",
+  "release_id": "living-guide-public-v13-proof-linked-handoffs",
+  "updated_at": "2026-07-29T08:11:30+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v6-v11-20260729a",
@@ -12,8 +12,8 @@
     "manifest_sha256": "2cb39529dfe8063843547770b6fcc2ce7ac50f8b0f852b6e6d9b759997c36f85"
   },
   "manuscripts": {
-    "data_dir": "manuscripts-v11",
-    "manifest_sha256": "b94b7eb6ea993ff41ae075b7c4c94dfba4126895bdd36e71c0c96037ff9d5bc0",
+    "data_dir": "manuscripts-v12",
+    "manifest_sha256": "ce783432a003e43d1acc4fa59993e7fbc3d6202aca1e216e3638fa4fd4c8e60c",
     "expected_count": 7
   },
   "technical_materials": {
@@ -22,11 +22,11 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-briefs-v3-20260729a",
-    "manifest_sha256": "253ab2870b780d119c05a9ede03ef7429ca5f49147dd7a3b0364b2e3c13c0c70",
+    "data_dir": "model-briefs-v4-20260729a",
+    "manifest_sha256": "8f19eb44ae74c8a4521dfa62f4d4f19e3355fa2a799493405d153d4261bb77c9",
     "expected_count": 7
   },
-  "docs_dir": "docs-v12-20260729a",
+  "docs_dir": "docs-v13-20260729a",
   "expected_counts": {
     "grouped_pages": 102,
     "results": 83,

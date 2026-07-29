@@ -188,6 +188,22 @@ def run(
                     desktop.locator('a[href*="claims/JCG-"]').count() >= 1,
                     f"model handoff lacks stable claim links: {route}",
                 )
+                if brief.get("kind") == "cross_program":
+                    require(
+                        desktop.locator(
+                            'a[href*="#3-reusable-inputs-exact-scope-and-proof-access"]'
+                        ).count()
+                        >= 6,
+                        "cross-program handoff lacks all six proof routes",
+                    )
+                else:
+                    require(
+                        desktop.locator(
+                            'a[href*="/assets/"][href*=".pdf#page="]'
+                        ).count()
+                        >= 8,
+                        f"model handoff lacks direct proof-body links: {route}",
+                    )
 
             desktop.goto(base, wait_until="networkidle")
             for scheme in ("jacobian-light", "jacobian-dark"):
@@ -266,6 +282,9 @@ def run(
             mobile = browser.new_page(viewport={"width": 390, "height": 844})
             check_page(mobile, base, mobile=True)
             check_page(mobile, base + "counterexample/", mobile=True)
+            for brief in model_brief_manifest["briefs"]:
+                route = brief["route"].removesuffix(".md") + "/"
+                check_page(mobile, base + route, mobile=True)
             if screenshots is not None:
                 mobile.goto(base, wait_until="networkidle")
                 mobile.screenshot(

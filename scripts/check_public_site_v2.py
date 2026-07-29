@@ -62,8 +62,18 @@ HANDOFF_STRUCTURE = (
     "### Compact glossary",
     "### Case and dependency map",
     "Proof signature",
-    "accepted as project input",
+    "Boundary exit",
+)
+HANDOFF_PROOF_LINK = re.compile(
+    r"(?P<path>\.\./\.\./assets/(?:manuscripts|proof-archives)/"
+    r"[^)\s]+\.pdf)#page=(?P<page>\d+)"
+)
+HANDOFF_STATUS_BUREAUCRACY = (
+    "review status",
+    "audit status",
+    "last audited",
     "independent review",
+    "independent specialist review",
 )
 
 
@@ -199,6 +209,40 @@ def main() -> int:
         for tag in CLAIM_TAG_PATTERN.findall(source_text):
             if tag not in claims:
                 failures.append(f"{brief['source']}: unknown claim tag {tag}")
+        source_lower = source_text.casefold()
+        for marker in HANDOFF_STATUS_BUREAUCRACY:
+            if marker in source_lower:
+                failures.append(
+                    f"{brief['source']}: handoff carries non-research status "
+                    f"bureaucracy {marker!r}"
+                )
+        if brief.get("kind") == "cross_program":
+            if source_text.count("#3-reusable-inputs-exact-scope-and-proof-access") < 6:
+                failures.append(
+                    f"{brief['source']}: cross-program proof routes do not "
+                    "reach all six handoffs"
+                )
+        else:
+            proof_links = list(HANDOFF_PROOF_LINK.finditer(source_text))
+            if len(proof_links) < 8:
+                failures.append(
+                    f"{brief['source']}: too few direct page-level proof links"
+                )
+            for match in proof_links:
+                proof_pdf = (rendered.parent / match.group("path")).resolve()
+                page = int(match.group("page"))
+                if not proof_pdf.is_file():
+                    failures.append(
+                        f"{brief['source']}: missing direct proof PDF "
+                        f"{match.group('path')!r}"
+                    )
+                    continue
+                pages = len(PdfReader(proof_pdf).pages)
+                if page < 1 or page > pages:
+                    failures.append(
+                        f"{brief['source']}: proof page {page} is outside "
+                        f"the {pages}-page PDF {proof_pdf.name}"
+                    )
         if len(source.read_bytes()) != brief["bytes"]:
             failures.append(f"model brief byte count mismatch: {brief['source']}")
         if len(source_text.split()) != brief["words"]:
@@ -218,7 +262,6 @@ def main() -> int:
         for heading in (
             "## 1. Setup and notation",
             "## 2. Goal and payoff",
-            "## 3. What is proved",
             "## 4. The live frontier",
             "## 5. Graveyard",
             "## 6. Tasks",
@@ -227,6 +270,13 @@ def main() -> int:
         ):
             if heading not in rendered_text:
                 failures.append(f"{brief['route']}: missing {heading}")
+        section_three = (
+            "## 3. Reusable anchors and proof routes"
+            if brief.get("kind") == "cross_program"
+            else "## 3. Reusable inputs, exact scope, and proof access"
+        )
+        if section_three not in rendered_text:
+            failures.append(f"{brief['route']}: missing {section_three}")
         if brief["program_slug"] == "minimum-degree-and-quartic-exclusions":
             required_conic = (
                 "JCG-24A6190A",

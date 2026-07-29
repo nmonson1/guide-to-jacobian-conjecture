@@ -650,6 +650,7 @@ def render_research_index(
 
 
 def render_papers(manuscripts: dict[str, dict[str, Any]]) -> str:
+    version = max(int(item["version"]) for item in manuscripts.values())
     lines = [
         "---",
         'title: "Working papers"',
@@ -658,7 +659,7 @@ def render_papers(manuscripts: dict[str, dict[str, Any]]) -> str:
         "",
         "# Working papers",
         "",
-        '<p class="dek">Version 11 of the six-program reader set. These are working manuscripts, not refereed papers.</p>',
+        f'<p class="dek">Version {version} of the six-program reader set. These are working manuscripts.</p>',
         "",
     ]
     for key, item in sorted(manuscripts.items()):

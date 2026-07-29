@@ -25,7 +25,7 @@ The active local release candidate contains:
 - 355 stable-tagged atomic claim pages, all included in site search but kept
   out of the main navigation;
 - 500 many-to-many claim memberships across six research programs;
-- six version-11 reader PDFs and one companion Results and Research Register;
+- six version-12 reader PDFs and one companion Results and Research Register;
 - six self-contained, searchable program handoffs plus one cross-program
   state page under `/research/handoffs/`;
 - 74 collections with complete manuscript coverage, nine with partial
@@ -59,7 +59,7 @@ surfaces are:
   catalogue pages;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, and route validation;
-- `data/model-briefs-v3-20260729a/`: hash-pinned sanitized source for
+- `data/model-briefs-v4-20260729a/`: hash-pinned sanitized source for
   model-ready HTML handoffs;
 - `scripts/generate_compatibility_stubs_v1.py`: historical noindex
   compatibility pages for earlier public routes (not part of the active
@@ -101,9 +101,10 @@ uv run --with-requirements requirements.txt python scripts/browser_smoke_v1.py \
   --site-dir /tmp/jacobian-guide-preview
 ```
 
-The browser suite covers desktop and mobile navigation, both color schemes,
-MathJax, PDF downloads, noindex, heading structure, landmarks, link labels,
-contrast, keyboard focus, reduced motion, and horizontal overflow.
+The browser suite covers desktop and mobile navigation (including every
+handoff), both color schemes, MathJax, PDF proof links, noindex, heading
+structure, landmarks, link labels, contrast, keyboard focus, reduced motion,
+and horizontal overflow.
 
 ## Current publication policy
 
