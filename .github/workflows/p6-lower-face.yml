@@ -45,7 +45,14 @@ jobs:
           sha256sum research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
             > research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256
 
-      - name: Locate likely C.9 source members in the public archive
+      - name: Replay the exact lower-face linear quotient
+        run: |
+          python research-notes/p6-chart-correspondence/degree21_lower_face_replay.py \
+            research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
+            research-notes/p6-chart-correspondence/lower_face_supports.json \
+            --output research-notes/p6-chart-correspondence/degree21_lower_face_replay.json
+
+      - name: Scan small archive sources for the C.9 calculation
         run: |
           python - <<'PY'
           import json
@@ -55,26 +62,33 @@ jobs:
 
           archive = Path('docs-v7-20260726c/assets/technical-materials/06-plane-boundary-computational-supplement.zip')
           output = Path('research-notes/p6-chart-correspondence/archive_c9_candidates.json')
-          patterns = [
-              r'chart', r'rechart', r'layer.?four', r'layer.?4', r'two.?chart',
-              r'gauge', r'divergence', r'complete.?chain', r'approximate.?root',
-              r'blowdown', r'nullstellensatz', r'layer.?seven', r'layer.?7'
-          ]
-          compiled = [re.compile(pattern, re.IGNORECASE) for pattern in patterns]
+          expressions = {
+              'residual_dimensions': re.compile(r'residual\s+dimensions?', re.I),
+              'weighted_divergence': re.compile(r'weighted[-_ ]?divergence|\\mathcal\s*D.*Theta', re.I),
+              'layer_four': re.compile(r'layer[-_ ]?(four|4)', re.I),
+              'two_chart': re.compile(r'two[-_ ]?chart|adjacent\s+Newton\s+chart', re.I),
+              'x_minus_four': re.compile(r'X\s*(\^|\*\*)\s*\{?\s*-?4|X\s*\*\*\s*-4', re.I),
+              'complete_chain': re.compile(r'complete[-_ ]?chain', re.I),
+          }
+          suffixes = {'.py', '.sage', '.m', '.md', '.tex', '.txt', '.json', '.log'}
+          members = []
           with zipfile.ZipFile(archive) as handle:
-              members = []
               for info in handle.infolist():
-                  if info.is_dir():
+                  path = Path(info.filename)
+                  if info.is_dir() or path.suffix.lower() not in suffixes or info.file_size > 2_000_000:
                       continue
-                  matched = [pattern.pattern for pattern in compiled if pattern.search(info.filename)]
-                  if matched:
-                      members.append({
-                          'path': info.filename,
-                          'bytes': info.file_size,
-                          'matched_patterns': matched,
-                      })
+                  text = handle.read(info).decode('utf-8', errors='replace')
+                  hits = []
+                  for label, expression in expressions.items():
+                      match = expression.search(text)
+                      if match:
+                          line = text.count('\n', 0, match.start()) + 1
+                          snippet = ' '.join(text[match.start():match.start()+300].split())
+                          hits.append({'label': label, 'line': line, 'snippet': snippet})
+                  if hits:
+                      members.append({'path': info.filename, 'bytes': info.file_size, 'hits': hits})
           output.write_text(json.dumps({
-              'schema_version': 1,
+              'schema_version': 2,
               'archive_sha256': '4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585',
               'member_count': len(members),
               'members': members,
@@ -89,10 +103,11 @@ jobs:
             research-notes/p6-chart-correspondence/lower_face_supports.json \
             research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
             research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256 \
+            research-notes/p6-chart-correspondence/degree21_lower_face_replay.json \
             research-notes/p6-chart-correspondence/archive_c9_candidates.json
           if git diff --cached --quiet; then
             echo 'No generated changes.'
             exit 0
           fi
-          git commit -m 'Refresh degree-21 lower-face fixtures'
+          git commit -m 'Refresh degree-21 lower-face replay'
           git push origin HEAD:${{ github.head_ref || github.ref_name }}
