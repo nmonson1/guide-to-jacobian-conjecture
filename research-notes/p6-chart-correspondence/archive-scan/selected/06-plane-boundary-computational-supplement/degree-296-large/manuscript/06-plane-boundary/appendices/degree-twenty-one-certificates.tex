@@ -1,0 +1,208 @@
+\section{The degree-\(21\) divisor and terminal certificates}
+\label{app:degree-twenty-one}
+
+The body develops the lattice-gap quotient covers.  Here we record the
+complementary calculation on the original lower face and the exact
+certificates obtained after substituting its five dessins into the two
+surviving Newton supports.
+
+\subsection{The lower face}
+
+For either surviving support in the Guccione--Guccione--Horruitiner--Valqui
+reduction \cite{guccioneEtAl2022degree108}, the transformed bracket is
+\[
+[P,Q]=X^2.
+\]
+For the primitive toric valuation
+\[
+\nu(X)=-2,\qquad \nu(Y)=1,
+\]
+put \(z=XY^2\).  The lower faces have the form
+\[
+P_{\mathrm{face}}=Xp(z),\qquad
+Q_{\mathrm{face}}=X^2Yq(z),
+\]
+where \(\deg p=7\), \(\deg q=10\), and
+\begin{equation}
+\label{eq:degree21-face}
+pq+2zpq'-3zp'q=1.
+\end{equation}
+
+\begin{proposition}[The degree-\(21\) Belyi map]
+\label{prop:degree21-belyi}
+The rational function
+\[
+\tau(z)=z\frac{q(z)^2}{p(z)^3}
+\]
+is a degree-\(21\) Belyi map with passport
+\[
+(2^{10}1),\qquad(3^7),\qquad(17\,1^4).
+\]
+There are exactly five connected dessin isomorphism classes with this
+passport.  They form one arithmetic orbit over an irreducible quintic field
+and have monodromy \(A_{21}\).
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:degree21-face} implies that \(p,q\) are coprime and
+nonzero at zero.  Differentiation gives
+\[
+\tau'(z)=\frac{q(z)}{p(z)^4}.
+\]
+Thus the ten roots of \(q\) give double zeros, the seven roots of \(p\)
+give triple poles, and infinity has ramification index \(17\).  The total
+ramification is
+\[
+10+14+16=40=2\cdot21-2,
+\]
+so there is no additional branch value.
+
+The exact Murnaghan--Nakayama character calculation in \(S_{21}\), followed
+by the class-size factor, gives \(5\cdot21!\) labeled triples.  Each is
+transitive, and the deck group is trivial, so there are five isomorphism
+classes.  Exact coefficient reconstruction places all five over one
+quintic field; exact permutation certificates give monodromy \(A_{21}\).
+The enumeration and reconstruction are computer-assisted.
+\end{proof}
+
+\subsection{Identification with Borisov's divisor}
+
+\begin{theorem}[Valuation over \(F_{-5}\)]
+\label{thm:borisov-fminusfive}
+Let \(E_\nu\) be the source divisor defined by \(\nu\).  Its target center is
+Borisov's divisor \(F_{-5}\).  The normal ramification index and residue
+degree are
+\[
+(e,f)=(1,21).
+\]
+Consequently neither surviving Newton support can realize Borisov's
+Three-dessin framework.
+\end{theorem}
+
+\begin{proof}
+Set \(t=Y\), so \(x=t^2/z\) in the original source coordinates.  The source
+volume form is
+\[
+dx\wedge dy=t^{-6}z^2\,dt\wedge dz.
+\]
+After adding the reduced boundary coefficient, the augmented-canonical label
+is \(-5\).
+
+The face expansions are
+\[
+P=t^{-2}zp(z)+\text{higher \(\nu\)-terms},\qquad
+Q=t^{-3}z^2q(z)+\text{higher \(\nu\)-terms}.
+\]
+On the target put
+\[
+s=\frac P Q,\qquad \lambda=\frac{Q^2}{P^3}.
+\]
+Then \(s\) is a uniformizer and
+\[
+dP\wedge dQ=-s^{-6}\lambda^{-3}\,ds\wedge d\lambda,
+\]
+so the target label is also \(-5\).  Pullback gives
+\[
+\frac P Q
+=t\left(\frac{p(z)}{zq(z)}+O(t)\right),
+\]
+hence \(e=1\).  The residue of \(\lambda\) is
+\[
+\operatorname{res}_{E_\nu}(\lambda)
+=z\frac{q(z)^2}{p(z)^3}=\tau(z),
+\]
+so \(f=21\) by \cref{prop:degree21-belyi}.
+
+In Borisov's target coordinates \((y_1,y_2)=(Q,P)\), the divisor
+\(F_{-5}\) is characterized by valuations \((-3,-2)\) and by the
+nonconstant residual parameter \(y_1^2/y_2^3\).  Those are exactly the
+values above.  Later infinitely-near divisors with the same two numerical
+orders have constant residue of this parameter, so they are distinguished.
+
+Borisov's Three-dessin framework gives residue degree \(16\) on its unique
+source divisor above \(F_{-5}\) \cite{borisov2020frameworks}.  The forced
+divisor has residue degree
+\(21\), a contradiction.  This excludes the named framework, not the two
+supports themselves.
+\end{proof}
+
+\begin{corollary}
+Any plane counterexample of maximum coordinate degree below \(125\) has
+generic degree at least \(21\).
+\end{corollary}
+
+\begin{proof}
+The published below-\(125\) reduction leaves the two supports above, and the
+generic-degree formula contains the contribution \(ef=21\) from
+\cref{thm:borisov-fminusfive}.
+\end{proof}
+
+\begin{question}
+Is \(E_\nu\) the only source divisor over the generic point of \(F_{-5}\)?
+The calculation \(f=21\) is one residue-degree contribution; cancellation
+valuations or infinitely-near divisors could contribute additional sheets.
+\end{question}
+
+\subsection{Exact support certificates}
+
+Substituting the five reconstructed lower faces into the truncated Newton
+support gives seven compatibility equations over the quintic field.  A
+nonzero exact resultant, certified by good reduction, eliminates every
+dessin.  Thus the truncated support is empty in characteristic zero.
+
+For the full support, exact layer elimination and normalization reduce the
+problem to fifteen equations in five variables over the same quintic field.
+Six selected equations already generate the unit ideal.
+
+\begin{theorem}[Terminal unit-ideal certificate]
+\label{thm:terminal-unit}
+For the stored normalized full-support system, the six selected obstruction
+equations generate the unit ideal over the quintic coefficient field.
+\end{theorem}
+
+\begin{proof}[Exact computer-assisted certificate]
+The Macaulay multiplication map has \(10{,}824\) columns.  The certificate
+specifies \(7{,}121\) rows and \(7{,}121\) pivot columns.  Reducing this
+exact minor at a good prime and at the selected quintic embedding gives
+\[
+\det=859\pmod{2053}.
+\]
+The determinant is therefore nonzero in characteristic zero.  The
+certificate package regenerates all fifteen exact equations, rebuilds the
+matrix, and replays the fixed pivot minor.
+\end{proof}
+
+Combining the truncated resultant and
+\cref{thm:terminal-unit} eliminates both encoded support alternatives after
+the degree-\(21\) face substitution.  This statement is exact for the stored
+systems.  Turning it into a stand-alone global below-\(125\) proof requires
+a line-by-line audit that the published Newton reduction, the five faces,
+all saturations and normalizations, and the layer systems exhaust every
+candidate.
+
+There is also a smaller geometric compression.  Five partial-gluing
+equations have mixed volume \(296\); on the certified
+\(296\)-dimensional modular finite algebra, the sixth obstruction is a unit,
+and its rational norm over the five split embeddings is
+\[
+51\pmod{2053}.
+\]
+This is already a compact representative of the large certificate.  To use
+it as an independent characteristic-zero proof, one still needs a
+publication-level toric-saturation lemma showing that the finite \'{e}tale
+special fiber exhausts the complete toric intersection.
+
+\subsection{Credit for the degree-\(125\) conclusion}
+
+MathOverflow user \texttt{ratto3423} publicly announced the conclusion that
+every characteristic-zero plane counterexample has maximum coordinate degree
+at least \(125\), based on a computer-assisted elimination of the same two
+supports \cite{ratto3423degree125}.  We credit that public theorem
+announcement to \texttt{ratto3423}.  The public answer does not disclose
+enough method to compare its computation with the certificates above.
+
+Accordingly, our claim is not priority for the degree-\(125\) conclusion.
+The potential contribution of this project is the explicit degree-\(21\)
+boundary description and an independently auditable terminal certificate
+architecture.  The current certificate is conditional only at the upstream
+exhaustiveness layer described above, not at its final linear-algebra step.

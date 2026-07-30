@@ -1,0 +1,183 @@
+\section{Gauge normal form and filtered principal-part obstructions}
+\label{sec:filtered-principal-parts}
+
+Retain the notation
+\[
+ A=A_0,\qquad B=B_0,\qquad
+ \Omega=2A\,dB-3B\,dA=z^2\,dz.
+\]
+For a layer variation $(a,b)$ put
+\[
+ u=\frac aA,\qquad v=\frac bB,\qquad
+ \xi=u+v,\qquad \eta=2v-3u.
+\]
+
+\begin{proposition}[Gauge normal form]
+\label{prop:gauge-normal-form}
+For every normal order $r$,
+\begin{equation}
+\label{eq:gauge-normal-form}
+ \boxed{
+ \mathscr D_r(a,b)
+ =AB\left(d\eta+\frac r5\eta\,d\log(AB)\right)
+ +\frac{5-r}{5}\xi\,\Omega.}
+\end{equation}
+Consequently, over the rational function field of the boundary curve,
+$\mathscr D_r$ is surjective for $r\ne5$.  At the resonant order,
+\begin{equation}
+\label{eq:resonant-exact}
+ \boxed{\mathscr D_5(a,b)=d(2Ab-3Ba).}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Substitute
+\[
+ u=\frac{2\xi-\eta}{5},\qquad
+ v=\frac{3\xi+\eta}{5}
+\]
+into
+\[
+ \mathscr D_r(a,b)
+ =(2-r)a\,dB-3B\,da+2A\,db+(r-3)b\,dA
+\]
+to obtain \eqref{eq:gauge-normal-form}.  If $r\ne5$, set $\eta=0$ and
+$\xi=5\Phi/((5-r)\Omega)$ to solve $\mathscr D_r(a,b)=\Phi$ over the
+function field.  For $r=5$, the $\xi$ term disappears and
+$AB(d\eta+\eta\,d\log(AB))=d(AB\eta)=d(2Ab-3Ba)$.
+\end{proof}
+
+\begin{remark}[An extended deformation complex]
+Allowing a variation $\rho\Omega$ of the normalized right-hand side, put
+\[
+ \widetilde{\mathscr D}_r(a,b,\rho)
+ =\mathscr D_r(a,b)-\rho\Omega.
+\]
+Then
+\[
+ G_r(h)=(2Ah,3Bh,(5-r)h)
+\]
+satisfies $\widetilde{\mathscr D}_r\circ G_r=0$.  Thus the fixed layer is
+represented by the three-term complex
+\[
+ \mathcal G_r\xrightarrow{G_r}
+ \mathcal U_{A,r}\oplus\mathcal U_{B,r}\oplus\mathcal R_r
+ \xrightarrow{\widetilde{\mathscr D}_r}\mathcal W_r.
+\]
+At $r=5$ the right-hand-side component of $G_r$ vanishes, leaving the
+residual normal-coordinate gauge in the fixed-volume problem.
+\end{remark}
+
+\subsection{The exact two-point windows}
+
+Let $o=(z=0)$ and $p=(z=\infty)$ on $E\simeq\mathbf P^1$.  For
+$5\le r\le8$, the full Newton support gives
+\begin{align}
+ U_{A,r}&=\langle1,z,\ldots,z^{10-r}\rangle
+        =H^0(E,\mathcal O((10-r)p)),\label{eq:UA-window}\\
+ U_{B,r}&=\langle1,z,\ldots,z^{15-r}\rangle
+        =H^0(E,\mathcal O((15-r)p)),\label{eq:UB-window}\\
+ W_r&=\langle z^{-1},1,z,\ldots,z^{24-r}\rangle\,dz
+     =H^0(E,\Omega_E^1(o+(26-r)p)).\label{eq:W-window}
+\end{align}
+The exact layer matrices have full column rank, hence
+\[
+ \dim\operatorname{coker}\mathscr D_r
+ =(26-r)-(11-r)-(16-r)=r-1.
+\]
+
+\begin{proposition}[Filtered principal-part duality]
+\label{prop:filtered-principal-part-duality}
+Order the target basis as $z^I dz$, $-1\le I\le24-r$.  If
+$c=(c_I)$ is a row vector, set
+\[
+ \lambda_c(z)=\sum_{I=-1}^{24-r}c_Iz^{-I-1}.
+\]
+Then $c$ lies in the left kernel of the layer matrix if and only if
+\begin{align}
+ \operatorname{Res}_{0}\!
+ \left(z^i\bigl(3B\,d\lambda_c+(5-r)\lambda_c\,dB\bigr)\right)&=0,
+ &&0\le i\le10-r,\label{eq:filtered-adjoint-A}\\
+ \operatorname{Res}_{0}\!
+ \left(z^j\bigl(-2A\,d\lambda_c+(r-5)\lambda_c\,dA\bigr)\right)&=0,
+ &&0\le j\le15-r.\label{eq:filtered-adjoint-B}
+\end{align}
+For the lower-layer forcing form $\Phi_r$, the corresponding compatibility
+coordinate is
+\begin{equation}
+\label{eq:residue-coordinate}
+ c^T(-\Phi_r)
+ =\operatorname{Res}_{0}\bigl(\lambda_c(-\Phi_r)\bigr).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The identity
+\begin{align*}
+ \lambda\mathscr D_r(a,b)
+ &-a\bigl(3B\,d\lambda+(5-r)\lambda\,dB\bigr)\\
+ &-b\bigl(-2A\,d\lambda+(r-5)\lambda\,dA\bigr)
+ =d(-3\lambda Ba+2\lambda Ab).
+\end{align*}
+shows that the residue of the left side is zero.  Taking successively
+$a=z^i,b=0$ and $a=0,b=z^j$ gives
+\eqref{eq:filtered-adjoint-A}--\eqref{eq:filtered-adjoint-B}.  Conversely,
+those equalities say exactly that the residue functional annihilates every
+column of the ordered coefficient matrix.  Formula
+\eqref{eq:residue-coordinate} is the definition of the dual monomial basis.
+\end{proof}
+
+\begin{remark}
+Away from resonance the two adjoint expressions in
+\eqref{eq:filtered-adjoint-A}--\eqref{eq:filtered-adjoint-B} need not vanish
+as meromorphic differentials.  Only their projections to the duals of the
+allowed Newton windows vanish.  The obstruction classes are therefore
+filtered principal parts, rather than unrestricted global adjoint
+solutions.
+\end{remark}
+
+\subsection{The exact cokernel frames through order eight}
+
+The deterministic row reduction gives echelon principal-part frames whose
+leading pole orders at $o$ are
+\[
+\begin{array}{c|c|c}
+ r&\dim\operatorname{coker}\mathscr D_r&
+ \text{leading pole orders}\\
+\hline
+5&4&0,18,19,20\\
+6&5&0,16,17,18,19\\
+7&6&0,14,15,16,17,18\\
+8&7&0,12,13,14,15,16,17.
+\end{array}
+\]
+In every layer the order-zero class is represented by $\lambda=1$ and its
+forcing pairing vanishes identically.  At $r=5$, the order-twenty class also
+pairs identically to zero; the order-nineteen pairing vanishes after the
+order-four normalization.  At $r=6$, the order-nineteen pairing vanishes
+after that normalization.  The surviving normalized equations are therefore
+\[
+1,3,5,6
+\]
+at orders $5,6,7,8$, respectively.
+
+In particular, the five weight-seven equations are exactly the residue
+coordinates with leading pole orders $14,15,16,17,18$, and the six
+weight-eight equations are exactly those with leading pole orders
+$12,13,14,15,16,17$.  The exact principal parts and normalization scalars
+are contained in the accompanying machine-readable certificate.
+
+\begin{remark}[The six resultant coordinates]
+The sparse resultant and norm certificate uses
+\[
+ (F_4,F_6,F_8,F_9,F_{10},F_{11}).
+\]
+In the filtered frames above these are the layer-seven coordinates of
+leading pole orders $14,16,18$ and the layer-eight coordinates of leading
+pole orders $12,13,14$.  This is an exact coordinate projection of the full
+fifteen-component obstruction section.  It is not a whole layer or a
+subspace defined by one pole cutoff.  The present calculation therefore
+does not identify this six-dimensional projection as a canonical
+subquotient of the pole filtration; its current justification is its exact
+unit-ideal and mixed-volume effectiveness.
+\end{remark}

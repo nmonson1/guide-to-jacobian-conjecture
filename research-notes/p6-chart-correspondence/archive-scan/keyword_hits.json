@@ -2,237 +2,273 @@
   "archive": "06-plane-boundary-computational-supplement.zip",
   "archive_sha256": "4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585",
   "entry_count": 151,
-  "extracted_bytes": 58207,
+  "extracted_bytes": 252175,
   "file_count": 151,
-  "hit_count": 184,
+  "hit_count": 234,
   "hits": [
     {
-      "keyword": "support window|support matrix|support transport",
+      "keyword": "support window|support matrix|support transport|chart-matching",
       "line": 9,
       "path": "06-plane-boundary-computational-supplement/COMPUTATION.md",
       "snippet": "| Exact normal linearization | `code/verify_exact_normal_form.py` | logarithmic wedge coefficient, determinant-one jet block, \\((8,28)\\) boundary-volume identity, and full-support window dimensions |"
     },
     {
-      "keyword": "D_4|D4",
-      "line": 6,
-      "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"d4ed01c56647fff1476f1fa4a2b8be84e0d32f504808f5034d8850b65ad5c02e\""
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 11,
+      "path": "06-plane-boundary-computational-supplement/COMPUTATION.md",
+      "snippet": "| Degree-\\(21\\) quotient faces | `computational-supplement/degree-twenty-one/` | character count, five dessins, exact Belyi reconstruction, passports, and lower-face substitutions |"
     },
     {
-      "keyword": "D_4|D4",
-      "line": 26,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 85,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"e17da37f870d45ba8af8e2848650dcf13e4a5b95362a4161618222eb4e2e5af8\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/README.md\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 36,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 90,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"780c644701688ab1a3b36040691aae336be2b412cada338d4be3ae05c2e7857c\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 56,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 95,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"b43871c8897512b752c9e8fa8d4f2d80571865d465940e13b36f130d07091942\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/attack_8_28.py\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 66,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 100,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"4f5cb3d479c8d6ef301ff41f62e0c88a71b6fd695a4b868524a99c84bc4a6086\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/boundary_graph_data.json\","
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 105,
+      "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py\","
+    },
+    {
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 110,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
       "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/character_count_degree21.py\","
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 115,
+      "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/deeper_exact_reduction.json\","
+    },
+    {
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 120,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
       "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/degree21_dessin_count.json\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 121,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 125,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"6c80ddc676e425220e236f4135a08bc97845f8201b637d47d1b38fb2cc6b8084\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/enumerate_five_dessins.py\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 151,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 130,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"0893503545463c8a242c5b9100fe37d1e33629196b0d44024306fc4ac40bd87a\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/exact_data.json\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 156,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 135,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"1cb13f9c7cb2d8d24fcaf982d4c3c80978946748d346f54b58f7f2d670744ab9\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/extend_attack.py\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 176,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 140,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"e1c6d0c43fef387791d00c714682e4f86cd96dda7e2c22e832509d46887e8451\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/fan_data.json\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 191,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 145,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"63fb30b6de06df86c9c87e968d4d72e58b9218134a9eaa8cbce978b78901eb5e\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/full_coefficient_ideal.sing\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 211,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 150,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"33cea48ebe382a9a10b3669f899bc86015ce0b05d64c96dd48b34fb21ebb2174\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/full_first_nonlinear_obstruction.txt\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 221,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 155,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"e7520fe2d56057d4a4339acedf6b1139631e02ec9e6a5c8d18b7b7ad8cb644db\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/minus5_belyi_obstruction.json\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 246,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 160,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"b4a8d4c2aab624e52e1bb07337069300279a6032003d835cc3a400bb2274ef3e\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/refined_fan_data.json\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 276,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 165,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"6f9e9632a0d976c448c4689b41abe4ec66f8517404a7fb36b6ab5d4903452ee8\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/truncated_coefficient_ideal.sing\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 281,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 170,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"dcb23b88c89bb3588d48e98826abe3289ce040a469ca610666b17baae8acaa1f\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/truncated_first_nonlinear_obstruction.txt\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 286,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 175,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"026a0d41f5672c3e34ddecef4c7bb8096ef63530c548da03045c4780f9f83cfb\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/verify_minus5_belyi.py\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 331,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 180,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"5f58817470d49b1f7739edf97f94b09a5330b80ffdcdce1e9e68b1fd712df1d5\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/verify_quintic_field.py\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 346,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 430,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"7e3e9d474c0e4251117d20f7cc5de78360b781a191598969733baacaee63c04b\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u1975.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 351,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 435,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"e3e76d6253ca6f153d4d464e5f0116c2ee6f06ccd236b4d974cb4bcb5cda003d\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u216.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 396,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 440,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"e17da37f870d45ba8af8e2848650dcf13e4a5b95362a4161618222eb4e2e5af8\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u531.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 416,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 445,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"34d5d45d348418de5171088c31c4e1685d1e57fdade9f1b4462b826134b2c713\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u664.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 431,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 450,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"6549ecc4d04889e2c721136f77774bc81c905510410b80d44506daed5102d22f\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u721.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 466,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 455,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"cea60a09a835c5dbb67a64f679487909801317b0fda06b5c8abd4a5991f81c34\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/krylov_charpoly_p2053_u216.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 496,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 460,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"4aa192f613ebb7493eee74a7b955d19d404c2d83a79cb4fb97a7787542f1c11e\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/modular_groebner_basis_p2053_u216.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 506,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 470,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"bc4ca14ab87d6eba22bc392cba94f0b0bc339511fc4a5c6bf8d432b3438f6026\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/six_p2053_u216.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 556,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 475,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"524108e9dba8bafd8c4ee6d4b1151946e78c9df3121397850206b8886806631f\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var0_matrix_p2053_u216.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 571,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 480,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"e24a7e4578762335fc723f0fd2d647370b1ef3b6de42bd7f4ac450a8d435e199\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var1_matrix_p2053_u216.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 576,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 485,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"7562afab59875d04d58da6917a6c8d7166ba6b21536ea6de1d418c48078f230c\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var2_matrix_p2053_u216.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 626,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 490,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"780c644701688ab1a3b36040691aae336be2b412cada338d4be3ae05c2e7857c\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var3_matrix_p2053_u216.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 646,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 495,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"b43871c8897512b752c9e8fa8d4f2d80571865d465940e13b36f130d07091942\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var4_matrix_p2053_u216.bin\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 656,
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 505,
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"4f5cb3d479c8d6ef301ff41f62e0c88a71b6fd695a4b868524a99c84bc4a6086\""
+      "snippet": "\"path\": \"06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex\","
     },
     {
-      "keyword": "D_4|D4",
-      "line": 711,
-      "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"1f1d3c0e7fe21f2015657668543b0564e27ec007957d1d02cf6e7dc19aa5dd4a\""
-    },
-    {
-      "keyword": "D_4|D4",
-      "line": 731,
-      "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"4d4ab290055975211339542de079f016056fda658b9e844df5298abb221a4656\""
-    },
-    {
-      "keyword": "D_4|D4",
-      "line": 736,
-      "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
-      "snippet": "\"sha256\": \"e3e76d6253ca6f153d4d464e5f0116c2ee6f06ccd236b4d974cb4bcb5cda003d\""
-    },
-    {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 50,
       "path": "06-plane-boundary-computational-supplement/code/verify_exact_normal_form.py",
       "snippet": "# The degree-21 face gives Omega=z^2 dz."
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 26,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/COMPLETION_REPORT.md",
+      "snippet": "`F_2053` at `u=216`;"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 31,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/COMPLETION_REPORT.md",
+      "snippet": "`det(m_rho)=682 mod 2053`. Proper toric compactification and the complete"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 13,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/README.md",
+      "snippet": "- complete 296-dimensional reduced finite algebra over `F_2053`;"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 15,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/README.md",
+      "snippet": "- `det(m_rho)=682 mod 2053`;"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 16,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/README.md",
+      "snippet": "- five split determinant residues `682,116,337,242,740` with product `51 mod 2053`;"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 18,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/THEOREM_AND_DEPENDENCIES.md",
+      "snippet": "At the prime `p=2053`, with `u=216`, the five equations `g_1,...,g_5` are"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 24,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/THEOREM_AND_DEPENDENCIES.md",
+      "snippet": "Localizing the coefficient ring at `(2053,u-216)` therefore gives a finite"
     },
     {
       "keyword": "normal[-_ ]?layer",
@@ -241,7 +277,7 @@
       "snippet": "1. the lower-face reconstruction and first four normal-layer reductions are exhaustive;"
     },
     {
-      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)",
+      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)|X\\^\\{-4\\}",
       "line": 41,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/export_residue_audit.py",
       "snippet": "MINPOLY_EXPR = X**5 - X**4 + 3 * X**3 + 3 * X**2 + 26"
@@ -259,100 +295,184 @@
       "snippet": "\"normal_layer\": r,"
     },
     {
-      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)",
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 855,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/export_residue_audit.py",
+      "snippet": "\"Psi\": [{\"z_exp\": 2, \"coeff_basis\": k_to_vector(ONE), \"coeff_expr\": \"1\"}],"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 27,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/generate_toric_face_systems.py",
+      "snippet": "PRIME=2053"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 2,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_galois_norm.py",
+      "snippet": "\"\"\"Verify the five residue determinants and their rational field norm modulo 2053.\"\"\""
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 11,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_galois_norm.py",
+      "snippet": "PRIME = 2053"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 98,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_galois_norm.py",
+      "snippet": "monomials, matrix = read_matrix(directory / f\"f4_matrix_p2053_u{root}.bin\")"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 2,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_good_prime.py",
+      "snippet": "\"\"\"Verify the arithmetic conditions used at the split prime p=2053.\"\"\""
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 7,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_good_prime.py",
+      "snippet": "P=2053"
+    },
+    {
+      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)|X\\^\\{-4\\}",
       "line": 21,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_good_prime.py",
       "snippet": "f=lambda x:(x**5-x**4+3*x**3+3*x**2+26)%P"
     },
     {
-      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)",
+      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)|X\\^\\{-4\\}",
       "line": 22,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_good_prime.py",
       "snippet": "fp=lambda x:(5*x**4-4*x**3+9*x**2+6*x)%P"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 92,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/README.md",
       "snippet": "| -5 | `(-2,1)` | `(-2,-3)` | degree-21 map onto target `-5` |"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 106,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/README.md",
       "snippet": "so `tau` is a degree-21 Belyi map with passport"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 112,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/README.md",
       "snippet": "## Exact dessin count for the forced degree-21 face map"
     },
     {
-      "keyword": "residual",
-      "line": 118,
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/README.md",
-      "snippet": "gives an ordered-triple count equal to `5 * 21!`. Every such triple is transitive: an orbit outside the 17-cycle would consist of points fixed by the third permutation; on such an orbit the order-2 and order-3 permutations would be mutual \u2026"
-    },
-    {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 8,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md",
       "snippet": "4. The common toric `Kbar=-5` divisor forces a degree-21 Belyi map with passport"
     },
     {
-      "keyword": "approximate root",
+      "keyword": "approximate root|common linear form",
       "line": 116,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md",
       "snippet": "Thus the first nonlinear obstruction does not kill the case; it forces the first correction to be a change of approximate root."
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 118,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md",
       "snippet": "## 3. Toric boundary and the forced degree-21 Belyi map"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 161,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md",
       "snippet": "It follows that `p` and `q` are coprime and squarefree, and have no zero at `z=0`. Hence `tau` has degree 21 and passport"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 181,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md",
       "snippet": "1. construct the five degree-21 Belyi maps explicitly;"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 79,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
+      "snippet": "theta=K([0,1,0,0,0])"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 89,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
+      "snippet": "a[0]=K(1);a[1]=K(1);a[2]=theta"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 91,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
+      "snippet": "poly=sum((K(rel[j])*(theta**j) for j in range(5)),K(0))"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 137,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
+      "snippet": "out={'minimal_polynomial':list(map(str,f)), 'a':[kel_json(x) for x in a], 'b':[kel_json(x) for x in b], 'H':[kel_json(x) for x in H], 'tau_infinity':kel_json(L), 'normalization':'a0=a1=b0=1; theta=a2'}"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 151,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
+      "snippet": "elif i==1:term=r'(%s)\\\\theta'%qtex(c)"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 152,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
+      "snippet": "else:term=r'(%s)\\\\theta^{%d}'%(qtex(c),i)"
+    },
+    {
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 157,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
       "snippet": "g.write('%% Auto-generated exact degree-21 Belyi data.\\n')"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 2,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/enumerate_five_dessins.py",
       "snippet": "\"\"\"Exact verification of five degree-21 passport representatives."
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 141,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/extend_attack.py",
       "snippet": "| -5 | `(-2,1)` | `(-2,-3)` | degree-21 map onto target `-5` |"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 155,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/extend_attack.py",
       "snippet": "so `tau` is a degree-21 Belyi map with passport"
     },
     {
-      "keyword": "residue adjoint|left kernel",
+      "keyword": "residue adjoint|left kernel|principal-part residue",
       "line": 6,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md",
       "snippet": "- `terminal_boundary_gluing_program.tex` / `.md` \u2014 universal determinant layer operator, residue adjoint, Riemann--Roch index, contact-degree formula, hypergeometric secondary Belyi transport, filtered one-layer descent, the conditional gl\u2026"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 12,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md",
+      "snippet": "- `boundary_complex_index.py` \u2014 verifies the universal layer/adjoint integration-by-parts identity and the current virtual obstruction excess \\(\\epsilon_r=r-1\\)."
+    },
+    {
+      "keyword": "Y.*lambda.*X|Y.*\\\\lambda.*X",
+      "line": 109,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
+      "snippet": "y\\longmapsto y+\\lambda x^{-1/5},"
     },
     {
       "keyword": "normal[-_ ]?layer",
@@ -361,70 +481,82 @@
       "snippet": "4. enumerate the finite normal-layer windows;"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 173,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
       "snippet": "This is the first meaningful test of whether the degree-21 gluing mechanism is a terminal-chain mechanism rather than a special feature of the \\((8,28)\\) support."
     },
     {
-      "keyword": "residue adjoint|left kernel",
+      "keyword": "residue adjoint|left kernel|principal-part residue",
       "line": 260,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
       "snippet": "3. form the intrinsic determinant layer operators and their pole-filtered residue adjoints;"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 2,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_dessin_count.json",
       "snippet": "\"degree21_regression\": {"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 2,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_dessin_count.log",
       "snippet": "\"degree21_regression\": {"
     },
     {
-      "keyword": "residual",
-      "line": 68,
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/boundary_complex_index.py",
-      "snippet": "residual = sp.expand(lam * D - a * ca - b * cb - sp.diff(primitive, z))"
-    },
-    {
-      "keyword": "residual",
-      "line": 69,
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/boundary_complex_index.py",
-      "snippet": "assert sp.simplify(residual) == 0"
-    },
-    {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 12,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/count_F2_terminal_dessins.py",
       "snippet": "* reproduces the known degree-21 count 5 as a regression check;"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 312,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/count_F2_terminal_dessins.py",
       "snippet": "# Regression check: the degree-21 passport from the earlier calculation."
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 351,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/count_F2_terminal_dessins.py",
       "snippet": "\"degree21_regression\": {\"character_sum\": str(s21), \"weighted_count\": str(h21)},"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 1,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
       "snippet": "# From the degree-21 boundary obstruction to a terminal gluing\u2013descent program"
     },
     {
-      "keyword": "residue adjoint|left kernel",
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 10,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
+      "snippet": "\\alpha A B_z-\\beta A_zB+s(A_zB_s-A_sB_z)=\\Psi(z),"
+    },
+    {
+      "keyword": "residue adjoint|left kernel|principal-part residue",
       "line": 21,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
       "snippet": "Its residue adjoint is"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 40,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
+      "snippet": "\\epsilon=d_W-d_A-d_B-1."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 46,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
+      "snippet": "\\epsilon_r=r-1."
+    },
+    {
+      "keyword": "Y.*lambda.*X|Y.*\\\\lambda.*X",
+      "line": 133,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
+      "snippet": "In the boundary complex, these \\(\\lambda\\)'s are precisely the high-pole adjoint residue classes. Therefore vanishing high-pole residues *does* lower a single Newton window. The missing step is to make the reductions compatible across all \u2026"
     },
     {
       "keyword": "normal[-_ ]?layer",
@@ -433,22 +565,52 @@
       "snippet": "In the boundary complex, these \\(\\lambda\\)'s are precisely the high-pole adjoint residue classes. Therefore vanishing high-pole residues *does* lower a single Newton window. The missing step is to make the reductions compatible across all \u2026"
     },
     {
-      "keyword": "residue adjoint|left kernel",
+      "keyword": "residue adjoint|left kernel|principal-part residue",
       "line": 40,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
       "snippet": "The surviving $(8,28)$ Newton case has an exact characteristic-zero no-gluing certificate: a degree--$21$ primary boundary cover and a forced degree--$17$ secondary cover admit $296$ partial normal thickenings, but a final global residue i\u2026"
     },
     {
-      "keyword": "residue adjoint|left kernel",
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 83,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
+      "snippet": "+s(A_zB_s-A_sB_z)=\\Psi(z),"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 93,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
+      "snippet": "\\alpha A_0B_0'-\\beta A_0'B_0=\\Psi."
+    },
+    {
+      "keyword": "residue adjoint|left kernel|principal-part residue",
       "line": 117,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
       "snippet": "\\subsection{Residue adjoint}"
     },
     {
-      "keyword": "residue adjoint|left kernel",
+      "keyword": "residue adjoint|left kernel|principal-part residue",
       "line": 119,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
       "snippet": "\\begin{proposition}[Universal residue adjoint]\\label{prop:adjoint}"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 158,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
+      "snippet": "\\epsilon_r=d_W-d_A-d_B-1."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 160,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
+      "snippet": "If $\\mathscr D_r$ is injective, then $\\dim\\coker\\mathscr D_r=\\epsilon_r$."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 179,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
+      "snippet": "\\boxed{\\epsilon_r=(25-r)-(10-r)-(15-r)-1=r-1.}"
     },
     {
       "keyword": "normal[-_ ]?layer",
@@ -457,10 +619,64 @@
       "snippet": "At a fixed normal layer, vanishing of all adjoint residue components above a chosen pole threshold is equivalent to the existence of a correction $(a_r,b_r)$ after which the forcing one-form lies in the smaller pole window."
     },
     {
-      "keyword": "residue adjoint|left kernel",
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 168,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "snippet": "\\bar p_\\varepsilon"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 169,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "snippet": "=1+u+\\left(\\frac13+\\varepsilon\\frac{\\sqrt6}{18}\\right)u^2,"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 173,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "snippet": "\\bar q_\\varepsilon"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 175,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "snippet": "+\\left(\\frac25+\\varepsilon\\frac{\\sqrt6}{40}\\right)u^2"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 176,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "snippet": "+\\left(\\frac{17}{160}+\\varepsilon\\frac{11\\sqrt6}{480}\\right)u^3,"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 177,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "snippet": "\\qquad\\varepsilon=\\pm1."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 197,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "snippet": "The source scaling \\(u\\mapsto(1+\\epsilon)u\\) gives the kernel vector"
+    },
+    {
+      "keyword": "residue adjoint|left kernel|principal-part residue",
       "line": 225,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
       "snippet": "and residue adjoint"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 245,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "snippet": "\\epsilon=d_W-d_A-d_B-1."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 248,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "snippet": "The certified \\((8,28)\\) support has \\(\\epsilon_r=r-1\\)."
     },
     {
       "keyword": "normal[-_ ]?layer",
@@ -469,16 +685,46 @@
       "snippet": "For the \\(F_2\\) chain, one must still propagate the **full** Newton supports through the approximate-root shears and the quotient \\(u=z^5\\). The complete-chain table fixes the terminal face but does not by itself determine every normal-lay\u2026"
     },
     {
-      "keyword": "residual",
-      "line": 54,
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_face_rigidity.py",
-      "snippet": "scaling_residual = (matrix * scaling).applyfunc(sp.simplify)"
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 353,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "snippet": "has exactly two classes, conjugate over \\(\\mathbf Q(\\sqrt6)\\). With \\(\\varepsilon=\\pm1\\), set"
     },
     {
-      "keyword": "residual",
-      "line": 55,
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_face_rigidity.py",
-      "snippet": "assert scaling_residual == sp.zeros(rows, 1)"
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 356,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "snippet": "\\bar p_\\varepsilon"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 357,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "snippet": "=1+u+\\left(\\frac13+\\varepsilon\\frac{\\sqrt6}{18}\\right)u^2,"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 361,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "snippet": "\\bar q_\\varepsilon"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 363,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "snippet": "+\\left(\\frac25+\\varepsilon\\frac{\\sqrt6}{40}\\right)u^2"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 364,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "snippet": "+\\left(\\frac{17}{160}+\\varepsilon\\frac{11\\sqrt6}{480}\\right)u^3."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 403,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "snippet": "The infinitesimal source rescaling \\(u\\mapsto(1+\\varepsilon)u\\) gives"
     },
     {
       "keyword": "normal[-_ ]?layer",
@@ -487,34 +733,154 @@
       "snippet": "2. compute the two-point line-bundle windows for every normal layer;"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 142,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex",
+      "snippet": "\\bar p_\\varepsilon=1+u+\\left(\\frac13+\\varepsilon\\frac{\\sqrt6}{18}\\right)u^2,"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 145,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex",
+      "snippet": "\\bar q_\\varepsilon=\\frac14+\\frac58u"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 146,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex",
+      "snippet": "+\\left(\\frac25+\\varepsilon\\frac{\\sqrt6}{40}\\right)u^2"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 147,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex",
+      "snippet": "+\\left(\\frac{17}{160}+\\varepsilon\\frac{11\\sqrt6}{480}\\right)u^3,"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 148,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex",
+      "snippet": "\\qquad\\varepsilon=\\pm1."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 172,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex",
+      "snippet": "The infinitesimal source rescaling $u\\mapsto(1+\\varepsilon)u$ gives"
+    },
+    {
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 135,
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/universal_boundary_transport.py",
       "snippet": "# Exact specialization appearing in the degree-21/17 boundary calculation."
     },
     {
-      "keyword": "D_4|D4",
-      "line": 45,
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/exact_certificate_manifest.json",
-      "snippet": "\"sha256\": \"4d4ab290055975211339542de079f016056fda658b9e844df5298abb221a4656\""
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 18,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "F_{\\epsilon,0},\\ldots,F_{\\epsilon,8}\\in K[I,H,G,A],\\qquad \\epsilon\\in\\{+1,-1\\}."
     },
     {
-      "keyword": "D_4|D4",
-      "line": 61,
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/exact_certificate_manifest.json",
-      "snippet": "\"sha256\": \"1f1d3c0e7fe21f2015657668543b0564e27ec007957d1d02cf6e7dc19aa5dd4a\""
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 23,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "> **Exact certificate theorem.** For each \\(\\epsilon=\\pm1\\), there are polynomials"
     },
     {
-      "keyword": "D_4|D4",
-      "line": 105,
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/exact_certificate_manifest.json",
-      "snippet": "\"sha256\": \"ddfe10be5879c051c1c8d90a55def263a32467310694553c03dc53fd41163581\""
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 24,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "> \\(C_{\\epsilon,j}\\in K[I,H,G,A]\\) such that"
     },
     {
-      "keyword": "residual",
-      "line": 75,
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/modular_macaulay_witness.py",
-      "snippet": "selected.append({'generator':gi,'multiplier':list(mm),'pivot_col':pc,'residual_pivot':pv})"
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 26,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "> \\sum_{j=0}^{8}C_{\\epsilon,j}F_{\\epsilon,j}=1."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 28,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "> Moreover every product \\(C_{\\epsilon,j}F_{\\epsilon,j}\\) has total degree at most \\(5\\)."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 33,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "(F_{\\epsilon,0},\\ldots,F_{\\epsilon,8})=K[I,H,G,A]"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 51,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "mF_{\\epsilon,j},\\qquad \\deg(mF_{\\epsilon,j})\\le5."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 63,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "1\\pmod{31}\\quad(\\epsilon=+1),"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 65,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "17\\pmod{31}\\quad(\\epsilon=-1)."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 2,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/exact_certificate_manifest.json",
+      "snippet": "\"statement\": \"For each exceptional system I_epsilon in K[I,H,G,A], epsilon=+1,-1, an exact degree-5 Macaulay certificate proves 1 in I_epsilon.\","
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 32,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/make_certificate_manifest.py",
+      "snippet": "'statement':'For each exceptional system I_epsilon in K[I,H,G,A], epsilon=+1,-1, an exact degree-5 Macaulay certificate proves 1 in I_epsilon.',"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 26,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/COMPLETION_REPORT.md",
+      "snippet": "`F_2053` at `u=216`;"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 31,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/COMPLETION_REPORT.md",
+      "snippet": "`det(m_rho)=682 mod 2053`. Proper toric compactification and the complete"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 13,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/README.md",
+      "snippet": "- complete 296-dimensional reduced finite algebra over `F_2053`;"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 15,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/README.md",
+      "snippet": "- `det(m_rho)=682 mod 2053`;"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 16,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/README.md",
+      "snippet": "- five split determinant residues `682,116,337,242,740` with product `51 mod 2053`;"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 18,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/THEOREM_AND_DEPENDENCIES.md",
+      "snippet": "At the prime `p=2053`, with `u=216`, the five equations `g_1,...,g_5` are"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 24,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/THEOREM_AND_DEPENDENCIES.md",
+      "snippet": "Localizing the coefficient ring at `(2053,u-216)` therefore gives a finite"
     },
     {
       "keyword": "normal[-_ ]?layer",
@@ -529,61 +895,391 @@
       "snippet": "4. the universal normal-layer operator and its logarithmic gauge normal form;"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 25,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/STATUS.md",
+      "snippet": "10. a complete reduced 296-dimensional special algebra at `p=2053, u=216`;"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 38,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/STATUS.md",
+      "snippet": "- `det(m_rho)=682 mod 2053`;"
+    },
+    {
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 2,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
+      "snippet": "\\label{app:degree-twenty-one}"
+    },
+    {
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 27,
       "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
       "snippet": "\\label{eq:degree21-face}"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 32,
       "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
       "snippet": "\\label{prop:degree21-belyi}"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 47,
       "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
       "snippet": "Equation \\eqref{eq:degree21-face} implies that \\(p,q\\) are coprime and"
     },
     {
-      "keyword": "degree[-_ ]?21",
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
       "line": 114,
       "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
       "snippet": "so \\(f=21\\) by \\cref{prop:degree21-belyi}."
     },
     {
-      "keyword": "residual",
-      "line": 118,
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 168,
       "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
-      "snippet": "nonconstant residual parameter \\(y_1^2/y_2^3\\). Those are exactly the"
+      "snippet": "\\det=859\\pmod{2053}."
     },
     {
-      "keyword": "residue adjoint|left kernel",
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 188,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
+      "snippet": "51\\pmod{2053}."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 535,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "\\(\\mathbb Q(\\sqrt6)\\). With \\(\\varepsilon=\\pm1\\),"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 537,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "\\bar p_\\varepsilon"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 538,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "=1+u+\\left(\\frac13+\\varepsilon\\frac{\\sqrt6}{18}\\right)u^2,"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 541,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "\\bar q_\\varepsilon"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 543,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "+\\left(\\frac25+\\varepsilon\\frac{\\sqrt6}{40}\\right)u^2"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 545,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "+\\varepsilon\\frac{11\\sqrt6}{480}\\right)u^3."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 619,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "+s(A_zB_s-A_sB_z)=\\Psi(z),"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 628,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "\\alpha A_0B_0'-\\beta A_0'B_0=\\Psi."
+    },
+    {
+      "keyword": "residue adjoint|left kernel|principal-part residue",
       "line": 655,
       "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
       "snippet": "\\begin{proposition}[Residue adjoint]"
     },
     {
-      "keyword": "residual",
-      "line": 68,
-      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/filtered-principal-parts.tex",
-      "snippet": "residual normal-coordinate gauge in the fixed-volume problem."
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 703,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "\\epsilon=d_W-d_A-d_B-1."
     },
     {
-      "keyword": "residue adjoint|left kernel",
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 705,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "If \\(\\mathscr D_r\\) is injective, its cokernel has dimension \\(\\epsilon\\)."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 719,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "\\epsilon_r=r-1."
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 791,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "x=t^{-1}\\varepsilon_x(t,s),\\qquad"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 792,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "dx\\wedge dy=t^{-2}\\varepsilon_\\omega(t,s)\\,dt\\wedge ds,"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 794,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "where both \\(\\varepsilon_x\\) and \\(\\varepsilon_\\omega\\) are units, and that"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 796,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "dP\\wedge dQ=x^\\kappa\\varepsilon(s,t)\\,dx\\wedge dy"
+    },
+    {
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 798,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "with \\(\\varepsilon\\) a unit. After removing all lower resonant shears,"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 1033,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "saturated initial ideals are unit ideals over \\(\\mathbf F_{2053}\\), and"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 1038,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "\\(2053\\)."
+    },
+    {
+      "keyword": "degree[-_ ]?(21|twenty[- ]one)",
+      "line": 1050,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "snippet": "\\input{appendices/degree-twenty-one-certificates}"
+    },
+    {
+      "keyword": "residue adjoint|left kernel|principal-part residue",
       "line": 96,
       "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/filtered-principal-parts.tex",
       "snippet": "Then $c$ lies in the left kernel of the layer matrix if and only if"
     },
     {
-      "keyword": "D_4|D4",
-      "line": 189,
-      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
-      "snippet": "988,\\quad1142,\\quad1476,\\quad420,\\quad1384"
+      "keyword": "layer[-_ ]?(4|four|7|seven)",
+      "line": 175,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/filtered-principal-parts.tex",
+      "snippet": "In the filtered frames above these are the layer-seven coordinates of"
     },
     {
-      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)",
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 99,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "p=2053,"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 105,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "f'(216)\\equiv135\\ne0\\pmod{2053}."
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 113,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "\\((\\overline{\\mathbf F}_{2053}^{\\,*})^5\\). Consequently their common zero"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 138,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "over \\(\\mathbf F_{2053}\\) proves that all \\(74\\) saturated ideals are the"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 155,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "\\subset(\\mathbb G_{\\mathrm m,\\mathbf F_{2053}})^5."
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 162,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "matrices. It is finite \\(\\acute{e}\\)tale over \\(\\mathbf F_{2053}\\), every"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 167,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "\\det(m_\\rho)=682\\ne0\\pmod{2053}."
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 190,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "\\pmod{2053},"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 203,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "the certificate verifies that \\(2053\\nmid N\\). Set"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 209,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "\\right)_{(2053,u-216)}."
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 211,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "Because \\(f'(216)\\not\\equiv0\\pmod{2053}\\), \\(R\\) is a discrete valuation"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 212,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "ring, unramified over \\(\\mathbf Z_{(2053)}\\), with fraction field \\(K\\) and"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 213,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "residue field \\(\\mathbf F_{2053}\\)."
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 290,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "\\Omega\\equiv682\\pmod{(2053,u-216)}."
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 292,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "At the five primes above \\(2053\\), the determinant residues are"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 299,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "snippet": "N_{K/\\mathbf Q}(\\Omega)\\equiv51\\pmod{2053}."
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 2,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/galois_norm_certificate.json",
+      "snippet": "\"prime\": 2053,"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 2,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/good_prime_certificate.json",
+      "snippet": "\"prime\": 2053,"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 5,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/f4_matrix_p2053_u1975.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 6,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/f4_matrix_p2053_u216.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 7,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/f4_matrix_p2053_u531.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 8,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/f4_matrix_p2053_u664.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 9,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/f4_matrix_p2053_u721.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 10,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/krylov_charpoly_p2053_u216.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 11,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/modular_groebner_basis_p2053_u216.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 13,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/six_p2053_u216.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 14,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/var0_matrix_p2053_u216.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 15,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/var1_matrix_p2053_u216.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 16,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/var2_matrix_p2053_u216.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 17,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/var3_matrix_p2053_u216.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 18,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "snippet": "./certificate/var4_matrix_p2053_u216.bin: OK"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 2,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_face_generation.log",
+      "snippet": "\"prime\": 2053,"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 2,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_faces_exact.json",
+      "snippet": "\"prime\": 2053,"
+    },
+    {
+      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)|X\\^\\{-4\\}",
       "line": 41,
       "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/export_residue_audit.py",
       "snippet": "MINPOLY_EXPR = X**5 - X**4 + 3 * X**3 + 3 * X**2 + 26"
@@ -601,533 +1297,182 @@
       "snippet": "\"normal_layer\": r,"
     },
     {
-      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)",
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 855,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/export_residue_audit.py",
+      "snippet": "\"Psi\": [{\"z_exp\": 2, \"coeff_basis\": k_to_vector(ONE), \"coeff_expr\": \"1\"}],"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 27,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/generate_toric_face_systems.py",
+      "snippet": "PRIME=2053"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 2,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_galois_norm.py",
+      "snippet": "\"\"\"Verify the five residue determinants and their rational field norm modulo 2053.\"\"\""
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 11,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_galois_norm.py",
+      "snippet": "PRIME = 2053"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 98,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_galois_norm.py",
+      "snippet": "monomials, matrix = read_matrix(directory / f\"f4_matrix_p2053_u{root}.bin\")"
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 2,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_good_prime.py",
+      "snippet": "\"\"\"Verify the arithmetic conditions used at the split prime p=2053.\"\"\""
+    },
+    {
+      "keyword": "u\\s*[-\u2212]\\s*216|2053",
+      "line": 7,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_good_prime.py",
+      "snippet": "P=2053"
+    },
+    {
+      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)|X\\^\\{-4\\}",
       "line": 21,
       "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_good_prime.py",
       "snippet": "f=lambda x:(x**5-x**4+3*x**3+3*x**2+26)%P"
     },
     {
-      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)",
+      "keyword": "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)|X\\^\\{-4\\}",
       "line": 22,
       "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_good_prime.py",
       "snippet": "fp=lambda x:(5*x**4-4*x**3+9*x**2+6*x)%P"
     },
     {
-      "keyword": "D_4|D4",
-      "line": 45,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/exact_certificate_manifest.json",
-      "snippet": "\"sha256\": \"4d4ab290055975211339542de079f016056fda658b9e844df5298abb221a4656\""
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 18,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "F_{\\epsilon,0},\\ldots,F_{\\epsilon,8}\\in K[I,H,G,A],\\qquad \\epsilon\\in\\{+1,-1\\}."
     },
     {
-      "keyword": "D_4|D4",
-      "line": 61,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/exact_certificate_manifest.json",
-      "snippet": "\"sha256\": \"1f1d3c0e7fe21f2015657668543b0564e27ec007957d1d02cf6e7dc19aa5dd4a\""
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 23,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "> **Exact certificate theorem.** For each \\(\\epsilon=\\pm1\\), there are polynomials"
     },
     {
-      "keyword": "D_4|D4",
-      "line": 105,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/exact_certificate_manifest.json",
-      "snippet": "\"sha256\": \"ddfe10be5879c051c1c8d90a55def263a32467310694553c03dc53fd41163581\""
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 24,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "> \\(C_{\\epsilon,j}\\in K[I,H,G,A]\\) such that"
     },
     {
-      "keyword": "residual",
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
       "line": 26,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "> \\sum_{j=0}^{8}C_{\\epsilon,j}F_{\\epsilon,j}=1."
     },
     {
-      "keyword": "residual",
-      "line": 37,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 28,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "> Moreover every product \\(C_{\\epsilon,j}F_{\\epsilon,j}\\) has total degree at most \\(5\\)."
     },
     {
-      "keyword": "residual",
-      "line": 48,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 33,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "(F_{\\epsilon,0},\\ldots,F_{\\epsilon,8})=K[I,H,G,A]"
     },
     {
-      "keyword": "residual",
-      "line": 59,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 51,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "mF_{\\epsilon,j},\\qquad \\deg(mF_{\\epsilon,j})\\le5."
     },
     {
-      "keyword": "residual",
-      "line": 70,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 63,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "1\\pmod{31}\\quad(\\epsilon=+1),"
     },
     {
-      "keyword": "residual",
-      "line": 81,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 65,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "snippet": "17\\pmod{31}\\quad(\\epsilon=-1)."
     },
     {
-      "keyword": "residual",
-      "line": 92,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
-    },
-    {
-      "keyword": "residual",
-      "line": 103,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
-    },
-    {
-      "keyword": "residual",
-      "line": 114,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
-    },
-    {
-      "keyword": "residual",
-      "line": 125,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
-    },
-    {
-      "keyword": "residual",
-      "line": 136,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
-    },
-    {
-      "keyword": "residual",
-      "line": 147,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
-    },
-    {
-      "keyword": "residual",
-      "line": 158,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
-    },
-    {
-      "keyword": "residual",
-      "line": 169,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
-    },
-    {
-      "keyword": "residual",
-      "line": 180,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 28"
-    },
-    {
-      "keyword": "residual",
-      "line": 191,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 202,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 213,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 224,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 235,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 246,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 257,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 1"
-    },
-    {
-      "keyword": "residual",
-      "line": 268,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 1"
-    },
-    {
-      "keyword": "residual",
-      "line": 279,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 1"
-    },
-    {
-      "keyword": "residual",
-      "line": 290,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 1"
-    },
-    {
-      "keyword": "residual",
-      "line": 301,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 21"
-    },
-    {
-      "keyword": "residual",
-      "line": 312,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 323,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 334,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 1"
-    },
-    {
-      "keyword": "residual",
-      "line": 345,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 356,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 367,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 378,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 389,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 400,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 411,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 422,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 16"
-    },
-    {
-      "keyword": "residual",
-      "line": 433,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 13"
-    },
-    {
-      "keyword": "residual",
-      "line": 444,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 16"
-    },
-    {
-      "keyword": "residual",
-      "line": 455,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 16"
-    },
-    {
-      "keyword": "residual",
-      "line": 466,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 1"
-    },
-    {
-      "keyword": "residual",
-      "line": 477,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 15"
-    },
-    {
-      "keyword": "residual",
-      "line": 488,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 1"
-    },
-    {
-      "keyword": "residual",
-      "line": 499,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 1"
-    },
-    {
-      "keyword": "residual",
-      "line": 510,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 1"
-    },
-    {
-      "keyword": "residual",
-      "line": 521,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 532,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 22"
-    },
-    {
-      "keyword": "residual",
-      "line": 543,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 7"
-    },
-    {
-      "keyword": "residual",
-      "line": 554,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 7"
-    },
-    {
-      "keyword": "residual",
-      "line": 565,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 576,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 10"
-    },
-    {
-      "keyword": "residual",
-      "line": 587,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 20"
-    },
-    {
-      "keyword": "residual",
-      "line": 598,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 22"
-    },
-    {
-      "keyword": "residual",
-      "line": 609,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 22"
-    },
-    {
-      "keyword": "residual",
-      "line": 620,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 631,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 25"
-    },
-    {
-      "keyword": "residual",
-      "line": 642,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 1"
-    },
-    {
-      "keyword": "residual",
-      "line": 653,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 23"
-    },
-    {
-      "keyword": "residual",
-      "line": 664,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 11"
-    },
-    {
-      "keyword": "residual",
-      "line": 675,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 22"
-    },
-    {
-      "keyword": "residual",
-      "line": 686,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 697,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 20"
-    },
-    {
-      "keyword": "residual",
-      "line": 708,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 22"
-    },
-    {
-      "keyword": "residual",
-      "line": 719,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 730,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 741,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 24"
-    },
-    {
-      "keyword": "residual",
-      "line": 752,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 23"
-    },
-    {
-      "keyword": "residual",
-      "line": 763,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 774,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 18"
-    },
-    {
-      "keyword": "residual",
-      "line": 785,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 23"
-    },
-    {
-      "keyword": "residual",
-      "line": 796,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 807,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 818,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 24"
-    },
-    {
-      "keyword": "residual",
-      "line": 829,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 23"
-    },
-    {
-      "keyword": "residual",
-      "line": 840,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 851,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 862,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 14"
-    },
-    {
-      "keyword": "residual",
-      "line": 873,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 16"
-    },
-    {
-      "keyword": "residual",
-      "line": 884,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 11"
-    },
-    {
-      "keyword": "residual",
-      "line": 895,
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "snippet": "\"residual_pivot\": 20"
+      "keyword": "Theta|\\\\Theta|Psi|\\\\Psi",
+      "line": 2,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/exact_certificate_manifest.json",
+      "snippet": "\"statement\": \"For each exceptional system I_epsilon in K[I,H,G,A], epsilon=+1,-1, an exact degree-5 Macaulay certificate proves 1 in I_epsilon.\","
     }
   ],
   "keyword_file_counts": {
-    "D_4|D4": 5,
-    "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)": 4,
-    "approximate root": 1,
-    "degree[-_ ]?21": 14,
-    "dimension.*1.*2.*1.*1": 0,
+    "1\\s*[,)]\\s*2\\s*,\\s*1\\s*,\\s*1": 0,
+    "F_?5\\s*=\\s*D|affine-linear.*d": 0,
+    "P_?2.*R(\\^|\\*\\*)?2|Q_?3.*R(\\^|\\*\\*)?3": 0,
+    "Theta|\\\\Theta|Psi|\\\\Psi": 15,
+    "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)|X\\^\\{-4\\}": 4,
+    "Y.*lambda.*X|Y.*\\\\lambda.*X": 2,
+    "approximate root|common linear form": 1,
+    "degree[-_ ]?(21|twenty[- ]one)": 16,
+    "divergence[-_ ]?free|weighted[-_ ]?divergence": 0,
+    "fixed[-_ ]?chart": 0,
     "k\\s*=\\s*4": 0,
-    "layer[-_ ]?4": 0,
+    "layer[-_ ]?(4|four|7|seven)": 1,
+    "nineteen[-_ ]term|201[-_ ]term|93 face|93 normal": 0,
     "normal[-_ ]?layer": 10,
-    "rechart|re-chart|chart transition": 0,
-    "residual": 7,
-    "residue adjoint|left kernel": 7,
-    "support window|support matrix|support transport": 1
+    "rechart|re-chart|chart transition|complete-chain operation": 0,
+    "residual dimensions|residual kernel|residual direction": 0,
+    "residue adjoint|left kernel|principal-part residue": 7,
+    "support window|support matrix|support transport|chart-matching": 1,
+    "two[-_ ]chart": 0,
+    "u\\s*[-\u2212]\\s*216|2053": 22,
+    "weighted[-_ ]?projective|weighted chart": 0
   },
   "ranked_candidates": [
     {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md",
+      "score": 12
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
+      "score": 12
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
+      "score": 12
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/README.md",
+      "score": 11
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/enumerate_five_dessins.py",
+      "score": 11
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/extend_attack.py",
+      "score": 11
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/attack_8_28.py",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/boundary_graph_data.json",
+      "score": 10
+    },
+    {
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/character_count_degree21.py",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/deeper_exact_reduction.json",
       "score": 10
     },
     {
@@ -1135,39 +1480,155 @@
       "score": 10
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
-      "score": 3
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/exact_data.json",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/fan_data.json",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/full_coefficient_ideal.sing",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/full_first_nonlinear_obstruction.txt",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/minus5_belyi_obstruction.json",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/refined_fan_data.json",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/truncated_coefficient_ideal.sing",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/truncated_first_nonlinear_obstruction.txt",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/verify_minus5_belyi.py",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/verify_quintic_field.py",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u1975.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u216.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u531.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u664.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u721.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/krylov_charpoly_p2053_u216.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/modular_groebner_basis_p2053_u216.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/six_p2053_u216.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var0_matrix_p2053_u216.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var1_matrix_p2053_u216.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var2_matrix_p2053_u216.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var3_matrix_p2053_u216.bin",
+      "score": 10
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var4_matrix_p2053_u216.bin",
+      "score": 10
     },
     {
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
+      "score": 5
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
+      "score": 4
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "score": 4
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/export_residue_audit.py",
       "score": 3
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
+      "score": 3
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "score": 3
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/export_residue_audit.py",
+      "score": 3
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/COMPUTATION.md",
+      "score": 2
     },
     {
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
       "score": 2
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/export_residue_audit.py",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/THEOREM_AND_DEPENDENCIES.md",
       "score": 2
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/README.md",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_good_prime.py",
       "score": 2
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md",
       "score": 2
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
       "score": 2
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/THEOREM_AND_DEPENDENCIES.md",
       "score": 2
     },
     {
-      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/STATUS.md",
       "score": 2
     },
     {
@@ -1175,43 +1636,27 @@
       "score": 2
     },
     {
-      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/export_residue_audit.py",
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_good_prime.py",
       "score": 2
-    },
-    {
-      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
-      "score": 2
-    },
-    {
-      "path": "06-plane-boundary-computational-supplement/COMPUTATION.md",
-      "score": 1
     },
     {
       "path": "06-plane-boundary-computational-supplement/code/verify_exact_normal_form.py",
       "score": 1
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/THEOREM_AND_DEPENDENCIES.md",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/COMPLETION_REPORT.md",
       "score": 1
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_good_prime.py",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/README.md",
       "score": 1
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/generate_toric_face_systems.py",
       "score": 1
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/enumerate_five_dessins.py",
-      "score": 1
-    },
-    {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/extend_attack.py",
-      "score": 1
-    },
-    {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_galois_norm.py",
       "score": 1
     },
     {
@@ -1223,19 +1668,11 @@
       "score": 1
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/boundary_complex_index.py",
-      "score": 1
-    },
-    {
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/count_F2_terminal_dessins.py",
       "score": 1
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_face_rigidity.py",
-      "score": 1
-    },
-    {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex",
       "score": 1
     },
     {
@@ -1243,23 +1680,23 @@
       "score": 1
     },
     {
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "score": 1
+    },
+    {
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/exact_certificate_manifest.json",
       "score": 1
     },
     {
-      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/modular_macaulay_witness.py",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/make_certificate_manifest.py",
       "score": 1
     },
     {
-      "path": "06-plane-boundary-computational-supplement/degree-296-large/THEOREM_AND_DEPENDENCIES.md",
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/COMPLETION_REPORT.md",
       "score": 1
     },
     {
-      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/STATUS.md",
-      "score": 1
-    },
-    {
-      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/README.md",
       "score": 1
     },
     {
@@ -1267,7 +1704,35 @@
       "score": 1
     },
     {
-      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_good_prime.py",
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/galois_norm_certificate.json",
+      "score": 1
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/good_prime_certificate.json",
+      "score": 1
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "score": 1
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_face_generation.log",
+      "score": 1
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_faces_exact.json",
+      "score": 1
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/generate_toric_face_systems.py",
+      "score": 1
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_galois_norm.py",
+      "score": 1
+    },
+    {
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
       "score": 1
     },
     {
