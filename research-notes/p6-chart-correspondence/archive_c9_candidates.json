@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585",
+  "member_count": 1,
+  "members": [
+    {
+      "bytes": 5728,
+      "matched_patterns": [
+        "complete.?chain"
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/next_complete_chain_queue.json"
+    }
+  ],
+  "schema_version": 1
+}
