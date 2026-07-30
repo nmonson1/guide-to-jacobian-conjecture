@@ -55,6 +55,10 @@ jobs:
             research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
             research-notes/p6-chart-correspondence/lower_face_supports.json \
             --output research-notes/p6-chart-correspondence/degree21_lower_face_full_gauge.json
+          python research-notes/p6-chart-correspondence/degree21_subgroup_ladder.py \
+            research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
+            research-notes/p6-chart-correspondence/lower_face_supports.json \
+            --output research-notes/p6-chart-correspondence/degree21_subgroup_ladder.json
 
       - name: Scan small archive sources for the C.9 calculation
         run: |
@@ -109,6 +113,7 @@ jobs:
             research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256 \
             research-notes/p6-chart-correspondence/degree21_lower_face_replay.json \
             research-notes/p6-chart-correspondence/degree21_lower_face_full_gauge.json \
+            research-notes/p6-chart-correspondence/degree21_subgroup_ladder.json \
             research-notes/p6-chart-correspondence/archive_c9_candidates.json
           if git diff --cached --quiet; then
             echo 'No generated changes.'
