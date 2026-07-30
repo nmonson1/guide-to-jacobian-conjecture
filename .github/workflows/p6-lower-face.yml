@@ -60,7 +60,7 @@ jobs:
             research-notes/p6-chart-correspondence/lower_face_supports.json \
             --output research-notes/p6-chart-correspondence/degree21_subgroup_ladder.json
 
-      - name: Scan small archive sources for the C.9 calculation
+      - name: Inventory the archived normalization and C.9 source trail
         run: |
           python - <<'PY'
           import json
@@ -71,6 +71,9 @@ jobs:
           archive = Path('docs-v7-20260726c/assets/technical-materials/06-plane-boundary-computational-supplement.zip')
           output = Path('research-notes/p6-chart-correspondence/archive_c9_candidates.json')
           expressions = {
+              'parameter_names': re.compile(r'PARAMETER_NAMES|t1_0', re.I),
+              'final_parameter_indices': re.compile(r'FINAL_PARAMETER_INDICES|final_parameter_indices', re.I),
+              'normalization_map': re.compile(r'normalization[_ -]?map|normalized[_ -]?parameters', re.I),
               'residual_dimensions': re.compile(r'residual\s+dimensions?', re.I),
               'weighted_divergence': re.compile(r'weighted[-_ ]?divergence|\\mathcal\s*D.*Theta', re.I),
               'layer_four': re.compile(r'layer[-_ ]?(four|4)', re.I),
@@ -88,15 +91,15 @@ jobs:
                   text = handle.read(info).decode('utf-8', errors='replace')
                   hits = []
                   for label, expression in expressions.items():
-                      match = expression.search(text)
-                      if match:
+                      for match in list(expression.finditer(text))[:5]:
                           line = text.count('\n', 0, match.start()) + 1
-                          snippet = ' '.join(text[match.start():match.start()+300].split())
+                          start = max(0, match.start() - 120)
+                          snippet = ' '.join(text[start:match.start()+500].split())
                           hits.append({'label': label, 'line': line, 'snippet': snippet})
                   if hits:
                       members.append({'path': info.filename, 'bytes': info.file_size, 'hits': hits})
           output.write_text(json.dumps({
-              'schema_version': 2,
+              'schema_version': 3,
               'archive_sha256': '4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585',
               'member_count': len(members),
               'members': members,
