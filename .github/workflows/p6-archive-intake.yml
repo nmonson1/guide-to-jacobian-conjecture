@@ -31,14 +31,29 @@ jobs:
             --config research-notes/p6-chart-correspondence/archive_intake_config.json \
             --expected-sha256 4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585
 
-      - name: Commit the deterministic intake report
+      - name: Replay all archived degree-21 linear layers
+        run: |
+          python research-notes/p6-chart-correspondence/degree21_linear_replay.py \
+            research-notes/p6-chart-correspondence/archive-scan/selected/06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/exact_data.json \
+            --output research-notes/p6-chart-correspondence/degree21_linear_replay.json
+
+      - name: Run the exact diagnostic tests
+        run: |
+          python -m unittest discover \
+            -s research-notes/p6-chart-correspondence \
+            -p 'test_*.py' \
+            -v
+
+      - name: Commit the deterministic intake and replay reports
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add research-notes/p6-chart-correspondence/archive-scan
+          git add \
+            research-notes/p6-chart-correspondence/archive-scan \
+            research-notes/p6-chart-correspondence/degree21_linear_replay.json
           if git diff --cached --quiet; then
-            echo 'No intake changes to commit.'
+            echo 'No intake or replay changes to commit.'
             exit 0
           fi
-          git commit -m 'Record Program 6 archive intake'
+          git commit -m 'Record Program 6 archive replay'
           git push origin HEAD:${{ github.head_ref || github.ref_name }}
