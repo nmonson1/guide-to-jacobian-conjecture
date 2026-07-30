@@ -38,5 +38,13 @@
     }
   ],
   "release_id": "program-3-v13-repairs-20260730a",
-  "schema_version": 1
+  "schema_version": 1,
+  "substitution_count": 1,
+  "substitutions": [
+    {
+      "new": "- [`JCG-24C82405`](../claims/JCG-24C82405.md) **The v13 degree-eight first-normal obstruction is not established over Q in the full residual problem; exact elimination covers weight -2, while weight -1 survives through order four and later death is modular evidence only.** — Corrected",
+      "old": "- [`JCG-24C82405`](../claims/JCG-24C82405.md) **At the degree-eight base point, after quotienting the affine orbit and the known quadratic source-shear and target-shear components, no additional formal branch has a first nonzero normal term transverse to those two components.** — Certificate offered — review pending",
+      "target": "results/all-claims.md"
+    }
+  ]
 }
