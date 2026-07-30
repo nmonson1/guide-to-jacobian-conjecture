@@ -1,0 +1,75 @@
+{
+  "archive": "06-plane-boundary-computational-supplement.zip",
+  "archive_sha256": "4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585",
+  "entry_count": 151,
+  "extracted_bytes": 58207,
+  "file_count": 151,
+  "hit_count": 184,
+  "keyword_file_counts": {
+    "D_4|D4": 5,
+    "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)": 4,
+    "approximate root": 1,
+    "degree[-_ ]?21": 14,
+    "dimension.*1.*2.*1.*1": 0,
+    "k\\s*=\\s*4": 0,
+    "layer[-_ ]?4": 0,
+    "normal[-_ ]?layer": 10,
+    "rechart|re-chart|chart transition": 0,
+    "residual": 7,
+    "residue adjoint|left kernel": 7,
+    "support window|support matrix|support transport": 1
+  },
+  "members": [
+    {
+      "decoded_as": "utf-8",
+      "output": "selected/06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
+      "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
+      "size": 36354,
+      "status": "extracted"
+    },
+    {
+      "decoded_as": "utf-8",
+      "output": "selected/06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/README.md",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/README.md",
+      "size": 1854,
+      "status": "extracted"
+    },
+    {
+      "decoded_as": "utf-8",
+      "output": "selected/06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/README.md",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/README.md",
+      "size": 4526,
+      "status": "extracted"
+    },
+    {
+      "decoded_as": "utf-8",
+      "output": "selected/06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md",
+      "size": 4609,
+      "status": "extracted"
+    },
+    {
+      "decoded_as": "utf-8",
+      "output": "selected/06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/exact_certificate_manifest.json",
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/exact_certificate_manifest.json",
+      "size": 4505,
+      "status": "extracted"
+    },
+    {
+      "decoded_as": "utf-8",
+      "output": "selected/06-plane-boundary-computational-supplement/degree-296-large/README.md",
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/README.md",
+      "size": 1854,
+      "status": "extracted"
+    },
+    {
+      "decoded_as": "utf-8",
+      "output": "selected/06-plane-boundary-computational-supplement/terminal-unit-ideal-large/exact_certificate_manifest.json",
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/exact_certificate_manifest.json",
+      "size": 4505,
+      "status": "extracted"
+    }
+  ],
+  "schema_version": 1,
+  "uncompressed_bytes": 267478776
+}

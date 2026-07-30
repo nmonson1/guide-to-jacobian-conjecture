@@ -1,0 +1,118 @@
+{
+  "statement": "For each exceptional system I_epsilon in K[I,H,G,A], epsilon=+1,-1, an exact degree-5 Macaulay certificate proves 1 in I_epsilon.",
+  "field_polynomial_coefficients_high_to_low": [
+    "43215205018107904",
+    "-15455317150390026240",
+    "3097871869703740194816",
+    "-340770032682537179234304",
+    "23295891481369636508226432",
+    "-513198182072654549018449551"
+  ],
+  "field": "K = Q[eta]/(T(eta))",
+  "systems": {
+    "b1_dcrit": {
+      "generators": 9,
+      "macaulay_columns": 126,
+      "selected_rows": 111,
+      "certificate_terms": 80,
+      "max_cofactor_monomial_degree": 3,
+      "max_product_degree": 5,
+      "pivot_minor_det_mod_31": 1,
+      "residue_eta_mod_31": 30,
+      "DH_digits": 26616,
+      "DF_digits": 898
+    },
+    "b-1_dcrit": {
+      "generators": 9,
+      "macaulay_columns": 126,
+      "selected_rows": 111,
+      "certificate_terms": 80,
+      "max_cofactor_monomial_degree": 3,
+      "max_product_degree": 5,
+      "pivot_minor_det_mod_31": 17,
+      "residue_eta_mod_31": 30,
+      "DH_digits": 26617,
+      "DF_digits": 898
+    }
+  },
+  "verification": {
+    "derivation": "GMP rational Gaussian elimination in K followed by exact verification of all 126 columns",
+    "independent_replay": "Separate GMP verifier and separate Python Fraction verifier both returned exact equality"
+  },
+  "files": {
+    "certificate_systems.json": {
+      "bytes": 2977027,
+      "sha256": "4d4ab290055975211339542de079f016056fda658b9e844df5298abb221a4656"
+    },
+    "modular_macaulay_witnesses.json": {
+      "bytes": 56236,
+      "sha256": "70cdb8113b0511fc7fe7ebe7c5464b19e8be38ca92e52bf93045c8366a5bb339"
+    },
+    "b1_dcrit_gmp_certificate.txt": {
+      "bytes": 20956824,
+      "sha256": "b4ef6dd80f34882200b3bfc0acce0590f9388ce9f6f7aed1f6fdb4c8b354ca6f"
+    },
+    "b-1_dcrit_gmp_certificate.txt": {
+      "bytes": 20957071,
+      "sha256": "7080fab408b07c517d144c712dd6e7fbeaccce8a9af17d61371e1b4f7f8473b2"
+    },
+    "b1_dcrit_exact_certificate.json": {
+      "bytes": 20984665,
+      "sha256": "1f1d3c0e7fe21f2015657668543b0564e27ec007957d1d02cf6e7dc19aa5dd4a"
+    },
+    "b-1_dcrit_exact_certificate.json": {
+      "bytes": 20984912,
+      "sha256": "2cf1b598d12eabb53b044ca643abcc42c617755bb2967f56f1ffa0ee48ec7fbb"
+    },
+    "b1_dcrit_cleared_certificate.json": {
+      "bytes": 10656667,
+      "sha256": "c442199945d92fe0bdc2a29bb04506ef9416ca9e83cf921eaea36bb1f9eb83e5"
+    },
+    "b-1_dcrit_cleared_certificate.json": {
+      "bytes": 10657110,
+      "sha256": "14aeb37e0678e3a8a376545715809f5f07d6dcf389a632197a846eafdda13f8e"
+    },
+    "gmp_exact_certificate.cpp": {
+      "bytes": 4362,
+      "sha256": "a6f4177c7d211a62a3689a6f3836607d2510a9ad97048427ffe56a1c33a84505"
+    },
+    "gmp_verify_certificate.cpp": {
+      "bytes": 2162,
+      "sha256": "e165e11ab170309be79188db736685a952e321fb6d327e665c116fe1483e6e1a"
+    },
+    "verify_and_clear_certificate.py": {
+      "bytes": 3776,
+      "sha256": "8845a14fb8d9be9c4fecce9cbcda56686cc05de4bb7a02f5fa46dac9faebc503"
+    },
+    "b1_exact_verification.txt": {
+      "bytes": 58,
+      "sha256": "ec34b7577865e570896457055339e8edb2a72b53406d9b599f8b346f641686c6"
+    },
+    "b-1_exact_verification.txt": {
+      "bytes": 59,
+      "sha256": "5ef6791a403071f6b00cb7ec0bedce7c061db7a5455a46fcee8116789a865cdc"
+    },
+    "b1_dcrit_selected_matrix.txt": {
+      "bytes": 5479065,
+      "sha256": "8299a485cfb9b5a4bf14cb5bd9f45eaf4c32008c58c81a00dde0aaea6890b895"
+    },
+    "b-1_dcrit_selected_matrix.txt": {
+      "bytes": 5480476,
+      "sha256": "a3fc104f5464560515875d2130311982cde9bfce912f1f36dc0f27e8bd398c54"
+    },
+    "make_selected_matrix_input.py": {
+      "bytes": 1439,
+      "sha256": "ddfe10be5879c051c1c8d90a55def263a32467310694553c03dc53fd41163581"
+    },
+    "convert_gmp_certificate.py": {
+      "bytes": 1347,
+      "sha256": "d6df6c5c695d39a92db13cf0e98721062dafcde0ca90960ee164e896f665a78f"
+    },
+    "EXACT_CERTIFICATE_REPORT.md": {
+      "bytes": 5826,
+      "sha256": "f9bd2c4e9ddad58196eb504c7fa8e5c2c4f7fc4f57c67ab3fef67b2ba7f626aa"
+    }
+  },
+  "audit_note": "These certificates prove the two stored exceptional ideals are unit ideals. The global degree >=125 implication also uses the preceding reductions from the raw (8,28) Newton systems to these two ideals; those reductions should be independently replayed from a complete upstream script before publication.",
+  "sha256_without_hash": "d6c9af21d21152719a629accc7fe67793390d9c1cf49885127585ba70fa9a665"
+}

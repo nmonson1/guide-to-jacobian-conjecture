@@ -1,0 +1,756 @@
+{
+  "files": [
+    {
+      "bytes": 3111,
+      "path": "06-plane-boundary-computational-supplement/COMPUTATION.md",
+      "sha256": "d4ed01c56647fff1476f1fa4a2b8be84e0d32f504808f5034d8850b65ad5c02e"
+    },
+    {
+      "bytes": 2491,
+      "path": "06-plane-boundary-computational-supplement/code/verify_exact_normal_form.py",
+      "sha256": "2c77de0cda06a47beabf661130d82e112e06ef6d874c72f908d8f8a6e577439f"
+    },
+    {
+      "bytes": 2074,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/COMPLETION_REPORT.md",
+      "sha256": "20e45d3428ec5cef9bdb2e3f02cfca95b4e2b74f1d3834c9ec0ff75f1a8b3025"
+    },
+    {
+      "bytes": 1854,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/README.md",
+      "sha256": "0deab5699300c746fcd7b6c08e444ac5c8e2394fa9a8149a826920be14e74c2a"
+    },
+    {
+      "bytes": 6825,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/SHA256SUMS",
+      "sha256": "e17da37f870d45ba8af8e2848650dcf13e4a5b95362a4161618222eb4e2e5af8"
+    },
+    {
+      "bytes": 2084,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/THEOREM_AND_DEPENDENCIES.md",
+      "sha256": "598e9f4c0e7399ce0772179891849c2987755a06294b060f65a7915e8b291189"
+    },
+    {
+      "bytes": 1689,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/run_all.sh",
+      "sha256": "780c644701688ab1a3b36040691aae336be2b412cada338d4be3ae05c2e7857c"
+    },
+    {
+      "bytes": 1400,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/boundary_gluing_secondary_belyi.py",
+      "sha256": "bf75acea8d9c9a89ba85f0bcf454671c7bfe0425539cb683f46cdc1f51260210"
+    },
+    {
+      "bytes": 34229,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/export_residue_audit.py",
+      "sha256": "418ddb2911a05b65218801d09a77762ba6bf63818a3f7cb29ee2c5545cbe2680"
+    },
+    {
+      "bytes": 8326,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/generate_toric_face_systems.py",
+      "sha256": "5a57ceb0a442db2b137628b9fbfaa2d3e0ad5678d57bf261970b1411bb2c8caa"
+    },
+    {
+      "bytes": 5706,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/quintic_field_fast.py",
+      "sha256": "b43871c8897512b752c9e8fa8d4f2d80571865d465940e13b36f130d07091942"
+    },
+    {
+      "bytes": 5424,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_galois_norm.py",
+      "sha256": "7112daebf7ccd22a6bff82817b1d577ad9e753026c632d23374fbcf9e8b968cf"
+    },
+    {
+      "bytes": 2457,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_good_prime.py",
+      "sha256": "4f5cb3d479c8d6ef301ff41f62e0c88a71b6fd695a4b868524a99c84bc4a6086"
+    },
+    {
+      "bytes": 6068,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_mixed_volume.py",
+      "sha256": "aab3befb37996ecf0d9e464adb72da154378d60678317387806f1ef1670263c3"
+    },
+    {
+      "bytes": 14962,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_modular_algebra.cpp",
+      "sha256": "c2de3aa5eb09bb58ae09653248f78957b686f6368919c1a629a9027b4a077ab4"
+    },
+    {
+      "bytes": 7383,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_toric_faces.cpp",
+      "sha256": "791d03e05d69a217be09b612796fda26823a59a6c3e74306e82e405dd8f5c8d2"
+    },
+    {
+      "bytes": 4526,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/README.md",
+      "sha256": "122e13b96d2da0d2fbccf80a2714f223f123c82b731387483822aad931bf2aac"
+    },
+    {
+      "bytes": 5642,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md",
+      "sha256": "35dd78b7013c8f27f8f18b138da7419397e536e6c241917591faab883e2059f8"
+    },
+    {
+      "bytes": 14287,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/attack_8_28.py",
+      "sha256": "2c46704164a92fce7fa541f77506917ddbbd5fc859ccdad814745ce72acce0ec"
+    },
+    {
+      "bytes": 19815,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/boundary_graph_data.json",
+      "sha256": "92c363168278fa941181adc63cb769a27bd8a95e42c356b01efec513502adddf"
+    },
+    {
+      "bytes": 7313,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
+      "sha256": "834850cfd30ebe3f73ff6497fd0c30898b6d917c632a1c7298716bdbf1c40183"
+    },
+    {
+      "bytes": 2697,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/character_count_degree21.py",
+      "sha256": "9e961a22f75e7705001240c74bfe25061dbedf28c9660dc5011550324db2ad25"
+    },
+    {
+      "bytes": 931,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/deeper_exact_reduction.json",
+      "sha256": "7749b5c53cf9f5712da2d1ada2c29eebb6fd3a08e265141a4b636f0d77aaf162"
+    },
+    {
+      "bytes": 750,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/degree21_dessin_count.json",
+      "sha256": "6c80ddc676e425220e236f4135a08bc97845f8201b637d47d1b38fb2cc6b8084"
+    },
+    {
+      "bytes": 4184,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/enumerate_five_dessins.py",
+      "sha256": "4d79c73adaa5537933f24d5b912a7a0ed156826e1b08ec3de49eaac957ee7a9c"
+    },
+    {
+      "bytes": 69105,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/exact_data.json",
+      "sha256": "a506ccf4a8b97801b1a450609aa98382ef151d83c48b765270c37fbe7cb371f2"
+    },
+    {
+      "bytes": 6454,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/extend_attack.py",
+      "sha256": "206e5a5e1e228242547d5ec25556ff5a997fa18f2edfb530e82198d589a34b68"
+    },
+    {
+      "bytes": 1935,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/fan_data.json",
+      "sha256": "a3cf4a3253d0a739754f52c4dd562d36dad970f7968def79d37697f43e08bb19"
+    },
+    {
+      "bytes": 129041,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/full_coefficient_ideal.sing",
+      "sha256": "396f3b94fa2fff90c1b3ee6d04bfe2a8da069e4f8ede6748c0715e745cd5a99d"
+    },
+    {
+      "bytes": 226,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/full_first_nonlinear_obstruction.txt",
+      "sha256": "0893503545463c8a242c5b9100fe37d1e33629196b0d44024306fc4ac40bd87a"
+    },
+    {
+      "bytes": 666,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/minus5_belyi_obstruction.json",
+      "sha256": "1cb13f9c7cb2d8d24fcaf982d4c3c80978946748d346f54b58f7f2d670744ab9"
+    },
+    {
+      "bytes": 2188,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/refined_fan_data.json",
+      "sha256": "6ce4e57f2f3186fedb86eeba6fa784d9cc573728d3b4b5cdf116252a30c83924"
+    },
+    {
+      "bytes": 18047,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/truncated_coefficient_ideal.sing",
+      "sha256": "9f6a53303b0549e63220fa5e218a6c4e861d5b987f575dfa4fc4c1bde37e2c4d"
+    },
+    {
+      "bytes": 146,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/truncated_first_nonlinear_obstruction.txt",
+      "sha256": "660b6ac1bec670cf59fda472f1737f8da185f42e4e55e2905da452039ae057d6"
+    },
+    {
+      "bytes": 543,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/verify_minus5_belyi.py",
+      "sha256": "e1c6d0c43fef387791d00c714682e4f86cd96dda7e2c22e832509d46887e8451"
+    },
+    {
+      "bytes": 2243,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/verify_quintic_field.py",
+      "sha256": "6e140dd2eac0046b1d20d6e34f623e88466be1adf79a6f0c326db5ad5f101c8a"
+    },
+    {
+      "bytes": 4609,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md",
+      "sha256": "6c4ad09b00603a899661777939736b4e78d15c7449534b1abbdf2cf0d37c17e5"
+    },
+    {
+      "bytes": 5965,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
+      "sha256": "63fb30b6de06df86c9c87e968d4d72e58b9218134a9eaa8cbce978b78901eb5e"
+    },
+    {
+      "bytes": 46956,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree30_coefficient_system.json",
+      "sha256": "5e0a86e664b690dbf288a04ed0fea4ed367ff2a249a77bcac50db67a567b5171"
+    },
+    {
+      "bytes": 1054,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_dessin_count.json",
+      "sha256": "7a7b7b35414789be24a054edd08b5e93cff78b7325bb3616ebfbe5d75768adad"
+    },
+    {
+      "bytes": 1202,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_dessin_count.log",
+      "sha256": "ce9c07da611264c33b4441d051b9eef85bc61b0ebbd328c24f7791a0cb352530"
+    },
+    {
+      "bytes": 1667,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_primary_passport.json",
+      "sha256": "33cea48ebe382a9a10b3669f899bc86015ce0b05d64c96dd48b34fb21ebb2174"
+    },
+    {
+      "bytes": 2931,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/boundary_complex_index.py",
+      "sha256": "a11f82761ed70bf3fd019131d0da2981338ef8abb4bcfba48964240f77156ea0"
+    },
+    {
+      "bytes": 501,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/boundary_complex_index_output.txt",
+      "sha256": "e7520fe2d56057d4a4339acedf6b1139631e02ec9e6a5c8d18b7b7ad8cb644db"
+    },
+    {
+      "bytes": 13421,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/count_F2_terminal_dessins.py",
+      "sha256": "8fa863b83eba510783e2defd7a439d1d836ceb47890bd5bf94605609b9508161"
+    },
+    {
+      "bytes": 373,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/generate_F2_degree30_system.log",
+      "sha256": "9bcb44556c8391f2caaac6610aa75a308c0f59c13a9a2ad0dc7c93ece8ccf1b5"
+    },
+    {
+      "bytes": 4235,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/generate_F2_degree30_system.py",
+      "sha256": "f9079ad861c95af85d310455bbde938a21ba3b9c3b5c5b335e6869c26da0e2c6"
+    },
+    {
+      "bytes": 5728,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/next_complete_chain_queue.json",
+      "sha256": "c161f309194a8f0e86d7b1343d5c7e192e76afb80ab5bb62f02048c28a20c50c"
+    },
+    {
+      "bytes": 5881,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/post125_terminal_passports.json",
+      "sha256": "b4a8d4c2aab624e52e1bb07337069300279a6032003d835cc3a400bb2274ef3e"
+    },
+    {
+      "bytes": 2941,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_manifest.sha256",
+      "sha256": "e44e0f08f3a5368230d6b490962eeb491956cb82b718bf56e579116164aeb58c"
+    },
+    {
+      "bytes": 7379,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
+      "sha256": "d1ca56b6fa4ea8494513e1f60a0ef9b0f3fcf5bf029df8185ea833377283a09e"
+    },
+    {
+      "bytes": 22432,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
+      "sha256": "7837b4f97723090dce84e140758262a5c3ff6e0548cd5aed1f37ae1b5001494d"
+    },
+    {
+      "bytes": 7793,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "sha256": "2d69c2d3bceb3823c8b6a3c04bb0f09fd5f46c55e887bef05fc58b2e978b8d37"
+    },
+    {
+      "bytes": 1814,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_face_rigidity.json",
+      "sha256": "4e216367b5fc9a0f617548efda03ee2532f402996c3262e2f6153bf7d270746b"
+    },
+    {
+      "bytes": 1888,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_face_rigidity.log",
+      "sha256": "6f9e9632a0d976c448c4689b41abe4ec66f8517404a7fb36b6ab5d4903452ee8"
+    },
+    {
+      "bytes": 4875,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_face_rigidity.py",
+      "sha256": "dcb23b88c89bb3588d48e98826abe3289ce040a469ca610666b17baae8acaa1f"
+    },
+    {
+      "bytes": 1752,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi.log",
+      "sha256": "026a0d41f5672c3e34ddecef4c7bb8096ef63530c548da03045c4780f9f83cfb"
+    },
+    {
+      "bytes": 9833,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi.py",
+      "sha256": "eab0a34c3f4565999fbcd09389fb059e1f4d5bf63df366cd89541549761b8fc6"
+    },
+    {
+      "bytes": 11727,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "sha256": "60309805f47062ed2d3a3c8a6a9f0ad04698db44267acfa657377b2cca417ae6"
+    },
+    {
+      "bytes": 7009,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex",
+      "sha256": "06d28b73c21c7fe40ae2570efb7b1ba0783dfd5a2f11fca28b5bfed270496c63"
+    },
+    {
+      "bytes": 5343,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/universal_boundary_transport.py",
+      "sha256": "e5a7267667fcb63d60a26eb5dbd5b9d9b1b6b6827510bcf449cd805dd9ecb1a1"
+    },
+    {
+      "bytes": 12170,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/universal_boundary_transport_table.json",
+      "sha256": "8e0fab1edf3aff2d8a078a316e4bf173015cabdb8cbbf6956e0edc84b0bb172e"
+    },
+    {
+      "bytes": 1648,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/universal_boundary_transport_table.txt",
+      "sha256": "20b01fb967b8a4531fa099e320c44e5df793a9abe5c0ac7e54c6aa48abe8f56c"
+    },
+    {
+      "bytes": 285,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_F2_degree125_seed.log",
+      "sha256": "f47b1aaf9ecebda95c034031562ea2bb5d8546ea1f0e7deb5811b6bf422113d2"
+    },
+    {
+      "bytes": 1500,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py",
+      "sha256": "6f8ad5aea64d82ef73037260721fc5a5280058ee64cea599442a1bfda2e982a8"
+    },
+    {
+      "bytes": 5974,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_post125_terminal_examples.log",
+      "sha256": "5f58817470d49b1f7739edf97f94b09a5330b80ffdcdce1e9e68b1fd712df1d5"
+    },
+    {
+      "bytes": 8997,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_post125_terminal_examples.py",
+      "sha256": "8f29587fea74d96f2674795bc215efce01ec7673549918ab6d12ef7f303356df"
+    },
+    {
+      "bytes": 5826,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "sha256": "f9bd2c4e9ddad58196eb504c7fa8e5c2c4f7fc4f57c67ab3fef67b2ba7f626aa"
+    },
+    {
+      "bytes": 1628,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/convert_gmp_certificate.py",
+      "sha256": "7e3e9d474c0e4251117d20f7cc5de78360b781a191598969733baacaee63c04b"
+    },
+    {
+      "bytes": 4505,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/exact_certificate_manifest.json",
+      "sha256": "e3e76d6253ca6f153d4d464e5f0116c2ee6f06ccd236b4d974cb4bcb5cda003d"
+    },
+    {
+      "bytes": 4362,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/gmp_exact_certificate.cpp",
+      "sha256": "a6f4177c7d211a62a3689a6f3836607d2510a9ad97048427ffe56a1c33a84505"
+    },
+    {
+      "bytes": 2162,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/gmp_verify_certificate.cpp",
+      "sha256": "e165e11ab170309be79188db736685a952e321fb6d327e665c116fe1483e6e1a"
+    },
+    {
+      "bytes": 3220,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/make_certificate_manifest.py",
+      "sha256": "51309c02d7eac661af7c5dcbe8a346f82c5545b5b72f3a7fb5995b84dd245ad1"
+    },
+    {
+      "bytes": 1769,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/make_selected_matrix_input.py",
+      "sha256": "30a4b42e0d641a6916eda476c3f9257884f23943bdabbec1305887c1223761f1"
+    },
+    {
+      "bytes": 4983,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/modular_macaulay_witness.py",
+      "sha256": "893ee09c3adaa69a6ff4a7297ffc76020845b75404159a943d52e2e12371bda5"
+    },
+    {
+      "bytes": 4046,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/verify_and_clear_certificate.py",
+      "sha256": "1d36558b3003473ac9a9372351f6fdfe572704334699876ec81051021b463283"
+    },
+    {
+      "bytes": 2074,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/COMPLETION_REPORT.md",
+      "sha256": "20e45d3428ec5cef9bdb2e3f02cfca95b4e2b74f1d3834c9ec0ff75f1a8b3025"
+    },
+    {
+      "bytes": 1854,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/README.md",
+      "sha256": "0deab5699300c746fcd7b6c08e444ac5c8e2394fa9a8149a826920be14e74c2a"
+    },
+    {
+      "bytes": 6825,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/SHA256SUMS",
+      "sha256": "e17da37f870d45ba8af8e2848650dcf13e4a5b95362a4161618222eb4e2e5af8"
+    },
+    {
+      "bytes": 2084,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/THEOREM_AND_DEPENDENCIES.md",
+      "sha256": "598e9f4c0e7399ce0772179891849c2987755a06294b060f65a7915e8b291189"
+    },
+    {
+      "bytes": 178,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/build_manuscript.sh",
+      "sha256": "30b99721788942a8dd8b175cf7fb6805446b071be533c1630e2b2565579d5dcd"
+    },
+    {
+      "bytes": 3149,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/handoff-lite/layer-calculation/belyi_exact_field_relations.json",
+      "sha256": "5b4af2128b91aba7796660865a48fc4cc3d9a851521f45106acad74db7dbcb6d"
+    },
+    {
+      "bytes": 6319397,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/handoff-lite/layer-calculation/full_exact_fivevar_w8.json",
+      "sha256": "34d5d45d348418de5171088c31c4e1685d1e57fdade9f1b4462b826134b2c713"
+    },
+    {
+      "bytes": 10927,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/handoff-lite/residue_resultant_obstruction/mixed_volume_certificate.json",
+      "sha256": "101db9e5580fb4d18101876af981a5989dda30315bb5f93e57f385c96385393b"
+    },
+    {
+      "bytes": 5207,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/buchberger_generator.cpp",
+      "sha256": "13926c3083c2c3ce8a9d018394c2a8d87c890f9c7d0346771de0274ea87f2f0f"
+    },
+    {
+      "bytes": 177604,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u1975.bin",
+      "sha256": "6549ecc4d04889e2c721136f77774bc81c905510410b80d44506daed5102d22f"
+    },
+    {
+      "bytes": 177604,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u216.bin",
+      "sha256": "97471bd28807a66e25dc649e8220b549499546734e721db218446d230697129c"
+    },
+    {
+      "bytes": 177604,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u531.bin",
+      "sha256": "a2bfe0e2029dc2061d559cbf79fd2692ee821512fd54c78100936e7f1fa607bb"
+    },
+    {
+      "bytes": 177604,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u664.bin",
+      "sha256": "11bc49a79d22c7c4ae9490c3dc3aaa3e4dfbf61c4e2fe6a61720a9b6f31df6a9"
+    },
+    {
+      "bytes": 177604,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u721.bin",
+      "sha256": "2b31484a0e4f25f5593e84487088eb59319395fa3341671afcffa553db5f419d"
+    },
+    {
+      "bytes": 598,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/krylov_charpoly_p2053_u216.bin",
+      "sha256": "061a5a9147e1c236990bc91d287049a1e6b2d141c0cef0afeccb3135b8fa9bb4"
+    },
+    {
+      "bytes": 744948,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/modular_groebner_basis_p2053_u216.bin",
+      "sha256": "3ee10ee9a45ed3de770a0697337f69f40cefaf283ab2ec43705413f444e213f7"
+    },
+    {
+      "bytes": 6224,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/multiplication_matrix_generator.cpp",
+      "sha256": "cea60a09a835c5dbb67a64f679487909801317b0fda06b5c8abd4a5991f81c34"
+    },
+    {
+      "bytes": 2500,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/six_p2053_u216.bin",
+      "sha256": "14e41605cc59822a0f3915fc00e38153e6cc8cf906f08867d7d64d99ba405203"
+    },
+    {
+      "bytes": 177604,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var0_matrix_p2053_u216.bin",
+      "sha256": "2c165b3a043d3c332550d8bc7ab3ad3a64efba70d7ca9d3575a82e26e20b22ca"
+    },
+    {
+      "bytes": 177604,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var1_matrix_p2053_u216.bin",
+      "sha256": "543ab9d0d73a53b7146cb14c071dc79a4140750092e5d8b6c9caf5110e99d696"
+    },
+    {
+      "bytes": 177604,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var2_matrix_p2053_u216.bin",
+      "sha256": "da0c0aa7036e0421352bc365f523808f2c0a08496a3d9b9b21cd32b274180158"
+    },
+    {
+      "bytes": 177604,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var3_matrix_p2053_u216.bin",
+      "sha256": "b00e61ad74e15c63b7e3a0bb28f1a3879af5f5f5cc33670cdecf05ebbcaf8829"
+    },
+    {
+      "bytes": 177604,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var4_matrix_p2053_u216.bin",
+      "sha256": "4aa192f613ebb7493eee74a7b955d19d404c2d83a79cb4fb97a7787542f1c11e"
+    },
+    {
+      "bytes": 3313,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/STATUS.md",
+      "sha256": "b82a736a9bd29372651abc4054649f2a9ac4d13a77d174dd0a4e534132f7413b"
+    },
+    {
+      "bytes": 7603,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
+      "sha256": "bc4ca14ab87d6eba22bc392cba94f0b0bc339511fc4a5c6bf8d432b3438f6026"
+    },
+    {
+      "bytes": 6424,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/descent-puiseux-log.tex",
+      "sha256": "492ea26c947bf2d7e5c61bc598b8a59ea7d8e51430e6a7076029b716468f4495"
+    },
+    {
+      "bytes": 35686,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "sha256": "4e6d7b628ee9932c8f041032606bb024a9d2c41495c36a63a931f95f356ae8f2"
+    },
+    {
+      "bytes": 6133,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/filtered-principal-parts.tex",
+      "sha256": "76ef2aa9f70cac7f0c064c8a358e065ba05cee41b7857080c18ff4ded888c9a3"
+    },
+    {
+      "bytes": 12542,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "sha256": "2bbe5e7223c354177aae93a49b590abbaa90c7b48f8b59cfd7cd181a17ffd960"
+    },
+    {
+      "bytes": 1825,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/common/preamble.tex",
+      "sha256": "e0994104a086094c3cdd1324ae363da5f2aa4d69e7d0d9774d528aac2bbd0b29"
+    },
+    {
+      "bytes": 16111,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/common/references.bib",
+      "sha256": "45af49876f6dcae9924e2459308b4dd102508ec5d986bd213586daa84f17ff3d"
+    },
+    {
+      "bytes": 120,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/galois_norm.log",
+      "sha256": "72f393630d9c6a23d3d14f88f3efc94ce997ae160902e46a1dace6bb20f969c1"
+    },
+    {
+      "bytes": 471,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/galois_norm_certificate.json",
+      "sha256": "3a59e352af9566af61d813940e570c24ef6a1232ec0ed7d6640f8827f10c6cf5"
+    },
+    {
+      "bytes": 146,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/good_prime.log",
+      "sha256": "cc2661c623396e3747256679c186b4efe758d0fee60e8ac50b43daffbe0ef0a6"
+    },
+    {
+      "bytes": 1264,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/good_prime_certificate.json",
+      "sha256": "524108e9dba8bafd8c4ee6d4b1151946e78c9df3121397850206b8886806631f"
+    },
+    {
+      "bytes": 125,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/mixed_volume.log",
+      "sha256": "3d80826f0f672d274219e5f3633b745b4841dfd39cd2a80024638835d6cebf8b"
+    },
+    {
+      "bytes": 10927,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/mixed_volume_certificate.json",
+      "sha256": "101db9e5580fb4d18101876af981a5989dda30315bb5f93e57f385c96385393b"
+    },
+    {
+      "bytes": 605,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/modular_algebra.log",
+      "sha256": "e24a7e4578762335fc723f0fd2d647370b1ef3b6de42bd7f4ac450a8d435e199"
+    },
+    {
+      "bytes": 1250,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "sha256": "7562afab59875d04d58da6917a6c8d7166ba6b21536ea6de1d418c48078f230c"
+    },
+    {
+      "bytes": 104170305,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/residue_audit/residue_audit_layers.json",
+      "sha256": "4d623c513de48e722c84435039b08a84fbcab84cfeb57f08780e36b36dcd8bd5"
+    },
+    {
+      "bytes": 34173593,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/residue_audit/residue_audit_provenance.json",
+      "sha256": "5f4dfe88f016ddb942bf5d9a4478690d56d80326f6b580a413f805bcc8548bc7"
+    },
+    {
+      "bytes": 3373,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/residue_audit/residue_audit_summary.json",
+      "sha256": "f6c451cae0788cfae64e9f7b5e5599d7abc0c1e8896f6086b27b5fce54dcc556"
+    },
+    {
+      "bytes": 299,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/secondary_belyi.log",
+      "sha256": "8bb86854695988382b8176a94bd678ddbe125a9672c78f34de24702ff1b5de5f"
+    },
+    {
+      "bytes": 2744,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_face_checks.tsv",
+      "sha256": "5da2c3bd24d13b5146fc71522a2c950fbfc72895bcbc3e541023038afae2fd75"
+    },
+    {
+      "bytes": 450,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_face_generation.log",
+      "sha256": "be75521245494d05feac0fec5d95cfaa740de77ee62014316d2f05de188e957e"
+    },
+    {
+      "bytes": 4883,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_face_verification.log",
+      "sha256": "a4fedaf7c2b2100b7979a2f8d33c3ad152aa7ab5bb8c35aeb06c3f66b0dfb8bb"
+    },
+    {
+      "bytes": 25720,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_faces_exact.bin",
+      "sha256": "02e270fdc239a6463442050646f2b1e4a5a29cd61476d9e546324723c40a8460"
+    },
+    {
+      "bytes": 140630,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_faces_exact.json",
+      "sha256": "64769c697325a0922eb32bab9c9d13096fb4d2877100ed09c2963106e60f2f43"
+    },
+    {
+      "bytes": 1689,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/run_all.sh",
+      "sha256": "780c644701688ab1a3b36040691aae336be2b412cada338d4be3ae05c2e7857c"
+    },
+    {
+      "bytes": 1400,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/boundary_gluing_secondary_belyi.py",
+      "sha256": "bf75acea8d9c9a89ba85f0bcf454671c7bfe0425539cb683f46cdc1f51260210"
+    },
+    {
+      "bytes": 34229,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/export_residue_audit.py",
+      "sha256": "418ddb2911a05b65218801d09a77762ba6bf63818a3f7cb29ee2c5545cbe2680"
+    },
+    {
+      "bytes": 8326,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/generate_toric_face_systems.py",
+      "sha256": "5a57ceb0a442db2b137628b9fbfaa2d3e0ad5678d57bf261970b1411bb2c8caa"
+    },
+    {
+      "bytes": 5706,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/quintic_field_fast.py",
+      "sha256": "b43871c8897512b752c9e8fa8d4f2d80571865d465940e13b36f130d07091942"
+    },
+    {
+      "bytes": 5424,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_galois_norm.py",
+      "sha256": "7112daebf7ccd22a6bff82817b1d577ad9e753026c632d23374fbcf9e8b968cf"
+    },
+    {
+      "bytes": 2457,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_good_prime.py",
+      "sha256": "4f5cb3d479c8d6ef301ff41f62e0c88a71b6fd695a4b868524a99c84bc4a6086"
+    },
+    {
+      "bytes": 6068,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_mixed_volume.py",
+      "sha256": "aab3befb37996ecf0d9e464adb72da154378d60678317387806f1ef1670263c3"
+    },
+    {
+      "bytes": 14962,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_modular_algebra.cpp",
+      "sha256": "c2de3aa5eb09bb58ae09653248f78957b686f6368919c1a629a9027b4a077ab4"
+    },
+    {
+      "bytes": 7383,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_toric_faces.cpp",
+      "sha256": "791d03e05d69a217be09b612796fda26823a59a6c3e74306e82e405dd8f5c8d2"
+    },
+    {
+      "bytes": 5826,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "sha256": "f9bd2c4e9ddad58196eb504c7fa8e5c2c4f7fc4f57c67ab3fef67b2ba7f626aa"
+    },
+    {
+      "bytes": 10657110,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b-1_dcrit_cleared_certificate.json",
+      "sha256": "14aeb37e0678e3a8a376545715809f5f07d6dcf389a632197a846eafdda13f8e"
+    },
+    {
+      "bytes": 20984912,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b-1_dcrit_exact_certificate.json",
+      "sha256": "2cf1b598d12eabb53b044ca643abcc42c617755bb2967f56f1ffa0ee48ec7fbb"
+    },
+    {
+      "bytes": 20957071,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b-1_dcrit_gmp_certificate.txt",
+      "sha256": "7080fab408b07c517d144c712dd6e7fbeaccce8a9af17d61371e1b4f7f8473b2"
+    },
+    {
+      "bytes": 5480476,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b-1_dcrit_selected_matrix.txt",
+      "sha256": "a3fc104f5464560515875d2130311982cde9bfce912f1f36dc0f27e8bd398c54"
+    },
+    {
+      "bytes": 59,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b-1_exact_verification.txt",
+      "sha256": "5ef6791a403071f6b00cb7ec0bedce7c061db7a5455a46fcee8116789a865cdc"
+    },
+    {
+      "bytes": 10656667,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b1_dcrit_cleared_certificate.json",
+      "sha256": "c442199945d92fe0bdc2a29bb04506ef9416ca9e83cf921eaea36bb1f9eb83e5"
+    },
+    {
+      "bytes": 20984665,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b1_dcrit_exact_certificate.json",
+      "sha256": "1f1d3c0e7fe21f2015657668543b0564e27ec007957d1d02cf6e7dc19aa5dd4a"
+    },
+    {
+      "bytes": 20956824,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b1_dcrit_gmp_certificate.txt",
+      "sha256": "b4ef6dd80f34882200b3bfc0acce0590f9388ce9f6f7aed1f6fdb4c8b354ca6f"
+    },
+    {
+      "bytes": 5479065,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b1_dcrit_selected_matrix.txt",
+      "sha256": "8299a485cfb9b5a4bf14cb5bd9f45eaf4c32008c58c81a00dde0aaea6890b895"
+    },
+    {
+      "bytes": 58,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b1_exact_verification.txt",
+      "sha256": "ec34b7577865e570896457055339e8edb2a72b53406d9b599f8b346f641686c6"
+    },
+    {
+      "bytes": 2977027,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/certificate_systems.json",
+      "sha256": "4d4ab290055975211339542de079f016056fda658b9e844df5298abb221a4656"
+    },
+    {
+      "bytes": 4505,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/exact_certificate_manifest.json",
+      "sha256": "e3e76d6253ca6f153d4d464e5f0116c2ee6f06ccd236b4d974cb4bcb5cda003d"
+    },
+    {
+      "bytes": 4362,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/gmp_exact_certificate.cpp",
+      "sha256": "a6f4177c7d211a62a3689a6f3836607d2510a9ad97048427ffe56a1c33a84505"
+    },
+    {
+      "bytes": 2162,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/gmp_verify_certificate.cpp",
+      "sha256": "e165e11ab170309be79188db736685a952e321fb6d327e665c116fe1483e6e1a"
+    },
+    {
+      "bytes": 56236,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
+      "sha256": "70cdb8113b0511fc7fe7ebe7c5464b19e8be38ca92e52bf93045c8366a5bb339"
+    }
+  ],
+  "format": 1,
+  "paper": "06-plane-boundary"
+}

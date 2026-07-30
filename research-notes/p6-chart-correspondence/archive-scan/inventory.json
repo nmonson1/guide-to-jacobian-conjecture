@@ -1,0 +1,1234 @@
+{
+  "archive": "06-plane-boundary-computational-supplement.zip",
+  "archive_sha256": "4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585",
+  "entries": [
+    {
+      "compressed_size": 1455,
+      "crc32": "b874b719",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/COMPUTATION.md",
+      "size": 3111,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 7828,
+      "crc32": "e3bcbe4f",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
+      "size": 36354,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 1177,
+      "crc32": "bf5ab146",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/code/verify_exact_normal_form.py",
+      "size": 2491,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1117,
+      "crc32": "95cb80c8",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/COMPLETION_REPORT.md",
+      "size": 2074,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 1005,
+      "crc32": "0f72e415",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/README.md",
+      "size": 1854,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 3275,
+      "crc32": "0d8fe2fd",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/SHA256SUMS",
+      "size": 6825,
+      "suffix": ""
+    },
+    {
+      "compressed_size": 1123,
+      "crc32": "6c7c2d1f",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/THEOREM_AND_DEPENDENCIES.md",
+      "size": 2084,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 558,
+      "crc32": "4d871a62",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/run_all.sh",
+      "size": 1689,
+      "suffix": ".sh"
+    },
+    {
+      "compressed_size": 722,
+      "crc32": "82584cb2",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/boundary_gluing_secondary_belyi.py",
+      "size": 1400,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 9261,
+      "crc32": "09437cdf",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/export_residue_audit.py",
+      "size": 34229,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 3037,
+      "crc32": "e395fe84",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/generate_toric_face_systems.py",
+      "size": 8326,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1934,
+      "crc32": "2545ee49",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/quintic_field_fast.py",
+      "size": 5706,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1767,
+      "crc32": "312c06d3",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_galois_norm.py",
+      "size": 5424,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1031,
+      "crc32": "54cbeded",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_good_prime.py",
+      "size": 2457,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 2098,
+      "crc32": "5b7e5ff9",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_mixed_volume.py",
+      "size": 6068,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 3343,
+      "crc32": "e5675501",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_modular_algebra.cpp",
+      "size": 14962,
+      "suffix": ".cpp"
+    },
+    {
+      "compressed_size": 2547,
+      "crc32": "04495a40",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_toric_faces.cpp",
+      "size": 7383,
+      "suffix": ".cpp"
+    },
+    {
+      "compressed_size": 1854,
+      "crc32": "f503bc72",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/README.md",
+      "size": 4526,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 2695,
+      "crc32": "7e8b3b71",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md",
+      "size": 5642,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 5617,
+      "crc32": "8fbc9065",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/attack_8_28.py",
+      "size": 14287,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1033,
+      "crc32": "6794df9f",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/boundary_graph_data.json",
+      "size": 19815,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 3383,
+      "crc32": "c027552b",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
+      "size": 7313,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1124,
+      "crc32": "8a6f6cfd",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/character_count_degree21.py",
+      "size": 2697,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 388,
+      "crc32": "0cfa9c47",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/deeper_exact_reduction.json",
+      "size": 931,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 395,
+      "crc32": "b7677d5f",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/degree21_dessin_count.json",
+      "size": 750,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 1706,
+      "crc32": "b67de76a",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/enumerate_five_dessins.py",
+      "size": 4184,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 3551,
+      "crc32": "80de53b7",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/exact_data.json",
+      "size": 69105,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 2793,
+      "crc32": "f496fd51",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/extend_attack.py",
+      "size": 6454,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 242,
+      "crc32": "f822ec79",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/fan_data.json",
+      "size": 1935,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 28500,
+      "crc32": "4dea4770",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/full_coefficient_ideal.sing",
+      "size": 129041,
+      "suffix": ".sing"
+    },
+    {
+      "compressed_size": 120,
+      "crc32": "f3b9c7cb",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/full_first_nonlinear_obstruction.txt",
+      "size": 226,
+      "suffix": ".txt"
+    },
+    {
+      "compressed_size": 367,
+      "crc32": "a8b5e520",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/minus5_belyi_obstruction.json",
+      "size": 666,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 247,
+      "crc32": "9c04d19b",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/refined_fan_data.json",
+      "size": 2188,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 4325,
+      "crc32": "8248aa11",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/truncated_coefficient_ideal.sing",
+      "size": 18047,
+      "suffix": ".sing"
+    },
+    {
+      "compressed_size": 94,
+      "crc32": "2681009a",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/truncated_first_nonlinear_obstruction.txt",
+      "size": 146,
+      "suffix": ".txt"
+    },
+    {
+      "compressed_size": 319,
+      "crc32": "2ee3007a",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/verify_minus5_belyi.py",
+      "size": 543,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1171,
+      "crc32": "28cf8004",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/verify_quintic_field.py",
+      "size": 2243,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1977,
+      "crc32": "c9037103",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md",
+      "size": 4609,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 2682,
+      "crc32": "237c8114",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
+      "size": 5965,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 3492,
+      "crc32": "64033142",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree30_coefficient_system.json",
+      "size": 46956,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 454,
+      "crc32": "0f87ee0b",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_dessin_count.json",
+      "size": 1054,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 535,
+      "crc32": "d25c6de6",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_dessin_count.log",
+      "size": 1202,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 453,
+      "crc32": "08d57d8e",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_primary_passport.json",
+      "size": 1667,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 1219,
+      "crc32": "dc9753b8",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/boundary_complex_index.py",
+      "size": 2931,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 225,
+      "crc32": "f647e5a4",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/boundary_complex_index_output.txt",
+      "size": 501,
+      "suffix": ".txt"
+    },
+    {
+      "compressed_size": 4369,
+      "crc32": "abeede6d",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/count_F2_terminal_dessins.py",
+      "size": 13421,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 172,
+      "crc32": "7416d6e0",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/generate_F2_degree30_system.log",
+      "size": 373,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 1842,
+      "crc32": "e86d0949",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/generate_F2_degree30_system.py",
+      "size": 4235,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1133,
+      "crc32": "378bcd1d",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/next_complete_chain_queue.json",
+      "size": 5728,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 1192,
+      "crc32": "f077d936",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/post125_terminal_passports.json",
+      "size": 5881,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 1537,
+      "crc32": "27d15bc4",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_manifest.sha256",
+      "size": 2941,
+      "suffix": ".sha256"
+    },
+    {
+      "compressed_size": 3457,
+      "crc32": "81c7b003",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
+      "size": 7379,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 8615,
+      "crc32": "44cdb693",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
+      "size": 22432,
+      "suffix": ".tex"
+    },
+    {
+      "compressed_size": 3448,
+      "crc32": "9a092fde",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "size": 7793,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 341,
+      "crc32": "d82517cf",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_face_rigidity.json",
+      "size": 1814,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 389,
+      "crc32": "91eab331",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_face_rigidity.log",
+      "size": 1888,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 1837,
+      "crc32": "85eaa39f",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_face_rigidity.py",
+      "size": 4875,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 506,
+      "crc32": "c6d6b5a1",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi.log",
+      "size": 1752,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 3351,
+      "crc32": "14d9a3c6",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi.py",
+      "size": 9833,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 4798,
+      "crc32": "eeed6f6d",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "size": 11727,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 3170,
+      "crc32": "0c6e4516",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex",
+      "size": 7009,
+      "suffix": ".tex"
+    },
+    {
+      "compressed_size": 2082,
+      "crc32": "dc5f7c7a",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/universal_boundary_transport.py",
+      "size": 5343,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 2548,
+      "crc32": "2181714c",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/universal_boundary_transport_table.json",
+      "size": 12170,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 467,
+      "crc32": "a5961c9d",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/universal_boundary_transport_table.txt",
+      "size": 1648,
+      "suffix": ".txt"
+    },
+    {
+      "compressed_size": 187,
+      "crc32": "7f66e6dc",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_F2_degree125_seed.log",
+      "size": 285,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 699,
+      "crc32": "4e386182",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py",
+      "size": 1500,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1239,
+      "crc32": "cfe540aa",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_post125_terminal_examples.log",
+      "size": 5974,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 2815,
+      "crc32": "2ea67350",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_post125_terminal_examples.py",
+      "size": 8997,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 2716,
+      "crc32": "ef2f73b4",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "size": 5826,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 829,
+      "crc32": "8e39cf45",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/convert_gmp_certificate.py",
+      "size": 1628,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1878,
+      "crc32": "ba693fd5",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/exact_certificate_manifest.json",
+      "size": 4505,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 1682,
+      "crc32": "040ad9b6",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/gmp_exact_certificate.cpp",
+      "size": 4362,
+      "suffix": ".cpp"
+    },
+    {
+      "compressed_size": 976,
+      "crc32": "ce6c35e8",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/gmp_verify_certificate.cpp",
+      "size": 2162,
+      "suffix": ".cpp"
+    },
+    {
+      "compressed_size": 1424,
+      "crc32": "d0c49a27",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/make_certificate_manifest.py",
+      "size": 3220,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 885,
+      "crc32": "e2660f6c",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/make_selected_matrix_input.py",
+      "size": 1769,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 2036,
+      "crc32": "ce03eb79",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/modular_macaulay_witness.py",
+      "size": 4983,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1728,
+      "crc32": "8dcea82c",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/verify_and_clear_certificate.py",
+      "size": 4046,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1117,
+      "crc32": "95cb80c8",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/COMPLETION_REPORT.md",
+      "size": 2074,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 1005,
+      "crc32": "0f72e415",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/README.md",
+      "size": 1854,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 3275,
+      "crc32": "0d8fe2fd",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/SHA256SUMS",
+      "size": 6825,
+      "suffix": ""
+    },
+    {
+      "compressed_size": 1123,
+      "crc32": "6c7c2d1f",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/THEOREM_AND_DEPENDENCIES.md",
+      "size": 2084,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 147,
+      "crc32": "788b4161",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/build_manuscript.sh",
+      "size": 178,
+      "suffix": ".sh"
+    },
+    {
+      "compressed_size": 1587,
+      "crc32": "69ae494e",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/handoff-lite/layer-calculation/belyi_exact_field_relations.json",
+      "size": 3149,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 1948242,
+      "crc32": "4b43da08",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/handoff-lite/layer-calculation/full_exact_fivevar_w8.json",
+      "size": 6319397,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 707,
+      "crc32": "cecb8a23",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/handoff-lite/residue_resultant_obstruction/mixed_volume_certificate.json",
+      "size": 10927,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 2048,
+      "crc32": "1f5cf50a",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/buchberger_generator.cpp",
+      "size": 5207,
+      "suffix": ".cpp"
+    },
+    {
+      "compressed_size": 138289,
+      "crc32": "f494da3f",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u1975.bin",
+      "size": 177604,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 138267,
+      "crc32": "8e32a105",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u216.bin",
+      "size": 177604,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 138272,
+      "crc32": "e3652a1a",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u531.bin",
+      "size": 177604,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 138231,
+      "crc32": "e08ad0ed",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u664.bin",
+      "size": 177604,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 138277,
+      "crc32": "8173ec3d",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/f4_matrix_p2053_u721.bin",
+      "size": 177604,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 534,
+      "crc32": "6cd6f22b",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/krylov_charpoly_p2053_u216.bin",
+      "size": 598,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 258206,
+      "crc32": "1ce88b47",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/modular_groebner_basis_p2053_u216.bin",
+      "size": 744948,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 2590,
+      "crc32": "135980c0",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/multiplication_matrix_generator.cpp",
+      "size": 6224,
+      "suffix": ".cpp"
+    },
+    {
+      "compressed_size": 1241,
+      "crc32": "7b8491c8",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/six_p2053_u216.bin",
+      "size": 2500,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 66288,
+      "crc32": "951530b0",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var0_matrix_p2053_u216.bin",
+      "size": 177604,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 69765,
+      "crc32": "ccf831cc",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var1_matrix_p2053_u216.bin",
+      "size": 177604,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 70495,
+      "crc32": "1306524e",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var2_matrix_p2053_u216.bin",
+      "size": 177604,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 63722,
+      "crc32": "7c3add87",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var3_matrix_p2053_u216.bin",
+      "size": 177604,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 55882,
+      "crc32": "22b322ef",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/modular-certificate/var4_matrix_p2053_u216.bin",
+      "size": 177604,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 1637,
+      "crc32": "d18f0259",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/STATUS.md",
+      "size": 3313,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 3298,
+      "crc32": "be992b16",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
+      "size": 7603,
+      "suffix": ".tex"
+    },
+    {
+      "compressed_size": 2886,
+      "crc32": "9da9eeaa",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/descent-puiseux-log.tex",
+      "size": 6424,
+      "suffix": ".tex"
+    },
+    {
+      "compressed_size": 13148,
+      "crc32": "753ea893",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "size": 35686,
+      "suffix": ".tex"
+    },
+    {
+      "compressed_size": 2564,
+      "crc32": "0386f9f2",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/filtered-principal-parts.tex",
+      "size": 6133,
+      "suffix": ".tex"
+    },
+    {
+      "compressed_size": 4846,
+      "crc32": "11aa0eb9",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/sections/toric-norm.tex",
+      "size": 12542,
+      "suffix": ".tex"
+    },
+    {
+      "compressed_size": 549,
+      "crc32": "1c886957",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/common/preamble.tex",
+      "size": 1825,
+      "suffix": ".tex"
+    },
+    {
+      "compressed_size": 4901,
+      "crc32": "e4588a67",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/common/references.bib",
+      "size": 16111,
+      "suffix": ".bib"
+    },
+    {
+      "compressed_size": 99,
+      "crc32": "c121e30b",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/galois_norm.log",
+      "size": 120,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 240,
+      "crc32": "f7411c05",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/galois_norm_certificate.json",
+      "size": 471,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 98,
+      "crc32": "6c9af169",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/good_prime.log",
+      "size": 146,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 292,
+      "crc32": "b09aace8",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/good_prime_certificate.json",
+      "size": 1264,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 100,
+      "crc32": "164f3dd5",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/mixed_volume.log",
+      "size": 125,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 707,
+      "crc32": "cecb8a23",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/mixed_volume_certificate.json",
+      "size": 10927,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 234,
+      "crc32": "00729d1b",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/modular_algebra.log",
+      "size": 605,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 336,
+      "crc32": "8f39e897",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/original_manifest.log",
+      "size": 1250,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 23471945,
+      "crc32": "5e757351",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/residue_audit/residue_audit_layers.json",
+      "size": 104170305,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 6607212,
+      "crc32": "31757526",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/residue_audit/residue_audit_provenance.json",
+      "size": 34173593,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 534,
+      "crc32": "a794905e",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/residue_audit/residue_audit_summary.json",
+      "size": 3373,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 205,
+      "crc32": "04250905",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/secondary_belyi.log",
+      "size": 299,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 947,
+      "crc32": "e0cc6e0d",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_face_checks.tsv",
+      "size": 2744,
+      "suffix": ".tsv"
+    },
+    {
+      "compressed_size": 245,
+      "crc32": "4942e62e",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_face_generation.log",
+      "size": 450,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 1045,
+      "crc32": "4be55736",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_face_verification.log",
+      "size": 4883,
+      "suffix": ".log"
+    },
+    {
+      "compressed_size": 7129,
+      "crc32": "cfc07ccf",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_faces_exact.bin",
+      "size": 25720,
+      "suffix": ".bin"
+    },
+    {
+      "compressed_size": 5372,
+      "crc32": "ee2f2fe3",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/outputs/toric_faces_exact.json",
+      "size": 140630,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 558,
+      "crc32": "4d871a62",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/run_all.sh",
+      "size": 1689,
+      "suffix": ".sh"
+    },
+    {
+      "compressed_size": 722,
+      "crc32": "82584cb2",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/boundary_gluing_secondary_belyi.py",
+      "size": 1400,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 9261,
+      "crc32": "09437cdf",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/export_residue_audit.py",
+      "size": 34229,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 3037,
+      "crc32": "e395fe84",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/generate_toric_face_systems.py",
+      "size": 8326,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1934,
+      "crc32": "2545ee49",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/quintic_field_fast.py",
+      "size": 5706,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1767,
+      "crc32": "312c06d3",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_galois_norm.py",
+      "size": 5424,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 1031,
+      "crc32": "54cbeded",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_good_prime.py",
+      "size": 2457,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 2098,
+      "crc32": "5b7e5ff9",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_mixed_volume.py",
+      "size": 6068,
+      "suffix": ".py"
+    },
+    {
+      "compressed_size": 3343,
+      "crc32": "e5675501",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_modular_algebra.cpp",
+      "size": 14962,
+      "suffix": ".cpp"
+    },
+    {
+      "compressed_size": 2547,
+      "crc32": "04495a40",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_toric_faces.cpp",
+      "size": 7383,
+      "suffix": ".cpp"
+    },
+    {
+      "compressed_size": 2716,
+      "crc32": "ef2f73b4",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "size": 5826,
+      "suffix": ".md"
+    },
+    {
+      "compressed_size": 5004741,
+      "crc32": "f0fe5340",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b-1_dcrit_cleared_certificate.json",
+      "size": 10657110,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 9854319,
+      "crc32": "e4db6d11",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b-1_dcrit_exact_certificate.json",
+      "size": 20984912,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 9837452,
+      "crc32": "168ef8c0",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b-1_dcrit_gmp_certificate.txt",
+      "size": 20957071,
+      "suffix": ".txt"
+    },
+    {
+      "compressed_size": 2046938,
+      "crc32": "447ab17c",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b-1_dcrit_selected_matrix.txt",
+      "size": 5480476,
+      "suffix": ".txt"
+    },
+    {
+      "compressed_size": 61,
+      "crc32": "0cd94d9d",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b-1_exact_verification.txt",
+      "size": 59,
+      "suffix": ".txt"
+    },
+    {
+      "compressed_size": 5004525,
+      "crc32": "253097af",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b1_dcrit_cleared_certificate.json",
+      "size": 10656667,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 9855251,
+      "crc32": "0fbbb7dc",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b1_dcrit_exact_certificate.json",
+      "size": 20984665,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 9838475,
+      "crc32": "848c9013",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b1_dcrit_gmp_certificate.txt",
+      "size": 20956824,
+      "suffix": ".txt"
+    },
+    {
+      "compressed_size": 2043943,
+      "crc32": "ee8ecbc4",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b1_dcrit_selected_matrix.txt",
+      "size": 5479065,
+      "suffix": ".txt"
+    },
+    {
+      "compressed_size": 60,
+      "crc32": "01c02247",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/b1_exact_verification.txt",
+      "size": 58,
+      "suffix": ".txt"
+    },
+    {
+      "compressed_size": 1392684,
+      "crc32": "360deb1a",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/certificate_systems.json",
+      "size": 2977027,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 1878,
+      "crc32": "ba693fd5",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/exact_certificate_manifest.json",
+      "size": 4505,
+      "suffix": ".json"
+    },
+    {
+      "compressed_size": 1682,
+      "crc32": "040ad9b6",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/gmp_exact_certificate.cpp",
+      "size": 4362,
+      "suffix": ".cpp"
+    },
+    {
+      "compressed_size": 976,
+      "crc32": "ce6c35e8",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/gmp_verify_certificate.cpp",
+      "size": 2162,
+      "suffix": ".cpp"
+    },
+    {
+      "compressed_size": 2222,
+      "crc32": "2e80de27",
+      "is_dir": false,
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/modular_macaulay_witnesses.json",
+      "size": 56236,
+      "suffix": ".json"
+    }
+  ],
+  "entry_count": 151,
+  "extracted_bytes": 58207,
+  "file_count": 151,
+  "hit_count": 184,
+  "keyword_file_counts": {
+    "D_4|D4": 5,
+    "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)": 4,
+    "approximate root": 1,
+    "degree[-_ ]?21": 14,
+    "dimension.*1.*2.*1.*1": 0,
+    "k\\s*=\\s*4": 0,
+    "layer[-_ ]?4": 0,
+    "normal[-_ ]?layer": 10,
+    "rechart|re-chart|chart transition": 0,
+    "residual": 7,
+    "residue adjoint|left kernel": 7,
+    "support window|support matrix|support transport": 1
+  },
+  "schema_version": 1,
+  "uncompressed_bytes": 267478776
+}
