@@ -1,29 +1,50 @@
-# Program 6 chart correspondence: exact replay and resonance reduction
+# Program 6 chart correspondence: exact fixed-chart and upper-face diagnostics
 
 **Status:** research intake note, not an integrated claim or manuscript result.
 
-This note develops Program 6 task P6-T2: replace fixed-chart surjectivity by a
-support-aware distinction between fixed-chart gauge and tangent directions to
-adjacent complete-chain charts. It now contains both a general reduction and a
-non-synthetic replay of the archived degree-21 upper-face complex:
+This note develops Program 6 task P6-T2: distinguish fixed-chart gauge
+parameters from tangent directions to adjacent complete-chain charts while
+transporting finite support and residue conditions exactly.
+
+The work now has two complementary parts:
+
+1. a general fixed-chart formalism and an executable support-window quotient;
+2. an independent replay and structural decomposition of the archived
+   degree-21 **upper-face** linear complex.
+
+These must not be conflated. The archive fixture `exact_data.json` concerns the
+upper-face pair
+
+```text
+A0 = R^2,  B0 = R^3,  R = y^7(y-1),  (alpha,beta)=(8,12).
+```
+
+Proposition C.9 of the reader manuscript concerns a later **lower-face normal**
+complex with
+
+```text
+A0 = z p(z),  B0 = z^2 q(z),  (alpha,beta)=(2,3),  Psi=z^2.
+```
+
+Both calculations have a distinguished layer numbered four, but they are not
+the same vector space or quotient. The upper-face replay below does not by
+itself identify the C.9 rechart direction.
+
+The concrete outputs are:
 
 1. determinant-kernel directions are divergence-free rational source fields;
 2. elementary wall shears give explicit adjacent-chart tangent directions;
 3. Newton support and residue functionals transport by finite exact formulas;
-4. a rational diagnostic computes `ker(D_r)/(gauge + rechart)`;
-5. all 24 archived full/truncated degree-21 layer matrices and their recorded
+4. `fixed_chart_gauge.py` computes the actual support-aware quotient
+   `ker(D_r)/im(Theta_r)` once the four exponent windows are supplied;
+5. `chart_correspondence.py` further quotients by proposed adjacent-chart
+   tangent vectors;
+6. all 24 archived full/truncated upper-face matrices and their recorded
    left/right nullspaces are independently replayed over `Q`;
-6. the raw degree-21 kernel has a canonical common-root defect whose only
-   exceptional polynomial classes occur at layers `4, 8, 12`;
-7. at layer four the exceptional quotient is one-dimensional in both support
-   models and has the same normalized representative.
+7. the upper-face kernel has a canonical common-root defect whose only
+   polynomial resonance layers are `4, 8, 12`.
 
-The last point recovers a basis-independent algebraic precursor of the stored
-`k = 4` rechart. It does not independently prove that the exceptional vector is
-an admissible complete-chain transition; that still requires the actual chart
-map and support transport.
-
-## 1. Kernel directions as divergence-free source fields
+## 1. Keller kernel directions are divergence-free source fields
 
 Let `K` be a characteristic-zero field and let
 
@@ -69,8 +90,8 @@ The first term vanishes because `J(F)=c` is constant. Conversely, every
 `delta F` determines the unique rational field `v=(dF)^(-1)delta F`.
 
 Thus P6-T2 is not primarily another determinant calculation. Its hard part is
-the classification of divergence-free vector fields subject to the
-complete-chain filtration and finite Newton windows.
+the classification of divergence-free fields subject to the complete-chain
+filtration and finite Newton windows.
 
 A logarithmic chart can have non-Hamiltonian de Rham classes, so
 `divergence-free` must not be silently replaced by `Hamiltonian`.
@@ -146,7 +167,128 @@ Res(phi^*(lambda Phi)) = Res(lambda Phi).
 Transporting only the kernel vector is insufficient: the support window,
 adjoint element, and lower-layer forcing term must move together.
 
-## 4. The finite quotient to compute
+## 4. The fixed-chart operator
+
+Let a completed normal chart have leading pair
+
+```text
+P0 = s^(-alpha) A0(z),
+Q0 = s^(-beta)  B0(z).
+```
+
+A layer-`r` source field has the form
+
+```text
+V_(f,g) = s^r (f(z) partial_z + g(z) s partial_s).
+```
+
+Its action on the leading coefficients is
+
+```text
+Theta_r(f,g)
+  = (f A0' - alpha g A0,
+     f B0' - beta  g B0).
+```
+
+Put
+
+```text
+Psi = alpha A0 B0' - beta A0' B0
+```
+
+and
+
+```text
+D_r(a,b)
+  = (alpha-r)a B0' - beta B0 a'
+    + alpha A0 b' + (r-beta)b A0'.
+```
+
+### Proposition 3 (weighted-divergence identity)
+
+For all Laurent polynomials `f,g`,
+
+```text
+D_r Theta_r(f,g)
+  = (f Psi)' + (r-alpha-beta) g Psi.
+```
+
+#### Proof
+
+Substitute the two components of `Theta_r` into `D_r`. The `f'` terms combine
+to `f' Psi`; the `f` terms combine to `f Psi'`; the two `g'` terms cancel; and
+the remaining `g` terms are `(r-alpha-beta)g Psi`.
+
+This is the coefficient form of weighted divergence for the source volume in
+the normal chart.
+
+### The degree-21 lower face
+
+For the lower face used in Proposition C.9,
+
+```text
+A0 = z p(z),  B0 = z^2 q(z),
+pq + 2z p q' - 3z p' q = 1.
+```
+
+Therefore
+
+```text
+Psi = 2 A0 B0' - 3 A0' B0 = z^2,
+```
+
+and Proposition 3 becomes exactly
+
+```text
+D_r Theta_r(f,g) = (f z^2)' + (r-5)g z^2.
+```
+
+For `r != 5`, a monomial `f=z^j` is weighted-divergence-free precisely with
+
+```text
+g = -(j+2)/(r-5) z^(j-1).
+```
+
+This formula makes the remaining issue completely finite: which exponents of
+`f` and `g` are admissible in the fixed chart, and which induced coefficients
+fit the `a` and `b` Newton windows?
+
+## 5. Exact fixed-chart quotient
+
+`fixed_chart_gauge.py` takes as input:
+
+- `alpha,beta,r`;
+- exact Laurent coefficients of `A0,B0`;
+- candidate exponent windows for `f,g`;
+- allowed coefficient exponents for `a,b`.
+
+It then:
+
+1. constructs the complete matrix of `D_r` on the `(a,b)` window;
+2. imposes the weighted-divergence equation on `(f,g)`;
+3. imposes vanishing of every induced `a` or `b` coefficient outside the
+   requested window;
+4. computes the admissible source-field space;
+5. maps it through `Theta_r` and removes stabilizers;
+6. returns
+
+```text
+h_r = dim ker D_r,
+b_r = dim im Theta_r,
+o_r = dim(ker D_r / im Theta_r).
+```
+
+The included toy face `A0=z, B0=z^2` has `Psi=z^2`. With the same `(a,b)`
+window, a restricted source window leaves residual dimension one, whereas
+adding the missing Laurent `g` exponent makes the residual vanish. This is a
+small exact illustration of why fixed-chart support must be specified rather
+than inferred from formal divergence-freeness.
+
+Once the actual four support windows from C.9 are entered, the program is
+intended to reproduce the recorded residual dimensions `(1,2,1,1)` without
+using the manuscript's precomputed quotient.
+
+## 6. Quotient by adjacent charts
 
 At layer `r` in chart `C`, put
 
@@ -156,7 +298,7 @@ B_r(C) = span of supported fixed-chart gauge vectors,
 R_r(C) = span of supported tangents of enumerated adjacent charts.
 ```
 
-The diagnostic quantity is
+The chart-correspondence diagnostic is
 
 ```text
 o_r(C) = dim H_r(C) - dim(B_r(C) + R_r(C)).
@@ -169,7 +311,7 @@ kernel direction and may indicate a missing adjacent chart.
 supplied gauge and rechart vectors, returns quotient representatives, and
 computes the transported support `T_k(S)`.
 
-## 5. Non-synthetic replay of the archived degree-21 layers
+## 7. Non-synthetic replay of the archived upper-face layers
 
 The distilled fixture is copied verbatim from
 
@@ -208,14 +350,15 @@ All 24 layers pass. In particular, the raw layer-four dimensions are
 | truncated | 7 | 5 | 3 | 4 | 2 |
 | full | 15 | 10 | 7 | 8 | 3 |
 
-These are raw upper-face dimensions. They are not the later specialized
-fixed-chart residual dimensions `(1,2,1,1)`.
+These are upper-face dimensions. They are not the C.9 fixed-chart residual
+dimensions `(1,2,1,1)`.
 
-## 6. Pure-power face factorization
+## 8. Pure-power upper-face factorization
 
-The layer-four phenomenon admits a basis-independent reduction.
+The archived upper-face complex has an additional basis-independent
+simplification.
 
-### Proposition 3 (common-root defect factorization)
+### Proposition 4 (common-root defect factorization)
 
 Let
 
@@ -225,14 +368,6 @@ alpha = d m, beta = d n,
 ```
 
 with positive integers `d,m,n`, `n >= m`, and nonconstant `R in K[z]`. Define
-
-```text
-D_r(a,b)
-  = (alpha-r)a B0' - beta B0 a'
-    + alpha A0 b' + (r-beta)b A0'
-```
-
-and the common-root defect
 
 ```text
 N = m b - n R^(n-m) a.
@@ -256,21 +391,16 @@ d R^m N'
     - d n R^n a',
 ```
 
-and add
-
-```text
-(r-beta)R^(m-1)R'N.
-```
-
-The coefficient of `R^(n-1)R'a` becomes
+and add `(r-beta)R^(m-1)R'N`. The coefficient of
+`R^(n-1)R'a` becomes
 
 ```text
 -n[d(n-m)+(r-beta)] = n(alpha-r),
 ```
 
-while the other three terms are exactly the remaining terms of `D_r`.
+while the other three terms are the remaining terms of `D_r`.
 
-### Corollary 4 (arithmetic resonance rule)
+### Corollary 5 (arithmetic resonance rule)
 
 If `D_r(a,b)=0`, then
 
@@ -281,37 +411,21 @@ If `D_r(a,b)=0`, then
 so
 
 ```text
-N^d = c R^(beta-r)
+N^d = c R^(beta-r).
 ```
 
-for a constant `c`. If `R` has a simple zero and `N` is polynomial, a nonzero
-`N` can occur only when
+If `R` has a simple zero and `N` is polynomial, a nonzero `N` can occur only
+when
 
 ```text
 beta-r is in d Z_{>=0}.
 ```
 
-In that case
+In that case `N=c0 R^((beta-r)/d)`. Thus each arithmetic resonance contributes
+at most one non-common-root kernel class before support restrictions.
 
-```text
-N = c0 R^((beta-r)/d).
-```
-
-Thus, after quotienting by the common-root relation `N=0`, each arithmetic
-resonance contributes at most one raw kernel class before support restrictions.
-
-## 7. The degree-21 layer-four class
-
-For the archived degree-21 operator,
-
-```text
-m=2, n=3, d=4, beta=12,
-N=2v-3Ru,
-
-L_r(u,v) = R(4R N' + (r-12)R'N).
-```
-
-The only possible polynomial resonance layers in `1 <= r <= 12` are
+For the archived pair `m=2,n=3,d=4,beta=12`, the possible resonance layers in
+`1 <= r <= 12` are exactly
 
 ```text
 r = 4, 8, 12.
@@ -319,16 +433,16 @@ r = 4, 8, 12.
 
 `degree21_kernel_decomposition.py` verifies the factorization on every domain
 basis vector and the defect equation on every archived kernel vector. In both
-the truncated and full windows, the exceptional defect image has dimension one
-exactly at `r=4,8,12` and is zero elsewhere.
+support windows, the exceptional defect image has dimension one exactly at
+these three layers and is zero elsewhere.
 
-At layer four, define
+At upper-face layer four,
 
 ```text
-kappa_4(u,v) = (2v-3Ru)/R^2.
+kappa_4(u,v) = (2v-3Ru)/R^2
 ```
 
-The archived windows give exact sequences
+gives exact sequences
 
 ```text
 0 -> {kernel vectors with 2v=3Ru}
@@ -338,54 +452,46 @@ The archived windows give exact sequences
 ```
 
 The common-root subspace has dimension `3` in the truncated window and `7` in
-the full window. Both windows have the same normalized exceptional
-representative:
+the full window. Both have the same normalized exceptional representative
 
 ```text
-u = -(1/3) R,    v = 0,    kappa_4(u,v)=1.
+u = -(1/3)R,   v = 0,   kappa_4(u,v)=1.
 ```
 
-Equivalently, with `R=y^8-y^7`,
+This is a canonical upper-face resonance class. It is **not** identified here
+with the lower-face C.9 rechart class. The equality of their layer labels is
+insufficient: the leading faces, gradings, and gauge quotients differ.
 
-```text
-u = (1/3)y^7 - (1/3)y^8.
-```
+## 9. Remaining exact bridge to Proposition C.9
 
-This proves that the raw layer-four complex contains a canonical
-one-dimensional non-common-root quotient, independent of the nullspace basis
-and stable under passage from the truncated to the full support window. The
-reader manuscript identifies that unique residual direction with the
-`Y -> Y+lambda X^(-4)` complete-chain operation. The replay here verifies the
-algebraic uniqueness and representative; it does not independently verify the
-geometric chart identification.
+The fixed-chart identity is now derived and executable. The remaining inputs
+needed for a direct independent replay of C.9 are:
 
-The analogous raw classes at layers eight and twelve should be treated as
-resonance flags, not automatically as rechart directions.
+1. the exact coefficient-field model for its chosen degree-21 face `p,q`;
+2. the four source windows for `f,g` and coefficient windows for `a,b` at each
+   of layers one through four;
+3. the explicit `k=4` transition tangent expressed in the same lower-face
+   coefficient bases;
+4. the old/new support transition matrices;
+5. the transported residue-adjoint bases and lower-layer forcing terms.
 
-## 8. Remaining exact bridge to P6-T2
+With items 1--2, `fixed_chart_gauge.py` can test the reported residual sequence
+`(1,2,1,1)`. With item 3, a nonzero class in the one-dimensional layer-four
+quotient would certify that the chart tangent spans it. Items 4--5 then upgrade
+the vector-space identification to the support- and residue-compatible
+correspondence required by P6-T2.
 
-The next required data are now narrower than a full matrix export:
+Only after that classification should the two-sided `F_2` Laurent/band
+attachment system be formed.
 
-1. the fixed-chart action `Theta_r` in the same ordered degree-21 bases;
-2. the support windows for its source-vector-field components;
-3. the image of `ker(D_r Theta_r)` inside `ker D_r`;
-4. the explicit `k=4` chart tangent in the raw `(u,v)` basis;
-5. old/new support transition matrices and residue-adjoint transport.
-
-For layer four, it is enough to show that the chart tangent has
-`kappa_4 != 0`. The one-dimensional quotient then forces it to span the
-exceptional class. The harder layers one through three require the actual
-fixed-chart action: their raw kernels satisfy the common-root relation, but the
-recorded fixed-chart residual dimensions are still nonzero.
-
-After this bridge is certified, the same workflow can be applied to every
-residual `F_2` layer before forming the two-sided Laurent/band matching system.
-
-## 9. Reproduction
+## 10. Reproduction
 
 Run:
 
 ```bash
+python research-notes/p6-chart-correspondence/fixed_chart_gauge.py \
+  research-notes/p6-chart-correspondence/fixed_chart_example.json
+
 python research-notes/p6-chart-correspondence/chart_correspondence.py \
   research-notes/p6-chart-correspondence/synthetic_k4_contract.json
 
@@ -402,16 +508,16 @@ python -m unittest discover \
   -p 'test_*.py' -v
 ```
 
-## 10. Scope and provenance
+## 11. Scope and provenance
 
-This note proves the kernel-reduction identity, elementary wall-shear lemma,
-finite support-transport formula, pure-power factorization, and arithmetic
-resonance rule. It independently replays the displayed degree-21 linear
-formula and archived nullspace data.
+This note proves the Keller kernel reduction, elementary wall-shear lemma,
+finite support transport, weighted-divergence identity, pure-power
+factorization, and arithmetic resonance rule. It independently replays the
+archived upper-face matrices and nullspace data.
 
-It does not prove the global chart-correspondence theorem, classify every
-complete-chain transition, replay the later layer-five-through-seven no-gluing
-certificate, prove queue exhaustiveness, or solve global `F_2` attachment.
+It does not independently replay Proposition C.9 or Theorem C.10, classify
+every complete-chain transition, prove queue exhaustiveness, or solve global
+`F_2` attachment.
 
 AI assistance: GPT-5.6 Thinking was used for theorem formulation, proof
 drafting, archive triage, and implementation. A human contributor remains
