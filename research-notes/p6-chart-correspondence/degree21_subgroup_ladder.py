@@ -2,31 +2,40 @@
 """Compare natural source-operation subgroups in the degree-21 lower face.
 
 The full support-admissible weighted-divergence space is larger than the
-valuation-filtered approximate-root subgroup.  This program inserts one
+valuation-filtered approximate-root subgroup. This program inserts one
 canonical intermediate condition: the infinitesimal source field must be
-polynomial in the original affine coordinates
+polynomial in the original affine coordinates.
 
-    x = X^(-1),   y = Y,   z = X Y^2 = y^2/x.
+The archived inverse Laurent substitution is
+
+    X = x^(-1),    Y = x^4 y,
+
+so with ``t=Y`` and ``z=XY^2`` one has
+
+    t = x^4 y,    z = x^7 y^2,
+    x = t^2/z,    y = z^4/t^7.
 
 For ``f=z^k`` and
 
     g=-(k+2)/(r-5) z^(k-1),
 
-the corresponding field is
+the corresponding source field is
 
     V_{r,k}
-      = -(2k+r-1)/(r-5) x^(2-k) y^(2k+r-2) partial_x
-        -(k+2)/(r-5)    x^(1-k) y^(2k+r-1) partial_y.
+      = -(2k+r-1)/(r-5)
+          x^(7k+4r-6) y^(2k+r-2) partial_x
+        +(7k+4r-6)/(r-5)
+          x^(7k+4r-7) y^(2k+r-1) partial_y.
 
 Polynomiality is therefore an exact combinatorial condition on ``(r,k)``, with
-zero components treated separately.  Arbitrary linear combinations of the
+zero components treated separately. Arbitrary linear combinations of the
 allowed monomials are then subjected to the same exact outside-window
 constraints as the full Laurent calculation.
 
 The resulting affine-polynomial subgroup is still not asserted to equal the
-complete-chain approximate-root subgroup.  Comparing its rank with the
-manuscript's recorded residual dimensions isolates the remaining filtered
-realization gap.
+complete-chain approximate-root subgroup. Comparing its rank with the
+manuscript's recorded residual dimensions isolates a necessary filtered
+realization gap, but does not identify the admissible approximate-root image.
 """
 
 from __future__ import annotations
@@ -39,7 +48,6 @@ from typing import Any, Mapping, Sequence
 
 from degree21_lower_face_full_gauge import (
     exact_source_bounds,
-    independent_extension,
     linear_combination,
     source_column,
 )
@@ -59,7 +67,6 @@ from degree21_lower_face_replay import (
     nullspace,
     output_vector,
     parse_face,
-    theta,
     vector_image,
 )
 
@@ -68,17 +75,21 @@ def affine_polynomial_exponent(r: int, k: int) -> bool:
     if r == 5:
         raise ValueError("r=5 requires a separate divergence parametrization")
 
-    x_numerator = 2 * k + r - 1
-    y_numerator = k + 2
-    if x_numerator != 0 and (2 - k < 0 or 2 * k + r - 2 < 0):
+    x_component_numerator = 2 * k + r - 1
+    y_component_numerator = 7 * k + 4 * r - 6
+    if x_component_numerator != 0 and (
+        7 * k + 4 * r - 6 < 0 or 2 * k + r - 2 < 0
+    ):
         return False
-    if y_numerator != 0 and (1 - k < 0 or 2 * k + r - 1 < 0):
+    if y_component_numerator != 0 and (
+        7 * k + 4 * r - 7 < 0 or 2 * k + r - 1 < 0
+    ):
         return False
     return True
 
 
 def fixed_boundary_shear_exponent(r: int, k: int) -> bool:
-    """The monomial field is an x-Laurent triangular shear h(x) partial_y."""
+    """The transformed field is a triangular x-Laurent shear h(x) partial_y."""
     return 2 * k + r - 1 == 0
 
 
@@ -264,12 +275,17 @@ def analyze(face_path: Path, support_path: Path) -> dict[str, Any]:
         for layer, residual in zip(layers, recorded_residuals)
     ]
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "name": "degree-21 source-subgroup ladder",
-        "coordinate_change": "x=X^(-1), y=Y, z=XY^2=y^2/x",
+        "coordinate_change": (
+            "X=x^(-1), Y=x^4*y, t=Y=x^4*y, "
+            "z=X*Y^2=x^7*y^2"
+        ),
         "scope": (
             "The manuscript residual sequence is recorded input for comparison, "
-            "not independently proved by this report."
+            "not independently proved by this report. Affine polynomiality is a "
+            "necessary intermediate condition, not a definition of the "
+            "complete-chain approximate-root subgroup."
         ),
         "layers": results,
         "kernel_sequence": [item["kernel_dimension"] for item in results],
