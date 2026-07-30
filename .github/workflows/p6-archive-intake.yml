@@ -1,0 +1,44 @@
+name: Program 6 archive intake
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: p6-archive-intake-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  inventory:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the pull-request branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 0
+
+      - name: Inventory the public Program 6 supplement
+        run: |
+          python research-notes/p6-chart-correspondence/archive_intake.py \
+            docs-v7-20260726c/assets/technical-materials/06-plane-boundary-computational-supplement.zip \
+            research-notes/p6-chart-correspondence/archive-scan \
+            --config research-notes/p6-chart-correspondence/archive_intake_config.json \
+            --expected-sha256 4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585
+
+      - name: Commit the deterministic intake report
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add research-notes/p6-chart-correspondence/archive-scan
+          if git diff --cached --quiet; then
+            echo 'No intake changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record Program 6 archive intake'
+          git push origin HEAD:${{ github.head_ref || github.ref_name }}
