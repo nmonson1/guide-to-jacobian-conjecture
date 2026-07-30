@@ -5,15 +5,15 @@
   "limitations": "The large terminal certificate archive, branch-reduction pipeline, and upstream Newton exhaustiveness were not independently replayed.",
   "compiled_pdf": {
     "filename": "program6-v13-corrigendum.pdf",
-    "bytes": 311584,
-    "sha256": "ad8550ffd2232b734d0b35a33402d05290ecae0addb538d52e4469e1b355503f",
+    "bytes": 311693,
+    "sha256": "25fb86776b31641fe18a8ead8b1b53885a77a1ea4b19c62e609c0f39dc9eb157",
     "repository_status": "not committed; compiled from the committed TeX source during this audit"
   },
   "files": [
     {
       "filename": "program6-v13-corrigendum.tex",
-      "bytes": 13459,
-      "sha256": "a967b94b7134da217b5b1a62d68e079ff40f6f1ad83849e1c245ed3e28f4ba99"
+      "bytes": 13529,
+      "sha256": "64960a55be10b3ae61be12b8d025ef1e71cdf42e2923d18be6db6a52637f5c1e"
     },
     {
       "filename": "program6-independent-audit-checks/README.md",
