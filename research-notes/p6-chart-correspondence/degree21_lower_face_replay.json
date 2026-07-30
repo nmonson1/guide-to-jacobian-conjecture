@@ -1,0 +1,426 @@
+{
+  "coefficient_field_degree": 5,
+  "face_identity_verified": true,
+  "gauge_model": "all Laurent monomial weighted-divergence-free fields whose Theta_r image lies in the exact full-support coefficient windows",
+  "identity": "D_r Theta_r(f,g)=(f z^2)' +(r-5)g z^2",
+  "layers": [
+    {
+      "a_support": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "allowed_gauge_exponents": [
+        1
+      ],
+      "b_support": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "cokernel_dimension": 1,
+      "domain_dimension": 19,
+      "gauge_candidates": [
+        {
+          "a_support": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "b_support": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "g_coefficient": {
+            "den": "4",
+            "num": "3"
+          },
+          "k": 1
+        }
+      ],
+      "gauge_dimension": 1,
+      "gauge_search_interval": [
+        -9,
+        14
+      ],
+      "kernel_dimension": 2,
+      "operator_sha256": "907b139851ff5f1908d2f2e5f1ed628b4e282c4ccb8cc6dbfbb18e383de01835",
+      "r": 1,
+      "rank": 17,
+      "residual_dimension": 1,
+      "target_dimension": 18,
+      "target_exponents": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "a_support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "allowed_gauge_exponents": [
+        0,
+        1
+      ],
+      "b_support": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "cokernel_dimension": 1,
+      "domain_dimension": 21,
+      "gauge_candidates": [
+        {
+          "a_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "b_support": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "g_coefficient": {
+            "den": "3",
+            "num": "2"
+          },
+          "k": 0
+        },
+        {
+          "a_support": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "b_support": [
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "g_coefficient": {
+            "den": "1",
+            "num": "1"
+          },
+          "k": 1
+        }
+      ],
+      "gauge_dimension": 2,
+      "gauge_search_interval": [
+        -10,
+        14
+      ],
+      "kernel_dimension": 3,
+      "operator_sha256": "4b4afd92728524b8748f9173855eb3bef1a347e30e747204681bc54aa630651c",
+      "r": 2,
+      "rank": 18,
+      "residual_dimension": 1,
+      "target_dimension": 19,
+      "target_exponents": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "a_support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "allowed_gauge_exponents": [
+        -1,
+        0
+      ],
+      "b_support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "cokernel_dimension": 1,
+      "domain_dimension": 21,
+      "gauge_candidates": [
+        {
+          "a_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "b_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "g_coefficient": {
+            "den": "2",
+            "num": "1"
+          },
+          "k": -1
+        },
+        {
+          "a_support": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "b_support": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "g_coefficient": {
+            "den": "1",
+            "num": "1"
+          },
+          "k": 0
+        }
+      ],
+      "gauge_dimension": 2,
+      "gauge_search_interval": [
+        -11,
+        14
+      ],
+      "kernel_dimension": 3,
+      "operator_sha256": "bc5bb26f2e6b7008f58b6da1ea98121f053442b3d95e26aeaf438a78659589b3",
+      "r": 3,
+      "rank": 18,
+      "residual_dimension": 1,
+      "target_dimension": 19,
+      "target_exponents": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "a_support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "allowed_gauge_exponents": [],
+      "b_support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "cokernel_dimension": 1,
+      "domain_dimension": 19,
+      "gauge_candidates": [],
+      "gauge_dimension": 0,
+      "gauge_search_interval": [
+        -11,
+        13
+      ],
+      "kernel_dimension": 1,
+      "operator_sha256": "2e17961af1113202c1506047b5a88bdee5d1db3ee6081f5c223507d63ba7db80",
+      "r": 4,
+      "rank": 18,
+      "residual_dimension": 1,
+      "target_dimension": 19,
+      "target_exponents": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    }
+  ],
+  "minimal_polynomial": [
+    "-87271593441390231552",
+    "1597839837356041961472",
+    "-11765268269898790599288",
+    "43543902955657595554476",
+    "-80998237342608310849530",
+    "60579126468209266677769"
+  ],
+  "name": "degree-21 lower-face fixed-chart linear replay",
+  "residual_sequence": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "schema_version": 1
+}

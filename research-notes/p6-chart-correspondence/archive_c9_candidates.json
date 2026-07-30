@@ -1,14 +1,254 @@
 {
   "archive_sha256": "4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585",
-  "member_count": 1,
+  "member_count": 22,
   "members": [
     {
+      "bytes": 34229,
+      "hits": [
+        {
+          "label": "x_minus_four",
+          "line": 41,
+          "snippet": "X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/export_residue_audit.py"
+    },
+    {
+      "bytes": 2457,
+      "hits": [
+        {
+          "label": "x_minus_four",
+          "line": 21,
+          "snippet": "x**4+3*x**3+3*x**2+26)%P fp=lambda x:(5*x**4-4*x**3+9*x**2+6*x)%P if f(ROOT)!=0 or fp(ROOT)==0: raise AssertionError((f(ROOT),fp(ROOT))) records=[]; all_den=[]; all_nonzero=True for idx in SELECTED: eq=data['equations'][idx] zeros=[]; den_bad=[] for t"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_good_prime.py"
+    },
+    {
+      "bytes": 5642,
+      "hits": [
+        {
+          "label": "x_minus_four",
+          "line": 122,
+          "snippet": "x^4 y`. For a toric ray `(r,s)`, the source `Kbar` label is `(-r)+(4r+s)=3r+s`. A common smooth refinement of both normal fans has negative-label chain `-1 -- -3 -- -5 -- -2` with source rays `(0,-1),(-1,0),(-2,1),(-1,1)` and self-intersections `-2,-2,-1,-1`. | label | `(v(P),v(Q))` | normal i"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md"
+    },
+    {
+      "bytes": 4609,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 8,
+          "snippet": "complete-chain seed for the first degree-125 family, corrected to its unique degree-six lattice quotient. ## Exact verifiers - `boundary_complex_index.py` \u2014 verifies the universal layer/adjoint integration-by-parts identity and the current virtual obstruction excess \\(\\epsilon_r=r-1\\). - `universa"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md"
+    },
+    {
+      "bytes": 5965,
+      "hits": [
+        {
+          "label": "x_minus_four",
+          "line": 188,
+          "snippet": "x^{4/5}y\\,p(z),\\quad\\deg p=5, \\qquad Q_E=x^{1/5}q(z),\\quad\\deg q=10, \\] and \\[ 5pq-3zpq'+5zp'q=1. \\tag{5.1} \\] The fractional uniformizing cover has degree 30 and passport \\[ (5^6),(3^{10}),(15,1^{15}). \\] That ambient passport has eleven connected dessin classes. However, the complete-chain l"
+        },
+        {
+          "label": "complete_chain",
+          "line": 1,
+          "snippet": "complete-chain case ## Source data The first family at maximum degree 125 in the complete-chain table is \\[ F_2:\\qquad A_0=(5,20),\\quad A_0'=(1,0),\\quad A_1=(7/5,2), \\qquad (m,n)=(3,5). \\] This note extracts the exact terminal-edge information that is available before a full Newton-support norma"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md"
+    },
+    {
+      "bytes": 13421,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 6,
+          "snippet": "complete-chain face must be a C5 pullback of the quotient passport (5,1), (3^2), (3,1^3), degree 6. The script: * implements Murnaghan--Nakayama from scratch; * reproduces the known degree-21 count 5 as a regression check; * computes the F2 weighted Hurwitz number 133/15; * enumerates t"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/count_F2_terminal_dessins.py"
+    },
+    {
+      "bytes": 4235,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 11,
+          "snippet": "complete-chain face has lattice gap five, hence lies on the sublocus a1=a2=a3=a4=0. This sublocus is one nonzero scaling orbit; a5=-1 is the displayed representative. \"\"\" from __future__ import annotations import argparse from functools import reduce from math import gcd import json from pathlib i"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/generate_F2_degree30_system.py"
+    },
+    {
       "bytes": 5728,
-      "matched_patterns": [
-        "complete.?chain"
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 155,
+          "snippet": "complete chain\", \"terminal_k\": 1, \"terminal_b\": 3, \"terminal_coordinate_exponent\": \"25/32\", \"terminal_ode\": \"4*p*q - 3*z*p*q' + 4*z*p'*q = 1\", \"terminal_direction\": [ 32, -25 ], \"lattice_gap\": 4, \"ambient_terminal_degree\": 36, \"ambient_terminal_passpor"
+        }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/next_complete_chain_queue.json"
+    },
+    {
+      "bytes": 7379,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 139,
+          "snippet": "complete-chain model, either its Newton-bounded boundary Kuranishi zero scheme is empty, or every zero produces a standard Keller pair of strictly smaller complete-chain complexity. Together with completeness of the boundary Kuranishi functor, this would prove the plane Jacobian conjecture by minim"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md"
+    },
+    {
+      "bytes": 22432,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 40,
+          "snippet": "complete chain. \\end{abstract} \\begin{tcolorbox}[colback=yellow!5,colframe=orange!60!black,title=Status] The layer, adjoint, index, resonance, hypergeometric, derivative, passport, and filtered-descent statements below are proved in this note. The terminal gluing--descent statement in Section~\\ref"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex"
+    },
+    {
+      "bytes": 7793,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 8,
+          "snippet": "complete-chain problems are much smaller than their fractional uniformizing covers suggest. For a final type-I.b corner, the complete-chain lattice gap forces the face polynomials to descend through a cyclic quotient. The relevant Belyi cover has degree \\[ D=\\frac{mnb}{g},\\qquad g=\\operatorname{g"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md"
+    },
+    {
+      "bytes": 9833,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 2,
+          "snippet": "complete-chain corners. There are two distinct covers. 1. On the fractional uniformizing coordinate z=x^{-sigma/rho}y, the final face equation is n*p*q - m*z*p*q' + n*z*p'*q = 1, with deg(p)=m*b-1 and deg(q)=n*b. It defines an ambient Belyi map tau(z)=z**n*p(z)**n/q(z)**m"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi.py"
+    },
+    {
+      "bytes": 11727,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 3,
+          "snippet": "complete-chain gap. The result is a finite Hurwitz problem of substantially smaller degree than the ambient uniformizing cover. It does not prove that any listed boundary map extends to a Keller pair. ## 1. Final face equation on the fractional uniformizing line Let a final regular corner of type"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md"
+    },
+    {
+      "bytes": 7009,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 12,
+          "snippet": "complete-chain lattice gap forces this map to factor through $u=z^g$. We derive the reduced differential equation, degree, and passport, and compute the first post-125 Hurwitz problems. In particular, the first degree-125 family has a unique lattice-compatible degree-six boundary map; the eleven deg"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex"
+    },
+    {
+      "bytes": 1500,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 2,
+          "snippet": "complete-chain seed.\"\"\" from fractions import Fraction from math import gcd A0 = (Fraction(5), Fraction(20)) A0p = (Fraction(1), Fraction(0)) A1 = (Fraction(7, 5), Fraction(2)) m, n = 3, 5 # Primitive normal to the edge A0-A0'. dx = A0[0] - A0p[0] dy = A0[1] - A0p[1] g = gcd(dx.numerator, dy.numer"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py"
+    },
+    {
+      "bytes": 8997,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 2,
+          "snippet": "complete chains. The script distinguishes the ambient fractional uniformizing cover from the lattice-compatible quotient u=z^gap. It verifies exact quotient ODEs and explicit maps for the degree-125 F2 case and the first three post-125 cases. \"\"\" from __future__ import annotations import argparse"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_post125_terminal_examples.py"
+    },
+    {
+      "bytes": 3149,
+      "hits": [
+        {
+          "label": "x_minus_four",
+          "line": 2,
+          "snippet": "x^4 + 3*x^3 + 3*x^2 + 26\", \"embedding_u\": \"-1.664836704033281178287344837278453851243269719290529858837572849478096828874852644384604910897382528107270588725589666125991437289596384307710878098059890261343130493410462877211296943502703584967016795149926388008709045993820767368828925295297803467062"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/handoff-lite/layer-calculation/belyi_exact_field_relations.json"
+    },
+    {
+      "bytes": 3313,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 59,
+          "snippet": "complete-chain-to-lattice-gap application. - Independent audit that the imported support enumeration, layer model, normalizations, and saturations cover every terminal vertex-saturated case. - Independent implementation of the toric face audit and finite algebra in another computer-algebra syste"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/STATUS.md"
+    },
+    {
+      "bytes": 35686,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 26,
+          "snippet": "complete-chain queue: they have \\(1,1,1,2,2\\) classes. The explicit quotient points through maximum degree \\(128\\) are infinitesimally rigid modulo source scaling. At every normal order the new coefficients enter through one universal first-order operator. We put it in logarithmic gauge normal for"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex"
+    },
+    {
+      "bytes": 34229,
+      "hits": [
+        {
+          "label": "x_minus_four",
+          "line": 41,
+          "snippet": "X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/export_residue_audit.py"
+    },
+    {
+      "bytes": 2457,
+      "hits": [
+        {
+          "label": "x_minus_four",
+          "line": 21,
+          "snippet": "x**4+3*x**3+3*x**2+26)%P fp=lambda x:(5*x**4-4*x**3+9*x**2+6*x)%P if f(ROOT)!=0 or fp(ROOT)==0: raise AssertionError((f(ROOT),fp(ROOT))) records=[]; all_den=[]; all_nonzero=True for idx in SELECTED: eq=data['equations'][idx] zeros=[]; den_bad=[] for t"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_good_prime.py"
+    },
+    {
+      "bytes": 36354,
+      "hits": [
+        {
+          "label": "complete_chain",
+          "line": 240,
+          "snippet": "complete_chain_queue.json\", \"sha256\": \"c161f309194a8f0e86d7b1343d5c7e192e76afb80ab5bb62f02048c28a20c50c\" }, { \"bytes\": 5881, \"path\": \"06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/post125_terminal_passports.json\", \"sha256\": \"b4a"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json"
     }
   ],
-  "schema_version": 1
+  "schema_version": 2
 }
