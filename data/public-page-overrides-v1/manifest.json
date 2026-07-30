@@ -1,0 +1,42 @@
+{
+  "override_count": 7,
+  "overrides": [
+    {
+      "sha256": "dd369fb2c2fa0d4e8b8a729f2ca1874da813df543c33a6141838f16cadc3218e",
+      "source": "claims/JCG-24C82405.md",
+      "target": "claims/JCG-24C82405.md"
+    },
+    {
+      "sha256": "56019c98c347929776272c64f86a802166998efe34aa40e7c0b06b3c575c59ea",
+      "source": "claims/JCG-D3F76EBC.md",
+      "target": "claims/JCG-D3F76EBC.md"
+    },
+    {
+      "sha256": "17ded63ce1d91173f4eb84a289e1ffabd227280f33fb107108a57d746d4c14bc",
+      "source": "claims/JCG-ECF242AB.md",
+      "target": "claims/JCG-ECF242AB.md"
+    },
+    {
+      "sha256": "7d8be5dad5abc7cf4b95161a1cb93411167aec1b3404bb9dd5079bb248c2a2d1",
+      "source": "collections/degree-eight-deformations.md",
+      "target": "collections/degree-eight-deformations.md"
+    },
+    {
+      "sha256": "6dede825f50bb749c17ad4a6f06ddacd953ce6f2c35b7cfaa0b5b490f251b7d1",
+      "source": "research/papers.md",
+      "target": "research/papers.md"
+    },
+    {
+      "sha256": "64bccfc80dee0e213875ae70140c47473a14ea0fda26c619777fba33f2133bb9",
+      "source": "research/programs/local-rigidity-and-deformation-algebra.md",
+      "target": "research/programs/local-rigidity-and-deformation-algebra.md"
+    },
+    {
+      "sha256": "d55fe60c913b0f9db2f519ac1ef5f1840c132872fa01736b372e6266fd05ed49",
+      "source": "results/corrections.md",
+      "target": "results/corrections.md"
+    }
+  ],
+  "release_id": "program-3-v13-repairs-20260730a",
+  "schema_version": 1
+}
