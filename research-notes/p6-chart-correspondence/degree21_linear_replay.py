@@ -2,11 +2,11 @@
 """Dependency-free replay of the archived degree-21 upper-face layer maps.
 
 The archive records supports, ordered monomial bases, and claimed left/right
-nullspace bases.  The original generator used SymPy.  This script reconstructs
+nullspace bases. The original generator used SymPy. This script reconstructs
 all matrices independently from the displayed bilinear formula using only
 ``fractions.Fraction`` and audits every recorded rank and nullspace.
 
-This is a replay of the raw upper-face linear complex.  It does not reproduce
+This is a replay of the raw upper-face linear complex. It does not reproduce
 the later specialized fixed-chart quotient with residual dimensions
 ``(1, 2, 1, 1)`` and does not identify the ``k = 4`` rechart vector.
 """
@@ -20,12 +20,11 @@ import sys
 from dataclasses import dataclass
 from fractions import Fraction
 from pathlib import Path
-from typing import Any, Iterable, Mapping, Sequence
+from typing import Any, Mapping, Sequence
 
 from chart_correspondence import (
     Matrix,
     Vector,
-    matrix_vector_product,
     parse_vectors,
     q,
     rank,
@@ -37,7 +36,11 @@ Poly = dict[int, Fraction]
 
 
 def clean(poly: Mapping[int, Fraction]) -> Poly:
-    return {exponent: coefficient for exponent, coefficient in poly.items() if coefficient}
+    return {
+        exponent: coefficient
+        for exponent, coefficient in poly.items()
+        if coefficient
+    }
 
 
 def monomial(exponent: int, coefficient: Fraction | int = 1) -> Poly:
@@ -55,15 +58,22 @@ def add(*polys: Mapping[int, Fraction]) -> Poly:
 
 def scale(poly: Mapping[int, Fraction], coefficient: Fraction | int) -> Poly:
     coefficient = q(coefficient)
-    return clean({exponent: coefficient * value for exponent, value in poly.items()})
+    return clean(
+        {exponent: coefficient * value for exponent, value in poly.items()}
+    )
 
 
-def multiply(left: Mapping[int, Fraction], right: Mapping[int, Fraction]) -> Poly:
+def multiply(
+    left: Mapping[int, Fraction], right: Mapping[int, Fraction]
+) -> Poly:
     result: Poly = {}
     for left_exponent, left_coefficient in left.items():
         for right_exponent, right_coefficient in right.items():
             exponent = left_exponent + right_exponent
-            result[exponent] = result.get(exponent, Fraction(0)) + left_coefficient * right_coefficient
+            result[exponent] = (
+                result.get(exponent, Fraction(0))
+                + left_coefficient * right_coefficient
+            )
     return clean(result)
 
 
@@ -119,7 +129,9 @@ def column_image(r: int, kind: str, exponent: int) -> Poly:
     raise ValueError(f"unknown domain kind {kind!r}")
 
 
-def reconstruct_matrix(layer: Mapping[str, Any]) -> Matrix:
+def ordered_bases(
+    layer: Mapping[str, Any],
+) -> tuple[int, list[list[Any]], list[int]]:
     r = layer.get("r")
     basis = layer.get("domain_basis")
     output_exponents = layer.get("output_exponents")
@@ -129,8 +141,6 @@ def reconstruct_matrix(layer: Mapping[str, Any]) -> Matrix:
         raise ValueError(f"layer {r}: missing ordered bases")
     if not all(isinstance(value, int) for value in output_exponents):
         raise ValueError(f"layer {r}: output exponents must be integers")
-
-    columns: list[Poly] = []
     for index, item in enumerate(basis):
         if (
             not isinstance(item, list)
@@ -139,8 +149,12 @@ def reconstruct_matrix(layer: Mapping[str, Any]) -> Matrix:
             or not isinstance(item[1], int)
         ):
             raise ValueError(f"layer {r}: invalid domain basis entry {index}")
-        columns.append(column_image(r, item[0], item[1]))
+    return r, basis, output_exponents
 
+
+def reconstruct_matrix(layer: Mapping[str, Any]) -> Matrix:
+    r, basis, output_exponents = ordered_bases(layer)
+    columns = [column_image(r, item[0], item[1]) for item in basis]
     allowed = set(output_exponents)
     outside = sorted(
         {
@@ -151,48 +165,113 @@ def reconstruct_matrix(layer: Mapping[str, Any]) -> Matrix:
         }
     )
     if outside:
-        raise ValueError(f"layer {r}: reconstructed image has omitted exponents {outside}")
-
+        raise ValueError(
+            f"layer {r}: reconstructed image has omitted exponents {outside}"
+        )
     return [
         [column.get(exponent, Fraction(0)) for column in columns]
         for exponent in output_exponents
     ]
 
 
-def transpose(matrix: Matrix) -> Matrix:
-    if not matrix:
-        return []
-    return [[matrix[row][column] for row in range(len(matrix))] for column in range(len(matrix[0]))]
-
-
 def matrix_json(matrix: Matrix) -> list[list[str]]:
-    return [[rational_string(value) for value in row] for row in matrix]
+    return [
+        [rational_string(value) for value in row]
+        for row in matrix
+    ]
 
 
-def matrix_digest(matrix: Matrix) -> str:
-    payload = json.dumps(matrix_json(matrix), separators=(",", ":"), ensure_ascii=True).encode("ascii")
+def matrix_digest(matrix: Matrix, *, rows: int, columns: int) -> str:
+    # Shape is included because [] can represent 0 x n for any n.
+    payload = json.dumps(
+        {"rows": rows, "columns": columns, "entries": matrix_json(matrix)},
+        separators=(",", ":"),
+        ensure_ascii=True,
+    ).encode("ascii")
     return hashlib.sha256(payload).hexdigest()
 
 
-def vectors_span_kernel(
+def right_image(matrix: Matrix, vector: Vector, *, rows: int) -> Vector:
+    return [
+        sum(
+            (entry * value for entry, value in zip(row, vector)),
+            Fraction(0),
+        )
+        for row in matrix[:rows]
+    ]
+
+
+def left_image(
+    matrix: Matrix,
+    vector: Vector,
+    *,
+    rows: int,
+    columns: int,
+) -> Vector:
+    return [
+        sum(
+            (vector[row] * matrix[row][column] for row in range(rows)),
+            Fraction(0),
+        )
+        for column in range(columns)
+    ]
+
+
+def verify_right_basis(
     matrix: Matrix,
     values: Any,
     *,
+    rows: int,
+    columns: int,
     expected_dimension: int,
     name: str,
-) -> tuple[list[Vector], bool]:
-    ambient_dimension = len(matrix[0]) if matrix else 0
+) -> bool:
     if not isinstance(values, list):
         raise ValueError(f"{name} must be a list")
-    vectors = parse_vectors(values, width=ambient_dimension, name=name)
+    vectors = parse_vectors(values, width=columns, name=name)
     for index, vector in enumerate(vectors):
-        image = matrix_vector_product(matrix, vector)
+        image = right_image(matrix, vector, rows=rows)
         if any(image):
             raise ValueError(
                 f"{name}[{index}] is not in the claimed kernel: "
                 f"{[rational_string(value) for value in image]}"
             )
-    return vectors, rank_of_vectors(vectors, ambient_dimension=ambient_dimension) == expected_dimension
+    return (
+        len(vectors) >= expected_dimension
+        and rank_of_vectors(vectors, ambient_dimension=columns)
+        == expected_dimension
+    )
+
+
+def verify_left_basis(
+    matrix: Matrix,
+    values: Any,
+    *,
+    rows: int,
+    columns: int,
+    expected_dimension: int,
+    name: str,
+) -> bool:
+    if not isinstance(values, list):
+        raise ValueError(f"{name} must be a list")
+    vectors = parse_vectors(values, width=rows, name=name)
+    for index, vector in enumerate(vectors):
+        image = left_image(
+            matrix,
+            vector,
+            rows=rows,
+            columns=columns,
+        )
+        if any(image):
+            raise ValueError(
+                f"{name}[{index}] is not in the claimed left kernel: "
+                f"{[rational_string(value) for value in image]}"
+            )
+    return (
+        len(vectors) >= expected_dimension
+        and rank_of_vectors(vectors, ambient_dimension=rows)
+        == expected_dimension
+    )
 
 
 @dataclass(frozen=True)
@@ -239,30 +318,30 @@ class LayerAudit:
 
 
 def audit_layer(case: str, layer: Mapping[str, Any]) -> LayerAudit:
+    _, basis, output_exponents = ordered_bases(layer)
     matrix = reconstruct_matrix(layer)
-    rows = len(matrix)
-    columns = len(matrix[0]) if matrix else int(layer.get("domain_dim", 0))
+    rows = len(output_exponents)
+    columns = len(basis)
     computed_rank = rank(matrix)
     kernel_dimension = columns - computed_rank
     cokernel_dimension = rows - computed_rank
 
-    right_vectors, right_complete = vectors_span_kernel(
+    right_complete = verify_right_basis(
         matrix,
         layer.get("right_nullspace"),
+        rows=rows,
+        columns=columns,
         expected_dimension=kernel_dimension,
         name=f"{case}.r{layer.get('r')}.right_nullspace",
     )
-    left_matrix = transpose(matrix)
-    left_vectors, left_complete = vectors_span_kernel(
-        left_matrix,
+    left_complete = verify_left_basis(
+        matrix,
         layer.get("left_nullspace"),
+        rows=rows,
+        columns=columns,
         expected_dimension=cokernel_dimension,
         name=f"{case}.r{layer.get('r')}.left_nullspace",
     )
-
-    # Make the completeness test explicit even when a supplied list has redundant vectors.
-    right_complete = right_complete and len(right_vectors) >= kernel_dimension
-    left_complete = left_complete and len(left_vectors) >= cokernel_dimension
     recorded_dimensions_verified = (
         layer.get("domain_dim") == columns
         and layer.get("codomain_support_dim") == rows
@@ -278,7 +357,7 @@ def audit_layer(case: str, layer: Mapping[str, Any]) -> LayerAudit:
         rank=computed_rank,
         kernel_dimension=kernel_dimension,
         cokernel_dimension=cokernel_dimension,
-        matrix_sha256=matrix_digest(matrix),
+        matrix_sha256=matrix_digest(matrix, rows=rows, columns=columns),
         right_basis_verified=right_complete,
         left_basis_verified=left_complete,
         recorded_dimensions_verified=recorded_dimensions_verified,
@@ -286,7 +365,9 @@ def audit_layer(case: str, layer: Mapping[str, Any]) -> LayerAudit:
     )
 
 
-def audit_document(document: Mapping[str, Any], *, include_matrices: bool = False) -> dict[str, Any]:
+def audit_document(
+    document: Mapping[str, Any], *, include_matrices: bool = False
+) -> dict[str, Any]:
     audits: list[LayerAudit] = []
     for case in ("truncated", "full"):
         case_data = document.get(case)
@@ -305,20 +386,25 @@ def audit_document(document: Mapping[str, Any], *, include_matrices: bool = Fals
             seen.add(audit.r)
             audits.append(audit)
         if seen != set(range(1, 13)):
-            raise ValueError(f"{case}: expected layers 1 through 12, found {sorted(seen)}")
+            raise ValueError(
+                f"{case}: expected layers 1 through 12, found {sorted(seen)}"
+            )
 
     return {
         "schema_version": 1,
         "name": "archived degree-21 upper-face linear replay",
         "scope": (
-            "Raw full and truncated upper-face layer maps reconstructed from the "
-            "displayed L_r formula; this is not the specialized chart quotient."
+            "Raw full and truncated upper-face layer maps reconstructed from "
+            "the displayed L_r formula; this is not the specialized chart quotient."
         ),
         "formula": (
             "L_r(u,v)=(8-r)u v0' - 12u'v0 + 8u0 v' - (12-r)u0'v; "
             "R=y^7(y-1), u0=R^2, v0=R^3"
         ),
-        "layers": [audit.as_json(include_matrix=include_matrices) for audit in audits],
+        "layers": [
+            audit.as_json(include_matrix=include_matrices)
+            for audit in audits
+        ],
         "all_layers_verified": all(audit.verified for audit in audits),
     }
 
@@ -337,7 +423,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         document = json.loads(args.input.read_text(encoding="utf-8"))
         if not isinstance(document, dict):
             raise ValueError("input must be a JSON object")
-        report = audit_document(document, include_matrices=args.include_matrices)
+        report = audit_document(
+            document,
+            include_matrices=args.include_matrices,
+        )
     except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:
         print(f"degree21_linear_replay: {exc}", file=sys.stderr)
         return 2
