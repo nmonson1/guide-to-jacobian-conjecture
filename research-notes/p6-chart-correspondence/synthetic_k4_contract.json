@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "name": "Synthetic regression contract matching the recorded residual dimensions",
+  "limitations": [
+    "The matrices are synthetic and do not reproduce the archived degree-21 calculation.",
+    "This fixture tests the diagnostic interface only."
+  ],
+  "layers": [
+    {"label": "layer 1", "operator": [[0, 1]], "gauge_vectors": [[1, 0]], "rechart_vectors": []},
+    {"label": "layer 2", "operator": [[0, 0, 1]], "gauge_vectors": [[1, 0, 0], [0, 1, 0]], "rechart_vectors": []},
+    {"label": "layer 3", "operator": [[1, 0]], "gauge_vectors": [[0, 1]], "rechart_vectors": []},
+    {"label": "layer 4", "operator": [[0, 1]], "gauge_vectors": [], "rechart_vectors": [[1, 0]], "support_transport": {"k": 4, "monomials": [[2, 2]]}}
+  ]
+}
