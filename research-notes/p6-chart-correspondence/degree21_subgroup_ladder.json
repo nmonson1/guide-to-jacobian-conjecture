@@ -1,0 +1,234 @@
+{
+  "affine_polynomial_gauge_sequence": [
+    1,
+    2,
+    2,
+    0
+  ],
+  "coordinate_change": "x=X^(-1), y=Y, z=XY^2=y^2/x",
+  "fixed_boundary_shear_gauge_sequence": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "formal_gauge_sequence": [
+    2,
+    3,
+    3,
+    1
+  ],
+  "kernel_sequence": [
+    2,
+    3,
+    3,
+    1
+  ],
+  "layers": [
+    {
+      "affine_polynomial": {
+        "candidate_exponents": [
+          1
+        ],
+        "gauge_dimension": 1,
+        "individually_supported_exponents": [
+          1
+        ],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 1
+      },
+      "fixed_boundary_shears": {
+        "candidate_exponents": [],
+        "gauge_dimension": 0,
+        "individually_supported_exponents": [],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 0
+      },
+      "formal_laurent": {
+        "candidate_exponents": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "gauge_dimension": 2,
+        "individually_supported_exponents": [
+          1
+        ],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 2
+      },
+      "kernel_dimension": 2,
+      "manuscript_inferred_gauge_dimension": 1,
+      "manuscript_recorded_residual_dimension": 1,
+      "polynomial_minus_manuscript_rank": 0,
+      "r": 1,
+      "target_dimension": 18
+    },
+    {
+      "affine_polynomial": {
+        "candidate_exponents": [
+          0,
+          1
+        ],
+        "gauge_dimension": 2,
+        "individually_supported_exponents": [
+          0,
+          1
+        ],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 2
+      },
+      "fixed_boundary_shears": {
+        "candidate_exponents": [],
+        "gauge_dimension": 0,
+        "individually_supported_exponents": [],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 0
+      },
+      "formal_laurent": {
+        "candidate_exponents": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "gauge_dimension": 3,
+        "individually_supported_exponents": [
+          0,
+          1
+        ],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 3
+      },
+      "kernel_dimension": 3,
+      "manuscript_inferred_gauge_dimension": 1,
+      "manuscript_recorded_residual_dimension": 2,
+      "polynomial_minus_manuscript_rank": 1,
+      "r": 2,
+      "target_dimension": 19
+    },
+    {
+      "affine_polynomial": {
+        "candidate_exponents": [
+          -1,
+          0,
+          1
+        ],
+        "gauge_dimension": 2,
+        "individually_supported_exponents": [
+          -1,
+          0
+        ],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 2
+      },
+      "fixed_boundary_shears": {
+        "candidate_exponents": [
+          -1
+        ],
+        "gauge_dimension": 1,
+        "individually_supported_exponents": [
+          -1
+        ],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 1
+      },
+      "formal_laurent": {
+        "candidate_exponents": [
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "gauge_dimension": 3,
+        "individually_supported_exponents": [
+          -1,
+          0
+        ],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 3
+      },
+      "kernel_dimension": 3,
+      "manuscript_inferred_gauge_dimension": 2,
+      "manuscript_recorded_residual_dimension": 1,
+      "polynomial_minus_manuscript_rank": 0,
+      "r": 3,
+      "target_dimension": 19
+    },
+    {
+      "affine_polynomial": {
+        "candidate_exponents": [
+          -1,
+          0,
+          1
+        ],
+        "gauge_dimension": 0,
+        "individually_supported_exponents": [],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 0
+      },
+      "fixed_boundary_shears": {
+        "candidate_exponents": [],
+        "gauge_dimension": 0,
+        "individually_supported_exponents": [],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 0
+      },
+      "formal_laurent": {
+        "candidate_exponents": [
+          -1,
+          0,
+          1,
+          2
+        ],
+        "gauge_dimension": 1,
+        "individually_supported_exponents": [],
+        "source_stabilizer_dimension": 0,
+        "support_admissible_source_dimension": 1
+      },
+      "kernel_dimension": 1,
+      "manuscript_inferred_gauge_dimension": 0,
+      "manuscript_recorded_residual_dimension": 1,
+      "polynomial_minus_manuscript_rank": 0,
+      "r": 4,
+      "target_dimension": 19
+    }
+  ],
+  "manuscript_inferred_gauge_sequence": [
+    1,
+    1,
+    2,
+    0
+  ],
+  "name": "degree-21 source-subgroup ladder",
+  "remaining_polynomial_rank_excess": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "schema_version": 1,
+  "scope": "The manuscript residual sequence is recorded input for comparison, not independently proved by this report."
+}
