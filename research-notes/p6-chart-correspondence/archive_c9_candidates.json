@@ -6,9 +6,39 @@
       "bytes": 34229,
       "hits": [
         {
+          "label": "parameter_names",
+          "line": 48,
+          "snippet": "MINPOLY_EXPR = X**5 - X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1, 2, 2, 2, 3, 3, 3, 4) ALPHA = 2 BETA = 3 S_TOTAL = ALPHA + BETA KElement = K5 ParamPoly = dict[tuple[int, ...], KElement] Laurent = dict[int, KElement] def _as_fraction(value: Any) -> Fraction: if isinstance(value, Fraction): return value if isinstance(value, int): retu"
+        },
+        {
+          "label": "parameter_names",
+          "line": 48,
+          "snippet": "- X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1, 2, 2, 2, 3, 3, 3, 4) ALPHA = 2 BETA = 3 S_TOTAL = ALPHA + BETA KElement = K5 ParamPoly = dict[tuple[int, ...], KElement] Laurent = dict[int, KElement] def _as_fraction(value: Any) -> Fraction: if isinstance(value, Fraction): return value if isinstance(value, int): return Fraction(value)"
+        },
+        {
+          "label": "parameter_names",
+          "line": 156,
+          "snippet": "f poly_to_json(f: ParamPoly, *, final: bool = False) -> list[dict[str, Any]]: names = FINAL_VARIABLES if final else PARAMETER_NAMES return [ { \"exp\": list(m), \"monomial\": \"*\".join( name if exponent == 1 else f\"{name}^{exponent}\" for name, exponent in zip(names, m) if exponent ) or \"1\", \"coeff_basis\": k_to_vector(c), \"coeff_expr\": k_to_expr(c), } for m, c in sorted(f.items()) ] # --------------------------------------------------------------------------- # Li"
+        },
+        {
+          "label": "parameter_names",
+          "line": 863,
+          "snippet": "version\": 1, \"normalization\": { \"description\": \"t1_1=1; t2_2=alpha; t2_0 and t3_0 split off; retain t1_0,t2_1,t3_1,t3_2,t4_0\", \"alpha_basis\": k_to_vector(alpha_norm), \"alpha_expr\": k_to_expr(alpha_norm), \"Ptop_basis\": k_to_vector(Ptop), \"Qtop_basis\": k_to_vector(Qtop), }, \"raw_nonzero_compatibility_equations\": [ { \"raw_equation_index\": i, \"layer\": eq.layer, \"null_index\": eq.null_index, \"transform_row_index\": eq.transform_row_index, \"terms\":"
+        },
+        {
+          "label": "final_parameter_indices",
+          "line": 50,
+          "snippet": "= [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1, 2, 2, 2, 3, 3, 3, 4) ALPHA = 2 BETA = 3 S_TOTAL = ALPHA + BETA KElement = K5 ParamPoly = dict[tuple[int, ...], KElement] Laurent = dict[int, KElement] def _as_fraction(value: Any) -> Fraction: if isinstance(value, Fraction): return value if isinstance(value, int): return Fraction(value) q = Rational(str(value)) return Fraction(int(q.p), int(q.q)) def k_from_rational(value: Any) -> KElement:"
+        },
+        {
+          "label": "final_parameter_indices",
+          "line": 659,
+          "snippet": "= -c12 / (2 * c22) assert c14 / c22 == alpha_norm**2 def subst_core(f: ParamPoly) -> ParamPoly: keep = FINAL_PARAMETER_INDICES out: ParamPoly = {} for m, c in f.items(): cc = c * (alpha_norm ** m[4]) # t1_1=1, t2_2=alpha q = tuple(m[i] for i in keep) out[q] = out.get(q, ZERO) + cc return clean(out) def eval12(f: ParamPoly) -> KElement: total = ZERO for m, c in f.items(): if any(m[i] for i in range(NVAR) if i not in (1, 4)): continue total += c * (alpha_norm ** m[4]) re"
+        },
+        {
           "label": "x_minus_four",
           "line": 41,
-          "snippet": "X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1"
+          "snippet": "26) # --------------------------------------------------------------------------- X = Symbol(\"x\") MINPOLY_EXPR = X**5 - X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1, 2, 2, 2, 3, 3, 3, 4) ALPHA = 2 BETA = 3 S_TOTAL = ALPHA + BETA KElement = K5 ParamPoly = dict[tuple[int, ...], KElement] Laurent = dict[int, KElement] def _as_fraction(value: Any) -> Fraction:"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/export_residue_audit.py"
@@ -19,7 +49,12 @@
         {
           "label": "x_minus_four",
           "line": 21,
-          "snippet": "x**4+3*x**3+3*x**2+26)%P fp=lambda x:(5*x**4-4*x**3+9*x**2+6*x)%P if f(ROOT)!=0 or fp(ROOT)==0: raise AssertionError((f(ROOT),fp(ROOT))) records=[]; all_den=[]; all_nonzero=True for idx in SELECTED: eq=data['equations'][idx] zeros=[]; den_bad=[] for t"
+          "snippet": ") from export_residue_audit import parse_pari_lift data=json.loads(args.input.read_text()) f=lambda x:(x**5-x**4+3*x**3+3*x**2+26)%P fp=lambda x:(5*x**4-4*x**3+9*x**2+6*x)%P if f(ROOT)!=0 or fp(ROOT)==0: raise AssertionError((f(ROOT),fp(ROOT))) records=[]; all_den=[]; all_nonzero=True for idx in SELECTED: eq=data['equations'][idx] zeros=[]; den_bad=[] for t in eq['terms']: k=parse_pari_lift(t['coeff']) all_den.append(k.den) if k.den%P==0: den_bad.append(t['exp']) val=sum((n%P)*pow(ROOT,i,P) for i,n in enume"
+        },
+        {
+          "label": "x_minus_four",
+          "line": 22,
+          "snippet": "_pari_lift data=json.loads(args.input.read_text()) f=lambda x:(x**5-x**4+3*x**3+3*x**2+26)%P fp=lambda x:(5*x**4-4*x**3+9*x**2+6*x)%P if f(ROOT)!=0 or fp(ROOT)==0: raise AssertionError((f(ROOT),fp(ROOT))) records=[]; all_den=[]; all_nonzero=True for idx in SELECTED: eq=data['equations'][idx] zeros=[]; den_bad=[] for t in eq['terms']: k=parse_pari_lift(t['coeff']) all_den.append(k.den) if k.den%P==0: den_bad.append(t['exp']) val=sum((n%P)*pow(ROOT,i,P) for i,n in enumerate(k.nums))%P val=val*pow(k.de"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/verify_good_prime.py"
@@ -30,7 +65,7 @@
         {
           "label": "x_minus_four",
           "line": 122,
-          "snippet": "x^4 y`. For a toric ray `(r,s)`, the source `Kbar` label is `(-r)+(4r+s)=3r+s`. A common smooth refinement of both normal fans has negative-label chain `-1 -- -3 -- -5 -- -2` with source rays `(0,-1),(-1,0),(-2,1),(-1,1)` and self-intersections `-2,-2,-1,-1`. | label | `(v(P),v(Q))` | normal i"
+          "snippet": "he forced degree-21 Belyi map Use transformed coordinates `X,Y`, with the inverse Laurent substitution `X=x^(-1)`, `Y=x^4 y`. For a toric ray `(r,s)`, the source `Kbar` label is `(-r)+(4r+s)=3r+s`. A common smooth refinement of both normal fans has negative-label chain `-1 -- -3 -- -5 -- -2` with source rays `(0,-1),(-1,0),(-2,1),(-1,1)` and self-intersections `-2,-2,-1,-1`. | label | `(v(P),v(Q))` | normal index | behavior | |---:|---|---:|---| |-1|`(-16,-24)=8(-2,-3)`|8|point on target `-5`| |-3|`(-8,-12)=4(-2,-3)`|4|point on target `-5`| |-5|`(-2,-3)`|1|dominates target `-5`| |-2|`(-1,-1)`|1|degree 1 o"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/REPORT.md"
@@ -41,7 +76,12 @@
         {
           "label": "complete_chain",
           "line": 8,
-          "snippet": "complete-chain seed for the first degree-125 family, corrected to its unique degree-six lattice quotient. ## Exact verifiers - `boundary_complex_index.py` \u2014 verifies the universal layer/adjoint integration-by-parts identity and the current virtual obstruction excess \\(\\epsilon_r=r-1\\). - `universa"
+          "snippet": "unts for the first five post-125 cases, and explicit maps through the max-128 case. - `F2_degree125_boundary_seed.md` \u2014 complete-chain seed for the first degree-125 family, corrected to its unique degree-six lattice quotient. ## Exact verifiers - `boundary_complex_index.py` \u2014 verifies the universal layer/adjoint integration-by-parts identity and the current virtual obstruction excess \\(\\epsilon_r=r-1\\). - `universal_boundary_transport.py` \u2014 verifies the hypergeometric secondary-map ODE, derivative, squarefreeness, degree, and passports. - `terminal_primary_belyi.py` \u2014 verifies the final-corner bracket equation,"
+        },
+        {
+          "label": "complete_chain",
+          "line": 28,
+          "snippet": "25_terminal_passports.json` - `F2_degree30_coefficient_system.json` - `universal_boundary_transport_table.json` - `next_complete_chain_queue.json` - `terminal_face_rigidity.json` ## Corrected primary-boundary conclusion The fractional uniformizing equation for a terminal type-I.b corner is \\[ npq-mzpq'+nzp'q=1, \\] but polynomial lattice support forces \\(p,q\\in K[z^g]\\), where \\[ g=\\operatorname{gap}(\\rho,\\ell). \\] The relevant quotient has degree \\[ D=\\frac{mnb}{g} \\] and passport \\[ \\left(n^{(mb-1)/g},\\frac ng\\right),\\quad \\left(m^{nb/g}\\right),\\quad \\left(\\frac{(m+n)b-1}{g},1^{D-\\frac{(m+n)b-1}{g}}\\rig"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md"
@@ -52,12 +92,32 @@
         {
           "label": "x_minus_four",
           "line": 188,
-          "snippet": "x^{4/5}y\\,p(z),\\quad\\deg p=5, \\qquad Q_E=x^{1/5}q(z),\\quad\\deg q=10, \\] and \\[ 5pq-3zpq'+5zp'q=1. \\tag{5.1} \\] The fractional uniformizing cover has degree 30 and passport \\[ (5^6),(3^{10}),(15,1^{15}). \\] That ambient passport has eleven connected dessin classes. However, the complete-chain l"
+          "snippet": "formulas give \\[ A_1=(7/5,2),\\quad k=1,\\quad(m,n)=(3,5), \\] \\[ (\\rho,\\sigma)=(25,-17),\\qquad z=x^{17/25}y, \\] \\[ P_E=x^{4/5}y\\,p(z),\\quad\\deg p=5, \\qquad Q_E=x^{1/5}q(z),\\quad\\deg q=10, \\] and \\[ 5pq-3zpq'+5zp'q=1. \\tag{5.1} \\] The fractional uniformizing cover has degree 30 and passport \\[ (5^6),(3^{10}),(15,1^{15}). \\] That ambient passport has eleven connected dessin classes. However, the complete-chain lattice gap is \\[ g=\\operatorname{gap}(25,5)=5. \\] Polynomial support therefore forces \\[ p(z)=\\bar p(z^5),\\qquad q(z)=\\bar q(z^5). \\] With \\(u=z^5\\), equation (5.1) becomes \\[ \\bar p\\bar q-3u\\bar"
         },
         {
           "label": "complete_chain",
           "line": 1,
-          "snippet": "complete-chain case ## Source data The first family at maximum degree 125 in the complete-chain table is \\[ F_2:\\qquad A_0=(5,20),\\quad A_0'=(1,0),\\quad A_1=(7/5,2), \\qquad (m,n)=(3,5). \\] This note extracts the exact terminal-edge information that is available before a full Newton-support norma"
+          "snippet": "# Boundary seed for the first post-125 complete-chain case ## Source data The first family at maximum degree 125 in the complete-chain table is \\[ F_2:\\qquad A_0=(5,20),\\quad A_0'=(1,0),\\quad A_1=(7/5,2), \\qquad (m,n)=(3,5). \\] This note extracts the exact terminal-edge information that is available before a full Newton-support normalization. ## 1. Starting direction and fractional coordinate The edge difference is \\[ A_0-A_0'=(4,20), \\] so its primitive normal direction is \\[ (\\rho,\\sigma)=(5,-1). \\] The standard fractiona"
+        },
+        {
+          "label": "complete_chain",
+          "line": 5,
+          "snippet": "Boundary seed for the first post-125 complete-chain case ## Source data The first family at maximum degree 125 in the complete-chain table is \\[ F_2:\\qquad A_0=(5,20),\\quad A_0'=(1,0),\\quad A_1=(7/5,2), \\qquad (m,n)=(3,5). \\] This note extracts the exact terminal-edge information that is available before a full Newton-support normalization. ## 1. Starting direction and fractional coordinate The edge difference is \\[ A_0-A_0'=(4,20), \\] so its primitive normal direction is \\[ (\\rho,\\sigma)=(5,-1). \\] The standard fractional edge coordinate is therefore \\[ z=x^{-\\sigma/\\rho}y=x^{1/5}y. \\] For the \\(P\\)-"
+        },
+        {
+          "label": "complete_chain",
+          "line": 135,
+          "snippet": "[ (7/5,2)=A_1, \\] which independently verifies the chain transition. ## 3. What this fixes, and what it does not The complete-chain data already force: - the fractional scale \\(l_1=5\\); - a quartic integral common-root polynomial \\(S(w)\\); - a distinguished nonzero double root of \\(S\\); - the first approximate-root shear; - the child corner \\((7/5,2)\\). They do **not** yet determine: - the complete normalized Newton polygons after the shear; - the monomial bracket exponent \\(\\kappa\\) in the final toric chart; - the adjacent-component pole scale \\(a\\); - the higher normal-neighborhood line-bundle windows (th"
+        },
+        {
+          "label": "complete_chain",
+          "line": 206,
+          "snippet": "d passport \\[ (5^6),(3^{10}),(15,1^{15}). \\] That ambient passport has eleven connected dessin classes. However, the complete-chain lattice gap is \\[ g=\\operatorname{gap}(25,5)=5. \\] Polynomial support therefore forces \\[ p(z)=\\bar p(z^5),\\qquad q(z)=\\bar q(z^5). \\] With \\(u=z^5\\), equation (5.1) becomes \\[ \\bar p\\bar q-3u\\bar p\\bar q'+5u\\bar p'\\bar q=\\frac15, \\] with \\[ \\deg\\bar p=1,\\qquad\\deg\\bar q=2. \\] The lattice-compatible quotient passport is \\[ \\boxed{(5,1),(3^2),(3,1^3),} \\] of degree six. Its connected Hurwitz count is one, and its deck group is trivial. A normalized representative is \\["
+        },
+        {
+          "label": "complete_chain",
+          "line": 258,
+          "snippet": "al-neighborhood computation around the explicit degree-six map above: 1. propagate the full Newton support through the complete chain into the quotient coordinate \\(u=z^5\\); 2. determine the allowed two-point line-bundle windows for the normal coefficients; 3. form the intrinsic determinant layer operators and their pole-filtered residue adjoints; 4. compute the boundary Kuranishi section; 5. prove either no gluing or a strict complete-chain descent. See `terminal_primary_belyi_reduction.md` and `verify_post125_terminal_examples.py`."
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md"
@@ -68,7 +128,7 @@
         {
           "label": "complete_chain",
           "line": 6,
-          "snippet": "complete-chain face must be a C5 pullback of the quotient passport (5,1), (3^2), (3,1^3), degree 6. The script: * implements Murnaghan--Nakayama from scratch; * reproduces the known degree-21 count 5 as a regression check; * computes the F2 weighted Hurwitz number 133/15; * enumerates t"
+          "snippet": "onal uniformizing passport is (5^6), (3^10), (15,1^15), degree 30. The polynomial lattice gap is five, so a genuine complete-chain face must be a C5 pullback of the quotient passport (5,1), (3^2), (3,1^3), degree 6. The script: * implements Murnaghan--Nakayama from scratch; * reproduces the known degree-21 count 5 as a regression check; * computes the F2 weighted Hurwitz number 133/15; * enumerates the C5 and C3 quotient dessins exactly; * concludes that the ambient degree-30 passport has 11 connected classes: 8 with trivial automorphism group, 2 with automorphism C3, 1"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/count_F2_terminal_dessins.py"
@@ -79,7 +139,7 @@
         {
           "label": "complete_chain",
           "line": 11,
-          "snippet": "complete-chain face has lattice gap five, hence lies on the sublocus a1=a2=a3=a4=0. This sublocus is one nonzero scaling orbit; a5=-1 is the displayed representative. \"\"\" from __future__ import annotations import argparse from functools import reduce from math import gcd import json from pathlib i"
+          "snippet": "five primitive integer polynomials in a1,...,a5, weighted homogeneous of weights 11,...,15 for wt(ai)=i. A polynomial complete-chain face has lattice gap five, hence lies on the sublocus a1=a2=a3=a4=0. This sublocus is one nonzero scaling orbit; a5=-1 is the displayed representative. \"\"\" from __future__ import annotations import argparse from functools import reduce from math import gcd import json from pathlib import Path import sympy as sp z = sp.symbols(\"z\") a = sp.symbols(\"a1:6\") vars_ = a def primitive_integer_poly(expr: sp.Expr) -> sp.Poly: poly = sp.Poly(expr, *vars_, domain=sp.QQ) den, cle"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/generate_F2_degree30_system.py"
@@ -90,7 +150,7 @@
         {
           "label": "complete_chain",
           "line": 155,
-          "snippet": "complete chain\", \"terminal_k\": 1, \"terminal_b\": 3, \"terminal_coordinate_exponent\": \"25/32\", \"terminal_ode\": \"4*p*q - 3*z*p*q' + 4*z*p'*q = 1\", \"terminal_direction\": [ 32, -25 ], \"lattice_gap\": 4, \"ambient_terminal_degree\": 36, \"ambient_terminal_passpor"
+          "snippet": ", \"m_n\": [ 3, 4 ], \"maximum_degree\": 128, \"reason\": \"different degree ratio and a two-level complete chain\", \"terminal_k\": 1, \"terminal_b\": 3, \"terminal_coordinate_exponent\": \"25/32\", \"terminal_ode\": \"4*p*q - 3*z*p*q' + 4*z*p'*q = 1\", \"terminal_direction\": [ 32, -25 ], \"lattice_gap\": 4, \"ambient_terminal_degree\": 36, \"ambient_terminal_passport\": [ \"(4^9)\", \"(3^12)\", \"(20,1^16)\" ], \"lattice_quotient_degree\": 9, \"lattice_quotient_passport\": [ \"(4^2,1)\", \"(3^3)\", \"(5,1^4)\" ], \"lattice_q"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/next_complete_chain_queue.json"
@@ -101,7 +161,27 @@
         {
           "label": "complete_chain",
           "line": 139,
-          "snippet": "complete-chain model, either its Newton-bounded boundary Kuranishi zero scheme is empty, or every zero produces a standard Keller pair of strictly smaller complete-chain complexity. Together with completeness of the boundary Kuranishi functor, this would prove the plane Jacobian conjecture by minim"
+          "snippet": "ate-root transformation. ## 4. Conditional full-proof theorem A sufficient global statement is: > For every terminal complete-chain model, either its Newton-bounded boundary Kuranishi zero scheme is empty, or every zero produces a standard Keller pair of strictly smaller complete-chain complexity. Together with completeness of the boundary Kuranishi functor, this would prove the plane Jacobian conjecture by minimal counterexample descent. ## 5. Next test queue | Priority | Complete-chain data | \\((m,n)\\) | maximum degree | |---:|---|---:|---:| | 1 | \\(F_2: (5,20)\\to(7/5,2)\\) | \\((3,5)\\) | 125 | | 2 | \\((7,3"
+        },
+        {
+          "label": "complete_chain",
+          "line": 139,
+          "snippet": "wton-bounded boundary Kuranishi zero scheme is empty, or every zero produces a standard Keller pair of strictly smaller complete-chain complexity. Together with completeness of the boundary Kuranishi functor, this would prove the plane Jacobian conjecture by minimal counterexample descent. ## 5. Next test queue | Priority | Complete-chain data | \\((m,n)\\) | maximum degree | |---:|---|---:|---:| | 1 | \\(F_2: (5,20)\\to(7/5,2)\\) | \\((3,5)\\) | 125 | | 2 | \\((7,35)\\to(19/7,5)\\) | \\((2,3)\\) | 126 | | 3 | \\((12,30)\\to(16/3,10)\\to(11/6,3)\\) | \\((3,2)\\) | 126 | | 4 | \\(F_{24}: (8,24)\\to(14/4,6)\\to(19/8,3)\\) | \\((3,4)\\)"
+        },
+        {
+          "label": "complete_chain",
+          "line": 145,
+          "snippet": "this would prove the plane Jacobian conjecture by minimal counterexample descent. ## 5. Next test queue | Priority | Complete-chain data | \\((m,n)\\) | maximum degree | |---:|---|---:|---:| | 1 | \\(F_2: (5,20)\\to(7/5,2)\\) | \\((3,5)\\) | 125 | | 2 | \\((7,35)\\to(19/7,5)\\) | \\((2,3)\\) | 126 | | 3 | \\((12,30)\\to(16/3,10)\\to(11/6,3)\\) | \\((3,2)\\) | 126 | | 4 | \\(F_{24}: (8,24)\\to(14/4,6)\\to(19/8,3)\\) | \\((3,4)\\) | 128 | | 5 | \\((11,33)\\to(19/4,8)\\) | \\((2,3)\\) | 132 | The first meaningful universality test is \\(F_2\\): it is the first candidate at 125, has a one-step complete chain, and changes the degree ratio from"
+        },
+        {
+          "label": "complete_chain",
+          "line": 153,
+          "snippet": "\\((2,3)\\) | 132 | The first meaningful universality test is \\(F_2\\): it is the first candidate at 125, has a one-step complete chain, and changes the degree ratio from the current \\((2,3)\\)-type geometry. ## 6. Lattice-gap terminal-primary reduction For every type-I.b final corner in the orientation of equation (3.17), the fractional terminal faces satisfy \\[ npq-mzpq'+nzp'q=1. \\] The ambient uniformizing map \\[ \\tau=z^n p^n/q^m \\] has degree \\(mnb\\). However, if \\[ g=\\operatorname{gap}(\\rho,\\ell), \\] then polynomial lattice support forces \\[ p(z)=\\bar p(z^g),\\qquad q(z)=\\bar q(z^g). \\] Writing \\(u=z"
+        },
+        {
+          "label": "complete_chain",
+          "line": 201,
+          "snippet": "quad \\left(\\frac{(m+n)b-1}{g},1^{\\frac{mnb-(m+n)b+1}{g}}\\right). \\] This is the finite Hurwitz problem relevant to the complete-chain corner; the ambient degree-\\(mnb\\) cover is its cyclic \\(g\\)-pullback. For the first cases in the queue: | Case | \\(g\\) | quotient degree | quotient passport | classes | |---|---:|---:|---|---:| | \\(F_2\\), max 125 | 5 | 6 | \\((5,1),(3^2),(3,1^3)\\) | 1 | | one-step max 126 | 3 | 10 | \\((3^3,1),(2^5),(8,1^2)\\) | 1 | | two-step max 126 | 2 | 9 | \\((2^4,1),(3^3),(7,1^2)\\) | 1 | | \\(F_{24}\\), max 128 | 4 | 9 | \\((4^2,1),(3^3),(5,1^4)\\) | 2 | | one-step max 132 | 3 | 16 | \\((3^5,1),(2"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md"
@@ -112,7 +192,27 @@
         {
           "label": "complete_chain",
           "line": 40,
-          "snippet": "complete chain. \\end{abstract} \\begin{tcolorbox}[colback=yellow!5,colframe=orange!60!black,title=Status] The layer, adjoint, index, resonance, hypergeometric, derivative, passport, and filtered-descent statements below are proved in this note. The terminal gluing--descent statement in Section~\\ref"
+          "snippet": "ow.'' The remaining gap to a full planar proof is isolated as an integrable gluing--descent theorem for every terminal complete chain. \\end{abstract} \\begin{tcolorbox}[colback=yellow!5,colframe=orange!60!black,title=Status] The layer, adjoint, index, resonance, hypergeometric, derivative, passport, and filtered-descent statements below are proved in this note. The terminal gluing--descent statement in Section~\\ref{sec:conditional} is a research conjecture. Nothing here by itself proves the plane Jacobian conjecture. \\end{tcolorbox} \\section{Input from the certified degree--21 case} The completed boundary pa"
+        },
+        {
+          "label": "complete_chain",
+          "line": 387,
+          "snippet": "al remaining issue. \\section{The terminal gluing--descent theorem needed for a full proof}\\label{sec:conditional} The complete-chain theory associates to every standard minimal pair a finite descending chain of regular corners, ending at a last lower corner. This supplies the natural induction parameter. The boundary calculation suggests the following formulation. \\begin{conjecture}[Terminal gluing--descent dichotomy]\\label{conj:dichotomy} For every terminal complete-chain boundary model of a standard minimal Keller pair, construct the determinant-preserving Newton-bounded Kuranishi section \\[ \\boldsymbol\\o"
+        },
+        {
+          "label": "complete_chain",
+          "line": 390,
+          "snippet": "following formulation. \\begin{conjecture}[Terminal gluing--descent dichotomy]\\label{conj:dichotomy} For every terminal complete-chain boundary model of a standard minimal Keller pair, construct the determinant-preserving Newton-bounded Kuranishi section \\[ \\boldsymbol\\omega_{\\mathcal C}:\\cM_{\\mathcal C} \\longrightarrow\\operatorname{Obs}_{\\mathcal C} \\] from the complexes \\eqref{eq:Dr}. Then exactly one of the following occurs: \\begin{enumerate} \\item the gluing scheme $Z(\\boldsymbol\\omega_{\\mathcal C})$ is empty; \\item every zero of $\\boldsymbol\\omega_{\\mathcal C}$ determines an allowable approximate-root tra"
+        },
+        {
+          "label": "complete_chain",
+          "line": 398,
+          "snippet": "athcal C}$ determines an allowable approximate-root transformation producing a standard Keller pair of strictly smaller complete-chain complexity. \\end{enumerate} \\end{conjecture} \\begin{theorem}[Conditional planar proof]\\label{thm:conditional} If Conjecture~\\ref{conj:dichotomy} holds and the boundary Kuranishi functor is complete for every terminal chain, then the plane Jacobian conjecture holds. \\end{theorem} \\begin{proof} Assume a counterexample and choose one minimal for a well-order refining its complete-chain complexity. Its terminal model cannot satisfy alternative (1), because the map itself supplies a"
+        },
+        {
+          "label": "complete_chain",
+          "line": 407,
+          "snippet": "ecture holds. \\end{theorem} \\begin{proof} Assume a counterexample and choose one minimal for a well-order refining its complete-chain complexity. Its terminal model cannot satisfy alternative (1), because the map itself supplies a gluing. Alternative (2) produces a counterexample of smaller complexity, contradicting minimality. \\end{proof} The proof is short because all substantive work is concentrated in two statements: \\begin{enumerate} \\item \\emph{completeness}: every formal/polynomial boundary deformation is seen by the finite Kuranishi model; \\item \\emph{integrable descent}: the layerwise pole reductions"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex"
@@ -123,7 +223,27 @@
         {
           "label": "complete_chain",
           "line": 8,
-          "snippet": "complete-chain problems are much smaller than their fractional uniformizing covers suggest. For a final type-I.b corner, the complete-chain lattice gap forces the face polynomials to descend through a cyclic quotient. The relevant Belyi cover has degree \\[ D=\\frac{mnb}{g},\\qquad g=\\operatorname{g"
+          "snippet": "r computations; no claim of a proof of the plane Jacobian conjecture. ## Executive result The first post-125 terminal complete-chain problems are much smaller than their fractional uniformizing covers suggest. For a final type-I.b corner, the complete-chain lattice gap forces the face polynomials to descend through a cyclic quotient. The relevant Belyi cover has degree \\[ D=\\frac{mnb}{g},\\qquad g=\\operatorname{gap}(\\rho,\\ell), \\] not the ambient degree \\(mnb\\). Its passport is \\[ \\left(n^{(mb-1)/g},\\frac ng\\right),\\qquad \\left(m^{nb/g}\\right),\\qquad \\left(\\frac{(m+n)b-1}{g},1^{D-\\frac{(m+n)b-1}{g}}\\right)"
+        },
+        {
+          "label": "complete_chain",
+          "line": 8,
+          "snippet": "te-chain problems are much smaller than their fractional uniformizing covers suggest. For a final type-I.b corner, the complete-chain lattice gap forces the face polynomials to descend through a cyclic quotient. The relevant Belyi cover has degree \\[ D=\\frac{mnb}{g},\\qquad g=\\operatorname{gap}(\\rho,\\ell), \\] not the ambient degree \\(mnb\\). Its passport is \\[ \\left(n^{(mb-1)/g},\\frac ng\\right),\\qquad \\left(m^{nb/g}\\right),\\qquad \\left(\\frac{(m+n)b-1}{g},1^{D-\\frac{(m+n)b-1}{g}}\\right). \\] For the first five complete-chain cases at maximum degrees \\(125,126,126,128,132\\), the numbers of relevant connected co"
+        },
+        {
+          "label": "complete_chain",
+          "line": 22,
+          "snippet": "t),\\qquad \\left(m^{nb/g}\\right),\\qquad \\left(\\frac{(m+n)b-1}{g},1^{D-\\frac{(m+n)b-1}{g}}\\right). \\] For the first five complete-chain cases at maximum degrees \\(125,126,126,128,132\\), the numbers of relevant connected covers are \\[ 1,\\quad1,\\quad1,\\quad2,\\quad2. \\] The explicit maps through maximum degree 128 are infinitesimally rigid modulo the single source-rescaling symmetry. Consequently the next obstruction calculations can be formulated entirely in the normal-neighborhood jets over rigid reduced boundary covers. ## 1. Universal terminal-primary equation For terminal faces \\[ P_E=x^{1-k/\\ell}y\\,p(z),\\"
+        },
+        {
+          "label": "complete_chain",
+          "line": 278,
+          "snippet": "nd integrate them into one allowable approximate-root transformation. A sufficient dichotomy is: > For every terminal complete-chain model, either the Newton-bounded boundary Kuranishi zero scheme is empty, or every zero induces a strict descent of complete-chain complexity. With a complete boundary deformation functor, this dichotomy would rule out a minimal counterexample. ## 8. Immediate unresolved calculation For the \\(F_2\\) chain, one must still propagate the **full** Newton supports through the approximate-root shears and the quotient \\(u=z^5\\). The complete-chain table fixes the terminal face but doe"
+        },
+        {
+          "label": "complete_chain",
+          "line": 278,
+          "snippet": "ain model, either the Newton-bounded boundary Kuranishi zero scheme is empty, or every zero induces a strict descent of complete-chain complexity. With a complete boundary deformation functor, this dichotomy would rule out a minimal counterexample. ## 8. Immediate unresolved calculation For the \\(F_2\\) chain, one must still propagate the **full** Newton supports through the approximate-root shears and the quotient \\(u=z^5\\). The complete-chain table fixes the terminal face but does not by itself determine every normal-layer monomial window. The next exact deliverable is therefore: 1. the two-point line-bund"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md"
@@ -134,7 +254,17 @@
         {
           "label": "complete_chain",
           "line": 2,
-          "snippet": "complete-chain corners. There are two distinct covers. 1. On the fractional uniformizing coordinate z=x^{-sigma/rho}y, the final face equation is n*p*q - m*z*p*q' + n*z*p'*q = 1, with deg(p)=m*b-1 and deg(q)=n*b. It defines an ambient Belyi map tau(z)=z**n*p(z)**n/q(z)**m"
+          "snippet": "#!/usr/bin/env python3 \"\"\"Exact terminal-primary Belyi formulas for type-I.b complete-chain corners. There are two distinct covers. 1. On the fractional uniformizing coordinate z=x^{-sigma/rho}y, the final face equation is n*p*q - m*z*p*q' + n*z*p'*q = 1, with deg(p)=m*b-1 and deg(q)=n*b. It defines an ambient Belyi map tau(z)=z**n*p(z)**n/q(z)**m of degree m*n*b. 2. Polynomial lattice support forces p(z)=pbar(z**g), q(z)=qbar(z**g), where g=gap(rho,ell)=rho/gcd(rho,ell). Put N=n/g and u=z**g. The lattice-compatible quotient sa"
+        },
+        {
+          "label": "complete_chain",
+          "line": 30,
+          "snippet": "e m*n*b/g. This quotient, not the ambient cyclic pullback, is the finite Hurwitz problem attached to the polynomial complete-chain corner. The script checks the final-corner arithmetic, divisibility, passports, Riemann--Hurwitz identities, and the explicit F2 quotient/lift. \"\"\" from __future__ import annotations import argparse from dataclasses import dataclass, asdict from fractions import Fraction from math import gcd import json from pathlib import Path from typing import Iterable import sympy as sp z, u = sp.symbols(\"z u\") def _partition_text(parts: Iterable[int]) -> str: counts: dict[int, int]"
+        },
+        {
+          "label": "complete_chain",
+          "line": 166,
+          "snippet": "# Lattice support: only powers z^gap occur. The degree divisibilities # are therefore necessary for a genuine complete-chain corner. assert deg_p % gap == 0 assert deg_q % gap == 0 assert gcd(gap, b) == 1 assert n % gap == 0 N = n // gap Abar, Bbar = deg_p // gap, deg_q // gap Dbar = m * n * b // gap Hbar_num = (m + n) * b - 1 assert Hbar_num % gap == 0 Hbar = Hbar_num // gap quotient = _passport( tuple(sorted([n] * Abar + [N], reverse=True)), tuple([m] * Bbar), tuple([Hbar] + [1] * (Dbar - Hbar)), ) return TerminalReduction("
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi.py"
@@ -145,7 +275,27 @@
         {
           "label": "complete_chain",
           "line": 3,
-          "snippet": "complete-chain gap. The result is a finite Hurwitz problem of substantially smaller degree than the ambient uniformizing cover. It does not prove that any listed boundary map extends to a Keller pair. ## 1. Final face equation on the fractional uniformizing line Let a final regular corner of type"
+          "snippet": "for standard plane Keller pairs after replacing the fractional boundary parameter by the lattice quotient forced by the complete-chain gap. The result is a finite Hurwitz problem of substantially smaller degree than the ambient uniformizing cover. It does not prove that any listed boundary map extends to a Keller pair. ## 1. Final face equation on the fractional uniformizing line Let a final regular corner of type I.b have \\[ A=\\left(\\frac a\\ell,b\\right),\\qquad \\operatorname{st}(Q)=\\left(\\frac k\\ell,0\\right),\\qquad \\operatorname{st}(P)=\\left(1-\\frac k\\ell,1\\right), \\] with a standard coprime degree ratio \\((m"
+        },
+        {
+          "label": "complete_chain",
+          "line": 96,
+          "snippet": "sport**. ## 2. The lattice-gap quotient Let \\[ g=\\operatorname{gap}(\\rho,\\ell)=\\frac{\\rho}{\\gcd(\\rho,\\ell)}. \\] The complete-chain lattice theorem forces both face polynomials to use only powers of \\(z^g\\): \\[ p(z)=\\bar p(u),\\qquad q(z)=\\bar q(u),\\qquad u=z^g. \\tag{2.1} \\] Consequently \\[ g\\mid mb-1,\\qquad g\\mid nb. \\] Since \\(g\\mid mb-1\\), one has \\(\\gcd(g,b)=1\\); hence \\(g\\mid n\\). Set \\[ N=\\frac ng,\\qquad A_0=\\frac{mb-1}{g},\\qquad B_0=\\frac{nb}{g}. \\] Substitution into (1.1), followed by division by \\(g\\), gives the quotient equation \\[ \\boxed{ N\\bar p\\bar q-mu\\bar p\\bar q' +nu\\bar p'\\bar q=\\frac1g."
+        },
+        {
+          "label": "complete_chain",
+          "line": 170,
+          "snippet": "z^g). \\] Thus the degree-\\(mnb\\) cover is a cyclic \\(g\\)-pullback; the finite Hurwitz problem relevant to a polynomial complete-chain corner is the smaller degree-\\(D\\) problem (2.5). ### Connectedness Every permutation triple with passport (2.5) is transitive. Indeed, an orbit not containing the unique \\(H\\)-cycle is fixed by the third permutation, so on that orbit the first two permutations are mutual inverses. Their cycle lengths would therefore have to agree. The ordinary cycles have lengths \\(n\\) and \\(m\\), which are coprime and greater than one. The only exceptional first-cycle length is \\(N\\mid n\\); equ"
+        },
+        {
+          "label": "complete_chain",
+          "line": 217,
+          "snippet": "two with deck group \\(C_3\\), and one with deck group \\(C_5\\). This is an exact count, but it is **not** the polynomial complete-chain count. The gap condition requires \\(p,q\\in K[z^5]\\), so only the unique \\(C_5\\)-symmetric class survives. On \\(u=z^5\\), \\[ \\bar p(u)=1-u, \\qquad \\bar q(u)=\\frac15-\\frac35u+\\frac9{25}u^2, \\tag{4.1} \\] and \\[ \\bar p\\bar q-3u\\bar p\\bar q'+5u\\bar p'\\bar q=\\frac15. \\] The unique quotient Belyi map is, up to target scaling, \\[ \\boxed{ \\phi_6(u)= \\frac{u(u-1)^5}{(u^2-\\frac53u+\\frac59)^3}. } \\tag{4.2} \\] The ambient terminal map is \\(\\phi_6(z^5)\\). Therefore the reduced boundary da"
+        },
+        {
+          "label": "complete_chain",
+          "line": 244,
+          "snippet": "tag{4.2} \\] The ambient terminal map is \\(\\phi_6(z^5)\\). Therefore the reduced boundary datum for the first degree-125 complete-chain family is unique up to the standard source and target normalizations. ## 5. Explicit maps for the first post-125 rows ### 5.1 One-step maximum degree 126 Here \\[ A=(19/7,5),\\quad k=2,\\quad(m,n)=(2,3), \\quad(\\rho,\\sigma)=(21,-11),\\quad g=3. \\] The quotient passport is \\[ (3^3,1),(2^5),(8,1^2), \\] and it has one class. Put \\[ P=u^3+u^2+\\frac5{12}u+\\frac1{18}, \\] \\[ Q=u^5+\\frac32u^4+u^3+\\frac13u^2+\\frac5{96}u+\\frac1{576}. \\] Then \\[ \\boxed{uP^3-Q^2=-\\frac{36u^2+28u+9}{2985"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md"
@@ -156,7 +306,12 @@
         {
           "label": "complete_chain",
           "line": 12,
-          "snippet": "complete-chain lattice gap forces this map to factor through $u=z^g$. We derive the reduced differential equation, degree, and passport, and compute the first post-125 Hurwitz problems. In particular, the first degree-125 family has a unique lattice-compatible degree-six boundary map; the eleven deg"
+          "snippet": "of a standard plane Keller pair, the fractional boundary coordinate produces an ambient Belyi map of degree $mnb$. The complete-chain lattice gap forces this map to factor through $u=z^g$. We derive the reduced differential equation, degree, and passport, and compute the first post-125 Hurwitz problems. In particular, the first degree-125 family has a unique lattice-compatible degree-six boundary map; the eleven degree-thirty dessins belong to the ambient uniformizing passport, and only one is compatible with polynomial lattice support. \\end{abstract} \\section{Uniformizing terminal equation} Let \\[ A=\\left(\\fra"
+        },
+        {
+          "label": "complete_chain",
+          "line": 200,
+          "snippet": "gle $C_5$-equivariant normal-neighborhood problem around the explicit degree-six $F_2$ quotient. One must propagate the complete-chain Newton polygons into the $u=z^g$ chart, compute the two-point line-bundle windows, and evaluate the intrinsic pole-filtered residue Kuranishi section. The same procedure then applies to the unique degree-ten and degree-nine maps above. \\end{document}"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex"
@@ -167,7 +322,7 @@
         {
           "label": "complete_chain",
           "line": 2,
-          "snippet": "complete-chain seed.\"\"\" from fractions import Fraction from math import gcd A0 = (Fraction(5), Fraction(20)) A0p = (Fraction(1), Fraction(0)) A1 = (Fraction(7, 5), Fraction(2)) m, n = 3, 5 # Primitive normal to the edge A0-A0'. dx = A0[0] - A0p[0] dy = A0[1] - A0p[1] g = gcd(dx.numerator, dy.numer"
+          "snippet": "#!/usr/bin/env python3 \"\"\"Exact arithmetic checks for the F2, maximum-degree-125 complete-chain seed.\"\"\" from fractions import Fraction from math import gcd A0 = (Fraction(5), Fraction(20)) A0p = (Fraction(1), Fraction(0)) A1 = (Fraction(7, 5), Fraction(2)) m, n = 3, 5 # Primitive normal to the edge A0-A0'. dx = A0[0] - A0p[0] dy = A0[1] - A0p[1] g = gcd(dx.numerator, dy.numerator) rho = dy / g sigma = -dx / g assert (rho, sigma) == (5, -1) # Degrees in z=x^(1/5)y. p_degree = m * (A0[1] - A0p[1]) q_degree = n * (A0[1] - A0p[1]) assert p_degree == 60 and q_degree == 100 as"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py"
@@ -178,7 +333,12 @@
         {
           "label": "complete_chain",
           "line": 2,
-          "snippet": "complete chains. The script distinguishes the ambient fractional uniformizing cover from the lattice-compatible quotient u=z^gap. It verifies exact quotient ODEs and explicit maps for the degree-125 F2 case and the first three post-125 cases. \"\"\" from __future__ import annotations import argparse"
+          "snippet": "#!/usr/bin/env python3 \"\"\"Exact lattice-gap terminal checks for the first post-125 complete chains. The script distinguishes the ambient fractional uniformizing cover from the lattice-compatible quotient u=z^gap. It verifies exact quotient ODEs and explicit maps for the degree-125 F2 case and the first three post-125 cases. \"\"\" from __future__ import annotations import argparse from dataclasses import asdict from fractions import Fraction import json from pathlib import Path import sympy as sp from terminal_primary_belyi import terminal_reduction, verify_explicit_f2_solut"
+        },
+        {
+          "label": "complete_chain",
+          "line": 219,
+          "snippet": "it_map\"] = two_step_max126_map() payload[\"F24_max128\"][\"explicit_maps\"] = F24_maps() # Spot checks against the complete-chain directions. assert reductions[\"F2_max125\"].rho == 25 and reductions[\"F2_max125\"].sigma == -17 assert reductions[\"one_step_max126\"].rho == 21 and reductions[\"one_step_max126\"].sigma == -11 assert reductions[\"two_step_max126\"].rho == 12 and reductions[\"two_step_max126\"].sigma == -7 assert reductions[\"F24_max128\"].rho == 32 and reductions[\"F24_max128\"].sigma == -25 assert reductions[\"one_step_max132\"].rho == 12 and reductions[\"one_step_max132\"].sigma == -7 if"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_post125_terminal_examples.py"
@@ -189,7 +349,7 @@
         {
           "label": "x_minus_four",
           "line": 2,
-          "snippet": "x^4 + 3*x^3 + 3*x^2 + 26\", \"embedding_u\": \"-1.664836704033281178287344837278453851243269719290529858837572849478096828874852644384604910897382528107270588725589666125991437289596384307710878098059890261343130493410462877211296943502703584967016795149926388008709045993820767368828925295297803467062"
+          "snippet": "{ \"minimal_polynomial\": \"x^5 - x^4 + 3*x^3 + 3*x^2 + 26\", \"embedding_u\": \"-1.66483670403328117828734483727845385124326971929052985883757284947809682887485264438460491089738252810727058872558966612599143728959638430771087809805989026134313049341046287721129694350270358496701679514992638800870904599382076736882892529529780346706229083450516502989236066731628656381400938321790900900120611988694421892436351685266348127796118337589388737803011662616442223284845040116299788117573133308891766535100322445614657754506121560729215355"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/handoff-lite/layer-calculation/belyi_exact_field_relations.json"
@@ -200,7 +360,7 @@
         {
           "label": "complete_chain",
           "line": 59,
-          "snippet": "complete-chain-to-lattice-gap application. - Independent audit that the imported support enumeration, layer model, normalizations, and saturations cover every terminal vertex-saturated case. - Independent implementation of the toric face audit and finite algebra in another computer-algebra syste"
+          "snippet": "ained replay package with scripts, exact inputs, outputs, and hashes. ## Remaining blockers - Specialist audit of the complete-chain-to-lattice-gap application. - Independent audit that the imported support enumeration, layer model, normalizations, and saturations cover every terminal vertex-saturated case. - Independent implementation of the toric face audit and finite algebra in another computer-algebra system. - Audit of the earlier reduction from arbitrary below-125 Keller pairs to the terminal model. - Final literature and priority review before public release. The honest label is **computer-assiste"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/STATUS.md"
@@ -211,7 +371,27 @@
         {
           "label": "complete_chain",
           "line": 26,
-          "snippet": "complete-chain queue: they have \\(1,1,1,2,2\\) classes. The explicit quotient points through maximum degree \\(128\\) are infinitesimally rigid modulo source scaling. At every normal order the new coefficients enter through one universal first-order operator. We put it in logarithmic gauge normal for"
+          "snippet": "/g\\). We give its passport, prove automatic connectedness, and compute the first five quotient Hurwitz problems in the complete-chain queue: they have \\(1,1,1,2,2\\) classes. The explicit quotient points through maximum degree \\(128\\) are infinitesimally rigid modulo source scaling. At every normal order the new coefficients enter through one universal first-order operator. We put it in logarithmic gauge normal form, identify the dual of each finite Newton-window cokernel with filtered principal parts, and reconstruct the exact compatibility equations as residue pairings. The normalized adjacent-contact equati"
+        },
+        {
+          "label": "complete_chain",
+          "line": 78,
+          "snippet": "terexamples \\cite{borisov2009geometric,borisov2020frameworks}. Guccione, Guccione, Horruitiner, and Valqui constructed complete-chain algorithms and reduced the range below maximum degree \\(125\\) to the pair \\((72,108)\\) and its transpose \\cite{guccioneEtAl2017algorithms,guccioneEtAl2022degree108}. Normal-boundary determinant expansions also have a recent valuative precursor in Bado's work \\cite{bado2026valuative}. While this manuscript was being prepared, a MathOverflow answer announced a computer-assisted calculation eliminating the remaining supports below maximum coordinate degree \\(125\\), with a write-up i"
+        },
+        {
+          "label": "complete_chain",
+          "line": 111,
+          "snippet": "q-mzpq'+nzp'q=1,\\qquad \\deg p=mb-1,\\quad \\deg q=nb. \\] If \\(p(z)=\\bar p(z^g)\\) and \\(q(z)=\\bar q(z^g)\\), as forced by a complete-chain lattice gap \\(g\\), then \\(g\\mid n\\) and \\[ \\bar\\tau(u)=u^{n/g}\\frac{\\bar p(u)^n}{\\bar q(u)^m} \\] is a Belyi map of degree \\(mnb/g\\), with passport \\[ \\left(n^{(mb-1)/g},\\frac ng\\right),\\qquad \\left(m^{nb/g}\\right),\\qquad \\left(\\frac{(m+n)b-1}{g}, 1^{\\frac{mnb-(m+n)b+1}{g}}\\right). \\] Every permutation triple with this passport is transitive. \\end{theorem} Applying the theorem to the first five terminal complete-chain rows gives quotient degrees \\(6,10,9,9,16\\) and respectively \\("
+        },
+        {
+          "label": "complete_chain",
+          "line": 125,
+          "snippet": "ery permutation triple with this passport is transitive. \\end{theorem} Applying the theorem to the first five terminal complete-chain rows gives quotient degrees \\(6,10,9,9,16\\) and respectively \\(1,1,1,2,2\\) dessin classes. The first row is especially useful: an ambient degree-\\(30\\) passport has eleven classes, but the gap-five lattice selects the unique cyclic pullback of \\[ \\frac{u(u-1)^5}{(u^2-\\frac53u+\\frac59)^3}. \\] The second result describes the normal direction. At layer \\(r\\), new coefficients enter the determinant equation through a universal first-order operator \\[ \\mathscr D_r^{\\alpha,\\beta}(a,b"
+        },
+        {
+          "label": "complete_chain",
+          "line": 211,
+          "snippet": "over an algebraic closure of the characteristic-zero field. We do not prove: \\begin{itemize} \\item that the imported complete-chain and support reductions exhaust every hypothetical Keller pair below degree \\(125\\); \\item that the stated normalizations and saturations cover every terminal vertex-saturated case; \\item a general all-layer algebraization or approximate-root descent theorem; or \\item the plane Jacobian conjecture. \\end{itemize} These dependency boundaries remain visible throughout the paper. \\section{Face equations and their Belyi maps} \\label{sec:faces} We work over a characteristic-zero field"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex"
@@ -220,9 +400,39 @@
       "bytes": 34229,
       "hits": [
         {
+          "label": "parameter_names",
+          "line": 48,
+          "snippet": "MINPOLY_EXPR = X**5 - X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1, 2, 2, 2, 3, 3, 3, 4) ALPHA = 2 BETA = 3 S_TOTAL = ALPHA + BETA KElement = K5 ParamPoly = dict[tuple[int, ...], KElement] Laurent = dict[int, KElement] def _as_fraction(value: Any) -> Fraction: if isinstance(value, Fraction): return value if isinstance(value, int): retu"
+        },
+        {
+          "label": "parameter_names",
+          "line": 48,
+          "snippet": "- X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1, 2, 2, 2, 3, 3, 3, 4) ALPHA = 2 BETA = 3 S_TOTAL = ALPHA + BETA KElement = K5 ParamPoly = dict[tuple[int, ...], KElement] Laurent = dict[int, KElement] def _as_fraction(value: Any) -> Fraction: if isinstance(value, Fraction): return value if isinstance(value, int): return Fraction(value)"
+        },
+        {
+          "label": "parameter_names",
+          "line": 156,
+          "snippet": "f poly_to_json(f: ParamPoly, *, final: bool = False) -> list[dict[str, Any]]: names = FINAL_VARIABLES if final else PARAMETER_NAMES return [ { \"exp\": list(m), \"monomial\": \"*\".join( name if exponent == 1 else f\"{name}^{exponent}\" for name, exponent in zip(names, m) if exponent ) or \"1\", \"coeff_basis\": k_to_vector(c), \"coeff_expr\": k_to_expr(c), } for m, c in sorted(f.items()) ] # --------------------------------------------------------------------------- # Li"
+        },
+        {
+          "label": "parameter_names",
+          "line": 863,
+          "snippet": "version\": 1, \"normalization\": { \"description\": \"t1_1=1; t2_2=alpha; t2_0 and t3_0 split off; retain t1_0,t2_1,t3_1,t3_2,t4_0\", \"alpha_basis\": k_to_vector(alpha_norm), \"alpha_expr\": k_to_expr(alpha_norm), \"Ptop_basis\": k_to_vector(Ptop), \"Qtop_basis\": k_to_vector(Qtop), }, \"raw_nonzero_compatibility_equations\": [ { \"raw_equation_index\": i, \"layer\": eq.layer, \"null_index\": eq.null_index, \"transform_row_index\": eq.transform_row_index, \"terms\":"
+        },
+        {
+          "label": "final_parameter_indices",
+          "line": 50,
+          "snippet": "= [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1, 2, 2, 2, 3, 3, 3, 4) ALPHA = 2 BETA = 3 S_TOTAL = ALPHA + BETA KElement = K5 ParamPoly = dict[tuple[int, ...], KElement] Laurent = dict[int, KElement] def _as_fraction(value: Any) -> Fraction: if isinstance(value, Fraction): return value if isinstance(value, int): return Fraction(value) q = Rational(str(value)) return Fraction(int(q.p), int(q.q)) def k_from_rational(value: Any) -> KElement:"
+        },
+        {
+          "label": "final_parameter_indices",
+          "line": 659,
+          "snippet": "= -c12 / (2 * c22) assert c14 / c22 == alpha_norm**2 def subst_core(f: ParamPoly) -> ParamPoly: keep = FINAL_PARAMETER_INDICES out: ParamPoly = {} for m, c in f.items(): cc = c * (alpha_norm ** m[4]) # t1_1=1, t2_2=alpha q = tuple(m[i] for i in keep) out[q] = out.get(q, ZERO) + cc return clean(out) def eval12(f: ParamPoly) -> KElement: total = ZERO for m, c in f.items(): if any(m[i] for i in range(NVAR) if i not in (1, 4)): continue total += c * (alpha_norm ** m[4]) re"
+        },
+        {
           "label": "x_minus_four",
           "line": 41,
-          "snippet": "X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1"
+          "snippet": "26) # --------------------------------------------------------------------------- X = Symbol(\"x\") MINPOLY_EXPR = X**5 - X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1, 2, 2, 2, 3, 3, 3, 4) ALPHA = 2 BETA = 3 S_TOTAL = ALPHA + BETA KElement = K5 ParamPoly = dict[tuple[int, ...], KElement] Laurent = dict[int, KElement] def _as_fraction(value: Any) -> Fraction:"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/export_residue_audit.py"
@@ -233,7 +443,12 @@
         {
           "label": "x_minus_four",
           "line": 21,
-          "snippet": "x**4+3*x**3+3*x**2+26)%P fp=lambda x:(5*x**4-4*x**3+9*x**2+6*x)%P if f(ROOT)!=0 or fp(ROOT)==0: raise AssertionError((f(ROOT),fp(ROOT))) records=[]; all_den=[]; all_nonzero=True for idx in SELECTED: eq=data['equations'][idx] zeros=[]; den_bad=[] for t"
+          "snippet": ") from export_residue_audit import parse_pari_lift data=json.loads(args.input.read_text()) f=lambda x:(x**5-x**4+3*x**3+3*x**2+26)%P fp=lambda x:(5*x**4-4*x**3+9*x**2+6*x)%P if f(ROOT)!=0 or fp(ROOT)==0: raise AssertionError((f(ROOT),fp(ROOT))) records=[]; all_den=[]; all_nonzero=True for idx in SELECTED: eq=data['equations'][idx] zeros=[]; den_bad=[] for t in eq['terms']: k=parse_pari_lift(t['coeff']) all_den.append(k.den) if k.den%P==0: den_bad.append(t['exp']) val=sum((n%P)*pow(ROOT,i,P) for i,n in enume"
+        },
+        {
+          "label": "x_minus_four",
+          "line": 22,
+          "snippet": "_pari_lift data=json.loads(args.input.read_text()) f=lambda x:(x**5-x**4+3*x**3+3*x**2+26)%P fp=lambda x:(5*x**4-4*x**3+9*x**2+6*x)%P if f(ROOT)!=0 or fp(ROOT)==0: raise AssertionError((f(ROOT),fp(ROOT))) records=[]; all_den=[]; all_nonzero=True for idx in SELECTED: eq=data['equations'][idx] zeros=[]; den_bad=[] for t in eq['terms']: k=parse_pari_lift(t['coeff']) all_den.append(k.den) if k.den%P==0: den_bad.append(t['exp']) val=sum((n%P)*pow(ROOT,i,P) for i,n in enumerate(k.nums))%P val=val*pow(k.de"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/verify_good_prime.py"
@@ -244,11 +459,11 @@
         {
           "label": "complete_chain",
           "line": 240,
-          "snippet": "complete_chain_queue.json\", \"sha256\": \"c161f309194a8f0e86d7b1343d5c7e192e76afb80ab5bb62f02048c28a20c50c\" }, { \"bytes\": 5881, \"path\": \"06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/post125_terminal_passports.json\", \"sha256\": \"b4a"
+          "snippet": "bytes\": 5728, \"path\": \"06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/next_complete_chain_queue.json\", \"sha256\": \"c161f309194a8f0e86d7b1343d5c7e192e76afb80ab5bb62f02048c28a20c50c\" }, { \"bytes\": 5881, \"path\": \"06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/post125_terminal_passports.json\", \"sha256\": \"b4a8d4c2aab624e52e1bb07337069300279a6032003d835cc3a400bb2274ef3e\" }, { \"bytes\": 2941, \"path\": \"06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/te"
         }
       ],
       "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json"
     }
   ],
-  "schema_version": 2
+  "schema_version": 3
 }
