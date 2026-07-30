@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "source_archive": {
+    "repository_path": "docs-v7-20260726c/assets/technical-materials/06-plane-boundary-computational-supplement.zip",
+    "filename": "06-plane-boundary-computational-supplement.zip",
+    "bytes": 88506243,
+    "sha256": "4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585"
+  },
+  "member": {
+    "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/exact_data.json",
+    "fixture_path": "fixtures/degree21_exact_data.json",
+    "bytes": 69105,
+    "sha256": "a506ccf4a8b97801b1a450609aa98382ef151d83c48b765270c37fbe7cb371f2"
+  },
+  "scope": "Archived ordered supports, layer bases, dimensions, and left/right nullspace vectors for the truncated and full degree-21 upper-face linear complexes.",
+  "limitations": "The fixture does not contain the later specialized fixed-chart action, the explicit k=4 chart tangent, or the layer-five-through-seven no-gluing certificate."
+}
