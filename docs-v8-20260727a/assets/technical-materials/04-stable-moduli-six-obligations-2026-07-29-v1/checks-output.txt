@@ -1,0 +1,56 @@
+1. Hensel chart N=3,d=1,m=2
+   product coefficients:
+     q1 = e1 + q
+     q2 = e1*q + e2
+     q3 = e2*q
+   Jacobian at E=z^2 has determinant q**2
+   Hence the factor chart is etale when q=Q_d(0) is a unit.
+   exact P=z^2 P_d+Q_d S decomposition:
+     s0  = p0/q
+     s1  = -(p0 - p1*q)/q**2
+     P_d = (p0 - p1*q + p2*q**2)/q**2
+   N=3 inverse bounded map has P_i=n_i/q3^3, with
+     n0 = 2*q1*q2*q3*y0 - q1*q3**2*y1 - q2**3*y0 + q2**2*q3*y1 - q2*q3**2*y2 - q3**2*y0
+     n1 = q1**2*q3*y0 - q1*q2**2*y0 + q1*q2*q3*y1 - q1*q3**2*y2 + q2*q3*y0 - q3**2*y1
+     n2 = q1*q3*y0 - q2**2*y0 + q2*q3*y1 - q3**2*y2
+   At q3=0, n0=-q2^3*y0; the coarse one-root graph is [q3^5:n0].
+
+2. Nested one-root coordinate in the direct two-root chart
+   At gamma=0, S=z*p+(z+beta)*g with
+     g = S0/beta,  p = S1-S0/beta.
+   Under S0=beta^3*v, S1=beta^2*w:
+     normalized gauge = v
+     normalized residual decoration = -v + w
+   With gamma=beta^2*u, the small root has series -beta*u - beta*u**2 + O(u**3)
+   so the nested weighted coordinate is v/u^2.
+
+3. Direct/iterated N=3 overlap
+   Rees graph of [u^2:v] has equation U*v-V*u^2=0.
+   Direct chart: Spec k[u,v,w].
+   Iterated refinement: Bl_(u^2,v) Spec k[u,v,w].
+   Over u=v=0 the homogeneous fibre is P^1, so the charts differ.
+   U-chart: v=xi*u^2; V-chart: u^2=eta*v.
+
+4. Nonunit and relative-Jacobian compatibility
+   B_full=B_d+3A*phi with phi=cS/3.
+   rem_Q(B_full)=B_d and rem_Q(B_full^2)=rem_Q(B_d^2).
+   H_full(c,t)=H_d(c,t+phi), H=3At+B.
+   Hence (Q,B), (Q,B^2), and the marked H^3/content divisor are gauge invariant.
+   On k[eps]/(eps^2), m_sigma = [[sigma0, 0], [sigma1, sigma0]]
+   Fitt_0(coker m_sigma)=(sigma0^2)
+   Fitt_1(coker m_sigma)=(sigma0,sigma1)
+   Checked p=r-m and d=3m-min(r,2m) for 63 valuation pairs.
+
+5. Generic discriminant fibre as a standard cusp
+   X=B^2-3Ab
+   Y=B*X+(3A/2)*(-18Aa-Bb)
+   Y^2-X^3=-(27/4)A^2 Delta
+   det d(X,Y)/d(a,b)= -81*A**3
+   On normalization: X=H^2, Y=H^3, H=3At+B.
+
+6. Noninjectivity of comparison with the special orbit
+   epsilon=tau, y=lambda*tau^(N+2) has graph limit [1:lambda].
+   Different lambda give different graph points but the same special
+   coefficient point epsilon=y=0 and the same lower-length orbit.
+
+ALL PROGRAM-4 SIX-OBLIGATION SYMBOLIC CHECKS PASSED
