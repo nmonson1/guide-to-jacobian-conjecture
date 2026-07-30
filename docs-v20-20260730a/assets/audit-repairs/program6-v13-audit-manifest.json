@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-07-30",
+  "scope": "Program 6 v13 mathematical corrections and independent small exact checks.",
+  "limitations": "The large terminal certificate archive, branch-reduction pipeline, and upstream Newton exhaustiveness were not independently replayed.",
+  "compiled_pdf": {
+    "filename": "program6-v13-corrigendum.pdf",
+    "bytes": 311584,
+    "sha256": "ad8550ffd2232b734d0b35a33402d05290ecae0addb538d52e4469e1b355503f",
+    "repository_status": "not committed; compiled from the committed TeX source during this audit"
+  },
+  "files": [
+    {
+      "filename": "program6-v13-corrigendum.tex",
+      "bytes": 13459,
+      "sha256": "a967b94b7134da217b5b1a62d68e079ff40f6f1ad83849e1c245ed3e28f4ba99"
+    },
+    {
+      "filename": "program6-independent-audit-checks/README.md",
+      "bytes": 938,
+      "sha256": "0eba364817205559cd1602e32182be008611b0368802635745edfbe0b380b766"
+    },
+    {
+      "filename": "program6-independent-audit-checks/explicit_symbolic_checks.out",
+      "bytes": 561,
+      "sha256": "651dbcfc03eecd27e26ee296b969040a6049741e06d79f77e635557c96d07293"
+    },
+    {
+      "filename": "program6-independent-audit-checks/explicit_symbolic_checks.py",
+      "bytes": 4632,
+      "sha256": "5806961b891be5fada6410cb87e2eacee7629eac4a07f130386bc365041af9a3"
+    },
+    {
+      "filename": "program6-independent-audit-checks/hurwitz_counts.out",
+      "bytes": 146,
+      "sha256": "7c09c7a18d3f22dac2d450024040da9f4f7410e6b4202a5f6d90864e6834fca5"
+    },
+    {
+      "filename": "program6-independent-audit-checks/hurwitz_counts.py",
+      "bytes": 5356,
+      "sha256": "4789f500a243b96fd6a434e76745d1ce872f06119d2ff6ba5ee0122e231dca73"
+    },
+    {
+      "filename": "program6-independent-audit-checks/quintic_arithmetic.out",
+      "bytes": 223,
+      "sha256": "77c72de12f051a187866f84e4b5e832a3fc4b6c6eb2d799e542446423ea123fa"
+    },
+    {
+      "filename": "program6-independent-audit-checks/quintic_arithmetic.py",
+      "bytes": 1325,
+      "sha256": "4fd679c0126864008f0b6577887eafcdf3f0c1e2356c343f8952ea4f23d1eeb4"
+    },
+    {
+      "filename": "program6-independent-audit-checks/requirements.txt",
+      "bytes": 12,
+      "sha256": "a9029fbebed80d5530d9a770340843cfd032aac6af297d237cc24b758537ea81"
+    }
+  ]
+}
