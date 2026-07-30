@@ -1,0 +1,496 @@
+{
+  "all_layers_verified": true,
+  "exceptional_layers": [
+    {
+      "case": "truncated",
+      "dimension": 1,
+      "r": 4
+    },
+    {
+      "case": "truncated",
+      "dimension": 1,
+      "r": 8
+    },
+    {
+      "case": "truncated",
+      "dimension": 1,
+      "r": 12
+    },
+    {
+      "case": "full",
+      "dimension": 1,
+      "r": 4
+    },
+    {
+      "case": "full",
+      "dimension": 1,
+      "r": 8
+    },
+    {
+      "case": "full",
+      "dimension": 1,
+      "r": 12
+    }
+  ],
+  "identity": "L_r(u,v)=R*(4R*N'+(r-12)R'*N), N=2v-3Ru",
+  "layers": [
+    {
+      "case": "truncated",
+      "common_root_dimension": 3,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 3,
+      "normalized_exceptional": null,
+      "r": 1,
+      "resonance_exponent": null
+    },
+    {
+      "case": "truncated",
+      "common_root_dimension": 3,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 3,
+      "normalized_exceptional": null,
+      "r": 2,
+      "resonance_exponent": null
+    },
+    {
+      "case": "truncated",
+      "common_root_dimension": 3,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 3,
+      "normalized_exceptional": null,
+      "r": 3,
+      "resonance_exponent": null
+    },
+    {
+      "case": "truncated",
+      "common_root_dimension": 3,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 1,
+      "factorization_verified": true,
+      "kernel_dimension": 4,
+      "normalized_exceptional": {
+        "coordinates": [
+          "0",
+          "1/3",
+          "-1/3",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect": [
+          {
+            "coefficient": "1",
+            "exponent": 14
+          },
+          {
+            "coefficient": "-2",
+            "exponent": 15
+          },
+          {
+            "coefficient": "1",
+            "exponent": 16
+          }
+        ],
+        "u": [
+          {
+            "coefficient": "1/3",
+            "exponent": 7
+          },
+          {
+            "coefficient": "-1/3",
+            "exponent": 8
+          }
+        ],
+        "v": []
+      },
+      "r": 4,
+      "resonance_exponent": 2
+    },
+    {
+      "case": "truncated",
+      "common_root_dimension": 3,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 3,
+      "normalized_exceptional": null,
+      "r": 5,
+      "resonance_exponent": null
+    },
+    {
+      "case": "truncated",
+      "common_root_dimension": 3,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 3,
+      "normalized_exceptional": null,
+      "r": 6,
+      "resonance_exponent": null
+    },
+    {
+      "case": "truncated",
+      "common_root_dimension": 3,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 3,
+      "normalized_exceptional": null,
+      "r": 7,
+      "resonance_exponent": null
+    },
+    {
+      "case": "truncated",
+      "common_root_dimension": 1,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 1,
+      "factorization_verified": true,
+      "kernel_dimension": 2,
+      "normalized_exceptional": {
+        "coordinates": [
+          "-1/3",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect": [
+          {
+            "coefficient": "-1",
+            "exponent": 7
+          },
+          {
+            "coefficient": "1",
+            "exponent": 8
+          }
+        ],
+        "u": [
+          {
+            "coefficient": "-1/3",
+            "exponent": 0
+          }
+        ],
+        "v": []
+      },
+      "r": 8,
+      "resonance_exponent": 1
+    },
+    {
+      "case": "truncated",
+      "common_root_dimension": 0,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 0,
+      "normalized_exceptional": null,
+      "r": 9,
+      "resonance_exponent": null
+    },
+    {
+      "case": "truncated",
+      "common_root_dimension": 0,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 0,
+      "normalized_exceptional": null,
+      "r": 10,
+      "resonance_exponent": null
+    },
+    {
+      "case": "truncated",
+      "common_root_dimension": 0,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 0,
+      "normalized_exceptional": null,
+      "r": 11,
+      "resonance_exponent": null
+    },
+    {
+      "case": "truncated",
+      "common_root_dimension": 0,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 1,
+      "factorization_verified": true,
+      "kernel_dimension": 1,
+      "normalized_exceptional": {
+        "coordinates": [
+          "1/2"
+        ],
+        "defect": [
+          {
+            "coefficient": "1",
+            "exponent": 0
+          }
+        ],
+        "u": [],
+        "v": [
+          {
+            "coefficient": "1/2",
+            "exponent": 0
+          }
+        ]
+      },
+      "r": 12,
+      "resonance_exponent": 0
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 4,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 4,
+      "normalized_exceptional": null,
+      "r": 1,
+      "resonance_exponent": null
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 5,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 5,
+      "normalized_exceptional": null,
+      "r": 2,
+      "resonance_exponent": null
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 6,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 6,
+      "normalized_exceptional": null,
+      "r": 3,
+      "resonance_exponent": null
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 7,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 1,
+      "factorization_verified": true,
+      "kernel_dimension": 8,
+      "normalized_exceptional": {
+        "coordinates": [
+          "0",
+          "1/3",
+          "-1/3",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect": [
+          {
+            "coefficient": "1",
+            "exponent": 14
+          },
+          {
+            "coefficient": "-2",
+            "exponent": 15
+          },
+          {
+            "coefficient": "1",
+            "exponent": 16
+          }
+        ],
+        "u": [
+          {
+            "coefficient": "1/3",
+            "exponent": 7
+          },
+          {
+            "coefficient": "-1/3",
+            "exponent": 8
+          }
+        ],
+        "v": []
+      },
+      "r": 4,
+      "resonance_exponent": 2
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 8,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 8,
+      "normalized_exceptional": null,
+      "r": 5,
+      "resonance_exponent": null
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 9,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 9,
+      "normalized_exceptional": null,
+      "r": 6,
+      "resonance_exponent": null
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 10,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 10,
+      "normalized_exceptional": null,
+      "r": 7,
+      "resonance_exponent": null
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 9,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 1,
+      "factorization_verified": true,
+      "kernel_dimension": 10,
+      "normalized_exceptional": {
+        "coordinates": [
+          "-1/3",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect": [
+          {
+            "coefficient": "-1",
+            "exponent": 7
+          },
+          {
+            "coefficient": "1",
+            "exponent": 8
+          }
+        ],
+        "u": [
+          {
+            "coefficient": "-1/3",
+            "exponent": 0
+          }
+        ],
+        "v": []
+      },
+      "r": 8,
+      "resonance_exponent": 1
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 0,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 0,
+      "normalized_exceptional": null,
+      "r": 9,
+      "resonance_exponent": null
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 0,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 0,
+      "normalized_exceptional": null,
+      "r": 10,
+      "resonance_exponent": null
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 0,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 0,
+      "factorization_verified": true,
+      "kernel_dimension": 0,
+      "normalized_exceptional": null,
+      "r": 11,
+      "resonance_exponent": null
+    },
+    {
+      "case": "full",
+      "common_root_dimension": 0,
+      "defect_ode_verified": true,
+      "exceptional_dimension": 1,
+      "factorization_verified": true,
+      "kernel_dimension": 1,
+      "normalized_exceptional": {
+        "coordinates": [
+          "1/2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "defect": [
+          {
+            "coefficient": "1",
+            "exponent": 0
+          }
+        ],
+        "u": [],
+        "v": [
+          {
+            "coefficient": "1/2",
+            "exponent": 0
+          }
+        ]
+      },
+      "r": 12,
+      "resonance_exponent": 0
+    }
+  ],
+  "name": "degree-21 common-root defect decomposition",
+  "polynomial_resonance_rule": "N^4=c*R^(12-r)",
+  "schema_version": 1,
+  "scope": "Exact decomposition of the archived raw upper-face kernels. Geometric recognition of an exceptional class as a rechart remains separate."
+}
