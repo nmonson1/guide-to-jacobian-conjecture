@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check graph-generated pages plus hash-pinned public correction overrides."""
+"""Prepare and check graph-generated pages plus pinned public corrections."""
 
 from __future__ import annotations
 
@@ -8,7 +8,6 @@ import hashlib
 import json
 import sys
 from pathlib import Path
-from typing import Any
 
 from generate_living_guide_v2 import PUBLIC_DOCS_DIR, ROOT, expected_outputs
 
@@ -27,16 +26,29 @@ def _safe_relative(value: str, label: str) -> Path:
     return path
 
 
-def apply_overrides(root: Path, outputs: dict[Path, str]) -> tuple[dict[Path, str], int]:
+def apply_manifest(
+    root: Path, outputs: dict[Path, str]
+) -> tuple[dict[Path, str], dict[Path, tuple[str, str]], int, int]:
     override_root = root / "data" / OVERRIDE_DATA_DIR
     manifest_path = override_root / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    required = {"schema_version", "release_id", "override_count", "overrides"}
+    required = {
+        "schema_version",
+        "release_id",
+        "override_count",
+        "overrides",
+        "substitution_count",
+        "substitutions",
+    }
     if set(manifest) != required or manifest["schema_version"] != 1:
         raise ValueError(f"invalid public override manifest: {manifest_path}")
+
     entries = manifest["overrides"]
+    substitutions = manifest["substitutions"]
     if manifest["override_count"] != len(entries):
         raise ValueError("public override manifest count mismatch")
+    if manifest["substitution_count"] != len(substitutions):
+        raise ValueError("public substitution manifest count mismatch")
 
     docs = (root / PUBLIC_DOCS_DIR).resolve()
     seen_targets: set[Path] = set()
@@ -69,13 +81,58 @@ def apply_overrides(root: Path, outputs: dict[Path, str]) -> tuple[dict[Path, st
         outputs[target] = source.read_text(encoding="utf-8")
         seen_targets.add(target)
         seen_sources.add(source)
-    return outputs, len(entries)
+
+    materializations: dict[Path, tuple[str, str]] = {}
+    seen_substitutions: set[Path] = set()
+    for entry in substitutions:
+        if set(entry) != {"target", "old", "new"}:
+            raise ValueError("invalid public substitution entry")
+        target_rel = _safe_relative(entry["target"], "substitution target")
+        target = (docs / target_rel).resolve()
+        if not target.is_relative_to(docs):
+            raise ValueError(f"substitution target leaves docs tree: {target_rel}")
+        if target in seen_substitutions:
+            raise ValueError(f"duplicate substitution target: {target_rel}")
+        if target not in outputs:
+            raise ValueError(f"substitution target is not graph-generated: {target_rel}")
+        old = entry["old"]
+        new = entry["new"]
+        if not isinstance(old, str) or not isinstance(new, str) or not old or not new:
+            raise ValueError(f"invalid substitution text for {target_rel}")
+        original = outputs[target]
+        if original.count(old) != 1:
+            raise ValueError(
+                f"substitution anchor occurs {original.count(old)} times in {target_rel}"
+            )
+        patched = original.replace(old, new)
+        outputs[target] = patched
+        materializations[target] = (original, patched)
+        seen_substitutions.add(target)
+
+    return outputs, materializations, len(entries), len(substitutions)
 
 
-def check(root: Path) -> tuple[list[str], int, int]:
+def check(root: Path) -> tuple[list[str], int, int, int]:
     outputs = expected_outputs(root)
-    outputs, override_count = apply_overrides(root, outputs)
+    outputs, materializations, override_count, substitution_count = apply_manifest(
+        root, outputs
+    )
     failures: list[str] = []
+
+    # Large catalogue pages remain graph-generated in the repository. Apply
+    # narrow, anchor-checked substitutions in the build workspace so search and
+    # deployment expose the corrected statement without copying an entire
+    # catalogue into the override release.
+    for path, (original, patched) in materializations.items():
+        if not path.is_file():
+            failures.append(f"missing substitution target: {path.relative_to(root)}")
+            continue
+        current = path.read_text(encoding="utf-8")
+        if current == original:
+            path.write_text(patched, encoding="utf-8")
+        elif current != patched:
+            failures.append(f"stale substitution target: {path.relative_to(root)}")
+
     for path, expected in sorted(outputs.items()):
         if not path.is_file():
             failures.append(f"missing generated file: {path.relative_to(root)}")
@@ -92,7 +149,7 @@ def check(root: Path) -> tuple[list[str], int, int]:
         for path in directory.glob("*.md"):
             if path not in expected_paths:
                 failures.append(f"unexpected generated file: {path.relative_to(root)}")
-    return failures, len(outputs), override_count
+    return failures, len(outputs), override_count, substitution_count
 
 
 def main() -> int:
@@ -101,7 +158,7 @@ def main() -> int:
     args = parser.parse_args()
     root = args.root.resolve()
     try:
-        failures, output_count, override_count = check(root)
+        failures, output_count, override_count, substitution_count = check(root)
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
         parser.error(str(exc))
     if failures:
@@ -110,8 +167,9 @@ def main() -> int:
             print(f"- {failure}", file=sys.stderr)
         return 1
     print(
-        f"Living-guide generation check passed for {output_count} pages "
-        f"with {override_count} hash-pinned public overrides."
+        f"Living-guide generation check passed for {output_count} pages with "
+        f"{override_count} hash-pinned public overrides and "
+        f"{substitution_count} anchored catalogue substitution."
     )
     return 0
 
