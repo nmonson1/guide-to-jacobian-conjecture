@@ -6,6 +6,7 @@ from fractions import Fraction
 from pathlib import Path
 
 from fixed_chart_gauge import (
+    analyze_contract,
     analyze_document,
     face_volume,
     theta_identity_residual,
@@ -50,7 +51,10 @@ class FixedChartGaugeTests(unittest.TestCase):
     def test_restricted_generator_is_weighted_divergence_free(self) -> None:
         document = json.loads(EXAMPLE.read_text(encoding="utf-8"))
         restricted = analyze_document(document)[0]
-        self.assertEqual(restricted.source_variables, [["f", 0], ["f", 1], ["g", 0], ["g", 1]])
+        self.assertEqual(
+            restricted.source_variables,
+            [["f", 0], ["f", 1], ["g", 0], ["g", 1]],
+        )
         self.assertEqual(len(restricted.source_basis), 1)
         # Up to scale: f=z and g=3, since (fz^2)'-g z^2=0 at r=4.
         vector = restricted.source_basis[0]
@@ -58,6 +62,28 @@ class FixedChartGaugeTests(unittest.TestCase):
         self.assertEqual(vector[3], 0)
         self.assertNotEqual(vector[1], 0)
         self.assertEqual(vector[2], 3 * vector[1])
+
+    def test_resonant_layer_separates_f_and_g_freedoms(self) -> None:
+        result = analyze_contract(
+            {
+                "label": "toy resonant layer",
+                "alpha": 2,
+                "beta": 3,
+                "r": 5,
+                "A0": [[1, 1]],
+                "B0": [[2, 1]],
+                "f_exponents": [-2, 0],
+                "g_exponents": [0],
+                "a_support": [-2, 1],
+                "b_support": [-1, 2],
+            }
+        )
+        # At r=alpha+beta the divergence equation is (f Psi)'=0;
+        # f=z^-2 and g=1 are independent admissible source directions.
+        self.assertEqual(result.admissible_source_dimension, 2)
+        self.assertEqual(result.gauge_dimension, 2)
+        self.assertEqual(result.output_kernel_dimension, 3)
+        self.assertEqual(result.residual_dimension, 1)
 
 
 if __name__ == "__main__":
