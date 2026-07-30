@@ -85,6 +85,22 @@ class FixedChartGaugeTests(unittest.TestCase):
         self.assertEqual(result.output_kernel_dimension, 3)
         self.assertEqual(result.residual_dimension, 1)
 
+    def test_duplicate_support_exponents_are_rejected(self) -> None:
+        with self.assertRaisesRegex(ValueError, "duplicate exponents"):
+            analyze_contract(
+                {
+                    "alpha": 2,
+                    "beta": 3,
+                    "r": 4,
+                    "A0": [[1, 1]],
+                    "B0": [[2, 1]],
+                    "f_exponents": [0],
+                    "g_exponents": [0],
+                    "a_support": [0, 0],
+                    "b_support": [1],
+                }
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
