@@ -1,0 +1,463 @@
+{
+  "cases": [
+    {
+      "P_point_count": 25,
+      "Q_point_count": 47,
+      "label": "truncated",
+      "layers": [
+        {
+          "a_dimension": 8,
+          "a_support": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "b_dimension": 11,
+          "b_support": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "r": 0
+        },
+        {
+          "a_dimension": 8,
+          "a_support": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "b_dimension": 11,
+          "b_support": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "r": 1
+        },
+        {
+          "a_dimension": 9,
+          "a_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "b_dimension": 12,
+          "b_support": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "r": 2
+        },
+        {
+          "a_dimension": 0,
+          "a_support": [],
+          "b_dimension": 13,
+          "b_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "r": 3
+        }
+      ],
+      "maximum_layer": 3,
+      "minimum_layer": 0
+    },
+    {
+      "P_point_count": 61,
+      "Q_point_count": 125,
+      "label": "full",
+      "layers": [
+        {
+          "a_dimension": 8,
+          "a_support": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "b_dimension": 11,
+          "b_support": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "r": 0
+        },
+        {
+          "a_dimension": 8,
+          "a_support": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "b_dimension": 11,
+          "b_support": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "r": 1
+        },
+        {
+          "a_dimension": 9,
+          "a_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "b_dimension": 12,
+          "b_support": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "r": 2
+        },
+        {
+          "a_dimension": 8,
+          "a_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "b_dimension": 13,
+          "b_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "r": 3
+        },
+        {
+          "a_dimension": 7,
+          "a_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "b_dimension": 12,
+          "b_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "r": 4
+        },
+        {
+          "a_dimension": 6,
+          "a_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "b_dimension": 11,
+          "b_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "r": 5
+        },
+        {
+          "a_dimension": 5,
+          "a_support": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "b_dimension": 10,
+          "b_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "r": 6
+        },
+        {
+          "a_dimension": 4,
+          "a_support": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "b_dimension": 9,
+          "b_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "r": 7
+        },
+        {
+          "a_dimension": 3,
+          "a_support": [
+            0,
+            1,
+            2
+          ],
+          "b_dimension": 8,
+          "b_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "r": 8
+        },
+        {
+          "a_dimension": 2,
+          "a_support": [
+            0,
+            1
+          ],
+          "b_dimension": 7,
+          "b_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "r": 9
+        },
+        {
+          "a_dimension": 1,
+          "a_support": [
+            0
+          ],
+          "b_dimension": 6,
+          "b_support": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "r": 10
+        },
+        {
+          "a_dimension": 0,
+          "a_support": [],
+          "b_dimension": 5,
+          "b_support": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "r": 11
+        },
+        {
+          "a_dimension": 0,
+          "a_support": [],
+          "b_dimension": 4,
+          "b_support": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "r": 12
+        },
+        {
+          "a_dimension": 0,
+          "a_support": [],
+          "b_dimension": 3,
+          "b_support": [
+            0,
+            1,
+            2
+          ],
+          "r": 13
+        },
+        {
+          "a_dimension": 0,
+          "a_support": [],
+          "b_dimension": 2,
+          "b_support": [
+            0,
+            1
+          ],
+          "r": 14
+        },
+        {
+          "a_dimension": 0,
+          "a_support": [],
+          "b_dimension": 1,
+          "b_support": [
+            0
+          ],
+          "r": 15
+        }
+      ],
+      "maximum_layer": 15,
+      "minimum_layer": 0
+    }
+  ],
+  "coordinates": {
+    "t": "Y",
+    "z": "X Y^2"
+  },
+  "layer_formulas": {
+    "P": "r=j-2i+2",
+    "Q": "r=j-2i+3"
+  },
+  "schema_version": 1
+}
