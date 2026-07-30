@@ -1,0 +1,28 @@
+{
+  "max_text_file_bytes": 2000000,
+  "max_hits_per_file": 80,
+  "max_extract_total_bytes": 4000000,
+  "keywords": [
+    "degree[-_ ]?21",
+    "layer[-_ ]?4",
+    "k\\s*=\\s*4",
+    "X\\^\\(-?4\\)|X\\^-4|X\\*\\*(-?4)",
+    "normal[-_ ]?layer",
+    "residual",
+    "rechart|re-chart|chart transition",
+    "approximate root",
+    "support window|support matrix|support transport",
+    "residue adjoint|left kernel",
+    "D_4|D4",
+    "dimension.*1.*2.*1.*1"
+  ],
+  "extract_paths": [],
+  "extract_globs": [
+    "*README*",
+    "*readme*",
+    "*manifest*.json",
+    "*MANIFEST*.json",
+    "*manifest*.txt",
+    "*MANIFEST*.txt"
+  ]
+}
