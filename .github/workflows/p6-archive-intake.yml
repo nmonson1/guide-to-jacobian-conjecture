@@ -37,6 +37,12 @@ jobs:
             research-notes/p6-chart-correspondence/archive-scan/selected/06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/exact_data.json \
             --output research-notes/p6-chart-correspondence/degree21_linear_replay.json
 
+      - name: Decompose the archived kernels by common-root defect
+        run: |
+          python research-notes/p6-chart-correspondence/degree21_kernel_decomposition.py \
+            research-notes/p6-chart-correspondence/archive-scan/selected/06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/exact_data.json \
+            --output research-notes/p6-chart-correspondence/degree21_kernel_decomposition.json
+
       - name: Run the exact diagnostic tests
         run: |
           python -m unittest discover \
@@ -50,7 +56,8 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add \
             research-notes/p6-chart-correspondence/archive-scan \
-            research-notes/p6-chart-correspondence/degree21_linear_replay.json
+            research-notes/p6-chart-correspondence/degree21_linear_replay.json \
+            research-notes/p6-chart-correspondence/degree21_kernel_decomposition.json
           if git diff --cached --quiet; then
             echo 'No intake or replay changes to commit.'
             exit 0
