@@ -64,6 +64,9 @@ nav:
       - Homogeneous descendants: research/programs/homogeneous-descendants.md
       - Plane boundary: research/programs/plane-boundary-obstructions.md
     - Working papers: research/papers.md
+    - Audit repairs:
+      - Program 6 v13 corrections: research/program6-v13-corrigendum.md
+      - Program 6 independent checks: research/program6-v13-audit-checks.md
   - Evidence:
     - Proof index: evidence/index.md
     - Technical materials: evidence/materials.md
