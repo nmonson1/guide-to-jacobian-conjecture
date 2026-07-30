@@ -238,7 +238,7 @@ The Program 6 conclusion should be stated as follows:
 
 > For each displayed terminal system, the exact certificates establish the claimed emptiness. A global conclusion that every plane Keller map of maximum coordinate degree below 125 is an automorphism additionally requires an independently replayed and audited proof that the upstream Newton reduction, saturations, normalizations, branch eliminations, and chart attachments exhaust every candidate.
 
-The unconditional degree-below-125 theorem may be cited as an external announcement or literature result. It is not proved by the v13 Program 6 manuscript.
+The degree-below-125 statement may be reported only as an external, source-attributed announcement or literature claim, with its independent review status shown separately. It is not proved by the v13 Program 6 manuscript.
 
 ## Disposition
 
