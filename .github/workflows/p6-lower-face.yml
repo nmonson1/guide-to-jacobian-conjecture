@@ -45,12 +45,16 @@ jobs:
           sha256sum research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
             > research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256
 
-      - name: Replay the exact lower-face linear quotient
+      - name: Replay the lower-face linear quotients
         run: |
           python research-notes/p6-chart-correspondence/degree21_lower_face_replay.py \
             research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
             research-notes/p6-chart-correspondence/lower_face_supports.json \
             --output research-notes/p6-chart-correspondence/degree21_lower_face_replay.json
+          python research-notes/p6-chart-correspondence/degree21_lower_face_full_gauge.py \
+            research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
+            research-notes/p6-chart-correspondence/lower_face_supports.json \
+            --output research-notes/p6-chart-correspondence/degree21_lower_face_full_gauge.json
 
       - name: Scan small archive sources for the C.9 calculation
         run: |
@@ -104,6 +108,7 @@ jobs:
             research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
             research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256 \
             research-notes/p6-chart-correspondence/degree21_lower_face_replay.json \
+            research-notes/p6-chart-correspondence/degree21_lower_face_full_gauge.json \
             research-notes/p6-chart-correspondence/archive_c9_candidates.json
           if git diff --cached --quiet; then
             echo 'No generated changes.'
