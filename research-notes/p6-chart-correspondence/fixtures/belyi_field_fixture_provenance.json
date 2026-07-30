@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "source_archive": {
+    "repository_path": "docs-v7-20260726c/assets/technical-materials/06-plane-boundary-computational-supplement.zip",
+    "sha256": "4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585"
+  },
+  "members": [
+    {
+      "fixture_path": "fixtures/belyi_exact_field_relations.json",
+      "archive_path": "06-plane-boundary-computational-supplement/degree-296-large/inputs/handoff-lite/layer-calculation/belyi_exact_field_relations.json",
+      "bytes": 3149,
+      "sha256": "5b4af2128b91aba7796660865a48fc4cc3d9a851521f45106acad74db7dbcb6d"
+    },
+    {
+      "fixture_path": "fixtures/build_exact_belyi.py",
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/build_exact_belyi.py",
+      "bytes": 7313,
+      "sha256": "834850cfd30ebe3f73ff6497fd0c30898b6d917c632a1c7298716bdbf1c40183"
+    },
+    {
+      "fixture_path": "fixtures/deeper_exact_reduction.json",
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/degree-twenty-one/deeper_exact_reduction.json",
+      "bytes": 931,
+      "sha256": "7749b5c53cf9f5712da2d1ada2c29eebb6fd3a08e265141a4b636f0d77aaf162"
+    }
+  ]
+}
