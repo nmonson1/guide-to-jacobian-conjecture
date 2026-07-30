@@ -1,0 +1,6 @@
+F2: face identity OK; tangent matrix 2x3, rank 2, listed maximal minor OK, kernel = source scaling
+one-step: face identity OK; tangent matrix 7x8, rank 7, listed maximal minor OK, kernel = source scaling
+two-step: face identity OK; tangent matrix 6x7, rank 6, listed maximal minor OK, kernel = source scaling
+F24 epsilon=-1: face identity OK; tangent matrix 4x5, rank 4, listed maximal minor OK, kernel = source scaling
+F24 epsilon=1: face identity OK; tangent matrix 4x5, rank 4, listed maximal minor OK, kernel = source scaling
+Identities (3.2) and (3.3): OK
