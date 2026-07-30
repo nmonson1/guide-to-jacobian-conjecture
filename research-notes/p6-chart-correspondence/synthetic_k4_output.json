@@ -1,0 +1,11 @@
+{
+  "all_kernel_directions_explained": true,
+  "layers": [
+    {"ambient_dimension": 2, "explained_dimension": 1, "gauge_dimension": 1, "kernel_dimension": 1, "label": "layer 1", "quotient_representatives": [], "rechart_increment": 0, "unexplained_dimension": 0},
+    {"ambient_dimension": 3, "explained_dimension": 2, "gauge_dimension": 2, "kernel_dimension": 2, "label": "layer 2", "quotient_representatives": [], "rechart_increment": 0, "unexplained_dimension": 0},
+    {"ambient_dimension": 2, "explained_dimension": 1, "gauge_dimension": 1, "kernel_dimension": 1, "label": "layer 3", "quotient_representatives": [], "rechart_increment": 0, "unexplained_dimension": 0},
+    {"ambient_dimension": 2, "explained_dimension": 1, "gauge_dimension": 0, "kernel_dimension": 1, "label": "layer 4", "quotient_representatives": [], "rechart_increment": 1, "support_closure": [[2, 2], [-2, 1], [-6, 0]], "unexplained_dimension": 0}
+  ],
+  "name": "Synthetic regression contract matching the recorded residual dimensions",
+  "schema_version": 1
+}
