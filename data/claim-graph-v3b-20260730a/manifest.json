@@ -1,0 +1,19 @@
+{
+  "counts": {
+    "claims": 368,
+    "collections": 104,
+    "memberships": 534,
+    "programs": 6
+  },
+  "files": [
+    {
+      "path": "claim-graph.json",
+      "sha256": "2921d7dee02a9df693225d945e13c041e0b4063655f63b8c574eed7848eeb40d"
+    }
+  ],
+  "release_id": "claim-graph-rank-one-wall-scope-20260730a",
+  "schema_version": 1,
+  "source": {
+    "sha256": "955e3f8cbebba6f71822ff8784421f6717ed4ace831ab42decac9ab9cffc4d6a"
+  }
+}

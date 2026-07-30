@@ -34,7 +34,8 @@ The active local release candidate contains:
   unconditional interval \(4\leq D_{\min}\leq 7\) explicit; the Program 4
   handoff records the rank-one-wall correction \(e\geq1\), the stabilized
   Fitting-index correction, and the still-underdefined status of weighted
-  graph closures;
+  graph closures; atomic claim `JCG-4D953715` carries the corrected statement
+  as version 2;
 - 76 collections with complete manuscript coverage, nine with partial
   coverage, and 19 for which manuscript coverage is not applicable;
 - 21 context-only private records, not exported.
