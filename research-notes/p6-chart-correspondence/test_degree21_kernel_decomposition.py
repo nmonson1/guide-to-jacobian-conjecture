@@ -8,15 +8,7 @@ from degree21_kernel_decomposition import audit_document
 
 
 HERE = Path(__file__).resolve().parent
-EXACT_DATA = (
-    HERE
-    / "archive-scan"
-    / "selected"
-    / "06-plane-boundary-computational-supplement"
-    / "computational-supplement"
-    / "degree-twenty-one"
-    / "exact_data.json"
-)
+EXACT_DATA = HERE / "fixtures" / "degree21_exact_data.json"
 
 
 class Degree21KernelDecompositionTests(unittest.TestCase):
