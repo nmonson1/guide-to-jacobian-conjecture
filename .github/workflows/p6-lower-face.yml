@@ -1,0 +1,61 @@
+name: Generate degree-21 lower-face fixtures
+
+on:
+  pull_request:
+    types: [synchronize]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: p6-lower-face-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 0
+
+      - name: Run the exact test suite
+        run: |
+          python -m unittest discover \
+            -s research-notes/p6-chart-correspondence \
+            -p 'test_*.py' \
+            -v
+
+      - name: Extract lower-face normal support windows
+        run: |
+          python research-notes/p6-chart-correspondence/lower_face_supports.py \
+            research-notes/p6-chart-correspondence/fixtures/degree21_exact_data.json \
+            --output research-notes/p6-chart-correspondence/lower_face_supports.json
+
+      - name: Rebuild the exact degree-21 leading face
+        run: |
+          rm -rf /tmp/degree21-belyi
+          python research-notes/p6-chart-correspondence/fixtures/build_exact_belyi.py \
+            --output-dir /tmp/degree21-belyi
+          cp /tmp/degree21-belyi/exact_belyi_data.json \
+            research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json
+          sha256sum research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
+            > research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256
+
+      - name: Commit deterministic outputs
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add \
+            research-notes/p6-chart-correspondence/lower_face_supports.json \
+            research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
+            research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+            exit 0
+          fi
+          git commit -m 'Generate degree-21 lower-face fixtures'
+          git push origin HEAD:${{ github.head_ref || github.ref_name }}
