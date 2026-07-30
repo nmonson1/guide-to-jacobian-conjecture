@@ -45,6 +45,42 @@ jobs:
           sha256sum research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
             > research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256
 
+      - name: Locate likely C.9 source members in the public archive
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          import zipfile
+          from pathlib import Path
+
+          archive = Path('docs-v7-20260726c/assets/technical-materials/06-plane-boundary-computational-supplement.zip')
+          output = Path('research-notes/p6-chart-correspondence/archive_c9_candidates.json')
+          patterns = [
+              r'chart', r'rechart', r'layer.?four', r'layer.?4', r'two.?chart',
+              r'gauge', r'divergence', r'complete.?chain', r'approximate.?root',
+              r'blowdown', r'nullstellensatz', r'layer.?seven', r'layer.?7'
+          ]
+          compiled = [re.compile(pattern, re.IGNORECASE) for pattern in patterns]
+          with zipfile.ZipFile(archive) as handle:
+              members = []
+              for info in handle.infolist():
+                  if info.is_dir():
+                      continue
+                  matched = [pattern.pattern for pattern in compiled if pattern.search(info.filename)]
+                  if matched:
+                      members.append({
+                          'path': info.filename,
+                          'bytes': info.file_size,
+                          'matched_patterns': matched,
+                      })
+          output.write_text(json.dumps({
+              'schema_version': 1,
+              'archive_sha256': '4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585',
+              'member_count': len(members),
+              'members': members,
+          }, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+
       - name: Commit deterministic outputs
         run: |
           git config user.name github-actions[bot]
@@ -52,10 +88,11 @@ jobs:
           git add \
             research-notes/p6-chart-correspondence/lower_face_supports.json \
             research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
-            research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256
+            research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256 \
+            research-notes/p6-chart-correspondence/archive_c9_candidates.json
           if git diff --cached --quiet; then
             echo 'No generated changes.'
             exit 0
           fi
-          git commit -m 'Generate degree-21 lower-face fixtures'
+          git commit -m 'Refresh degree-21 lower-face fixtures'
           git push origin HEAD:${{ github.head_ref || github.ref_name }}
