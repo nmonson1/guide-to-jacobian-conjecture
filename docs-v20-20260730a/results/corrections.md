@@ -7,6 +7,18 @@ description: "Tagged records that correct, narrow, or explicitly retire an earli
 
 <p class="dek">Corrections live in the same claim graph as results. They are not buried in release notes.</p>
 
+## [Program 3 v13 corrigendum](../research/program-3-v13-corrigendum.md)
+
+The degree-seven theorem spine is unchanged. The corrigendum supplies the omitted irreducibility and completion arguments, replaces the converse proof of the quadratic-shear classification, withdraws the unsupported characteristic-zero conclusion of Appendix C.3, and clarifies that Appendix D is a post-length exact presentation as proved.
+
+## [JCG-24C82405 · The v13 degree-eight first-normal obstruction is not established over Q in the full residual problem.](../claims/JCG-24C82405.md)
+
+Exact elimination covers the residual weight -2 sector; the weight -1 sector survives through order four, and later death is modular evidence only. The former characteristic-zero conclusion is corrected and full orbit saturation remains open.
+
+## [JCG-02C45EB8 · Restricted-slice isolation does not imply full transverse isolation.](../claims/JCG-02C45EB8.md)
+
+The earlier inference from a restricted five-dimensional slice to isolation in the full transverse space is invalid because higher-order arcs can bend out of the slice.
+
 ## [JCG-0632B2B1 · On the five explicit degree-eight coordinate directions, the corrected quadratic/cubic equations lift precisely along the pure source-shear or pure target-shear sectors; a residual four-dimensional tangent survives to order three in a larger complement, and the full degree-four modular calculation remains exploratory.](../claims/JCG-0632B2B1.md)
 
 On the five explicit degree-eight coordinate directions, the corrected quadratic/cubic equations lift precisely along the pure source-shear or pure target-shear sectors; a residual four-dimensional tangent survives to order three in a larger complement, and the full degree-four modular calculation remains exploratory.
