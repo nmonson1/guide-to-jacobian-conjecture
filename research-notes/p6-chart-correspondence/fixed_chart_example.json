@@ -1,0 +1,21 @@
+{
+  "alpha": 2,
+  "beta": 3,
+  "A0": [[1, 1]],
+  "B0": [[2, 1]],
+  "f_exponents": [0, 1],
+  "a_support": [0, 1],
+  "b_support": [0, 1, 2],
+  "layers": [
+    {
+      "label": "restricted source window",
+      "r": 4,
+      "g_exponents": [0, 1]
+    },
+    {
+      "label": "extended Laurent source window",
+      "r": 4,
+      "g_exponents": [-1, 0, 1]
+    }
+  ]
+}
