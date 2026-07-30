@@ -45,6 +45,16 @@ jobs:
           sha256sum research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
             > research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256
 
+      - name: Pin the archived residue-audit normalization source
+        run: |
+          archive=docs-v7-20260726c/assets/technical-materials/06-plane-boundary-computational-supplement.zip
+          target=research-notes/p6-chart-correspondence/fixtures/export_residue_audit.py
+          unzip -p "$archive" \
+            06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/export_residue_audit.py \
+            > "$target"
+          sha256sum "$target" \
+            > research-notes/p6-chart-correspondence/fixtures/export_residue_audit.sha256
+
       - name: Replay the lower-face linear quotients
         run: |
           python research-notes/p6-chart-correspondence/degree21_lower_face_replay.py \
@@ -114,6 +124,8 @@ jobs:
             research-notes/p6-chart-correspondence/lower_face_supports.json \
             research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.json \
             research-notes/p6-chart-correspondence/fixtures/exact_belyi_data.sha256 \
+            research-notes/p6-chart-correspondence/fixtures/export_residue_audit.py \
+            research-notes/p6-chart-correspondence/fixtures/export_residue_audit.sha256 \
             research-notes/p6-chart-correspondence/degree21_lower_face_replay.json \
             research-notes/p6-chart-correspondence/degree21_lower_face_full_gauge.json \
             research-notes/p6-chart-correspondence/degree21_subgroup_ladder.json \
