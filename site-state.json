@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release_id": "living-guide-public-v17b-coherent-handoffs",
-  "updated_at": "2026-07-29T23:49:39+00:00",
+  "release_id": "living-guide-public-v18b-companion-budget-handoffs",
+  "updated_at": "2026-07-30T01:15:56+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,11 +22,11 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-briefs-v8-20260729a",
-    "manifest_sha256": "415d12d1c0789f59dd8c2d21d67ac34a53600ea1e81fb9bc4dd27adee3a504dc",
+    "data_dir": "model-briefs-v9-20260730a",
+    "manifest_sha256": "4b1c9852378bbee3ed70441d428489d6e80f99e567bc8a15f659c0b9106a8e9b",
     "expected_count": 7
   },
-  "docs_dir": "docs-v17b-20260729a",
+  "docs_dir": "docs-v18b-20260730a",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,

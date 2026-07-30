@@ -29,8 +29,9 @@ The active local release candidate contains:
 - six self-contained, searchable program handoffs plus one cross-program
   state page with nine broad research-lane entry links under
   `/research/handoffs/`; the Program 2 handoff records the exact replayed
-  nonresonant `F_3/F_4` exclusions while keeping branch exhaustiveness and
-  resonant charts visibly open;
+  nonresonant `F_3/F_4` exclusions and the presentation-sensitive
+  companion/Jordan budget while keeping branch exhaustiveness, resonant
+  charts, and the intrinsic orbit-degree budget visibly open;
 - 76 collections with complete manuscript coverage, nine with partial
   coverage, and 19 for which manuscript coverage is not applicable;
 - 21 context-only private records, not exported.
@@ -65,7 +66,7 @@ surfaces are:
   catalogue pages, model handoffs, and machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-briefs-v8-20260729a/`: hash-pinned sanitized source for
+- `data/model-briefs-v9-20260730a/`: hash-pinned sanitized source for
   model-ready HTML handoffs; logical manuscript slots resolve against the
   selected manuscript manifest, so a stale PDF version fails the build;
 - `scripts/check_deployed_site.py`: production verification that GitHub Pages
