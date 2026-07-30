@@ -1,0 +1,361 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\A}{\mathbb A}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\F}{\mathbb F}
+\newcommand{\kbar}{\overline{k}}
+
+\title{Corrections and Proof Repairs for\\
+\emph{Boundary Belyi Covers and Normal-Jet Obstructions in the Plane Jacobian Problem}, v13}
+\author{Audit repair note}
+\date{30 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note records source-level repairs to the v13 working manuscript.  It
+corrects the codomain in Proposition~3.3, replaces the proof of the
+contact-degree formula with an invariant wedge-order argument, supplies a
+non-computational proof of the asserted $A_{21}$ monodromy, states the exact
+logical requirement behind the Macaulay minor in Theorem~C.6, and replaces
+the finite-etale sentence in Theorem~C.8 by a finite-plus-Nakayama argument.
+The degree-$17$ secondary Belyi cover survives the contact-degree repair:
+in the stored $(8,28)$ chart the computed positive wedge order itself forces
+the residual target parameter to be constant.  This note does not replay the
+large certificate archive and does not remove the upstream exhaustiveness
+condition needed for a global degree-below-$125$ theorem.
+\end{abstract}
+
+\section{Status and scope}
+
+The v13 PDF is a working manuscript whose title page is dated 22 July 2026;
+29 July 2026 is the public release date appearing in the filename and site
+manifest.  These dates should be displayed separately.
+
+The repairs below distinguish three levels of assertion:
+\begin{enumerate}[label=(\roman*)]
+  \item hand proofs that can be repaired directly;
+  \item exact claims about named finite systems whose certificate semantics
+        must be stated completely; and
+  \item the global degree-below-$125$ implication, which remains conditional
+        on an audited exhaustive Newton reduction and attachment argument.
+\end{enumerate}
+
+\section{Corrected codomain for Proposition 3.3}
+
+Let $A=\deg p$ and $B=\deg q$, and write the reduced face equation as
+\[
+ F(p,q)=Npq-m u\,p q'+n u\,p'q=\text{constant}.
+\]
+Variations fixing the constant coefficients lie in
+\[
+ U:=u k[u]_{\le A}\oplus u k[u]_{\le B}.
+\]
+The differential is
+\[
+ L(\alpha,\beta)=N(\alpha q+p\beta)
+ -m u(\alpha q'+p\beta')+n u(\alpha' q+p'\beta).
+\]
+The constant coefficient of $L(\alpha,\beta)$ vanishes.  Its coefficient at
+$u^{A+B}$ is
+\[
+ (N-mB+nA)(\alpha_Aq_B+p_A\beta_B),
+\]
+and the endpoint degree relation for the face equation is
+$N-mB+nA=0$.  Hence
+\[
+ L:U\longrightarrow W:=u k[u]_{\le A+B-1}.
+\]
+
+\begin{proposition}[Replacement for Proposition 3.3]
+For each explicit reduced cover in Section~3, the map
+\[
+ L:u k[u]_{\le A}\oplus u k[u]_{\le B}
+   \longrightarrow u k[u]_{\le A+B-1}
+\]
+is surjective and its kernel is the source-scaling line spanned by
+$(up',uq')$.  Consequently the normalized quotient solution is a reduced
+isolated point after quotienting by source scaling.
+\end{proposition}
+
+\noindent
+The rank table in v13 proves this corrected statement: the domain has
+dimension $A+B$, the displayed rank is $A+B-1=\dim W$, and the nonzero
+source-scaling vector already lies in the kernel.
+
+\section{Contact degree: corrected statement and proof}
+
+Let $D=(t=0)$ be a smooth boundary component with a parameter $s$ along
+$D$.  For a meromorphic two-form, $\ord_D$ denotes the $t$-order of its
+coefficient in $dt\wedge ds$.
+
+\begin{lemma}[Leading wedge order and the Section~5 resonances]
+Suppose
+\[
+ \pi=t^a c(s)+O(t^{a+1}),\qquad
+ \tau=\tau_0(s)+\sum_{j\ge1}t^j h_j(s),
+ \qquad c\ne0.
+\]
+If $\ord_D(d\pi\wedge d\tau)>a-1$, then $d\tau_0=0$ in $k(D)$.
+In the normalized Section~5 chart, where $c(s)=s/(s-1)$, a rational lower
+coefficient invisible to the wedge occurs exactly at an order $j=ar$ and is
+removed by the target shear $\tau\mapsto\tau-C\pi^r$.  After all such lower
+resonances have been removed, if $e$ is the first remaining normal order,
+then
+\[
+ \ord_D(d\pi\wedge d\tau)=a+e-1.
+\]
+\end{lemma}
+
+\begin{proof}
+The coefficient of $t^{a-1}dt\wedge ds$ in $d\pi\wedge d\tau$ is
+$a c(s)\tau_0'(s)$.  Thus an order greater than $a-1$ forces
+$\tau_0'=0$.  At order $a+j-1$, the leading coefficient contributed by
+$t^jh_j$ is
+\[
+ a c h_j'-j c'h_j.
+\]
+It vanishes exactly when $h_j=Cc^{j/a}$.  For $c=s/(s-1)$, the divisor of
+$c$ is $(0)-(1)$, so this expression is rational exactly when $a\mid j$.
+Writing $j=ar$, it is the leading term of the target shear $C\pi^r$ and may
+be subtracted without changing $d\pi\wedge d\tau$.  Once all lower
+resonant terms have been removed, the first remaining order $e$ has nonzero
+coefficient, giving $a+e-1$.
+\end{proof}
+
+\begin{proposition}[Corrected contact-degree formula]
+Suppose coprime positive integers $m,n$ satisfy
+\[
+ v_E(P)=-m,\quad v_E(Q)=-n,\quad
+ v_D(P)=-ma,\quad v_D(Q)=-na.
+\]
+Choose $c,d\in\mathbb Z$ with $dn-cm=1$ and set
+\[
+ \pi=P^c/Q^d,\qquad \tau=Q^m/P^n.
+\]
+Assume $x=t^{-1}$ up to a unit,
+\[
+ dP\wedge dQ=x^\kappa\,dx\wedge dy
+\]
+up to a unit along $D$, and use the normalized Section~5 coordinate
+$\pi=t^a s/(s-1)+O(t^{a+1})$.  Put
+$K_D=\ord_D(dx\wedge dy)$ and
+\[
+ e_*:=a(m+n)-\kappa+K_D+1.
+\]
+If $e_*>0$, then $\tau|_D$ is constant.  After removing all lower resonant
+target shears, the first non-shear contact degree is
+\[
+ \boxed{e=e_*.}
+\]
+In the regular toric chart used in v13, $K_D=-2$, so
+\[
+ \boxed{e=a(m+n)-\kappa-1.}
+\]
+\end{proposition}
+
+\begin{proof}
+Direct differentiation gives
+\[
+ d\pi\wedge d\tau
+ =-P^{c-n-1}Q^{m-d-1}\,dP\wedge dQ.
+\]
+The monomial factor has $D$-order $a(m+n+1)$, because
+$dn-cm=1$.  Therefore
+\[
+ N:=\ord_D(d\pi\wedge d\tau)
+   =a(m+n+1)-\kappa+K_D.
+\]
+The inequality $e_*>0$ is equivalent to $N>a-1$.  The preceding lemma
+therefore forces $\tau|_D$ to be constant.  After resonant target shears are
+removed, the same lemma gives $N=a+e-1$, hence
+$e=N-a+1=e_*$.
+\end{proof}
+
+\begin{corollary}[The stored $(4,17)$ contact survives]
+For the stored chart with $(m,n,a,\kappa,K_D)=(2,3,4,2,-2)$,
+\[
+ e=4(2+3)-2-1=17>0.
+\]
+Thus the wedge order itself forces constant residual $\tau$, and the
+shear-normalized transport theorem applies with $(a,e)=(4,17)$.  The
+resulting degree-$17$ Belyi map and passport
+\[
+ (4^4,1),\qquad (17),\qquad (5,1^{12})
+\]
+are unaffected by this correction.
+\end{corollary}
+
+\section{A non-computational proof of the $A_{21}$ monodromy}
+
+Let $G$ be the monodromy group of a connected degree-$21$ cover with
+passport
+\[
+ (2^{10},1),\qquad (3^7),\qquad (17,1^4).
+\]
+The following replaces the permutation-certificate portion of
+Proposition~C.1; the exact count of five covers and their arithmetic orbit
+remain computational statements.
+
+\begin{proposition}
+The monodromy group is $A_{21}$.
+\end{proposition}
+
+\begin{proof}
+The three branch permutations are even, so $G\subseteq A_{21}$.  The cover
+is connected, hence $G$ is transitive.  A nontrivial block in degree $21$
+would have size $3$ or $7$.  The $17$-cycle induces the identity on the set
+of blocks, because neither $S_7$ nor $S_3$ contains an element of order
+$17$.  It would therefore preserve every block setwise.  This is impossible:
+a preserved block is a union of orbits of the $17$-cycle, but its unique
+nontrivial orbit has size $17$, larger than either possible block.  Thus $G$
+is primitive.  Jordan's theorem now applies: a primitive subgroup of
+$S_{21}$ containing a prime $17$-cycle, with $17\le21-3$, contains
+$A_{21}$.  Hence $G=A_{21}$.
+\end{proof}
+
+\section{Theorem C.6: exact certificate semantics}
+
+A nonzero square minor proves a rank statement.  It proves a unit-ideal
+statement only after the domain and the \emph{complete} target basis of the
+Macaulay map have been specified.
+
+Let the six selected polynomials be $F_1,\dots,F_6$.  The certificate should
+define finite multiplier spaces $V_i$ and a target monomial space $W$ such
+that $F_iV_i\subseteq W$, together with the map
+\[
+ \mu:\bigoplus_{i=1}^6V_i\longrightarrow W,
+ \qquad (H_i)_i\longmapsto\sum_i H_iF_i.
+\]
+The logically sufficient replacement text is:
+
+\begin{quote}
+The archive stores the full ordered basis of $W$, consisting of exactly
+$7121$ monomials and including the constant monomial $1$, and the ordered
+basis of $\bigoplus_iV_i$, consisting of $10824$ columns.  The certified
+$7121\times7121$ minor uses every row of $W$ and the listed pivot columns.
+Its reduction has determinant $859\pmod{2053}$, so the minor is nonzero in
+characteristic zero.  Hence $\mu$ is surjective; in particular
+$1\in\operatorname{im}\mu\subseteq(F_1,\dots,F_6)$.
+\end{quote}
+
+\noindent
+This wording is valid only if the archive replay confirms the phrases
+``full ordered basis,'' ``including $1$,'' and ``uses every row.''  If the
+$7121$ rows are merely a subset of a larger target basis, the minor alone
+does not prove $1\in(F_1,\dots,F_6)$; an explicit solution of
+$\mu(H_i)=1$ or a Nullstellensatz cofactor identity is then required.
+The explicit cofactor identities stated in Theorem~C.7 are already a
+complete proof interface for the two stored branch ideals, subject to the
+separate correctness of the reduction to those branches.
+
+\section{Theorem C.8: finite plus Nakayama, not unproved flatness}
+
+Let $R$ be the unramified local DVR obtained by localizing the coefficient
+ring at $(2053,u-216)$, with residue field $k$.  Let $\mathcal T_R$ be the
+proper toric model used by the certificate, and put
+\[
+ Z:=V(g_1,\dots,g_5)\subseteq\mathcal T_R.
+\]
+
+\begin{proposition}[Replacement for Theorem C.8]
+Assume the face-initial-ideal replay shows that the special fiber $Z_k$ has
+no toric-boundary points and is the reduced finite scheme of length $296$
+represented by the archived multiplication matrices.  If multiplication by
+$\rho$ on $\Gamma(Z_k,\mathcal O_{Z_k})$ has nonzero determinant, then
+\[
+ V_{\overline{K_0}}(\rho,g_1,g_2,g_3,g_4,g_5)=\varnothing.
+\]
+For the stored specialization the determinant is
+$682\not\equiv0\pmod{2053}$, so the conclusion follows.
+\end{proposition}
+
+\begin{proof}
+The morphism $Z\to\Spec R$ is proper.  It is quasi-finite on the closed
+fiber.  The non-quasi-finite locus is closed in $Z$, and its image is closed
+because the morphism is proper.  That image cannot be the generic point
+alone in the spectrum of a local DVR, and it does not contain the closed
+point.  Hence it is empty.  Thus $Z\to\Spec R$ is proper and quasi-finite,
+therefore finite.
+
+Write $A=\Gamma(Z,\mathcal O_Z)$, a finite $R$-algebra.  The determinant
+condition says that multiplication by $\bar\rho$ on $A/\mathfrak mA$ is an
+automorphism.  Consequently
+\[
+ (A/\rho A)\otimes_R k=0.
+\]
+The finite $R$-module $A/\rho A$ is therefore zero by Nakayama's lemma.
+Thus $\rho$ is a unit in $A$, so the six equations have no common point on
+$Z$ over $R$, on its generic fiber, or after any field extension.  In
+particular the common zero locus over $\overline{K_0}$ is empty.
+\end{proof}
+
+\begin{remark}
+Finite flatness or finite etaleness may also be provable from the smooth
+torus complete-intersection structure and a Jacobian-rank check, but neither
+property is needed for the no-common-zero conclusion.  The replacement
+proof uses only properness, finiteness of the special fiber, and invertibility
+of multiplication by $\rho$ modulo the maximal ideal.
+\end{remark}
+
+\section{Required public scope language}
+
+The manuscript explicitly states that it does not supply a new independent
+proof of the degree-$125$ lower bound.  The corresponding site collection
+should therefore use the following statement:
+
+\begin{quote}
+For each displayed terminal system, the exact certificates establish the
+claimed emptiness.  A global conclusion that every plane Keller map of
+maximum coordinate degree below $125$ is an automorphism additionally
+requires an independently replayed and audited proof that the upstream
+Newton reduction, saturations, normalizations, branch eliminations, and
+chart attachments exhaust every candidate.
+\end{quote}
+
+\noindent
+The unconditional theorem may still be cited as an external public
+announcement or literature result, but it must not be presented as a theorem
+proved by Program~6 or by the v13 manuscript.
+
+\section{Disposition of the audited items}
+
+\begin{center}
+\begin{tabular}{@{}p{0.23\textwidth}p{0.67\textwidth}@{}}
+\toprule
+Item & Repair status \\
+\midrule
+Proposition 3.3 & Repaired by specifying the codomain
+$u k[u]_{\le A+B-1}$. \\
+Proposition 5.2 & Repaired.  Positivity of the computed wedge order forces
+constant residue; the $(4,17)$ application survives. \\
+Proposition C.1 & $A_{21}$ now follows from transitivity, primitivity,
+parity, and Jordan's theorem; no permutation certificate is needed. \\
+Theorem C.6 & Logical implication repaired, but the archive must explicitly
+confirm that the $7121$ rows are the complete target basis containing $1$. \\
+Theorem C.8 & Repaired by properness, finiteness, and Nakayama; geometric
+emptiness is stated over $\overline{K_0}$. \\
+Degree below $125$ & Remains conditional within Program~6 on the upstream
+exhaustiveness and attachment audit. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}
