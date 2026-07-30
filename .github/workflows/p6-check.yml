@@ -1,0 +1,36 @@
+name: Check Program 6 research diagnostic
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - name: Run exact tests
+        run: |
+          python -m unittest discover \
+            -s research-notes/p6-chart-correspondence \
+            -p 'test_*.py' \
+            -v
+      - name: Replay the fixed-chart example
+        run: |
+          python research-notes/p6-chart-correspondence/fixed_chart_gauge.py \
+            research-notes/p6-chart-correspondence/fixed_chart_example.json \
+            --output /tmp/fixed-chart-example.json
+      - name: Replay archived upper-face layers
+        run: |
+          python research-notes/p6-chart-correspondence/degree21_linear_replay.py \
+            research-notes/p6-chart-correspondence/fixtures/degree21_exact_data.json \
+            --output /tmp/degree21-linear-replay.json
+          python research-notes/p6-chart-correspondence/degree21_kernel_decomposition.py \
+            research-notes/p6-chart-correspondence/fixtures/degree21_exact_data.json \
+            --output /tmp/degree21-kernel-decomposition.json
