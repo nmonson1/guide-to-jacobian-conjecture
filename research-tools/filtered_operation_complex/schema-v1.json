@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nmonson1.github.io/guide-to-jacobian-conjecture/schemas/filtered-operation-complex-v1.json",
+  "title": "Filtered operation complex contract",
+  "type": "object",
+  "required": ["schema_version", "layers"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "name": {"type": "string"},
+    "field": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["kind"],
+          "properties": {"kind": {"const": "rational"}},
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["kind", "modulus"],
+          "properties": {
+            "kind": {"const": "number_field"},
+            "modulus": {"type": "array", "minItems": 2},
+            "symbol": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "report_options": {
+      "type": "object",
+      "properties": {"include_vectors": {"type": "boolean"}},
+      "additionalProperties": true
+    },
+    "layers": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/layer"}},
+    "transitions": {"type": "array", "items": {"$ref": "#/$defs/transition"}}
+  },
+  "$defs": {
+    "vector": {"type": "array"},
+    "namedVector": {
+      "oneOf": [
+        {"$ref": "#/$defs/vector"},
+        {
+          "type": "object",
+          "required": ["vector"],
+          "properties": {"name": {"type": "string"}, "vector": {"$ref": "#/$defs/vector"}},
+          "additionalProperties": true
+        }
+      ]
+    },
+    "action": {
+      "type": "object",
+      "required": ["name", "generators"],
+      "properties": {
+        "name": {"type": "string"},
+        "role": {"type": "string"},
+        "parent": {"type": ["string", "null"]},
+        "generators": {"type": "array", "items": {"$ref": "#/$defs/namedVector"}}
+      },
+      "additionalProperties": true
+    },
+    "rechart": {
+      "type": "object",
+      "required": ["name", "generators"],
+      "properties": {
+        "name": {"type": "string"},
+        "generators": {"type": "array", "items": {"$ref": "#/$defs/namedVector"}}
+      },
+      "additionalProperties": true
+    },
+    "layer": {
+      "type": "object",
+      "required": ["id", "deformation_dimension", "equation_dimension", "operator"],
+      "properties": {
+        "id": {"type": "string"},
+        "deformation_dimension": {"type": "integer", "minimum": 0},
+        "equation_dimension": {"type": "integer", "minimum": 0},
+        "deformation_basis": {"type": "array", "items": {"type": "string"}},
+        "equation_basis": {"type": "array", "items": {"type": "string"}},
+        "operator": {"type": "array", "items": {"type": "array"}},
+        "actions": {"type": "array", "items": {"$ref": "#/$defs/action"}},
+        "gauge_action": {"type": "string"},
+        "gauge_actions": {"type": "array", "items": {"type": "string"}},
+        "recharts": {"type": "array", "items": {"$ref": "#/$defs/rechart"}},
+        "forcing": {"$ref": "#/$defs/vector"},
+        "obstruction_functionals": {"type": "array", "items": {"$ref": "#/$defs/namedVector"}},
+        "metadata": {"type": "object"}
+      },
+      "additionalProperties": true
+    },
+    "transition": {
+      "type": "object",
+      "required": ["name", "from", "to", "deformation_map", "equation_map"],
+      "properties": {
+        "name": {"type": "string"},
+        "from": {"type": "string"},
+        "to": {"type": "string"},
+        "deformation_map": {"type": "array", "items": {"type": "array"}},
+        "equation_map": {"type": "array", "items": {"type": "array"}},
+        "require_isomorphism": {"type": "boolean"},
+        "operation_span_pairs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["from", "to"],
+            "properties": {"from": {"type": "string"}, "to": {"type": "string"}}
+          }
+        },
+        "dual_pairs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["from", "to"],
+            "properties": {"from": {"$ref": "#/$defs/vector"}, "to": {"$ref": "#/$defs/vector"}}
+          }
+        },
+        "forcing_pair": {
+          "type": "object",
+          "required": ["from", "to"],
+          "properties": {"from": {"$ref": "#/$defs/vector"}, "to": {"$ref": "#/$defs/vector"}}
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

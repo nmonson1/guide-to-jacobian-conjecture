@@ -1,0 +1,57 @@
+name: Check filtered operation complex
+
+on:
+  pull_request:
+    paths:
+      - 'research-tools/filtered_operation_complex/**'
+      - 'research-notes/p6-chart-correspondence/synthetic_k4_contract.json'
+      - '.github/workflows/filtered-operation-complex.yml'
+  push:
+    branches: [agent/p6-chart-correspondence]
+    paths:
+      - 'research-tools/filtered_operation_complex/**'
+      - 'research-notes/p6-chart-correspondence/synthetic_k4_contract.json'
+      - '.github/workflows/filtered-operation-complex.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run exact unit tests
+        run: |
+          python -m unittest discover \
+            -s research-tools/filtered_operation_complex/tests \
+            -p 'test_*.py' \
+            -v
+
+      - name: Replay the generic two-chart example
+        env:
+          PYTHONPATH: research-tools
+        run: |
+          python -m filtered_operation_complex \
+            research-tools/filtered_operation_complex/examples/two_chart_rational.json \
+            --output /tmp/two-chart-report.json
+
+      - name: Adapt the Program 6 synthetic k=4 contract
+        env:
+          PYTHONPATH: research-tools
+        run: |
+          python -m filtered_operation_complex.adapters.program6_legacy \
+            research-notes/p6-chart-correspondence/synthetic_k4_contract.json \
+            --output /tmp/program6-report.json \
+            --emit-contract /tmp/program6-contract.json
+
+      - name: Replay the Program 5 adapter template
+        env:
+          PYTHONPATH: research-tools
+        run: |
+          python -m filtered_operation_complex.adapters.program5_row_killing \
+            research-tools/filtered_operation_complex/examples/program5_row_killing_template.json \
+            --output /tmp/program5-report.json \
+            --emit-contract /tmp/program5-contract.json

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "name": "Synthetic Program 5 row-killing adapter template",
+  "scope": "Template only. Replace every displayed matrix and vector with the exact Program 5 export before drawing mathematical conclusions.",
+  "field": {"kind": "rational"},
+  "layer_id": "synthetic-compression-layer",
+  "deformation_dimension": 6,
+  "equation_dimension": 3,
+  "deformation_basis": ["h0", "h1", "h2", "h3", "h4", "h5"],
+  "equation_basis": ["row0", "row1", "obstruction"],
+  "operator": [
+    [1, 0, 0, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0]
+  ],
+  "candidate_row_killers": [
+    [0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0, 1]
+  ],
+  "source_automorphisms": [
+    [0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 1, 0, 0]
+  ],
+  "target_automorphisms": [
+    [0, 0, 0, 0, 1, 0]
+  ],
+  "stable_presentation_changes": [
+    [0, 0, 0, 0, 0, 1]
+  ],
+  "forcing": [0, 0, -1],
+  "obstruction_functionals": [[0, 0, 1]],
+  "report_options": {"include_vectors": true}
+}

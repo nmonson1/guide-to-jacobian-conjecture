@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "name": "Two-chart filtered-operation example",
+  "field": {"kind": "rational"},
+  "layers": [
+    {
+      "id": "C:r4",
+      "deformation_dimension": 4,
+      "equation_dimension": 2,
+      "deformation_basis": ["a0", "a1", "a2", "a3"],
+      "equation_basis": ["w0", "w1"],
+      "operator": [[1, 0, 0, 0], [0, 0, 0, 0]],
+      "actions": [
+        {
+          "name": "formal",
+          "role": "formal",
+          "generators": [[0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        },
+        {
+          "name": "polynomial",
+          "role": "polynomial",
+          "parent": "formal",
+          "generators": [[0, 1, 0, 0], [0, 0, 1, 0]]
+        },
+        {
+          "name": "filtered",
+          "role": "filtered",
+          "parent": "polynomial",
+          "generators": [[0, 1, 0, 0]]
+        }
+      ],
+      "gauge_actions": ["filtered"],
+      "recharts": [
+        {"name": "wall-shear", "generators": [[0, 0, 1, 0]]}
+      ],
+      "forcing": [0, 1],
+      "obstruction_functionals": [[0, 1]]
+    },
+    {
+      "id": "Cprime:r4",
+      "deformation_dimension": 4,
+      "equation_dimension": 2,
+      "deformation_basis": ["a0p", "a1p", "a2p", "a3p"],
+      "equation_basis": ["w0p", "w1p"],
+      "operator": [[1, 0, 0, 0], [0, 0, 0, 0]],
+      "actions": [
+        {
+          "name": "formal",
+          "role": "formal",
+          "generators": [[0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        },
+        {
+          "name": "polynomial",
+          "role": "polynomial",
+          "parent": "formal",
+          "generators": [[0, 1, 0, 0], [0, 0, 1, 0]]
+        },
+        {
+          "name": "filtered",
+          "role": "filtered",
+          "parent": "polynomial",
+          "generators": [[0, 0, 1, 0]]
+        }
+      ],
+      "gauge_actions": ["filtered"],
+      "recharts": [
+        {"name": "inverse-wall-shear", "generators": [[0, 1, 0, 0]]}
+      ],
+      "forcing": [0, 1],
+      "obstruction_functionals": [[0, 1]]
+    }
+  ],
+  "transitions": [
+    {
+      "name": "swap-wall-coordinates",
+      "from": "C:r4",
+      "to": "Cprime:r4",
+      "deformation_map": [
+        [1, 0, 0, 0],
+        [0, 0, 1, 0],
+        [0, 1, 0, 0],
+        [0, 0, 0, 1]
+      ],
+      "equation_map": [[1, 0], [0, 1]],
+      "require_isomorphism": true,
+      "operation_span_pairs": [
+        {"from": "formal", "to": "formal"},
+        {"from": "filtered", "to": "filtered"}
+      ],
+      "dual_pairs": [{"from": [0, 1], "to": [0, 1]}],
+      "forcing_pair": {"from": [0, 1], "to": [0, 1]}
+    }
+  ]
+}
