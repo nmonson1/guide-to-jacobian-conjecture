@@ -36,6 +36,10 @@ The active local release candidate contains:
   Fitting-index correction, and the still-underdefined status of weighted
   graph closures; atomic claim `JCG-4D953715` carries the corrected statement
   as version 2;
+- a hash-pinned Program 3 v13 corrigendum overlay: the degree-seven theorem
+  spine is unchanged, Theorem C.2 has a replacement converse proof, the
+  characteristic-zero conclusion of Theorem C.3 is withdrawn, and Appendix D
+  is identified as a post-length exact presentation as proved;
 - 76 collections with complete manuscript coverage, nine with partial
   coverage, and 19 for which manuscript coverage is not applicable;
 - 21 context-only private records, not exported.
@@ -68,6 +72,12 @@ surfaces are:
 - `scripts/generate_living_guide_v2.py`: deterministic renderer for stable
   claim pages, result/open-problem collections, programs, evidence, and
   catalogue pages, model handoffs, and machine-readable handoff release;
+- `scripts/check_generated_with_public_overrides.py`: validates the graph
+  renderer together with narrowly scoped, hash-pinned public correction
+  overlays;
+- `data/public-page-overrides-v1/`: source pages and digest manifest for the
+  current Program 3 v13 public hotfix; the authoritative private claim source
+  still requires the same correction before the next clean export;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
 - `data/model-briefs-v10b-20260730a/`: hash-pinned sanitized source for
@@ -101,7 +111,7 @@ they are not part of the active MkDocs source tree.
 With [`uv`](https://docs.astral.sh/uv/) installed:
 
 ```bash
-uv run --with-requirements requirements.txt python scripts/generate_living_guide_v2.py
+uv run --with-requirements requirements.txt python scripts/check_generated_with_public_overrides.py
 uv run --with-requirements requirements.txt python scripts/check_public_site_v2.py
 uv run --with-requirements requirements.txt mkdocs build --strict --site-dir /tmp/jacobian-guide-preview
 uv run --with-requirements requirements.txt python scripts/check_built_site.py /tmp/jacobian-guide-preview
