@@ -34,13 +34,16 @@ Nathaniel Monson · 22 pages · dated 2026-07-29 · SHA-256 `18f4658390d0a956605
 
 The PDF is a working manuscript. Exact manuscript location, evidence, and independent review remain separate fields in the claim graph.
 
+!!! danger "v13 corrigendum"
+    Read the [Program 3 v13 corrigendum](../program-3-v13-corrigendum.md) with the paper. It repairs two proof-exposition gaps, replaces the converse proof of Theorem C.2, withdraws the unsupported characteristic-zero conclusion of Theorem C.3, and clarifies Appendix D's dependency. The degree-seven theorem spine is unchanged.
+
 ## Results
 
 ### [Degree Eight Deformations](../../collections/degree-eight-deformations.md)
 
 For the degree-eight local Kuranishi problem, the residual 28-dimensional slice reduces to weights -2 and -1; weight -2 is eliminated over Q, while weight -1 survives to fourth order and has only modular death evidence at order six.
 
-*Exact manuscript location*
+*Exact manuscript location, subject to the v13 corrigendum*
 
 ### [Degree Seven Local Affine Rigidity](../../collections/degree-seven-local-affine-rigidity.md)
 
