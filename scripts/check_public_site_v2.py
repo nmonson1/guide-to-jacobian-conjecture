@@ -180,6 +180,7 @@ def main() -> int:
         failures.append(f"expected {expected['grouped_pages']} collection pages")
     if len(program_files) != expected["research_programs"]:
         failures.append(f"expected {expected['research_programs']} program pages")
+    locator_pages = 0
     for path in claim_files:
         text = path.read_text(encoding="utf-8")
         if path.stem not in claims:
@@ -187,7 +188,23 @@ def main() -> int:
         for heading in ("## Exact statement", "## Appears in", "## Proof access and evidence boundary"):
             if heading not in text:
                 failures.append(f"{path.relative_to(ROOT)}: missing {heading}")
+        if "## Proof locators" in text:
+            locator_pages += 1
         _local_links(path, failures)
+    # Proof locators are the reason the coverage sidecar ships; losing them
+    # from the graph or the renderer should fail loudly, not silently.
+    expected_locator_pages = sum(
+        1 for claim in claims.values() if claim.get("locators")
+    )
+    if locator_pages != expected_locator_pages:
+        failures.append(
+            f"claim pages with a Proof locators section: expected "
+            f"{expected_locator_pages}, found {locator_pages}"
+        )
+    if locator_pages < 300:
+        failures.append(
+            f"fewer than 300 claim pages carry proof locators: {locator_pages}"
+        )
     for path in collection_files:
         text = path.read_text(encoding="utf-8")
         if path.stem not in collections:
@@ -202,6 +219,10 @@ def main() -> int:
         for phrase in TEMPLATE_PHRASES:
             if phrase in text:
                 failures.append(f"{path.relative_to(ROOT)}: legacy template prose remains")
+        # Privacy backstop for the locator sidecar: even a partial private
+        # canonical id must never appear on a rendered page.
+        if "JC-CAN" in text:
+            failures.append(f"{path.relative_to(ROOT)}: private canonical id marker")
         _local_links(path, failures)
 
     brief_manifest = json.loads(

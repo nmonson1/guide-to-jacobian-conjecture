@@ -350,6 +350,17 @@ def render_claim(
         )
     if not claim["proof_access"]:
         lines.append("- No program-manuscript location is claimed for this record.")
+    locators = claim.get("locators", [])
+    if locators:
+        # Manuscript-source anchors from the private coverage audit; plain
+        # text only, so no private path or identifier can become a link.
+        lines.extend(["", "## Proof locators", ""])
+        for locator in locators:
+            role = locator["role"].strip()
+            suffix = f" ({role})" if role else ""
+            lines.append(
+                f"- `{locator['anchor']}` in `{locator['repo_path']}`{suffix}"
+            )
     reviews = claim["verification"].get("independent_review", [])
     lines.extend(["", "**Independent review**", ""])
     for review in reviews:
