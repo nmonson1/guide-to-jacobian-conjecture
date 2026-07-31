@@ -1,0 +1,47 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "cubic-normalization-defect-open-package",
+      "page_title": "Cubic Normalization Defect Open Package",
+      "role": "conditional_flatness_criterion"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "low-radial-different-forces-a-rational-marked-root-4d6f79c6",
+  "source": [],
+  "statement": "Let L/K(lambda) be the cubic radial extension at the exceptional marked-root end, unramified over lambda=0 with residue degree three and residue field K*. If the geometric radial cover has different degree less than four, or if all geometric inertia groups fix a common sheet, then it is geometrically disconnected and L=K*(lambda); equivalently, the direction map has a rational marked-root lift.",
+  "title": "Low Radial Different Forces a Rational Marked Root",
+  "visibility": "technical"
+}

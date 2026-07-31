@@ -1,0 +1,54 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "categorical-cubic-frame-quotient",
+      "page_title": "The Categorical Quotient of Bounded Cubic Frames",
+      "role": "coefficient_model"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "cubic-frame-infinity-gluing",
+      "page_title": "Gluing Cubic-Frame Torelli at Infinity",
+      "role": "partial_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "one-polynomial-map-encodes-every-bounded-root-translation-orbit-2f2c2f29",
+  "source": [],
+  "statement": "At ambient bound N, degree-preserving cubic-frame root translations are exactly the kernel pair of (Qhat,P) mapping to (Qhat,z^N P mod Qhat); when roots escape to infinity, P decomposes uniquely into finite-root data plus the translated principal part.",
+  "title": "One Polynomial Map Encodes Every Bounded Root-Translation Orbit",
+  "visibility": "technical"
+}

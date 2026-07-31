@@ -1,0 +1,39 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "unrestricted-quartic-open-package",
+      "page_title": "Unrestricted Quartic Open Package",
+      "role": "partial_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "partial-result-the-degree-four-composite-pencil-analysis-gives-a-census-reduction-b57fac7a",
+  "source": [],
+  "statement": "The degree-four composite-pencil analysis gives a census/reduction and restrictions on primitive-line and rank-one top forms.",
+  "title": "Partial Result: The degree-four composite-pencil analysis gives a census/reduction and restrictions on primit…",
+  "visibility": "technical"
+}

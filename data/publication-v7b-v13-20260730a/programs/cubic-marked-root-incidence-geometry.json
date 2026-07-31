@@ -1,0 +1,32 @@
+{
+  "author": "Nathaniel Monson",
+  "manuscript": "01-cubic-incidence-geometry",
+  "page_slugs": [
+    "composition-primality",
+    "off-diagonal-collision-space",
+    "escape-rates-near-the-discriminant",
+    "incomplete-inverse-jacobian-flows",
+    "cubic-normalization-and-master-cover",
+    "cubic-normalization-defect-open-package",
+    "finite-triple-covers-conductors-and-automorphisms",
+    "higher-degree-frame-calculus",
+    "lost-sheet-local-models",
+    "moving-tangent-rigidity",
+    "multiplication-incidence-uniqueness",
+    "normalized-cubic-family-classification",
+    "normalized-cubic-family-open-problems",
+    "omitted-locus-and-smoothness",
+    "quadratic-covariant-incidence-rigidity",
+    "research-agenda",
+    "root-slope-and-cubic-cover-geometry",
+    "cubic-resolvent-defect-exclusions"
+  ],
+  "question": "The counterexample loses sheets; how much of its geometry can be classified?",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "sequence": 1,
+  "slug": "cubic-marked-root-incidence-geometry",
+  "summary": "A program about normalized marked-root constructions, cubic covers, lost sheets, moving hyperplanes, and the boundary between a universal mechanism and features special to the known example.",
+  "title": "Cubic Marked-Root Incidence Geometry",
+  "visibility": "featured"
+}

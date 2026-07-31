@@ -1,0 +1,57 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and proof drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "all-multiplicity-cubic-frame-torelli",
+      "page_title": "All-Multiplicity Torelli for Cubic Frames",
+      "role": "proof_lemma"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "the-weighted-relative-jacobian-recovers-every-common-factor-multiplicity-f9d9b3fa",
+  "source": [],
+  "statement": "If p=ord_s A0 and d=ord_s rho, then the common-factor multiplicity m is d when p is at least d and (p+d)/2 otherwise.",
+  "title": "The Weighted Relative Jacobian Recovers Every Common-Factor Multiplicity",
+  "visibility": "technical"
+}

@@ -1,0 +1,43 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "boundary-deformation-and-f2-correction",
+      "page_title": "Boundary Deformation And F2 Correction",
+      "role": "case_calculation"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "f2-support-window-calculation-for-the-f2-chain-5-20-7-5-66d861af",
+  "source": [],
+  "statement": "For the F2 chain (5,20)->(7/5,2) with (m,n)=(3,5), exact shear propagation gives 4433 and 12340 support positions, explicit C5-equivariant two-point windows, and the first missing linearized forcing coefficient at normal order 510.",
+  "title": "F2 Support Window Calculation: For the F2 chain (5,20)->(7/5,2) with (m,n)=(3,5), exact shear propagation gives 4433 and 123…",
+  "visibility": "technical"
+}

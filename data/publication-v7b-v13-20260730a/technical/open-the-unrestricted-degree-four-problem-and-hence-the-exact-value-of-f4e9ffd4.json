@@ -1,0 +1,34 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "open",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "open_problem",
+      "page_slug": "unrestricted-quartic-open-package",
+      "page_title": "Unrestricted Quartic Open Package",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "question",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "open-the-unrestricted-degree-four-problem-and-hence-the-exact-value-of-f4e9ffd4",
+  "source": [],
+  "statement": "The unrestricted degree-four problem, and hence the exact value of D_min within the public 4-to-7 range, remains open in this conversation.",
+  "title": "Open: The unrestricted degree-four problem, and hence the exact value of D_min within the public 4-…",
+  "visibility": "technical"
+}

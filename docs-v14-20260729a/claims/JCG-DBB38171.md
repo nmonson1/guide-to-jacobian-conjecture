@@ -1,0 +1,31 @@
+---
+title: "A rank-three affine-linear family whose full simple-root incidence is affine three-space lies in the tangent-but-not-osculating orbit and recovers the base map up to left-right equivalence."
+description: "A rank-three affine-linear family whose full simple-root incidence is affine three-space lies in the tangent-but-not-osculating orbit and recovers the base map up to left-right equivalence."
+---
+
+<p class="claim-tag">JCG-DBB38171</p>
+# A rank-three affine-linear family whose full simple-root incidence is affine three-space lies in the tangent-but-not-osculating orbit and recovers the base map up to left-right equivalence.
+
+<p class="dek">A rank-three affine-linear family whose full simple-root incidence is affine three-space lies in the tangent-but-not-osculating orbit and recovers the base map up to left-right equivalence.</p>
+
+<span class="status status-kind">Claim</span> <span class="status status-draft">Proof offered — review pending</span> <span class="status">Core</span>
+
+## Exact statement
+
+A rank-three affine-linear family whose full simple-root incidence is affine three-space lies in the tangent-but-not-osculating orbit and recovers the base map up to left-right equivalence.
+
+Statement version `1`. The public tag is stable; statement revisions increment the version rather than replacing the tag.
+
+## Appears in
+
+- [Uniqueness in the Multiplication-Incidence Construction](../collections/multiplication-incidence-uniqueness.md) — defining, supporting result
+
+## Proof access and evidence boundary
+
+- [Uniqueness in the Multiplication-Incidence Construction](../collections/multiplication-incidence-uniqueness.md): **Exact manuscript location**
+
+**Independent review**
+
+- None Recorded: No independent review is represented in this public record.
+
+[Browse all claims](../results/all-claims.md)

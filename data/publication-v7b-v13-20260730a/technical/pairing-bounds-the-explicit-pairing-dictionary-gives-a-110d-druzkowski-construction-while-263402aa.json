@@ -1,0 +1,50 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "druzkowski-pairing",
+      "page_title": "Drużkowski Pairing",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "open_problem",
+      "page_slug": "minimum-druzkowski-pairing-rank",
+      "page_title": "The Minimum Drużkowski Pairing Rank",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "pairing-bounds-the-explicit-pairing-dictionary-gives-a-110d-druzkowski-construction-while-263402aa",
+  "source": [],
+  "statement": "The explicit pairing dictionary gives a 110D Druzkowski construction, while the derivative-space zero-block and equality-case argument give the model-relative bound 52 <= pairing rank <= 110 for the fixed 19D tensor.",
+  "title": "Pairing Bounds: The explicit pairing dictionary gives a 110D Druzkowski construction, while the derivative-sp…",
+  "visibility": "technical"
+}

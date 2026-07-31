@@ -1,0 +1,43 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "stable-deformation-moduli",
+      "page_title": "Stable Deformation Moduli",
+      "role": "subsumed_theorem"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "based-deformation-classification-the-based-w20-family-has-exactly-two-based-equivalence-10b255a3",
+  "source": [],
+  "statement": "The based w20 family has exactly two based equivalence classes, k=0 and k nonzero, while its coefficientwise formal trivializations require unbounded spatial degree.",
+  "title": "Based Deformation Classification: The based w20 family has exactly two based equivalence classes, k=0 and k nonzero, while its…",
+  "visibility": "technical"
+}

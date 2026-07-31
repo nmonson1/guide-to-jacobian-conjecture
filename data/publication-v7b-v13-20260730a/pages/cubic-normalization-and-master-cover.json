@@ -1,0 +1,144 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "Nathaniel Monson"
+    ],
+    "systems": [
+      {
+        "purpose": "research assistance",
+        "roles": [
+          "derivation and drafting"
+        ],
+        "system": "ChatGPT"
+      }
+    ]
+  },
+  "connections": {
+    "depends_on": [
+      "base-cover-monodromy-and-deck-group",
+      "base-map-fibers-image-and-nonproperness",
+      "common-cover-of-the-descendant-ladder",
+      "keller-invertibility-and-properness",
+      "root-slope-and-cubic-cover-geometry"
+    ],
+    "shares_claims_with": []
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and mathematical responsibility"
+      ]
+    }
+  ],
+  "description": "If the cubic normalization is flat, it is the pullback of the universal marked-root master cover; equality with affine three-space additionally requires completeness of the boundary deletion.",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 8
+        },
+        "manuscript": "01-cubic-incidence-geometry",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Every generic-degree-three Keller map factors through a finite normal cubic cover whose trace-zero module is rank-two reflexive and locally free away from finitely many target points.",
+      "technical_slug": "normalization-and-triple-cover-reduction-every-generic-degree-three-keller-map-factors-c04524cf",
+      "title": "Normalization And Triple Cover Reduction: Every generic-degree-three Keller map factors through a finite normal cubic cover whose trace…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "Flatness of the finite cubic normalization is equivalent to vanishing of a finite defect module expressible through Ext data.",
+      "technical_slug": "defect-formulation-flatness-of-the-finite-cubic-normalization-is-equivalent-to-vanishing-248ad7b9",
+      "title": "Defect Formulation: Flatness of the finite cubic normalization is equivalent to vanishing of a finite defect modu…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The defect problem admits a resolvent maximal-Cohen–Macaulay reformulation.",
+      "technical_slug": "equivalent-reformulation-the-defect-problem-admits-a-resolvent-maximal-cohen-macaulay-reformulation-ab57a9b2",
+      "title": "Equivalent Reformulation: The defect problem admits a resolvent maximal-Cohen–Macaulay reformulation."
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "partial_result",
+      "statement": "A generically degree-three Keller map admits a useful normalization picture: a finite normalization X over the target together with an open embedding of A3, expressible through a finite-flat binary-cubic model.",
+      "technical_slug": "partial-result-a-generically-degree-three-keller-map-admits-a-useful-normalization-26fd089b",
+      "title": "Partial Result: A generically degree-three Keller map admits a useful normalization picture: a finite normali…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "For a finite normalization of the cubic cover, the trace-zero module is reflexive and the nonflat locus is finite; flatness and the global cubic package require an additional Cohen-Macaulay hypothesis.",
+      "technical_slug": "module-structure-for-a-finite-normalization-of-the-cubic-cover-the-trace-a5938472",
+      "title": "Module Structure: For a finite normalization of the cubic cover, the trace-zero module is reflexive and the non…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "supporting_result",
+      "statement": "The resultant-one factor space is isomorphic to SL2 times A1_gamma, and its universal marked-root map to the simple-root binary-cubic locus is etale; ordering the roots gives an S3 torsor.",
+      "technical_slug": "universal-marked-root-structure-the-resultant-one-factor-space-is-isomorphic-to-ecd1ca4e",
+      "title": "Universal Marked Root Structure: The resultant-one factor space is isomorphic to SL2 times A1_gamma, and its universal marked-…"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "proof_lemma",
+      "statement": "For every generic-degree-three Keller normalization, base change to the affine source splits the cubic algebra as S times S[eta]/(eta^2-D), implying flatness at every attained target point and a canonical marked-root form on the source.",
+      "technical_slug": "source-splitting-theorem-for-every-generic-degree-three-keller-normalization-base-change-bd8a0f77",
+      "title": "Source Splitting Theorem: For every generic-degree-three Keller normalization, base change to the affine source splits…"
+    },
+    {
+      "assessment": "recorded",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "If the cubic normalization is flat, it is the pullback of the universal marked-root master cover; equality with affine three-space additionally requires completeness of the boundary deletion.",
+      "technical_slug": "conditional-master-cover-theorem-if-the-cubic-normalization-is-flat-it-is-2e563312",
+      "title": "Conditional Master Cover Theorem: If the cubic normalization is flat, it is the pullback of the universal marked-root master co…"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 14,
+    "member_count": 8
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "cubic-marked-root-incidence-geometry"
+  ],
+  "schema_version": 2,
+  "slug": "cubic-normalization-and-master-cover",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "If the cubic normalization is flat, it is the pullback of the universal marked-root master cover; equality with affine three-space additionally requires completeness of the boundary deletion.",
+  "title": "Cubic Normalization And Master Cover",
+  "visibility": "catalogued"
+}

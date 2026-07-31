@@ -1,0 +1,94 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "connections": {
+    "depends_on": [
+      "quartic-target-span-two-ramification-filtration"
+    ],
+    "shares_claims_with": [
+      "quartic-target-span-two-ramification-filtration",
+      "triple-ramification-and-fixed-component-endgame",
+      "unrestricted-quartic-open-package"
+    ]
+  },
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "Nathaniel Monson",
+      "roles": [
+        "research direction and accountable author"
+      ]
+    }
+  ],
+  "description": "Conditional on the recorded target-span-two routing, primitive binary ramification degrees four and five are automorphic; fourth-power and zero-minor boundaries add no counterexample leaf. Exact programs certify the encoded determinant and projective-incidence calculations, not global exhaustiveness.",
+  "evidence_present": [
+    "proof"
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "kind": "result",
+  "manuscript_coverage": {
+    "coverage_rule": "Complete coverage requires an exact LaTeX location for every program-relevant defining claim. A locator records where the current statement and evidence boundary appear; it is not a proof-review status.",
+    "manuscripts": [
+      {
+        "defining_claim_counts": {
+          "exact_locator": 3
+        },
+        "manuscript": "02-low-degree",
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "members": [
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "primary_statement",
+      "statement": "Assume the Program 2 structural reductions place a quartic Keller map in the primitive coprime binary-pencil locus, with H4=(P,Q,0), P,Q in k[x,y]_4 coprime, R=(H3)_3 in k[x,y]_3, U=J(Q,R), V=J(P,R), W=J(P,Q), and r=deg gcd(U,V,W). If r is four or five, then the full Keller map is a polynomial automorphism.",
+      "technical_slug": "primitive-binary-ramification-four-and-five-is-automorphic-5c216c29",
+      "title": "Primitive Binary Ramification Four and Five Is Automorphic"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "fourth_power_absorption",
+      "statement": "Assume the Program 2 target-span-two reductions and suppose a primitive coprime leading pencil contains a fourth power, normalized as H4=(x^4,Q,0) with x not dividing Q. The highest Keller equation routes the cubic and, when necessary, quadratic normal layers to an aligned pure-power, binary, or quadratic-source branch; under the recorded Program 2 inputs every resulting branch is automorphic or already excluded.",
+      "technical_slug": "the-primitive-fourth-power-locus-adds-no-quartic-counterexample-leaf-5ef7883d",
+      "title": "The Primitive Fourth-Power Locus Adds No Quartic Counterexample Leaf"
+    },
+    {
+      "assessment": "proof offered",
+      "inclusion": "defining",
+      "role": "zero_minor_boundary",
+      "statement": "Assume the Program 2 binary target-span-two reduction. If one of U=J(Q,R), V=J(P,R), or W=J(P,Q) vanishes, including the separate case R=0, then the quartic Keller map is a polynomial automorphism. Consequently the ordinary common-ramification filtration may be applied only after these zero-minor boundaries are removed.",
+      "technical_slug": "zero-minor-binary-quartic-boundaries-are-automorphic-5e7e9377",
+      "title": "Zero-Minor Binary Quartic Boundaries Are Automorphic"
+    }
+  ],
+  "metadata": {
+    "canonical_registry_version": 14,
+    "member_count": 3
+  },
+  "release_state": "draft_public",
+  "research_programs": [
+    "minimum-degree-and-quartic-exclusions"
+  ],
+  "schema_version": 2,
+  "slug": "quartic-high-ramification-and-edge-exclusions",
+  "source": [],
+  "source_form": [
+    "working manuscript"
+  ],
+  "source_treatment": "The linked working manuscript has exact locations for every program-relevant defining claim on this page. This says where the claims are recorded, not that they have been independently verified.",
+  "statement": "Assume the Program 2 structural reductions place a quartic Keller map in the primitive coprime binary-pencil locus, with H4=(P,Q,0), P,Q in k[x,y]_4 coprime, R=(H3)_3 in k[x,y]_3, U=J(Q,R), V=J(P,R), W=J(P,Q), and r=deg gcd(U,V,W). If r is four or five, then the full Keller map is a polynomial automorphism.",
+  "title": "Quartic High-Ramification and Edge Exclusions",
+  "visibility": "catalogued"
+}

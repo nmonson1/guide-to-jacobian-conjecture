@@ -1,0 +1,105 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "documented_authorship",
+      "name": "algal",
+      "roles": [
+        "construction",
+        "computation"
+      ],
+      "scope": "Contribution recorded in Weighted lifts from the Jacobian counterexample."
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "links": [
+        {
+          "label": "Explicit family construction",
+          "url": "https://www.ulam.ai/research/jacobian.pdf"
+        }
+      ],
+      "scope": "Explicit family construction."
+    },
+    {
+      "kind": "proof",
+      "links": [
+        {
+          "label": "Independent uniform construction and exact atlas",
+          "url": "https://github.com/algal/jacobianfun/tree/0a73d4c75bed60660c6e91a56f1595be756cbd59"
+        }
+      ],
+      "scope": "Independent uniform construction and exact atlas."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "all-generic-degrees-family",
+      "page_title": "All Generic Degrees Family",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "higher-degree-frame-calculus",
+      "page_title": "The Higher-Degree Root-Slope Frame Calculus",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "public",
+  "schema_version": 2,
+  "slug": "three-dimensional-keller-maps-of-every-generic-degree-d739c229",
+  "source": [
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "A Counterexample to the Jacobian Conjecture",
+      "url": "https://www.ulam.ai/research/jacobian.pdf"
+    },
+    {
+      "date": "2026-07-20",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "announcement",
+      "title": "Hello there the Jacobian conjecture is false",
+      "url": "https://x.com/__alpoge__/status/2079028340955197566"
+    },
+    {
+      "authors": [
+        "algal"
+      ],
+      "date": "2026-07-20",
+      "relations": [
+        "evidence source"
+      ],
+      "source_form": "repository",
+      "title": "jacobianfun — RESEARCH.md and exact checkers",
+      "url": "https://github.com/algal/jacobianfun/tree/0a73d4c75bed60660c6e91a56f1595be756cbd59"
+    }
+  ],
+  "statement": "For every integer d at least 3, there is a nonproper Keller map from complex affine 3-space to itself with generic degree d.",
+  "title": "Three-dimensional Keller maps of every generic degree",
+  "visibility": "technical"
+}

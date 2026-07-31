@@ -1,0 +1,33 @@
+---
+title: "A torus-stable 337-dimensional slice has ten tangent parameters of weights (-1,2,-3,-2,-1,0,1,1,2,3); exact positive, negative, and fixed-weight obstruction certificates plus a torus-nullcone lemma show that its reduced completed local ring is C. Thus G is reduced-affinely rigid in K_{3,7}, though the local ring is a nonreduced Artin thickening."
+description: "A torus-stable 337-dimensional slice has ten tangent parameters of weights (-1,2,-3,-2,-1,0,1,1,2,3); exact positive, negative, and fixed-weight obstruction certificates plus a torus-nullcone lemma show that its reduced completed local ring is C. Thus G is reduced-affinely rigid in K_{3,7}, though the local ring is a nonreduced Artin thickening."
+---
+
+<p class="claim-tag">JCG-A6010D1B</p>
+# A torus-stable 337-dimensional slice has ten tangent parameters of weights (-1,2,-3,-2,-1,0,1,1,2,3); exact positive, negative, and fixed-weight obstruction certificates plus a torus-nullcone lemma show that its reduced completed local ring is C. Thus G is reduced-affinely rigid in K_{3,7}, though the local ring is a nonreduced Artin thickening.
+
+<p class="dek">A torus-stable 337-dimensional slice has ten tangent parameters of weights (-1,2,-3,-2,-1,0,1,1,2,3); exact positive, negative, and fixed-weight obstruction certificates plus a torus-nullcone lemma show that its reduced completed local ring is C. Thus G is reduced-affinely rigid in K_{3,7}, though the local ring is a nonreduced Artin thickening.</p>
+
+<span class="status status-kind">Claim</span> <span class="status status-draft">Certificate offered — review pending</span> <span class="status">Core</span>
+
+## Exact statement
+
+A torus-stable 337-dimensional slice has ten tangent parameters of weights (-1,2,-3,-2,-1,0,1,1,2,3); exact positive, negative, and fixed-weight obstruction certificates plus a torus-nullcone lemma show that its reduced completed local ring is C. Thus G is reduced-affinely rigid in K_{3,7}, though the local ring is a nonreduced Artin thickening.
+
+Statement version `1`. The public tag is stable; statement revisions increment the version rather than replacing the tag.
+
+## Appears in
+
+- [Degree Seven Local Affine Rigidity](../collections/degree-seven-local-affine-rigidity.md) — defining, primary statement
+- [Reconstructing the Kuranishi Ideal from Marked-Root Flows](../collections/marked-root-source-flow-reconstruction.md) — shared, independently reproved result
+
+## Proof access and evidence boundary
+
+- [Degree Seven Local Affine Rigidity](../collections/degree-seven-local-affine-rigidity.md): **Locator audit incomplete**
+- [Reconstructing the Kuranishi Ideal from Marked-Root Flows](../collections/marked-root-source-flow-reconstruction.md): **No program manuscript claimed**
+
+**Independent review**
+
+- None Recorded: No independent review is represented in this public record.
+
+[Browse all claims](../results/all-claims.md)

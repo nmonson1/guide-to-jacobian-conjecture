@@ -1,0 +1,50 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "proof offered",
+  "credited_to": [],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "scope": "A proof is present in the working research record."
+    },
+    {
+      "kind": "computation",
+      "scope": "Supporting checks are present in the working research record."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "dimension-five-partial-classification",
+      "page_title": "Sparse Exclusions in Dimension Five",
+      "role": "primary_statement"
+    },
+    {
+      "inclusion": "shared",
+      "page_kind": "result",
+      "page_slug": "filtered-regular-pencils-in-dimension-five",
+      "page_title": "Filtered Regular Nilpotent Pencils in Dimension Five",
+      "role": "supporting_result"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "three-row-sparse-exclusion-in-dimension-five-d49a43dc",
+  "source": [],
+  "statement": "In the five-dimensional square-zero two-matrix ansatz with a coordinate collision, exactly three active rows, one directed support edge in each active row, and all five vertices used by the three edges, the Keller equations have no solution.",
+  "title": "Three-Row Sparse Exclusion in Dimension Five",
+  "visibility": "technical"
+}

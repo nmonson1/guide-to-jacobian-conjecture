@@ -1,0 +1,32 @@
+{
+  "author": "Nathaniel Monson",
+  "manuscript": "02-low-degree",
+  "page_slugs": [
+    "balanced-quartic-leading-image-problem",
+    "bounded-degree-keller-scheme",
+    "collision-normalized-finite-search",
+    "quartic-conic-leading-image-exclusion",
+    "quartic-leading-curves-at-infinity",
+    "quartic-leading-line-reductions",
+    "quartic-rational-cubic-leading-image-exclusion",
+    "quartic-rational-quartic-frontier",
+    "rank-one-quartic-theorem",
+    "research-agenda",
+    "tricuspidal-quartic-leading-image-problem",
+    "unrestricted-quartic-open-package",
+    "degree-five-six-fixed-factor-conics",
+    "degree-five-six-conic-frontier",
+    "quartic-target-span-two-ramification-filtration",
+    "triple-ramification-and-fixed-component-endgame",
+    "quartic-high-ramification-and-edge-exclusions",
+    "quartic-fixed-component-exclusions"
+  ],
+  "question": "The counterexample has degree seven; how small can a counterexample be?",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "sequence": 2,
+  "slug": "minimum-degree-and-quartic-exclusions",
+  "summary": "A collision-normalized search and a sequence of geometric exclusions isolate what a hypothetical quartic counterexample would have to look like.",
+  "title": "Minimum Degree and Quartic Exclusions",
+  "visibility": "featured"
+}

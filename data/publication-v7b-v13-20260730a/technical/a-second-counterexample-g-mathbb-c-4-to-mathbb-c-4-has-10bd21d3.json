@@ -1,0 +1,34 @@
+{
+  "ai_assistance": {
+    "present": false,
+    "responsible_humans": [],
+    "systems": []
+  },
+  "assessment": "recorded",
+  "credited_to": [],
+  "evidence_present": [],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "second-four-dimensional-counterexample",
+      "page_title": "Second Four Dimensional Counterexample",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "draft_public",
+  "schema_version": 2,
+  "slug": "a-second-counterexample-g-mathbb-c-4-to-mathbb-c-4-has-10bd21d3",
+  "source": [],
+  "statement": "A second counterexample \\(G:\\mathbb C^4\\to\\mathbb C^4\\) has determinant \\(4\\) and generic degree \\(8\\).",
+  "title": "A second counterexample \\(G:\\mathbb C^4\\to\\mathbb C^4\\) has determinant \\(4\\) and generic deg…",
+  "visibility": "technical"
+}

@@ -1,0 +1,80 @@
+{
+  "ai_assistance": {
+    "present": true,
+    "responsible_humans": [
+      "William G. P. Mayner"
+    ],
+    "systems": [
+      {
+        "purpose": "Contribution recorded in The Dixmier conjecture fails for A_n, n at least 3.; mathematical argument in a directed session",
+        "roles": [
+          "proof",
+          "research assistance"
+        ],
+        "system": "Claude Fable 5"
+      }
+    ]
+  },
+  "assessment": "proof offered",
+  "credited_to": [
+    {
+      "attribution_basis": "attributed_by_source",
+      "name": "William G. P. Mayner",
+      "roles": [
+        "exposition"
+      ],
+      "scope": "Contribution recorded in The Dixmier conjecture fails for A_n, n at least 3."
+    }
+  ],
+  "evidence_present": [
+    {
+      "kind": "proof",
+      "links": [
+        {
+          "label": "Public proof and exact audit package",
+          "url": "https://github.com/wmayner/dixmier-counterexample/tree/475cea2a7449230e7d493ff29ea94fc22ce81e61"
+        }
+      ],
+      "scope": "Public proof and exact audit package."
+    }
+  ],
+  "independent_review": [
+    {
+      "level": "none recorded",
+      "scope": "No independent review is represented in this public record."
+    }
+  ],
+  "memberships": [
+    {
+      "inclusion": "defining",
+      "page_kind": "result",
+      "page_slug": "consequences-for-neighboring-conjectures",
+      "page_title": "Consequences for Neighboring Conjectures",
+      "role": "primary_statement"
+    }
+  ],
+  "noindex": true,
+  "record_type": "mathematical_claim",
+  "release_state": "public",
+  "schema_version": 2,
+  "slug": "failure-of-the-dixmier-conjecture-in-dimensions-at-least-three-52c555e4",
+  "source": [
+    {
+      "authors": [
+        "Claude Fable 5",
+        "William G. P. Mayner"
+      ],
+      "date": "2026-07-21",
+      "relations": [
+        "original statement",
+        "proof source"
+      ],
+      "source_form": "repository",
+      "title": "dixmier-counterexample",
+      "url": "https://github.com/wmayner/dixmier-counterexample/tree/475cea2a7449230e7d493ff29ea94fc22ce81e61"
+    }
+  ],
+  "statement": "The Dixmier conjecture is false for the complex Weyl algebra A_n for every n at least 3.",
+  "title": "Failure of the Dixmier conjecture in dimensions at least three",
+  "visibility": "technical"
+}

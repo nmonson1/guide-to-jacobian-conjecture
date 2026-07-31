@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release_id": "living-guide-public-v20-rank-one-wall-scope",
-  "updated_at": "2026-07-30T03:42:00+00:00",
+  "release_id": "living-guide-public-v25-four-pr-recovery",
+  "updated_at": "2026-07-30T19:55:41+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,11 +22,11 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-briefs-v10b-20260730a",
-    "manifest_sha256": "53cadbf72bbd5241cfd58f5f8c3419f3030f335f6b4f26083a40074fe36316cc",
+    "data_dir": "model-briefs-v12d-20260730a",
+    "manifest_sha256": "f0700c246134bd21bcb675237ef41f624933d1431ccfd8c97b5db18847636b0e",
     "expected_count": 7
   },
-  "docs_dir": "docs-v20-20260730a",
+  "docs_dir": "docs-v25-20260730a",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,
