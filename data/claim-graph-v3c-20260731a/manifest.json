@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "claims": 368,
+    "collections": 104,
+    "memberships": 534,
+    "programs": 6
+  },
+  "files": [
+    {
+      "path": "claim-graph.json",
+      "sha256": "6d7481c45c42ca6c2879410349fc1f274e5eb4a51e17cfd20b0b0b3cff28bcc8"
+    }
+  ],
+  "patches": [
+    "JCG-4D953715 statement v2 carried forward from claim-graph-rank-one-wall-scope-20260730a"
+  ],
+  "release_id": "claim-graph-proof-locators-20260731a",
+  "schema_version": 1,
+  "source": {
+    "coverage_sha256": "9e8cee31c5f359ff0beedc8786f83e25c357b1d9c1067936e97502d57d3d2925",
+    "sha256": "54625361375a33df524b27b34a62c9145feeec1fb2900f9046d81ca05947fcd4"
+  }
+}

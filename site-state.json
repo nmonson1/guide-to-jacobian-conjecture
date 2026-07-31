@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "release_id": "living-guide-public-v25-four-pr-recovery",
-  "updated_at": "2026-07-30T19:55:41+00:00",
+  "release_id": "living-guide-public-v26-proof-locators",
+  "updated_at": "2026-07-31T14:14:59+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
     "manifest_sha256": "c1bbdb9d4dfab755155052f63fb1ccdec097ce68c3168d41018331a6b9a8d191"
   },
   "claim_graph": {
-    "data_dir": "claim-graph-v3b-20260730a",
-    "manifest_sha256": "4d745521d21650ae215130a246b91fb3cf1195459322c5e3061fd39bb347c9e3"
+    "data_dir": "claim-graph-v3c-20260731a",
+    "manifest_sha256": "9dc01a70326393a7a8ab09d5d096593adb6e365a688ceed05fba284a6536b802"
   },
   "manuscripts": {
     "data_dir": "manuscripts-v13",
@@ -26,7 +26,7 @@
     "manifest_sha256": "f0700c246134bd21bcb675237ef41f624933d1431ccfd8c97b5db18847636b0e",
     "expected_count": 7
   },
-  "docs_dir": "docs-v25-20260730a",
+  "docs_dir": "docs-v26-20260731a",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,
