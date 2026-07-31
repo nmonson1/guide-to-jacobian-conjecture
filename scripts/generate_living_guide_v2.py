@@ -314,8 +314,11 @@ def render_claim(
         f'<p class="claim-tag">{claim["tag"]}</p>',
         f"# {claim['title']}",
         "",
-        f'<p class="dek">{claim["statement"]}</p>',
-        "",
+        *(
+            []
+            if claim["statement"].strip() == claim["title"].strip()
+            else [f'<p class="dek">{claim["statement"]}</p>', ""]
+        ),
         f'<span class="status status-kind">{_human(claim["kind"]).title()}</span> '
         f'<span class="status status-draft">{_status_label(claim["status"])}</span> '
         f'<span class="status">{claim["prominence"].title()}</span>',
