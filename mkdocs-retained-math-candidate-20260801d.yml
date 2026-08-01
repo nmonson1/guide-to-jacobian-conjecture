@@ -1,0 +1,112 @@
+site_name: "The Jacobian Conjecture: A Living Guide"
+site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
+site_description: A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened.
+docs_dir: docs-v31-retained-math-20260801d
+repo_name: nmonson1/guide-to-jacobian-conjecture
+repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
+edit_uri: ''
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  logo: assets/images/mark.svg
+  favicon: assets/images/mark.svg
+  font: false
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: jacobian-light
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: jacobian-dark
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Start: index.md
+  - Understand:
+    - Counterexample: counterexample.md
+    - Geometry: geometry.md
+    - Plane Case: plane-case.md
+  - Results:
+    - Highlights: results/index.md
+    - All claims: results/all-claims.md
+    - Open problems: results/open-problems.md
+    - Corrections: results/corrections.md
+  - Research:
+    - Retained working mathematics:
+      - Overview: research/working-mathematics/index.md
+      - Cubic Marked-Root Incidence Geometry: research/working-mathematics/programs/cubic-marked-root-incidence-geometry.md
+      - Minimum Degree and Quartic Exclusions: research/working-mathematics/programs/minimum-degree-and-quartic-exclusions.md
+      - Local Rigidity and Deformation Algebra: research/working-mathematics/programs/local-rigidity-and-deformation-algebra.md
+      - Stable Moduli: research/working-mathematics/programs/stable-moduli.md
+      - Homogeneous Descendants: research/working-mathematics/programs/homogeneous-descendants.md
+      - Plane Boundary Obstructions: research/working-mathematics/programs/plane-boundary-obstructions.md
+    - State of the program: research/index.md
+    - Model-ready handoffs:
+      - Cross-program state: research/handoffs/state-of-the-program.md
+      - Cubic incidence: research/handoffs/cubic-marked-root-incidence-geometry.md
+      - Quartic exclusions: research/handoffs/minimum-degree-and-quartic-exclusions.md
+      - Local rigidity: research/handoffs/local-rigidity-and-deformation-algebra.md
+      - Stable moduli: research/handoffs/stable-moduli.md
+      - Homogeneous descendants: research/handoffs/homogeneous-descendants.md
+      - Plane boundary: research/handoffs/plane-boundary-obstructions.md
+    - Programs:
+      - Cubic incidence: research/programs/cubic-marked-root-incidence-geometry.md
+      - Quartic exclusions: research/programs/minimum-degree-and-quartic-exclusions.md
+      - Local rigidity: research/programs/local-rigidity-and-deformation-algebra.md
+      - Stable moduli: research/programs/stable-moduli.md
+      - Homogeneous descendants: research/programs/homogeneous-descendants.md
+      - Plane boundary: research/programs/plane-boundary-obstructions.md
+    - Working papers: research/papers.md
+  - Evidence:
+    - Proof index: evidence/index.md
+    - Technical materials: evidence/materials.md
+  - About: about.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+
+plugins:
+  - search
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+extra:
+  status_date: 31 July 2026, Pacific time
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/nmonson1/guide-to-jacobian-conjecture
+
+copyright: Working draft updated 31 July 2026, Pacific time.
