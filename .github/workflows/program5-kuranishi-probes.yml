@@ -14,6 +14,10 @@ on:
       - '.github/workflows/program5-kuranishi-probes.yml'
   workflow_dispatch:
 
+concurrency:
+  group: program5-kuranishi-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
