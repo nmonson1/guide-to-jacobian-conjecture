@@ -332,6 +332,27 @@ PYTHONPATH=research-tools python -m \
   --output /tmp/program5-tangent-bridge.json
 ```
 
+## Program 5 cubic lifting test
+
+`adapters/program5_rank_six_third_order_lift.py` tests whether the chosen
+two-dimensional first-order plane survives cubic parameter order after all
+66 tangent-kernel coefficients in the quadratic correction are allowed.  The
+exact system has
+
+\[
+\operatorname{rank}E=15,
+\qquad
+\operatorname{rank}[E\mid b]=16,
+\]
+
+so the plane does not lift.  The output contains an exact left-null witness
+with pairing \(-256/3\), and the regression recomputes all 66 effect columns
+from the full cubic forcing.  This is a result about the selected plane and
+the modeled local rank-at-most-six Schur chart, not every tangent plane or a
+global noncompression theorem.  See
+[`PROGRAM5_THIRD_ORDER_AUDIT.md`](PROGRAM5_THIRD_ORDER_AUDIT.md) for the
+derivation, certificate, reproduction command, and exact conclusion boundary.
+
 ## Other uses
 
 The same interface can encode Program 2 determinant kernels versus

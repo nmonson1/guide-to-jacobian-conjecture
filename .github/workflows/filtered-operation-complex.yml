@@ -144,30 +144,10 @@ jobs:
           }, indent=2, sort_keys=True))
           PY
 
-      - name: Resolve the cubic obstruction modulo quadratic tangent freedom
+      - name: Verify the intrinsic cubic obstruction for the selected plane
         env:
           PYTHONPATH: research-tools
         run: |
-          python -m filtered_operation_complex.adapters.program5_rank_six_third_order_lift \
-            --output /tmp/program5-rank-six-third-order-lift.json
-          python - <<'PY'
-          import json
-          data = json.load(open('/tmp/program5-rank-six-third-order-lift.json'))
-          print(json.dumps({
-              'quadratic_tangent_freedom_dimension': data['quadratic_tangent_freedom_dimension'],
-              'compressed_cubic_equation_count': data['compressed_cubic_equation_count'],
-              'cubic_effect_rank': data['cubic_effect_rank'],
-              'cubic_augmented_rank': data['cubic_augmented_rank'],
-              'cubic_lift_solvable': data['cubic_lift_solvable'],
-              'cubic_lift_solution_free_dimension': data['cubic_lift_solution_free_dimension'],
-              'cubic_obstruction_after_adjustment': data.get('cubic_obstruction_after_adjustment'),
-              'quadratic_adjustment_counts': [
-                  item['coefficient_count']
-                  for item in data.get('quadratic_tangent_adjustments', [])
-              ],
-              'cubic_correction_nonzero_counts': [
-                  item['nonzero_count']
-                  for item in data.get('cubic_corrections', [])
-              ],
-          }, indent=2, sort_keys=True))
-          PY
+          python -m unittest discover \
+            -s research-tools/filtered_operation_complex/symbolic_tests \
+            -p 'test_*.py' -v

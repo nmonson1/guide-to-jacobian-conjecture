@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
-"""Resolve the Program 5 cubic rank-six obstruction modulo tangent freedom.
+"""Test the Program 5 cubic rank-six obstruction modulo tangent freedom.
 
 The deterministic formal lift in ``program5_rank_six_formal_arc.py`` sets the
 22-dimensional homogeneous freedom in each quadratic correction equal to
-zero.  Its order-three forcing has a nonzero cokernel projection.  That is not
-an intrinsic obstruction: every order-two correction is defined only modulo
-the rank-six tangent kernel.
+zero.  Its order-three forcing has a nonzero cokernel projection.  That
+deterministic residual alone does not decide whether the obstruction is
+intrinsic, because every order-two correction is defined only modulo the
+rank-six tangent kernel.
 
 This script introduces all 66 free coefficients
 
     K_rank tensor Sym^2<u,v>
 
 in the three quadratic corrections, computes their exact effect on the four
-cubic forcing coefficients, and solves the resulting linear system over Q.
-It then verifies the adjusted order-two lift and constructs deterministic
-order-three corrections.
+cubic forcing coefficients, and tests the resulting linear system over Q.
+For the current source, the system has rank 15 and augmented rank 16.  The
+script returns an exact left-null certificate showing that the chosen
+first-order plane cannot be lifted through cubic parameter order.
 
 The result decides compatibility through cubic parameter order for the chosen
 two-dimensional first-order plane. It does not decide fourth order, all-order
@@ -267,8 +269,10 @@ def analyze_third_order(source_path: Path = DEFAULT_SOURCE) -> dict[str, Any]:
         correction, _ = solve_image(_flatten(value))
         P2_particular.append(correction)
 
-    def inverse_order_two(P2: Sequence[sp.Matrix]) -> list[sp.Matrix]:
-        A2 = [blocks(vector)["A"] for vector in P2]
+    def inverse_order_two_blocks(
+        P2_blocks: Sequence[dict[str, sp.Matrix]],
+    ) -> list[sp.Matrix]:
+        A2 = [block["A"] for block in P2_blocks]
         result = []
         for total_u in range(3):
             convolution = sp.zeros(6, 6)
@@ -280,15 +284,17 @@ def analyze_third_order(source_path: Path = DEFAULT_SOURCE) -> dict[str, Any]:
             result.append(-G0 * convolution)
         return result
 
-    def cubic_forcing(P2: Sequence[sp.Matrix]) -> list[sp.Matrix]:
-        P2_blocks = [blocks(vector) for vector in P2]
-        G2 = inverse_order_two(P2)
+    def cubic_forcing_blocks(
+        P2_blocks: Sequence[dict[str, sp.Matrix]],
+    ) -> list[sp.Matrix]:
+        G2 = inverse_order_two_blocks(P2_blocks)
         values = []
         for total_u in range(4):
             value = sp.zeros(len(zero_rows), len(nonpivot_columns))
             # Sum C_i G_j B_k for i+j+k=3, i>=1, using orders 1 and 2.
             for i_order in (1, 2):
-                C_list = theta_blocks if i_order == 1 else P2_blocks
+                C_blocks = theta_blocks if i_order == 1 else P2_blocks
+                C_list = [block["C"] for block in C_blocks]
                 for j_order in (0, 1, 2):
                     k_order = 3 - i_order - j_order
                     if k_order not in (0, 1, 2):
@@ -307,6 +313,9 @@ def analyze_third_order(source_path: Path = DEFAULT_SOURCE) -> dict[str, Any]:
                                 value += C_value * G_value * B_list[b_u]
             values.append(value)
         return values
+
+    def cubic_forcing(P2: Sequence[sp.Matrix]) -> list[sp.Matrix]:
+        return cubic_forcing_blocks([blocks(vector) for vector in P2])
 
     base_H3 = cubic_forcing(P2_particular)
     base_residuals = [
@@ -358,6 +367,45 @@ def analyze_third_order(source_path: Path = DEFAULT_SOURCE) -> dict[str, Any]:
             )
         )
 
+    # Independently replay every column of the linearized effect by adding a
+    # single tangent basis vector to one quadratic coefficient and recomputing
+    # the complete cubic forcing.  This guards the closed bilinear formula and
+    # its u/v monomial bookkeeping.
+    particular_blocks = [blocks(vector) for vector in P2_particular]
+    direct_effect_columns_verified = 0
+    for input_u in range(3):
+        for tangent_index, tangent_block in enumerate(tangent_blocks):
+            perturbed_blocks = [
+                {name: matrix.copy() for name, matrix in block.items()}
+                for block in particular_blocks
+            ]
+            for name, matrix in tangent_block.items():
+                perturbed_blocks[input_u][name] += matrix
+            direct_values = cubic_forcing_blocks(perturbed_blocks)
+            direct_residuals = [
+                _project_to_cokernel(
+                    _flatten(value),
+                    L,
+                    pivot_rows=pivot_rows,
+                    pivot_columns=pivot_operation_columns,
+                    inverse_minor=minor_inverse,
+                )
+                for value in direct_values
+            ]
+            for output_u in range(4):
+                expected = sp.zeros(L.rows, 1)
+                if output_u == input_u:
+                    expected += effect_v[tangent_index]
+                if output_u == input_u + 1:
+                    expected += effect_u[tangent_index]
+                observed = direct_residuals[output_u] - base_residuals[output_u]
+                if observed != expected:
+                    raise AssertionError(
+                        "direct cubic-effect replay disagrees with the "
+                        f"bilinear formula in column {22 * input_u + tangent_index}"
+                    )
+            direct_effect_columns_verified += 1
+
     # Compress the 4*1400 equations to the rows that can be nonzero.
     row_keys: set[tuple[int, int]] = set()
     for output_u, residual in enumerate(base_residuals):
@@ -400,8 +448,56 @@ def analyze_third_order(source_path: Path = DEFAULT_SOURCE) -> dict[str, Any]:
     solvable, solution, effect_rank, augmented_rank, free_dimension = (
         _deterministic_linear_solution(effect_matrix, rhs)
     )
+    obstruction_certificate: dict[str, Any] | None = None
+    if not solvable:
+        left_null_basis = effect_matrix.T.nullspace()
+        witness = next(
+            (
+                vector
+                for vector in left_null_basis
+                if (vector.T * rhs)[0, 0] != 0
+            ),
+            None,
+        )
+        if witness is None:
+            raise AssertionError("rank mismatch has no left-null witness")
+        first_nonzero = next(value for value in witness if value != 0)
+        witness = sp.Matrix([sp.factor(value / first_nonzero) for value in witness])
+        pairing = sp.factor((witness.T * rhs)[0, 0])
+        if witness.T * effect_matrix != sp.zeros(1, effect_matrix.cols):
+            raise AssertionError("cubic obstruction witness left the left nullspace")
+        if pairing == 0:
+            raise AssertionError("cubic obstruction witness does not separate the rhs")
+        parameter_monomials = ("v^3", "u*v^2", "u^2*v", "u^3")
+        certificate_coordinates = []
+        for certificate_row, coefficient in enumerate(witness):
+            if coefficient == 0:
+                continue
+            output_u, residual_row = ordered_rows[certificate_row]
+            schur_row, schur_column = divmod(
+                residual_row,
+                len(nonpivot_columns),
+            )
+            certificate_coordinates.append(
+                {
+                    "parameter_monomial": parameter_monomials[output_u],
+                    "schur_row_variable": str(V[zero_rows[schur_row]]),
+                    "schur_column_monomial": _monomial_label(
+                        cubic_monomials[nonpivot_columns[schur_column]]
+                    ),
+                    "coefficient": _q(coefficient),
+                }
+            )
+        obstruction_certificate = {
+            "kind": "exact left-null witness",
+            "equation_order": list(parameter_monomials),
+            "nonzero_count": len(certificate_coordinates),
+            "pairing_with_rhs": _q(pairing),
+            "witness_sha256": _digest(witness),
+            "coordinates": certificate_coordinates,
+        }
     result: dict[str, Any] = {
-        "schema_version": 1,
+        "schema_version": 2,
         "name": "Program 5 cubic lift modulo quadratic tangent freedom",
         "source_file": str(source_path),
         "source_sha256": exported["summary"]["source_sha256"],
@@ -409,6 +505,7 @@ def analyze_third_order(source_path: Path = DEFAULT_SOURCE) -> dict[str, Any]:
         "rank_six_tangent_dimension": 22,
         "quadratic_coefficient_count": 3,
         "quadratic_tangent_freedom_dimension": 66,
+        "direct_effect_columns_verified": direct_effect_columns_verified,
         "compressed_cubic_equation_count": len(ordered_rows),
         "cubic_effect_rank": effect_rank,
         "cubic_augmented_rank": augmented_rank,
@@ -422,6 +519,7 @@ def analyze_third_order(source_path: Path = DEFAULT_SOURCE) -> dict[str, Any]:
         ],
     }
     if not solvable or solution is None:
+        result["cubic_obstruction_certificate"] = obstruction_certificate
         result["interpretation"] = (
             "The cubic obstruction survives every tangent-kernel choice in "
             "the quadratic correction, so it is intrinsic for the chosen "
