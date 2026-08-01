@@ -137,29 +137,19 @@ def analyze_generic_line_obstruction(
     H2 = model.quadratic_forcing(theta_block)
     forcing2 = _flatten(H2)
     residual2 = model.project(forcing2)
-    residual2 = residual2.applyfunc(sp.factor)
     if any(value != 0 for value in residual2):
         raise AssertionError("the selected plane lost second-order compatibility")
-
-    coefficients = model.minor_inverse * forcing2[list(model.pivot_rows), :]
-    P2 = sp.zeros(model.ambient_operation_dimension, 1)
-    for index, column in enumerate(model.pivot_operation_columns):
-        P2[column, 0] = sp.factor(coefficients[index, 0])
-    if any(
-        sp.factor(value) != 0
-        for value in model.L * P2 - forcing2
-    ):
-        raise AssertionError("symbolic quadratic image solution failed")
+    P2 = model.solve_image(H2)
 
     P2_block = model.blocks(P2)
     cubic_residual = model.project(
         _flatten(model.cubic_forcing(theta_block, P2_block))
-    ).applyfunc(sp.factor)
+    )
     tangent_blocks = [model.blocks(vector) for vector in model.tangent_basis]
     effect_columns = [
         model.project(
             _flatten(model.bilinear_effect(tangent_block, theta_block))
-        ).applyfunc(sp.factor)
+        )
         for tangent_block in tangent_blocks
     ]
     active_rows = sorted(
@@ -205,14 +195,18 @@ def analyze_generic_line_obstruction(
     witness, cleared_denominator, coordinate_gcd = (
         _primitive_polynomial_vector(left_kernel[0], r)
     )
-    if any(
-        sp.factor(value) != 0
-        for value in witness.T * effect_matrix
-    ):
+    annihilation = (witness.T * effect_matrix).applyfunc(
+        lambda value: sp.factor(sp.cancel(value))
+    )
+    if any(value != 0 for value in annihilation):
         raise AssertionError("primitive witness does not annihilate E(r)")
-    pairing = sp.factor((witness.T * residual_vector)[0, 0])
+    pairing = sp.factor(sp.cancel((witness.T * residual_vector)[0, 0]))
     pairing_polynomial = sp.Poly(pairing, r, domain=sp.QQ)
-    universal = coordinate_gcd == 1 and pairing_polynomial.degree() == 0 and pairing != 0
+    universal = (
+        coordinate_gcd == 1
+        and pairing_polynomial.degree() == 0
+        and pairing != 0
+    )
 
     witness_coordinates = []
     for local_row, coefficient in enumerate(witness):
