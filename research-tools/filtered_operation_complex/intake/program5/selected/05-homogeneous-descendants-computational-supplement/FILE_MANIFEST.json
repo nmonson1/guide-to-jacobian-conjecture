@@ -1,0 +1,381 @@
+{
+  "files": [
+    {
+      "bytes": 2129,
+      "path": "05-homogeneous-descendants-computational-supplement/COMPUTATION.md",
+      "sha256": "d260f1c064b99774e9757156c089102fa0ed770d25bffa9a8a6a8472ce5fd1a9"
+    },
+    {
+      "bytes": 3457,
+      "path": "05-homogeneous-descendants-computational-supplement/code/compression_slice_verifier.py",
+      "sha256": "f53938d40242889a5f4ee13b1a838377f8c6571540d4aa3cda94f97c5c670b7f"
+    },
+    {
+      "bytes": 4284,
+      "path": "05-homogeneous-descendants-computational-supplement/code/extensions_verifier.py",
+      "sha256": "a2ec1fb45cc42b527958f3c881b8a9bb8c0ce093aa553c846806ab868513a2d8"
+    },
+    {
+      "bytes": 13790,
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/affine_lie_capelli_research_note.md",
+      "sha256": "023fadf8ddd28f0289745c244185e14e2d7dbc5df5ceff63ec2b5862fe2ee92c"
+    },
+    {
+      "bytes": 96279,
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/affine_lie_hankel_certificate.json",
+      "sha256": "74c46c01e866f2d3f83bd5c4d0a67dd061a662b17f6605ca622fdf226f5cffde"
+    },
+    {
+      "bytes": 19123,
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/prolongation_monolith_continuation.md",
+      "sha256": "68d63c03ed50926c07f25c71410127b1361790bdc10a1fba5fca783fedadf309"
+    },
+    {
+      "bytes": 75029,
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/prolongation_structure_certificate.json",
+      "sha256": "aa5dc60ccc5ba85fb26cff7cac9f8a4837e9e9dbf6a1343626ffd71c9e43e4ec"
+    },
+    {
+      "bytes": 7345,
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/sl2_collision_obstruction_certificate.json",
+      "sha256": "9363c2b7ebe8c9b1120c791a54f9a987dd4c9927dc6bbdf4032ed1189c836334"
+    },
+    {
+      "bytes": 19283,
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/verify_affine_lie_hankel.py",
+      "sha256": "feee7b9f607b8319266417cb5fbb2699920a49a460ef312764c172ac69366496"
+    },
+    {
+      "bytes": 15191,
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/verify_prolongation_structure.py",
+      "sha256": "8bf279abc5b75934db52ac3304e4c47d4d3601fe9ad935d8ac2b857e79fd6441"
+    },
+    {
+      "bytes": 3453,
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/verify_sl2_collision_obstruction.py",
+      "sha256": "22ccee2b138ced79fd147cde768b40895fc76e76195e58e78fcaef97742ab14c"
+    },
+    {
+      "bytes": 16102,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/CONTINUATION_REPORT.md",
+      "sha256": "3e36be980d05d87c344a50edd2aab251504f0fb5f5019a91d4156909facf5bfb"
+    },
+    {
+      "bytes": 1925,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/CONTINUATION_RESULTS.json",
+      "sha256": "dd508bc3172f3d43291add42eef4bb068a65f48d97423c2e142aea3cb92ec5b7"
+    },
+    {
+      "bytes": 2561,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/CONTINUATION_RUN_LOG.txt",
+      "sha256": "442fe5a439e4158d015dcbc5928f65996682590ef67ef825312be8fe75556b02"
+    },
+    {
+      "bytes": 890,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/README.md",
+      "sha256": "98c451e753afe654fa13d28581866e0259b3fbb3f2efa522c332ca8a574f4521"
+    },
+    {
+      "bytes": 1518,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/SHA256SUMS",
+      "sha256": "f6c99ba69ad6b9b8d6b2e4672be4391fb5b788caefdc0081fa76733daf50adc1"
+    },
+    {
+      "bytes": 5743,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack10_three_row_exact.py",
+      "sha256": "b2a66f7610ab97fae396daa94f04ff284cda84c1c31b813c4a4a7955bd63a6ed"
+    },
+    {
+      "bytes": 3536,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack11_target_cleanup.py",
+      "sha256": "c64306ff01dec304c949967e9a50752e724407f0faf2aff903fd86b5f5efaa28"
+    },
+    {
+      "bytes": 5620,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack7_waring52.py",
+      "sha256": "1b4778f36d9259f277b0f75e7bbeca8b101328e64c8d2bb3ce0eae4508224c4a"
+    },
+    {
+      "bytes": 3077,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack8_quartic_functional.py",
+      "sha256": "3693f7ae109eac4bc74f7219974216aeb421965de1bd353392df14924ea7675b"
+    },
+    {
+      "bytes": 3214,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack9_monomial_shifts.py",
+      "sha256": "0cd734dafc064ecc1435396f6bbe674e79401e22bc89be682ddd4e7851da3604"
+    },
+    {
+      "bytes": 1329,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/base19_data.py",
+      "sha256": "00857f79ef7d445875b84178e440ee93452dc306b361a22b90b9837ad8a641ca"
+    },
+    {
+      "bytes": 2491,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/exhaust_three_row_f5.cpp",
+      "sha256": "30db3f3725d43aa02f518f376ef7d3348ba2187fa7d6ea7c142c04e5b5cd2a43"
+    },
+    {
+      "bytes": 4326,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/generate_three_row_f5.py",
+      "sha256": "7c21f5783361f3b084a10623690bbe9a4d40b3fbef3506843d9ea32856128ab5"
+    },
+    {
+      "bytes": 449,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/run_all.sh",
+      "sha256": "4794032fbf5ea6bc8d9f3583b6f8aee4cff0383a8bf662f19a3867151a415bc5"
+    },
+    {
+      "bytes": 54948,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/small_certificates.json",
+      "sha256": "03840e9be04ec64772b6411bb6b9f9ea4bb6836bbff5cd5dba972a6b099fcc4f"
+    },
+    {
+      "bytes": 362,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/three_row_f5_summary.json",
+      "sha256": "97ffce2e27b0609bf6d1b502ead9db9ee159159425333affed1810582274d55c"
+    },
+    {
+      "bytes": 54916,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/three_row_records_f5.bin",
+      "sha256": "f675b713821da9f406f9706544ebb77b62e5e324b2077f999517d4b195762dfa"
+    },
+    {
+      "bytes": 4486,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/verify_small_certificates.py",
+      "sha256": "b002efe2e8be4e1f415cdc1d5cbcabe5ff6ec9a5ff9726b85f0a78f10a03790d"
+    },
+    {
+      "bytes": 35147,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/A_110.tsv",
+      "sha256": "b7ce5a3f7ad8cda01db1b4c56118d071cdd7a363c44c2577d0e5bfae065b2fe7"
+    },
+    {
+      "bytes": 5322,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/B_110.tsv",
+      "sha256": "396ae30a55600fa7a9e2b1997c991f95bb20b315f55708458231b80be6b715ea"
+    },
+    {
+      "bytes": 4324,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/C_110.tsv",
+      "sha256": "ec93a78f8b54df3a675a3dc29b490142c519a9af480f69497e59d1cef3ba558f"
+    },
+    {
+      "bytes": 4255,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/D_110.tsv",
+      "sha256": "e875a4e70526f5f87ab53e81fb7d280c9b510a01a6ad5505b81bd1bc6e123bb2"
+    },
+    {
+      "bytes": 772,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/README.md",
+      "sha256": "cb954f1a62c87289e69ba076dbd63a365ba55b25d42b56b1e572b8d9b72ba1de"
+    },
+    {
+      "bytes": 20538,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/REPORT.md",
+      "sha256": "837f8a832200c9938b4730869aec6f0e3bd0201460b8a3db60a5fc2b5af7785c"
+    },
+    {
+      "bytes": 2007,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/RUN_LOG.txt",
+      "sha256": "f571cbef9e0abbc7a7515352887ea1a8fde839509bade3d4adac0dcc6d055f41"
+    },
+    {
+      "bytes": 1731,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/SHA256SUMS",
+      "sha256": "c4d88fab37755db4a6d9ec23119fcd3b20d9d59db5f8c8b2ae36784439dac0fb"
+    },
+    {
+      "bytes": 4534,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack1_n5.py",
+      "sha256": "9cb879e10a0127d9ca7c326c35bd6de986fbdd84f91bff5fb026c4d0e6fe6b62"
+    },
+    {
+      "bytes": 2679,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack2_compression.py",
+      "sha256": "d64a0fe889771b89098a3a8201320d5412b8795b5b47c8fe11433f2d1377494a"
+    },
+    {
+      "bytes": 2306,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack3_jordan_degeneration.py",
+      "sha256": "1b225208dfa9626fb410d84e76778605dc17bdb96a40318bc6a7595981880252"
+    },
+    {
+      "bytes": 4962,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack4_hessian38.py",
+      "sha256": "65f4155c96524c4545eaabd4782b749277b0c425e89a8cae68c45170795196bb"
+    },
+    {
+      "bytes": 3380,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack5_druzkowski110.py",
+      "sha256": "a8e5b8bfa0115fdd5898e96b77c9d233a589cafaf6d460259d54212aa34eccb4"
+    },
+    {
+      "bytes": 1329,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/base19_data.py",
+      "sha256": "00857f79ef7d445875b84178e440ee93452dc306b361a22b90b9837ad8a641ca"
+    },
+    {
+      "bytes": 3494,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/canonical_H19.json",
+      "sha256": "1d6ab264802c761bc179e8af609685662206d4102e7bfe1d717735760add9ed4"
+    },
+    {
+      "bytes": 76887,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/canonical_quartic38.json",
+      "sha256": "309e46c2ff10dd0e3bfa2d80b68e808da980e849c850d7daa5a82180c694493c"
+    },
+    {
+      "bytes": 1915,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/collision_110.tsv",
+      "sha256": "5ab7aff6f7cc0f1025a88e0477ad8cdae2cfed51125e000d714029776fb042c9"
+    },
+    {
+      "bytes": 2785,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/collision_19d_38d.json",
+      "sha256": "3e4b42c08ad6d47e2e5f60d7f1c8f0385d072d990d9e284b9d6c791328bd62e0"
+    },
+    {
+      "bytes": 49905,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/pairing_110.json",
+      "sha256": "a2be0cadaf8b3fccd8f991bc335739ceaf02aff93b91f9ee0503119eb2c9b210"
+    },
+    {
+      "bytes": 13271,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/quartic38.txt",
+      "sha256": "8ddec8b2ef77ce04a535747f1e7ca96272ea8f530cc973dac0155c619613af64"
+    },
+    {
+      "bytes": 265,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/run_all.sh",
+      "sha256": "7cce7d9dee8d0e4e27ba9e1d16f3f8d98fa5ff2ba9632074cd9e8bd06dbfdec9"
+    },
+    {
+      "bytes": 1392,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/serialize_110.py",
+      "sha256": "6659195eb54a4906480fd54f6e5eb51e2ff2fee57584d242d01abc6cacd48d03"
+    },
+    {
+      "bytes": 12208,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/CONTINUATION_REPORT.md",
+      "sha256": "b3c6ef3290dd77b96da754807752b234af60e20c4be64e26157583859fca2643"
+    },
+    {
+      "bytes": 681,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/FULL_KERNEL_ENUMERATION_LOG.txt",
+      "sha256": "ea16464d14f8a0450e3456847cb288c3f48111034a2e84a67b244d9fbba3b9d5"
+    },
+    {
+      "bytes": 188,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/Makefile",
+      "sha256": "c8f971de8b21e3d7e09b939cfb7b830a1a96c723e499199d21d34cc44470155c"
+    },
+    {
+      "bytes": 708,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/README.md",
+      "sha256": "6af83faee851a701cc3a15fef2af96443b7de06a04490fc368e007e7ab8806d1"
+    },
+    {
+      "bytes": 1959,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/RESULTS.json",
+      "sha256": "ca5acba0802c13b8c7a67ca506a3621a99707b0161b8d30d8aa083642b862f01"
+    },
+    {
+      "bytes": 2283,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/RUN_LOG.txt",
+      "sha256": "87ac234c22a8b919bb7c40b3a7bce8ba5ec19d8a979c1b20de5c0f605e4b1333"
+    },
+    {
+      "bytes": 1244,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/SHA256SUMS",
+      "sha256": "9407ab235323f6d95c84671f4b86a0950e4c44013a4bde1f2f0f8719efee49bd"
+    },
+    {
+      "bytes": 1808,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/check_candidate_geometry.py",
+      "sha256": "ef11780dc87ad61a42f07fce9820a237633f8a8f4aa4c22a2542ec60affca113"
+    },
+    {
+      "bytes": 804,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/check_f11_candidates_exact.py",
+      "sha256": "50702c0cd96d67a0b4d003d7e8c8a0c83aba864050c78c758b8bd5d87725baa6"
+    },
+    {
+      "bytes": 569,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/check_f7_candidates_exact.py",
+      "sha256": "9c7447b9e1c0b4677a4c260fe95c8aa0ce7f0610f49557d28ac1387cafaacf3b"
+    },
+    {
+      "bytes": 8425,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/enumerate_full_kernel.cpp",
+      "sha256": "89e13cd55dd2a0e5f7b5069c72f97befec86e25f54d7b9285ff850d7850f677b"
+    },
+    {
+      "bytes": 4030,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/ff_helpers.py",
+      "sha256": "1748cf928f197e7ce829ed6a1be238e51a2f8d09b91e33757e294265e6ef7913"
+    },
+    {
+      "bytes": 8257,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/verify_f11_hensel.py",
+      "sha256": "aa594109c79e042e31fcd780a8df03bbf30fdef18c6bf5056df03d69c4287c29"
+    },
+    {
+      "bytes": 3551,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/verify_first_normal_coordinatefree.py",
+      "sha256": "b25d76203fa99699255f608b22ecb3c54495ca867c92fa6289ac250dcf1ce2db"
+    },
+    {
+      "bytes": 4156,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/verify_first_normal_transformed.py",
+      "sha256": "37169daeeecd7737a85c37486c0cd9164dbf5f948c7235df6213629e57564c00"
+    },
+    {
+      "bytes": 11016,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/REPORT.md",
+      "sha256": "da30f24a80ceda167d479b1f668e41b2ace158ba329f40d5e57e03b36c154a10"
+    },
+    {
+      "bytes": 1602,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/RESULTS.json",
+      "sha256": "44ddf451054f25fc7341addee30d69b561b1d4d4c7f4f6ac51729e133e34fe91"
+    },
+    {
+      "bytes": 951,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/RUN_LOG.txt",
+      "sha256": "04ce0bf4748e213f4d856c850f642d2fe3a242756c02cd55a016ae21370593be"
+    },
+    {
+      "bytes": 581,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/SHA256SUMS",
+      "sha256": "75b37d241bc3ac7a7e5fdbe61d8f4f257c2b130f0be4b940da6ecb8011a43d70"
+    },
+    {
+      "bytes": 150,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/verify_all.sh",
+      "sha256": "58aff7ad1207675c41e4445f2ac998cff26cd90bf2f7412ed9ca25c5afff034a"
+    },
+    {
+      "bytes": 1142,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/verify_f11_geometric.py",
+      "sha256": "9f8907c6d26f62ef5cd2d56b991133e9c190626eb1d5758997337b8be6966480"
+    },
+    {
+      "bytes": 8257,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/verify_f11_hensel.py",
+      "sha256": "aa594109c79e042e31fcd780a8df03bbf30fdef18c6bf5056df03d69c4287c29"
+    },
+    {
+      "bytes": 3599,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/verify_regular_family.py",
+      "sha256": "5793530675af6ced7448aa6870fd92b6dd56b08eb790210a0592b2b4e1b5037d"
+    },
+    {
+      "bytes": 9936,
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/verify_19d_from_11d.py",
+      "sha256": "d24020fcb17ba908b0871d113f342948c58fe6c6daf2b94d08830c38e5e49927"
+    }
+  ],
+  "format": 1,
+  "paper": "05-homogeneous-descendants"
+}

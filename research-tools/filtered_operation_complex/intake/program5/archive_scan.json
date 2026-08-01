@@ -1,0 +1,1069 @@
+{
+  "archive_path": "docs-v7-20260726c/assets/technical-materials/05-homogeneous-descendants-computational-supplement.zip",
+  "archive_sha256": "303a48b635d5a02f8c24d85a7af3fcf4734b3df90fdfbcda931dc313c2512b22",
+  "candidate_count": 24,
+  "candidates": [
+    {
+      "bytes": 18483,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 10,
+          "snippet": "9774e9757156c089102fa0ed770d25bffa9a8a6a8472ce5fd1a9\" }, { \"bytes\": 3457, \"path\": \"05-homogeneous-descendants-computational-supplement/code/compression_slice_verifier.py\", \"sha256\": \"f53938d40242889a5f4ee13b1a838377f8c6571540d4aa3cda94f97c5c670b7f\" }, { \"bytes\": 4284, \"path\": \"05-homogeneous-descendants-computational-supplement/code/extensions_verifier.py\", \"sha256\": \"a2ec1fb45cc42b527958f3c881b8a9bb8c0ce093aa553c846806ab868513a2d8\" }, { \"bytes\": 13790,"
+        },
+        {
+          "label": "compression",
+          "line": 195,
+          "snippet": "4d0e6fe6b62\" }, { \"bytes\": 2679, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack2_compression.py\", \"sha256\": \"d64a0fe889771b89098a3a8201320d5412b8795b5b47c8fe11433f2d1377494a\" }, { \"bytes\": 2306, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack3_jordan_degeneration.py\", \"sha256\": \"1b225208dfa9626fb410d84e76778605dc17bdb96a40318bc6a7595981880252\" }, {"
+        },
+        {
+          "label": "dimension_109",
+          "line": 101,
+          "snippet": "\"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack8_quartic_functional.py\", \"sha256\": \"3693f7ae109eac4bc74f7219974216aeb421965de1bd353392df14924ea7675b\" }, { \"bytes\": 3214, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack9_monomial_shifts.py\", \"sha256\": \"0cd734dafc064ecc1435396f6bbe674e79401e22bc89be682ddd4e7851da3604\" }, { \"bytes\": 1329, \"path\": \"05-ho"
+        },
+        {
+          "label": "dimension_75",
+          "line": 96,
+          "snippet": "\"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack7_waring52.py\", \"sha256\": \"1b4778f36d9259f277b0f75e7bbeca8b101328e64c8d2bb3ce0eae4508224c4a\" }, { \"bytes\": 3077, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack8_quartic_functional.py\", \"sha256\": \"3693f7ae109eac4bc74f7219974216aeb421965de1bd353392df14924ea7675b\" }, { \"bytes\": 3214, \"path\": \"05-homogeneous"
+        },
+        {
+          "label": "dimension_75",
+          "line": 351,
+          "snippet": "\"bytes\": 581, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/SHA256SUMS\", \"sha256\": \"75b37d241bc3ac7a7e5fdbe61d8f4f257c2b130f0be4b940da6ecb8011a43d70\" }, { \"bytes\": 150, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/verify_all.sh\", \"sha256\": \"58aff7ad1207675c41e4445f2ac998cff26cd90bf2f7412ed9ca25c5afff034a\" }, { \"bytes\": 1142, \"path\": \"05-ho"
+        }
+      ],
+      "labels": [
+        "compression",
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/FILE_MANIFEST.json",
+      "score": 23,
+      "sha256": "93806de6a09d2f7c05f11d2f874c2e58b93db1041c7b2230c494899a2f7406e6"
+    },
+    {
+      "bytes": 3457,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 1,
+          "snippet": "\"\"\"Exact verifier for the 20-dimensional equivariant compression slice. Imports the formulas and basic checks from extensions_verifier.py, then verifies: * dim(weight-preserving quadratic vector fields) = 115; * the affine slice killing the a,d,q,h,k cubic rows has dimension 20; * Lambda_4(O_4(P)) is identically 1 on that slice; * the tangent space to the equivariant rank<=6 locus at P0 has dimension 22. \"\"\""
+        },
+        {
+          "label": "rank_six_cone",
+          "line": 7,
+          "snippet": "e affine slice killing the a,d,q,h,k cubic rows has dimension 20; * Lambda_4(O_4(P)) is identically 1 on that slice; * the tangent space to the equivariant rank<=6 locus at P0 has dimension 22. \"\"\" from itertools import combinations_with_replacement import sympy as sp from sympy.polys.matrices import DomainMatrix import extensions_verifier as E V,Q,C = E.V,E.Q,E.C x,y,z,a,b,c,d,q,s,h,k = V weights=E.weights quad=[sp.prod(V[i] for i in I) for I in combinations_with_replacement(range(11),2)] def wt(mon): ex=sp.Pol"
+        },
+        {
+          "label": "rank_six_cone",
+          "line": 67,
+          "snippet": ",Q)) Lambda=sum(co*sp.Poly(sp.expand(O4[row]),*V).coeff_monomial(mon) for row,mon,co in E.terms) assert sp.factor(Lambda)==1 # Tangent dimension to rank<=6 at P0=-d^2 e_a. P0=sp.zeros(11,1); P0[3]=-d**2 C0=sp.Matrix([sp.expand(e) for e in C+JQ*P0-P0.jacobian(V)*Q]) M0=sp.zeros(11,len(cubic)) for i,expr in enumerate(C0): pp=sp.Poly(expr,*V) for j,mon in enumerate(cubic): M0[i,j]=pp.coeff_monomial(mon) assert M0.rank()==6 ind_rows=(0,1,2,4,5,8) R=M0[list(ind_rows),:] _,piv=R.rref(); piv=list(piv) RJ=R[:,"
+        }
+      ],
+      "labels": [
+        "compression",
+        "compression_filename",
+        "rank_six_cone"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/code/compression_slice_verifier.py",
+      "score": 21,
+      "sha256": "f53938d40242889a5f4ee13b1a838377f8c6571540d4aa3cda94f97c5c670b7f"
+    },
+    {
+      "bytes": 19123,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 464,
+          "snippet": "rray}{c|c|c|c} \\text{layer}&\\text{linear operator span}&\\text{Lie closure}& \\text{associative closure}\\\\ \\hline \\mu_0=\\mu|_{U^3}&20&20&20\\\\ \\mu_1=\\mu(t,U,U)&11&109&110\\\\ \\mu_2=\\mu(t,t,U)&1&1&1 \\end{array} \\] The operator \\(\\mu_2=L_{t,t}|_U\\) has rank seven and square zero. All three layers together generate \\[ \\operatorname{End}(U),\\qquad \\dim=324, \\] associatively. ### A shorter conceptual certificate for \\(\\mathfrak{sl}_{18}\\) The associative closure \\(M_{18}\\) proves irreducibility. Since \\(\\mu_0\\ne0\\), the"
+        },
+        {
+          "label": "triangular_automorphism",
+          "line": 526,
+          "snippet": "he raw affine-Lie and Hankel invariants are not stable invariants At \\(t=1\\), the rank-sensitive fibre is \\[ K_f(X,w)=\\bigl(X+Q(X)+Bw,\\;w-q(X)\\bigr). \\] The triangular automorphisms \\[ S(X,w)=(X,w-q(X)), \\qquad T(Y,v)=(Y+Bv,v) \\] satisfy exactly \\[ \\boxed{K_f=T\\circ(K\\times\\operatorname{id}_7)\\circ S.} \\tag{7.1} \\] The verifier checks (7.1) symbolically. Yet the suspended homogeneous tensor has multiplication algebra \\(\\operatorname{Hom}(k^{19},U)\\), while the three nonlinear branch Jacobians in the displayed 11-dimensional prese"
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "triangular_automorphism"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/prolongation_monolith_continuation.md",
+      "score": 20,
+      "sha256": "68d63c03ed50926c07f25c71410127b1361790bdc10a1fba5fca783fedadf309"
+    },
+    {
+      "bytes": 96279,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 2951,
+          "snippet": "94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141,"
+        },
+        {
+          "label": "dimension_109",
+          "line": 6042,
+          "snippet": "94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141,"
+        },
+        {
+          "label": "dimension_109",
+          "line": 8658,
+          "snippet": "94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141,"
+        },
+        {
+          "label": "dimension_75",
+          "line": 2917,
+          "snippet": "59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 11"
+        },
+        {
+          "label": "dimension_75",
+          "line": 6008,
+          "snippet": "59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 11"
+        },
+        {
+          "label": "dimension_75",
+          "line": 8624,
+          "snippet": "59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 11"
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/affine_lie_hankel_certificate.json",
+      "score": 18,
+      "sha256": "74c46c01e866f2d3f83bd5c4d0a67dd061a662b17f6605ca622fdf226f5cffde"
+    },
+    {
+      "bytes": 75029,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 57,
+          "snippet": "word_length\": 1, \"maximum_associative_word_length\": 1 }, \"mu_1_tU\": { \"linear_span_dimension\": 11, \"lie_closure_dimension\": 109, \"associative_closure_dimension\": 110, \"maximum_lie_word_length\": 5, \"maximum_associative_word_length\": 5 }, \"mu_2_tt\": { \"linear_span_dimension\": 1, \"lie_closure_dimension\": 1, \"associative_closure_dimension\": 1, \"maximum_lie_word_length\": 1, \"maximum_associative_word_length\": 1"
+        },
+        {
+          "label": "dimension_109",
+          "line": 1701,
+          "snippet": "97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136,"
+        },
+        {
+          "label": "dimension_109",
+          "line": 3533,
+          "snippet": "97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136,"
+        },
+        {
+          "label": "dimension_75",
+          "line": 1667,
+          "snippet": "62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104,"
+        },
+        {
+          "label": "dimension_75",
+          "line": 3499,
+          "snippet": "62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104,"
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/prolongation_structure_certificate.json",
+      "score": 18,
+      "sha256": "aa5dc60ccc5ba85fb26cff7cac9f8a4837e9e9dbf6a1343626ffd71c9e43e4ec"
+    },
+    {
+      "bytes": 54948,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 2019,
+          "snippet": "107, 2, \"5\" ], [ 107, 8, \"2\" ], [ 108, 1, \"5\" ], [ 109, 1, \"2\" ], [ 110, 3, \"-6\" ], [ 110, 6, \"14\" ], [ 111, 0, \"5\" ], [ 112, 1, \"-12\" ], [ 113, 1, \"28\" ], [ 114, 0, \"2\" ],"
+        },
+        {
+          "label": "dimension_109",
+          "line": 5023,
+          "snippet": "5, 34, \"1\" ], [ 106, 35, \"1\" ], [ 108, 36, \"1\" ], [ 109, 37, \"1\" ], [ 110, 38, \"1\" ], [ 111, 39, \"1\" ], [ 112, 40, \"1\" ], [ 115, 43, \"2\" ], [ 116, 41, \"1\" ], [ 117, 42, \"1\" ],"
+        },
+        {
+          "label": "dimension_75",
+          "line": 597,
+          "snippet": "72, 24, \"-2\" ], [ 73, 6, \"-2\" ], [ 74, 1, \"-2\" ], [ 75, 1, \"-6\" ], [ 76, 0, \"-3\" ], [ 77, 20, \"5\" ], [ 77, 26, \"2\" ], [ 78, 2, \"5\" ], [ 78, 8, \"2\" ], [ 78, 21, \"-12\" ], ["
+        },
+        {
+          "label": "dimension_75",
+          "line": 1814,
+          "snippet": ", 10, \"-1/2\" ], [ 73, 0, \"3\" ], [ 74, 9, \"1/2\" ], [ 75, 2, \"1/2\" ], [ 76, 0, \"-1\" ], [ 77, 0, \"1/2\" ], [ 78, 1, \"-24\" ], [ 78, 7, \"-1\" ], [ 79, 6, \"3\" ], [ 80, 5, \"3\" ],"
+        },
+        {
+          "label": "dimension_75",
+          "line": 2976,
+          "snippet": "72, \"1\" ], [ 17, 73, \"1\" ], [ 18, 74, \"1\" ], [ 19, 75, \"1\" ], [ 20, 76, \"1\" ], [ 21, 79, \"1\" ], [ 21, 82, \"1/2\" ], [ 22, 80, \"1\" ], [ 23, 81, \"1\" ] ] }, \"mixed_membership_L\": { \"rows\": 60, \"cols\": 84,"
+        },
+        {
+          "label": "dimension_75",
+          "line": 4878,
+          "snippet": "72, 11, \"1\" ], [ 73, 12, \"1\" ], [ 74, 13, \"1\" ], [ 75, 14, \"1\" ], [ 76, 15, \"1\" ], [ 78, 61, \"1\" ], [ 79, 18, \"2\" ], [ 80, 16, \"1\" ], [ 81, 17, \"1\" ], [ 82, 18, \"1\" ], ["
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/small_certificates.json",
+      "score": 18,
+      "sha256": "03840e9be04ec64772b6411bb6b9f9ea4bb6836bbff5cd5dba972a6b099fcc4f"
+    },
+    {
+      "bytes": 1915,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 110,
+          "snippet": "64 100 0 -12195/32 -1/64 101 0 -8001/64 -1/64 102 0 -32769/64 -1/64 103 0 -17577/64 -1/64 104 0 1521 1/8 105 0 2457/4 1/8 106 0 8001/8 1/8 107 0 8 0 108 0 -1 0 109 0 -1715/2 -1/8 110 0 422 1/8"
+        },
+        {
+          "label": "dimension_75",
+          "line": 76,
+          "snippet": "5 0 -970299/64 0 66 0 -7 1 67 0 -1 -1 68 0 1331/8 0 69 0 -3375/8 0 70 0 2197/8 0 71 0 -39305/64 -1/64 72 0 17577/64 1/64 73 0 -17577/64 -1/64 74 0 5833/64 1/64 75 0 -1 0 76 0 -1/64 0 77 0 -343/64 0 78 0 125/64 0 79 0 -2197/64 0 80 0 4631/4 1/8 81 0 -1715/2 -1/8 82 0 -27 0 83 0 216 0 84 0 -729/8 0 85 0 -54873/64 -1/64 86 0 -2745/64 -1/64 87 0 21953/64 1/64 88 0 -46657/64 -1/64 89 0 3869893/512 0 90 0 -5177717/512 0 91 0 -3307949/512 0 92 0 2352637/512 0 93 0 3375/64 0 94 0 -27/64 0 95 0 729/64 0 96 0 27 0 97 0 0 0 98"
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/collision_110.tsv",
+      "score": 18,
+      "sha256": "5ab7aff6f7cc0f1025a88e0477ad8cdae2cfed51125e000d714029776fb042c9"
+    },
+    {
+      "bytes": 49905,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 120,
+          "snippet": "84, 85, 86, 87, 88, 89, 90, 91, 94, 95, 96, 97, 98, 99, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 118, 119, 120, 121, 122, 123, 124, 125, 126, 129, 132, 133 ], \"B\": [ [ \"-1/48\", \"-1/48\", \"1/48\", \"1/48\", \"1/6\", \"1/6\", \"-1/3\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\","
+        },
+        {
+          "label": "dimension_75",
+          "line": 95,
+          "snippet": "53, 54, 55, 56, 57, 59, 60, 61, 62, 63, 64, 65, 67, 68, 69, 70, 71, 72, 73, 74, 75, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 94, 95, 96, 97, 98, 99, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 118, 119, 120, 121, 122, 123, 124, 125, 126, 129, 132,"
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/pairing_110.json",
+      "score": 18,
+      "sha256": "a2be0cadaf8b3fccd8f991bc335739ceaf02aff93b91f9ee0503119eb2c9b210"
+    },
+    {
+      "bytes": 16102,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 476,
+          "snippet": "(Q\\). ## 3.1 Trace-one support lemma For one edge \\(i\\to j\\) with coefficient \\(r\\), \\[ U=(z_i+r z_j)^3-z_i^3-rz_j^3. \\] If the corresponding column of the compressed coefficient matrix is \\(b\\), its contribution to the trace is \\[ \\frac{\\partial U}{\\partial z_i}b_i+ \\frac{\\partial U}{\\partial z_j}b_j. \\] The coefficients of \\(z_i^2\\) and \\(z_iz_j\\) are \\[ 3rb_j, \\qquad 6rb_i+6r^2b_j. \\] For \\(r\\ne0\\), trace-one therefore forces \\[ \\boxed{b_i=b_j=0.} \\] ## 3.2 Graph classification If the three support edges use"
+        },
+        {
+          "label": "compression",
+          "line": 633,
+          "snippet": "n the 30 graph patterns that survive the linear constraints. It produces: \\[ 528 \\] affine records, each of dimension four, hence \\[ 528\\cdot5^4=330000 \\] compressed coefficient matrices. Testing nilpotence at all \\[ 5^5-1=3124 \\] nonzero points gives: \\[ \\boxed{0\\text{ survivors}.} \\] This finite-field computation is now consistent with, but weaker than, the characteristic-zero graph-orbit proof. Files: `generate_three_row_f5.py`, `exhaust_three_row_f5.cpp`, `three_row_records_f5.bin`. --- # 4. Corrections to"
+        },
+        {
+          "label": "quartic_obstruction",
+          "line": 295,
+          "snippet": "d \\(19\\)-dimensional tensor, not for arbitrary direct Dru\u017ckowski counterexamples. Verifier: `attack7_waring52.py`. --- # 2. The rank-six jet and its compact quartic obstruction Write the normalized 11-dimensional map as \\[ K=I+Q+C. \\] The quadratic triangular conjugacy \\[ P_2=-d^2e_a \\] lowers the cubic-coordinate span from seven to six. The exact conjugate has quartic part \\[ \\begin{aligned} (D_4)_z&=d^3z+3d^2y^2,\\\\ (D_4)_a&=x^2y^2,\\\\ (D_4)_c&=-2d^3z-6d^2y^2. \\end{aligned} \\] For a cubic vector field \\(P_3\\), the next hom"
+        },
+        {
+          "label": "quartic_obstruction",
+          "line": 409,
+          "snippet": "_2=-d^2e_a.} \\] Thus the successful jet shift is unique in this entire scalar monomial triangular class, and it is precisely the shift detected by the nonzero quartic obstruction above. Verifier: `attack9_monomial_shifts.py`. ## 2.3 Independent target cleanup in the natural low-degree model After the conjugacy, the exact output coordinates \\(d,q,h,k\\) have degree at most two. Quadratic target corrections built from these four outputs form a ten-dimensional space and cannot create terms above degree four. Their quartic images ar"
+        }
+      ],
+      "labels": [
+        "compression",
+        "quartic_obstruction"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/CONTINUATION_REPORT.md",
+      "score": 15,
+      "sha256": "3e36be980d05d87c344a50edd2aab251504f0fb5f5019a91d4156909facf5bfb"
+    },
+    {
+      "bytes": 772,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 7,
+          "snippet": "exact verification scripts for five follow-up attacks on the 19-dimensional cubic-homogeneous reduction: 1. the dimension-five classification problem; 2. rank-compressed suspension and cubic-jet obstruction; 3. generic Jordan structure and degeneration; 4. a 38-dimensional Hessian-nilpotent quartic with explicit inverse/Laplacian coefficients; 5. catalecticant bounds and a 110-dimensional square-zero Dru\u017ckowski pairing. Run: ```bash ./run_all.sh ``` Main mathematical narrative: `REPORT.md`. Compact pairing data are in"
+        },
+        {
+          "label": "quartic_obstruction",
+          "line": 7,
+          "snippet": "follow-up attacks on the 19-dimensional cubic-homogeneous reduction: 1. the dimension-five classification problem; 2. rank-compressed suspension and cubic-jet obstruction; 3. generic Jordan structure and degeneration; 4. a 38-dimensional Hessian-nilpotent quartic with explicit inverse/Laplacian coefficients; 5. catalecticant bounds and a 110-dimensional square-zero Dru\u017ckowski pairing. Run: ```bash ./run_all.sh ``` Main mathematical narrative: `REPORT.md`. Compact pairing data are in `pairing_110.json`; fully expanded matrices and the transferred collision are in `A_110.tsv`, `B_110.tsv`, `D_110.tsv`, `C_110.tsv`"
+        }
+      ],
+      "labels": [
+        "compression",
+        "quartic_obstruction"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/README.md",
+      "score": 15,
+      "sha256": "cb954f1a62c87289e69ba076dbd63a365ba55b25d42b56b1e572b8d9b72ba1de"
+    },
+    {
+      "bytes": 20538,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 26,
+          "snippet": "Global problem still open; collision normalized, search reduced to three Jordan types, and a natural 25-parameter boundary ansatz is pruned exactly | | 2. Rank-compressed suspension | General theorem proved; the present representative gives \\(11+7+1=19\\); a nonzero cubic-jet cohomology class is exhibited | | 3. Jordan and degeneration structure | Complete: \\(JH\\) has generic Jordan type \\((18,1)\\), with an explicit cyclic vector and kernel vector; all nonzero slices are conjugate and the zero slice is triangular | | 4. Sym"
+        },
+        {
+          "label": "compression",
+          "line": 302,
+          "snippet": "ealistic next computation is a stratum-by-stratum elimination for the pencil \\(s^2A+stB+t^2C\\), followed by the tensor-integrability equations. --- # 2. Rank-compressed suspension ## 2.1 General theorem Let \\[ K(X)=X+Q(X)+C(X):\\mathbb A^n\\to\\mathbb A^n, \\] where \\(Q\\) is quadratic homogeneous and \\(C\\) is cubic homogeneous. Put \\[ r=\\dim\\operatorname{span}\\{C_1,\\ldots,C_n\\}. \\] Choose a basis \\(q=(q_1,\\ldots,q_r)^T\\) and a matrix \\(B\\in M_{n\\times r}\\) such that \\[ C=Bq. \\] Define \\[ \\widetilde K(X,w) =\\bigl(X+"
+        },
+        {
+          "label": "compression",
+          "line": 1049,
+          "snippet": "d 19-dimensional tensor. Neither endpoint is claimed globally sharp. --- # What is now proved, and what remains open ## Proved in this package 1. The rank-compressed suspension theorem and its \\(19\\)-dimensional application. 2. A nonzero cubic-jet obstruction for the normalized 11-dimensional map. 3. An explicit generic Jordan basis for \\(JH\\), with type \\((18,1)\\). 4. The exact nonzero-slice conjugacy and triangular special fiber. 5. An explicit 38-dimensional homogeneous quartic with Hessian type \\((35,2,1)\\),"
+        },
+        {
+          "label": "dimension_109",
+          "line": 961,
+          "snippet": "134 coefficient rows was found and then checked exactly. These 24 forms can be zeroed simultaneously. On the remaining 110 forms: \\[ \\operatorname{rank}W_S=109, \\] so there is one cube relation. That relation also has zero first moment against the linear-form matrix and is independent of the 18 nonzero output rows. Using it as the nineteenth, zero-output row gives matrices \\[ B\\in M_{19\\times110}(\\mathbb Q), \\qquad D\\in M_{110\\times19}(\\mathbb Q) \\] with \\[ \\boxed{ \\operatorname{rank}B= \\operatorname{rank}D="
+        }
+      ],
+      "labels": [
+        "compression",
+        "dimension_109"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/REPORT.md",
+      "score": 15,
+      "sha256": "837f8a832200c9938b4730869aec6f0e3bd0201460b8a3db60a5fc2b5af7785c"
+    },
+    {
+      "bytes": 2679,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 2,
+          "snippet": "#!/usr/bin/env python3 \"\"\"Attack 2: rank-compressed suspension and a cubic-jet obstruction.\"\"\" from __future__ import annotations import itertools import sympy as sp import base19_data as M # K = X + Q + C with C=Bq and rank of the cubic-coordinate span equal to 7. assert M.K1 == sp.Matrix(M.X) assert M.K3 == M.B*M.q cubic_mons = sorted(set().union(*[ set(sp.Poly(e, *M.X).monoms()) for e in M.K3 ])) c"
+        }
+      ],
+      "labels": [
+        "compression",
+        "compression_filename"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack2_compression.py",
+      "score": 13,
+      "sha256": "d64a0fe889771b89098a3a8201320d5412b8795b5b47c8fe11433f2d1377494a"
+    },
+    {
+      "bytes": 890,
+      "hits": [
+        {
+          "label": "quartic_obstruction",
+          "line": 10,
+          "snippet": "ults: * ordinary vector-Waring lower bound for the fixed tensor: **52**; * fixed full-rank square-zero pairing interval: **52 <= N <= 110**; * a 13-term exact quartic obstruction functional; * uniqueness of `P2=-d^2 e_a` among 605 scalar monomial triangular shifts; * exact exclusion of the first three-row, one-edge-per-row, coordinate-collision class; * corrected exhaustive F5 search over all nonzero edge coefficients. Start with `CONTINUATION_REPORT.md`. Verification: ```bash ./run_all.sh ``` The scripts use exact rational arit"
+        }
+      ],
+      "labels": [
+        "quartic_obstruction"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/README.md",
+      "score": 10,
+      "sha256": "98c451e753afe654fa13d28581866e0259b3fbb3f2efa522c332ca8a574f4521"
+    },
+    {
+      "bytes": 3077,
+      "hits": [
+        {
+          "label": "quartic_obstruction",
+          "line": 2,
+          "snippet": "#!/usr/bin/env python3 \"\"\"Attack 8: a 13-term exact functional detecting the quartic obstruction. For the normalized 11D degree-three map K=I+Q+C, the unique scalar monomial triangular quadratic shift lowering the cubic-coordinate span from seven to six is P2=-d^2 e_a. Its exact conjugate has quartic error D4. This script verifies a compact linear functional Lambda_4 such that Lambda_4([Q,P3]) = 0 for every cubic vector field P3, Lambda_4(D4"
+        }
+      ],
+      "labels": [
+        "quartic_obstruction"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack8_quartic_functional.py",
+      "score": 10,
+      "sha256": "3693f7ae109eac4bc74f7219974216aeb421965de1bd353392df14924ea7675b"
+    },
+    {
+      "bytes": 4486,
+      "hits": [
+        {
+          "label": "quartic_obstruction",
+          "line": 6,
+          "snippet": "oes not reconstruct the maps. It independently checks the serialized sparse rational matrices, determinants, ranks, isotropic-block zeros, q_* membership, and quartic obstruction circuit. \"\"\" from __future__ import annotations from fractions import Fraction import json from pathlib import Path ROOT = Path(__file__).resolve().parent D = json.loads((ROOT / \"small_certificates.json\").read_text()) def Q(s): return Fraction(s) def dense(obj): M = [[Fraction(0) for _ in range(obj[\"cols\"])] for _ in range(obj[\"rows\"])] for i"
+        }
+      ],
+      "labels": [
+        "quartic_obstruction"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/verify_small_certificates.py",
+      "score": 10,
+      "sha256": "b002efe2e8be4e1f415cdc1d5cbcabe5ff6ec9a5ff9726b85f0a78f10a03790d"
+    },
+    {
+      "bytes": 3214,
+      "hits": [
+        {
+          "label": "rank_six_cone",
+          "line": 5,
+          "snippet": "triangular quadratic shifts. For P2=lambda*m*e_r, with m a quadratic monomial not involving X_r, test whether the cubic jet C+[Q,P2] can have coordinate-span rank <=6. There are 11*C(11,2)=605 such triangular monomial directions. A fixed nonzero 7x7 minor of C gives a univariate exceptional polynomial. Only 22 directions have a nonconstant exceptional polynomial; all 27 roots are rational and are checked by full exact rank. \"\"\" from __future__ import annotations import itertools import sympy as sp import base19_data as"
+        },
+        {
+          "label": "rank_six_cone",
+          "line": 94,
+          "snippet": "t, multiplicity in roots.items(): assert root.is_Rational rank = (Ccoef + root*dcoef).rank() checks.append((r, exp, root, multiplicity, rank)) if rank <= 6: drops.append((r, exp, root, rank)) assert len(checks) == 27 expected_exp = [0]*n expected_exp[6] = 2 assert drops == [(3, tuple(expected_exp), sp.Rational(-1), 6)] print(\"[ok] 605 scalar monomial triangular quadratic shifts checked exactly\") print(\"[ok] 583 have no exceptional parameter; 22 give 27 rational roots\") print(\"[result] the unique"
+        }
+      ],
+      "labels": [
+        "rank_six_cone"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack9_monomial_shifts.py",
+      "score": 8,
+      "sha256": "0cd734dafc064ecc1435396f6bbe674e79401e22bc89be682ddd4e7851da3604"
+    },
+    {
+      "bytes": 12208,
+      "hits": [
+        {
+          "label": "dimension_75",
+          "line": 276,
+          "snippet": "c cubic tensor in dimension five has \\[ 5\\binom{7}{3}=175 \\] coefficients. The restrictions \\[ 3T(-,u,u)=A, \\qquad 6T(-,u,v)=B, \\qquad 3T(-,v,v)=C \\] give 75 displayed equations but rank only 65, exactly because the line integrability identities account for ten dependencies. Add all first-normal characteristic equations in the five ambient basis directions. Exact arithmetic gives: \\[ \\begin{array}{c|c|c} \\text{system}&\\text{coefficient rank}&\\text{augmented rank}\\\\ \\hline \\text{line restrictions}&65&65\\\\ \\tex"
+        }
+      ],
+      "labels": [
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/CONTINUATION_REPORT.md",
+      "score": 8,
+      "sha256": "b3c6ef3290dd77b96da754807752b234af60e20c4be64e26157583859fca2643"
+    },
+    {
+      "bytes": 1959,
+      "hits": [
+        {
+          "label": "dimension_75",
+          "line": 28,
+          "snippet": "6, 1, 7, 2, 5], [9, 5, 9, 8, 5, 3, 4, 6, 3, 8] ] }, \"coordinate_free\": { \"tensor_variables\": 175, \"displayed_line_restriction_equations\": 75, \"line_restriction_rank\": 65, \"rows_total\": 225, \"rank_through_k4\": [125, 125], \"rank_through_k5\": [125, 126], \"remaining_pure_normal_dimension\": 50 }, \"enumeration\": { \"F7\": { \"projective_parameter_points\": 960800, \"invertible_chart\": 806344, \"collision_line_points\": 6, \"geometrically_regular\": 6, \""
+        }
+      ],
+      "labels": [
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/RESULTS.json",
+      "score": 8,
+      "sha256": "ca5acba0802c13b8c7a67ca506a3621a99707b0161b8d30d8aa083642b862f01"
+    },
+    {
+      "bytes": 3551,
+      "hits": [
+        {
+          "label": "dimension_75",
+          "line": 64,
+          "snippet": "r q,row in enumerate(coeff):rows.append(row);labels.append(('tr',m,kpow,q)) rc=rank([r[:-1] for r in rows])[0];ra=rank(rows)[0] rrc=rank([r[:-1] for r in rows[:75]])[0];rra=rank(rows[:75])[0] idx=[i for i,l in enumerate(labels) if l[0]!='tr' or l[2]<=4] tc=rank([rows[i][:-1] for i in idx])[0];ta=rank([rows[i] for i in idx])[0] assert (len(rows),NV)==(225,175) assert (rrc,rra)==(65,65) assert (tc,ta)==(125,125) assert (rc,ra)==(125,126) print('[ok] rows=225, tensor variables=175') print('[ok] line restrictions: coeffi"
+        },
+        {
+          "label": "dimension_75",
+          "line": 64,
+          "snippet": "ff):rows.append(row);labels.append(('tr',m,kpow,q)) rc=rank([r[:-1] for r in rows])[0];ra=rank(rows)[0] rrc=rank([r[:-1] for r in rows[:75]])[0];rra=rank(rows[:75])[0] idx=[i for i,l in enumerate(labels) if l[0]!='tr' or l[2]<=4] tc=rank([rows[i][:-1] for i in idx])[0];ta=rank([rows[i] for i in idx])[0] assert (len(rows),NV)==(225,175) assert (rrc,rra)==(65,65) assert (tc,ta)==(125,125) assert (rc,ra)==(125,126) print('[ok] rows=225, tensor variables=175') print('[ok] line restrictions: coefficient/augmented ranks ="
+        }
+      ],
+      "labels": [
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/verify_first_normal_coordinatefree.py",
+      "score": 8,
+      "sha256": "b25d76203fa99699255f608b22ecb3c54495ca867c92fa6289ac250dcf1ce2db"
+    },
+    {
+      "bytes": 2129,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 7,
+          "snippet": "Directory | Main checks | | --- | --- | --- | | Fixed 19D tensor and descendants | `computational-supplement/fixed-tensor/` | collision, nilpotence, rank-seven compression, Jordan chain, 38D Hessian construction, and 110D square-zero pairing | | Waring and compression continuation | `computational-supplement/continuation/` | 52-cube lower bound, quartic functional, monomial shifts, target cleanup, and small Fraction-only certificates | | Public 11D input to 19D | `computational-supplement/verify_19d_from_11d.py` | direct t"
+        },
+        {
+          "label": "compression",
+          "line": 8,
+          "snippet": "-supplement/fixed-tensor/` | collision, nilpotence, rank-seven compression, Jordan chain, 38D Hessian construction, and 110D square-zero pairing | | Waring and compression continuation | `computational-supplement/continuation/` | 52-cube lower bound, quartic functional, monomial shifts, target cleanup, and small Fraction-only certificates | | Public 11D input to 19D | `computational-supplement/verify_19d_from_11d.py` | direct transfer from the credited public input | | Regular \\(5\\times5\\) collision line | `computational-s"
+        },
+        {
+          "label": "compression",
+          "line": 12,
+          "snippet": "omputational-supplement/n5-regular-continuation/` | first-normal equations and the required rank drop away from the line | | Smaller focused checks | `code/` | compression-slice and structural-extension verifiers | | Monolith and prolongation | `code/monolith-prolongation/` | affine Lie/Hankel data, \\(18+1\\) layer structure, symplectic exclusion, and principal-\\(\\mathfrak{sl}_2\\) obstruction | Each subdirectory contains its own report, manifest, and replay script where applicable. Start with: ```bash cd computational-sup"
+        }
+      ],
+      "labels": [
+        "compression"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/COMPUTATION.md",
+      "score": 5,
+      "sha256": "d260f1c064b99774e9757156c089102fa0ed770d25bffa9a8a6a8472ce5fd1a9"
+    },
+    {
+      "bytes": 4284,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 71,
+          "snippet": "2,V19) == sp.zeros(19,1) expected=sp.zeros(19,1); expected[0]=-4*t**3*x*z assert sp.simplify(D2(H,v1,v1,V19)-expected) == sp.zeros(19,1) # Robust 12-parameter compression family. weights=dict(zip(V,(1,-1,-2,0,1,-2,0,-1,-2,2,-1))) def wt(mon): ex=sp.Poly(mon,*V).monoms()[0] return sum(ex[i]*weights[V[i]] for i in range(11)) quad=[sp.prod(V[i] for i in I) for I in combinations_with_replacement(range(11),2)] Sigma=[m for m in quad if wt(m)==-2] assert Sigma == [y**2,q*y,k*y,a*z,d*z,a*c,a*s,c*d,d*s,q**2,k*q,k**2] u=sp"
+        }
+      ],
+      "labels": [
+        "compression"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/code/extensions_verifier.py",
+      "score": 5,
+      "sha256": "a2ec1fb45cc42b527958f3c881b8a9bb8c0ce093aa553c846806ab868513a2d8"
+    },
+    {
+      "bytes": 4326,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 10,
+          "snippet": "ike the earlier +/-1-only experiment, this includes values with r^3-r != 0. For each Q, solve exactly the normalized collision and trace-one equations for the compressed 5x3 coefficient matrix B. Serialize every nonempty affine solution space for exhaust_three_row_f5.cpp. \"\"\" from __future__ import annotations import itertools import struct from pathlib import Path import numpy as np p = 5 pairs = [(i, j) for i in range(5) for j in range(i, 5)] def solve_affine(A, b): A = np.asarray(A, dtype=np.int64) % p b = n"
+        }
+      ],
+      "labels": [
+        "compression"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/generate_three_row_f5.py",
+      "score": 5,
+      "sha256": "7c21f5783361f3b084a10623690bbe9a4d40b3fbef3506843d9ea32856128ab5"
+    },
+    {
+      "bytes": 2007,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 7,
+          "snippet": "in the report [ok] exact commutator and trace identities for H_C [ok] exhaustive F5/F7 sparse search: no zero-diagonal H_C candidate of support <=4 === attack2_compression.py === [ok] cubic-coordinate span rank r=7 [ok] 18D stable-equivalence identity [ok] determinant reduces to det JK(tX) by an 11x11 Schur complement [ok] exact cubic-jet obstruction Lambda([Q,P]_b)=0, Lambda(C_b)=3 [result] mu(F0) <= 11+7=18, hence N_cubic <= 19 === attack3_jordan_degeneration.py === [ok] two exact generic kernel vectors [ok] A^17 e_t = 1"
+        }
+      ],
+      "labels": [
+        "compression"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/RUN_LOG.txt",
+      "score": 5,
+      "sha256": "f571cbef9e0abbc7a7515352887ea1a8fde839509bade3d4adac0dcc6d055f41"
+    },
+    {
+      "bytes": 9936,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 7,
+          "snippet": "terexample. Starting point: the public 11-variable degree-3 map of Spacerat (gist 08b4a43f6b6ca57178efabc220170ce8, 2026-07-20). The construction uses a rank-compressed cubic suspension. If K(X) = X + K2(X) + B q(X), where K2 is quadratic, q has r cubic components, and B is constant, then (X,w) |-> (X + K2(X) + B w, w - q(X)) is polynomially stably equivalent to K. Homogenizing with one coordinate t produces G(X,w,t) = (X + t K2(X) + t^2 B w, w - q(X), t), whose nonlinear part is homogeneous cubic. H"
+        }
+      ],
+      "labels": [
+        "compression"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/verify_19d_from_11d.py",
+      "score": 5,
+      "sha256": "d24020fcb17ba908b0871d113f342948c58fe6c6daf2b94d08830c38e5e49927"
+    }
+  ],
+  "patterns": [
+    "compression",
+    "dimension_109",
+    "dimension_75",
+    "quartic_obstruction",
+    "rank_six_cone",
+    "row_killing",
+    "six_dimensional",
+    "source_direction",
+    "triangular_automorphism"
+  ],
+  "schema_version": 1,
+  "selected": [
+    {
+      "bytes": 18483,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 10,
+          "snippet": "9774e9757156c089102fa0ed770d25bffa9a8a6a8472ce5fd1a9\" }, { \"bytes\": 3457, \"path\": \"05-homogeneous-descendants-computational-supplement/code/compression_slice_verifier.py\", \"sha256\": \"f53938d40242889a5f4ee13b1a838377f8c6571540d4aa3cda94f97c5c670b7f\" }, { \"bytes\": 4284, \"path\": \"05-homogeneous-descendants-computational-supplement/code/extensions_verifier.py\", \"sha256\": \"a2ec1fb45cc42b527958f3c881b8a9bb8c0ce093aa553c846806ab868513a2d8\" }, { \"bytes\": 13790,"
+        },
+        {
+          "label": "compression",
+          "line": 195,
+          "snippet": "4d0e6fe6b62\" }, { \"bytes\": 2679, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack2_compression.py\", \"sha256\": \"d64a0fe889771b89098a3a8201320d5412b8795b5b47c8fe11433f2d1377494a\" }, { \"bytes\": 2306, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack3_jordan_degeneration.py\", \"sha256\": \"1b225208dfa9626fb410d84e76778605dc17bdb96a40318bc6a7595981880252\" }, {"
+        },
+        {
+          "label": "dimension_109",
+          "line": 101,
+          "snippet": "\"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack8_quartic_functional.py\", \"sha256\": \"3693f7ae109eac4bc74f7219974216aeb421965de1bd353392df14924ea7675b\" }, { \"bytes\": 3214, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack9_monomial_shifts.py\", \"sha256\": \"0cd734dafc064ecc1435396f6bbe674e79401e22bc89be682ddd4e7851da3604\" }, { \"bytes\": 1329, \"path\": \"05-ho"
+        },
+        {
+          "label": "dimension_75",
+          "line": 96,
+          "snippet": "\"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack7_waring52.py\", \"sha256\": \"1b4778f36d9259f277b0f75e7bbeca8b101328e64c8d2bb3ce0eae4508224c4a\" }, { \"bytes\": 3077, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack8_quartic_functional.py\", \"sha256\": \"3693f7ae109eac4bc74f7219974216aeb421965de1bd353392df14924ea7675b\" }, { \"bytes\": 3214, \"path\": \"05-homogeneous"
+        },
+        {
+          "label": "dimension_75",
+          "line": 351,
+          "snippet": "\"bytes\": 581, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/SHA256SUMS\", \"sha256\": \"75b37d241bc3ac7a7e5fdbe61d8f4f257c2b130f0be4b940da6ecb8011a43d70\" }, { \"bytes\": 150, \"path\": \"05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-jordan/verify_all.sh\", \"sha256\": \"58aff7ad1207675c41e4445f2ac998cff26cd90bf2f7412ed9ca25c5afff034a\" }, { \"bytes\": 1142, \"path\": \"05-ho"
+        }
+      ],
+      "labels": [
+        "compression",
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/FILE_MANIFEST.json",
+      "score": 23,
+      "sha256": "93806de6a09d2f7c05f11d2f874c2e58b93db1041c7b2230c494899a2f7406e6"
+    },
+    {
+      "bytes": 3457,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 1,
+          "snippet": "\"\"\"Exact verifier for the 20-dimensional equivariant compression slice. Imports the formulas and basic checks from extensions_verifier.py, then verifies: * dim(weight-preserving quadratic vector fields) = 115; * the affine slice killing the a,d,q,h,k cubic rows has dimension 20; * Lambda_4(O_4(P)) is identically 1 on that slice; * the tangent space to the equivariant rank<=6 locus at P0 has dimension 22. \"\"\""
+        },
+        {
+          "label": "rank_six_cone",
+          "line": 7,
+          "snippet": "e affine slice killing the a,d,q,h,k cubic rows has dimension 20; * Lambda_4(O_4(P)) is identically 1 on that slice; * the tangent space to the equivariant rank<=6 locus at P0 has dimension 22. \"\"\" from itertools import combinations_with_replacement import sympy as sp from sympy.polys.matrices import DomainMatrix import extensions_verifier as E V,Q,C = E.V,E.Q,E.C x,y,z,a,b,c,d,q,s,h,k = V weights=E.weights quad=[sp.prod(V[i] for i in I) for I in combinations_with_replacement(range(11),2)] def wt(mon): ex=sp.Pol"
+        },
+        {
+          "label": "rank_six_cone",
+          "line": 67,
+          "snippet": ",Q)) Lambda=sum(co*sp.Poly(sp.expand(O4[row]),*V).coeff_monomial(mon) for row,mon,co in E.terms) assert sp.factor(Lambda)==1 # Tangent dimension to rank<=6 at P0=-d^2 e_a. P0=sp.zeros(11,1); P0[3]=-d**2 C0=sp.Matrix([sp.expand(e) for e in C+JQ*P0-P0.jacobian(V)*Q]) M0=sp.zeros(11,len(cubic)) for i,expr in enumerate(C0): pp=sp.Poly(expr,*V) for j,mon in enumerate(cubic): M0[i,j]=pp.coeff_monomial(mon) assert M0.rank()==6 ind_rows=(0,1,2,4,5,8) R=M0[list(ind_rows),:] _,piv=R.rref(); piv=list(piv) RJ=R[:,"
+        }
+      ],
+      "labels": [
+        "compression",
+        "compression_filename",
+        "rank_six_cone"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/code/compression_slice_verifier.py",
+      "score": 21,
+      "sha256": "f53938d40242889a5f4ee13b1a838377f8c6571540d4aa3cda94f97c5c670b7f"
+    },
+    {
+      "bytes": 19123,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 464,
+          "snippet": "rray}{c|c|c|c} \\text{layer}&\\text{linear operator span}&\\text{Lie closure}& \\text{associative closure}\\\\ \\hline \\mu_0=\\mu|_{U^3}&20&20&20\\\\ \\mu_1=\\mu(t,U,U)&11&109&110\\\\ \\mu_2=\\mu(t,t,U)&1&1&1 \\end{array} \\] The operator \\(\\mu_2=L_{t,t}|_U\\) has rank seven and square zero. All three layers together generate \\[ \\operatorname{End}(U),\\qquad \\dim=324, \\] associatively. ### A shorter conceptual certificate for \\(\\mathfrak{sl}_{18}\\) The associative closure \\(M_{18}\\) proves irreducibility. Since \\(\\mu_0\\ne0\\), the"
+        },
+        {
+          "label": "triangular_automorphism",
+          "line": 526,
+          "snippet": "he raw affine-Lie and Hankel invariants are not stable invariants At \\(t=1\\), the rank-sensitive fibre is \\[ K_f(X,w)=\\bigl(X+Q(X)+Bw,\\;w-q(X)\\bigr). \\] The triangular automorphisms \\[ S(X,w)=(X,w-q(X)), \\qquad T(Y,v)=(Y+Bv,v) \\] satisfy exactly \\[ \\boxed{K_f=T\\circ(K\\times\\operatorname{id}_7)\\circ S.} \\tag{7.1} \\] The verifier checks (7.1) symbolically. Yet the suspended homogeneous tensor has multiplication algebra \\(\\operatorname{Hom}(k^{19},U)\\), while the three nonlinear branch Jacobians in the displayed 11-dimensional prese"
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "triangular_automorphism"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/prolongation_monolith_continuation.md",
+      "score": 20,
+      "sha256": "68d63c03ed50926c07f25c71410127b1361790bdc10a1fba5fca783fedadf309"
+    },
+    {
+      "bytes": 96279,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 2951,
+          "snippet": "94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141,"
+        },
+        {
+          "label": "dimension_109",
+          "line": 6042,
+          "snippet": "94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141,"
+        },
+        {
+          "label": "dimension_109",
+          "line": 8658,
+          "snippet": "94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141,"
+        },
+        {
+          "label": "dimension_75",
+          "line": 2917,
+          "snippet": "59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 11"
+        },
+        {
+          "label": "dimension_75",
+          "line": 6008,
+          "snippet": "59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 11"
+        },
+        {
+          "label": "dimension_75",
+          "line": 8624,
+          "snippet": "59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 11"
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/affine_lie_hankel_certificate.json",
+      "score": 18,
+      "sha256": "74c46c01e866f2d3f83bd5c4d0a67dd061a662b17f6605ca622fdf226f5cffde"
+    },
+    {
+      "bytes": 75029,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 57,
+          "snippet": "word_length\": 1, \"maximum_associative_word_length\": 1 }, \"mu_1_tU\": { \"linear_span_dimension\": 11, \"lie_closure_dimension\": 109, \"associative_closure_dimension\": 110, \"maximum_lie_word_length\": 5, \"maximum_associative_word_length\": 5 }, \"mu_2_tt\": { \"linear_span_dimension\": 1, \"lie_closure_dimension\": 1, \"associative_closure_dimension\": 1, \"maximum_lie_word_length\": 1, \"maximum_associative_word_length\": 1"
+        },
+        {
+          "label": "dimension_109",
+          "line": 1701,
+          "snippet": "97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136,"
+        },
+        {
+          "label": "dimension_109",
+          "line": 3533,
+          "snippet": "97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136,"
+        },
+        {
+          "label": "dimension_75",
+          "line": 1667,
+          "snippet": "62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104,"
+        },
+        {
+          "label": "dimension_75",
+          "line": 3499,
+          "snippet": "62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104,"
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/code/monolith-prolongation/prolongation_structure_certificate.json",
+      "score": 18,
+      "sha256": "aa5dc60ccc5ba85fb26cff7cac9f8a4837e9e9dbf6a1343626ffd71c9e43e4ec"
+    },
+    {
+      "bytes": 54948,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 2019,
+          "snippet": "107, 2, \"5\" ], [ 107, 8, \"2\" ], [ 108, 1, \"5\" ], [ 109, 1, \"2\" ], [ 110, 3, \"-6\" ], [ 110, 6, \"14\" ], [ 111, 0, \"5\" ], [ 112, 1, \"-12\" ], [ 113, 1, \"28\" ], [ 114, 0, \"2\" ],"
+        },
+        {
+          "label": "dimension_109",
+          "line": 5023,
+          "snippet": "5, 34, \"1\" ], [ 106, 35, \"1\" ], [ 108, 36, \"1\" ], [ 109, 37, \"1\" ], [ 110, 38, \"1\" ], [ 111, 39, \"1\" ], [ 112, 40, \"1\" ], [ 115, 43, \"2\" ], [ 116, 41, \"1\" ], [ 117, 42, \"1\" ],"
+        },
+        {
+          "label": "dimension_75",
+          "line": 597,
+          "snippet": "72, 24, \"-2\" ], [ 73, 6, \"-2\" ], [ 74, 1, \"-2\" ], [ 75, 1, \"-6\" ], [ 76, 0, \"-3\" ], [ 77, 20, \"5\" ], [ 77, 26, \"2\" ], [ 78, 2, \"5\" ], [ 78, 8, \"2\" ], [ 78, 21, \"-12\" ], ["
+        },
+        {
+          "label": "dimension_75",
+          "line": 1814,
+          "snippet": ", 10, \"-1/2\" ], [ 73, 0, \"3\" ], [ 74, 9, \"1/2\" ], [ 75, 2, \"1/2\" ], [ 76, 0, \"-1\" ], [ 77, 0, \"1/2\" ], [ 78, 1, \"-24\" ], [ 78, 7, \"-1\" ], [ 79, 6, \"3\" ], [ 80, 5, \"3\" ],"
+        },
+        {
+          "label": "dimension_75",
+          "line": 2976,
+          "snippet": "72, \"1\" ], [ 17, 73, \"1\" ], [ 18, 74, \"1\" ], [ 19, 75, \"1\" ], [ 20, 76, \"1\" ], [ 21, 79, \"1\" ], [ 21, 82, \"1/2\" ], [ 22, 80, \"1\" ], [ 23, 81, \"1\" ] ] }, \"mixed_membership_L\": { \"rows\": 60, \"cols\": 84,"
+        },
+        {
+          "label": "dimension_75",
+          "line": 4878,
+          "snippet": "72, 11, \"1\" ], [ 73, 12, \"1\" ], [ 74, 13, \"1\" ], [ 75, 14, \"1\" ], [ 76, 15, \"1\" ], [ 78, 61, \"1\" ], [ 79, 18, \"2\" ], [ 80, 16, \"1\" ], [ 81, 17, \"1\" ], [ 82, 18, \"1\" ], ["
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/small_certificates.json",
+      "score": 18,
+      "sha256": "03840e9be04ec64772b6411bb6b9f9ea4bb6836bbff5cd5dba972a6b099fcc4f"
+    },
+    {
+      "bytes": 1915,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 110,
+          "snippet": "64 100 0 -12195/32 -1/64 101 0 -8001/64 -1/64 102 0 -32769/64 -1/64 103 0 -17577/64 -1/64 104 0 1521 1/8 105 0 2457/4 1/8 106 0 8001/8 1/8 107 0 8 0 108 0 -1 0 109 0 -1715/2 -1/8 110 0 422 1/8"
+        },
+        {
+          "label": "dimension_75",
+          "line": 76,
+          "snippet": "5 0 -970299/64 0 66 0 -7 1 67 0 -1 -1 68 0 1331/8 0 69 0 -3375/8 0 70 0 2197/8 0 71 0 -39305/64 -1/64 72 0 17577/64 1/64 73 0 -17577/64 -1/64 74 0 5833/64 1/64 75 0 -1 0 76 0 -1/64 0 77 0 -343/64 0 78 0 125/64 0 79 0 -2197/64 0 80 0 4631/4 1/8 81 0 -1715/2 -1/8 82 0 -27 0 83 0 216 0 84 0 -729/8 0 85 0 -54873/64 -1/64 86 0 -2745/64 -1/64 87 0 21953/64 1/64 88 0 -46657/64 -1/64 89 0 3869893/512 0 90 0 -5177717/512 0 91 0 -3307949/512 0 92 0 2352637/512 0 93 0 3375/64 0 94 0 -27/64 0 95 0 729/64 0 96 0 27 0 97 0 0 0 98"
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/collision_110.tsv",
+      "score": 18,
+      "sha256": "5ab7aff6f7cc0f1025a88e0477ad8cdae2cfed51125e000d714029776fb042c9"
+    },
+    {
+      "bytes": 49905,
+      "hits": [
+        {
+          "label": "dimension_109",
+          "line": 120,
+          "snippet": "84, 85, 86, 87, 88, 89, 90, 91, 94, 95, 96, 97, 98, 99, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 118, 119, 120, 121, 122, 123, 124, 125, 126, 129, 132, 133 ], \"B\": [ [ \"-1/48\", \"-1/48\", \"1/48\", \"1/48\", \"1/6\", \"1/6\", \"-1/3\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\","
+        },
+        {
+          "label": "dimension_75",
+          "line": 95,
+          "snippet": "53, 54, 55, 56, 57, 59, 60, 61, 62, 63, 64, 65, 67, 68, 69, 70, 71, 72, 73, 74, 75, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 94, 95, 96, 97, 98, 99, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 118, 119, 120, 121, 122, 123, 124, 125, 126, 129, 132,"
+        }
+      ],
+      "labels": [
+        "dimension_109",
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/pairing_110.json",
+      "score": 18,
+      "sha256": "a2be0cadaf8b3fccd8f991bc335739ceaf02aff93b91f9ee0503119eb2c9b210"
+    },
+    {
+      "bytes": 16102,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 476,
+          "snippet": "(Q\\). ## 3.1 Trace-one support lemma For one edge \\(i\\to j\\) with coefficient \\(r\\), \\[ U=(z_i+r z_j)^3-z_i^3-rz_j^3. \\] If the corresponding column of the compressed coefficient matrix is \\(b\\), its contribution to the trace is \\[ \\frac{\\partial U}{\\partial z_i}b_i+ \\frac{\\partial U}{\\partial z_j}b_j. \\] The coefficients of \\(z_i^2\\) and \\(z_iz_j\\) are \\[ 3rb_j, \\qquad 6rb_i+6r^2b_j. \\] For \\(r\\ne0\\), trace-one therefore forces \\[ \\boxed{b_i=b_j=0.} \\] ## 3.2 Graph classification If the three support edges use"
+        },
+        {
+          "label": "compression",
+          "line": 633,
+          "snippet": "n the 30 graph patterns that survive the linear constraints. It produces: \\[ 528 \\] affine records, each of dimension four, hence \\[ 528\\cdot5^4=330000 \\] compressed coefficient matrices. Testing nilpotence at all \\[ 5^5-1=3124 \\] nonzero points gives: \\[ \\boxed{0\\text{ survivors}.} \\] This finite-field computation is now consistent with, but weaker than, the characteristic-zero graph-orbit proof. Files: `generate_three_row_f5.py`, `exhaust_three_row_f5.cpp`, `three_row_records_f5.bin`. --- # 4. Corrections to"
+        },
+        {
+          "label": "quartic_obstruction",
+          "line": 295,
+          "snippet": "d \\(19\\)-dimensional tensor, not for arbitrary direct Dru\u017ckowski counterexamples. Verifier: `attack7_waring52.py`. --- # 2. The rank-six jet and its compact quartic obstruction Write the normalized 11-dimensional map as \\[ K=I+Q+C. \\] The quadratic triangular conjugacy \\[ P_2=-d^2e_a \\] lowers the cubic-coordinate span from seven to six. The exact conjugate has quartic part \\[ \\begin{aligned} (D_4)_z&=d^3z+3d^2y^2,\\\\ (D_4)_a&=x^2y^2,\\\\ (D_4)_c&=-2d^3z-6d^2y^2. \\end{aligned} \\] For a cubic vector field \\(P_3\\), the next hom"
+        },
+        {
+          "label": "quartic_obstruction",
+          "line": 409,
+          "snippet": "_2=-d^2e_a.} \\] Thus the successful jet shift is unique in this entire scalar monomial triangular class, and it is precisely the shift detected by the nonzero quartic obstruction above. Verifier: `attack9_monomial_shifts.py`. ## 2.3 Independent target cleanup in the natural low-degree model After the conjugacy, the exact output coordinates \\(d,q,h,k\\) have degree at most two. Quadratic target corrections built from these four outputs form a ten-dimensional space and cannot create terms above degree four. Their quartic images ar"
+        }
+      ],
+      "labels": [
+        "compression",
+        "quartic_obstruction"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/CONTINUATION_REPORT.md",
+      "score": 15,
+      "sha256": "3e36be980d05d87c344a50edd2aab251504f0fb5f5019a91d4156909facf5bfb"
+    },
+    {
+      "bytes": 772,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 7,
+          "snippet": "exact verification scripts for five follow-up attacks on the 19-dimensional cubic-homogeneous reduction: 1. the dimension-five classification problem; 2. rank-compressed suspension and cubic-jet obstruction; 3. generic Jordan structure and degeneration; 4. a 38-dimensional Hessian-nilpotent quartic with explicit inverse/Laplacian coefficients; 5. catalecticant bounds and a 110-dimensional square-zero Dru\u017ckowski pairing. Run: ```bash ./run_all.sh ``` Main mathematical narrative: `REPORT.md`. Compact pairing data are in"
+        },
+        {
+          "label": "quartic_obstruction",
+          "line": 7,
+          "snippet": "follow-up attacks on the 19-dimensional cubic-homogeneous reduction: 1. the dimension-five classification problem; 2. rank-compressed suspension and cubic-jet obstruction; 3. generic Jordan structure and degeneration; 4. a 38-dimensional Hessian-nilpotent quartic with explicit inverse/Laplacian coefficients; 5. catalecticant bounds and a 110-dimensional square-zero Dru\u017ckowski pairing. Run: ```bash ./run_all.sh ``` Main mathematical narrative: `REPORT.md`. Compact pairing data are in `pairing_110.json`; fully expanded matrices and the transferred collision are in `A_110.tsv`, `B_110.tsv`, `D_110.tsv`, `C_110.tsv`"
+        }
+      ],
+      "labels": [
+        "compression",
+        "quartic_obstruction"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/README.md",
+      "score": 15,
+      "sha256": "cb954f1a62c87289e69ba076dbd63a365ba55b25d42b56b1e572b8d9b72ba1de"
+    },
+    {
+      "bytes": 20538,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 26,
+          "snippet": "Global problem still open; collision normalized, search reduced to three Jordan types, and a natural 25-parameter boundary ansatz is pruned exactly | | 2. Rank-compressed suspension | General theorem proved; the present representative gives \\(11+7+1=19\\); a nonzero cubic-jet cohomology class is exhibited | | 3. Jordan and degeneration structure | Complete: \\(JH\\) has generic Jordan type \\((18,1)\\), with an explicit cyclic vector and kernel vector; all nonzero slices are conjugate and the zero slice is triangular | | 4. Sym"
+        },
+        {
+          "label": "compression",
+          "line": 302,
+          "snippet": "ealistic next computation is a stratum-by-stratum elimination for the pencil \\(s^2A+stB+t^2C\\), followed by the tensor-integrability equations. --- # 2. Rank-compressed suspension ## 2.1 General theorem Let \\[ K(X)=X+Q(X)+C(X):\\mathbb A^n\\to\\mathbb A^n, \\] where \\(Q\\) is quadratic homogeneous and \\(C\\) is cubic homogeneous. Put \\[ r=\\dim\\operatorname{span}\\{C_1,\\ldots,C_n\\}. \\] Choose a basis \\(q=(q_1,\\ldots,q_r)^T\\) and a matrix \\(B\\in M_{n\\times r}\\) such that \\[ C=Bq. \\] Define \\[ \\widetilde K(X,w) =\\bigl(X+"
+        },
+        {
+          "label": "compression",
+          "line": 1049,
+          "snippet": "d 19-dimensional tensor. Neither endpoint is claimed globally sharp. --- # What is now proved, and what remains open ## Proved in this package 1. The rank-compressed suspension theorem and its \\(19\\)-dimensional application. 2. A nonzero cubic-jet obstruction for the normalized 11-dimensional map. 3. An explicit generic Jordan basis for \\(JH\\), with type \\((18,1)\\). 4. The exact nonzero-slice conjugacy and triangular special fiber. 5. An explicit 38-dimensional homogeneous quartic with Hessian type \\((35,2,1)\\),"
+        },
+        {
+          "label": "dimension_109",
+          "line": 961,
+          "snippet": "134 coefficient rows was found and then checked exactly. These 24 forms can be zeroed simultaneously. On the remaining 110 forms: \\[ \\operatorname{rank}W_S=109, \\] so there is one cube relation. That relation also has zero first moment against the linear-form matrix and is independent of the 18 nonzero output rows. Using it as the nineteenth, zero-output row gives matrices \\[ B\\in M_{19\\times110}(\\mathbb Q), \\qquad D\\in M_{110\\times19}(\\mathbb Q) \\] with \\[ \\boxed{ \\operatorname{rank}B= \\operatorname{rank}D="
+        }
+      ],
+      "labels": [
+        "compression",
+        "dimension_109"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/REPORT.md",
+      "score": 15,
+      "sha256": "837f8a832200c9938b4730869aec6f0e3bd0201460b8a3db60a5fc2b5af7785c"
+    },
+    {
+      "bytes": 2679,
+      "hits": [
+        {
+          "label": "compression",
+          "line": 2,
+          "snippet": "#!/usr/bin/env python3 \"\"\"Attack 2: rank-compressed suspension and a cubic-jet obstruction.\"\"\" from __future__ import annotations import itertools import sympy as sp import base19_data as M # K = X + Q + C with C=Bq and rank of the cubic-coordinate span equal to 7. assert M.K1 == sp.Matrix(M.X) assert M.K3 == M.B*M.q cubic_mons = sorted(set().union(*[ set(sp.Poly(e, *M.X).monoms()) for e in M.K3 ])) c"
+        }
+      ],
+      "labels": [
+        "compression",
+        "compression_filename"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack2_compression.py",
+      "score": 13,
+      "sha256": "d64a0fe889771b89098a3a8201320d5412b8795b5b47c8fe11433f2d1377494a"
+    },
+    {
+      "bytes": 890,
+      "hits": [
+        {
+          "label": "quartic_obstruction",
+          "line": 10,
+          "snippet": "ults: * ordinary vector-Waring lower bound for the fixed tensor: **52**; * fixed full-rank square-zero pairing interval: **52 <= N <= 110**; * a 13-term exact quartic obstruction functional; * uniqueness of `P2=-d^2 e_a` among 605 scalar monomial triangular shifts; * exact exclusion of the first three-row, one-edge-per-row, coordinate-collision class; * corrected exhaustive F5 search over all nonzero edge coefficients. Start with `CONTINUATION_REPORT.md`. Verification: ```bash ./run_all.sh ``` The scripts use exact rational arit"
+        }
+      ],
+      "labels": [
+        "quartic_obstruction"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/README.md",
+      "score": 10,
+      "sha256": "98c451e753afe654fa13d28581866e0259b3fbb3f2efa522c332ca8a574f4521"
+    },
+    {
+      "bytes": 3077,
+      "hits": [
+        {
+          "label": "quartic_obstruction",
+          "line": 2,
+          "snippet": "#!/usr/bin/env python3 \"\"\"Attack 8: a 13-term exact functional detecting the quartic obstruction. For the normalized 11D degree-three map K=I+Q+C, the unique scalar monomial triangular quadratic shift lowering the cubic-coordinate span from seven to six is P2=-d^2 e_a. Its exact conjugate has quartic error D4. This script verifies a compact linear functional Lambda_4 such that Lambda_4([Q,P3]) = 0 for every cubic vector field P3, Lambda_4(D4"
+        }
+      ],
+      "labels": [
+        "quartic_obstruction"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack8_quartic_functional.py",
+      "score": 10,
+      "sha256": "3693f7ae109eac4bc74f7219974216aeb421965de1bd353392df14924ea7675b"
+    },
+    {
+      "bytes": 4486,
+      "hits": [
+        {
+          "label": "quartic_obstruction",
+          "line": 6,
+          "snippet": "oes not reconstruct the maps. It independently checks the serialized sparse rational matrices, determinants, ranks, isotropic-block zeros, q_* membership, and quartic obstruction circuit. \"\"\" from __future__ import annotations from fractions import Fraction import json from pathlib import Path ROOT = Path(__file__).resolve().parent D = json.loads((ROOT / \"small_certificates.json\").read_text()) def Q(s): return Fraction(s) def dense(obj): M = [[Fraction(0) for _ in range(obj[\"cols\"])] for _ in range(obj[\"rows\"])] for i"
+        }
+      ],
+      "labels": [
+        "quartic_obstruction"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/verify_small_certificates.py",
+      "score": 10,
+      "sha256": "b002efe2e8be4e1f415cdc1d5cbcabe5ff6ec9a5ff9726b85f0a78f10a03790d"
+    },
+    {
+      "bytes": 3214,
+      "hits": [
+        {
+          "label": "rank_six_cone",
+          "line": 5,
+          "snippet": "triangular quadratic shifts. For P2=lambda*m*e_r, with m a quadratic monomial not involving X_r, test whether the cubic jet C+[Q,P2] can have coordinate-span rank <=6. There are 11*C(11,2)=605 such triangular monomial directions. A fixed nonzero 7x7 minor of C gives a univariate exceptional polynomial. Only 22 directions have a nonconstant exceptional polynomial; all 27 roots are rational and are checked by full exact rank. \"\"\" from __future__ import annotations import itertools import sympy as sp import base19_data as"
+        },
+        {
+          "label": "rank_six_cone",
+          "line": 94,
+          "snippet": "t, multiplicity in roots.items(): assert root.is_Rational rank = (Ccoef + root*dcoef).rank() checks.append((r, exp, root, multiplicity, rank)) if rank <= 6: drops.append((r, exp, root, rank)) assert len(checks) == 27 expected_exp = [0]*n expected_exp[6] = 2 assert drops == [(3, tuple(expected_exp), sp.Rational(-1), 6)] print(\"[ok] 605 scalar monomial triangular quadratic shifts checked exactly\") print(\"[ok] 583 have no exceptional parameter; 22 give 27 rational roots\") print(\"[result] the unique"
+        }
+      ],
+      "labels": [
+        "rank_six_cone"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack9_monomial_shifts.py",
+      "score": 8,
+      "sha256": "0cd734dafc064ecc1435396f6bbe674e79401e22bc89be682ddd4e7851da3604"
+    },
+    {
+      "bytes": 12208,
+      "hits": [
+        {
+          "label": "dimension_75",
+          "line": 276,
+          "snippet": "c cubic tensor in dimension five has \\[ 5\\binom{7}{3}=175 \\] coefficients. The restrictions \\[ 3T(-,u,u)=A, \\qquad 6T(-,u,v)=B, \\qquad 3T(-,v,v)=C \\] give 75 displayed equations but rank only 65, exactly because the line integrability identities account for ten dependencies. Add all first-normal characteristic equations in the five ambient basis directions. Exact arithmetic gives: \\[ \\begin{array}{c|c|c} \\text{system}&\\text{coefficient rank}&\\text{augmented rank}\\\\ \\hline \\text{line restrictions}&65&65\\\\ \\tex"
+        }
+      ],
+      "labels": [
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/CONTINUATION_REPORT.md",
+      "score": 8,
+      "sha256": "b3c6ef3290dd77b96da754807752b234af60e20c4be64e26157583859fca2643"
+    },
+    {
+      "bytes": 1959,
+      "hits": [
+        {
+          "label": "dimension_75",
+          "line": 28,
+          "snippet": "6, 1, 7, 2, 5], [9, 5, 9, 8, 5, 3, 4, 6, 3, 8] ] }, \"coordinate_free\": { \"tensor_variables\": 175, \"displayed_line_restriction_equations\": 75, \"line_restriction_rank\": 65, \"rows_total\": 225, \"rank_through_k4\": [125, 125], \"rank_through_k5\": [125, 126], \"remaining_pure_normal_dimension\": 50 }, \"enumeration\": { \"F7\": { \"projective_parameter_points\": 960800, \"invertible_chart\": 806344, \"collision_line_points\": 6, \"geometrically_regular\": 6, \""
+        }
+      ],
+      "labels": [
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/RESULTS.json",
+      "score": 8,
+      "sha256": "ca5acba0802c13b8c7a67ca506a3621a99707b0161b8d30d8aa083642b862f01"
+    },
+    {
+      "bytes": 3551,
+      "hits": [
+        {
+          "label": "dimension_75",
+          "line": 64,
+          "snippet": "r q,row in enumerate(coeff):rows.append(row);labels.append(('tr',m,kpow,q)) rc=rank([r[:-1] for r in rows])[0];ra=rank(rows)[0] rrc=rank([r[:-1] for r in rows[:75]])[0];rra=rank(rows[:75])[0] idx=[i for i,l in enumerate(labels) if l[0]!='tr' or l[2]<=4] tc=rank([rows[i][:-1] for i in idx])[0];ta=rank([rows[i] for i in idx])[0] assert (len(rows),NV)==(225,175) assert (rrc,rra)==(65,65) assert (tc,ta)==(125,125) assert (rc,ra)==(125,126) print('[ok] rows=225, tensor variables=175') print('[ok] line restrictions: coeffi"
+        },
+        {
+          "label": "dimension_75",
+          "line": 64,
+          "snippet": "ff):rows.append(row);labels.append(('tr',m,kpow,q)) rc=rank([r[:-1] for r in rows])[0];ra=rank(rows)[0] rrc=rank([r[:-1] for r in rows[:75]])[0];rra=rank(rows[:75])[0] idx=[i for i,l in enumerate(labels) if l[0]!='tr' or l[2]<=4] tc=rank([rows[i][:-1] for i in idx])[0];ta=rank([rows[i] for i in idx])[0] assert (len(rows),NV)==(225,175) assert (rrc,rra)==(65,65) assert (tc,ta)==(125,125) assert (rc,ra)==(125,126) print('[ok] rows=225, tensor variables=175') print('[ok] line restrictions: coefficient/augmented ranks ="
+        }
+      ],
+      "labels": [
+        "dimension_75"
+      ],
+      "path": "05-homogeneous-descendants-computational-supplement/computational-supplement/n5-regular-continuation/verify_first_normal_coordinatefree.py",
+      "score": 8,
+      "sha256": "b25d76203fa99699255f608b22ecb3c54495ca867c92fa6289ac250dcf1ce2db"
+    }
+  ],
+  "selected_count": 19,
+  "selected_total_bytes": 388615
+}

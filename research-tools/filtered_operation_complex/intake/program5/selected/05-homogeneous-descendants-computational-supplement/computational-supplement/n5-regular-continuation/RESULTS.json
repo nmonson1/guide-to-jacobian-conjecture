@@ -1,0 +1,58 @@
+{
+  "scope": "dimension-five cubic-homogeneous, regular Jordan type (5), full-kernel collision-line chart",
+  "status": "first-normal obstruction established for the explicit smooth 11-adic residue disk; exhaustive rational-point exclusions over F7 and F11; no global characteristic-zero classification",
+  "known_point_F11": {
+    "a": [8, 7, 1, 7, 2, 9, 0, 1],
+    "u": [7, 6, 3, 10, 4],
+    "v": [8, 9, 7, 9, 1],
+    "line_equation_jacobian_rank": 15,
+    "hensel_modulus": 3138428376721
+  },
+  "first_normal_transformed": {
+    "unknowns": 60,
+    "equations_through_k4": 60,
+    "determinant_through_k4_mod11": 3,
+    "coefficient_rank_all": 60,
+    "augmented_rank_all": 61,
+    "selected_augmented_minor_mod11": 1,
+    "fifth_residual_rank": 3,
+    "fifth_residual_minor_mod11": 2,
+    "fifth_residual_rows": [
+      [5, 8, 9, 1, 9, 2, 2, 1, 3, 1],
+      [2, 2, 6, 2, 4, 6, 1, 7, 2, 5],
+      [9, 5, 9, 8, 5, 3, 4, 6, 3, 8]
+    ]
+  },
+  "coordinate_free": {
+    "tensor_variables": 175,
+    "displayed_line_restriction_equations": 75,
+    "line_restriction_rank": 65,
+    "rows_total": 225,
+    "rank_through_k4": [125, 125],
+    "rank_through_k5": [125, 126],
+    "remaining_pure_normal_dimension": 50
+  },
+  "enumeration": {
+    "F7": {
+      "projective_parameter_points": 960800,
+      "invertible_chart": 806344,
+      "collision_line_points": 6,
+      "geometrically_regular": 6,
+      "first_normal_extensions": 0
+    },
+    "F11": {
+      "projective_parameter_points": 21435888,
+      "invertible_chart": 19324668,
+      "collision_line_points": 11,
+      "geometrically_regular": 11,
+      "first_normal_extensions": 0
+    }
+  },
+  "limitations": [
+    "finite-extension points over F7 or F11 not excluded",
+    "bad-reduction characteristic-zero points not excluded",
+    "singular-chart boundary not excluded",
+    "kernel-span-three and kernel-span-four strata not excluded",
+    "generic Jordan types (4,1) and (3,2) not addressed"
+  ]
+}
