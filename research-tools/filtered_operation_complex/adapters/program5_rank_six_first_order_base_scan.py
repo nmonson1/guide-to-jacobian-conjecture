@@ -6,7 +6,7 @@ locus, not the whole locus.  For finite slope r=u/v, v=1, the displayed six
 quadratic equations reduce to
 
     s3 = 0,  s4 = r-4,  s5 = 0,
-    s1 = 0,
+    s1 = -24,
     3*s0 + 2*s2 - 12*s19 = 12,
 
 with thirteen further row-zero coordinates free.  Relative to the chosen
