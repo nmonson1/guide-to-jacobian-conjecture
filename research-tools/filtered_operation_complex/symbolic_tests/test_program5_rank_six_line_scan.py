@@ -63,7 +63,7 @@ class Program5RankSixLineScanTests(unittest.TestCase):
                 {
                     "finite": [
                         {
-                            "u_over_v": item["u_over_v"],
+                            "u_over_v": str(item["u_over_v"]),
                             "rank": item["cubic_effect_rank"],
                             "augmented_rank": item["cubic_augmented_rank"],
                             "solvable": item["cubic_lift_solvable"],
