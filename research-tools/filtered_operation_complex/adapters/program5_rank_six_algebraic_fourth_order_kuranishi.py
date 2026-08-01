@@ -22,6 +22,12 @@ coefficient, a K-linear target functional annihilates all dependence on the
 17 fibre parameters while pairing nontrivially with the constant term.  This
 is an intrinsic order-four obstruction for both conjugate slopes.
 
+The cubic image solve is linear in the quadratic correction.  The code solves
+it once at the affine base point and once for each of the seventeen homogeneous
+fibre directions, then reuses those eighteen solutions throughout the
+quadratic polarization.  This is mathematically identical to resolving the
+image equation at every sample but avoids 153 redundant number-field solves.
+
 This is a formal local rank-at-most-six calculation.  It does not classify the
 full 15-dimensional finite row-base fibre, impose the compression functional,
 or prove convergence/algebraization.
@@ -96,6 +102,17 @@ def _support_union(vectors: Sequence[sp.Matrix]) -> list[int]:
             if _normal(value) != 0
         }
     )
+
+
+def _combine_blocks(
+    base: dict[str, sp.Matrix],
+    terms: Sequence[tuple[sp.Expr, dict[str, sp.Matrix]]],
+) -> dict[str, sp.Matrix]:
+    result = {key: value.copy() for key, value in base.items()}
+    for coefficient, block in terms:
+        for key in result:
+            result[key] += coefficient * block[key]
+    return result
 
 
 def analyze_algebraic_fourth_order_kuranishi(
@@ -193,34 +210,34 @@ def analyze_algebraic_fourth_order_kuranishi(
             raise AssertionError("algebraic order-three projection kept pivots")
         return residual
 
-    def forcing_through_four(P2: sp.Matrix) -> sp.Matrix:
-        block1 = theta_block
-        block2 = model.blocks(P2)
-        G0 = model.G0
-        G1 = -G0 * block1["A"] * G0
+    block1 = theta_block
+    G0 = model.G0
+    G1 = -G0 * block1["A"] * G0
+
+    def h3_from_block2(block2: dict[str, sp.Matrix]) -> sp.Matrix:
         G2 = -G0 * (
             block1["A"] * G1 + block2["A"] * G0
         )
-        H3 = _normal_matrix(
+        return _normal_matrix(
             block1["C"] * G0 * block2["B"]
             + block1["C"] * G1 * block1["B"]
             + block1["C"] * G2 * model.B0
             + block2["C"] * G0 * block1["B"]
             + block2["C"] * G1 * model.B0
         )
-        if any(
-            _normal(value) != 0
-            for value in model.project(_flatten(H3))
-        ):
-            raise AssertionError("algebraic quadratic fibre left cubic forcing")
-        P3 = model.solve_image(H3)
-        block3 = model.blocks(P3)
+
+    def h4_from_blocks(
+        block2: dict[str, sp.Matrix],
+        block3: dict[str, sp.Matrix],
+    ) -> sp.Matrix:
+        G2 = -G0 * (
+            block1["A"] * G1 + block2["A"] * G0
+        )
         G3 = -G0 * (
             block1["A"] * G2
             + block2["A"] * G1
             + block3["A"] * G0
         )
-
         blocks = {1: block1, 2: block2, 3: block3}
         inverses = {0: G0, 1: G1, 2: G2, 3: G3}
         B_series = {
@@ -241,13 +258,73 @@ def analyze_algebraic_fourth_order_kuranishi(
                     )
         return project_effect(model.project(_flatten(H4)))
 
-    q0 = forcing_through_four(P2_base)
+    block2_base = model.blocks(P2_base)
+    H3_base = h3_from_block2(block2_base)
+    if any(
+        _normal(value) != 0
+        for value in model.project(_flatten(H3_base))
+    ):
+        raise AssertionError("algebraic affine base left cubic forcing")
+    P3_base = model.solve_image(H3_base)
+    block3_base = model.blocks(P3_base)
+
+    block2_directions = [
+        model.blocks(direction)
+        for direction in homogeneous_directions
+    ]
+    block3_directions: list[dict[str, sp.Matrix]] = []
+    for index, block2_direction in enumerate(block2_directions):
+        H3_plus = h3_from_block2(
+            _combine_blocks(block2_base, [(1, block2_direction)])
+        )
+        H3_direction = _normal_matrix(H3_plus - H3_base)
+        if any(
+            _normal(value) != 0
+            for value in model.project(_flatten(H3_direction))
+        ):
+            raise AssertionError(
+                f"cubic-compatible fibre direction {index} left the image"
+            )
+        P3_direction = model.solve_image(H3_direction)
+        block3_direction = model.blocks(P3_direction)
+        replay = h3_from_block2(
+            _combine_blocks(block2_base, [(-1, block2_direction)])
+        )
+        if _normal_matrix(replay - (H3_base - H3_direction)) != sp.zeros(
+            H3_base.rows,
+            H3_base.cols,
+        ):
+            raise AssertionError(
+                f"cubic image linearity failed in fibre direction {index}"
+            )
+        block3_directions.append(block3_direction)
+
+    def evaluate(
+        terms: Sequence[tuple[sp.Expr, int]],
+    ) -> sp.Matrix:
+        block2 = _combine_blocks(
+            block2_base,
+            [
+                (coefficient, block2_directions[index])
+                for coefficient, index in terms
+            ],
+        )
+        block3 = _combine_blocks(
+            block3_base,
+            [
+                (coefficient, block3_directions[index])
+                for coefficient, index in terms
+            ],
+        )
+        return h4_from_blocks(block2, block3)
+
+    q0 = evaluate([])
     plus_values: list[sp.Matrix] = []
     linear_coefficients: list[sp.Matrix] = []
     diagonal_coefficients: list[sp.Matrix] = []
-    for direction in homogeneous_directions:
-        plus = forcing_through_four(P2_base + direction)
-        minus = forcing_through_four(P2_base - direction)
+    for index in range(len(homogeneous_directions)):
+        plus = evaluate([(1, index)])
+        minus = evaluate([(-1, index)])
         plus_values.append(plus)
         linear_coefficients.append(
             _normal_matrix((plus - minus) / 2)
@@ -259,11 +336,7 @@ def analyze_algebraic_fourth_order_kuranishi(
     off_diagonal_coefficients: list[sp.Matrix] = []
     for left in range(len(homogeneous_directions)):
         for right in range(left + 1, len(homogeneous_directions)):
-            value = forcing_through_four(
-                P2_base
-                + homogeneous_directions[left]
-                + homogeneous_directions[right]
-            )
+            value = evaluate([(1, left), (1, right)])
             off_diagonal_coefficients.append(
                 _normal_matrix(
                     value
@@ -347,6 +420,7 @@ def analyze_algebraic_fourth_order_kuranishi(
         "cubic_effect_rank": effect_rank,
         "cubic_augmented_rank": effect_augmented_rank,
         "cubic_lift_affine_dimension": expected_free_dimension,
+        "cubic_image_solve_count": 1 + expected_free_dimension,
         "order_four_map": {
             "source_dimension": expected_free_dimension,
             "constant_nonzero_count": sum(
