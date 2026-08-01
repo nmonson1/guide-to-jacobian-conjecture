@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: program5-kuranishi-${{ github.event.pull_request.number || github.ref }}
+  group: program5-kuranishi-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 
 permissions:
@@ -63,7 +63,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install pinned symbolic dependency
         run: python -m pip install --disable-pip-version-check 'sympy==1.14.0'
-      - name: Lift the exceptional point at infinity
+      - name: Lift the deterministic point-at-infinity section
         env:
           PYTHONPATH: research-tools
         run: |
@@ -77,10 +77,24 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install pinned symbolic dependency
         run: python -m pip install --disable-pip-version-check 'sympy==1.14.0'
-      - name: Lift the infinity row-base coordinate samples
+      - name: Lift deterministic infinity-fibre coordinate sections
         env:
           PYTHONPATH: research-tools
         run: |
           python -m unittest discover \
             -s research-tools/filtered_operation_complex/symbolic_tests \
             -p 'test_program5_infinity_fibre_formal_scan.py' -v
+
+  intrinsic-fourth-order:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned symbolic dependency
+        run: python -m pip install --disable-pip-version-check 'sympy==1.14.0'
+      - name: Retain the full cubic-lift fibre at order four
+        env:
+          PYTHONPATH: research-tools
+        run: |
+          python -m unittest discover \
+            -s research-tools/filtered_operation_complex/symbolic_tests \
+            -p 'test_program5_fourth_order_kuranishi.py' -v
