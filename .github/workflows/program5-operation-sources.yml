@@ -47,7 +47,6 @@ jobs:
               '05-homogeneous-descendants-computational-supplement/code/compression_slice_verifier.py',
               '05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/base19_data.py',
               '05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack2_compression.py',
-              '05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/base19_data.py',
               '05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack8_quartic_functional.py',
               '05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack9_monomial_shifts.py',
               '05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack11_target_cleanup.py',
@@ -84,14 +83,36 @@ jobs:
           )
           PY
 
-      - name: Commit focused sources
+      - name: Install the pinned symbolic dependency
+        run: python -m pip install --disable-pip-version-check 'sympy==1.14.0'
+
+      - name: Generate and replay the exact compression contract
+        env:
+          PYTHONPATH: research-tools
+        run: |
+          generated=research-tools/filtered_operation_complex/intake/program5/generated
+          rm -rf "$generated"
+          mkdir -p "$generated"
+          python -m filtered_operation_complex.adapters.program5_compression_export \
+            --contract "$generated/program5_compression_contract.json" \
+            --report "$generated/program5_compression_report.json" \
+            --summary "$generated/program5_compression_summary.json"
+          python -m filtered_operation_complex \
+            "$generated/program5_compression_contract.json" \
+            --output /tmp/program5-compression-replay.json
+          cmp "$generated/program5_compression_report.json" \
+              /tmp/program5-compression-replay.json
+
+      - name: Commit focused sources and generated exact outputs
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add research-tools/filtered_operation_complex/intake/program5/focused
+          git add \
+            research-tools/filtered_operation_complex/intake/program5/focused \
+            research-tools/filtered_operation_complex/intake/program5/generated
           if git diff --cached --quiet; then
-            echo 'No focused-source changes.'
+            echo 'No Program 5 source or export changes.'
             exit 0
           fi
-          git commit -m 'Extract focused Program 5 operation sources'
+          git commit -m 'Record exact Program 5 compression complex'
           git push origin HEAD:${{ github.ref_name }}
