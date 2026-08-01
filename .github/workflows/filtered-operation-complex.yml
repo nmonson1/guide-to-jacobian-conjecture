@@ -114,3 +114,32 @@ jobs:
               'rational_samples': ratios['rational_samples'],
           }, indent=2, sort_keys=True))
           PY
+
+      - name: Construct the two-parameter formal rank-six arc
+        env:
+          PYTHONPATH: research-tools
+        run: |
+          python -m filtered_operation_complex.adapters.program5_rank_six_formal_arc \
+            --max-order 6 \
+            --output /tmp/program5-rank-six-formal-arc.json
+          python - <<'PY'
+          import json
+          data = json.load(open('/tmp/program5-rank-six-formal-arc.json'))
+          print(json.dumps({
+              'maximum_compatible_order': data['maximum_compatible_order'],
+              'first_obstructed_order': data['first_obstructed_order'],
+              'orders': [
+                  {
+                      'order': item['order'],
+                      'compatible': item['compatible'],
+                      'obstruction_rank': item.get('obstruction_rank'),
+                      'obstructed_monomials': item.get('obstructed_monomials', []),
+                      'correction_nonzero_counts': [
+                          correction['nonzero_count']
+                          for correction in item.get('corrections', [])
+                      ],
+                  }
+                  for item in data['orders']
+              ],
+          }, indent=2, sort_keys=True))
+          PY
