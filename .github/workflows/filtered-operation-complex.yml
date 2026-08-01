@@ -55,3 +55,15 @@ jobs:
             research-tools/filtered_operation_complex/examples/program5_row_killing_template.json \
             --output /tmp/program5-report.json \
             --emit-contract /tmp/program5-contract.json
+
+      - name: Export the exact public Program 5 compression complex
+        env:
+          PYTHONPATH: research-tools
+        run: |
+          python -m filtered_operation_complex.adapters.program5_compression_export \
+            --contract /tmp/program5-compression-contract.json \
+            --report /tmp/program5-compression-report.json \
+            --summary /tmp/program5-compression-summary.json
+          python -m filtered_operation_complex \
+            /tmp/program5-compression-contract.json \
+            --output /tmp/program5-compression-generic-replay.json
