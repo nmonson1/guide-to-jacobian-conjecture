@@ -11,7 +11,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from itertools import combinations_with_replacement
 from pathlib import Path
-from typing import Any, Sequence
 
 import sympy as sp
 
@@ -25,7 +24,6 @@ from .program5_rank_six_second_order import (
     _flatten,
     _independent_rows_and_columns,
     _matrix_rank,
-    _project_to_cokernel,
     _sympy_matrix,
 )
 from .program5_tangent_bridge import _extend_basis
@@ -81,24 +79,29 @@ class Program5RankSixSchurModel:
         }
 
     def project(self, forcing: sp.Matrix) -> sp.Matrix:
-        return _project_to_cokernel(
-            forcing,
-            self.L,
-            pivot_rows=self.pivot_rows,
-            pivot_columns=self.pivot_operation_columns,
-            inverse_minor=self.minor_inverse,
-        )
+        selected_rhs = forcing[list(self.pivot_rows), :]
+        coefficients = self.minor_inverse * selected_rhs
+        residual = (
+            forcing
+            - self.L[:, list(self.pivot_operation_columns)] * coefficients
+        ).applyfunc(lambda value: sp.factor(sp.cancel(value)))
+        if any(residual[row, 0] != 0 for row in self.pivot_rows):
+            raise AssertionError("cokernel projection did not kill pivot rows")
+        return residual
 
     def solve_image(self, forcing_matrix: sp.Matrix) -> sp.Matrix:
         forcing = _flatten(forcing_matrix)
         residual = self.project(forcing)
-        if any(sp.factor(value) != 0 for value in residual):
+        if any(value != 0 for value in residual):
             raise AssertionError("forcing is not in the tangent image")
         coefficients = self.minor_inverse * forcing[list(self.pivot_rows), :]
         correction = sp.zeros(self.ambient_operation_dimension, 1)
         for index, column in enumerate(self.pivot_operation_columns):
-            correction[column, 0] = coefficients[index, 0]
-        if self.L * correction != forcing:
+            correction[column, 0] = sp.factor(sp.cancel(coefficients[index, 0]))
+        error = (self.L * correction - forcing).applyfunc(
+            lambda value: sp.factor(sp.cancel(value))
+        )
+        if any(value != 0 for value in error):
             raise AssertionError("deterministic image solution failed")
         return correction
 
@@ -309,8 +312,8 @@ def build_schur_model(
         G0=G0,
         B0=B0,
         L=L,
-        pivot_rows=pivot_rows,
-        pivot_operation_columns=pivot_operation_columns,
+        pivot_rows=tuple(pivot_rows),
+        pivot_operation_columns=tuple(pivot_operation_columns),
         minor_inverse=minor_inverse,
         tangent_basis=adapted,
         row_basis=row_columns,
