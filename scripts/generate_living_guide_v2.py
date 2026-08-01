@@ -24,6 +24,9 @@ PUBLICATION_DATA_DIR = SITE_STATE["publication"]["data_dir"]
 MANUSCRIPTS_DATA_DIR = SITE_STATE["manuscripts"]["data_dir"]
 TECHNICAL_MATERIALS_DATA_DIR = SITE_STATE["technical_materials"]["data_dir"]
 MODEL_BRIEFS_DATA_DIR = SITE_STATE["model_briefs"]["data_dir"]
+RETAINED_MATH_DATA_DIR = (
+    SITE_STATE.get("retained_math", {}).get("data_dir")
+)
 
 MANUSCRIPT_TOKEN_RE = re.compile(r"\{\{MANUSCRIPT_(?P<sequence>[0-9]{2})\}\}")
 LITERAL_MANUSCRIPT_LINK_RE = re.compile(
@@ -44,6 +47,33 @@ NEW_COLLECTIONS = (
 
 def _load(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_retained_math(root: Path) -> tuple[dict[str, Any], dict[str, Any]] | None:
+    state = load_site_state(root)
+    component = state.get("retained_math")
+    if component is None:
+        return None
+    data = root / "data" / component["data_dir"]
+    manifest = _load(data / "manifest.json")
+    graph = _load(data / "public-graph.json")
+    if manifest.get("source_registry_id") != graph.get("registry_id"):
+        raise ValueError("retained-math manifest and public graph disagree")
+    if manifest.get("counts") != graph.get("counts"):
+        raise ValueError("retained-math manifest and public counts disagree")
+    files = manifest.get("files", [])
+    if manifest.get("file_count") != len(files):
+        raise ValueError("retained-math manifest file count disagrees")
+    for item in files:
+        path = data / item["path"]
+        if not path.is_file():
+            raise ValueError(f"missing retained-math source: {item['path']}")
+        payload = path.read_bytes()
+        if len(payload) != item["size_bytes"]:
+            raise ValueError(f"retained-math byte count mismatch: {item['path']}")
+        if hashlib.sha256(payload).hexdigest() != item["sha256"]:
+            raise ValueError(f"retained-math digest mismatch: {item['path']}")
+    return manifest, graph
 
 
 def _yaml(value: str) -> str:
@@ -232,7 +262,7 @@ def build_release_metadata(root: Path) -> dict[str, Any]:
                 "source_words": item["words"],
             }
         )
-    return {
+    release = {
         "schema_version": 1,
         "site_release_id": state["release_id"],
         "updated_at": state["updated_at"],
@@ -252,6 +282,15 @@ def build_release_metadata(root: Path) -> dict[str, Any]:
         },
         "handoffs": handoffs,
     }
+    retained = load_retained_math(root)
+    if retained is not None:
+        manifest, graph = retained
+        release["retained_math"] = {
+            "release_id": manifest["release_id"],
+            "registry_id": graph["registry_id"],
+            "counts": graph["counts"],
+        }
+    return release
 
 
 def render_model_brief(
@@ -273,6 +312,20 @@ def render_model_brief(
         else f'[Back to the Program {brief["program_sequence"]} overview]'
         f'(../programs/{brief["program_slug"]}.md)'
     )
+    retained_note: list[str] = []
+    if "retained_math" in release:
+        retained_target = (
+            "../working-mathematics/index.md"
+            if cross_program
+            else "../working-mathematics/programs/"
+            f"{brief['program_slug']}.md"
+        )
+        retained_note = [
+            "",
+            '!!! info "Retained working graph"',
+            "    Exact reusable units and their deeper support pages are available",
+            f"    in the [retained working mathematics view]({retained_target}).",
+        ]
     return "\n".join(
         [
             "---",
@@ -294,6 +347,7 @@ def render_model_brief(
                 "[Machine-readable release metadata](release.json)"
                 "{ .handoff-release }"
             ),
+            *retained_note,
             source.rstrip(),
             "",
             back_link,
@@ -918,6 +972,38 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     outputs[docs / "research/papers.md"] = render_papers(manuscripts)
     outputs[docs / "evidence/index.md"] = render_evidence_index(collections)
     outputs[docs / "evidence/materials.md"] = render_materials(materials)
+    retained = load_retained_math(root)
+    if retained is not None:
+        _, retained_graph = retained
+        retained_data = root / "data" / SITE_STATE["retained_math"]["data_dir"]
+        retained_programs = retained_graph["programs"]
+        program_links = "\n".join(
+            f"- [{program['title']}](programs/{program['slug']}.md)"
+            for program in retained_programs
+        )
+        retained_counts = retained_graph["counts"]
+        outputs[docs / "research/working-mathematics/index.md"] = (
+            "# Retained working mathematics\n\n"
+            "This view is generated from the retained mathematical graph. It "
+            "exposes exact reusable units, supplied support, dependencies, and "
+            "scope without private source locators or editorial workflow labels.\n\n"
+            f"The current graph contains **{retained_counts['units']} working units** "
+            f"across {len(retained_programs)} overlapping program views, with "
+            f"{retained_counts['support_objects']} support objects and "
+            f"{retained_counts['relations']} typed relations.\n\n"
+            f"{program_links}\n\n"
+            "This is not the publication-ready subset. Verification, attribution, "
+            "deduplication, and dependency repair proceed asynchronously.\n"
+        )
+        for program in retained_programs:
+            relative = Path("programs") / f"{program['slug']}.md"
+            outputs[
+                docs / "research/working-mathematics" / relative
+            ] = (retained_data / relative).read_text(encoding="utf-8")
+        for source in sorted((retained_data / "units").glob("*.md")):
+            outputs[
+                docs / "research/working-mathematics/units" / source.name
+            ] = source.read_text(encoding="utf-8")
     return outputs
 
 
@@ -951,6 +1037,8 @@ def main() -> int:
         root / PUBLIC_DOCS_DIR / "collections",
         root / PUBLIC_DOCS_DIR / "research/programs",
         root / PUBLIC_DOCS_DIR / "research/handoffs",
+        root / PUBLIC_DOCS_DIR / "research/working-mathematics/programs",
+        root / PUBLIC_DOCS_DIR / "research/working-mathematics/units",
     ):
         for path in directory.glob("*.md"):
             if path not in expected_paths:

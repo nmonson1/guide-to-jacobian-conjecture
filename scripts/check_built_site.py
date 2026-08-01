@@ -185,6 +185,33 @@ def main() -> int:
             f"{SITE_STATE['model_briefs']['expected_count']}, found "
             f"{len(handoff_pages)}"
         )
+    retained_unit_pages = list(
+        (site / "research/working-mathematics/units").glob("*/index.html")
+    )
+    retained_program_pages = list(
+        (site / "research/working-mathematics/programs").glob("*/index.html")
+    )
+    if len(retained_unit_pages) != SITE_STATE["retained_math"]["expected_units"]:
+        failures.append(
+            "built retained-unit routes: expected "
+            f"{SITE_STATE['retained_math']['expected_units']}, found "
+            f"{len(retained_unit_pages)}"
+        )
+    if (
+        len(retained_program_pages)
+        != SITE_STATE["retained_math"]["expected_programs"]
+    ):
+        failures.append(
+            "built retained-program routes: expected "
+            f"{SITE_STATE['retained_math']['expected_programs']}, found "
+            f"{len(retained_program_pages)}"
+        )
+    for path in handoff_pages:
+        text = path.read_text(encoding="utf-8")
+        if '<p>title: "Model research brief' in text:
+            failures.append(f"handoff renders YAML metadata as prose: {path.name}")
+        if "Retained working graph" not in text:
+            failures.append(f"handoff lacks retained graph link: {path.name}")
 
     search_path = site / "search/search_index.json"
     if not search_path.is_file():
@@ -197,6 +224,8 @@ def main() -> int:
             route = brief["route"].removesuffix(".md") + "/"
             if route not in search_text:
                 failures.append(f"model handoff is missing from internal search: {route}")
+        if "research/working-mathematics/units/" not in search_text:
+            failures.append("retained working units are missing from internal search")
 
     robots = site / "robots.txt"
     if not robots.is_file() or "Disallow: /" not in robots.read_text(encoding="utf-8"):

@@ -47,6 +47,16 @@ def _write_once(path: Path, payload: bytes) -> None:
         handle.write(payload)
 
 
+def _insert_after_front_matter(text: str, block: str) -> str:
+    if not text.startswith("---\n"):
+        raise ValueError("handoff lacks opening YAML front matter")
+    closing = text.find("\n---\n", 4)
+    if closing < 0:
+        raise ValueError("handoff lacks closing YAML front matter")
+    insertion = closing + len("\n---\n")
+    return text[:insertion] + block + text[insertion:]
+
+
 def _verify_source(source: Path) -> tuple[dict[str, Any], dict[str, Any]]:
     manifest_path = source / "manifest.json"
     graph_path = source / "public-graph.json"
@@ -175,13 +185,8 @@ def prepare(
             "    Exact reusable units and their deeper support pages are "
             f"available in the [retained working mathematics view](../working-mathematics/programs/{slug}.md).\n"
         )
-        first_break = handoff_text.find("\n")
-        if first_break < 0:
-            raise ValueError(f"handoff lacks a title line: {handoff}")
         handoff.write_text(
-            handoff_text[: first_break + 1]
-            + handoff_note
-            + handoff_text[first_break + 1 :],
+            _insert_after_front_matter(handoff_text, handoff_note),
             encoding="utf-8",
         )
 

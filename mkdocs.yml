@@ -1,10 +1,10 @@
 site_name: "The Jacobian Conjecture: A Living Guide"
 site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
 site_description: A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened.
-docs_dir: docs-v27b-20260801a
+docs_dir: docs-v36-retained-math-20260801h
 repo_name: nmonson1/guide-to-jacobian-conjecture
 repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
-edit_uri: edit/main/docs-v27b-20260801a/
+edit_uri: edit/main/docs-v36-retained-math-20260801h/
 
 theme:
   name: material
@@ -47,6 +47,14 @@ nav:
     - Open problems: results/open-problems.md
     - Corrections: results/corrections.md
   - Research:
+    - Retained working mathematics:
+      - Overview: research/working-mathematics/index.md
+      - Cubic Marked-Root Incidence Geometry: research/working-mathematics/programs/cubic-marked-root-incidence-geometry.md
+      - Minimum Degree and Quartic Exclusions: research/working-mathematics/programs/minimum-degree-and-quartic-exclusions.md
+      - Local Rigidity and Deformation Algebra: research/working-mathematics/programs/local-rigidity-and-deformation-algebra.md
+      - Stable Moduli: research/working-mathematics/programs/stable-moduli.md
+      - Homogeneous Descendants: research/working-mathematics/programs/homogeneous-descendants.md
+      - Plane Boundary Obstructions: research/working-mathematics/programs/plane-boundary-obstructions.md
     - State of the program: research/index.md
     - Model-ready handoffs:
       - Cross-program state: research/handoffs/state-of-the-program.md
@@ -96,9 +104,9 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 
 extra:
-  status_date: 31 July 2026, Pacific time
+  status_date: 1 August 2026, Pacific time
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/nmonson1/guide-to-jacobian-conjecture
 
-copyright: Working draft updated 31 July 2026, Pacific time.
+copyright: Working draft updated 1 August 2026, Pacific time.

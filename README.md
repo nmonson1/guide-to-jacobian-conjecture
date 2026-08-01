@@ -25,6 +25,8 @@ The active local release candidate contains:
 - 368 stable-tagged atomic claim pages, all included in site search but kept
   out of the main navigation;
 - 534 many-to-many claim memberships across six research programs;
+- 560 retained working-mathematics units, 537 supplied support objects, and
+  17 typed relations across six overlapping program views;
 - six version-13 reader PDFs and one companion Results and Research Register;
 - six self-contained, searchable program handoffs plus one cross-program
   state page with nine broad research-lane entry links under
@@ -59,9 +61,10 @@ prose, versioned PDFs, selected immutable technical materials, and build
 machinery.
 
 `site-state.json` is the single sanitized release pointer. It pins the
-publication, unified claim graph, manuscript and technical-material
-manifests, generated docs tree, expected counts, and Pacific-time release
-date. Generators and checks resolve their paths and counts from it. Every
+publication, unified claim graph, retained working-mathematics graph,
+manuscript and technical-material manifests, generated docs tree, expected
+counts, and Pacific-time release date. Generators and checks resolve their
+paths and counts from it. Every
 model handoff also exposes the selected release as
 `/research/handoffs/release.json`; its visible snapshot, counts, and
 manuscript links are rendered from that same pointer.
@@ -73,11 +76,12 @@ surfaces are:
 
 - `site-state.json`: active release selection and counts;
 - `scripts/generate_living_guide_v2.py`: deterministic renderer for stable
-  claim pages, result/open-problem collections, programs, evidence, and
-  catalogue pages, model handoffs, and machine-readable handoff release;
+  claim pages, result/open-problem collections, programs, retained
+  working-mathematics units, evidence and catalogue pages, model handoffs,
+  and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-briefs-v12d-20260730a/`: hash-pinned sanitized source for
+- `data/model-briefs-v12h-20260801a/`: hash-pinned sanitized source for
   model-ready HTML handoffs; logical manuscript slots resolve against the
   selected manuscript manifest, so a stale PDF version fails the build;
 - `scripts/check_deployed_site.py`: production verification that GitHub Pages

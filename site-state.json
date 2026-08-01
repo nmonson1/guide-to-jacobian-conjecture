@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
-  "release_id": "living-guide-public-v27b-source-assimilation",
-  "updated_at": "2026-07-31T20:57:01-07:00",
+  "schema_version": 2,
+  "release_id": "living-guide-public-v36-retained-mathematics",
+  "updated_at": "2026-08-01T08:42:05-07:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,11 +22,17 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-briefs-v12e-20260801a",
-    "manifest_sha256": "18c61191cd9a3bc7aa0a650f2e1edbb90a65024b83db3d3d9abfb7166d20dd0a",
+    "data_dir": "model-briefs-v12h-20260801a",
+    "manifest_sha256": "d27869d2e81bf165a3b6911a84a9703ef766a6c1e3865a6f8f52071b5b15afa9",
     "expected_count": 7
   },
-  "docs_dir": "docs-v27b-20260801a",
+  "retained_math": {
+    "data_dir": "retained-math-v1-20260801f",
+    "manifest_sha256": "1eb730433f1e7ea6955d21ee7b7b9043ee0333fe8b508a49519d0d7e78bb2ea0",
+    "expected_units": 560,
+    "expected_programs": 6
+  },
+  "docs_dir": "docs-v36-retained-math-20260801h",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,

@@ -23,6 +23,7 @@ from generate_living_guide_v2 import (
     SITE_STATE,
     TECHNICAL_MATERIALS_DATA_DIR,
     build_release_metadata,
+    load_retained_math,
     resolve_manuscript_links,
 )
 
@@ -180,6 +181,31 @@ def main() -> int:
         failures.append(f"expected {expected['grouped_pages']} collection pages")
     if len(program_files) != expected["research_programs"]:
         failures.append(f"expected {expected['research_programs']} program pages")
+    retained = load_retained_math(ROOT)
+    if retained is None:
+        failures.append("selected release does not pin retained mathematics")
+    else:
+        retained_manifest, retained_graph = retained
+        retained_state = SITE_STATE["retained_math"]
+        retained_units = sorted(
+            (DOCS / "research/working-mathematics/units").glob("*.md")
+        )
+        retained_programs = sorted(
+            (DOCS / "research/working-mathematics/programs").glob("*.md")
+        )
+        if retained_graph["counts"]["units"] != retained_state["expected_units"]:
+            failures.append("retained-math unit count disagrees with site state")
+        if (
+            retained_graph["counts"]["programs"]
+            != retained_state["expected_programs"]
+        ):
+            failures.append("retained-math program count disagrees with site state")
+        if len(retained_units) != retained_state["expected_units"]:
+            failures.append("retained working-unit page count changed")
+        if len(retained_programs) != retained_state["expected_programs"]:
+            failures.append("retained program-view page count changed")
+        if retained_manifest["source_registry_id"] != retained_graph["registry_id"]:
+            failures.append("retained registry identity disagrees")
     locator_pages = 0
     for path in claim_files:
         text = path.read_text(encoding="utf-8")
@@ -249,6 +275,13 @@ def main() -> int:
             failures.append(f"model brief source mismatch: {brief['source']}")
             continue
         source_text = source.read_text(encoding="utf-8")
+        rendered_text = rendered.read_text(encoding="utf-8")
+        front_matter_end = rendered_text.find("\n---\n", 4)
+        retained_notice = rendered_text.find('!!! info "Retained working graph"')
+        if front_matter_end < 0 or retained_notice <= front_matter_end:
+            failures.append(
+                f"{brief['route']}: retained notice is not after YAML front matter"
+            )
         literal_links = LITERAL_MANUSCRIPT_LINK_RE.findall(source_text)
         if literal_links:
             failures.append(

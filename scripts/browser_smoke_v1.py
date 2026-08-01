@@ -226,6 +226,18 @@ def run(
                     desktop.locator('a[href*="claims/JCG-"]').count() >= 1,
                     f"model handoff lacks stable claim links: {route}",
                 )
+                require(
+                    desktop.locator(
+                        '.admonition-title:has-text("Retained working graph")'
+                    ).count()
+                    == 1,
+                    f"model handoff lacks retained-graph notice: {route}",
+                )
+                main_text = desktop.locator("main").inner_text()
+                require(
+                    'title: "Model research brief' not in main_text,
+                    f"model handoff exposes YAML metadata: {route}",
+                )
                 if brief.get("kind") == "cross_program":
                     require(
                         desktop.locator(
