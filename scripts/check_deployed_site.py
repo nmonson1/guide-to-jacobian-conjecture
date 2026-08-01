@@ -63,7 +63,10 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
             )
         if handoff["kind"] == "program" and not linked:
             failures.append(f"{route}: no active manuscript link")
-        if "research/proof-sources/" not in html:
+        if (
+            "Current text proofs — preferred" not in html
+            or "proof-sources/" not in html
+        ):
             failures.append(f"{route}: current text-proof link is missing")
     source_index = _fetch(
         urljoin(base_url, expected["manuscript_sources"]["index_route"])
