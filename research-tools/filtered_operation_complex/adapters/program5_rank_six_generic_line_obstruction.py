@@ -164,11 +164,21 @@ def _bezout_pairing_ideal(
         raise AssertionError("Bezout computation returned the zero generator")
     leading = generator.LC()
     generator = generator.monic()
-    coefficients = [coefficient / leading for coefficient in coefficients]
-    verification = sum(
-        coefficient * sp.Poly(pairing, variable, domain=sp.QQ)
-        for coefficient, pairing in zip(coefficients, pairings)
-    )
+    coefficients = [
+        sp.Poly(
+            coefficient.as_expr() / leading,
+            variable,
+            domain=sp.QQ,
+        )
+        for coefficient in coefficients
+    ]
+    verification = sp.Poly(0, variable, domain=sp.QQ)
+    for coefficient, pairing in zip(coefficients, pairings):
+        verification += coefficient * sp.Poly(
+            pairing,
+            variable,
+            domain=sp.QQ,
+        )
     if verification != generator:
         raise AssertionError("Bezout coefficients do not reproduce the pairing gcd")
     return generator, coefficients
