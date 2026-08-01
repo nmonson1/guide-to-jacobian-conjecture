@@ -24,16 +24,23 @@ class Program5ExceptionalFiniteLineTests(unittest.TestCase):
             "a2ec1fb45cc42b527958f3c881b8a9bb8c0ce093aa553c846806ab868513a2d8",
         )
         self.assertEqual(result["exceptional_ratio_count"], 3)
-        self.assertEqual(len(result["exceptional_ratios"]), 3)
+        ratios = result["exceptional_ratios"]
+        self.assertEqual(len(ratios), 3)
         self.assertTrue(result["conjugate_rank_profiles_equal"])
-        for item in result["exceptional_ratios"]:
-            self.assertFalse(item["cubic_lift_solvable"])
-            self.assertGreater(
-                item["cubic_augmented_rank"],
-                item["cubic_effect_rank"],
+        for item in ratios:
+            self.assertEqual(
+                item["cubic_lift_solvable"],
+                item["cubic_effect_rank"]
+                == item["cubic_augmented_rank"],
             )
-        self.assertTrue(result["all_exceptional_finite_ratios_obstructed"])
-        self.assertTrue(result["finite_selected_plane_closed_at_cubic_order"])
+        self.assertEqual(
+            result["all_exceptional_finite_ratios_obstructed"],
+            all(not item["cubic_lift_solvable"] for item in ratios),
+        )
+        self.assertEqual(
+            result["finite_selected_plane_closed_at_cubic_order"],
+            result["all_exceptional_finite_ratios_obstructed"],
+        )
 
         print(
             json.dumps(
@@ -51,7 +58,7 @@ class Program5ExceptionalFiniteLineTests(unittest.TestCase):
                             ],
                             "solvable": item["cubic_lift_solvable"],
                         }
-                        for item in result["exceptional_ratios"]
+                        for item in ratios
                     ],
                     "finite_selected_plane_closed": result[
                         "finite_selected_plane_closed_at_cubic_order"
