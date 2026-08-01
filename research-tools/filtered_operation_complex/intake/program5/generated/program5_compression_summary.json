@@ -1,0 +1,33 @@
+{
+  "affine_row_killing": {
+    "augmented_rank": 95,
+    "constraint_rank": 95,
+    "direction_dimension": 20,
+    "distinguished_solution": "P0=-d^2 e_a",
+    "original_equation_count": 126,
+    "selected_output_rows": [
+      "a",
+      "d",
+      "q",
+      "h",
+      "k"
+    ]
+  },
+  "classification_boundary": "Candidate source-operation directions only. No claim that the full direction space consists of polynomial automorphisms or stable-presentation changes.",
+  "missing_input": "The public supplement inspected here does not export the later 109-direction/75-automorphism packet stated in the Program 5 handoff. This export must not be relabeled as that packet.",
+  "name": "Exact Program 5 compression export summary",
+  "quartic_functional": {
+    "name": "Lambda_4",
+    "value_on_entire_affine_row_killing_slice": 1
+  },
+  "rank_six_tangent": {
+    "basepoint": "P0=-d^2 e_a",
+    "constraint_rank": 93,
+    "tangent_dimension": 22
+  },
+  "robust_family_dimension": 12,
+  "schema_version": 1,
+  "source_file": "/home/runner/work/guide-to-jacobian-conjecture/guide-to-jacobian-conjecture/research-tools/filtered_operation_complex/intake/program5/focused/extensions_verifier.py",
+  "source_sha256": "a2ec1fb45cc42b527958f3c881b8a9bb8c0ce093aa553c846806ab868513a2d8",
+  "weight_preserving_quadratic_operation_dimension": 115
+}

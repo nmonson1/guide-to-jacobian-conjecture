@@ -33,12 +33,6 @@
       "sha256": "d64a0fe889771b89098a3a8201320d5412b8795b5b47c8fe11433f2d1377494a"
     },
     {
-      "archive_path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/base19_data.py",
-      "bytes": 1329,
-      "output_path": "research-tools/filtered_operation_complex/intake/program5/focused/base19_data.py",
-      "sha256": "00857f79ef7d445875b84178e440ee93452dc306b361a22b90b9837ad8a641ca"
-    },
-    {
       "archive_path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack8_quartic_functional.py",
       "bytes": 3077,
       "output_path": "research-tools/filtered_operation_complex/intake/program5/focused/attack8_quartic_functional.py",
