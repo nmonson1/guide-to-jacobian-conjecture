@@ -16,6 +16,7 @@ from generate_living_guide_v2 import (
     CLAIM_GRAPH_DATA_DIR,
     LITERAL_MANUSCRIPT_LINK_RE,
     MANUSCRIPTS_DATA_DIR,
+    MANUSCRIPT_SOURCES_DATA_DIR,
     MANUSCRIPT_TOKEN_RE,
     MODEL_BRIEFS_DATA_DIR,
     PUBLICATION_DATA_DIR,
@@ -23,7 +24,9 @@ from generate_living_guide_v2 import (
     SITE_STATE,
     TECHNICAL_MATERIALS_DATA_DIR,
     build_release_metadata,
+    load_manuscript_sources,
     load_retained_math,
+    proof_source_route,
     retained_corrections,
     resolve_manuscript_links,
 )
@@ -34,7 +37,9 @@ DOCS = ROOT / PUBLIC_DOCS_DIR
 GRAPH_DATA = ROOT / "data" / CLAIM_GRAPH_DATA_DIR
 PUBLICATION_DATA = ROOT / "data" / PUBLICATION_DATA_DIR
 MODEL_BRIEF_DATA = ROOT / "data" / MODEL_BRIEFS_DATA_DIR
-TEXT_SUFFIXES = {".md", ".yml", ".yaml", ".json", ".css", ".js", ".txt"}
+TEXT_SUFFIXES = {
+    ".md", ".yml", ".yaml", ".json", ".css", ".js", ".txt", ".tex", ".bib"
+}
 FORBIDDEN = (
     "/fss/",
     "/home/",
@@ -73,6 +78,10 @@ HANDOFF_STRUCTURE = (
 HANDOFF_PROOF_LINK = re.compile(
     r"(?P<path>\.\./\.\./assets/(?:manuscripts|proof-archives)/"
     r"[^)\s]+\.pdf)#page=(?P<page>\d+)"
+)
+HANDOFF_TEXT_PROOF_LINK = re.compile(
+    r"(?:\.\./\.\./research/|\.\./)proof-sources/"
+    r"[^)\s#]+/?(?:#[^)\s]+)?"
 )
 HANDOFF_STATUS_BUREAUCRACY = (
     "review status",
@@ -113,8 +122,9 @@ def _sensitive(text: str, label: str, failures: list[str]) -> None:
 
 def _local_links(path: Path, failures: list[str]) -> None:
     text = path.read_text(encoding="utf-8")
-    targets = re.findall(r"\[[^\]]+\]\(([^)]+)\)", text)
-    targets += re.findall(r'href="([^"]+)"', text)
+    link_text = re.sub(r"~~~.*?~~~|```.*?```", "", text, flags=re.DOTALL)
+    targets = re.findall(r"\[[^\]]+\]\(([^)]+)\)", link_text)
+    targets += re.findall(r'href="([^"]+)"', link_text)
     for raw in targets:
         target = raw.split("#", 1)[0]
         if not target or "://" in target or target.startswith(("mailto:", "#")):
@@ -213,6 +223,63 @@ def main() -> int:
             failures.append("retained program-view page count changed")
         if retained_manifest["source_registry_id"] != retained_graph["registry_id"]:
             failures.append("retained registry identity disagrees")
+    source_manifest = load_manuscript_sources(ROOT)
+    source_files: dict[str, dict[str, object]] = {}
+    if source_manifest is None:
+        failures.append("selected release does not pin manuscript sources")
+    else:
+        source_files = {item["path"]: item for item in source_manifest["files"]}
+        source_state = SITE_STATE["manuscript_sources"]
+        source_pages = sorted(
+            (DOCS / "research/proof-sources").rglob("*.md")
+        )
+        if len(source_files) != source_state["expected_files"]:
+            failures.append("manuscript-source file count disagrees with site state")
+        if len(source_manifest["labels"]) != source_state["expected_labels"]:
+            failures.append("manuscript-source label count disagrees with site state")
+        if len(source_pages) != source_state["expected_files"] + 1:
+            failures.append("text-proof source page count changed")
+        if retained is not None and (
+            source_manifest["retained_registry"]["registry_id"]
+            != retained[1]["registry_id"]
+        ):
+            failures.append("manuscript sources pin the wrong retained registry")
+        for item in source_manifest["files"]:
+            page = DOCS / proof_source_route(str(item["path"]))
+            if not page.is_file():
+                failures.append(f"missing text-proof source page: {item['path']}")
+                continue
+            text = page.read_text(encoding="utf-8")
+            for marker in (str(item["path"]), str(item["sha256"]), "## Complete source"):
+                if marker not in text:
+                    failures.append(
+                        f"{page.relative_to(ROOT)}: missing source marker {marker!r}"
+                    )
+        if retained is not None:
+            for unit in retained[1]["units"]:
+                for support in unit.get("support", []):
+                    for key in ("locator", "source_locator"):
+                        locator = support.get(key)
+                        if not isinstance(locator, dict):
+                            continue
+                        repo_path = str(locator.get("repo_path", ""))
+                        if locator.get("kind") != "repo" or not repo_path.startswith(
+                            "manuscripts/"
+                        ):
+                            continue
+                        relative = repo_path.removeprefix("manuscripts/")
+                        item = source_files.get(relative)
+                        if item is None:
+                            failures.append(
+                                f"{unit['unit_id']}: unpublished manuscript source {relative}"
+                            )
+                            continue
+                        anchor = locator.get("anchor")
+                        labels = {label["label"] for label in item["labels"]}
+                        if anchor and anchor not in labels:
+                            failures.append(
+                                f"{unit['unit_id']}: missing source label {relative}#{anchor}"
+                            )
     locator_pages = 0
     for path in claim_files:
         text = path.read_text(encoding="utf-8")
@@ -388,9 +455,12 @@ def main() -> int:
                     f"{brief['source']}: no active-manuscript token"
                 )
             proof_links = list(HANDOFF_PROOF_LINK.finditer(resolved_source))
-            if len(proof_links) < 8:
+            text_proof_links = list(
+                HANDOFF_TEXT_PROOF_LINK.finditer(resolved_source)
+            )
+            if len(proof_links) + len(text_proof_links) < 8:
                 failures.append(
-                    f"{brief['source']}: too few direct page-level proof links"
+                    f"{brief['source']}: too few direct proof/source locators"
                 )
             for match in proof_links:
                 if "assets/manuscripts/" in match.group("path"):
@@ -436,6 +506,8 @@ def main() -> int:
             failures.append(f"{brief['route']}: missing canonical snapshot")
         if SITE_STATE["release_id"] not in rendered_text:
             failures.append(f"{brief['route']}: snapshot names the wrong release")
+        if '!!! tip "Current text proofs — preferred"' not in rendered_text:
+            failures.append(f"{brief['route']}: missing preferred text-proof notice")
         for heading in (
             "## 1. Setup and notation",
             "## 2. Goal and payoff",
@@ -489,6 +561,7 @@ def main() -> int:
         GRAPH_DATA,
         PUBLICATION_DATA,
         MODEL_BRIEF_DATA,
+        ROOT / "data" / MANUSCRIPT_SOURCES_DATA_DIR,
         ROOT / "overrides",
     )
     scanned = 0

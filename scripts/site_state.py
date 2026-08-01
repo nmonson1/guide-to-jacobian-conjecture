@@ -29,9 +29,11 @@ def load_site_state(root: Path) -> dict[str, Any]:
         "expected_counts",
     }
     schema_version = state.get("schema_version")
-    if schema_version == 2:
+    if schema_version in {2, 3}:
         required.add("retained_math")
-    if schema_version not in {1, 2} or set(state) != required:
+    if schema_version == 3:
+        required.add("manuscript_sources")
+    if schema_version not in {1, 2, 3} or set(state) != required:
         raise ValueError(f"invalid site-state structure: {path}")
     if state["timezone"] != "America/Los_Angeles":
         raise ValueError("site-state dates must use America/Los_Angeles")
@@ -42,8 +44,10 @@ def load_site_state(root: Path) -> dict[str, Any]:
         "technical_materials",
         "model_briefs",
     ]
-    if schema_version == 2:
+    if schema_version in {2, 3}:
         component_keys.append("retained_math")
+    if schema_version == 3:
+        component_keys.append("manuscript_sources")
     for key in component_keys:
         component = state[key]
         manifest = root / "data" / component["data_dir"] / "manifest.json"

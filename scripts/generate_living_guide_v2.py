@@ -27,6 +27,9 @@ MODEL_BRIEFS_DATA_DIR = SITE_STATE["model_briefs"]["data_dir"]
 RETAINED_MATH_DATA_DIR = (
     SITE_STATE.get("retained_math", {}).get("data_dir")
 )
+MANUSCRIPT_SOURCES_DATA_DIR = (
+    SITE_STATE.get("manuscript_sources", {}).get("data_dir")
+)
 
 MANUSCRIPT_TOKEN_RE = re.compile(r"\{\{MANUSCRIPT_(?P<sequence>[0-9]{2})\}\}")
 LITERAL_MANUSCRIPT_LINK_RE = re.compile(
@@ -74,6 +77,144 @@ def load_retained_math(root: Path) -> tuple[dict[str, Any], dict[str, Any]] | No
         if hashlib.sha256(payload).hexdigest() != item["sha256"]:
             raise ValueError(f"retained-math digest mismatch: {item['path']}")
     return manifest, graph
+
+
+def load_manuscript_sources(root: Path) -> dict[str, Any] | None:
+    state = load_site_state(root)
+    component = state.get("manuscript_sources")
+    if component is None:
+        return None
+    data = root / "data" / component["data_dir"]
+    manifest = _load(data / "manifest.json")
+    files = manifest.get("files", [])
+    if manifest["counts"]["files"] != len(files):
+        raise ValueError("manuscript-source file count disagrees")
+    if manifest["counts"]["labels"] != len(manifest.get("labels", [])):
+        raise ValueError("manuscript-source label count disagrees")
+    if len(files) != component["expected_files"]:
+        raise ValueError("manuscript-source file count disagrees with site state")
+    if len(manifest["labels"]) != component["expected_labels"]:
+        raise ValueError("manuscript-source label count disagrees with site state")
+    indexed_labels = []
+    for item in files:
+        path = data / "sources" / item["path"]
+        payload = path.read_bytes()
+        if len(payload) != item["size_bytes"]:
+            raise ValueError(f"manuscript-source byte count mismatch: {item['path']}")
+        if hashlib.sha256(payload).hexdigest() != item["sha256"]:
+            raise ValueError(f"manuscript-source digest mismatch: {item['path']}")
+        indexed_labels.extend(item["labels"])
+    def label_key(item: dict[str, Any]) -> tuple[str, int, str]:
+        return item["path"], item["line"], item["label"]
+
+    if sorted(indexed_labels, key=label_key) != sorted(
+        manifest["labels"], key=label_key
+    ):
+        raise ValueError("manuscript-source file labels disagree with global index")
+    return manifest
+
+
+def proof_source_route(path: str) -> Path:
+    return Path("research/proof-sources") / Path(path).with_suffix(".md")
+
+
+def _proof_entrypoint(
+    manifest: dict[str, Any], program_sequence: int
+) -> dict[str, Any]:
+    entry_id = f"program-{program_sequence}"
+    return next(
+        item for item in manifest["entrypoints"] if item["entrypoint_id"] == entry_id
+    )
+
+
+def render_proof_source_page(item: dict[str, Any], source: str) -> str:
+    relative = item["path"]
+    language = "bibtex" if relative.endswith(".bib") else "tex"
+    back = "../" * len(Path(relative).parent.parts) + "index.md"
+    lines = [
+        "---",
+        f"title: {_yaml('Text proof source — ' + relative)}",
+        f"description: {_yaml('Sanitized current source with exact TeX-label anchors.')}",
+        "---",
+        "",
+        "# Text proof source",
+        "",
+        f"`manuscripts/{relative}`",
+        "",
+        "This is the current sanitized source text used by the retained working "
+        "graph. Comments and private locators are omitted; mathematical content "
+        "and line numbering are preserved. PDFs are optional reading copies.",
+        "",
+        f"Published SHA-256: `{item['sha256']}` · {item['size_bytes']:,} bytes",
+        "",
+    ]
+    if item["labels"]:
+        lines.extend(["## Exact label anchors", ""])
+        for label in item["labels"]:
+            lines.extend(
+                [
+                    f'<a id="{label["anchor"]}"></a>',
+                    f"- `{label['label']}` — source line {label['line']}",
+                ]
+            )
+        lines.append("")
+    lines.extend(
+        [
+            "## Complete source",
+            "",
+            f"~~~{language}",
+            source.rstrip(),
+            "~~~",
+            "",
+            f"[Back to the text-source index]({back})",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def render_proof_source_index(manifest: dict[str, Any]) -> str:
+    files = {item["path"]: item for item in manifest["files"]}
+    lines = [
+        "---",
+        'title: "Current text proof sources"',
+        'description: "Model-friendly TeX sources for the current retained mathematics."',
+        "---",
+        "",
+        "# Current text proof sources",
+        "",
+        "Give a research model the relevant program entrypoint below. It can "
+        "follow `\\input` links, retained-unit source anchors, and technical "
+        "records without downloading a PDF.",
+        "",
+        f"This pinned release contains **{manifest['counts']['files']} files**, "
+        f"**{manifest['counts']['labels']} exact label anchors**, and "
+        f"{manifest['counts']['size_bytes']:,} bytes of sanitized TeX/BibTeX.",
+        "",
+        "## Program entrypoints",
+        "",
+    ]
+    for entry in manifest["entrypoints"]:
+        path = entry["path"].removeprefix("manuscripts/")
+        item = files[path]
+        title = entry["entrypoint_id"].replace("-", " ").title()
+        route = proof_source_route(path).relative_to("research/proof-sources")
+        lines.append(
+            f"- [{title}]({route.as_posix()}) — "
+            f"{len(entry['selected_files'])} transitive source files, "
+            f"{len(item['labels'])} labels in the entrypoint"
+        )
+    lines.extend(["", "## All published source files", ""])
+    for item in manifest["files"]:
+        route = proof_source_route(item["path"]).relative_to(
+            "research/proof-sources"
+        )
+        lines.append(
+            f"- [`{item['path']}`]({route.as_posix()}) — "
+            f"{len(item['labels'])} labels · {item['size_bytes']:,} bytes"
+        )
+    lines.append("")
+    return "\n".join(lines)
 
 
 def retained_corrections(
@@ -191,6 +332,9 @@ def load(root: Path) -> tuple[
     brief_manifest = _load(
         root / "data" / state["model_briefs"]["data_dir"] / "manifest.json"
     )
+    source_manifest = load_manuscript_sources(root)
+    if source_manifest is None:
+        raise ValueError("selected release does not pin manuscript sources")
     if brief_manifest["brief_count"] != len(brief_manifest["briefs"]):
         raise ValueError("model brief manifest count mismatch")
     briefs = {item["program_slug"]: item for item in brief_manifest["briefs"]}
@@ -255,6 +399,9 @@ def build_release_metadata(root: Path) -> dict[str, Any]:
     brief_manifest = _load(
         root / "data" / state["model_briefs"]["data_dir"] / "manifest.json"
     )
+    source_manifest = load_manuscript_sources(root)
+    if source_manifest is None:
+        raise ValueError("selected release does not pin manuscript sources")
     versions = {item["version"] for item in manuscript_manifest["manuscripts"]}
     if len(versions) != 1:
         raise ValueError("selected manuscripts do not share one release version")
@@ -294,6 +441,7 @@ def build_release_metadata(root: Path) -> dict[str, Any]:
             "claim_graph_manifest_sha256": state["claim_graph"]["manifest_sha256"],
             "manuscript_manifest_sha256": state["manuscripts"]["manifest_sha256"],
             "model_brief_manifest_sha256": state["model_briefs"]["manifest_sha256"],
+            "manuscript_source_manifest_sha256": state["manuscript_sources"]["manifest_sha256"],
         },
         "counts": state["expected_counts"],
         "manuscript_version": next(iter(versions)),
@@ -304,6 +452,12 @@ def build_release_metadata(root: Path) -> dict[str, Any]:
             "count": brief_manifest["brief_count"],
         },
         "handoffs": handoffs,
+        "manuscript_sources": {
+            "release_id": source_manifest["release_id"],
+            "source_repository_commit": source_manifest["source_repository_commit"],
+            "counts": source_manifest["counts"],
+            "index_route": "research/proof-sources/",
+        },
     }
     retained = load_retained_math(root)
     if retained is not None:
@@ -321,6 +475,7 @@ def render_model_brief(
     source: str,
     manuscripts: dict[str, dict[str, Any]],
     release: dict[str, Any],
+    proof_sources: dict[str, Any],
 ) -> str:
     source = resolve_manuscript_links(source, manuscripts)
     cross_program = brief.get("kind") == "cross_program"
@@ -349,6 +504,21 @@ def render_model_brief(
             "    Exact reusable units and their deeper support pages are available",
             f"    in the [retained working mathematics view]({retained_target}).",
         ]
+    if cross_program:
+        source_target = "../proof-sources/index.md"
+    else:
+        entry = _proof_entrypoint(proof_sources, brief["program_sequence"])
+        source_path = entry["path"].removeprefix("manuscripts/")
+        source_target = "../proof-sources/" + proof_source_route(
+            source_path
+        ).relative_to("research/proof-sources").as_posix()
+    source_note = [
+        "",
+        '!!! tip "Current text proofs — preferred"',
+        "    Use the [current TeX source and exact label anchors]"
+        f"({source_target}) for full proof context. PDFs are optional archival",
+        "    reading copies and may predate source repairs.",
+    ]
     return "\n".join(
         [
             "---",
@@ -371,6 +541,7 @@ def render_model_brief(
                 "{ .handoff-release }"
             ),
             *retained_note,
+            *source_note,
             source.rstrip(),
             "",
             back_link,
@@ -779,12 +950,16 @@ def render_program(
     collections: dict[str, dict[str, Any]],
     manuscripts: dict[str, dict[str, Any]],
     briefs: dict[str, dict[str, Any]],
+    proof_sources: dict[str, Any],
 ) -> str:
     pages = [collections[slug] for slug in program["collection_slugs"]]
     results = [page for page in pages if page["kind"] == "result"]
     problems = [page for page in pages if page["kind"] == "open_problem"]
     coverage = Counter(page["manuscript_coverage"]["status"] for page in pages)
     manuscript = _manuscript(program, manuscripts)
+    entry = _proof_entrypoint(proof_sources, program["sequence"])
+    source_path = entry["path"].removeprefix("manuscripts/")
+    source_route = proof_source_route(source_path).relative_to("research")
     lines = [
         "---",
         f"title: {_yaml(program['title'])}",
@@ -824,14 +999,24 @@ def render_program(
         )
     lines.extend(
         [
-            "## Working paper",
+            "## Current text proof sources",
+            "",
+            f"[Open the complete Program {program['sequence']} TeX source]"
+            f"(../{source_route.as_posix()})"
+            "{ .md-button .md-button--primary }",
+            "",
+            "The text source is the current model-friendly authority: exact "
+            "definitions, statements, proofs, dependencies, and label anchors.",
+            "",
+            "## Optional PDF reading copy",
             "",
             f"[{manuscript['title']}, v{manuscript['version']}](../../assets/manuscripts/{manuscript['filename']})"
-            "{ .md-button .md-button--primary }",
+            "{ .md-button }",
             "",
             f"Nathaniel Monson · {manuscript['pages']} pages · dated {manuscript['manuscript_date']} · SHA-256 `{manuscript['sha256']}`",
             "",
-            "The PDF is a working manuscript. Exact manuscript location, evidence, and independent review remain separate fields in the claim graph.",
+            "This PDF predates some August 1 source repairs. Use it for reading, "
+            "not as the authority when it differs from the retained graph or text source.",
             "",
         ]
     )
@@ -1020,6 +1205,16 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     docs = root / PUBLIC_DOCS_DIR
     outputs: dict[Path, str] = {}
     retained = load_retained_math(root)
+    proof_sources = load_manuscript_sources(root)
+    if proof_sources is None:
+        raise ValueError("selected release does not pin manuscript sources")
+    if retained is None:
+        raise ValueError("selected release does not pin retained mathematics")
+    if (
+        proof_sources["retained_registry"]["registry_id"]
+        != retained[1]["registry_id"]
+    ):
+        raise ValueError("manuscript sources and retained graph disagree")
     corrections = retained_corrections(retained)
     for claim in claims.values():
         outputs[docs / "claims" / f"{claim['tag']}.md"] = render_claim(
@@ -1032,7 +1227,9 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     for program in programs.values():
         outputs[
             docs / "research/programs" / f"{program['slug']}.md"
-        ] = render_program(program, collections, manuscripts, briefs)
+        ] = render_program(
+            program, collections, manuscripts, briefs, proof_sources
+        )
     for brief in briefs.values():
         source_path = root / "data" / MODEL_BRIEFS_DATA_DIR / brief["source"]
         outputs[docs / brief["route"]] = render_model_brief(
@@ -1040,6 +1237,7 @@ def expected_outputs(root: Path) -> dict[Path, str]:
             source_path.read_text(encoding="utf-8"),
             manuscripts,
             release,
+            proof_sources,
         )
     outputs[docs / "research/handoffs/release.json"] = (
         json.dumps(release, indent=2, sort_keys=True) + "\n"
@@ -1062,6 +1260,17 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     outputs[docs / "research/papers.md"] = render_papers(manuscripts)
     outputs[docs / "evidence/index.md"] = render_evidence_index(collections)
     outputs[docs / "evidence/materials.md"] = render_materials(materials)
+    source_data = root / "data" / SITE_STATE["manuscript_sources"]["data_dir"]
+    outputs[docs / "research/proof-sources/index.md"] = (
+        render_proof_source_index(proof_sources)
+    )
+    for item in proof_sources["files"]:
+        source_path = source_data / "sources" / item["path"]
+        outputs[docs / proof_source_route(item["path"])] = (
+            render_proof_source_page(
+                item, source_path.read_text(encoding="utf-8")
+            )
+        )
     if retained is not None:
         _, retained_graph = retained
         retained_data = root / "data" / SITE_STATE["retained_math"]["data_dir"]
@@ -1126,10 +1335,11 @@ def main() -> int:
         root / PUBLIC_DOCS_DIR / "collections",
         root / PUBLIC_DOCS_DIR / "research/programs",
         root / PUBLIC_DOCS_DIR / "research/handoffs",
+        root / PUBLIC_DOCS_DIR / "research/proof-sources",
         root / PUBLIC_DOCS_DIR / "research/working-mathematics/programs",
         root / PUBLIC_DOCS_DIR / "research/working-mathematics/units",
     ):
-        for path in directory.glob("*.md"):
+        for path in directory.rglob("*.md"):
             if path not in expected_paths:
                 failures.append(f"unexpected generated file: {path.relative_to(root)}")
     if failures:

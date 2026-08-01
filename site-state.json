@@ -1,7 +1,7 @@
 {
-  "schema_version": 2,
-  "release_id": "living-guide-public-v38-cubic-obstruction",
-  "updated_at": "2026-08-01T11:26:41-07:00",
+  "schema_version": 3,
+  "release_id": "living-guide-public-v39-text-proofs",
+  "updated_at": "2026-08-01T12:56:55-07:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,17 +22,23 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-briefs-v12k-20260801a",
-    "manifest_sha256": "6a164fb86614a36ab6a4501116875c4a998f4186013b53a889b4d091cf82b7d9",
+    "data_dir": "model-briefs-v12m-20260801a",
+    "manifest_sha256": "73c1f6d08ce91bef895ad45fa45b36cfc67488c5f58d94b07f8ac4e7a1cecfb8",
     "expected_count": 7
   },
   "retained_math": {
-    "data_dir": "retained-math-v1-20260801i",
-    "manifest_sha256": "a672a2df3b7bc1c4342debfe7d6bf6083182b74a5e7dae2191d70a59009d8246",
-    "expected_units": 562,
+    "data_dir": "retained-math-v1-20260801j",
+    "manifest_sha256": "4535a812fb5db2ade20a317c95f90db935fbe4c40ad547cfc340f7fec037a6b3",
+    "expected_units": 558,
     "expected_programs": 6
   },
-  "docs_dir": "docs-v38-retained-math-20260801m",
+  "manuscript_sources": {
+    "data_dir": "manuscript-sources-v1-20260801a",
+    "manifest_sha256": "10533d7ee7a4fb1c889185e883eafd00a256a1572da4c21e790d5d1b3dba72fb",
+    "expected_files": 37,
+    "expected_labels": 630
+  },
+  "docs_dir": "docs-v39-text-proofs-20260801b",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,

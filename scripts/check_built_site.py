@@ -19,6 +19,7 @@ from generate_living_guide_v2 import (
     SITE_STATE,
     TECHNICAL_MATERIALS_DATA_DIR,
     build_release_metadata,
+    load_manuscript_sources,
     load_retained_math,
     retained_corrections,
 )
@@ -146,6 +147,8 @@ def main() -> int:
             )
         if brief.get("kind") == "program" and not linked_manuscripts:
             failures.append(f"model handoff lacks an active manuscript: /{route}")
+        if "Current text proofs — preferred" not in text:
+            failures.append(f"model handoff lacks current text proofs: /{route}")
 
     release_path = site / "research/handoffs/release.json"
     if not release_path.is_file():
@@ -217,12 +220,37 @@ def main() -> int:
             f"{SITE_STATE['retained_math']['expected_programs']}, found "
             f"{len(retained_program_pages)}"
         )
+    source_manifest = load_manuscript_sources(ROOT)
+    if source_manifest is None:
+        failures.append("selected release does not pin manuscript sources")
+    else:
+        proof_pages = list(
+            (site / "research/proof-sources").rglob("index.html")
+        )
+        expected_proof_pages = SITE_STATE["manuscript_sources"]["expected_files"] + 1
+        if len(proof_pages) != expected_proof_pages:
+            failures.append(
+                "built text-proof routes: expected "
+                f"{expected_proof_pages}, found {len(proof_pages)}"
+            )
+        label_anchors = 0
+        for path in proof_pages:
+            text = path.read_text(encoding="utf-8")
+            label_anchors += len(re.findall(r'id="label-[^"]+"', text))
+        if label_anchors != SITE_STATE["manuscript_sources"]["expected_labels"]:
+            failures.append(
+                "built text-proof label anchors: expected "
+                f"{SITE_STATE['manuscript_sources']['expected_labels']}, "
+                f"found {label_anchors}"
+            )
     for path in handoff_pages:
         text = path.read_text(encoding="utf-8")
         if '<p>title: "Model research brief' in text:
             failures.append(f"handoff renders YAML metadata as prose: {path.name}")
         if "Retained working graph" not in text:
             failures.append(f"handoff lacks retained graph link: {path.name}")
+        if "Current text proofs — preferred" not in text:
+            failures.append(f"handoff lacks text-proof link: {path.name}")
 
     search_path = site / "search/search_index.json"
     if not search_path.is_file():
@@ -237,6 +265,8 @@ def main() -> int:
                 failures.append(f"model handoff is missing from internal search: {route}")
         if "research/working-mathematics/units/" not in search_text:
             failures.append("retained working units are missing from internal search")
+        if "research/proof-sources/" not in search_text:
+            failures.append("text proof sources are missing from internal search")
 
     robots = site / "robots.txt"
     if not robots.is_file() or "Disallow: /" not in robots.read_text(encoding="utf-8"):

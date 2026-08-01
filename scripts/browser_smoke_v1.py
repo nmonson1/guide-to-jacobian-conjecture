@@ -185,6 +185,21 @@ def run(
                 release_response.json()["site_release_id"] == state["release_id"],
                 "machine-readable handoff release names the wrong site release",
             )
+            source_response = desktop.context.request.get(
+                base + "research/proof-sources/"
+            )
+            require(source_response.ok, "text-proof source index is not readable")
+            exact_source = desktop.context.request.get(
+                base
+                + "research/proof-sources/01-cubic-incidence/appendices/"
+                + "cubic-resolvent-defects/"
+            )
+            require(exact_source.ok, "corrected Program 1 source is not readable")
+            require(
+                'id="label-prop-cubic-divisorial-trichotomy"'
+                in exact_source.text(),
+                "corrected Program 1 source anchor is missing",
+            )
             material = desktop.context.request.get(
                 base + "assets/technical-materials/" + first_material
             )
@@ -233,6 +248,13 @@ def run(
                     == 1,
                     f"model handoff lacks retained-graph notice: {route}",
                 )
+                require(
+                    desktop.locator(
+                        '.admonition-title:has-text("Current text proofs")'
+                    ).count()
+                    == 1,
+                    f"model handoff lacks text-proof notice: {route}",
+                )
                 main_text = desktop.locator("main").inner_text()
                 require(
                     'title: "Model research brief' not in main_text,
@@ -251,12 +273,14 @@ def run(
                         bool(linked_manuscripts),
                         f"model handoff lacks an active manuscript: {route}",
                     )
+                    proof_locators = desktop.locator(
+                        'a[href*="/assets/"][href*=".pdf#page="]'
+                    ).count() + desktop.locator(
+                        'a[href*="proof-sources/"]'
+                    ).count()
                     require(
-                        desktop.locator(
-                            'a[href*="/assets/"][href*=".pdf#page="]'
-                        ).count()
-                        >= 8,
-                        f"model handoff lacks direct proof-body links: {route}",
+                        proof_locators >= 8,
+                        f"model handoff lacks direct proof/source links: {route}",
                     )
 
             desktop.goto(base, wait_until="networkidle")

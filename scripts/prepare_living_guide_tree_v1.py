@@ -17,6 +17,7 @@ GENERATED_NAMESPACES = {
     Path("collections"),
     Path("research/programs"),
     Path("research/handoffs"),
+    Path("research/proof-sources"),
     Path("research/working-mathematics/programs"),
     Path("research/working-mathematics/units"),
 }

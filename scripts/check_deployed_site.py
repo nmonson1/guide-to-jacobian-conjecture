@@ -63,6 +63,22 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
             )
         if handoff["kind"] == "program" and not linked:
             failures.append(f"{route}: no active manuscript link")
+        if "research/proof-sources/" not in html:
+            failures.append(f"{route}: current text-proof link is missing")
+    source_index = _fetch(
+        urljoin(base_url, expected["manuscript_sources"]["index_route"])
+    ).decode("utf-8")
+    if "Current text proof sources" not in source_index:
+        failures.append("deployed text-proof source index is missing")
+    exact_source = _fetch(
+        urljoin(
+            base_url,
+            "research/proof-sources/01-cubic-incidence/appendices/"
+            "cubic-resolvent-defects/",
+        )
+    ).decode("utf-8")
+    if 'id="label-prop-cubic-divisorial-trichotomy"' not in exact_source:
+        failures.append("deployed corrected Program 1 proof anchor is missing")
     return failures
 
 
