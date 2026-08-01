@@ -102,6 +102,8 @@ jobs:
             --output /tmp/program5-compression-replay.json
           cmp "$generated/program5_compression_report.json" \
               /tmp/program5-compression-replay.json
+          python -m filtered_operation_complex.adapters.program5_tangent_bridge \
+            --output "$generated/program5_tangent_bridge.json"
 
       - name: Commit focused sources and generated exact outputs
         run: |
@@ -114,5 +116,5 @@ jobs:
             echo 'No Program 5 source or export changes.'
             exit 0
           fi
-          git commit -m 'Record exact Program 5 compression complex'
+          git commit -m 'Record Program 5 tangent bridge'
           git push origin HEAD:${{ github.ref_name }}
