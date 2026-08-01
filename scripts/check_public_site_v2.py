@@ -26,6 +26,7 @@ from generate_living_guide_v2 import (
     build_release_metadata,
     load_manuscript_sources,
     load_retained_math,
+    load_retained_math_v2,
     proof_source_route,
     retained_corrections,
     resolve_manuscript_links,
@@ -223,6 +224,32 @@ def main() -> int:
             failures.append("retained program-view page count changed")
         if retained_manifest["source_registry_id"] != retained_graph["registry_id"]:
             failures.append("retained registry identity disagrees")
+    retained_v2 = load_retained_math_v2(ROOT)
+    v2_selection: dict[str, object] | None = None
+    if retained_v2 is None:
+        failures.append("selected release does not pin retained-math v2")
+    else:
+        _, v2_selection = retained_v2
+        expected_v2_ids = {
+            "arguments": ["ARG-RMU5D8E0003-FINITE-PLANE"],
+            "evidence": [
+                "EVD-RMU5D8E0003-EXCEPTIONAL-CUBIC",
+                "EVD-RMU5D8E0003-GENERIC-CUBIC",
+                "EVD-RMU5D8E0003-QUARTIC-SEPARATOR",
+            ],
+            "obligations": ["OBL-P5-FULL-FINITE-ROW-BASE"],
+            "tasks": ["TSK-P5-FULL-FINITE-ROW-BASE"],
+            "units": ["RMU-5D8E0001", "RMU-5D8E0002", "RMU-5D8E0003"],
+        }
+        if v2_selection["selected_ids"] != expected_v2_ids:
+            failures.append("retained-math v2 pilot selection changed")
+        machine_selection = (
+            DOCS / "research/handoffs/retained-math-v2-pilot.json"
+        )
+        if not machine_selection.is_file():
+            failures.append("machine-readable retained-math v2 selection is missing")
+        elif json.loads(machine_selection.read_text(encoding="utf-8")) != v2_selection:
+            failures.append("rendered retained-math v2 selection disagrees")
     source_manifest = load_manuscript_sources(ROOT)
     source_files: dict[str, dict[str, object]] = {}
     if source_manifest is None:
@@ -384,6 +411,7 @@ def main() -> int:
     if brief_manifest.get("primary_entrypoint_count") != 10:
         failures.append("primary model-entrypoint count is not ten")
     brief_routes: set[str] = set()
+    found_v2_markers: list[dict[str, str]] = []
     for brief in brief_manifest["briefs"]:
         kind = brief.get("kind")
         source = MODEL_BRIEF_DATA / brief["source"]
@@ -424,6 +452,17 @@ def main() -> int:
                     )
             if ".md)" not in source_text:
                 failures.append(f"{brief['source']}: lane has no deeper route")
+            marker_ids = re.findall(
+                r"<!-- retained-math-v2-selection:([A-Z0-9-]+) -->",
+                source_text,
+            )
+            found_v2_markers.extend(
+                {
+                    "program_slug": brief["program_slug"],
+                    "argument_id": argument_id,
+                }
+                for argument_id in marker_ids
+            )
         else:
             for marker in HANDOFF_STRUCTURE:
                 if marker.casefold() not in source_text.casefold():
@@ -584,11 +623,34 @@ def main() -> int:
             if brief["route"].split("/")[-1] not in program_page.read_text(encoding="utf-8"):
                 failures.append(f"program page does not link model brief: {brief['program_slug']}")
 
+        if brief["program_slug"] == "homogeneous-realization-compression":
+            if source_text.count(
+                "<!-- retained-math-v2-selection:ARG-RMU5D8E0003-FINITE-PLANE -->"
+            ) != 1:
+                failures.append("Lane 6 does not contain exactly one v2 marker")
+            for marker in (
+                "### Compiler-owned retained result",
+                "ARG-RMU5D8E0003-FINITE-PLANE",
+                "g(r)=(r-4)(r^2-8r+64)",
+                "-1152",
+                "OBL-P5-FULL-FINITE-ROW-BASE",
+                "TSK-P5-FULL-FINITE-ROW-BASE",
+                "retained-math-v2-pilot.json",
+            ):
+                if marker not in rendered_text:
+                    failures.append(f"Lane 6 v2 rendering lacks {marker!r}")
+        elif "retained-math-v2-selection:" in source_text:
+            failures.append(f"unexpected v2 marker in {brief['source']}")
+
+    if found_v2_markers != brief_manifest.get("retained_math_v2_markers"):
+        failures.append("handoff v2 markers disagree with their manifest")
+
     scan_roots = (
         DOCS,
         GRAPH_DATA,
         PUBLICATION_DATA,
         MODEL_BRIEF_DATA,
+        ROOT / "data" / SITE_STATE["retained_math_v2"]["data_dir"],
         ROOT / "data" / MANUSCRIPT_SOURCES_DATA_DIR,
         ROOT / "overrides",
     )

@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "arguments": 1,
+    "evidence": 3,
+    "obligations": 1,
+    "tasks": 1,
+    "units": 3
+  },
+  "files": [
+    {
+      "path": "selection.json",
+      "sha256": "73e5713560283498e04e7e571c5a3d44b3be257d50d767ae7e4e35ca9cc2630a",
+      "size_bytes": 21595
+    }
+  ],
+  "release_id": "retained-math-v2-program5-selected-plane-20260801a",
+  "schema_version": 1,
+  "selection_id": "SEL-ARG-RMU5D8E0003-FINITE-PLANE",
+  "source_manifest_sha256": "2be14459053da9b0c82bdf1de75b5fb6bae538e6c92d94b33a0365e95b93be5e",
+  "source_public_graph_sha256": "c734babfe5e22216daa725e017378dda0a91356e89ce8bd72e970183722f8dd5",
+  "source_registry_id": "RETAINED2-30185ad5e712",
+  "updated_at": "2026-08-01T23:00:00+00:00"
+}

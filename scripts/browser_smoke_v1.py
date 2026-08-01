@@ -185,6 +185,18 @@ def run(
                 release_response.json()["site_release_id"] == state["release_id"],
                 "machine-readable handoff release names the wrong site release",
             )
+            v2_response = desktop.context.request.get(
+                base + "research/handoffs/retained-math-v2-pilot.json"
+            )
+            require(
+                v2_response.ok,
+                "machine-readable retained-math v2 selection is not downloadable",
+            )
+            require(
+                v2_response.json()["selected_ids"]["arguments"]
+                == ["ARG-RMU5D8E0003-FINITE-PLANE"],
+                "retained-math v2 selection names the wrong pilot argument",
+            )
             source_response = desktop.context.request.get(
                 base + "research/proof-sources/"
             )
@@ -258,6 +270,18 @@ def run(
                         deeper_routes >= 1,
                         f"lane handoff lacks a deeper program route: {route}",
                     )
+                    if brief["program_slug"] == "homogeneous-realization-compression":
+                        for marker in (
+                            "Compiler-owned retained result",
+                            "ARG-RMU5D8E0003-FINITE-PLANE",
+                            "OBL-P5-FULL-FINITE-ROW-BASE",
+                            "TSK-P5-FULL-FINITE-ROW-BASE",
+                            "-1152",
+                        ):
+                            require(
+                                marker in desktop.locator("main").inner_text(),
+                                f"Lane 6 v2 block lacks {marker}: {route}",
+                            )
                 else:
                     require(
                         desktop.locator(

@@ -43,6 +43,15 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
     release = json.loads(_fetch(release_url))
     if release != expected:
         failures.append("deployed release.json does not match site-state.json")
+    v2 = expected.get("retained_math_v2")
+    if v2 is None:
+        failures.append("expected release does not name retained-math v2")
+    else:
+        selection = json.loads(
+            _fetch(urljoin(base_url, v2["machine_route"])).decode("utf-8")
+        )
+        if selection.get("selection_id") != v2["selection_id"]:
+            failures.append("deployed retained-math v2 selection disagrees")
 
     active_manuscripts = {
         item["filename"] for item in expected["manuscripts"]
@@ -68,6 +77,16 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
             or "proof-sources/" not in html
         ):
             failures.append(f"{route}: current text-proof link is missing")
+        if handoff["program_slug"] == "homogeneous-realization-compression":
+            for marker in (
+                "Compiler-owned retained result",
+                "ARG-RMU5D8E0003-FINITE-PLANE",
+                "OBL-P5-FULL-FINITE-ROW-BASE",
+                "TSK-P5-FULL-FINITE-ROW-BASE",
+                "-1152",
+            ):
+                if marker not in html:
+                    failures.append(f"{route}: retained-math v2 lacks {marker}")
     source_index = _fetch(
         urljoin(base_url, expected["manuscript_sources"]["index_route"])
     ).decode("utf-8")

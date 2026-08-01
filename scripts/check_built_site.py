@@ -21,6 +21,7 @@ from generate_living_guide_v2 import (
     build_release_metadata,
     load_manuscript_sources,
     load_retained_math,
+    load_retained_math_v2,
     retained_corrections,
 )
 
@@ -163,6 +164,36 @@ def main() -> int:
                 failures.append(
                     "built machine-readable handoff release disagrees with site state"
                 )
+    retained_v2 = load_retained_math_v2(ROOT)
+    selection_path = site / "research/handoffs/retained-math-v2-pilot.json"
+    if retained_v2 is None:
+        failures.append("selected release does not pin retained-math v2")
+    elif not selection_path.is_file():
+        failures.append("built retained-math v2 selection is missing")
+    else:
+        try:
+            found_selection = json.loads(selection_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            failures.append("built retained-math v2 selection is invalid JSON")
+        else:
+            if found_selection != retained_v2[1]:
+                failures.append("built retained-math v2 selection disagrees")
+
+    lane_six = (
+        site
+        / "research/handoffs/homogeneous-realization-compression/index.html"
+    )
+    lane_six_text = lane_six.read_text(encoding="utf-8") if lane_six.is_file() else ""
+    for marker in (
+        "Compiler-owned retained result",
+        "ARG-RMU5D8E0003-FINITE-PLANE",
+        "g(r)=(r-4)(r^2-8r+64)",
+        "-1152",
+        "OBL-P5-FULL-FINITE-ROW-BASE",
+        "TSK-P5-FULL-FINITE-ROW-BASE",
+    ):
+        if marker not in lane_six_text:
+            failures.append(f"built Lane 6 v2 block lacks {marker!r}")
 
     result_pages = list((site / "collections").glob("*/index.html"))
     claim_pages = list((site / "claims").glob("*/index.html"))

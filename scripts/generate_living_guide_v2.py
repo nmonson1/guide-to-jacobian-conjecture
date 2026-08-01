@@ -35,6 +35,9 @@ MANUSCRIPT_TOKEN_RE = re.compile(r"\{\{MANUSCRIPT_(?P<sequence>[0-9]{2})\}\}")
 LITERAL_MANUSCRIPT_LINK_RE = re.compile(
     r"assets/manuscripts/(?P<filename>[^)\s]+\.pdf)"
 )
+RETAINED_MATH_V2_MARKER_RE = re.compile(
+    r"<!-- retained-math-v2-selection:(?P<argument_id>[A-Z0-9-]+) -->"
+)
 
 NEW_COLLECTIONS = (
     "cubic-resolvent-defect-exclusions",
@@ -77,6 +80,62 @@ def load_retained_math(root: Path) -> tuple[dict[str, Any], dict[str, Any]] | No
         if hashlib.sha256(payload).hexdigest() != item["sha256"]:
             raise ValueError(f"retained-math digest mismatch: {item['path']}")
     return manifest, graph
+
+
+def load_retained_math_v2(
+    root: Path,
+) -> tuple[dict[str, Any], dict[str, Any]] | None:
+    state = load_site_state(root)
+    component = state.get("retained_math_v2")
+    if component is None:
+        return None
+    data = root / "data" / component["data_dir"]
+    manifest = _load(data / "manifest.json")
+    selection = _load(data / "selection.json")
+    if manifest.get("selection_id") != selection.get("selection_id"):
+        raise ValueError("retained-math v2 manifest and selection disagree")
+    if manifest.get("source_registry_id") != selection.get("source", {}).get(
+        "registry_id"
+    ):
+        raise ValueError("retained-math v2 source registry disagrees")
+    if manifest.get("counts") != selection.get("counts"):
+        raise ValueError("retained-math v2 manifest and counts disagree")
+    files = manifest.get("files", [])
+    if len(files) != 1 or files[0].get("path") != "selection.json":
+        raise ValueError("retained-math v2 must pin exactly selection.json")
+    for item in files:
+        path = data / item["path"]
+        payload = path.read_bytes()
+        if len(payload) != item["size_bytes"]:
+            raise ValueError(f"retained-math v2 byte count mismatch: {item['path']}")
+        if hashlib.sha256(payload).hexdigest() != item["sha256"]:
+            raise ValueError(f"retained-math v2 digest mismatch: {item['path']}")
+    expected = {
+        key.removeprefix("expected_"): value
+        for key, value in component.items()
+        if key.startswith("expected_")
+    }
+    if selection["counts"] != expected:
+        raise ValueError("retained-math v2 counts disagree with site state")
+    selected_ids = selection["selected_ids"]
+    for plural, key in (
+        ("units", "unit_id"),
+        ("arguments", "argument_id"),
+        ("evidence", "evidence_id"),
+        ("obligations", "obligation_id"),
+        ("tasks", "task_id"),
+    ):
+        found = [item[key] for item in selection[plural]]
+        if found != selected_ids[plural] or len(found) != len(set(found)):
+            raise ValueError(f"retained-math v2 {plural} selection disagrees")
+    retained = load_retained_math(root)
+    if retained is None:
+        raise ValueError("retained-math v2 requires the v1 working graph")
+    if selection["source"]["base_registry"]["registry_id"] != retained[1][
+        "registry_id"
+    ]:
+        raise ValueError("retained-math v2 and v1 registries disagree")
+    return manifest, selection
 
 
 def load_manuscript_sources(root: Path) -> dict[str, Any] | None:
@@ -473,7 +532,217 @@ def build_release_metadata(root: Path) -> dict[str, Any]:
             "registry_id": graph["registry_id"],
             "counts": graph["counts"],
         }
+    retained_v2 = load_retained_math_v2(root)
+    if retained_v2 is not None:
+        manifest, selection = retained_v2
+        release["components"]["retained_math_v2_manifest_sha256"] = state[
+            "retained_math_v2"
+        ]["manifest_sha256"]
+        release["retained_math_v2"] = {
+            "release_id": manifest["release_id"],
+            "source_registry_id": manifest["source_registry_id"],
+            "selection_id": selection["selection_id"],
+            "selected_ids": selection["selected_ids"],
+            "counts": selection["counts"],
+            "machine_route": "research/handoffs/retained-math-v2-pilot.json",
+        }
     return release
+
+
+def _bullet_lines(items: list[str]) -> list[str]:
+    return [f"- {item}" for item in items]
+
+
+def _retained_v2_locator(evidence: dict[str, Any]) -> str | None:
+    locator = evidence.get("locator")
+    if not locator:
+        return None
+    if locator.get("kind") == "external":
+        return f"[Pinned source]({locator['url']})"
+    if locator.get("kind") == "repo":
+        anchor = f"#{locator['anchor']}" if locator.get("anchor") else ""
+        return f"`{locator['repo_path']}{anchor}`"
+    raise ValueError(f"unsupported retained-math v2 locator: {locator}")
+
+
+def render_retained_math_v2_selection(
+    argument_id: str, selection: dict[str, Any]
+) -> str:
+    arguments = {item["argument_id"]: item for item in selection["arguments"]}
+    if argument_id not in arguments:
+        raise ValueError(f"handoff requests unselected argument: {argument_id}")
+    argument = arguments[argument_id]
+    if len(argument["conclusion_unit_ids"]) != 1:
+        raise ValueError("v2 handoff pilot requires one conclusion unit")
+    units = {item["unit_id"]: item for item in selection["units"]}
+    evidence = {item["evidence_id"]: item for item in selection["evidence"]}
+    obligations = {
+        item["obligation_id"]: item for item in selection["obligations"]
+    }
+    tasks = [
+        item
+        for item in selection["tasks"]
+        if argument_id
+        in {
+            task_input.get("argument_id")
+            for task_input in item.get("inputs", [])
+            if task_input.get("kind") == "argument"
+        }
+    ]
+    if len(tasks) != 1:
+        raise ValueError("v2 handoff pilot requires one task for its argument")
+    task = tasks[0]
+    unit = units[argument["conclusion_unit_ids"][0]]
+    obligation_ids = list(dict.fromkeys(task.get("obligation_ids", [])))
+    if len(obligation_ids) != 1 or obligation_ids[0] not in obligations:
+        raise ValueError("v2 handoff pilot requires one selected obligation")
+    obligation = obligations[obligation_ids[0]]
+
+    lines = [
+        "### Compiler-owned retained result",
+        "",
+        '!!! info "Generated from first-class mathematics"',
+        "    This result, its complete argument, its evidence boundary, and its",
+        "    next task are rendered from one retained-math v2 selection. The",
+        "    [machine-readable selection](retained-math-v2-pilot.json) is pinned",
+        "    by the handoff release metadata.",
+        "",
+        f"#### {unit['title']}",
+        "",
+        f"`{unit['unit_id']}` · `{unit['unit_type']}` · statement version "
+        f"`{unit['statement_version']}`",
+        "",
+        unit["statement"],
+        "",
+        "**Hypotheses**",
+        "",
+        *_bullet_lines(unit["hypotheses"]),
+        "",
+        "**Applies to**",
+        "",
+        *_bullet_lines(unit["exact_scope"]["applies_to"]),
+        "",
+        "**Limitations**",
+        "",
+        *_bullet_lines(unit["exact_scope"]["limitations"]),
+        "",
+        "#### Complete argument",
+        "",
+        f"**{argument['title']}** · `{argument['argument_id']}` · "
+        f"`{argument['argument_type']}`",
+        "",
+        argument["summary"],
+        "",
+        argument["body"],
+        "",
+        "**This argument does not establish**",
+        "",
+        *_bullet_lines(argument["does_not_establish"]),
+        "",
+        "#### Evidence and exact replay boundary",
+        "",
+    ]
+    for evidence_id in argument["evidence_ids"]:
+        item = evidence[evidence_id]
+        lines.extend(
+            [
+                f"##### {item['title']}",
+                "",
+                f"`{item['evidence_id']}` · `{item['kind']}`",
+                "",
+                item["summary"],
+                "",
+                f"**Establishes:** {item['establishes']}",
+                "",
+            ]
+        )
+        locator = _retained_v2_locator(item)
+        if locator is not None:
+            lines.extend([f"**Locator:** {locator}", ""])
+        replay = item.get("replay")
+        if replay:
+            lines.extend(["**Replay**", ""])
+            lines.extend(f"- `{command}`" for command in replay["commands"])
+            lines.extend(["", "Environment:", ""])
+            lines.extend(_bullet_lines(replay.get("environment", [])))
+            lines.extend(["", "Expected:", ""])
+            lines.extend(_bullet_lines(replay["expected"]))
+            lines.append("")
+        lines.extend(
+            [
+                "**Does not establish**",
+                "",
+                *_bullet_lines(item["does_not_establish"]),
+                "",
+            ]
+        )
+
+    lines.extend(
+        [
+            "### Current boundary and next task",
+            "",
+            f"#### {obligation['title']}",
+            "",
+            f"`{obligation['obligation_id']}`",
+            "",
+            obligation["statement"],
+            "",
+            obligation["rationale"],
+            "",
+            "**Done when**",
+            "",
+            *_bullet_lines(obligation["done_when"]),
+            "",
+            f"#### {task['title']}",
+            "",
+            f"`{task['task_id']}`",
+            "",
+            f"**Goal:** {task['goal']}",
+            "",
+            f"**Payoff:** {task['payoff']}",
+            "",
+            "**Inputs**",
+            "",
+        ]
+    )
+    for item in task["inputs"]:
+        kind = item["kind"]
+        if kind == "unit":
+            unit_id = item["unit_id"]
+            lines.append(
+                f"- [`{unit_id}`](../working-mathematics/units/{unit_id}.md) "
+                "(unit)"
+            )
+        else:
+            identifier = item[f"{kind}_id"]
+            lines.append(f"- `{identifier}` ({kind})")
+    lines.extend(["", "**Suggested approaches**", ""])
+    lines.extend(_bullet_lines(task["suggested_approaches"]))
+    lines.extend(["", "**Done when**", ""])
+    lines.extend(_bullet_lines(task["done_when"]))
+    lines.extend(["", "**Research freedom**", ""])
+    lines.extend(_bullet_lines(task["freedoms"]))
+    lines.extend(["", "**Scope fences**", ""])
+    lines.extend(_bullet_lines(task["scope_fences"]))
+    return "\n".join(lines)
+
+
+def expand_retained_math_v2_markers(
+    source: str, selection: dict[str, Any]
+) -> str:
+    found = RETAINED_MATH_V2_MARKER_RE.findall(source)
+
+    def replace(match: re.Match[str]) -> str:
+        return render_retained_math_v2_selection(
+            match.group("argument_id"), selection
+        )
+
+    rendered = RETAINED_MATH_V2_MARKER_RE.sub(replace, source)
+    if "retained-math-v2-selection:" in rendered:
+        raise ValueError("malformed retained-math v2 marker")
+    if len(found) != len(set(found)):
+        raise ValueError("duplicate retained-math v2 marker")
+    return rendered
 
 
 def render_model_brief(
@@ -482,8 +751,10 @@ def render_model_brief(
     manuscripts: dict[str, dict[str, Any]],
     release: dict[str, Any],
     proof_sources: dict[str, Any],
+    retained_v2_selection: dict[str, Any],
 ) -> str:
     source = resolve_manuscript_links(source, manuscripts)
+    source = expand_retained_math_v2_markers(source, retained_v2_selection)
     kind = brief.get("kind")
     cross_program = kind == "cross_program"
     lane = kind == "lane"
@@ -1245,11 +1516,14 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     docs = root / PUBLIC_DOCS_DIR
     outputs: dict[Path, str] = {}
     retained = load_retained_math(root)
+    retained_v2 = load_retained_math_v2(root)
     proof_sources = load_manuscript_sources(root)
     if proof_sources is None:
         raise ValueError("selected release does not pin manuscript sources")
     if retained is None:
         raise ValueError("selected release does not pin retained mathematics")
+    if retained_v2 is None:
+        raise ValueError("selected release does not pin retained-math v2")
     if (
         proof_sources["retained_registry"]["registry_id"]
         != retained[1]["registry_id"]
@@ -1278,9 +1552,14 @@ def expected_outputs(root: Path) -> dict[Path, str]:
             manuscripts,
             release,
             proof_sources,
+            retained_v2[1],
         )
     outputs[docs / "research/handoffs/release.json"] = (
         json.dumps(release, indent=2, sort_keys=True) + "\n"
+    )
+    outputs[docs / "research/handoffs/retained-math-v2-pilot.json"] = (
+        json.dumps(retained_v2[1], indent=2, ensure_ascii=False, sort_keys=True)
+        + "\n"
     )
     outputs[docs / "results/index.md"] = render_results_index(
         collections, claims
