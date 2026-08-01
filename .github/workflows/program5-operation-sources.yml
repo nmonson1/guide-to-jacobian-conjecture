@@ -1,0 +1,97 @@
+name: Extract Program 5 operation sources
+
+on:
+  push:
+    branches: [agent/p6-chart-correspondence]
+    paths:
+      - '.github/workflows/program5-operation-sources.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Extract focused sources with provenance
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import hashlib
+          import json
+          import shutil
+          import zipfile
+          from pathlib import Path
+
+          archive = Path(
+              'docs-v7-20260726c/assets/technical-materials/'
+              '05-homogeneous-descendants-computational-supplement.zip'
+          )
+          output = Path(
+              'research-tools/filtered_operation_complex/intake/program5/focused'
+          )
+          shutil.rmtree(output, ignore_errors=True)
+          output.mkdir(parents=True, exist_ok=True)
+
+          members = [
+              '05-homogeneous-descendants-computational-supplement/COMPUTATION.md',
+              '05-homogeneous-descendants-computational-supplement/code/extensions_verifier.py',
+              '05-homogeneous-descendants-computational-supplement/code/compression_slice_verifier.py',
+              '05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/base19_data.py',
+              '05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack2_compression.py',
+              '05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/base19_data.py',
+              '05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack8_quartic_functional.py',
+              '05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack9_monomial_shifts.py',
+              '05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack11_target_cleanup.py',
+          ]
+
+          records = []
+          with zipfile.ZipFile(archive) as handle:
+              available = set(handle.namelist())
+              missing = [member for member in members if member not in available]
+              if missing:
+                  raise FileNotFoundError(f'missing archive members: {missing}')
+              for member in members:
+                  data = handle.read(member)
+                  destination = output / Path(member).name
+                  destination.write_bytes(data)
+                  records.append(
+                      {
+                          'archive_path': member,
+                          'output_path': str(destination),
+                          'bytes': len(data),
+                          'sha256': hashlib.sha256(data).hexdigest(),
+                      }
+                  )
+
+          provenance = {
+              'schema_version': 1,
+              'archive_path': str(archive),
+              'archive_sha256': hashlib.sha256(archive.read_bytes()).hexdigest(),
+              'members': records,
+          }
+          (output / 'provenance.json').write_text(
+              json.dumps(provenance, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Commit focused sources
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add research-tools/filtered_operation_complex/intake/program5/focused
+          if git diff --cached --quiet; then
+            echo 'No focused-source changes.'
+            exit 0
+          fi
+          git commit -m 'Extract focused Program 5 operation sources'
+          git push origin HEAD:${{ github.ref_name }}
