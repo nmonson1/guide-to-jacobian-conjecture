@@ -16,7 +16,8 @@ from filtered_operation_complex.adapters.program5_rank_six_line_scan import (  #
 
 class Program5RankSixLineScanTests(unittest.TestCase):
     def test_selected_projective_lines_are_audited_exactly(self) -> None:
-        result = analyze_line_scan(ratios=(-2, -1, 0, 1, 2), verify_axes=True)
+        ratios = (-2, -1, 0, 1, 2, 3, 4, 5)
+        result = analyze_line_scan(ratios=ratios, verify_axes=True)
 
         self.assertEqual(result["schema_version"], 1)
         self.assertEqual(
@@ -27,7 +28,7 @@ class Program5RankSixLineScanTests(unittest.TestCase):
         self.assertEqual(result["rank_six_tangent_dimension"], 22)
 
         directions = result["finite_ratio_results"] + [result["infinity_result"]]
-        self.assertEqual(len(directions), 6)
+        self.assertEqual(len(directions), len(ratios) + 1)
         for direction in directions:
             self.assertTrue(direction["second_order_compatible"])
             self.assertEqual(direction["quadratic_tangent_freedom_dimension"], 22)
@@ -70,6 +71,9 @@ class Program5RankSixLineScanTests(unittest.TestCase):
                             "pairing": item.get(
                                 "cubic_obstruction_certificate", {}
                             ).get("pairing_with_rhs"),
+                            "witness_sha256": item.get(
+                                "cubic_obstruction_certificate", {}
+                            ).get("witness_sha256"),
                         }
                         for item in result["finite_ratio_results"]
                     ],
