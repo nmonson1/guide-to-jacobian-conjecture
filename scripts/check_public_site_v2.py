@@ -24,6 +24,7 @@ from generate_living_guide_v2 import (
     TECHNICAL_MATERIALS_DATA_DIR,
     build_release_metadata,
     load_retained_math,
+    retained_corrections,
     resolve_manuscript_links,
 )
 
@@ -182,10 +183,16 @@ def main() -> int:
     if len(program_files) != expected["research_programs"]:
         failures.append(f"expected {expected['research_programs']} program pages")
     retained = load_retained_math(ROOT)
+    corrections: dict[str, dict[str, object]] = {}
+    retained_unit_ids: set[str] = set()
     if retained is None:
         failures.append("selected release does not pin retained mathematics")
     else:
         retained_manifest, retained_graph = retained
+        corrections = retained_corrections(retained)
+        retained_unit_ids = {
+            unit["unit_id"] for unit in retained_graph["units"]
+        }
         retained_state = SITE_STATE["retained_math"]
         retained_units = sorted(
             (DOCS / "research/working-mathematics/units").glob("*.md")
@@ -217,6 +224,32 @@ def main() -> int:
         if "## Proof locators" in text:
             locator_pages += 1
         _local_links(path, failures)
+    for tag, correction in corrections.items():
+        unit_id = str(correction["unit_id"])
+        if tag not in claims:
+            failures.append(f"retained correction targets unknown claim {tag}")
+            continue
+        if tag in retained_unit_ids:
+            failures.append(f"superseded legacy claim remains in working graph: {tag}")
+        page = DOCS / "claims" / f"{tag}.md"
+        text = page.read_text(encoding="utf-8")
+        for marker in (
+            '!!! warning "Superseded by current working mathematics"',
+            "## Current corrected statement",
+            unit_id,
+            str(correction["statement"]),
+        ):
+            if marker not in text:
+                failures.append(
+                    f"{page.relative_to(ROOT)}: missing correction marker {marker!r}"
+                )
+        unit_page = (
+            DOCS
+            / "research/working-mathematics/units"
+            / f"{unit_id}.md"
+        )
+        if not unit_page.is_file():
+            failures.append(f"retained correction page is missing: {unit_id}")
     # Proof locators are the reason the coverage sidecar ships; losing them
     # from the graph or the renderer should fail loudly, not silently.
     expected_locator_pages = sum(
@@ -239,6 +272,20 @@ def main() -> int:
             if heading not in text:
                 failures.append(f"{path.relative_to(ROOT)}: missing {heading}")
         _local_links(path, failures)
+    for tag, correction in corrections.items():
+        unit_id = str(correction["unit_id"])
+        for membership in claims[tag]["memberships"]:
+            collection = DOCS / "collections" / f"{membership['collection_slug']}.md"
+            if unit_id not in collection.read_text(encoding="utf-8"):
+                failures.append(
+                    f"{collection.relative_to(ROOT)}: corrected legacy member "
+                    f"does not link {unit_id}"
+                )
+        corrections_page = DOCS / "results/corrections.md"
+        if unit_id not in corrections_page.read_text(encoding="utf-8"):
+            failures.append(
+                f"results/corrections.md omits retained correction {unit_id}"
+            )
 
     for path in DOCS.rglob("*.md"):
         text = path.read_text(encoding="utf-8")

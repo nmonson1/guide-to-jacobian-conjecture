@@ -76,6 +76,29 @@ def load_retained_math(root: Path) -> tuple[dict[str, Any], dict[str, Any]] | No
     return manifest, graph
 
 
+def retained_corrections(
+    retained: tuple[dict[str, Any], dict[str, Any]] | None,
+) -> dict[str, dict[str, Any]]:
+    """Map corrected legacy claim tags to their current retained units."""
+    if retained is None:
+        return {}
+    _, graph = retained
+    corrections: dict[str, dict[str, Any]] = {}
+    for unit in graph["units"]:
+        for relation in unit.get("relations", []):
+            target = relation.get("target_unit_id", "")
+            if relation.get("relation_type") != "corrects" or not target.startswith(
+                "JCG-"
+            ):
+                continue
+            if target in corrections:
+                raise ValueError(
+                    f"legacy claim has multiple retained corrections: {target}"
+                )
+            corrections[target] = unit
+    return corrections
+
+
 def _yaml(value: str) -> str:
     return json.dumps(value, ensure_ascii=False)
 
@@ -357,8 +380,25 @@ def render_model_brief(
 
 
 def render_claim(
-    claim: dict[str, Any], collections: dict[str, dict[str, Any]]
+    claim: dict[str, Any],
+    collections: dict[str, dict[str, Any]],
+    correction: dict[str, Any] | None = None,
 ) -> str:
+    correction_block = []
+    if correction is not None:
+        unit_id = correction["unit_id"]
+        correction_block = [
+            '!!! warning "Superseded by current working mathematics"',
+            "    This stable-tag statement is retained as publication-pipeline "
+            "history. Use the",
+            f"    [current corrected unit](../research/working-mathematics/units/{unit_id}.md)",
+            "    for research and model handoffs.",
+            "",
+            "## Current corrected statement",
+            "",
+            correction["statement"],
+            "",
+        ]
     lines = [
         "---",
         f"title: {_yaml(claim['title'])}",
@@ -368,9 +408,11 @@ def render_claim(
         f'<p class="claim-tag">{claim["tag"]}</p>',
         f"# {claim['title']}",
         "",
+        *correction_block,
         *(
             []
-            if claim["statement"].strip() == claim["title"].strip()
+            if correction is not None
+            or claim["statement"].strip() == claim["title"].strip()
             else [f'<p class="dek">{claim["statement"]}</p>', ""]
         ),
         f'<span class="status status-kind">{_human(claim["kind"]).title()}</span> '
@@ -379,6 +421,11 @@ def render_claim(
         "",
         "## Exact statement",
         "",
+        *(
+            ["**Superseded legacy wording:**", ""]
+            if correction is not None
+            else []
+        ),
         claim["statement"],
         "",
         f"Statement version `{claim['statement_version']}`. The public tag is stable; "
@@ -463,6 +510,7 @@ def render_collection(
     page: dict[str, Any],
     claims: dict[str, dict[str, Any]],
     collections: dict[str, dict[str, Any]],
+    corrections: dict[str, dict[str, Any]],
 ) -> str:
     coverage = page["manuscript_coverage"]["status"]
     lines = [
@@ -488,6 +536,7 @@ def render_collection(
     ]
     for tag in page["member_tags"]:
         claim = claims[tag]
+        correction = corrections.get(tag)
         membership = next(
             item
             for item in claim["memberships"]
@@ -497,6 +546,16 @@ def render_collection(
             [
                 f"### [{claim['tag']} · {claim['title']}](../claims/{claim['tag']}.md)",
                 "",
+                *(
+                    [
+                        '!!! warning "Superseded working statement"',
+                        "    Use the "
+                        f"[current corrected unit](../research/working-mathematics/units/{correction['unit_id']}.md).",
+                        "",
+                    ]
+                    if correction is not None
+                    else []
+                ),
                 claim["statement"],
                 "",
                 f"*{_human(membership['inclusion']).title()} · "
@@ -592,7 +651,10 @@ def render_results_index(
     return "\n".join(lines)
 
 
-def render_all_claims(claims: dict[str, dict[str, Any]]) -> str:
+def render_all_claims(
+    claims: dict[str, dict[str, Any]],
+    corrections: dict[str, dict[str, Any]],
+) -> str:
     counts = Counter(claim["prominence"] for claim in claims.values())
     lines = [
         "---",
@@ -610,9 +672,15 @@ def render_all_claims(claims: dict[str, dict[str, Any]]) -> str:
         "",
     ]
     for claim in sorted(claims.values(), key=lambda item: item["tag"]):
+        correction = corrections.get(claim["tag"])
+        suffix = (
+            f"; superseded by `{correction['unit_id']}`"
+            if correction is not None
+            else ""
+        )
         lines.append(
             f"- [`{claim['tag']}`](../claims/{claim['tag']}.md) "
-            f"**{claim['title']}** — {_status_label(claim['status'])}"
+            f"**{claim['title']}** — {_status_label(claim['status'])}{suffix}"
         )
     lines.extend(["", "</div>", ""])
     return "\n".join(lines)
@@ -654,11 +722,15 @@ def render_open_problems(
     return "\n".join(lines)
 
 
-def render_corrections(claims: dict[str, dict[str, Any]]) -> str:
+def render_corrections(
+    claims: dict[str, dict[str, Any]],
+    corrections: dict[str, dict[str, Any]],
+) -> str:
     selected = [
         claim
         for claim in claims.values()
-        if any(
+        if claim["tag"] in corrections
+        or any(
             word in (claim["title"] + " " + claim["statement"]).casefold()
             for word in ("correction", "corrected", "proof gap", "failed extension")
         )
@@ -675,12 +747,24 @@ def render_corrections(claims: dict[str, dict[str, Any]]) -> str:
         "",
     ]
     for claim in sorted(selected, key=lambda item: item["tag"]):
+        correction = corrections.get(claim["tag"])
         lines.extend(
             [
                 f"## [{claim['tag']} · {claim['title']}](../claims/{claim['tag']}.md)",
                 "",
                 claim["statement"],
                 "",
+                *(
+                    [
+                        "**Current corrected statement:** "
+                        f"[{correction['unit_id']}](../research/working-mathematics/units/{correction['unit_id']}.md)",
+                        "",
+                        correction["statement"],
+                        "",
+                    ]
+                    if correction is not None
+                    else []
+                ),
             ]
         )
     return "\n".join(lines)
@@ -935,13 +1019,15 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     release = build_release_metadata(root)
     docs = root / PUBLIC_DOCS_DIR
     outputs: dict[Path, str] = {}
+    retained = load_retained_math(root)
+    corrections = retained_corrections(retained)
     for claim in claims.values():
         outputs[docs / "claims" / f"{claim['tag']}.md"] = render_claim(
-            claim, collections
+            claim, collections, corrections.get(claim["tag"])
         )
     for page in collections.values():
         outputs[docs / "collections" / f"{page['slug']}.md"] = render_collection(
-            page, claims, collections
+            page, claims, collections, corrections
         )
     for program in programs.values():
         outputs[
@@ -961,18 +1047,21 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     outputs[docs / "results/index.md"] = render_results_index(
         collections, claims
     )
-    outputs[docs / "results/all-claims.md"] = render_all_claims(claims)
+    outputs[docs / "results/all-claims.md"] = render_all_claims(
+        claims, corrections
+    )
     outputs[docs / "results/open-problems.md"] = render_open_problems(
         collections, claims
     )
-    outputs[docs / "results/corrections.md"] = render_corrections(claims)
+    outputs[docs / "results/corrections.md"] = render_corrections(
+        claims, corrections
+    )
     outputs[docs / "research/index.md"] = render_research_index(
         programs, collections, claims, briefs
     )
     outputs[docs / "research/papers.md"] = render_papers(manuscripts)
     outputs[docs / "evidence/index.md"] = render_evidence_index(collections)
     outputs[docs / "evidence/materials.md"] = render_materials(materials)
-    retained = load_retained_math(root)
     if retained is not None:
         _, retained_graph = retained
         retained_data = root / "data" / SITE_STATE["retained_math"]["data_dir"]

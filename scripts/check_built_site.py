@@ -19,6 +19,8 @@ from generate_living_guide_v2 import (
     SITE_STATE,
     TECHNICAL_MATERIALS_DATA_DIR,
     build_release_metadata,
+    load_retained_math,
+    retained_corrections,
 )
 
 
@@ -173,6 +175,15 @@ def main() -> int:
             "built claim routes: expected "
             f"{expected['technical_records']}, found {len(claim_pages)}"
         )
+    for tag, correction in retained_corrections(load_retained_math(ROOT)).items():
+        page = site / "claims" / tag / "index.html"
+        text = page.read_text(encoding="utf-8") if page.is_file() else ""
+        if "Superseded by current working mathematics" not in text:
+            failures.append(f"built corrected claim lacks supersession notice: {tag}")
+        if correction["unit_id"] not in text:
+            failures.append(
+                f"built corrected claim does not link {correction['unit_id']}: {tag}"
+            )
     if len(program_pages) != expected["research_programs"]:
         failures.append(
             "built program routes: expected "

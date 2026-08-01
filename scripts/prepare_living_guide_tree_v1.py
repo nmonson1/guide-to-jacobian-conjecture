@@ -12,6 +12,14 @@ from generate_living_guide_v2 import PUBLIC_DOCS_DIR, expected_outputs
 
 
 ROOT = Path(__file__).resolve().parents[1]
+GENERATED_NAMESPACES = {
+    Path("claims"),
+    Path("collections"),
+    Path("research/programs"),
+    Path("research/handoffs"),
+    Path("research/working-mathematics/programs"),
+    Path("research/working-mathematics/units"),
+}
 
 
 def main() -> int:
@@ -39,7 +47,10 @@ def main() -> int:
     for source in sorted(base.rglob("*")):
         relative = source.relative_to(base)
         target = output / relative
-        if relative in generated:
+        if relative in generated or any(
+            relative.is_relative_to(namespace)
+            for namespace in GENERATED_NAMESPACES
+        ):
             continue
         if source.is_symlink():
             target.parent.mkdir(parents=True, exist_ok=True)

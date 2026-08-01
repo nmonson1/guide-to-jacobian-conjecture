@@ -25,8 +25,8 @@ The active local release candidate contains:
 - 368 stable-tagged atomic claim pages, all included in site search but kept
   out of the main navigation;
 - 534 many-to-many claim memberships across six research programs;
-- 560 retained working-mathematics units, 537 supplied support objects, and
-  17 typed relations across six overlapping program views;
+- 562 retained working-mathematics units, 539 supplied support objects, and
+  22 typed relations across six overlapping program views;
 - six version-13 reader PDFs and one companion Results and Research Register;
 - six self-contained, searchable program handoffs plus one cross-program
   state page with nine broad research-lane entry links under
@@ -40,8 +40,13 @@ The active local release candidate contains:
   Program 6 chart packet at draft PR 1, the Program 4 six-obligation packet
   at PR 2, the Program 3 corrigendum at PR 3, and the Program 6 corrigendum
   at PR 4. All remain unmerged and keep their mathematical boundaries; the
-  38 PR 1 tests pass while the complete-chain subgroup and global attachment
-  remain open. Conditional global syntheses remain conditional, and the
+  newest PR 1 head supplies an exact 20-in-22 tangent bridge, excludes its
+  full affine tangent plane by the quartic functional, and gives one
+  second-order rank-six section. Its twelve package tests and thirty Program 6
+  tests pass; the fixed-minor order-three residual is not intrinsic. PR 4's
+  source repairs are integrated with the old Macaulay implication explicitly
+  conditional. Complete-chain admissibility and global attachment remain
+  open. Conditional global syntheses remain conditional, and the
   public interval stays
   \(4\leq D_{\min}\leq 7\), and the state page names exhaustive
   message-to-claim reconciliation as the next post-import audit;
@@ -60,14 +65,23 @@ contains only its deterministic sanitized publication export, reader-facing
 prose, versioned PDFs, selected immutable technical materials, and build
 machinery.
 
-`site-state.json` is the single sanitized release pointer. It pins the
-publication, unified claim graph, retained working-mathematics graph,
+`site-state.json` is the single sanitized site-release pointer. It pins the
+legacy publication and stable-tag claim graph, the retained
+working-mathematics graph,
 manuscript and technical-material manifests, generated docs tree, expected
 counts, and Pacific-time release date. Generators and checks resolve their
 paths and counts from it. Every
 model handoff also exposes the selected release as
 `/research/handoffs/release.json`; its visible snapshot, counts, and
 manuscript links are rendered from that same pointer.
+
+The two mathematical components have different jobs. The 368 stable-tag
+claim pages preserve the legacy publication pipeline and durable public URLs;
+the 562-unit retained graph is the current progress-facing corpus for research
+models. A retained `corrects` relation is rendered programmatically on the
+affected legacy claim and collection pages, so historical wording cannot
+silently outrank its current working replacement. Advancing either component
+does not implicitly advance the other.
 
 The selected inputs currently include the sanitized canonical/publication
 export, hashes and metadata for six reader manuscripts and their companion
@@ -81,7 +95,7 @@ surfaces are:
   and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-briefs-v12h-20260801a/`: hash-pinned sanitized source for
+- `data/model-briefs-v12j-20260801a/`: hash-pinned sanitized source for
   model-ready HTML handoffs; logical manuscript slots resolve against the
   selected manuscript manifest, so a stale PDF version fails the build;
 - `scripts/check_deployed_site.py`: production verification that GitHub Pages

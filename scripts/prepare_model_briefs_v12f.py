@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare the write-once audit-repair update over model briefs v12e."""
+"""Prepare a write-once selective source refresh over public model briefs."""
 
 from __future__ import annotations
 
@@ -18,6 +18,8 @@ UPDATED_SOURCES = {
         "cubic-marked-root-incidence-geometry.md"
     ),
     "stable-moduli": "stable-moduli.md",
+    "homogeneous-descendants": "homogeneous-descendants.md",
+    "plane-boundary-obstructions": "plane-boundary-obstructions.md",
 }
 
 

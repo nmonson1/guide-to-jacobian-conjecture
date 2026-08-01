@@ -17,6 +17,10 @@ MANUSCRIPT_LINK_RE = re.compile(
     r"(?P<sequence>0[1-7])-[^)\s]+\.pdf"
 )
 FRESHNESS_RE = re.compile(r"^\*\*Freshness:\*\*.*\n\n", re.MULTILINE)
+RETAINED_UNIT_LINK_RE = re.compile(
+    r"\.\./\.\./(?:claims/|research/working-mathematics/units/)"
+    r"(?P<unit>RMU-[A-Z0-9]+)\.md"
+)
 
 SOURCE_MAP = {
     "state-of-the-program": "state-of-the-program.md",
@@ -92,6 +96,13 @@ def _publicize(text: str, *, cross_program: bool) -> str:
     if count != 1:
         raise ValueError("source brief has no single freshness header")
     text = text.replace(PUBLIC_BASE, "../../")
+    text = RETAINED_UNIT_LINK_RE.sub(
+        lambda match: (
+            "../working-mathematics/units/"
+            f"{match.group('unit')}.md"
+        ),
+        text,
+    )
     text = MANUSCRIPT_LINK_RE.sub(
         lambda match: (
             f"{match.group('prefix')}{{{{MANUSCRIPT_"
