@@ -206,6 +206,7 @@ def run(
             require(material.ok, "technical-material archive is not downloadable")
 
             for brief in model_brief_manifest["briefs"]:
+                kind = brief.get("kind")
                 route = brief["route"].removesuffix(".md") + "/"
                 desktop.goto(base + route, wait_until="networkidle")
                 require(
@@ -232,15 +233,43 @@ def run(
                     f"model handoff links inactive manuscripts: {route}: "
                     f"{sorted(linked_manuscripts - active_manuscripts)}",
                 )
-                require(
-                    desktop.locator('main h2:has-text("The live frontier")').count()
-                    == 1,
-                    f"model handoff lacks its live-frontier section: {route}",
-                )
-                require(
-                    desktop.locator('a[href*="claims/JCG-"]').count() >= 1,
-                    f"model handoff lacks stable claim links: {route}",
-                )
+                if kind == "lane":
+                    require(
+                        desktop.locator(
+                            'main h2:has-text("Reusable mathematics")'
+                        ).count()
+                        == 1,
+                        f"lane handoff lacks reusable mathematics: {route}",
+                    )
+                    require(
+                        desktop.locator(
+                            'main h2:has-text("Useful deliverable")'
+                        ).count()
+                        == 1,
+                        f"lane handoff lacks its deliverable boundary: {route}",
+                    )
+                    deeper_routes = desktop.locator("main a[href]").evaluate_all(
+                        """links => links.filter(link =>
+                          new URL(link.href).pathname.includes(
+                            '/research/handoffs/'
+                          )).length"""
+                    )
+                    require(
+                        deeper_routes >= 1,
+                        f"lane handoff lacks a deeper program route: {route}",
+                    )
+                else:
+                    require(
+                        desktop.locator(
+                            'main h2:has-text("The live frontier")'
+                        ).count()
+                        == 1,
+                        f"model handoff lacks its live-frontier section: {route}",
+                    )
+                    require(
+                        desktop.locator('a[href*="claims/JCG-"]').count() >= 1,
+                        f"model handoff lacks stable claim links: {route}",
+                    )
                 require(
                     desktop.locator(
                         '.admonition-title:has-text("Retained working graph")'
@@ -260,7 +289,7 @@ def run(
                     'title: "Model research brief' not in main_text,
                     f"model handoff exposes YAML metadata: {route}",
                 )
-                if brief.get("kind") == "cross_program":
+                if kind == "cross_program":
                     require(
                         desktop.locator(
                             'a[href*="#3-reusable-inputs-exact-scope-and-proof-access"]'
@@ -268,7 +297,7 @@ def run(
                         >= 6,
                         "cross-program handoff lacks all six proof routes",
                     )
-                else:
+                elif kind == "program":
                     require(
                         bool(linked_manuscripts),
                         f"model handoff lacks an active manuscript: {route}",
@@ -281,6 +310,11 @@ def run(
                     require(
                         proof_locators >= 8,
                         f"model handoff lacks direct proof/source links: {route}",
+                    )
+                else:
+                    require(
+                        desktop.locator('a[href*="proof-sources/"]').count() >= 1,
+                        f"lane handoff lacks the current text-proof index: {route}",
                     )
 
             desktop.goto(base, wait_until="networkidle")

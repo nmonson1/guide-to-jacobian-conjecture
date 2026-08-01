@@ -25,12 +25,12 @@ The active local release candidate contains:
 - 368 stable-tagged atomic claim pages, all included in site search but kept
   out of the main navigation;
 - 534 many-to-many claim memberships across six research programs;
-- 562 retained working-mathematics units, 540 supplied support objects, and
-  24 typed relations across six overlapping program views;
+- 565 retained working-mathematics units, 544 supplied support objects, and
+  32 typed relations across six overlapping program views;
 - six version-13 reader PDFs and one companion Results and Research Register;
-- six self-contained, searchable program handoffs plus one cross-program
-  state page with nine broad research-lane entry links under
-  `/research/handoffs/`; the second 30 July research-import checkpoint adds
+- ten primary model entrypoints under `/research/handoffs/`: one portfolio
+  hub plus nine first-class research lanes. Six longer program dossiers remain
+  as deeper overlapping subject views. The second 30 July checkpoint adds
   the corrected Program 1 `U0/U1/U2/B` boundary taxonomy and C.4 proof
   boundary, the scoped degree-five/six exclusions, the Program 3 and 4 proof
   audits, complete Program 5 source coupling together with the moving-target
@@ -40,13 +40,14 @@ The active local release candidate contains:
   Program 6 chart packet at draft PR 1, the Program 4 six-obligation packet
   at PR 2, the Program 3 corrigendum at PR 3, and the Program 6 corrigendum
   at PR 4. All remain unmerged and keep their mathematical boundaries; the
-  newest PR 1 head supplies an exact 20-in-22 tangent bridge, excludes its
-  full affine tangent plane by the quartic functional, and gives one
-  second-order rank-six section. The repaired search over all 66 quadratic
-  tangent-kernel parameters has cubic-effect rank 15 and augmented rank 16;
-  an exact left-null witness pairs with the right-hand side as \(-256/3\), so
-  this selected plane is intrinsically obstructed at cubic order. The result
-  does not cover other planes or the full source/target/stable quotient. Its
+  newest PR 1 head classifies the selected finite rank-six plane through its
+  first intrinsic obstruction: generic slopes and `r=4` fail cubically,
+  while the two conjugate exceptional slopes have 17-dimensional cubic-lift
+  fibres but fail quartically, with exact certificate pairing `-1152`. The
+  result does not classify the full row-base fibre or stable quotient. The
+  same checkpoint adds ordered-composition PRS charts, a five-variable
+  universal order-six reduction, and the five-dimensional Program 5
+  polynomial-gauge core with its three residual surfaces. Its
   twelve package tests and thirty Program 6 tests pass. PR 4's
   source repairs are integrated with the old Macaulay implication explicitly
   conditional. Complete-chain admissibility and global attachment remain
@@ -81,7 +82,7 @@ manuscript links are rendered from that same pointer.
 
 The two mathematical components have different jobs. The 368 stable-tag
 claim pages preserve the legacy publication pipeline and durable public URLs;
-the 562-unit retained graph is the current progress-facing corpus for research
+the 565-unit retained graph is the current progress-facing corpus for research
 models. A retained `corrects` relation is rendered programmatically on the
 affected legacy claim and collection pages, so historical wording cannot
 silently outrank its current working replacement. Advancing either component
@@ -99,9 +100,10 @@ surfaces are:
   and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-briefs-v12k-20260801a/`: hash-pinned sanitized source for
-  model-ready HTML handoffs; logical manuscript slots resolve against the
-  selected manuscript manifest, so a stale PDF version fails the build;
+- `data/model-handoffs-v13-20260801b/`: hash-pinned sanitized source for
+  the hub, nine lane entrypoints, and six program dossiers; logical manuscript
+  slots resolve against the selected manuscript manifest, so a stale PDF
+  version fails the build;
 - `scripts/check_deployed_site.py`: production verification that GitHub Pages
   serves the exact selected handoff release after deployment;
 - `scripts/generate_compatibility_stubs_v1.py`: historical noindex

@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "release_id": "living-guide-public-v39-text-proofs",
-  "updated_at": "2026-08-01T12:56:55-07:00",
+  "release_id": "living-guide-public-v40-lane-handoffs",
+  "updated_at": "2026-08-01T22:00:00+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,23 +22,23 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-briefs-v12m-20260801a",
-    "manifest_sha256": "73c1f6d08ce91bef895ad45fa45b36cfc67488c5f58d94b07f8ac4e7a1cecfb8",
-    "expected_count": 7
+    "data_dir": "model-handoffs-v13-20260801b",
+    "manifest_sha256": "eb2cad674c76b76433323e7072ab316293de6b95a84965c57ed7c559b60c1376",
+    "expected_count": 16
   },
   "retained_math": {
-    "data_dir": "retained-math-v1-20260801j",
-    "manifest_sha256": "4535a812fb5db2ade20a317c95f90db935fbe4c40ad547cfc340f7fec037a6b3",
-    "expected_units": 558,
+    "data_dir": "retained-math-v1-20260801k",
+    "manifest_sha256": "656e18f7ef6260d09b8cff3b511788cbd6fdc5e8b7ccb9de8b2e6664a5c83365",
+    "expected_units": 565,
     "expected_programs": 6
   },
   "manuscript_sources": {
-    "data_dir": "manuscript-sources-v1-20260801a",
-    "manifest_sha256": "10533d7ee7a4fb1c889185e883eafd00a256a1572da4c21e790d5d1b3dba72fb",
+    "data_dir": "manuscript-sources-v1-20260801b",
+    "manifest_sha256": "dfeb3c9db62614d852d7e273b3876a70b2c40e79ae820b4a01f22c17ebfbf943",
     "expected_files": 37,
     "expected_labels": 630
   },
-  "docs_dir": "docs-v39-text-proofs-20260801b",
+  "docs_dir": "docs-v40-lane-handoffs-20260801b",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,

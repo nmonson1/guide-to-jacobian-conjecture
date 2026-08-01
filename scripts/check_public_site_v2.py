@@ -381,8 +381,11 @@ def main() -> int:
         failures.append("model brief count changed")
     if brief_manifest["brief_count"] != len(brief_manifest["briefs"]):
         failures.append("model brief manifest count mismatch")
+    if brief_manifest.get("primary_entrypoint_count") != 10:
+        failures.append("primary model-entrypoint count is not ten")
     brief_routes: set[str] = set()
     for brief in brief_manifest["briefs"]:
+        kind = brief.get("kind")
         source = MODEL_BRIEF_DATA / brief["source"]
         rendered = DOCS / brief["route"]
         if not source.is_file() or _sha(source) != brief["sha256"]:
@@ -409,11 +412,24 @@ def main() -> int:
         except ValueError as exc:
             failures.append(f"{brief['source']}: {exc}")
             resolved_source = source_text
-        for marker in HANDOFF_STRUCTURE:
-            if marker.casefold() not in source_text.casefold():
-                failures.append(
-                    f"{brief['source']}: missing handoff semantic marker {marker!r}"
-                )
+        if kind == "lane":
+            for marker in (
+                "## Research objective",
+                "## Reusable mathematics",
+                "## Useful deliverable",
+            ):
+                if marker.casefold() not in source_text.casefold():
+                    failures.append(
+                        f"{brief['source']}: missing lane semantic marker {marker!r}"
+                    )
+            if ".md)" not in source_text:
+                failures.append(f"{brief['source']}: lane has no deeper route")
+        else:
+            for marker in HANDOFF_STRUCTURE:
+                if marker.casefold() not in source_text.casefold():
+                    failures.append(
+                        f"{brief['source']}: missing handoff semantic marker {marker!r}"
+                    )
         for tag in CLAIM_TAG_PATTERN.findall(source_text):
             if tag not in claims:
                 failures.append(f"{brief['source']}: unknown claim tag {tag}")
@@ -424,7 +440,7 @@ def main() -> int:
                     f"{brief['source']}: handoff carries non-research status "
                     f"bureaucracy {marker!r}"
                 )
-        if brief.get("kind") == "cross_program":
+        if kind == "cross_program":
             if source_text.count("#3-reusable-inputs-exact-scope-and-proof-access") < 6:
                 failures.append(
                     f"{brief['source']}: cross-program proof routes do not "
@@ -449,7 +465,7 @@ def main() -> int:
                         f"{brief['source']}: missing research-autonomy "
                         f"language {phrase!r}"
                     )
-        else:
+        elif kind == "program":
             if not MANUSCRIPT_TOKEN_RE.search(source_text):
                 failures.append(
                     f"{brief['source']}: no active-manuscript token"
@@ -491,7 +507,7 @@ def main() -> int:
         if brief["route"] in brief_routes:
             failures.append(f"duplicate model brief route: {brief['route']}")
         brief_routes.add(brief["route"])
-        lower, upper = (2000, 4000)
+        lower, upper = (350, 2000) if kind == "lane" else (2000, 4000)
         if not lower <= brief["words"] <= upper:
             failures.append(
                 f"model brief word count outside {lower}-{upper}: {brief['source']}"
@@ -508,24 +524,34 @@ def main() -> int:
             failures.append(f"{brief['route']}: snapshot names the wrong release")
         if '!!! tip "Current text proofs — preferred"' not in rendered_text:
             failures.append(f"{brief['route']}: missing preferred text-proof notice")
-        for heading in (
-            "## 1. Setup and notation",
-            "## 2. Goal and payoff",
-            "## 4. The live frontier",
-            "## 5. Graveyard",
-            "## 6. Tasks",
-            "## 7. Evidence and replay index",
-            "## 8. Do not do",
-        ):
+        expected_headings = (
+            (
+                "## Research objective",
+                "## Reusable mathematics",
+                "## Useful deliverable",
+            )
+            if kind == "lane"
+            else (
+                "## 1. Setup and notation",
+                "## 2. Goal and payoff",
+                "## 4. The live frontier",
+                "## 5. Graveyard",
+                "## 6. Tasks",
+                "## 7. Evidence and replay index",
+                "## 8. Do not do",
+            )
+        )
+        for heading in expected_headings:
             if heading not in rendered_text:
                 failures.append(f"{brief['route']}: missing {heading}")
-        section_three = (
-            "## 3. What is proved"
-            if brief.get("kind") == "cross_program"
-            else "## 3. Reusable inputs, exact scope, and proof access"
-        )
-        if section_three not in rendered_text:
-            failures.append(f"{brief['route']}: missing {section_three}")
+        if kind != "lane":
+            section_three = (
+                "## 3. What is proved"
+                if kind == "cross_program"
+                else "## 3. Reusable inputs, exact scope, and proof access"
+            )
+            if section_three not in rendered_text:
+                failures.append(f"{brief['route']}: missing {section_three}")
         if brief["program_slug"] == "minimum-degree-and-quartic-exclusions":
             required_conic = (
                 "JCG-24A6190A",
@@ -547,11 +573,13 @@ def main() -> int:
                     f"{brief['source']}: open lower-bound dependency is not "
                     "distinguished from accepted inputs"
                 )
-        if brief.get("kind") == "cross_program":
+        if brief.get("primary_entrypoint", False):
             index_page = DOCS / "research/index.md"
             if brief["route"].split("/")[-1] not in index_page.read_text(encoding="utf-8"):
-                failures.append("research index does not link cross-program brief")
-        else:
+                failures.append(
+                    f"research index does not link primary brief: {brief['program_slug']}"
+                )
+        elif kind == "program":
             program_page = DOCS / "research/programs" / f"{brief['program_slug']}.md"
             if brief["route"].split("/")[-1] not in program_page.read_text(encoding="utf-8"):
                 failures.append(f"program page does not link model brief: {brief['program_slug']}")

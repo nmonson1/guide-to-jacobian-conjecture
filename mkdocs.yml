@@ -1,10 +1,10 @@
 site_name: "The Jacobian Conjecture: A Living Guide"
 site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
 site_description: A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened.
-docs_dir: docs-v39-text-proofs-20260801b
+docs_dir: docs-v40-lane-handoffs-20260801b
 repo_name: nmonson1/guide-to-jacobian-conjecture
 repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
-edit_uri: edit/main/docs-v39-text-proofs-20260801b/
+edit_uri: edit/main/docs-v40-lane-handoffs-20260801b/
 
 theme:
   name: material
@@ -58,13 +58,22 @@ nav:
       - Plane Boundary Obstructions: research/working-mathematics/programs/plane-boundary-obstructions.md
     - State of the program: research/index.md
     - Model-ready handoffs:
-      - Cross-program state: research/handoffs/state-of-the-program.md
-      - Cubic incidence: research/handoffs/cubic-marked-root-incidence-geometry.md
-      - Quartic exclusions: research/handoffs/minimum-degree-and-quartic-exclusions.md
-      - Local rigidity: research/handoffs/local-rigidity-and-deformation-algebra.md
-      - Stable moduli: research/handoffs/stable-moduli.md
-      - Homogeneous descendants: research/handoffs/homogeneous-descendants.md
-      - Plane boundary: research/handoffs/plane-boundary-obstructions.md
+      - Portfolio hub: research/handoffs/state-of-the-program.md
+      - "Lane 1 · Cubic flatness": research/handoffs/cubic-flatness-normalization-defects.md
+      - "Lane 2 · Boundary and Torelli": research/handoffs/boundary-completeness-torelli-at-infinity.md
+      - "Lane 3 · Deformation and moduli": research/handoffs/bounded-degree-deformation-modulus-onset.md
+      - "Lane 4 · Quartic endgame": research/handoffs/quartic-endgame.md
+      - "Lane 5 · Degree budgets": research/handoffs/intrinsic-degree-valuative-budgets.md
+      - "Lane 6 · Homogeneous compression": research/handoffs/homogeneous-realization-compression.md
+      - "Lane 7 · Collision geometry": research/handoffs/five-dimensional-collision-geometry.md
+      - "Lane 8 · Plane Newton queue": research/handoffs/plane-newton-queue-terminal-certificates.md
+      - "Lane 9 · Plane global attachment": research/handoffs/plane-chart-correspondence-global-attachment.md
+      - "Dossier · Cubic incidence": research/handoffs/cubic-marked-root-incidence-geometry.md
+      - "Dossier · Quartic exclusions": research/handoffs/minimum-degree-and-quartic-exclusions.md
+      - "Dossier · Local rigidity": research/handoffs/local-rigidity-and-deformation-algebra.md
+      - "Dossier · Stable moduli": research/handoffs/stable-moduli.md
+      - "Dossier · Homogeneous descendants": research/handoffs/homogeneous-descendants.md
+      - "Dossier · Plane boundary": research/handoffs/plane-boundary-obstructions.md
     - Programs:
       - Cubic incidence: research/programs/cubic-marked-root-incidence-geometry.md
       - Quartic exclusions: research/programs/minimum-degree-and-quartic-exclusions.md

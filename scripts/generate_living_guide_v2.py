@@ -419,7 +419,10 @@ def build_release_metadata(root: Path) -> dict[str, Any]:
         )
     handoffs = []
     for item in sorted(
-        brief_manifest["briefs"], key=lambda brief: brief["program_sequence"]
+        brief_manifest["briefs"],
+        key=lambda brief: brief.get(
+            "display_sequence", brief["program_sequence"]
+        ),
     ):
         handoffs.append(
             {
@@ -430,6 +433,9 @@ def build_release_metadata(root: Path) -> dict[str, Any]:
                 "route": item["route"].removesuffix(".md") + "/",
                 "source_sha256": item["sha256"],
                 "source_words": item["words"],
+                "primary_entrypoint": item.get("primary_entrypoint", False),
+                "related_programs": item.get("related_programs", []),
+                "lane_sequence": item.get("lane_sequence"),
             }
         )
     release = {
@@ -478,23 +484,26 @@ def render_model_brief(
     proof_sources: dict[str, Any],
 ) -> str:
     source = resolve_manuscript_links(source, manuscripts)
-    cross_program = brief.get("kind") == "cross_program"
-    label = (
-        "Model research brief · Cross-program"
-        if cross_program
-        else f'Model research brief · Program {brief["program_sequence"]}'
-    )
-    back_link = (
-        "[Back to the research overview](../index.md)"
-        if cross_program
-        else f'[Back to the Program {brief["program_sequence"]} overview]'
-        f'(../programs/{brief["program_slug"]}.md)'
-    )
+    kind = brief.get("kind")
+    cross_program = kind == "cross_program"
+    lane = kind == "lane"
+    if cross_program:
+        label = "Model research brief · Portfolio hub"
+        back_link = "[Back to the research overview](../index.md)"
+    elif lane:
+        label = f'Model research brief · Lane {brief["lane_sequence"]}'
+        back_link = "[Back to the portfolio hub](state-of-the-program.md)"
+    else:
+        label = f'Model research brief · Program {brief["program_sequence"]}'
+        back_link = (
+            f'[Back to the Program {brief["program_sequence"]} overview]'
+            f'(../programs/{brief["program_slug"]}.md)'
+        )
     retained_note: list[str] = []
     if "retained_math" in release:
         retained_target = (
             "../working-mathematics/index.md"
-            if cross_program
+            if cross_program or lane
             else "../working-mathematics/programs/"
             f"{brief['program_slug']}.md"
         )
@@ -504,7 +513,7 @@ def render_model_brief(
             "    Exact reusable units and their deeper support pages are available",
             f"    in the [retained working mathematics view]({retained_target}).",
         ]
-    if cross_program:
+    if cross_program or lane:
         source_target = "../proof-sources/index.md"
     else:
         entry = _proof_entrypoint(proof_sources, brief["program_sequence"])
@@ -1065,15 +1074,46 @@ def render_research_index(
         "A model-ready handoff is a single self-contained web page, not a download bundle. It records enough setup, known results, dead ends, tasks, and evidence boundaries to begin useful work without access to private conversations.",
         "",
     ]
-    for brief in sorted(briefs.values(), key=lambda item: item["program_sequence"]):
+    primary = sorted(
+        (
+            brief
+            for brief in briefs.values()
+            if brief.get("primary_entrypoint", False)
+        ),
+        key=lambda item: item.get("display_sequence", item["program_sequence"]),
+    )
+    secondary = sorted(
+        (
+            brief
+            for brief in briefs.values()
+            if not brief.get("primary_entrypoint", False)
+        ),
+        key=lambda item: item.get("display_sequence", item["program_sequence"]),
+    )
+    for brief in primary:
         label = (
             brief["title"]
-            if brief.get("kind") == "cross_program"
-            else f"Program {brief['program_sequence']}: {brief['title']}"
+            if brief.get("kind") != "lane"
+            else f"Lane {brief['lane_sequence']}: {brief['title']}"
         )
         lines.extend(
             [
-                f"- [{label}](handoffs/{brief['program_slug']}.md) — {brief['words']} words; research state 29 July 2026.",
+                f"- [{label}](handoffs/{brief['program_slug']}.md) — {brief['words']} words.",
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            "### Deeper program dossiers",
+            "",
+            "The six program dossiers are durable subject views over the same mathematics; use them for broader context and proof navigation.",
+            "",
+        ]
+    )
+    for brief in secondary:
+        lines.extend(
+            [
+                f"- [Program {brief['program_sequence']}: {brief['title']}](handoffs/{brief['program_slug']}.md) — {brief['words']} words.",
                 "",
             ]
         )

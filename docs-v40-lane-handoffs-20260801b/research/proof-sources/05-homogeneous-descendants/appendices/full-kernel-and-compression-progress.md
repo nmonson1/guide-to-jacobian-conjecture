@@ -1,0 +1,199 @@
+---
+title: "Text proof source — 05-homogeneous-descendants/appendices/full-kernel-and-compression-progress.tex"
+description: "Sanitized current source with exact TeX-label anchors."
+---
+
+# Text proof source
+
+`manuscripts/05-homogeneous-descendants/appendices/full-kernel-and-compression-progress.tex`
+
+This is the current sanitized source text used by the retained working graph. Comments and private locators are omitted; mathematical content and line numbering are preserved. PDFs are optional reading copies.
+
+Published SHA-256: `c58fc1eba37aa04f4029637112dcc36038d81d9a3a6126a97b138214b777749b` · 6,165 bytes
+
+## Exact label anchors
+
+<a id="label-app-full-kernel-and-compression"></a>
+- `app:full-kernel-and-compression` — source line 3
+<a id="label-prop-full-kernel-regularity"></a>
+- `prop:full-kernel-regularity` — source line 27
+<a id="label-prop-full-kernel-finite-field-samples"></a>
+- `prop:full-kernel-finite-field-samples` — source line 69
+<a id="label-prop-row-killing-families"></a>
+- `prop:row-killing-families` — source line 94
+<a id="label-thm-transverse-cone-no-lift"></a>
+- `thm:transverse-cone-no-lift` — source line 125
+
+## Complete source
+
+~~~tex
+\section{Full-kernel pencils and the \texorpdfstring{\(19\to18\)}{19-to-18}
+  compression problem}
+\label{app:full-kernel-and-compression}
+
+Two computations continue our dimension-five and nineteen-variable analyses.
+The first reorganizes the regular full-kernel pencil by binary-sextic
+invariant theory.  The second proves a no-lift theorem on a natural
+transversal to the \(19\to18\) compression locus.
+
+\subsection{The regular full-kernel chart}
+
+In the full-kernel chart write
+\[
+M(s,t)=R(s,t)T^{-1}K(s,t).
+\]
+With the standard quartic Veronese column \(k\), cubic column \(q\), and
+row \(\ell\), exact multiplication gives
+\[
+N_4^3=6q\ell,\qquad Rq=a_7k,
+\]
+and hence
+\[
+M(s,t)^4=6a_7\,k(s,t)\ell(s,t)T^{-1}K(s,t).
+\]
+
+\begin{proposition}[Exact regularity criterion]
+\label{prop:full-kernel-regularity}
+On \(\det T\ne0\), the pencil \(M(s,t)\) has Jordan type \((5)\) at every
+point of \(\PP^1\) if and only if \(a_7\ne0\).
+\end{proposition}
+
+\begin{proof}
+All factors in the displayed formula other than \(a_7\) are nonzero at
+every point of \(\PP^1\), while \(M^5=0\).  Thus \(M^4\) is everywhere
+nonzero exactly when \(a_7\ne0\).
+\end{proof}
+
+Put \(\lambda=a_7\).  After a fixed linear change of the other seven
+parameters,
+\[
+T=\frac{\lambda}{4}I+S_b,
+\qquad
+S_b^TJ+JS_b=0,
+\]
+and the \(b\)-space is the irreducible principal-\(\mathfrak{sl}_2\) module
+\[
+\Sym^6(\C^2).
+\]
+Thus the chart is naturally
+\[
+\C\lambda\oplus\Sym^6(\C^2),
+\]
+not an unstructured eight-parameter matrix family.  If \(A,B\) are the
+standard degree-two and degree-four binary-sextic invariants in the chosen
+normalization, then
+\[
+\det T=\frac{(\lambda^2+4A)^2-96B}{256}.
+\]
+
+The marking equations are linear in the nine unfixed marking variables.
+On an explicit pivot chart they eliminate to one degree-\(12\) parameter
+equation and five degree-\(13\) equations.  A candidate invariant formula
+for the degree-\(12\) equation was reconstructed by exact modular
+interpolation and checked on rational samples; it is retained in the
+supplement as a computational conjecture until a coefficient certificate or
+conceptual invariant-theoretic derivation is supplied.
+
+\begin{proposition}[Finite-field sample audit]
+\label{prop:full-kernel-finite-field-samples}
+An exhaustive \(\mathbf F_{13}\)-calculation finds thirteen rational points
+of this normalized collision system.  Together with the previously checked
+six points over \(\mathbf F_7\) and eleven over \(\mathbf F_{11}\), all
+thirty sampled points have nonzero first-normal obstruction.  This is exact
+finite-field evidence, not a proof that the obstruction section is nowhere
+zero on the characteristic-zero collision curve.
+\end{proposition}
+
+\begin{proof}[Exact computation]
+The finite-field programs enumerate the normalized solutions and evaluate the
+first-normal obstruction in the corresponding prime field.  Their saved exact
+outputs give the three counts and a nonzero value at every listed point.
+\end{proof}
+
+\subsection{The unrestricted compression tangent space}
+
+Let \(K=X+Q+C\colon\A^{11}\to\A^{11}\) be the normalized
+degree-at-most-three map used in the fixed nineteen-variable construction.
+A quadratic source field \(P\) changes its cubic term to
+\[
+C_P=C+[Q,P].
+\]
+
+\begin{proposition}[Large row-killing families]
+\label{prop:row-killing-families}
+The affine space of quadratic source fields has dimension \(726\).
+There is a \(109\)-dimensional affine family on which five prescribed cubic
+output rows vanish and the remaining coordinate span has rank at most six.
+The quartic obstruction functional is identically one on this family.
+Inside it, a specified \(75\)-dimensional family consists of triangular
+polynomial automorphisms.  The full rank-six tangent space at the base point
+has dimension \(129\), leaving a \(20\)-dimensional quotient by the
+row-killing directions; a nonempty Zariski-open subset of that quotient is
+obstructed at second order.
+\end{proposition}
+
+\begin{proof}[Exact computer-assisted proof]
+The assertions are rational ranks and symbolic bracket identities in the
+displayed coefficient bases.  Fixed full-rank minors certify the ranks, and
+the triangular family is obtained by removing the \(145\) forbidden output
+coefficients from the \(220\)-dimensional triangular ansatz.
+\end{proof}
+
+\subsection{The complete transverse cone}
+
+At the row-killing rank-six point
+\[
+P_*=2hx\,e_z-d^2e_a-6ax\,e_b+
+(2az-\tfrac23bh)e_c+2b^2e_s-h^2e_k,
+\]
+the determinantal tangent space has dimension \(115\).  Modulo the
+\(109\) row-killing directions, choose transverse coordinates
+\(u_0,\ldots,u_5\).
+
+\begin{theorem}[Transverse no-lift]
+\label{thm:transverse-cone-no-lift}
+In this six-dimensional transversal, the second-order rank-six cone is the
+reduced scheme
+\[
+V(u_0u_5,u_2u_3,u_3u_5)
+=
+V(u_3,u_5)\cup V(u_0,u_3)\cup V(u_2,u_5).
+\]
+There is an explicit polynomial family \(P(u)\) such that
+\[
+\operatorname{rank}(C+[Q,P(u)])\le6
+\quad\Longleftrightarrow\quad
+u_0u_5=u_2u_3=u_3u_5=0.
+\]
+Every point of the cone is therefore integrated to an exact cubic jet of
+coordinate span six.  Nevertheless no member lifts through quartic order.
+\end{theorem}
+
+\begin{proof}[Exact computer-assisted proof]
+The projected second fundamental form has the three displayed generators.
+Five exact pivot charts show that the Schur-complement ideal of the explicit
+family is exactly their radical intersection and that six output rows retain
+rank six everywhere on it.
+
+For a quartic vector field \(E\), set
+\[
+\Gamma_4(E)=[h^4](E_z).
+\]
+Support alone gives \(\Gamma_4([Q,P_3])=0\) for every cubic source
+correction \(P_3\).  Direct exact calculation on the whole six-parameter
+family gives
+\[
+\Gamma_4(\mathcal O_4(P(u)))=-1.
+\]
+Thus the quartic homological equation cannot hold at any rank-six member.
+\end{proof}
+
+The theorem resolves the complete natural six-dimensional transversal, but
+not the entire \(726\)-parameter compression problem: nonlinear coupling
+with the \(109\) row-killing parameters, independent target changes, and
+stable-coordinate changes remain outside its scope.  A previously studied
+two-parameter active surface is superseded by
+\cref{thm:transverse-cone-no-lift} and is not used.
+~~~
+
+[Back to the text-source index](../../index.md)
