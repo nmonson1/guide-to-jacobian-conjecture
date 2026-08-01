@@ -31,6 +31,13 @@ jobs:
           python -m unittest discover \
             -s research-tools/filtered_operation_complex/symbolic_tests \
             -p 'test_program5_generic_line_obstruction.py' -v
+      - name: Audit the exceptional algebraic finite slopes
+        env:
+          PYTHONPATH: research-tools
+        run: |
+          python -m unittest discover \
+            -s research-tools/filtered_operation_complex/symbolic_tests \
+            -p 'test_program5_exceptional_finite_lines.py' -v
 
   first-order-row-base:
     runs-on: ubuntu-latest
