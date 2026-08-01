@@ -1,6 +1,11 @@
 name: Probe Program 5 Kuranishi branches
 
 on:
+  pull_request:
+    paths:
+      - 'research-tools/filtered_operation_complex/adapters/program5_rank_six_*.py'
+      - 'research-tools/filtered_operation_complex/symbolic_tests/test_program5_*.py'
+      - '.github/workflows/program5-kuranishi-probes.yml'
   push:
     branches: [agent/p6-chart-correspondence]
     paths:
