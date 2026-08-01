@@ -21,6 +21,7 @@ class FilteredOperationComplexTests(unittest.TestCase):
         report = analyze_document(self.rational_contract())
         self.assertTrue(report["all_transitions_verified"])
         self.assertFalse(report["all_true_quotients_zero"])
+        self.assertFalse(report["all_forcing_equations_solvable"])
         for layer in report["layers"]:
             self.assertEqual(layer["kernel_dimension"], 3)
             self.assertEqual(layer["cokernel_dimension"], 1)
@@ -28,6 +29,12 @@ class FilteredOperationComplexTests(unittest.TestCase):
             self.assertEqual(layer["rechart_increment"], 1)
             self.assertEqual(layer["unexplained_dimension"], 1)
             self.assertEqual(layer["forcing_pairings"], ["1"])
+            self.assertFalse(layer["forcing_solvable"])
+            self.assertIsNone(layer["affine_solution_dimension"])
+            self.assertEqual(
+                layer["complete_left_null_forcing_pairings"],
+                ["1"],
+            )
 
             actions = {entry["name"]: entry for entry in layer["actions"]}
             self.assertEqual(
@@ -76,6 +83,30 @@ class FilteredOperationComplexTests(unittest.TestCase):
             transition["forcing_check"]["dual_pairings_preserved"]
         )
         self.assertEqual(transition["forcing_check"]["pairings"], ["1"])
+
+    def test_solvable_affine_forcing_returns_particular_solution(self) -> None:
+        contract = {
+            "schema_version": 1,
+            "field": {"kind": "rational"},
+            "report_options": {"include_vectors": True},
+            "layers": [
+                {
+                    "id": "solvable-affine-layer",
+                    "deformation_dimension": 2,
+                    "equation_dimension": 1,
+                    "operator": [[1, 0]],
+                    "forcing": [-2],
+                }
+            ],
+        }
+        report = analyze_document(contract)
+        layer = report["layers"][0]
+        self.assertTrue(report["all_forcing_equations_solvable"])
+        self.assertTrue(layer["forcing_solvable"])
+        self.assertTrue(layer["forcing_compatibility_verified"])
+        self.assertEqual(layer["affine_solution_dimension"], 1)
+        self.assertEqual(layer["particular_solution"], ["2", "0"])
+        self.assertEqual(layer["complete_left_null_forcing_pairings"], [])
 
     def test_generator_form_also_reports_source_stabilizer(self) -> None:
         contract = {
@@ -135,6 +166,7 @@ class FilteredOperationComplexTests(unittest.TestCase):
         self.assertEqual(layer["gauge_dimension"], 1)
         self.assertEqual(layer["unexplained_dimension"], 0)
         self.assertTrue(report["all_true_quotients_zero"])
+        self.assertIsNone(report["all_forcing_equations_solvable"])
         self.assertEqual(
             layer["actions"][0]["source_stabilizer_dimension"],
             0,
