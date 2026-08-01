@@ -46,7 +46,13 @@ For each layer the engine computes, exactly:
 - the independent contribution of the rechart spaces;
 - a basis of the unexplained quotient;
 - left-null obstruction functionals and their pairings with an optional
-  forcing vector.
+  forcing vector;
+- exact solvability of the affine equation
+  \[
+  D_rx=-\Phi_r,
+  \]
+  including a deterministic particular solution and verification against the
+  complete left nullspace.
 
 An operation may be supplied either by image generators or by its full action
 matrix. In the latter form the package records
@@ -151,14 +157,16 @@ geometry.
 
 ## Coefficient fields
 
-The package supports `Q` and a simple algebraic number field in a power basis.
-A number field is specified by a low-to-high modulus, for example
+The dependency-free core supports `Q` and a simple algebraic number field in a
+power basis. A number field is specified by a low-to-high modulus, for example
 
 ```json
 {"field": {"kind": "number_field", "modulus": [-2, 0, 1], "symbol": "u"}}
 ```
 
 for `Q[u]/(u^2-2)`. Number-field elements are coefficient vectors.
+Program-specific exporters may use a pinned symbolic dependency to derive the
+finite contract; the emitted contract is then replayed by the exact core.
 
 ## Minimal layer contract
 
@@ -191,7 +199,8 @@ for `Q[u]/(u^2-2)`. Number-field elements are coefficient vectors.
   "gauge_actions": ["filtered"],
   "recharts": [
     {"name": "adjacent-wall", "generators": [[0, 0, 1, 0]]}
-  ]
+  ],
+  "forcing": [0, 1]
 }
 ```
 
@@ -234,23 +243,94 @@ Laurent, affine-polynomial, and complete-chain-filtered action maps; the
 The first two action levels are computable; the complete-chain subgroup
 remains mathematical input.
 
-## Program 5 adapter and archive intake
+## Program 5 exact public instantiation
 
-`adapters/program5_row_killing.py` accepts the equation operator, candidate
-row-killers, proved source and target automorphism images,
-stable-presentation changes, and optional obstruction functionals. It forms
+`adapters/program5_compression_export.py` reconstructs the compression systems
+from the hash-pinned public `extensions_verifier.py`. It does **not** import or
+claim the later 109-direction/75-automorphism packet stated in the Program 5
+handoff; that packet is absent from the public supplement inspected here.
+
+The exact exported contract has an ambient operation space of 115
+weight-preserving quadratic source fields and two real layers:
+
+1. the affine row-killing system for the `a,d,q,h,k` rows,
+   \[
+   \operatorname{rank}A=\operatorname{rank}(A\mid b)=95,
+   \qquad \dim\ker A=20;
+   \]
+2. the tangent system to the rank-at-most-six cubic-coordinate locus at
+   \(P_0=-d^2\partial_a\),
+   \[
+   \operatorname{rank}D_{\mathrm{rank}}=93,
+   \qquad \dim\ker D_{\mathrm{rank}}=22.
+   \]
+
+The published twelve-parameter family is verified as a subspace of both. The
+affine forcing equation is solved by the generic engine, and the public
+quartic functional is independently reconstructed as
 
 \[
-H_{\mathrm{row}}/(\mathfrak a_{\mathrm{source}}+
-\mathfrak a_{\mathrm{target}}+R_{\mathrm{stable}}).
+\Lambda_4=1
 \]
 
-The included Program 5 file is deliberately synthetic and documents the
-export contract. `program5-operation-intake.yml` inventories the public
-Program 5 supplement for the exact compression sources needed to replace that
-template. Importing the actual 109-direction and 75-direction matrices would
-give the first exact tangent quotient for compression; it would not settle
-nonlinear coupling to the quartic obstruction.
+on the full 20-dimensional affine row-killing slice.
+
+Run:
+
+```bash
+PYTHONPATH=research-tools python -m \
+  filtered_operation_complex.adapters.program5_compression_export \
+  --contract /tmp/program5-compression-contract.json \
+  --report /tmp/program5-compression-report.json \
+  --summary /tmp/program5-compression-summary.json
+```
+
+Generated exact contracts, reports, and provenance are retained under
+
+```text
+research-tools/filtered_operation_complex/intake/program5/
+```
+
+## Program 5 tangent bridge
+
+`adapters/program5_tangent_bridge.py` compares the two real tangent spaces. It
+verifies
+
+\[
+K_{\mathrm{row}}\subset K_{\mathrm{rank}},
+\qquad
+\dim K_{\mathrm{rank}}/K_{\mathrm{row}}=2,
+\]
+
+constructs explicit complement vectors \(\eta_0,\eta_1\), and evaluates the
+full quadratic expression \(\Lambda_4(O_4(P))\) on
+
+\[
+P=P_0+K_{\mathrm{row}}+\mathbf Q\eta_0+\mathbf Q\eta_1.
+\]
+
+The result is the exact identity
+
+\[
+\boxed{\Lambda_4(O_4(P))=1}
+\]
+
+on the entire 22-dimensional affine tangent plane. There are no linear,
+quadratic, or mixed parameter terms. Thus the two first-order rank-six
+directions omitted by the row-zero normal form cannot cancel the displayed
+quartic functional.
+
+This is stronger than the earlier row-zero calculation but remains
+restricted: the affine tangent plane is not proved to lie in the nonlinear
+rank-at-most-six locus, and the true source/target/stable operation quotient
+has not been supplied. See [`PROGRAM5_TANGENT_BRIDGE.md`](PROGRAM5_TANGENT_BRIDGE.md)
+for the exact vectors, proof contract, and conclusion boundary.
+
+```bash
+PYTHONPATH=research-tools python -m \
+  filtered_operation_complex.adapters.program5_tangent_bridge \
+  --output /tmp/program5-tangent-bridge.json
+```
 
 ## Other uses
 
@@ -261,8 +341,9 @@ directions, and Program 1 local gauges versus globally nontrivial overlap
 classes.
 
 The explicit operation-map square is the linear precursor of a filtered
-groupoid or `L_infinity` comparison. Nonlinear problems require additional
-Kuranishi, Maurer--Cartan, or higher-bracket data.
+groupoid or `L_infinity` comparison. The affine-forcing solver is the first
+Kuranishi-facing layer, but nonlinear problems still require recursive forcing,
+higher brackets, or Maurer--Cartan data.
 
 ## Mathematical boundary
 
