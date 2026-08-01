@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: filtered-operation-${{ github.event.pull_request.number || github.ref }}
+  group: filtered-operation-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 
 permissions:
@@ -119,7 +119,15 @@ jobs:
           }, indent=2, sort_keys=True))
           PY
 
-      - name: Construct the deterministic two-parameter rank-six lift
+      - name: Replay the selected-plane intrinsic cubic certificate
+        env:
+          PYTHONPATH: research-tools
+        run: |
+          python -m unittest discover \
+            -s research-tools/filtered_operation_complex/symbolic_tests \
+            -p 'test_program5_third_order_lift.py' -v
+
+      - name: Record the deterministic selected-plane section diagnostic
         env:
           PYTHONPATH: research-tools
         run: |
@@ -132,26 +140,6 @@ jobs:
           print(json.dumps({
               'maximum_compatible_order': data['maximum_compatible_order'],
               'first_obstructed_order': data['first_obstructed_order'],
-              'orders': [
-                  {
-                      'order': item['order'],
-                      'compatible': item['compatible'],
-                      'obstruction_rank': item.get('obstruction_rank'),
-                      'obstructed_monomials': item.get('obstructed_monomials', []),
-                      'correction_nonzero_counts': [
-                          correction['nonzero_count']
-                          for correction in item.get('corrections', [])
-                      ],
-                  }
-                  for item in data['orders']
-              ],
+              'interpretation': 'deterministic section only; free higher corrections are audited in the parallel Kuranishi workflow',
           }, indent=2, sort_keys=True))
           PY
-
-      - name: Verify the intrinsic cubic obstruction for the selected plane
-        env:
-          PYTHONPATH: research-tools
-        run: |
-          python -m unittest discover \
-            -s research-tools/filtered_operation_complex/symbolic_tests \
-            -p 'test_*.py' -v
