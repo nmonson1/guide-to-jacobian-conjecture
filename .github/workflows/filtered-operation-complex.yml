@@ -106,7 +106,8 @@ jobs:
           print(json.dumps({
               'obstruction_coefficient_rank': kur['obstruction_coefficient_rank'],
               'independent_equation_count': kur['independent_equation_count'],
-              'nonzero_obstruction_monomial_count': len(kur['nonzero_obstruction_monomials']),
+              'nonzero_obstruction_monomials': kur['nonzero_obstruction_monomials'],
+              'equations': kur['equations'],
               'u_axis': ratios['u_axis'],
               'v_axis': ratios['v_axis'],
               'generic_v_nonzero': ratios['generic_v_nonzero'],
