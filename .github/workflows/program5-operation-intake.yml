@@ -1,0 +1,215 @@
+name: Inventory Program 5 operation data
+
+on:
+  push:
+    branches: [agent/p6-chart-correspondence]
+    paths:
+      - 'research-tools/filtered_operation_complex/**'
+      - '.github/workflows/program5-operation-intake.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: program5-operation-intake-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  intake:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Scan the public Program 5 supplement
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import hashlib
+          import json
+          import re
+          import shutil
+          import zipfile
+          from pathlib import Path
+
+          archive = Path(
+              "docs-v7-20260726c/assets/technical-materials/"
+              "05-homogeneous-descendants-computational-supplement.zip"
+          )
+          root = Path(
+              "research-tools/filtered_operation_complex/intake/program5"
+          )
+          selected_root = root / "selected"
+          shutil.rmtree(selected_root, ignore_errors=True)
+          selected_root.mkdir(parents=True, exist_ok=True)
+
+          patterns = {
+              "row_killing": re.compile(r"row[-_ ]?kill", re.I),
+              "compression": re.compile(r"compress", re.I),
+              "dimension_109": re.compile(r"(?<!\d)109(?!\d)"),
+              "dimension_75": re.compile(r"(?<!\d)75(?!\d)"),
+              "triangular_automorphism": re.compile(
+                  r"triangular.{0,80}automorphism|automorphism.{0,80}triangular",
+                  re.I | re.S,
+              ),
+              "quartic_obstruction": re.compile(
+                  r"quartic.{0,100}obstruction|obstruction.{0,100}quartic|"
+                  r"Gamma[_ ]?4|GAMMA[_ ]?4",
+                  re.I | re.S,
+              ),
+              "six_dimensional": re.compile(
+                  r"six[-_ ]?dimensional|6[-_ ]?dimensional|six[-_ ]?coordinate",
+                  re.I,
+              ),
+              "rank_six_cone": re.compile(
+                  r"rank.{0,40}(at most|<=).{0,20}6|"
+                  r"V\(u_3,u_5\)|u_3.{0,20}u_5",
+                  re.I | re.S,
+              ),
+              "source_direction": re.compile(
+                  r"source.{0,60}direction|direction.{0,60}source",
+                  re.I | re.S,
+              ),
+          }
+          weights = {
+              "row_killing": 12,
+              "compression": 5,
+              "dimension_109": 10,
+              "dimension_75": 8,
+              "triangular_automorphism": 10,
+              "quartic_obstruction": 10,
+              "six_dimensional": 4,
+              "rank_six_cone": 8,
+              "source_direction": 3,
+          }
+          suffixes = {
+              ".py", ".sage", ".m", ".md", ".tex", ".txt", ".json",
+              ".log", ".csv", ".tsv", ".sing", ".m2",
+          }
+
+          digest = hashlib.sha256(archive.read_bytes()).hexdigest()
+          candidates = []
+          with zipfile.ZipFile(archive) as handle:
+              for info in handle.infolist():
+                  member_path = Path(info.filename)
+                  if (
+                      info.is_dir()
+                      or member_path.suffix.lower() not in suffixes
+                      or info.file_size > 8_000_000
+                  ):
+                      continue
+                  raw = handle.read(info)
+                  text = raw.decode("utf-8", errors="replace")
+                  hits = []
+                  score = 0
+                  labels = set()
+                  for label, expression in patterns.items():
+                      matches = list(expression.finditer(text))[:5]
+                      if not matches:
+                          continue
+                      labels.add(label)
+                      score += weights[label]
+                      for match in matches:
+                          line = text.count("\n", 0, match.start()) + 1
+                          start = max(0, match.start() - 160)
+                          end = min(len(text), match.end() + 360)
+                          snippet = " ".join(text[start:end].split())
+                          hits.append(
+                              {
+                                  "label": label,
+                                  "line": line,
+                                  "snippet": snippet,
+                              }
+                          )
+                  filename_text = info.filename.lower()
+                  if "compress" in filename_text:
+                      score += 8
+                      labels.add("compression_filename")
+                  if "row" in filename_text and "kill" in filename_text:
+                      score += 12
+                      labels.add("row_killing_filename")
+                  if not hits and score == 0:
+                      continue
+                  candidates.append(
+                      {
+                          "path": info.filename,
+                          "bytes": info.file_size,
+                          "sha256": hashlib.sha256(raw).hexdigest(),
+                          "score": score,
+                          "labels": sorted(labels),
+                          "hits": hits,
+                          "_raw": raw,
+                      }
+                  )
+
+          candidates.sort(key=lambda item: (-item["score"], item["path"]))
+          selected = []
+          total_bytes = 0
+          for item in candidates:
+              if len(selected) >= 25:
+                  break
+              if item["score"] < 8:
+                  continue
+              if item["bytes"] > 1_500_000:
+                  continue
+              if total_bytes + item["bytes"] > 6_000_000:
+                  continue
+              relative = Path(item["path"])
+              safe_parts = [
+                  part for part in relative.parts
+                  if part not in ("", ".", "..")
+              ]
+              destination = selected_root.joinpath(*safe_parts)
+              destination.parent.mkdir(parents=True, exist_ok=True)
+              destination.write_bytes(item["_raw"])
+              selected.append(
+                  {
+                      key: value
+                      for key, value in item.items()
+                      if key != "_raw"
+                  }
+              )
+              total_bytes += item["bytes"]
+
+          report_candidates = [
+              {
+                  key: value
+                  for key, value in item.items()
+                  if key != "_raw"
+              }
+              for item in candidates
+          ]
+          report = {
+              "schema_version": 1,
+              "archive_path": str(archive),
+              "archive_sha256": digest,
+              "candidate_count": len(report_candidates),
+              "selected_count": len(selected),
+              "selected_total_bytes": total_bytes,
+              "patterns": sorted(patterns),
+              "selected": selected,
+              "candidates": report_candidates,
+          }
+          root.mkdir(parents=True, exist_ok=True)
+          (root / "archive_scan.json").write_text(
+              json.dumps(report, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Commit deterministic intake output
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add research-tools/filtered_operation_complex/intake/program5
+          if git diff --cached --quiet; then
+            echo 'No Program 5 intake changes.'
+            exit 0
+          fi
+          git commit -m 'Inventory Program 5 operation data'
+          git push origin HEAD:${{ github.ref_name }}
