@@ -1,0 +1,61 @@
+{
+  "archive_path": "docs-v7-20260726c/assets/technical-materials/05-homogeneous-descendants-computational-supplement.zip",
+  "archive_sha256": "303a48b635d5a02f8c24d85a7af3fcf4734b3df90fdfbcda931dc313c2512b22",
+  "members": [
+    {
+      "archive_path": "05-homogeneous-descendants-computational-supplement/COMPUTATION.md",
+      "bytes": 2129,
+      "output_path": "research-tools/filtered_operation_complex/intake/program5/focused/COMPUTATION.md",
+      "sha256": "d260f1c064b99774e9757156c089102fa0ed770d25bffa9a8a6a8472ce5fd1a9"
+    },
+    {
+      "archive_path": "05-homogeneous-descendants-computational-supplement/code/extensions_verifier.py",
+      "bytes": 4284,
+      "output_path": "research-tools/filtered_operation_complex/intake/program5/focused/extensions_verifier.py",
+      "sha256": "a2ec1fb45cc42b527958f3c881b8a9bb8c0ce093aa553c846806ab868513a2d8"
+    },
+    {
+      "archive_path": "05-homogeneous-descendants-computational-supplement/code/compression_slice_verifier.py",
+      "bytes": 3457,
+      "output_path": "research-tools/filtered_operation_complex/intake/program5/focused/compression_slice_verifier.py",
+      "sha256": "f53938d40242889a5f4ee13b1a838377f8c6571540d4aa3cda94f97c5c670b7f"
+    },
+    {
+      "archive_path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/base19_data.py",
+      "bytes": 1329,
+      "output_path": "research-tools/filtered_operation_complex/intake/program5/focused/base19_data.py",
+      "sha256": "00857f79ef7d445875b84178e440ee93452dc306b361a22b90b9837ad8a641ca"
+    },
+    {
+      "archive_path": "05-homogeneous-descendants-computational-supplement/computational-supplement/fixed-tensor/attack2_compression.py",
+      "bytes": 2679,
+      "output_path": "research-tools/filtered_operation_complex/intake/program5/focused/attack2_compression.py",
+      "sha256": "d64a0fe889771b89098a3a8201320d5412b8795b5b47c8fe11433f2d1377494a"
+    },
+    {
+      "archive_path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/base19_data.py",
+      "bytes": 1329,
+      "output_path": "research-tools/filtered_operation_complex/intake/program5/focused/base19_data.py",
+      "sha256": "00857f79ef7d445875b84178e440ee93452dc306b361a22b90b9837ad8a641ca"
+    },
+    {
+      "archive_path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack8_quartic_functional.py",
+      "bytes": 3077,
+      "output_path": "research-tools/filtered_operation_complex/intake/program5/focused/attack8_quartic_functional.py",
+      "sha256": "3693f7ae109eac4bc74f7219974216aeb421965de1bd353392df14924ea7675b"
+    },
+    {
+      "archive_path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack9_monomial_shifts.py",
+      "bytes": 3214,
+      "output_path": "research-tools/filtered_operation_complex/intake/program5/focused/attack9_monomial_shifts.py",
+      "sha256": "0cd734dafc064ecc1435396f6bbe674e79401e22bc89be682ddd4e7851da3604"
+    },
+    {
+      "archive_path": "05-homogeneous-descendants-computational-supplement/computational-supplement/continuation/attack11_target_cleanup.py",
+      "bytes": 3536,
+      "output_path": "research-tools/filtered_operation_complex/intake/program5/focused/attack11_target_cleanup.py",
+      "sha256": "c64306ff01dec304c949967e9a50752e724407f0faf2aff903fd86b5f5efaa28"
+    }
+  ],
+  "schema_version": 1
+}
