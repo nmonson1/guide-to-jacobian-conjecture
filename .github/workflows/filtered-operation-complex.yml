@@ -70,3 +70,10 @@ jobs:
           python -m filtered_operation_complex \
             /tmp/program5-compression-contract.json \
             --output /tmp/program5-compression-generic-replay.json
+
+      - name: Analyze the Program 5 row-zero to rank-six tangent bridge
+        env:
+          PYTHONPATH: research-tools
+        run: |
+          python -m filtered_operation_complex.adapters.program5_tangent_bridge \
+            --output /tmp/program5-tangent-bridge.json
