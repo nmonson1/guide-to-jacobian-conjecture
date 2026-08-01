@@ -1,0 +1,170 @@
+{
+  "components": {
+    "claim_graph_manifest_sha256": "ff2e60ed912d9f75cdaf921f5cbbb0f98bba861d4b6c97e28c1a90c1cc54d96c",
+    "manuscript_manifest_sha256": "1dc62b27aed48e4c42d440880056d5b9a028e6fabafe855ab71dd274151e94d9",
+    "model_brief_manifest_sha256": "6a164fb86614a36ab6a4501116875c4a998f4186013b53a889b4d091cf82b7d9"
+  },
+  "counts": {
+    "context_only_private_records": 21,
+    "grouped_pages": 104,
+    "memberships": 534,
+    "open_problems": 19,
+    "pages_by_manuscript_coverage": {
+      "complete": 76,
+      "not_applicable": 19,
+      "partial": 9
+    },
+    "pages_by_release_state": {
+      "draft_public": 87,
+      "public": 17
+    },
+    "research_programs": 6,
+    "results": 85,
+    "technical_records": 368
+  },
+  "handoff_source": {
+    "count": 7,
+    "release_id": "model-briefs-v12k-20260801a",
+    "version": "v12k"
+  },
+  "handoffs": [
+    {
+      "kind": "cross_program",
+      "program_sequence": 0,
+      "program_slug": "state-of-the-program",
+      "route": "research/handoffs/state-of-the-program/",
+      "source_sha256": "a62e9d6507555d3e8a8357804b4387541f174748425d041896f5f07fd0269ff9",
+      "source_words": 3854,
+      "title": "State of the Jacobian Research Program"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 1,
+      "program_slug": "cubic-marked-root-incidence-geometry",
+      "route": "research/handoffs/cubic-marked-root-incidence-geometry/",
+      "source_sha256": "626a92e90829f7504711f2c08ded0eba8ac79eebf979e9edcf84f1c28befd214",
+      "source_words": 2856,
+      "title": "Cubic Marked-Root Incidence Geometry"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 2,
+      "program_slug": "minimum-degree-and-quartic-exclusions",
+      "route": "research/handoffs/minimum-degree-and-quartic-exclusions/",
+      "source_sha256": "0842ab124bc216cfbbfd7c89d293faa39e5c9ee3c923d6530396651cfe6da3f4",
+      "source_words": 3971,
+      "title": "Minimum Degree and Quartic Exclusions"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 3,
+      "program_slug": "local-rigidity-and-deformation-algebra",
+      "route": "research/handoffs/local-rigidity-and-deformation-algebra/",
+      "source_sha256": "7d950ad48c0cdd9cde822b8456a6b7dc77f53562efcbd5e1e8e9623ae1ad77c5",
+      "source_words": 3267,
+      "title": "Local Rigidity and Deformation Algebra"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 4,
+      "program_slug": "stable-moduli",
+      "route": "research/handoffs/stable-moduli/",
+      "source_sha256": "603a544cfdb92ec11c2678ac534d9c2a5d46ad4a572ff560c38ab9be2acd7781",
+      "source_words": 3746,
+      "title": "Stable Moduli"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 5,
+      "program_slug": "homogeneous-descendants",
+      "route": "research/handoffs/homogeneous-descendants/",
+      "source_sha256": "b8d78f2d8b2c20838db8c340f7e5f72599dea67ca1fbc5e2f9efa3a0ee7260ed",
+      "source_words": 3666,
+      "title": "Homogeneous Descendants"
+    },
+    {
+      "kind": "program",
+      "program_sequence": 6,
+      "program_slug": "plane-boundary-obstructions",
+      "route": "research/handoffs/plane-boundary-obstructions/",
+      "source_sha256": "8c5bab49a4118d2b69f496413302377b7b6d5096ecf16c21f48a63081b92727e",
+      "source_words": 3673,
+      "title": "Plane Boundary Obstructions"
+    }
+  ],
+  "manuscript_version": 13,
+  "manuscripts": [
+    {
+      "filename": "01-cubic-marked-root-covers-2026-07-29-v13.pdf",
+      "pages": 21,
+      "sequence": "01",
+      "sha256": "41c52f884816692a69b188488498fb674ded1c14842c44eda0f1760d6800103c",
+      "title": "Cubic Marked-Root Covers",
+      "version": 13
+    },
+    {
+      "filename": "02-quartic-keller-maps-2026-07-29-v13.pdf",
+      "pages": 31,
+      "sequence": "02",
+      "sha256": "21d411920210633f906c4292ad1d672b7f572a3c078f035d3fc6d4d7eba68025",
+      "title": "Quartic Keller Maps and Leading Curves",
+      "version": 13
+    },
+    {
+      "filename": "03-filtered-rigidity-2026-07-29-v13.pdf",
+      "pages": 22,
+      "sequence": "03",
+      "sha256": "18f4658390d0a9566056aee505c3fb5039d17969368cb2f544a44e6ba956f427",
+      "title": "Filtered Rigidity of the Degree-Seven Jacobian Counterexample",
+      "version": 13
+    },
+    {
+      "filename": "04-boundary-rigidity-stable-moduli-2026-07-29-v13.pdf",
+      "pages": 25,
+      "sequence": "04",
+      "sha256": "f4a0da4becd2129dcb845ca4ae89be25e97cc5f38b0b639cb55e93fc10bfaa0e",
+      "title": "Boundary Rigidity and Stable Moduli",
+      "version": 13
+    },
+    {
+      "filename": "05-homogeneous-descendants-2026-07-29-v13.pdf",
+      "pages": 20,
+      "sequence": "05",
+      "sha256": "2ae5abe37511aeb434c27e0761e9621809e8a2887b6c0e58deb8994293c18f9e",
+      "title": "Normal-Form Complexity of a Three-Sheeted Keller Map",
+      "version": 13
+    },
+    {
+      "filename": "06-plane-boundary-obstructions-2026-07-29-v13.pdf",
+      "pages": 31,
+      "sequence": "06",
+      "sha256": "c8c20e3ab8d4d858f10f77ab438dd22e23ac9d9542ac7ede869fbb80cc91f22f",
+      "title": "Boundary Belyi Covers and Normal Jets",
+      "version": 13
+    },
+    {
+      "filename": "07-results-and-research-register-2026-07-29-v13.pdf",
+      "pages": 32,
+      "sequence": "07",
+      "sha256": "1170bc336beb2a2e7ff37b2dc6c95d120e24c3ffefedf5d15215a3e8492bda70",
+      "title": "Results and Research Register for Six Jacobian-Conjecture Programs",
+      "version": 13
+    }
+  ],
+  "retained_math": {
+    "counts": {
+      "programs": 6,
+      "publication_ready": 0,
+      "relations": 24,
+      "support_objects": 540,
+      "units": 562,
+      "working_units": 562
+    },
+    "registry_id": "RETAINED-8e6156f8a0b8",
+    "release_id": "retained-math-v1-20260801i"
+  },
+  "schema_version": 1,
+  "site_release_id": "living-guide-public-v38-cubic-obstruction",
+  "timezone": "America/Los_Angeles",
+  "updated_at": "2026-08-01T11:26:41-07:00"
+}

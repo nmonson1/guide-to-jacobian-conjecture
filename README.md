@@ -25,8 +25,8 @@ The active local release candidate contains:
 - 368 stable-tagged atomic claim pages, all included in site search but kept
   out of the main navigation;
 - 534 many-to-many claim memberships across six research programs;
-- 562 retained working-mathematics units, 539 supplied support objects, and
-  22 typed relations across six overlapping program views;
+- 562 retained working-mathematics units, 540 supplied support objects, and
+  24 typed relations across six overlapping program views;
 - six version-13 reader PDFs and one companion Results and Research Register;
 - six self-contained, searchable program handoffs plus one cross-program
   state page with nine broad research-lane entry links under
@@ -42,8 +42,12 @@ The active local release candidate contains:
   at PR 4. All remain unmerged and keep their mathematical boundaries; the
   newest PR 1 head supplies an exact 20-in-22 tangent bridge, excludes its
   full affine tangent plane by the quartic functional, and gives one
-  second-order rank-six section. Its twelve package tests and thirty Program 6
-  tests pass; the fixed-minor order-three residual is not intrinsic. PR 4's
+  second-order rank-six section. The repaired search over all 66 quadratic
+  tangent-kernel parameters has cubic-effect rank 15 and augmented rank 16;
+  an exact left-null witness pairs with the right-hand side as \(-256/3\), so
+  this selected plane is intrinsically obstructed at cubic order. The result
+  does not cover other planes or the full source/target/stable quotient. Its
+  twelve package tests and thirty Program 6 tests pass. PR 4's
   source repairs are integrated with the old Macaulay implication explicitly
   conditional. Complete-chain admissibility and global attachment remain
   open. Conditional global syntheses remain conditional, and the
@@ -95,7 +99,7 @@ surfaces are:
   and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-briefs-v12j-20260801a/`: hash-pinned sanitized source for
+- `data/model-briefs-v12k-20260801a/`: hash-pinned sanitized source for
   model-ready HTML handoffs; logical manuscript slots resolve against the
   selected manuscript manifest, so a stale PDF version fails the build;
 - `scripts/check_deployed_site.py`: production verification that GitHub Pages

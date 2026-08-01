@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "release_id": "living-guide-public-v37-pr-assimilation",
-  "updated_at": "2026-08-01T10:29:51-07:00",
+  "release_id": "living-guide-public-v38-cubic-obstruction",
+  "updated_at": "2026-08-01T11:26:41-07:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,17 +22,17 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-briefs-v12j-20260801a",
-    "manifest_sha256": "2ce642666368e415358c91b11e8e8542c0f64b8a8013b636ef8f5f894a7bc4a3",
+    "data_dir": "model-briefs-v12k-20260801a",
+    "manifest_sha256": "6a164fb86614a36ab6a4501116875c4a998f4186013b53a889b4d091cf82b7d9",
     "expected_count": 7
   },
   "retained_math": {
-    "data_dir": "retained-math-v1-20260801h",
-    "manifest_sha256": "928bdc99ade70f12c0d5b73f305f06fb9b30554b200fe4692d803e3f2f19f441",
+    "data_dir": "retained-math-v1-20260801i",
+    "manifest_sha256": "a672a2df3b7bc1c4342debfe7d6bf6083182b74a5e7dae2191d70a59009d8246",
     "expected_units": 562,
     "expected_programs": 6
   },
-  "docs_dir": "docs-v37-retained-math-20260801l",
+  "docs_dir": "docs-v38-retained-math-20260801m",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,
