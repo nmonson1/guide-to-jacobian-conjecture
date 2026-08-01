@@ -8,7 +8,13 @@ import sys
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-from .fields import ContractError, NumberField, build_field
+from .fields import (
+    ContractError,
+    NumberField,
+    NumberFieldElement,
+    RationalField,
+    build_field,
+)
 from .layer import LayerAudit, parse_layer
 from .linear import dot, serialize_vector, solve_affine
 from .transition import audit_transition
