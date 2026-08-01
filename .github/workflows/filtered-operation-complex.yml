@@ -77,3 +77,17 @@ jobs:
         run: |
           python -m filtered_operation_complex.adapters.program5_tangent_bridge \
             --output /tmp/program5-tangent-bridge.json
+          python - <<'PY'
+          import json
+          data = json.load(open('/tmp/program5-tangent-bridge.json'))
+          quartic = data['quartic_restriction']
+          print(json.dumps({
+              'tangent_excess_dimension': data['tangent_excess_dimension'],
+              'extra_plane_expression': quartic['extra_plane_expression'],
+              'linear_coefficients': quartic['linear_coefficients_in_eta_coordinates'],
+              'extra_hessian': quartic['extra_hessian'],
+              'pure_extra_term_count': len(quartic['pure_extra_terms']),
+              'mixed_term_count': len(quartic['mixed_row_extra_terms']),
+              'rational_cancellation': quartic['rational_cancellation_on_complement_plane'],
+          }, indent=2, sort_keys=True))
+          PY
