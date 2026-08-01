@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "release_id": "living-guide-public-v26-proof-locators",
-  "updated_at": "2026-07-31T14:14:59+00:00",
+  "release_id": "living-guide-public-v27b-source-assimilation",
+  "updated_at": "2026-07-31T20:57:01-07:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
     "manifest_sha256": "c1bbdb9d4dfab755155052f63fb1ccdec097ce68c3168d41018331a6b9a8d191"
   },
   "claim_graph": {
-    "data_dir": "claim-graph-v3c-20260731a",
-    "manifest_sha256": "9dc01a70326393a7a8ab09d5d096593adb6e365a688ceed05fba284a6536b802"
+    "data_dir": "claim-graph-v3d-20260801a",
+    "manifest_sha256": "ff2e60ed912d9f75cdaf921f5cbbb0f98bba861d4b6c97e28c1a90c1cc54d96c"
   },
   "manuscripts": {
     "data_dir": "manuscripts-v13",
@@ -22,11 +22,11 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-briefs-v12d-20260730a",
-    "manifest_sha256": "f0700c246134bd21bcb675237ef41f624933d1431ccfd8c97b5db18847636b0e",
+    "data_dir": "model-briefs-v12e-20260801a",
+    "manifest_sha256": "18c61191cd9a3bc7aa0a650f2e1edbb90a65024b83db3d3d9abfb7166d20dd0a",
     "expected_count": 7
   },
-  "docs_dir": "docs-v26-20260731a",
+  "docs_dir": "docs-v27b-20260801a",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,
