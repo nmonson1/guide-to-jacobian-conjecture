@@ -1,7 +1,8 @@
 {
   "schema_version": 1,
-  "name": "Two-chart filtered-operation example",
+  "name": "Two-chart filtered-operation example with explicit action maps",
   "field": {"kind": "rational"},
+  "report_options": {"include_vectors": true},
   "layers": [
     {
       "id": "C:r4",
@@ -14,19 +15,40 @@
         {
           "name": "formal",
           "role": "formal",
-          "generators": [[0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          "source_dimension": 4,
+          "source_basis": ["F0", "F1", "F2", "F3"],
+          "action_matrix": [
+            [0, 0, 0, 0],
+            [1, 0, 0, 1],
+            [0, 1, 0, 1],
+            [0, 0, 1, 0]
+          ]
         },
         {
           "name": "polynomial",
           "role": "polynomial",
           "parent": "formal",
-          "generators": [[0, 1, 0, 0], [0, 0, 1, 0]]
+          "source_dimension": 3,
+          "source_basis": ["P0", "P1", "P2"],
+          "action_matrix": [
+            [0, 0, 0],
+            [1, 0, 1],
+            [0, 1, 1],
+            [0, 0, 0]
+          ]
         },
         {
           "name": "filtered",
           "role": "filtered",
           "parent": "polynomial",
-          "generators": [[0, 1, 0, 0]]
+          "source_dimension": 2,
+          "source_basis": ["G0", "G1"],
+          "action_matrix": [
+            [0, 0],
+            [1, 1],
+            [0, 0],
+            [0, 0]
+          ]
         }
       ],
       "gauge_actions": ["filtered"],
@@ -47,19 +69,40 @@
         {
           "name": "formal",
           "role": "formal",
-          "generators": [[0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          "source_dimension": 4,
+          "source_basis": ["F0p", "F1p", "F2p", "F3p"],
+          "action_matrix": [
+            [0, 0, 0, 0],
+            [1, 0, 0, 1],
+            [0, 1, 0, 1],
+            [0, 0, 1, 0]
+          ]
         },
         {
           "name": "polynomial",
           "role": "polynomial",
           "parent": "formal",
-          "generators": [[0, 1, 0, 0], [0, 0, 1, 0]]
+          "source_dimension": 3,
+          "source_basis": ["P0p", "P1p", "P2p"],
+          "action_matrix": [
+            [0, 0, 0],
+            [1, 0, 1],
+            [0, 1, 1],
+            [0, 0, 0]
+          ]
         },
         {
           "name": "filtered",
           "role": "filtered",
           "parent": "polynomial",
-          "generators": [[0, 0, 1, 0]]
+          "source_dimension": 2,
+          "source_basis": ["G0p", "G1p"],
+          "action_matrix": [
+            [0, 0],
+            [0, 0],
+            [1, 1],
+            [0, 0]
+          ]
         }
       ],
       "gauge_actions": ["filtered"],
@@ -87,6 +130,39 @@
         {"from": "formal", "to": "formal"},
         {"from": "filtered", "to": "filtered"}
       ],
+      "operation_map_pairs": [
+        {
+          "from": "formal",
+          "to": "formal",
+          "source_map": [
+            [0, 1, 0, 0],
+            [1, 0, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1]
+          ],
+          "require_isomorphism": true
+        },
+        {
+          "from": "polynomial",
+          "to": "polynomial",
+          "source_map": [
+            [0, 1, 0],
+            [1, 0, 0],
+            [0, 0, 1]
+          ],
+          "require_isomorphism": true
+        },
+        {
+          "from": "filtered",
+          "to": "filtered",
+          "source_map": [[1, 0], [0, 1]],
+          "require_isomorphism": true
+        }
+      ],
+      "rechart_span_pairs": [
+        {"from": "wall-shear", "to": "inverse-wall-shear"}
+      ],
+      "true_quotient_map": {"require_isomorphism": true},
       "dual_pairs": [{"from": [0, 1], "to": [0, 1]}],
       "forcing_pair": {"from": [0, 1], "to": [0, 1]}
     }
