@@ -56,6 +56,9 @@ jobs:
             --output /tmp/program5-report.json \
             --emit-contract /tmp/program5-contract.json
 
+      - name: Install the pinned Program 5 symbolic dependency
+        run: python -m pip install --disable-pip-version-check 'sympy==1.14.0'
+
       - name: Export the exact public Program 5 compression complex
         env:
           PYTHONPATH: research-tools
