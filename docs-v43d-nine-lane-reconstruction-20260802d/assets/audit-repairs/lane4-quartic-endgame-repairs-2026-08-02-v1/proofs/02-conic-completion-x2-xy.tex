@@ -1,0 +1,276 @@
+\section{Completion of the conic-image leaf}
+\label{app:quartic-conic-completion}
+
+This appendix treats the three conic representatives not covered by the
+invariant-field proof in the main text.  The orbit with fixed factor
+\(G=z^2\) is handled by the separate exact checker distributed with this
+packet.  Here we close the remaining two representatives
+\[
+ H_4=x^2(x^2,xy,y^2),\qquad
+ H_4=xy(x^2,xy,y^2).
+\]
+The computations retain arbitrary quadratic layer and arbitrary linear part.
+They use exact rational arithmetic, no random specialization, and no division
+by a parameter before entering the corresponding nonzero chart.
+
+Put
+\[
+ n=(y^2,-2xy,x^2)^T,
+ \qquad
+ \det(JH_1+\epsilon JH_2+\epsilon^2JH_3+\epsilon^3JH_4)
+ =\sum_{j=0}^9D_j\epsilon^j.
+\]
+For either fixed factor, the first normal equation gives
+\(M=n\cdot H_3\in k[x,y]_5\).  Write
+\[
+ H_3=T(A,B)+N(M),\qquad
+ T(A,B)=(2xA,yA+xB,2yB),
+\]
+where \(A,B\) are quadrics, and for
+\(M=\sum_{i=0}^5m_ix^{5-i}y^i\) take
+\[
+ N(M)=
+ \left(m_4xy^2+m_5y^3,0,
+ m_0x^3+m_1x^2y+m_2xy^2+m_3y^3\right).
+\]
+
+\begin{theorem}[The double-line conic orbit]
+\label{thm:quartic-conic-x2}
+No quartic Keller counterexample has
+\[
+ H_4=x^2(x^2,xy,y^2).
+\]
+\end{theorem}
+
+\begin{proof}[Exact coefficient proof]
+Write
+\[
+ A_z=a_2x+a_4y+a_5z,
+ \qquad
+ B_z=b_2x+b_4y+b_5z.
+\]
+The compatibility equations of \(D_7=0\) first give
+\[
+ a_4=a_5=b_5=0,
+\]
+and
+\begin{align}
+4a_3(a_2-b_4)+(4b_4-a_2)m_4+6b_2m_5&=0,
+\label{eq:x2-routing-one}\\
+m_5(a_2-2b_4)&=0.
+\label{eq:x2-routing-two}
+\end{align}
+The coefficients
+\begin{align*}
+[x^4z^2]D_6&=24b_2^2b_4,\\
+[x^3yz^2]D_6&=-48b_2b_4(a_2-b_4),\\
+[x^2y^2z^2]D_6&=24b_4(a_2-b_4)^2,\\
+[y^5z]D_6&=-6b_4m_5(a_2+b_4)
+\end{align*}
+together with \eqref{eq:x2-routing-one}--
+\eqref{eq:x2-routing-two} give four exhaustive stabilizer types:
+scalar, rank-one semisimple, nilpotent, and zero.
+
+In the scalar chart normalize
+\[
+ A=a_0x^2+a_1xy+xz,
+ \qquad
+ B=b_0x^2+b_1xy+b_3y^2+yz.
+\]
+The equations give \(M=0\), \(a_1=b_3\), and then
+\[
+ c_6=b_0(a_0+b_1),\quad
+ c_0=a_0^2-2b_0b_3-b_1^2+c_7,
+ \quad c_1=4b_3(a_0-b_1).
+\]
+After the preceding linear solves put
+\begin{align*}
+ A_*&=4a_0b_0b_1+2b_0^2b_3-4b_0b_1^2-2b_0c_7+\ell_7,\\
+ B_*&=2a_0^2b_1-4a_0b_1^2-a_0c_7+2b_1^3+b_1c_7+\ell_4,\\
+ S&=2a_0b_0^2b_3+a_0\ell_7-2b_0^2b_1b_3-2b_0\ell_4-b_1\ell_7.
+\end{align*}
+The exact residual identities are
+\[
+ D_2=A_*^2x^2-4A_*B_*xy+4B_*^2y^2,
+ \qquad
+ \det L=S^2,
+\]
+and
+\[
+ S=(a_0-b_1)A_*-2b_0B_*.
+\]
+Thus \(D_2=0\) implies \(\det L=0\).
+
+In the rank-one semisimple chart normalize
+\[
+ A=a_0x^2+a_1xy+xz,
+ \qquad
+ B=b_0x^2+b_1xy+b_3y^2.
+\]
+The first lower equations give
+\[
+ m_0=0,
+ \quad c_{16}=\frac38m_1,
+ \quad c_{10}=b_1+\frac5{16}m_2,
+ \quad b_3=-\frac9{16}m_3.
+\]
+Four coefficients of \(D_5\) force \(m_1=m_2=m_3=0\).  The remaining
+\(D_4\)-equations are
+\[
+\begin{aligned}
+X&=a_1b_0^2-a_1c_{12}+2b_0b_1^2-b_1c_{13}+\ell_7=0,\\
+Y&=a_0a_1b_0+a_0b_1^2+a_1b_0b_1-a_1c_6-b_1c_7+\ell_4=0.
+\end{aligned}
+\]
+Substitution gives \(\det L=0\).
+
+In the nilpotent chart a source translation gives
+\[
+ A=a_0x^2+a_1xy,
+ \qquad
+ B=xz+b_3y^2.
+\]
+The equations reduce to
+\[
+\begin{gathered}
+ m_3=-2b_3,
+ \quad c_{15}=m_2^2/4,
+ \quad c_9=(a_1+b_3)m_2/2,\\
+ b_3(a_1+b_3)=0,
+ \qquad
+ (a_1+b_3)(3a_1m_2+2a_0b_3)=0.
+\end{gathered}
+\]
+If \(a_1+b_3=0\), the remaining linear equations give \(\det L=0\).
+Otherwise \(b_3=m_2=0\); normalize \(a_1=1\).  Then \(D_4=0\) forces
+\[
+ m_0=m_1=0,
+ \quad \ell_6=a_0c_{12},
+ \quad \ell_3=a_0c_6,
+ \quad \ell_0=a_0(c_0-a_0^2),
+\]
+and again \(\det L=0\).
+
+In the zero chart \(H_3\) is binary and
+\[
+ \partial_zH_2=(2px,py+qx,2qy).
+\]
+The two nonzero stabilizer orbits are represented by \((p,q)=(1,0)\) and
+\((0,1)\).  They respectively give the fixed coefficients
+\[
+ [x^2y^2z]D_5=-8,
+ \qquad
+ [x^4z]D_5=-8.
+\]
+Thus \(p=q=0\), so every nonlinear layer is binary.  A target linear change
+reduces the map to
+\[
+ (f_1(x,y),f_2(x,y),z+f_3(x,y)),
+\]
+whose plane Keller pair has degree at most four and is automorphic by the
+low-degree plane theorem used elsewhere in Program~2.
+\end{proof}
+
+\begin{theorem}[The nodal two-line conic orbit]
+\label{thm:quartic-conic-xy}
+No quartic Keller counterexample has
+\[
+ H_4=xy(x^2,xy,y^2).
+\]
+\end{theorem}
+
+\begin{proof}[Exact coefficient proof]
+The compatibility equations of \(D_7=0\) give
+\[
+ a_4=a_5=b_2=b_5=0,
+ \qquad
+ m_0(3a_2-b_4)=m_5(a_2-3b_4)=0.
+\]
+The pure coefficients
+\[
+\begin{aligned}
+[x^5z]D_6&=-3m_0(3a_2^2+b_4^2),\\
+[y^5z]D_6&=-3m_5(a_2^2+3b_4^2),\\
+[x^2y^2z^2]D_6&=12(a_2-b_4)^2(a_2+b_4)
+\end{aligned}
+\]
+show that a nonzero \(z\)-matrix has exactly two stabilizer types,
+\((a_2,b_4)=(1,1)\) and \((1,-1)\).
+
+In the scalar chart, the next equations force
+\[
+ a_3=b_0=m_1=m_2=m_3=m_4=0.
+\]
+After the linear solves, \(D_4=0\) gives
+\[
+\begin{aligned}
+ c_{16}&=4(b_1-a_0),& c_{10}&=2(a_1-b_3),\\
+ c_6&=-2a_0(a_0-b_1),&c_9&=2b_3(a_1-b_3),\\
+ c_{15}&=-a_0a_1-a_0b_3-a_1b_1+3b_1b_3+c_7.
+\end{aligned}
+\]
+Set
+\begin{align*}
+ A_*={}&2a_0^2a_1-4a_0^2b_3+4a_0b_1b_3-2a_0c_7
+       -2a_1b_1^2+2b_1c_7-\ell_7,\\
+ B_*={}&a_0a_1^2-2a_0a_1b_3+a_0b_3^2+a_1^2b_1
+       -2a_1b_1b_3-a_1c_7+b_1b_3^2+b_3c_7+\ell_4,\\
+ S={}&2a_0^2a_1b_3-2a_0^2b_3^2-4a_0a_1b_1b_3
+       +4a_0b_1b_3^2+2a_0\ell_4\\
+ &\qquad{}+2a_1b_1^2b_3+a_1\ell_7-2b_1^2b_3^2
+       -2b_1\ell_4-b_3\ell_7.
+\end{align*}
+Then
+\[
+ D_2=A_*^2x^2+4A_*B_*xy+4B_*^2y^2,
+ \qquad \det L=S^2,
+\]
+and
+\[
+ S=-(a_1-b_3)A_*+2(a_0-b_1)B_*.
+\]
+Thus \(D_2=0\) gives \(\det L=0\).
+
+In the anti-scalar chart, the high equations give
+\(m_1=4b_0,m_4=4a_3\) and then \(b_0=a_3=0\).  The residual coefficient is
+\[
+ [xyz^3]D_5=-64,
+\]
+so the chart is empty.
+
+In the zero chart, again
+\[
+ \partial_zH_2=(2px,py+qx,2qy).
+\]
+The stabilizer of \(xy\) has nonzero vector orbits represented by
+\((1,0)\) and \((1,1)\).  The first has
+\([xy^3z]D_5=-8\).  The second has
+\[
+ [x^3yz]D_5=-8,
+ \quad [x^2y^2z]D_5=16,
+ \quad [xy^3z]D_5=-8.
+\]
+Thus \(p=q=0\), and the all-binary plane reduction proves automorphy.
+\end{proof}
+
+\begin{corollary}[All conic-image leaves]
+\label{cor:quartic-all-conic-orbits}
+Subject to the same low-degree plane input used in the reader manuscript,
+no quartic Keller counterexample has a nondegenerate conic as the
+projective image of its leading homogeneous part.
+\end{corollary}
+
+\begin{proof}
+The four reduced representatives in the main conic theorem, together with
+\cref{thm:quartic-conic-x2,thm:quartic-conic-xy} and the separate
+\(G=z^2\) exact proposition, exhaust the seven parabolic conic orbits.
+\end{proof}
+
+\begin{remark}[Evidence boundary]
+The supplied SymPy programs reconstruct the full determinant arc with all
+lower coefficients present.  They are exact, assertion-based calculations,
+but they constitute one computer-algebra lineage rather than an independent
+second-system reproduction.  This corollary closes the conic leaf; it does
+not establish the exhaustiveness of the global quartic case tree.  The proper
+rational-cubic leading-image leaf remains separate.
+\end{remark}
