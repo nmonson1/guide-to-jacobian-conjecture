@@ -1,0 +1,293 @@
+{
+  "schema_version": 4,
+  "release_id": "model-handoffs-v16d-20260802d",
+  "updated_at": "2026-08-02T08:36:05+00:00",
+  "base_release": {
+    "release_id": "model-handoffs-v15-20260802b",
+    "manifest_sha256": "5815a030e33aef31adbea7b4e288dc0bd962e776fa8e3e4824b8cd91750001a9"
+  },
+  "source_handoff": {
+    "handoff_version": 4,
+    "manifest_sha256": "7a6da3bb1e25e5f1d90cc9a1fd11ef24e26e764fe21ff694a950ca1bd338ebd7"
+  },
+  "brief_count": 16,
+  "primary_entrypoint_count": 10,
+  "retained_math_v2_markers": [
+    {
+      "program_slug": "homogeneous-realization-compression",
+      "argument_id": "ARG-RMU5D8E0003-FINITE-PLANE"
+    }
+  ],
+  "briefs": [
+    {
+      "kind": "cross_program",
+      "program_sequence": 0,
+      "program_slug": "state-of-the-program",
+      "title": "State of the Jacobian Research Program",
+      "source": "state-of-the-program.md",
+      "sha256": "c9cd6fb174f5eba88559253752e29373c5f7508bf3ca3fa9eae15370fb57e0f1",
+      "bytes": 21693,
+      "words": 2784,
+      "route": "research/handoffs/state-of-the-program.md",
+      "primary_entrypoint": true,
+      "display_sequence": 0,
+      "related_programs": []
+    },
+    {
+      "kind": "program",
+      "program_sequence": 1,
+      "program_slug": "cubic-marked-root-incidence-geometry",
+      "title": "Cubic Marked-Root Incidence Geometry",
+      "source": "cubic-marked-root-incidence-geometry.md",
+      "sha256": "10da55c725aeb28ef60b1c25679cd874be253d5ece6f27aa90735f75cb1771b7",
+      "bytes": 21438,
+      "words": 2881,
+      "route": "research/handoffs/cubic-marked-root-incidence-geometry.md",
+      "primary_entrypoint": false,
+      "display_sequence": 101,
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 2,
+      "program_slug": "minimum-degree-and-quartic-exclusions",
+      "title": "Minimum Degree and Quartic Exclusions",
+      "source": "minimum-degree-and-quartic-exclusions.md",
+      "sha256": "0842ab124bc216cfbbfd7c89d293faa39e5c9ee3c923d6530396651cfe6da3f4",
+      "bytes": 30097,
+      "words": 3971,
+      "route": "research/handoffs/minimum-degree-and-quartic-exclusions.md",
+      "primary_entrypoint": false,
+      "display_sequence": 102,
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 3,
+      "program_slug": "local-rigidity-and-deformation-algebra",
+      "title": "Local Rigidity and Deformation Algebra",
+      "source": "local-rigidity-and-deformation-algebra.md",
+      "sha256": "7d950ad48c0cdd9cde822b8456a6b7dc77f53562efcbd5e1e8e9623ae1ad77c5",
+      "bytes": 23920,
+      "words": 3267,
+      "route": "research/handoffs/local-rigidity-and-deformation-algebra.md",
+      "primary_entrypoint": false,
+      "display_sequence": 103,
+      "related_programs": [
+        "local-rigidity-and-deformation-algebra"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 4,
+      "program_slug": "stable-moduli",
+      "title": "Stable Moduli",
+      "source": "stable-moduli.md",
+      "sha256": "603a544cfdb92ec11c2678ac534d9c2a5d46ad4a572ff560c38ab9be2acd7781",
+      "bytes": 28653,
+      "words": 3746,
+      "route": "research/handoffs/stable-moduli.md",
+      "primary_entrypoint": false,
+      "display_sequence": 104,
+      "related_programs": [
+        "stable-moduli"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 5,
+      "program_slug": "homogeneous-descendants",
+      "title": "Homogeneous Descendants",
+      "source": "homogeneous-descendants.md",
+      "sha256": "b8d78f2d8b2c20838db8c340f7e5f72599dea67ca1fbc5e2f9efa3a0ee7260ed",
+      "bytes": 27806,
+      "words": 3666,
+      "route": "research/handoffs/homogeneous-descendants.md",
+      "primary_entrypoint": false,
+      "display_sequence": 105,
+      "related_programs": [
+        "homogeneous-descendants"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 6,
+      "program_slug": "plane-boundary-obstructions",
+      "title": "Plane Boundary Obstructions",
+      "source": "plane-boundary-obstructions.md",
+      "sha256": "8c5bab49a4118d2b69f496413302377b7b6d5096ecf16c21f48a63081b92727e",
+      "bytes": 27944,
+      "words": 3673,
+      "route": "research/handoffs/plane-boundary-obstructions.md",
+      "primary_entrypoint": false,
+      "display_sequence": 106,
+      "related_programs": [
+        "plane-boundary-obstructions"
+      ]
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 1,
+      "program_sequence": 11,
+      "program_slug": "cubic-flatness-normalization-defects",
+      "title": "Cubic flatness and finite normalization defects",
+      "source": "cubic-flatness-normalization-defects.md",
+      "route": "research/handoffs/cubic-flatness-normalization-defects.md",
+      "primary_entrypoint": true,
+      "display_sequence": 1,
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry",
+        "stable-moduli"
+      ],
+      "sha256": "bc786761124408a44085903fd486fd5d3bff9aac2e74fdb428f635b295ef27a5",
+      "bytes": 8497,
+      "words": 1152
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 2,
+      "program_sequence": 12,
+      "program_slug": "boundary-completeness-torelli-at-infinity",
+      "title": "Boundary completeness and Torelli at infinity",
+      "source": "boundary-completeness-torelli-at-infinity.md",
+      "route": "research/handoffs/boundary-completeness-torelli-at-infinity.md",
+      "primary_entrypoint": true,
+      "display_sequence": 2,
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry",
+        "stable-moduli"
+      ],
+      "sha256": "52ce552d7c0518c210ccff51cc6657d00063ee6533241b4c7143c8d6e5ed6a1d",
+      "bytes": 4667,
+      "words": 642
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 3,
+      "program_sequence": 13,
+      "program_slug": "bounded-degree-deformation-modulus-onset",
+      "title": "Bounded-degree deformation and modulus onset",
+      "source": "bounded-degree-deformation-modulus-onset.md",
+      "route": "research/handoffs/bounded-degree-deformation-modulus-onset.md",
+      "primary_entrypoint": true,
+      "display_sequence": 3,
+      "related_programs": [
+        "local-rigidity-and-deformation-algebra",
+        "stable-moduli"
+      ],
+      "sha256": "3aac3dff7706bb42e9d92aceea1f361ad0873a260f85dc39666ec0f207596c33",
+      "bytes": 4465,
+      "words": 552
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 4,
+      "program_sequence": 14,
+      "program_slug": "quartic-endgame",
+      "title": "The quartic endgame",
+      "source": "quartic-endgame.md",
+      "route": "research/handoffs/quartic-endgame.md",
+      "primary_entrypoint": true,
+      "display_sequence": 4,
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions"
+      ],
+      "sha256": "dc23e782de96af0aba1884eded1dd727317ea5e4c42325e8d2647e4a6b06b57d",
+      "bytes": 4685,
+      "words": 606
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 5,
+      "program_sequence": 15,
+      "program_slug": "intrinsic-degree-valuative-budgets",
+      "title": "Intrinsic degree and valuative budgets",
+      "source": "intrinsic-degree-valuative-budgets.md",
+      "route": "research/handoffs/intrinsic-degree-valuative-budgets.md",
+      "primary_entrypoint": true,
+      "display_sequence": 5,
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions",
+        "stable-moduli",
+        "plane-boundary-obstructions"
+      ],
+      "sha256": "65d85c0bdfc7d67302ee4231b04859e25849d9b56dd5fc212b2fa5091069128b",
+      "bytes": 4376,
+      "words": 592
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 6,
+      "program_sequence": 16,
+      "program_slug": "homogeneous-realization-compression",
+      "title": "Homogeneous realization and compression",
+      "source": "homogeneous-realization-compression.md",
+      "route": "research/handoffs/homogeneous-realization-compression.md",
+      "primary_entrypoint": true,
+      "display_sequence": 6,
+      "related_programs": [
+        "homogeneous-descendants",
+        "local-rigidity-and-deformation-algebra"
+      ],
+      "sha256": "471101547c136cca784615b55871aa38aaf86d9d246adc04cac5238116c862e5",
+      "bytes": 4822,
+      "words": 623
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 7,
+      "program_sequence": 17,
+      "program_slug": "five-dimensional-collision-geometry",
+      "title": "Five-dimensional collision geometry",
+      "source": "five-dimensional-collision-geometry.md",
+      "route": "research/handoffs/five-dimensional-collision-geometry.md",
+      "primary_entrypoint": true,
+      "display_sequence": 7,
+      "related_programs": [
+        "homogeneous-descendants"
+      ],
+      "sha256": "a77b7c954bc03b508aaddba3a8e8690c2b94d2579db99bce0f8150b2d53fb1b2",
+      "bytes": 4563,
+      "words": 589
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 8,
+      "program_sequence": 18,
+      "program_slug": "plane-newton-queue-terminal-certificates",
+      "title": "Plane Newton queue and terminal certificates",
+      "source": "plane-newton-queue-terminal-certificates.md",
+      "route": "research/handoffs/plane-newton-queue-terminal-certificates.md",
+      "primary_entrypoint": true,
+      "display_sequence": 8,
+      "related_programs": [
+        "plane-boundary-obstructions"
+      ],
+      "sha256": "3cc11563bce6b4cc9ee043dc8243a5c898d8cae1e46fe6ff2614b8ec740d3f4c",
+      "bytes": 4914,
+      "words": 674
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 9,
+      "program_sequence": 19,
+      "program_slug": "plane-chart-correspondence-global-attachment",
+      "title": "Plane chart correspondence and global attachment",
+      "source": "plane-chart-correspondence-global-attachment.md",
+      "route": "research/handoffs/plane-chart-correspondence-global-attachment.md",
+      "primary_entrypoint": true,
+      "display_sequence": 9,
+      "related_programs": [
+        "plane-boundary-obstructions",
+        "stable-moduli"
+      ],
+      "sha256": "a456677b463b489575a6a1bedc8d244382333ee55f6b1bf04ccfc7de67d6c868",
+      "bytes": 5546,
+      "words": 710
+    }
+  ]
+}

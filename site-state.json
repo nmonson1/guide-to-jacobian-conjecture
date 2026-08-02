@@ -1,7 +1,7 @@
 {
   "schema_version": 4,
-  "release_id": "living-guide-public-v42-program1-reaudit",
-  "updated_at": "2026-08-02T07:00:00+00:00",
+  "release_id": "living-guide-public-v43d-nine-lane-reconstruction",
+  "updated_at": "2026-08-02T08:36:05+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,8 +22,8 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-handoffs-v15-20260802b",
-    "manifest_sha256": "5815a030e33aef31adbea7b4e288dc0bd962e776fa8e3e4824b8cd91750001a9",
+    "data_dir": "model-handoffs-v16-20260802d",
+    "manifest_sha256": "eac212182626935769c4bb1b61d825645038480e53049dde2c42e2ce3f56164a",
     "expected_count": 16
   },
   "retained_math": {
@@ -47,7 +47,7 @@
     "expected_files": 39,
     "expected_labels": 642
   },
-  "docs_dir": "docs-v42-program1-reaudit-20260802b",
+  "docs_dir": "docs-v43d-nine-lane-reconstruction-20260802d",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,

@@ -629,7 +629,7 @@ def main() -> int:
             ) != 1:
                 failures.append("Lane 6 does not contain exactly one v2 marker")
             for marker in (
-                "### Compiler-owned retained result",
+                "\n### Compiler-owned retained result\n",
                 "ARG-RMU5D8E0003-FINITE-PLANE",
                 "g(r)=(r-4)(r^2-8r+64)",
                 "-1152",
