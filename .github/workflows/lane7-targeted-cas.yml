@@ -1,0 +1,81 @@
+name: Lane 7 targeted exact certificates
+
+on:
+  pull_request:
+    paths:
+      - "data/model-handoffs-v19-20260802a/lane-7-source-packet.md"
+      - "research-notes/lane7-projective-kernel-20260802/**"
+      - ".github/workflows/lane7-targeted-cas.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  targeted-qq:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Extract the hash-pinned matrix and generate the QQ input
+        run: |
+          python research-notes/lane7-projective-kernel-20260802/extract_embedded_sources.py \
+            --output-dir build/lane7-sources \
+            lane7-split-incidence-20260802-v1/collision_residual_matrix_M.json \
+            lane7-split-incidence-20260802-v1/Hv10_split_matrix_factorization.json
+          python research-notes/lane7-projective-kernel-20260802/generate_macaulay2_input.py \
+            build/lane7-sources build/lane7-qq-local.m2 --with-localizer
+      - name: Install Macaulay2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo add-apt-repository -y ppa:macaulay2/macaulay2
+          sudo apt-get update
+          sudo apt-get install -y macaulay2
+          M2 --version | tee build/macaulay2-version.txt
+      - name: Prove the top-block corank-two locus is empty on D(d)
+        run: |
+          cat > build/i4-top-block-qq.m2 <<'EOF'
+          load "build/lane7-qq-local.m2";
+          print "I4_TOP_BLOCK_QQ_BEGIN";
+          G = submatrix(M,{0..4},{0..4});
+          J4G = minors(4,G,Strategy=>Dynamic) + ideal(localizerEquation);
+          unit4G = (J4G == 1);
+          print("I4_TOP_BLOCK_LOCAL_UNIT=" | toString unit4G);
+          assert unit4G;
+          print "I4_TOP_BLOCK_QQ_END";
+          EOF
+          M2 --script build/i4-top-block-qq.m2 | tee build/i4-top-block-qq.log
+      - name: Test a six-maximal-minor grade certificate over QQ
+        run: |
+          cat > build/i5-six-minors-qq.m2 <<'EOF'
+          load "build/lane7-qq-local.m2";
+          print "I5_SIX_MINORS_QQ_BEGIN";
+          baseRows = {0,1,2,4};
+          extraRows = {3,5,6,7,8,9};
+          selected = apply(extraRows, r -> det submatrix(M, append(baseRows,r), {0..4}));
+          K = ideal selected + ideal(localizerEquation);
+          dimK = dim K;
+          codimK = codim K;
+          degreeK = degree K;
+          print("SIX_MINOR_LOCAL_DIM=" | toString dimK);
+          print("SIX_MINOR_LOCAL_CODIM_IN_8_VARIABLE_RING=" | toString codimK);
+          print("SIX_MINOR_LOCAL_HEIGHT_IN_A_D=" | toString(codimK-1));
+          print("SIX_MINOR_LOCAL_DEGREE=" | toString degreeK);
+          assert(dimK == 1);
+          assert(codimK == 7);
+          print "I5_SIX_MINORS_QQ_END";
+          EOF
+          M2 --script build/i5-six-minors-qq.m2 | tee build/i5-six-minors-qq.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lane7-targeted-qq
+          path: |
+            build/macaulay2-version.txt
+            build/i4-top-block-qq.*
+            build/i5-six-minors-qq.*
+          if-no-files-found: warn
