@@ -1,0 +1,13 @@
+[RUN] z2-conic
+[PASS] z2-conic (13.85s)
+[RUN] conic-terminal-identities
+[PASS] conic-terminal-identities (0.86s)
+[RUN] high-ramification-r4-r5
+[PASS] high-ramification-r4-r5 (10.45s)
+[RUN] tau-minus-one
+[PASS] tau-minus-one (3.77s)
+[RUN] rational-cubic-transverse-cusp
+[PASS] rational-cubic-transverse-cusp (1.23s)
+[RUN] rational-cubic-nodal-constant-minor
+[PASS] rational-cubic-nodal-constant-minor (0.99s)
+PASS: 6 exact Lane 4 checks completed in 31.16s
