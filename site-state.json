@@ -1,7 +1,7 @@
 {
   "schema_version": 4,
   "release_id": "living-guide-public-v41-retained-v2-pilot",
-  "updated_at": "2026-08-02T00:10:00+00:00",
+  "updated_at": "2026-08-01T23:00:00+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -23,7 +23,7 @@
   },
   "model_briefs": {
     "data_dir": "model-handoffs-v14-20260801a",
-    "manifest_sha256": "fdfc7713b61ac30ecdbd101ef2b4134a2dfb0c3925a50dd15e91443486c64f67",
+    "manifest_sha256": "f2c6f3a1f9f4914aedd697c9a2b644e00df070dbca6d7f2d326b282758133e42",
     "expected_count": 16
   },
   "retained_math": {
