@@ -30,6 +30,9 @@ jobs:
             build/lane7-sources build/lane7-qq-local-cleared.m2 \
             --with-localizer --clear-row-denominators
           python research-notes/lane7-projective-kernel-20260802/generate_macaulay2_input.py \
+            build/lane7-sources build/lane7-char5-local-cleared.m2 \
+            --characteristic 5 --with-localizer --clear-row-denominators
+          python research-notes/lane7-projective-kernel-20260802/generate_macaulay2_input.py \
             build/lane7-sources build/lane7-char32003-local-cleared.m2 \
             --characteristic 32003 --with-localizer --clear-row-denominators
       - uses: actions/upload-artifact@v4
@@ -38,84 +41,7 @@ jobs:
           path: build/lane7-*-local-cleared.m2
           if-no-files-found: error
 
-  fixed-row-i4-qq:
-    needs: prepare
-    runs-on: ubuntu-22.04
-    timeout-minutes: 60
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          name: lane7-targeted-inputs
-          path: build
-      - name: Install Macaulay2
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y software-properties-common
-          sudo add-apt-repository -y ppa:macaulay2/macaulay2
-          sudo apt-get update
-          sudo apt-get install -y macaulay2
-          M2 --version | tee build/macaulay2-version.txt
-      - name: Test the fixed four-row block on D(d) over QQ
-        run: |
-          cat > build/i4-fixed-row-qq.m2 <<'EOF'
-          load "build/lane7-qq-local-cleared.m2";
-          print "I4_FIXED_ROW_QQ_BEGIN";
-          fixedRows = {0,1,2,4};
-          H = submatrix(M,fixedRows,{0..4});
-          J4H = minors(4,H,Strategy=>Dynamic) + ideal(localizerEquation);
-          unit4H = (J4H == 1);
-          print("I4_FIXED_ROW_LOCAL_UNIT=" | toString unit4H);
-          assert unit4H;
-          print "I4_FIXED_ROW_QQ_END";
-          EOF
-          M2 --script build/i4-fixed-row-qq.m2 | tee build/i4-fixed-row-qq.log
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: lane7-i4-fixed-row-qq
-          path: |
-            build/macaulay2-version.txt
-            build/i4-fixed-row-qq.*
-          if-no-files-found: warn
-
-  fixed-row-i4-char32003:
-    needs: prepare
-    runs-on: ubuntu-22.04
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          name: lane7-targeted-inputs
-          path: build
-      - name: Install Macaulay2
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y software-properties-common
-          sudo add-apt-repository -y ppa:macaulay2/macaulay2
-          sudo apt-get update
-          sudo apt-get install -y macaulay2
-      - name: Test the fixed four-row block on D(d) over F_32003
-        run: |
-          cat > build/i4-fixed-row-char32003.m2 <<'EOF'
-          load "build/lane7-char32003-local-cleared.m2";
-          fixedRows = {0,1,2,4};
-          H = submatrix(M,fixedRows,{0..4});
-          J4H = minors(4,H,Strategy=>Dynamic) + ideal(localizerEquation);
-          unit4H = (J4H == 1);
-          print("I4_FIXED_ROW_LOCAL_UNIT_CHAR32003=" | toString unit4H);
-          assert unit4H;
-          EOF
-          M2 --script build/i4-fixed-row-char32003.m2 | tee build/i4-fixed-row-char32003.log
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: lane7-i4-fixed-row-char32003
-          path: build/i4-fixed-row-char32003.*
-          if-no-files-found: warn
-
-  six-minor-grade-qq:
+  i4-small-qq:
     needs: prepare
     runs-on: ubuntu-22.04
     timeout-minutes: 90
@@ -133,30 +59,183 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y macaulay2
           M2 --version | tee build/macaulay2-version.txt
-      - name: Test a six-maximal-minor height certificate over QQ
+      - name: Test eleven four-minor generators on D(d) over QQ
         run: |
-          cat > build/i5-six-minors-qq.m2 <<'EOF'
+          set -o pipefail
+          cat > build/i4-small-qq.m2 <<'EOF'
           load "build/lane7-qq-local-cleared.m2";
-          print "I5_SIX_MINORS_QQ_BEGIN";
-          baseRows = {0,1,2,4};
-          extraRows = {3,5,6,7,8,9};
-          selected = apply(extraRows, r -> det submatrix(M,append(baseRows,r),{0..4}));
-          K = ideal selected + ideal(localizerEquation);
-          dimK = dim K;
-          codimK = codim K;
-          print("SIX_MINOR_LOCAL_DIM=" | toString dimK);
-          print("SIX_MINOR_LOCAL_CODIM_IN_8_VARIABLE_RING=" | toString codimK);
-          print("SIX_MINOR_LOCAL_HEIGHT_IN_A_D=" | toString(codimK-1));
-          assert(dimK == 1);
-          assert(codimK == 7);
-          print "I5_SIX_MINORS_QQ_END";
+          print "I4_SMALL_QQ_BEGIN";
+          selected4 = {
+            det submatrix(M,{0,1,2,4},{0,1,3,4}),
+            det submatrix(M,{0,1,2,3},{0,2,3,4}),
+            det submatrix(M,{0,2,3,4},{1,2,3,4}),
+            det submatrix(M,{1,2,3,4},{0,1,2,3}),
+            det submatrix(M,{0,1,3,4},{0,1,2,4}),
+            det submatrix(M,{0,2,4,6},{0,2,3,4}),
+            det submatrix(M,{1,2,3,5},{1,2,3,4}),
+            det submatrix(M,{0,1,4,6},{0,1,2,3}),
+            det submatrix(M,{0,1,3,6},{1,2,3,4}),
+            det submatrix(M,{2,3,4,5},{0,1,2,3}),
+            det submatrix(M,{0,1,3,7},{0,1,2,3})
+          };
+          J4small = ideal selected4 + ideal(localizerEquation);
+          unit4small = (J4small == 1);
+          print("I4_SMALL_LOCAL_UNIT_QQ=" | toString unit4small);
+          assert unit4small;
+          print "I4_SMALL_QQ_END";
           EOF
-          M2 --script build/i5-six-minors-qq.m2 | tee build/i5-six-minors-qq.log
+          M2 --script build/i4-small-qq.m2 2>&1 | tee build/i4-small-qq.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: lane7-i5-six-minors-qq
+          name: lane7-i4-small-qq
           path: |
             build/macaulay2-version.txt
-            build/i5-six-minors-qq.*
+            build/i4-small-qq.*
+          if-no-files-found: warn
+
+  i4-small-char5:
+    needs: prepare
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: lane7-targeted-inputs
+          path: build
+      - name: Install Macaulay2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo add-apt-repository -y ppa:macaulay2/macaulay2
+          sudo apt-get update
+          sudo apt-get install -y macaulay2
+      - name: Test the same four-minor generators over F_5
+        run: |
+          set -o pipefail
+          cat > build/i4-small-char5.m2 <<'EOF'
+          load "build/lane7-char5-local-cleared.m2";
+          selected4 = {
+            det submatrix(M,{0,1,2,4},{0,1,3,4}),
+            det submatrix(M,{0,1,2,3},{0,2,3,4}),
+            det submatrix(M,{0,2,3,4},{1,2,3,4}),
+            det submatrix(M,{1,2,3,4},{0,1,2,3}),
+            det submatrix(M,{0,1,3,4},{0,1,2,4}),
+            det submatrix(M,{0,2,4,6},{0,2,3,4}),
+            det submatrix(M,{1,2,3,5},{1,2,3,4}),
+            det submatrix(M,{0,1,4,6},{0,1,2,3}),
+            det submatrix(M,{0,1,3,6},{1,2,3,4}),
+            det submatrix(M,{2,3,4,5},{0,1,2,3}),
+            det submatrix(M,{0,1,3,7},{0,1,2,3})
+          };
+          J4small = ideal selected4 + ideal(localizerEquation);
+          unit4small = (J4small == 1);
+          print("I4_SMALL_LOCAL_UNIT_CHAR5=" | toString unit4small);
+          assert unit4small;
+          EOF
+          M2 --script build/i4-small-char5.m2 2>&1 | tee build/i4-small-char5.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lane7-i4-small-char5
+          path: build/i4-small-char5.*
+          if-no-files-found: warn
+
+  i5-six-grade-qq:
+    needs: prepare
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: lane7-targeted-inputs
+          path: build
+      - name: Install Macaulay2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo add-apt-repository -y ppa:macaulay2/macaulay2
+          sudo apt-get update
+          sudo apt-get install -y macaulay2
+          M2 --version | tee build/macaulay2-version.txt
+      - name: Test six diverse maximal minors over QQ
+        run: |
+          set -o pipefail
+          cat > build/i5-six-grade-qq.m2 <<'EOF'
+          load "build/lane7-qq-local-cleared.m2";
+          print "I5_SIX_GRADE_QQ_BEGIN";
+          selected5 = {
+            det submatrix(M,{0,1,4,7,8},{0..4}),
+            det submatrix(M,{1,2,3,7,9},{0..4}),
+            det submatrix(M,{0,2,3,4,9},{0..4}),
+            det submatrix(M,{2,5,7,8,9},{0..4}),
+            det submatrix(M,{0,1,3,5,6},{0..4}),
+            det submatrix(M,{2,4,5,6,7},{0..4})
+          };
+          K5 = ideal selected5 + ideal(localizerEquation);
+          dimK5 = dim K5;
+          codimK5 = codim K5;
+          print("I5_SIX_LOCAL_DIM_QQ=" | toString dimK5);
+          print("I5_SIX_LOCAL_CODIM_IN_8_VARIABLE_RING_QQ=" | toString codimK5);
+          print("I5_SIX_LOCAL_HEIGHT_IN_A_D_QQ=" | toString(codimK5-1));
+          assert(dimK5 == 1);
+          assert(codimK5 == 7);
+          print "I5_SIX_GRADE_QQ_END";
+          EOF
+          M2 --script build/i5-six-grade-qq.m2 2>&1 | tee build/i5-six-grade-qq.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lane7-i5-six-grade-qq
+          path: |
+            build/macaulay2-version.txt
+            build/i5-six-grade-qq.*
+          if-no-files-found: warn
+
+  i5-six-grade-char32003:
+    needs: prepare
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: lane7-targeted-inputs
+          path: build
+      - name: Install Macaulay2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo add-apt-repository -y ppa:macaulay2/macaulay2
+          sudo apt-get update
+          sudo apt-get install -y macaulay2
+      - name: Test six diverse maximal minors over F_32003
+        run: |
+          set -o pipefail
+          cat > build/i5-six-grade-char32003.m2 <<'EOF'
+          load "build/lane7-char32003-local-cleared.m2";
+          selected5 = {
+            det submatrix(M,{0,1,4,7,8},{0..4}),
+            det submatrix(M,{1,2,3,7,9},{0..4}),
+            det submatrix(M,{0,2,3,4,9},{0..4}),
+            det submatrix(M,{2,5,7,8,9},{0..4}),
+            det submatrix(M,{0,1,3,5,6},{0..4}),
+            det submatrix(M,{2,4,5,6,7},{0..4})
+          };
+          K5 = ideal selected5 + ideal(localizerEquation);
+          dimK5 = dim K5;
+          codimK5 = codim K5;
+          print("I5_SIX_LOCAL_DIM_CHAR32003=" | toString dimK5);
+          print("I5_SIX_LOCAL_CODIM_IN_8_VARIABLE_RING_CHAR32003=" | toString codimK5);
+          assert(dimK5 == 1);
+          assert(codimK5 == 7);
+          EOF
+          M2 --script build/i5-six-grade-char32003.m2 2>&1 | tee build/i5-six-grade-char32003.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lane7-i5-six-grade-char32003
+          path: build/i5-six-grade-char32003.*
           if-no-files-found: warn
