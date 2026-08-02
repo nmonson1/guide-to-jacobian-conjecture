@@ -1,0 +1,57 @@
+name: Lane 3 formal effectivity checks
+
+on:
+  pull_request:
+    paths:
+      - "research-notes/lane3-formal-effectivity/**"
+      - ".github/workflows/lane3-formal-effectivity.yml"
+  push:
+    branches: [main]
+    paths:
+      - "research-notes/lane3-formal-effectivity/**"
+      - ".github/workflows/lane3-formal-effectivity.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Check the source manifest
+        run: python research-notes/lane3-formal-effectivity/check_manifest.py
+
+      - name: Install the exact symbolic dependency
+        run: python -m pip install "sympy==1.14.0"
+
+      - name: Compile the verification programs
+        run: >-
+          python -m py_compile
+          research-notes/lane3-formal-effectivity/verify_formal_effectivity.py
+          research-notes/lane3-formal-effectivity/verify_formal_effectivity_independent.py
+          research-notes/lane3-formal-effectivity/verify_effective_unframed_bound.py
+
+      - name: Verify the formal-effectivity identities
+        run: python research-notes/lane3-formal-effectivity/verify_formal_effectivity.py
+
+      - name: Run the independent sparse-polynomial replication
+        run: python research-notes/lane3-formal-effectivity/verify_formal_effectivity_independent.py
+
+      - name: Verify the effective unframed bounds
+        run: python research-notes/lane3-formal-effectivity/verify_effective_unframed_bound.py
+
+      - name: Upload deterministic replay reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: lane3-formal-effectivity-reports
+          path: research-notes/lane3-formal-effectivity/*_report.json
