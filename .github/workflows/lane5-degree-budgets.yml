@@ -1,0 +1,43 @@
+name: Lane 5 degree-budget certificates
+
+on:
+  pull_request:
+    paths:
+      - "research-notes/lane5-degree-budgets/**"
+      - ".github/workflows/lane5-degree-budgets.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Verify the standard degree-six intersection
+        working-directory: research-notes/lane5-degree-budgets
+        run: python standard_filtration_certificate.py
+
+      - name: Replay the compact elementary-shear checkpoint
+        working-directory: research-notes/lane5-degree-budgets
+        run: python elementary_shear_scan.py
+
+      - name: Verify the exact resonant coefficient family
+        working-directory: research-notes/lane5-degree-budgets
+        run: python resonant_weight_certificate.py
+
+      - name: Verify every single elementary monomial shear
+        working-directory: research-notes/lane5-degree-budgets
+        run: python all_elementary_monomial_shears.py
+
+      - name: Check high-weight polynomial-tail arithmetic
+        working-directory: research-notes/lane5-degree-budgets
+        run: python lacunary_polynomial_shears.py
