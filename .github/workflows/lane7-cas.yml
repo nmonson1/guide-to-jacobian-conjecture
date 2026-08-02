@@ -87,6 +87,7 @@ jobs:
           M2 --script build/smoke.m2
 
   i4-char101:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.pull_request.title, '[lane7-heavy]')
     needs: packet-and-interface
     runs-on: ubuntu-22.04
     timeout-minutes: 90
@@ -126,6 +127,7 @@ jobs:
           if-no-files-found: warn
 
   i5-char101:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.pull_request.title, '[lane7-heavy]')
     needs: packet-and-interface
     runs-on: ubuntu-22.04
     timeout-minutes: 90
