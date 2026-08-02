@@ -12,22 +12,42 @@ permissions:
   contents: read
 
 jobs:
-  targeted-qq:
+  prepare:
     runs-on: ubuntu-22.04
-    timeout-minutes: 90
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Extract the hash-pinned matrix and generate the QQ input
+      - name: Extract the hash-pinned matrix and generate exact inputs
         run: |
           python research-notes/lane7-projective-kernel-20260802/extract_embedded_sources.py \
             --output-dir build/lane7-sources \
             lane7-split-incidence-20260802-v1/collision_residual_matrix_M.json \
             lane7-split-incidence-20260802-v1/Hv10_split_matrix_factorization.json
           python research-notes/lane7-projective-kernel-20260802/generate_macaulay2_input.py \
-            build/lane7-sources build/lane7-qq-local.m2 --with-localizer
+            build/lane7-sources build/lane7-qq-local-cleared.m2 \
+            --with-localizer --clear-row-denominators
+          python research-notes/lane7-projective-kernel-20260802/generate_macaulay2_input.py \
+            build/lane7-sources build/lane7-char32003-local-cleared.m2 \
+            --characteristic 32003 --with-localizer --clear-row-denominators
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lane7-targeted-inputs
+          path: build/lane7-*-local-cleared.m2
+          if-no-files-found: error
+
+  fixed-row-i4-qq:
+    needs: prepare
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: lane7-targeted-inputs
+          path: build
       - name: Install Macaulay2
         run: |
           sudo apt-get update
@@ -36,35 +56,97 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y macaulay2
           M2 --version | tee build/macaulay2-version.txt
-      - name: Prove the top-block corank-two locus is empty on D(d)
+      - name: Test the fixed four-row block on D(d) over QQ
         run: |
-          cat > build/i4-top-block-qq.m2 <<'EOF'
-          load "build/lane7-qq-local.m2";
-          print "I4_TOP_BLOCK_QQ_BEGIN";
-          G = submatrix(M,{0..4},{0..4});
-          J4G = minors(4,G,Strategy=>Dynamic) + ideal(localizerEquation);
-          unit4G = (J4G == 1);
-          print("I4_TOP_BLOCK_LOCAL_UNIT=" | toString unit4G);
-          assert unit4G;
-          print "I4_TOP_BLOCK_QQ_END";
+          cat > build/i4-fixed-row-qq.m2 <<'EOF'
+          load "build/lane7-qq-local-cleared.m2";
+          print "I4_FIXED_ROW_QQ_BEGIN";
+          fixedRows = {0,1,2,4};
+          H = submatrix(M,fixedRows,{0..4});
+          J4H = minors(4,H,Strategy=>Dynamic) + ideal(localizerEquation);
+          unit4H = (J4H == 1);
+          print("I4_FIXED_ROW_LOCAL_UNIT=" | toString unit4H);
+          assert unit4H;
+          print "I4_FIXED_ROW_QQ_END";
           EOF
-          M2 --script build/i4-top-block-qq.m2 | tee build/i4-top-block-qq.log
-      - name: Test a six-maximal-minor grade certificate over QQ
+          M2 --script build/i4-fixed-row-qq.m2 | tee build/i4-fixed-row-qq.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lane7-i4-fixed-row-qq
+          path: |
+            build/macaulay2-version.txt
+            build/i4-fixed-row-qq.*
+          if-no-files-found: warn
+
+  fixed-row-i4-char32003:
+    needs: prepare
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: lane7-targeted-inputs
+          path: build
+      - name: Install Macaulay2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo add-apt-repository -y ppa:macaulay2/macaulay2
+          sudo apt-get update
+          sudo apt-get install -y macaulay2
+      - name: Test the fixed four-row block on D(d) over F_32003
+        run: |
+          cat > build/i4-fixed-row-char32003.m2 <<'EOF'
+          load "build/lane7-char32003-local-cleared.m2";
+          fixedRows = {0,1,2,4};
+          H = submatrix(M,fixedRows,{0..4});
+          J4H = minors(4,H,Strategy=>Dynamic) + ideal(localizerEquation);
+          unit4H = (J4H == 1);
+          print("I4_FIXED_ROW_LOCAL_UNIT_CHAR32003=" | toString unit4H);
+          assert unit4H;
+          EOF
+          M2 --script build/i4-fixed-row-char32003.m2 | tee build/i4-fixed-row-char32003.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lane7-i4-fixed-row-char32003
+          path: build/i4-fixed-row-char32003.*
+          if-no-files-found: warn
+
+  six-minor-grade-qq:
+    needs: prepare
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: lane7-targeted-inputs
+          path: build
+      - name: Install Macaulay2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo add-apt-repository -y ppa:macaulay2/macaulay2
+          sudo apt-get update
+          sudo apt-get install -y macaulay2
+          M2 --version | tee build/macaulay2-version.txt
+      - name: Test a six-maximal-minor height certificate over QQ
         run: |
           cat > build/i5-six-minors-qq.m2 <<'EOF'
-          load "build/lane7-qq-local.m2";
+          load "build/lane7-qq-local-cleared.m2";
           print "I5_SIX_MINORS_QQ_BEGIN";
           baseRows = {0,1,2,4};
           extraRows = {3,5,6,7,8,9};
-          selected = apply(extraRows, r -> det submatrix(M, append(baseRows,r), {0..4}));
+          selected = apply(extraRows, r -> det submatrix(M,append(baseRows,r),{0..4}));
           K = ideal selected + ideal(localizerEquation);
           dimK = dim K;
           codimK = codim K;
-          degreeK = degree K;
           print("SIX_MINOR_LOCAL_DIM=" | toString dimK);
           print("SIX_MINOR_LOCAL_CODIM_IN_8_VARIABLE_RING=" | toString codimK);
           print("SIX_MINOR_LOCAL_HEIGHT_IN_A_D=" | toString(codimK-1));
-          print("SIX_MINOR_LOCAL_DEGREE=" | toString degreeK);
           assert(dimK == 1);
           assert(codimK == 7);
           print "I5_SIX_MINORS_QQ_END";
@@ -73,9 +155,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: lane7-targeted-qq
+          name: lane7-i5-six-minors-qq
           path: |
             build/macaulay2-version.txt
-            build/i4-top-block-qq.*
             build/i5-six-minors-qq.*
           if-no-files-found: warn
