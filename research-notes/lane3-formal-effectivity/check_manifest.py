@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the hash-pinned Lane 3 formal-effectivity package manifest."""
+"""Verify the hash-pinned Lane 3 formal-effectivity source manifest."""
 from __future__ import annotations
 
 import hashlib
@@ -16,7 +16,9 @@ def main() -> None:
     found = sorted(
         path.name
         for path in ROOT.iterdir()
-        if path.is_file() and path.name not in {"manifest.json"}
+        if path.is_file()
+        and path.name != "manifest.json"
+        and not path.name.endswith("_report.json")
     )
     listed = sorted(item["path"] for item in expected)
     if found != listed:
