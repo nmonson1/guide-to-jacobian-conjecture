@@ -129,7 +129,7 @@ The set \(\mathcal A_D\) is finite: apply the finitely many ordered
 exponentials successively to a basis of the finite-dimensional space
 \(B_{\le D}\); local nilpotence makes every expansion finite.
 
-## Arbitrarily long commuting compositions
+## Arbitrarily long commuting compositions with mixed signs
 
 Fix one target coordinate \(x_i\). Let
 
@@ -161,7 +161,7 @@ it is enough that
 
 for every nonzero \(\gamma\in\mathbf Z^t\) with
 \(\|\gamma\|_1\le2D\). A convenient sufficient condition, after ordering the
-shifts, is
+shifts by construction, is
 
 \[
 |d_1|>3D,\qquad
@@ -171,7 +171,8 @@ shifts, is
 
 For Lane 5, the common-fiber witnesses from the pure-monomial theorem show
 that \(m_r\partial_{x_i}Q\) and \(m_r\partial_{x_i}R\) are outside \(S\) for
-every monomial used there. Hence (4), or the stronger condition (5), gives
+every nonzero monomial in the other two source coordinates. Hence (4), or the
+stronger condition (5), gives
 
 \[
 \boxed{
@@ -179,124 +180,119 @@ every monomial used there. Hence (4), or the stronger condition (5), gives
 }
 \]
 
-This covers words of arbitrary length, not merely a fixed finite scan.
+This is especially useful for mixed positive/negative shift support, which is
+not covered by the one-sided high-weight semigroup theorem.
 
-For example, if
-
-\[
-17\le N_1<N_2<\cdots<N_t
-\]
-
-and
+For example, use the target coordinate \(y\). The shifts of
+\(z^M\partial_y\) and \(x^N\partial_y\) are respectively \(2M-1\) and
+\(-N-1\). The alternating superincreasing shifts
 
 \[
-N_r+2>12\sum_{s<r}(N_s+2)+18\qquad(r\ge2),
+19,-247,3211,-41743
 \]
 
-then for all nonzero \(c_r\),
+are realized by
 
 \[
-z\longmapsto z+\sum_{r=1}^t c_rx^{N_r}
+y\longmapsto y+c_1z^{10}+c_2x^{246}+c_3z^{1606}+c_4x^{41742}.
 \]
 
-satisfies
+For arbitrary nonzero coefficients, its transformed image algebra has only
+constants in degree at most six. The construction continues to arbitrary word
+length by the recurrence (5).
 
-\[
-\Phi(S)\cap B_{\le6}=k.
-\]
-
-Thus compositions of arbitrarily many commuting nonlinear shears cannot lower
-the orbit degree to six when their torus shifts are superincreasing.
-
-## A genuinely noncommuting two-step family
+## A genuinely mixed-sign noncommuting family
 
 Let
 
 \[
-\delta_1=y^N\partial_x,\qquad
-\delta_2=z^M\partial_y,
+\delta_1=x^N\partial_y,\qquad
+\delta_2=y^M\partial_z,
 \]
 
 and
 
 \[
-\Phi_{N,M}=\exp(\delta_2)\exp(\delta_1).
+\Psi_{N,M}=\exp(\delta_1)\exp(\delta_2).
 \]
 
-The derivations do not commute. On coordinates,
+The derivations do not commute and have shifts of opposite signs. On
+coordinates,
 
 \[
-\Phi_{N,M}(x,y,z)
- =\bigl(x+(y+z^M)^N,\ y+z^M,\ z\bigr).
+\Psi_{N,M}(x,y,z)
+ =\bigl(x,\ y+x^N,\ z+(y+x^N)^M\bigr).
 \]
 
 Their shifts are
 
 \[
-d_1=N+1,\qquad d_2=2M-1.
+d_1=-N-1,\qquad d_2=M-2.
 \]
 
 For \(h\in B_{\le6}\), the expansion of
-\(\Phi_{N,M}^{-1}h=\exp(-\delta_1)\exp(-\delta_2)h\) uses only
+\(\Psi_{N,M}^{-1}h=\exp(-\delta_2)\exp(-\delta_1)h\) uses only
 
 \[
 0\le\alpha_1\le6,\qquad0\le\alpha_2\le6.
 \]
 
-Indeed, \(\delta_2\) is applied first and does not increase the degree in
-\(x\), after which \(\delta_1\) can act at most six times.
+Indeed, \(\delta_1\) is applied first and does not increase the degree in
+\(z\), after which \(\delta_2\) can act at most six times.
 
 Assume
 
 \[
-N\ge18,\qquad M\ge3N+13.
+M\ge21,\qquad N\ge6M+6.
 \tag{6}
 \]
 
 Then
 
 \[
-d_1>18,\qquad d_2>6d_1+18.
+d_2>18,\qquad |d_1|>6d_2+18.
 \]
 
 For distinct \(\alpha,\beta\in\{0,\ldots,6\}^2\), if
-\(\alpha_2=\beta_2\), their shift difference has magnitude at least
-\(d_1>18\). Otherwise it has magnitude at least
+\(\alpha_1=\beta_1\), their shift difference has magnitude at least
+\(d_2>18\). Otherwise it has magnitude at least
 
 \[
-d_2-6d_1>18.
+|d_1|-6d_2>18.
 \]
 
-Thus condition (1) holds. The exact common-fiber witness already used for the
-one-step theorem gives
+Thus condition (1) holds despite the opposite signs. The exact common-fiber
+witness already used for the one-step theorem gives
 
 \[
-y^N\partial_xQ,\ y^N\partial_xR,
-\ z^M\partial_yQ,\ z^M\partial_yR\notin S
+x^N\partial_yQ,\ x^N\partial_yR,
+\ y^M\partial_zQ,\ y^M\partial_zR\notin S
 \]
 
 for all \(N,M\ge2\). The reduced-word theorem therefore yields
 
 \[
 \boxed{
-\Phi_{N,M}(S)\cap B_{\le6}=k
-\qquad(N\ge18,\ M\ge3N+13).
+\Psi_{N,M}(S)\cap B_{\le6}=k
+\qquad(M\ge21,\ N\ge6M+6).
 }
 \]
 
-This is an infinite theorem for genuinely noncommuting, nested triangular
-source automorphisms. Arbitrary affine source transformations applied after
-\(\Phi_{N,M}\) preserve the conclusion.
+This is an infinite theorem for genuinely noncommuting triangular words with
+both positive and negative torus shifts. It lies outside both one-sided
+high-weight subgroups. Arbitrary affine source transformations applied after
+\(\Psi_{N,M}\) preserve the conclusion.
 
 ## Scope and next target
 
 The theorem covers:
 
-- arbitrarily long commuting monomial-shear words with separated shifts;
-- general finite reduced words satisfying the exact support-separation
-  condition (1);
-- an explicit infinite noncommuting triangular family.
+- arbitrary finite reduced words satisfying the exact Taylor-support
+  separation condition (1);
+- arbitrarily long commuting polynomial shears with mixed-sign,
+  superincreasing support;
+- an explicit infinite noncommuting mixed-sign triangular family.
 
 It does not yet control words whose different Taylor multiindices have nearby
-or equal total torus shifts. Those resonant reduced words are the next finite
-or geometric frontier.
+or equal total torus shifts. Those resonant mixed-sign reduced words are the
+next finite or geometric frontier.
