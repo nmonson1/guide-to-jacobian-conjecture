@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "release_id": "model-handoffs-v14-20260801a",
-  "updated_at": "2026-08-01T23:00:00+00:00",
+  "updated_at": "2026-08-02T00:10:00+00:00",
   "base_release": {
     "release_id": "model-handoffs-v13-20260801b",
     "manifest_sha256": "eb2cad674c76b76433323e7072ab316293de6b95a84965c57ed7c559b60c1376"
@@ -21,9 +21,9 @@
       "program_slug": "state-of-the-program",
       "title": "State of the Jacobian Research Program",
       "source": "state-of-the-program.md",
-      "sha256": "d868936ba45b85f17e95b461e05304e4063bae0c6c3234e4e665d1f16222f80c",
-      "bytes": 30459,
-      "words": 3910,
+      "sha256": "70c4508f933e65cd802110b2baee0381759f9b5f13787630e6c7afe957581937",
+      "bytes": 31381,
+      "words": 4054,
       "route": "research/handoffs/state-of-the-program.md",
       "primary_entrypoint": true,
       "display_sequence": 0,
@@ -211,9 +211,9 @@
         "stable-moduli",
         "plane-boundary-obstructions"
       ],
-      "sha256": "dd3b93e4521350f845077df4ec821d85c7117f3886bf4ce5188071880e092840",
-      "bytes": 3124,
-      "words": 426
+      "sha256": "e111156334a01b6e090ec07778193b70c100979128319d605767ce18905730f8",
+      "bytes": 10033,
+      "words": 1454
     },
     {
       "kind": "lane",
