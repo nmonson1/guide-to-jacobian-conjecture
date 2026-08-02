@@ -34,8 +34,50 @@ jobs:
         run: python research-notes/lane7-projective-kernel-20260802/inspect_packet.py build/lane7-sources
       - name: Verify Pluecker transport identities
         run: python research-notes/lane7-projective-kernel-20260802/test_plucker_transport.py
+      - name: Generate standalone Macaulay2 inputs
+        run: |
+          python -m py_compile research-notes/lane7-projective-kernel-20260802/*.py
+          python research-notes/lane7-projective-kernel-20260802/generate_macaulay2_input.py \
+            build/lane7-sources build/lane7-qq-local.m2 --with-localizer
+          python research-notes/lane7-projective-kernel-20260802/generate_macaulay2_input.py \
+            build/lane7-sources build/lane7-char11.m2 --characteristic 11
       - uses: actions/upload-artifact@v4
         with:
-          name: lane7-extracted-sources
-          path: build/lane7-sources
+          name: lane7-exact-inputs
+          path: |
+            build/lane7-sources
+            build/lane7-qq-local.m2
+            build/lane7-char11.m2
           if-no-files-found: error
+
+  macaulay2-smoke:
+    needs: packet-and-interface
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: lane7-exact-inputs
+          path: build
+      - name: Install Macaulay2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo add-apt-repository -y ppa:macaulay2/macaulay2
+          sudo apt-get update
+          sudo apt-get install -y macaulay2
+          M2 --version
+      - name: Verify the known smooth-point rank input over F_11
+        run: |
+          cat > build/smoke.m2 <<'EOF'
+          load "build/lane7-char11.m2";
+          kk = ZZ/11;
+          phi = map(kk,R,{8,7,1,7,2,9,0});
+          N = phi M;
+          print("D_AT_POINT=" | toString(phi d));
+          print("RANK_AT_POINT=" | toString(rank N));
+          assert(phi d == 1_kk);
+          assert(rank N == 4);
+          EOF
+          M2 --script build/smoke.m2
