@@ -23,7 +23,7 @@
   },
   "model_briefs": {
     "data_dir": "model-handoffs-v14-20260801a",
-    "manifest_sha256": "15bb7b192996593c058c02664a8716f38b0321c257188b4ecefad18cf2736a9c",
+    "manifest_sha256": "0033c8312e5f500a75eabf7eab9d96ade500bb08c20aee5c953ee4ad606894f1",
     "expected_count": 16
   },
   "retained_math": {
