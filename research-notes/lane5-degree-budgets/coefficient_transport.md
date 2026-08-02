@@ -99,7 +99,9 @@ The standard theorem also transports under every affine source automorphism
 L(S) intersect B_{<=6} = span{1,L(Q),L(R)}.
 ```
 
-The remaining source-orbit issue is composition of nonlinear shears. The
-weight-separated composition theorem in `lacunary_polynomial_shears.md`
-closes an infinite superlacunary same-direction class; closely spaced and
-noncommuting compositions remain open.
+The composition frontier is now narrower. The same-direction theorem in
+`lacunary_polynomial_shears.md` closes arbitrary high-weight polynomial
+tails, and `one_sided_high_weight_semigroup.md` closes arbitrary noncommuting
+words whose nonzero weights all lie beyond the degree-six window on one side,
+including arbitrary interleaving with this resonant family. Low-weight words,
+mixed positive/negative high-weight words, and wild automorphisms remain open.
