@@ -1,7 +1,7 @@
 {
   "schema_version": 4,
-  "release_id": "living-guide-public-v43d-nine-lane-reconstruction",
-  "updated_at": "2026-08-02T08:36:05+00:00",
+  "release_id": "living-guide-public-v44-nine-lane-self-contained",
+  "updated_at": "2026-08-02T11:35:00+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,13 +22,13 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-handoffs-v16-20260802d",
-    "manifest_sha256": "eac212182626935769c4bb1b61d825645038480e53049dde2c42e2ce3f56164a",
+    "data_dir": "model-handoffs-v17-20260802h",
+    "manifest_sha256": "11b17a2f3f24a8d3a6cc3f17b4f266b048ca94a3eacdabd7760741ee922ee999",
     "expected_count": 16
   },
   "retained_math": {
-    "data_dir": "retained-math-v1-20260802a",
-    "manifest_sha256": "5c5516c8889341a97f39b77a90a960ddd45255656fa6774d1a51280098aa6257",
+    "data_dir": "retained-math-v1-20260802b",
+    "manifest_sha256": "079671f18100087763f09409157f66d04cbf3245b315856cff46039128841f14",
     "expected_units": 564,
     "expected_programs": 6
   },
@@ -47,7 +47,7 @@
     "expected_files": 39,
     "expected_labels": 642
   },
-  "docs_dir": "docs-v43d-nine-lane-reconstruction-20260802d",
+  "docs_dir": "docs-v44-nine-lane-self-contained-20260802j",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,

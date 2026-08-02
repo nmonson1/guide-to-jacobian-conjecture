@@ -105,6 +105,22 @@ STATE_LANE_ANCHORS = tuple(
         "lane-9-plane-global-attachment",
     )
 )
+LANE_HANDOFF_STRUCTURE = (
+    "## Problem and scope",
+    "## Setup and notation",
+    "## Reusable mathematics",
+    "## Exact live problem",
+    "## Tasks and deliverables",
+    "## Scope cautions",
+)
+HANDOFF_OPENING_BUREAUCRACY = (
+    "handoff source v",
+    "site release living-guide-",
+    "public claim records",
+    "grouped packages",
+    "retained working graph",
+    "current proof sources — preferred",
+)
 
 
 def _sha(path: Path) -> str:
@@ -320,19 +336,27 @@ def main() -> int:
         _local_links(path, failures)
     for tag, correction in corrections.items():
         unit_id = str(correction["unit_id"])
+        relation = str(correction["_forward_relation"])
+        historical = relation in {"corrects", "supersedes"}
         if tag not in claims:
             failures.append(f"retained correction targets unknown claim {tag}")
             continue
-        if tag in retained_unit_ids:
+        if historical and tag in retained_unit_ids:
             failures.append(f"superseded legacy claim remains in working graph: {tag}")
         page = DOCS / "claims" / f"{tag}.md"
         text = page.read_text(encoding="utf-8")
-        for marker in (
-            '!!! warning "Superseded by current working mathematics"',
-            "## Current corrected statement",
-            unit_id,
-            str(correction["statement"]),
-        ):
+        relation_markers = (
+            (
+                '!!! warning "Replaced by current working mathematics"',
+                "## Current replacement",
+            )
+            if historical
+            else ('!!! info "A stronger current result is available"',)
+        )
+        expected_markers = (*relation_markers, unit_id)
+        if historical:
+            expected_markers = (*expected_markers, str(correction["statement"]))
+        for marker in expected_markers:
             if marker not in text:
                 failures.append(
                     f"{page.relative_to(ROOT)}: missing correction marker {marker!r}"
@@ -368,13 +392,37 @@ def main() -> int:
         _local_links(path, failures)
     for tag, correction in corrections.items():
         unit_id = str(correction["unit_id"])
+        relation = str(correction["_forward_relation"])
+        claim_page = DOCS / "claims" / f"{tag}.md"
+        claim_text = claim_page.read_text(encoding="utf-8")
+        expected_label = (
+            "Replaced by current working mathematics"
+            if relation in {"corrects", "supersedes"}
+            else "A stronger current result is available"
+        )
+        if unit_id not in claim_text or expected_label not in claim_text:
+            failures.append(
+                f"{claim_page.relative_to(ROOT)}: missing {relation} forward link "
+                f"to {unit_id}"
+            )
         for membership in claims[tag]["memberships"]:
             collection = DOCS / "collections" / f"{membership['collection_slug']}.md"
-            if unit_id not in collection.read_text(encoding="utf-8"):
+            collection_text = collection.read_text(encoding="utf-8")
+            if unit_id not in collection_text:
                 failures.append(
                     f"{collection.relative_to(ROOT)}: corrected legacy member "
                     f"does not link {unit_id}"
                 )
+            if relation in {"corrects", "supersedes"}:
+                heading = f"### [{tag} · Replaced historical record]"
+                start = collection_text.find(heading)
+                end = collection_text.find("\n### ", start + len(heading))
+                block = collection_text[start : end if end >= 0 else None]
+                if start < 0 or claims[tag]["statement"] in block:
+                    failures.append(
+                        f"{collection.relative_to(ROOT)}: replaced statement {tag} "
+                        "is still rendered as collection mathematics"
+                    )
         corrections_page = DOCS / "results/corrections.md"
         if unit_id not in corrections_page.read_text(encoding="utf-8"):
             failures.append(
@@ -410,6 +458,47 @@ def main() -> int:
         failures.append("model brief manifest count mismatch")
     if brief_manifest.get("primary_entrypoint_count") != 10:
         failures.append("primary model-entrypoint count is not ten")
+    task_inputs = brief_manifest.get("task_inputs", [])
+    if brief_manifest.get("task_input_count", 0) != len(task_inputs):
+        failures.append("model task-input count mismatch")
+    if brief_manifest.get("schema_version") == 5 and {
+        item.get("input_id") for item in task_inputs
+    } != {
+        "LANE7-COLLISION-CHART-V1",
+        "LANE8-RAW-SUPPORT-RECONSTRUCTION-V1",
+    }:
+        failures.append("handoff v5 must expose the exact Lane 7 and Lane 8 inputs")
+    for item in task_inputs:
+        source = MODEL_BRIEF_DATA / item["source"]
+        rendered = DOCS / item["route"]
+        if not source.is_file() or _sha(source) != item["sha256"]:
+            failures.append(f"model task-input source mismatch: {item['source']}")
+            continue
+        if len(source.read_bytes()) != item["bytes"]:
+            failures.append(f"model task-input byte count mismatch: {item['source']}")
+        if not rendered.is_file() or _sha(rendered) != item["sha256"]:
+            failures.append(f"model task-input render mismatch: {item['route']}")
+        text = source.read_text(encoding="utf-8")
+        markers_by_id = {
+            "LANE7-COLLISION-CHART-V1": (
+                "# Lane 7 exact collision-chart input",
+                "15 primitive integer quintics",
+                "det(T)*(u3-u4*v3) != 0",
+                "## Complete Macaulay2 input",
+                "## Exact evidence boundary",
+            ),
+            "LANE8-RAW-SUPPORT-RECONSTRUCTION-V1": (
+                "# Lane 8 exact raw-support reconstruction input",
+                "## Mathematical contract",
+                "## Exact quintic-field relations",
+                "## Exact quintic-field helper",
+                "quintic_field_fast.py",
+                "## Complete reconstruction program",
+            ),
+        }
+        for marker in markers_by_id.get(item.get("input_id"), ()):
+            if marker not in text:
+                failures.append(f"{item['source']}: missing {marker!r}")
     brief_routes: set[str] = set()
     found_v2_markers: list[dict[str, str]] = []
     for brief in brief_manifest["briefs"]:
@@ -422,11 +511,25 @@ def main() -> int:
         source_text = source.read_text(encoding="utf-8")
         rendered_text = rendered.read_text(encoding="utf-8")
         front_matter_end = rendered_text.find("\n---\n", 4)
-        retained_notice = rendered_text.find('!!! info "Retained working graph"')
-        if front_matter_end < 0 or retained_notice <= front_matter_end:
+        visible_lines = [
+            line.strip()
+            for line in rendered_text[front_matter_end + 5 :].splitlines()
+            if line.strip()
+        ] if front_matter_end >= 0 else []
+        if not visible_lines or not visible_lines[0].startswith("# "):
             failures.append(
-                f"{brief['route']}: retained notice is not after YAML front matter"
+                f"{brief['route']}: mathematical title is not the first visible content"
             )
+        title_position = rendered_text.find("\n# ", front_matter_end)
+        identity_position = rendered_text.find('class="claim-tag"', front_matter_end)
+        if title_position < 0 or identity_position <= title_position:
+            failures.append(f"{brief['route']}: lane identity does not follow the title")
+        opening = "\n".join(visible_lines[:8]).casefold()
+        for marker in HANDOFF_OPENING_BUREAUCRACY:
+            if marker in opening:
+                failures.append(
+                    f"{brief['route']}: opening contains repository plumbing {marker!r}"
+                )
         literal_links = LITERAL_MANUSCRIPT_LINK_RE.findall(source_text)
         if literal_links:
             failures.append(
@@ -441,11 +544,7 @@ def main() -> int:
             failures.append(f"{brief['source']}: {exc}")
             resolved_source = source_text
         if kind == "lane":
-            for marker in (
-                "## Research objective",
-                "## Reusable mathematics",
-                "## Useful deliverable",
-            ):
+            for marker in LANE_HANDOFF_STRUCTURE:
                 if marker.casefold() not in source_text.casefold():
                     failures.append(
                         f"{brief['source']}: missing lane semantic marker {marker!r}"
@@ -557,18 +656,22 @@ def main() -> int:
         rendered_text = rendered.read_text(encoding="utf-8")
         if "{{MANUSCRIPT_" in rendered_text:
             failures.append(f"{brief['route']}: unresolved manuscript token")
-        if 'class="handoff-snapshot"' not in rendered_text:
-            failures.append(f"{brief['route']}: missing canonical snapshot")
-        if SITE_STATE["release_id"] not in rendered_text:
-            failures.append(f"{brief['route']}: snapshot names the wrong release")
-        if '!!! tip "Current proof sources — preferred"' not in rendered_text:
-            failures.append(f"{brief['route']}: missing preferred text-proof notice")
+        for marker in (
+            'class="handoff-snapshot"',
+            f"site release {SITE_STATE['release_id']}",
+        ):
+            if marker in rendered_text:
+                failures.append(f"{brief['route']}: obsolete release plumbing remains")
+        for marker in (
+            "## Sources and release",
+            "[Retained working mathematics]",
+            "[Current proof sources]",
+            "[Machine-readable release metadata](release.json)",
+        ):
+            if marker not in rendered_text:
+                failures.append(f"{brief['route']}: missing footer marker {marker!r}")
         expected_headings = (
-            (
-                "## Research objective",
-                "## Reusable mathematics",
-                "## Useful deliverable",
-            )
+            LANE_HANDOFF_STRUCTURE
             if kind == "lane"
             else (
                 "## 1. Setup and notation",
@@ -633,8 +736,6 @@ def main() -> int:
                 "ARG-RMU5D8E0003-FINITE-PLANE",
                 "g(r)=(r-4)(r^2-8r+64)",
                 "-1152",
-                "OBL-P5-FULL-FINITE-ROW-BASE",
-                "TSK-P5-FULL-FINITE-ROW-BASE",
                 "retained-math-v2-pilot.json",
             ):
                 if marker not in rendered_text:
@@ -644,6 +745,27 @@ def main() -> int:
 
     if found_v2_markers != brief_manifest.get("retained_math_v2_markers"):
         failures.append("handoff v2 markers disagree with their manifest")
+
+    retained_graph = load_retained_math(ROOT)
+    if retained_graph is not None:
+        exposed_ids = {
+            unit["unit_id"]
+            for unit in retained_graph[1]["units"]
+            if unit.get("exposure") == "exposed"
+        }
+        for unit_id in exposed_ids:
+            unit_page = DOCS / "research/working-mathematics/units" / f"{unit_id}.md"
+            unit_text = unit_page.read_text(encoding="utf-8")
+            if "This page is generated from the retained graph" in unit_text:
+                failures.append(
+                    f"{unit_page.relative_to(ROOT)}: generated-page boilerplate remains"
+                )
+            for relation in ("supersedes", "corrects"):
+                if f"- {relation} " in unit_text:
+                    failures.append(
+                        f"{unit_page.relative_to(ROOT)}: backward historical "
+                        f"{relation} relation is rendered"
+                    )
 
     scan_roots = (
         DOCS,

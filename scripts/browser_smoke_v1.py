@@ -154,6 +154,9 @@ def run(
             for brief in model_brief_manifest["briefs"]:
                 route = brief["route"].removesuffix(".md") + "/"
                 check_page(desktop, base + route)
+            for item in model_brief_manifest.get("task_inputs", []):
+                route = item["route"].removesuffix(".md") + "/"
+                check_page(desktop, base + route)
 
             desktop.goto(base + "counterexample/", wait_until="networkidle")
             desktop.wait_for_selector("mjx-container", timeout=15_000)
@@ -222,12 +225,12 @@ def run(
                 route = brief["route"].removesuffix(".md") + "/"
                 desktop.goto(base + route, wait_until="networkidle")
                 require(
-                    desktop.locator(".handoff-snapshot").count() == 1,
-                    f"model handoff lacks its canonical snapshot: {route}",
+                    desktop.locator(".handoff-snapshot").count() == 0,
+                    f"model handoff exposes the retired snapshot: {route}",
                 )
                 require(
                     desktop.locator(
-                        'a.handoff-release[href$="release.json"]'
+                        'main a[href$="release.json"]:has-text("Machine-readable release metadata")'
                     ).count()
                     == 1,
                     f"model handoff lacks release metadata link: {route}",
@@ -255,7 +258,7 @@ def run(
                     )
                     require(
                         desktop.locator(
-                            'main h2:has-text("Useful deliverable")'
+                            'main h2:has-text("Tasks and deliverables")'
                         ).count()
                         == 1,
                         f"lane handoff lacks its deliverable boundary: {route}",
@@ -274,8 +277,6 @@ def run(
                         for marker in (
                             "Compiler-owned retained result",
                             "ARG-RMU5D8E0003-FINITE-PLANE",
-                            "OBL-P5-FULL-FINITE-ROW-BASE",
-                            "TSK-P5-FULL-FINITE-ROW-BASE",
                             "-1152",
                         ):
                             require(
@@ -296,17 +297,17 @@ def run(
                     )
                 require(
                     desktop.locator(
-                        '.admonition-title:has-text("Retained working graph")'
+                        'main a:has-text("Retained working mathematics")'
                     ).count()
-                    == 1,
-                    f"model handoff lacks retained-graph notice: {route}",
+                    >= 1,
+                    f"model handoff lacks retained-math footer link: {route}",
                 )
                 require(
                     desktop.locator(
-                        '.admonition-title:has-text("Current proof sources")'
+                        'main a:has-text("Current proof sources")'
                     ).count()
-                    == 1,
-                    f"model handoff lacks text-proof notice: {route}",
+                    >= 1,
+                    f"model handoff lacks text-proof footer link: {route}",
                 )
                 main_text = desktop.locator("main").inner_text()
                 require(

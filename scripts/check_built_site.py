@@ -129,10 +129,10 @@ def main() -> int:
             failures.append(f"missing model handoff route: /{route}")
             continue
         text = path.read_text(encoding="utf-8")
-        if 'class="handoff-snapshot"' not in text:
-            failures.append(f"model handoff lacks canonical snapshot: /{route}")
-        if SITE_STATE["release_id"] not in text:
-            failures.append(f"model handoff names the wrong release: /{route}")
+        if 'class="handoff-snapshot"' in text or SITE_STATE["release_id"] in text:
+            failures.append(f"model handoff exposes release plumbing: /{route}")
+        if text.find("<h1") < 0 or text.find('class="claim-tag"') < text.find("<h1"):
+            failures.append(f"model handoff does not lead with its title: /{route}")
         parser_links = Links()
         parser_links.feed(text)
         linked_manuscripts = {
@@ -148,8 +148,37 @@ def main() -> int:
             )
         if brief.get("kind") == "program" and not linked_manuscripts:
             failures.append(f"model handoff lacks an active manuscript: /{route}")
-        if "Current proof sources — preferred" not in text:
+        if "Sources and release" not in text or "Current proof sources" not in text:
             failures.append(f"model handoff lacks current text proofs: /{route}")
+        if "Machine-readable release metadata" not in text:
+            failures.append(f"model handoff lacks release metadata footer: /{route}")
+
+    for item in brief_manifest.get("task_inputs", []):
+        route = item["route"].removesuffix(".md")
+        path = site / route / "index.html"
+        if not path.is_file():
+            failures.append(f"missing model task-input route: /{route}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        markers_by_id = {
+            "LANE7-COLLISION-CHART-V1": (
+                "Lane 7 exact collision-chart input",
+                "15 primitive integer quintics",
+                "Complete Macaulay2 input",
+                "Exact evidence boundary",
+            ),
+            "LANE8-RAW-SUPPORT-RECONSTRUCTION-V1": (
+                "Lane 8 exact raw-support reconstruction input",
+                "Mathematical contract",
+                "Exact quintic-field relations",
+                "Exact quintic-field helper",
+                "quintic_field_fast.py",
+                "Complete reconstruction program",
+            ),
+        }
+        for marker in markers_by_id.get(item.get("input_id"), ()):
+            if marker not in text:
+                failures.append(f"model task-input lacks {marker!r}: /{route}")
 
     release_path = site / "research/handoffs/release.json"
     if not release_path.is_file():
@@ -189,8 +218,6 @@ def main() -> int:
         "ARG-RMU5D8E0003-FINITE-PLANE",
         "g(r)=(r-4)(r^2-8r+64)",
         "-1152",
-        "OBL-P5-FULL-FINITE-ROW-BASE",
-        "TSK-P5-FULL-FINITE-ROW-BASE",
     ):
         if marker not in lane_six_text:
             failures.append(f"built Lane 6 v2 block lacks {marker!r}")
@@ -212,8 +239,13 @@ def main() -> int:
     for tag, correction in retained_corrections(load_retained_math(ROOT)).items():
         page = site / "claims" / tag / "index.html"
         text = page.read_text(encoding="utf-8") if page.is_file() else ""
-        if "Superseded by current working mathematics" not in text:
-            failures.append(f"built corrected claim lacks supersession notice: {tag}")
+        expected_notice = (
+            "Replaced by current working mathematics"
+            if correction["_forward_relation"] in {"corrects", "supersedes"}
+            else "A stronger current result is available"
+        )
+        if expected_notice not in text:
+            failures.append(f"built forward-linked claim lacks its notice: {tag}")
         if correction["unit_id"] not in text:
             failures.append(
                 f"built corrected claim does not link {correction['unit_id']}: {tag}"
@@ -223,13 +255,13 @@ def main() -> int:
             "built program routes: expected "
             f"{expected['research_programs']}, found {len(program_pages)}"
         )
-    handoff_pages = list((site / "research/handoffs").glob("*/index.html"))
-    if len(handoff_pages) != SITE_STATE["model_briefs"]["expected_count"]:
-        failures.append(
-            "built model handoff routes: expected "
-            f"{SITE_STATE['model_briefs']['expected_count']}, found "
-            f"{len(handoff_pages)}"
-        )
+    handoff_pages = [
+        site / brief["route"].removesuffix(".md") / "index.html"
+        for brief in brief_manifest["briefs"]
+    ]
+    missing_handoffs = [path for path in handoff_pages if not path.is_file()]
+    for path in missing_handoffs:
+        failures.append(f"missing built model handoff: {path.relative_to(site)}")
     retained_unit_pages = list(
         (site / "research/working-mathematics/units").glob("*/index.html")
     )
@@ -278,9 +310,9 @@ def main() -> int:
         text = path.read_text(encoding="utf-8")
         if '<p>title: "Model research brief' in text:
             failures.append(f"handoff renders YAML metadata as prose: {path.name}")
-        if "Retained working graph" not in text:
-            failures.append(f"handoff lacks retained graph link: {path.name}")
-        if "Current proof sources — preferred" not in text:
+        if "Retained working mathematics" not in text:
+            failures.append(f"handoff lacks retained-math link: {path.name}")
+        if "Current proof sources" not in text:
             failures.append(f"handoff lacks text-proof link: {path.name}")
 
     search_path = site / "search/search_index.json"

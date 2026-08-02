@@ -283,23 +283,28 @@ def render_proof_source_index(manifest: dict[str, Any]) -> str:
 def retained_corrections(
     retained: tuple[dict[str, Any], dict[str, Any]] | None,
 ) -> dict[str, dict[str, Any]]:
-    """Map corrected legacy claim tags to their current retained units."""
+    """Map legacy claim tags to the strongest current forward relation."""
     if retained is None:
         return {}
     _, graph = retained
     corrections: dict[str, dict[str, Any]] = {}
+    relation_priority = {"strengthens": 1, "supersedes": 2, "corrects": 3}
     for unit in graph["units"]:
         for relation in unit.get("relations", []):
             target = relation.get("target_unit_id", "")
-            if relation.get("relation_type") != "corrects" or not target.startswith(
-                "JCG-"
-            ):
+            relation_type = relation.get("relation_type")
+            if relation_type not in relation_priority or not target.startswith("JCG-"):
                 continue
-            if target in corrections:
+            candidate = {**unit, "_forward_relation": relation_type}
+            existing = corrections.get(target)
+            if existing is not None and existing["unit_id"] != unit["unit_id"]:
                 raise ValueError(
-                    f"legacy claim has multiple retained corrections: {target}"
+                    f"legacy claim has multiple current forward units: {target}"
                 )
-            corrections[target] = unit
+            if existing is None or relation_priority[relation_type] > relation_priority[
+                existing["_forward_relation"]
+            ]:
+                corrections[target] = candidate
     return corrections
 
 
@@ -412,6 +417,21 @@ def load(root: Path) -> tuple[
             raise ValueError(f"model brief byte count mismatch: {source}")
         if hashlib.sha256(payload).hexdigest() != brief["sha256"]:
             raise ValueError(f"model brief digest mismatch: {source}")
+    task_inputs = brief_manifest.get("task_inputs", [])
+    if brief_manifest.get("task_input_count", 0) != len(task_inputs):
+        raise ValueError("model brief task-input count mismatch")
+    brief_routes = {item["route"] for item in brief_manifest["briefs"]}
+    for item in task_inputs:
+        source = root / "data" / state["model_briefs"]["data_dir"] / item["source"]
+        if not source.is_file():
+            raise ValueError(f"missing model task input: {source}")
+        payload = source.read_bytes()
+        if len(payload) != item["bytes"]:
+            raise ValueError(f"model task-input byte count mismatch: {source}")
+        if hashlib.sha256(payload).hexdigest() != item["sha256"]:
+            raise ValueError(f"model task-input digest mismatch: {source}")
+        if item["route"] in brief_routes:
+            raise ValueError(f"model task-input route collides with brief: {item['route']}")
     expected = state["expected_counts"]
     if graph["counts"] != {
         "claims": expected["technical_records"],
@@ -519,6 +539,15 @@ def build_release_metadata(root: Path) -> dict[str, Any]:
             "release_id": brief_manifest["release_id"],
             "version": _version_label(brief_manifest["release_id"]),
             "count": brief_manifest["brief_count"],
+            "task_input_count": brief_manifest.get("task_input_count", 0),
+            "task_inputs": [
+                {
+                    "input_id": item["input_id"],
+                    "route": item["route"].removesuffix(".md") + "/",
+                    "source_sha256": item["sha256"],
+                }
+                for item in brief_manifest.get("task_inputs", [])
+            ],
         },
         "handoffs": handoffs,
         "manuscript_sources": {
@@ -580,34 +609,14 @@ def render_retained_math_v2_selection(
         raise ValueError("v2 handoff pilot requires one conclusion unit")
     units = {item["unit_id"]: item for item in selection["units"]}
     evidence = {item["evidence_id"]: item for item in selection["evidence"]}
-    obligations = {
-        item["obligation_id"]: item for item in selection["obligations"]
-    }
-    tasks = [
-        item
-        for item in selection["tasks"]
-        if argument_id
-        in {
-            task_input.get("argument_id")
-            for task_input in item.get("inputs", [])
-            if task_input.get("kind") == "argument"
-        }
-    ]
-    if len(tasks) != 1:
-        raise ValueError("v2 handoff pilot requires one task for its argument")
-    task = tasks[0]
     unit = units[argument["conclusion_unit_ids"][0]]
-    obligation_ids = list(dict.fromkeys(task.get("obligation_ids", [])))
-    if len(obligation_ids) != 1 or obligation_ids[0] not in obligations:
-        raise ValueError("v2 handoff pilot requires one selected obligation")
-    obligation = obligations[obligation_ids[0]]
 
     lines = [
         "### Compiler-owned retained result",
         "",
-        '!!! info "Generated from first-class mathematics"',
-        "    This result, its complete argument, its evidence boundary, and its",
-        "    next task are rendered from one retained-math v2 selection. The",
+        '!!! info "First-class retained mathematics"',
+        "    This result, its exact argument, and its evidence boundary are",
+        "    rendered from one retained-math v2 selection. The",
         "    [machine-readable selection](retained-math-v2-pilot.json) is pinned",
         "    by the handoff release metadata.",
         "",
@@ -630,7 +639,7 @@ def render_retained_math_v2_selection(
         "",
         *_bullet_lines(unit["exact_scope"]["limitations"]),
         "",
-        "#### Complete argument",
+        "#### Exact argument",
         "",
         f"**{argument['title']}** · `{argument['argument_id']}` · "
         f"`{argument['argument_type']}`",
@@ -643,7 +652,7 @@ def render_retained_math_v2_selection(
         "",
         *_bullet_lines(argument["does_not_establish"]),
         "",
-        "#### Evidence and exact replay boundary",
+        "#### Evidence and exact source links",
         "",
     ]
     for evidence_id in argument["evidence_ids"]:
@@ -651,8 +660,6 @@ def render_retained_math_v2_selection(
         lines.extend(
             [
                 f"##### {item['title']}",
-                "",
-                f"`{item['evidence_id']}` · `{item['kind']}`",
                 "",
                 item["summary"],
                 "",
@@ -663,15 +670,6 @@ def render_retained_math_v2_selection(
         locator = _retained_v2_locator(item)
         if locator is not None:
             lines.extend([f"**Locator:** {locator}", ""])
-        replay = item.get("replay")
-        if replay:
-            lines.extend(["**Replay**", ""])
-            lines.extend(f"- `{command}`" for command in replay["commands"])
-            lines.extend(["", "Environment:", ""])
-            lines.extend(_bullet_lines(replay.get("environment", [])))
-            lines.extend(["", "Expected:", ""])
-            lines.extend(_bullet_lines(replay["expected"]))
-            lines.append("")
         lines.extend(
             [
                 "**Does not establish**",
@@ -681,53 +679,6 @@ def render_retained_math_v2_selection(
             ]
         )
 
-    lines.extend(
-        [
-            "### Current boundary and next task",
-            "",
-            f"#### {obligation['title']}",
-            "",
-            f"`{obligation['obligation_id']}`",
-            "",
-            obligation["statement"],
-            "",
-            obligation["rationale"],
-            "",
-            "**Done when**",
-            "",
-            *_bullet_lines(obligation["done_when"]),
-            "",
-            f"#### {task['title']}",
-            "",
-            f"`{task['task_id']}`",
-            "",
-            f"**Goal:** {task['goal']}",
-            "",
-            f"**Payoff:** {task['payoff']}",
-            "",
-            "**Inputs**",
-            "",
-        ]
-    )
-    for item in task["inputs"]:
-        kind = item["kind"]
-        if kind == "unit":
-            unit_id = item["unit_id"]
-            lines.append(
-                f"- [`{unit_id}`](../working-mathematics/units/{unit_id}.md) "
-                "(unit)"
-            )
-        else:
-            identifier = item[f"{kind}_id"]
-            lines.append(f"- `{identifier}` ({kind})")
-    lines.extend(["", "**Suggested approaches**", ""])
-    lines.extend(_bullet_lines(task["suggested_approaches"]))
-    lines.extend(["", "**Done when**", ""])
-    lines.extend(_bullet_lines(task["done_when"]))
-    lines.extend(["", "**Research freedom**", ""])
-    lines.extend(_bullet_lines(task["freedoms"]))
-    lines.extend(["", "**Scope fences**", ""])
-    lines.extend(_bullet_lines(task["scope_fences"]))
     return "\n".join(lines)
 
 
@@ -774,7 +725,7 @@ def render_model_brief(
             f'[Back to the Program {brief["program_sequence"]} overview]'
             f'(../programs/{brief["program_slug"]}.md)'
         )
-    retained_note: list[str] = []
+    retained_target: str | None = None
     if "retained_math" in release:
         retained_target = (
             "../working-mathematics/index.md"
@@ -782,12 +733,6 @@ def render_model_brief(
             else "../working-mathematics/programs/"
             f"{brief['program_slug']}.md"
         )
-        retained_note = [
-            "",
-            '!!! info "Retained working graph"',
-            "    Exact reusable units and their deeper support pages are available",
-            f"    in the [retained working mathematics view]({retained_target}).",
-        ]
     if cross_program or lane:
         source_target = "../proof-sources/index.md"
     else:
@@ -796,13 +741,33 @@ def render_model_brief(
         source_target = "../proof-sources/" + proof_source_route(
             source_path
         ).relative_to("research/proof-sources").as_posix()
-    source_note = [
-        "",
-        '!!! tip "Current proof sources — preferred"',
-        "    Use the [current source text and exact labels]"
-        f"({source_target}) for full proof context. PDFs are optional archival",
-        "    reading copies and may predate source repairs.",
-    ]
+    source_lines = source.rstrip().splitlines()
+    if source_lines and source_lines[0].startswith("# "):
+        title_line = source_lines[0]
+        body = "\n".join(source_lines[1:]).lstrip()
+    else:
+        title_index = next(
+            (index for index, line in enumerate(source_lines) if line.startswith("# ")),
+            None,
+        )
+        if title_index is None:
+            title_line = f"# {brief['title']}"
+            body_lines = source_lines
+        else:
+            title_line = source_lines[title_index]
+            body_lines = source_lines[:title_index] + source_lines[title_index + 1 :]
+        body = "\n".join(body_lines).lstrip()
+    updated = datetime.fromisoformat(release["updated_at"]).strftime("%-d %B %Y")
+    identity = f"{label.removeprefix('Model research brief · ')} · Updated {updated}"
+    footer_links = []
+    if retained_target is not None:
+        footer_links.append(f"[Retained working mathematics]({retained_target})")
+    footer_links.extend(
+        [
+            f"[Current proof sources]({source_target})",
+            "[Machine-readable release metadata](release.json)",
+        ]
+    )
     return "\n".join(
         [
             "---",
@@ -810,23 +775,17 @@ def render_model_brief(
             "description: \"A self-contained mathematical handoff for a research model.\"",
             "---",
             "",
-            f'<p class="claim-tag">{label}</p>',
-            (
-                '<p class="handoff-snapshot"><strong>Snapshot:</strong> '
-                f'{datetime.fromisoformat(release["updated_at"]).strftime("%-d %B %Y")} '
-                f'· {release["counts"]["technical_records"]} public claim records '
-                f'· {release["counts"]["grouped_pages"]} grouped packages '
-                f'· manuscripts v{release["manuscript_version"]} '
-                f'· handoff source {release["handoff_source"]["version"]} '
-                f'· site release <code>{release["site_release_id"]}</code>.</p>'
-            ),
-            (
-                "[Machine-readable release metadata](release.json)"
-                "{ .handoff-release }"
-            ),
-            *retained_note,
-            *source_note,
-            source.rstrip(),
+            title_line,
+            "",
+            f'<p class="claim-tag">{identity}</p>',
+            "",
+            body,
+            "",
+            "## Sources and release",
+            "",
+            " · ".join(footer_links),
+            "",
+            "The linked source text is preferred for full proof context; PDFs are optional archival copies.",
             "",
             back_link,
             "",
@@ -840,20 +799,30 @@ def render_claim(
     correction: dict[str, Any] | None = None,
 ) -> str:
     correction_block = []
+    historical = False
     if correction is not None:
         unit_id = correction["unit_id"]
-        correction_block = [
-            '!!! warning "Superseded by current working mathematics"',
-            "    This stable-tag statement is retained as publication-pipeline "
-            "history. Use the",
-            f"    [current corrected unit](../research/working-mathematics/units/{unit_id}.md)",
-            "    for research and model handoffs.",
-            "",
-            "## Current corrected statement",
-            "",
-            correction["statement"],
-            "",
-        ]
+        historical = correction["_forward_relation"] in {"corrects", "supersedes"}
+        if historical:
+            correction_block = [
+                '!!! warning "Replaced by current working mathematics"',
+                "    This stable-tag statement is retained as publication history. Use the",
+                f"    [current replacement](../research/working-mathematics/units/{unit_id}.md)",
+                "    for research and model handoffs.",
+                "",
+                "## Current replacement",
+                "",
+                correction["statement"],
+                "",
+            ]
+        else:
+            correction_block = [
+                '!!! info "A stronger current result is available"',
+                "    The statement below remains valid, and the",
+                f"    [stronger current unit](../research/working-mathematics/units/{unit_id}.md)",
+                "    gives the improved formulation.",
+                "",
+            ]
     lines = [
         "---",
         f"title: {_yaml(claim['title'])}",
@@ -866,7 +835,7 @@ def render_claim(
         *correction_block,
         *(
             []
-            if correction is not None
+            if historical
             or claim["statement"].strip() == claim["title"].strip()
             else [f'<p class="dek">{claim["statement"]}</p>', ""]
         ),
@@ -878,7 +847,7 @@ def render_claim(
         "",
         *(
             ["**Superseded legacy wording:**", ""]
-            if correction is not None
+            if historical
             else []
         ),
         claim["statement"],
@@ -968,6 +937,18 @@ def render_collection(
     corrections: dict[str, dict[str, Any]],
 ) -> str:
     coverage = page["manuscript_coverage"]["status"]
+    historical_updates = [
+        corrections[tag]
+        for tag in page["member_tags"]
+        if tag in corrections
+        and corrections[tag]["_forward_relation"] in {"corrects", "supersedes"}
+    ]
+    visible_description = (
+        "This historical package includes replaced atomic statements. Follow "
+        "the current-unit links below for reusable mathematics."
+        if historical_updates
+        else page["description"]
+    )
     lines = [
         "---",
         f"title: {_yaml(page['title'])}",
@@ -976,7 +957,7 @@ def render_collection(
         "",
         f"# {page['title']}",
         "",
-        f'<p class="dek">{page["description"]}</p>',
+        f'<p class="dek">{visible_description}</p>',
         "",
         f'<span class="status status-kind">{_human(page["kind"]).title()}</span> '
         f'<span class="status status-draft">{_human(page["public"]["release_state"]).title()}</span> '
@@ -984,7 +965,14 @@ def render_collection(
         "",
         "## Precise statement",
         "",
-        page["statement"],
+        *(
+            [
+                "This package contains one or more replaced atomic statements. "
+                "The current mathematical statements and forward links are listed below."
+            ]
+            if historical_updates
+            else [page["statement"]]
+        ),
         "",
         "## Claims in this result package",
         "",
@@ -992,6 +980,10 @@ def render_collection(
     for tag in page["member_tags"]:
         claim = claims[tag]
         correction = corrections.get(tag)
+        historical = correction is not None and correction[
+            "_forward_relation"
+        ] in {"corrects", "supersedes"}
+        member_title = "Replaced historical record" if historical else claim["title"]
         membership = next(
             item
             for item in claim["memberships"]
@@ -999,19 +991,29 @@ def render_collection(
         )
         lines.extend(
             [
-                f"### [{claim['tag']} · {claim['title']}](../claims/{claim['tag']}.md)",
+                f"### [{claim['tag']} · {member_title}](../claims/{claim['tag']}.md)",
                 "",
                 *(
-                    [
-                        '!!! warning "Superseded working statement"',
-                        "    Use the "
-                        f"[current corrected unit](../research/working-mathematics/units/{correction['unit_id']}.md).",
-                        "",
-                    ]
+                    (
+                        [
+                            '!!! warning "Replaced working statement"',
+                            "    The historical wording is suppressed here. Use the "
+                            f"[current replacement](../research/working-mathematics/units/{correction['unit_id']}.md).",
+                            "",
+                        ]
+                        if historical
+                        else [
+                            '!!! info "Stronger current result"',
+                            "    A "
+                            f"[stronger current unit](../research/working-mathematics/units/{correction['unit_id']}.md) "
+                            "is available.",
+                            "",
+                        ]
+                    )
                     if correction is not None
                     else []
                 ),
-                claim["statement"],
+                correction["statement"] if historical else claim["statement"],
                 "",
                 f"*{_human(membership['inclusion']).title()} · "
                 f"{_human(membership['role']).title()} · {_status_label(claim['status'])}*",
@@ -1128,11 +1130,12 @@ def render_all_claims(
     ]
     for claim in sorted(claims.values(), key=lambda item: item["tag"]):
         correction = corrections.get(claim["tag"])
-        suffix = (
-            f"; superseded by `{correction['unit_id']}`"
-            if correction is not None
-            else ""
-        )
+        suffix = ""
+        if correction is not None:
+            if correction["_forward_relation"] in {"corrects", "supersedes"}:
+                suffix = f"; replaced by `{correction['unit_id']}`"
+            else:
+                suffix = f"; strengthened by `{correction['unit_id']}`"
         lines.append(
             f"- [`{claim['tag']}`](../claims/{claim['tag']}.md) "
             f"**{claim['title']}** — {_status_label(claim['status'])}{suffix}"
@@ -1211,8 +1214,13 @@ def render_corrections(
                 "",
                 *(
                     [
-                        "**Current corrected statement:** "
-                        f"[{correction['unit_id']}](../research/working-mathematics/units/{correction['unit_id']}.md)",
+                        (
+                            "**Current replacement:** "
+                            if correction["_forward_relation"]
+                            in {"corrects", "supersedes"}
+                            else "**Stronger current result:** "
+                        )
+                        + f"[{correction['unit_id']}](../research/working-mathematics/units/{correction['unit_id']}.md)",
                         "",
                         correction["statement"],
                         "",
@@ -1558,6 +1566,10 @@ def expected_outputs(root: Path) -> dict[Path, str]:
             proof_sources,
             retained_v2[1],
         )
+    brief_manifest = _load(root / "data" / MODEL_BRIEFS_DATA_DIR / "manifest.json")
+    for item in brief_manifest.get("task_inputs", []):
+        source_path = root / "data" / MODEL_BRIEFS_DATA_DIR / item["source"]
+        outputs[docs / item["route"]] = source_path.read_text(encoding="utf-8")
     outputs[docs / "research/handoffs/release.json"] = (
         json.dumps(release, indent=2, sort_keys=True) + "\n"
     )
