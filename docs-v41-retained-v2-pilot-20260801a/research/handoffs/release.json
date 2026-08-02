@@ -3,7 +3,7 @@
     "claim_graph_manifest_sha256": "ff2e60ed912d9f75cdaf921f5cbbb0f98bba861d4b6c97e28c1a90c1cc54d96c",
     "manuscript_manifest_sha256": "1dc62b27aed48e4c42d440880056d5b9a028e6fabafe855ab71dd274151e94d9",
     "manuscript_source_manifest_sha256": "dfeb3c9db62614d852d7e273b3876a70b2c40e79ae820b4a01f22c17ebfbf943",
-    "model_brief_manifest_sha256": "f2c6f3a1f9f4914aedd697c9a2b644e00df070dbca6d7f2d326b282758133e42",
+    "model_brief_manifest_sha256": "15bb7b192996593c058c02664a8716f38b0321c257188b4ecefad18cf2736a9c",
     "retained_math_v2_manifest_sha256": "fdef2f7a0614a13248ecc4197ca4c4aefda8554d180a9579a0462362a22c90d3"
   },
   "counts": {
@@ -113,8 +113,8 @@
         "plane-boundary-obstructions"
       ],
       "route": "research/handoffs/intrinsic-degree-valuative-budgets/",
-      "source_sha256": "893f619e7d11cb96f89b089467013593a8a40046bd2c0d8d0d914aac32dcfa5a",
-      "source_words": 1449,
+      "source_sha256": "9b6174f22d8fcd47f8e7c9491cca29cec8adb7e5436871f8b9802953f858f63b",
+      "source_words": 1716,
       "title": "Intrinsic degree and valuative budgets"
     },
     {
