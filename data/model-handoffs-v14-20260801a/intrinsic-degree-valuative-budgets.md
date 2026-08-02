@@ -160,9 +160,10 @@ d_LR(iota) =
 
 This advances the valuative route by identifying the precise replacement
 problem.  The family of all valuations gives equality but is not effective.
-A useful theorem must extract a smaller computable family from the finite
-cover, conductor, relative-Jacobian divisor, or marked boundary while
-preserving a lower bound after minimization over all coordinate frames.
+A useful theorem must extract a computable infinite family or a global
+boundary object from the finite cover, conductor, relative-Jacobian divisor,
+or marked boundary while preserving a lower bound after minimization over all
+coordinate frames.
 
 More precisely, suppose a family `W(iota) subset V_infty(B)` satisfies the
 source-equivariance rule
@@ -184,7 +185,8 @@ is left-right invariant and satisfies `b_W(iota) <= d_LR(iota)`.  The concrete
 Lane 5 target is now:
 
 ```text
-construct W(iota) canonically and prove b_W(iota) > 6
+construct an infinite source-equivariant W(iota), or a global boundary norm,
+and prove the resulting orbit lower bound is greater than six
 for the fixed three-sheeted inclusion.
 ```
 
@@ -215,6 +217,56 @@ against:
 5. at least one nontrivially changed presentation of the same orbit.
 
 A counterexample to a candidate family is a useful Lane 5 result.
+
+### Finite-family dilution theorem
+
+**Theorem.** Assume `k` is infinite and let `W` be a finite family of
+valuations in `V_infty(B)`.  For every finite tuple of nonzero polynomials
+`f=(f1,...,fr)` in `B`,
+
+```text
+inf over polynomial coordinate frames x'
+sup over v in W of max_j delta_v(fj) / M_v(x') = 0.
+```
+
+**Proof.** For `v in W`, put `m_v=min_i v(xi)`.  Since `v` has a pole on
+`B`, one has `m_v<0`.  In the degree-`m_v` piece of the associated graded
+ring, the coefficient vectors of linear forms whose leading term cancels
+form a proper linear subspace of `k^3`.  A finite union of proper linear
+subspaces cannot cover `k^3`, so choose one linear form `ell` satisfying
+
+```text
+v(ell)=m_v<0
+```
+
+for every `v in W`.  Complete `ell` to a linear coordinate frame
+`(ell,y,z)`.  For all sufficiently large `N`, simultaneously for every
+`v in W`,
+
+```text
+N v(ell) < v(y),
+```
+
+and hence the unequal-valuation rule gives
+
+```text
+v(y+ell^N)=N v(ell).
+```
+
+Thus `(ell,y+ell^N,z)` is a polynomial coordinate frame with
+
+```text
+M_v(ell,y+ell^N,z) >= N delta_v(ell)
+```
+
+for every `v`.  The numerator is fixed, so the displayed supremum tends to
+zero as `N` tends to infinity.  ∎
+
+Consequently, the normalized budget `b_W` above is zero for every finite
+valuation family, even if that family is canonical and source-equivariant.
+A viable valuative budget must therefore use an infinite or non-finitely
+supported boundary object, change the normalization, or first restrict source
+frames by a proved non-degree-increasing canonicalization.
 
 ## Simplex/Rees collapse lemma
 
@@ -263,10 +315,12 @@ polynomial source coordinate frame, without increasing degree, to an indexed
 case or the residual unramified family.  Stop and preserve any triangular
 shear or wild frame outside the classification.
 
-**L5-T3 — Build a canonical valuation family.**  Extract `W(iota)` from the
-embedded finite cover and affine opening, prove the equivariance rule above,
-and compute `b_W` on the fixed map and changed presentations.  A value greater
-than six proves orbit-minimal degree seven for the fixed map.
+**L5-T3 — Build a canonical valuation system.**  Extract an infinite
+source-equivariant family, a boundary `b`-divisor norm, or another
+non-finitely-supported object from the embedded finite cover and affine
+opening.  Prove its transformation law and compute the resulting lower bound
+on the fixed map and changed presentations.  A value greater than six proves
+orbit-minimal degree seven for the fixed map.
 
 **L5-T4 — Residual theorem.**  After L5-T2 has established coverage, prove the
 filtered conormal, Wronskian, or conductor theorem for unramified
