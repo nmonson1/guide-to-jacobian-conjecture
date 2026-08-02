@@ -1,0 +1,496 @@
+\subsection{Formal effectivity of the quadratic modulus}
+\label{subsec:formal-effectivity-q-modulus}
+
+The preceding formal source-triviality result can be sharpened in two
+independent directions.  First, the framed root-translation equation has an
+exact annihilator and degree law over every coefficient ring.  Second, the
+resulting compatible Artin isomorphisms do not algebraize to a stable
+polynomial left--right equivalence over \(\C[[s]]\).  Thus the stable
+left--right groupoid itself fails formal effectivity at the quadratic
+modulus, even though the quantitative lower bound below is proved only in the
+framed translation groupoid.  The complete stable \(q\)-classification is
+the load-bearing input for generic-fiber nonexistence; the existing all-order
+coefficientwise formal source triviality is overlapping background sharpened
+by the explicit calculation below.  The exact annihilator law,
+nonalgebraizability, unrestricted complexity escape, and diagonal obstruction
+are the new deductions in this subsection.
+
+For a commutative \(\Q\)-algebra \(R\), let
+\[
+ A_\alpha(c)=c(1+\alpha c),\qquad
+ B_{\alpha,q}(c)=-2-4\alpha c+q\alpha^2c^2,
+\]
+and write \(F_{\alpha,q}=G_{A_\alpha,B_{\alpha,q}}\).  Put
+\(\delta=q'-q\).
+
+For \(\phi(c)\in cR[c]\), define
+\[
+ \Theta_\phi(x,y,z)=
+ \left(x,y+\phi(c),z-3\frac{\phi(c)}x\right),
+\]
+\[
+ \ell_\phi=3A\phi^2+2B\phi,
+ \qquad
+ \eta_\phi=A\phi^3+B\phi^2,
+\]
+and
+\[
+ \Xi_\phi(a,b,c)=
+ \left(a-\frac12\phi(c)b-\frac12\eta_\phi(c),
+       b+\ell_\phi(c),c\right).
+\]
+The source map is polynomial because \(c/x=2-3xy-x^2z\), fixes \(c\),
+and shifts \(t\) by \(\phi(c)\).  Direct expansion gives
+\begin{equation}
+\label{eq:q-pairwise-root-translation}
+ G_{A,B+3A\phi}=\Xi_\phi\circ G_{A,B}\circ\Theta_\phi.
+\end{equation}
+
+\begin{theorem}[Exact framed effectivity law]
+\label{thm:q-framed-effectivity-law}
+Let \(D\ge0\).  A \(c\)-fixed framed root translation of
+\(c\)-degree at most \(D\) carries \(F_{\alpha,q}\) to
+\(F_{\alpha,q'}\) if and only if
+\[
+ \delta\alpha^{D+2}=0.
+\]
+When it exists, it is unique and is given by
+\[
+ \phi_D(c)=\frac\delta3\alpha^2c
+ \sum_{j=0}^{D-1}(-\alpha c)^j,
+\]
+where the sum is empty for \(D=0\).  Before imposing the annihilator
+condition, the residual is exactly
+\[
+ B_{\alpha,q'}-B_{\alpha,q}-3A_\alpha\phi_D
+ =(-1)^D\delta\alpha^{D+2}c^{D+2}.
+\]
+Consequently, if
+\[
+ N=\min\{n\ge2:\delta\alpha^n=0\}
+\]
+exists, then \(N=2\) means that the frames already agree and the
+translation is zero; for \(N\ge3\), its exact degree is \(N-2\).  If no
+such \(N\) exists, there is no polynomial framed translation.
+\end{theorem}
+
+\begin{proof}
+The coefficient equation is
+\[
+ 3c(1+\alpha c)\phi(c)=\delta\alpha^2c^2.
+\]
+Canceling \(c\) and writing
+\(\phi=p_1c+\cdots+p_Dc^D\) gives
+\[
+ 3p_1=\delta\alpha^2,\qquad
+ p_i=-\alpha p_{i-1}\ (2\le i\le D),\qquad
+ \alpha p_D=0.
+\]
+Thus
+\[
+ p_i=\frac\delta3(-1)^{i-1}\alpha^{i+1},
+\]
+and the terminal equation is precisely
+\(\delta\alpha^{D+2}=0\).  This proves existence and uniqueness.  The
+finite geometric-series identity gives the displayed residual.  For \(N\ge3\), minimality makes the coefficient of \(c^{N-2}\)
+nonzero, proving the exact degree.  When \(N=2\), the frames already
+coincide and \(\phi=0\).
+\end{proof}
+
+\begin{proposition}[Exact framed orbit cokernel]
+\label{prop:q-framed-orbit-cokernel}
+Let
+\[
+ \mu_\alpha:cR[c]\longrightarrow c^2R[c],
+ \qquad \phi\longmapsto3A_\alpha\phi.
+\]
+Then
+\[
+ \operatorname{coker}(\mu_\alpha)
+ \simeq R[c]/(1+\alpha c),
+\]
+and the difference between the \(q'\)- and \(q\)-frames is the class
+\[
+ \frac{q'-q}{3}\alpha^2\bmod(1+\alpha c).
+\]
+For \(R=\C[[s]]\) and \(\alpha=s\), this cokernel is
+\[
+ \C[[s]][c]/(1+sc)\simeq\C((s)).
+\]
+It is nonzero, but its reduction modulo every \(s^M\), and hence its
+\(s\)-adic completion, is zero.
+\end{proposition}
+
+\begin{proof}
+Divide the source by \(c\), the target by \(c^2\), and the map by the unit
+three.  The resulting map is multiplication by \(1+\alpha c\).  In the
+special case, the quotient relation is \(c=-s^{-1}\), giving
+\(\C[[s]][1/s]=\C((s))\).  Since \(s\) is invertible there, all
+\(s\)-power quotients vanish.
+\end{proof}
+
+\begin{corollary}[Ramification and obstruction staircase]
+\label{cor:q-ramification-degree-law}
+Let \(R_M=\C[s]/(s^M)\), let
+\(\alpha=s^eu(s)\) with \(u(0)\ne0\), and let \(q\ne q'\).  The exact
+framed translation degree is
+\[
+ D_M=\max\left(0,\left\lceil\frac Me\right\rceil-2\right).
+\]
+For the unramified arc \(\alpha=s\), this is \(D_M=M-2\) for \(M\ge3\),
+and the optimal degree-\(D\) residual is
+\[
+ (-1)^D(q'-q)s^{D+2}c^{D+2}.
+\]
+For \(D\ge1\), the canonical source and target automorphisms in
+\eqref{eq:q-pairwise-root-translation} have exact ordinary degrees
+\[
+ \deg\Theta_{\phi_D}=4D,
+ \qquad
+ \deg\Xi_{\phi_D}=D+1.
+\]
+\end{corollary}
+
+\begin{proof}
+The nilpotence index of \(s^eu(s)\) in \(R_M\) is
+\(\lceil M/e\rceil\), so the first assertion follows from
+\cref{thm:q-framed-effectivity-law}.  The residual formula is its displayed
+identity with \(\alpha=s\).  Since \(c(x,y,z)\) has degree four and the top
+coefficient of \(\phi_D\) is nonzero, the source degree is \(4D\).  On the
+target the term \(\phi_D(c)b\) has degree \(D+1\), while nilpotence and the
+explicit formulas for \(\ell_\phi,\eta_\phi\) bound all remaining
+corrections by \(D\).
+\end{proof}
+
+The same degree survives the residual affine transformations of the
+normalized conductor chart.  Indeed, over a local ring with \(\alpha\) in
+the maximal ideal, suppose
+\[
+ C=uc+v,\qquad T=\nu t+h(c)
+\]
+satisfies
+\[
+ A_\alpha(C)\nu=\kappa A_\alpha(c),
+\qquad
+ B_{\alpha,q'}(C)+3A_\alpha(C)h(c)=
+ \kappa B_{\alpha,q}(c).
+\]
+Coefficient comparison gives
+\[
+ v=0,\quad \kappa=1,\quad \nu u=1,\quad
+ \alpha(u-1)=0,
+\]
+and then
+\[
+ h(c)=\frac{q-q'}{3u}\frac{\alpha^2c}{1+\alpha c}.
+\]
+Multiplication by the unit \(u^{-1}\) does not alter the exact degree in
+\cref{thm:q-framed-effectivity-law}.
+
+\begin{theorem}[Failure of formal effectivity in the stable groupoid]
+\label{thm:q-stable-formal-noneffectivity}
+Let
+\[
+ \mathcal F_q=F_{s,q}
+\]
+be regarded as a polynomial Keller map over \(\C[[s]]\).  If \(q\ne q'\),
+then:
+\begin{enumerate}[label=(\roman*)]
+\item for every \(M\ge1\), the reductions of
+\(\mathcal F_q\) and \(\mathcal F_{q'}\) modulo \(s^M\) are ordinarily
+polynomially left--right equivalent;
+\item these equivalences may be chosen compatibly in \(M\); but
+\item the two maps are not stably polynomially left--right equivalent over
+\(\C[[s]]\).
+\end{enumerate}
+Consequently the stable isomorphism functor is not formally effective at
+this pair of arcs.
+\end{theorem}
+
+\begin{proof}
+For \(M\le2\) the frames agree.  For \(M\ge3\), use
+\[
+ \phi_M(c)=\frac{q'-q}{3}s^2c
+ \sum_{j=0}^{M-3}(-sc)^j
+\]
+in \eqref{eq:q-pairwise-root-translation}.  The extra term in
+\(\phi_{M+1}\) is divisible by \(s^M\), so the equivalences are compatible.
+
+Suppose a stable polynomial equivalence existed over \(\C[[s]]\).  Base
+change to an algebraic closure \(L\) of \(\C((s))\).  The diagonal
+cubic-frame scaling normalizes the nonzero coefficient \(\alpha=s\) to
+\(\alpha=1\), so the two generic fibers become \(G_q\) and \(G_{q'}\)
+over \(L\).
+
+Fix the stabilization dimension and the finite degrees of the polynomial
+automorphisms and their inverses in this alleged equivalence.  Their
+coefficients form an \(L\)-point of a finite-type affine \(\C\)-scheme cut
+out by the inverse-composition equations and the left--right identity.  Since
+\(\C\) is algebraically closed, nonemptiness gives a \(\C\)-point.  That
+would be a stable polynomial equivalence between \(G_q\) and \(G_{q'}\)
+over \(\C\), contradicting the complete \(q\)-classification.
+\end{proof}
+
+\subsection{Effective unframed complexity lower bounds}
+\label{subsec:q-effective-unframed-bound}
+
+The preceding framed calculation has a linear degree law.  We now give a
+weaker but completely unframed lower bound.  No recovery of the cubic frame,
+conductor chart, or escaping section is assumed.
+
+Fix distinct \(q,q'\in\C\), put
+\[
+ F_q=G_{c(1+sc),\,-2-4sc+qs^2c^2},
+ \qquad R_M=\C[s]/(s^M),
+\]
+and fix a stabilization dimension \(m\ge0\) and a degree bound \(b\ge1\).
+Set
+\[
+ n=3+m,\qquad
+ T(n,b)=\binom{n+b}{n},\qquad
+ N(n,b)=4nT(n,b),
+\]
+\[
+ d_b=\max\{b+1,11\},\qquad h_b=2b.
+\]
+
+Introduce coefficient variables for four polynomial maps
+\[
+ \Phi,\Phi^{-1},\Psi,\Psi^{-1}:\A^n\longrightarrow\A^n
+\]
+of degree at most \(b\).  Their two-sided inverse equations and the stable
+left--right identity
+\[
+ (F_{q'}\times\id_{\A^m})\circ\Phi
+ =\Psi\circ(F_q\times\id_{\A^m})
+\]
+define an affine scheme \(E_{m,b}\) over \(\C[s]\).  It has
+\(N=N(n,b)\) coefficient variables.  Every defining equation \(f_i\) obeys
+\[
+ \deg_X(f_i)\le d_b,
+ \qquad
+ \deg_s(f_i)\le h_b.
+\]
+Indeed, a composition-inverse coefficient has degree at most \(b+1\) in the
+unknown coefficients; substitution into the degree-eleven map has coefficient
+degree at most eleven; and a degree-\(b\) monomial in coordinates whose
+coefficients have \(s\)-degree at most two has \(s\)-degree at most \(2b\).
+
+\begin{lemma}[Reduction to \(N+1\) constant combinations]
+\label{lem:q-N-plus-one-combinations}
+Let \(k\) be an infinite field and
+\(f_1,\ldots,f_r\in k[s,X_1,\ldots,X_N]\) have no common zero over
+\(\overline{k(s)}\).  There are constants \(\lambda_{ji}\in k\),
+\(0\le j\le N\), such that
+\[
+ g_j=\sum_i\lambda_{ji}f_i
+\]
+are nonconstant in the \(X\)-variables and have no common zero over
+\(\overline{k(s)}\).
+\end{lemma}
+
+\begin{proof}
+Over \(K=\overline{k(s)}\), let \(\Lambda=(\lambda_{ji})\) range over
+\(\A_K^{(N+1)r}\), and consider the incidence scheme
+\[
+ I=\left\{(x,\Lambda):
+ \sum_i\lambda_{ji}f_i(x)=0\text{ for }0\le j\le N\right\}.
+\]
+For each \(x\), the vector \((f_1(x),\ldots,f_r(x))\) is nonzero.  Each row
+of \(\Lambda\) therefore satisfies one nontrivial linear equation, and
+\[
+ \dim I\le N+(N+1)(r-1)=(N+1)r-1.
+\]
+The closure of its projection to the coefficient space is proper.  Requiring
+a row not to produce an element of \(k[s]\) removes only a proper linear
+subspace.  Hence a nonempty open set of tuples works over \(k(s)\).
+
+This open contains a tuple with entries in \(k\).  Choose a nonzero polynomial
+over \(k(s)\) vanishing on the bad closed set and clear denominators.  A
+nonzero polynomial in \(k[s,\Lambda]\) cannot vanish at every constant point
+of \(k^{(N+1)r}\), since \(k\) is infinite.
+\end{proof}
+
+The generic fiber of \(E_{m,b}\) is empty.  Otherwise, after extension to an
+algebraic closure of \(\C(s)\), diagonal scaling would normalize \(s\ne0\)
+and give a stable equivalence between \(G_q\) and \(G_{q'}\).  With \(m\)
+and \(b\) fixed, such an equivalence is a point of a finite-type scheme over
+\(\C\); a point over an extension field would yield a complex point,
+contradicting the complete stable \(q\)-classification.
+
+Apply \cref{lem:q-N-plus-one-combinations} to obtain \(N+1\) polynomials
+\(g_0,\ldots,g_N\) with no generic common zero and with the same degree
+bounds.  The parametric effective Nullstellensatz
+\cite[Theorem~0.5]{dAndreaKrickSombra2013} supplies
+\(0\ne\alpha_{m,b}(s)\in\C[s]\) and \(a_j\in\C[s,X]\) such that
+\[
+ \alpha_{m,b}(s)=\sum_{j=0}^{N}a_jg_j
+\]
+and
+\[
+ \deg_s\alpha_{m,b}
+ \le\sum_{\ell=0}^{N}
+ \left(\prod_{j\ne\ell}\deg_Xg_j\right)\deg_sg_\ell
+ \le (N+1)d_b^Nh_b.
+\]
+
+\begin{theorem}[Effective unframed truncation bound]
+\label{thm:q-effective-unframed-truncation-bound}
+If the two reductions modulo \(s^M\) admit a stable polynomial left--right
+equivalence with exactly \(m\) stabilization variables and with
+\[
+ \deg\Phi,\deg\Phi^{-1},\deg\Psi,\deg\Psi^{-1}\le b,
+\]
+then
+\[
+ \boxed{
+ M\le H(m,b):=
+ 2b\bigl(N(n,b)+1\bigr)d_b^{N(n,b)}.}
+\]
+\end{theorem}
+
+\begin{proof}
+An \(R_M\)-point of \(E_{m,b}\) annihilates every \(g_j\).  Evaluation of
+the Bezout identity gives \(\alpha_{m,b}(s)=0\) in \(R_M\).  Since
+\(\alpha_{m,b}\ne0\),
+\[
+ M\le\ord_s\alpha_{m,b}
+ \le\deg_s\alpha_{m,b}
+ \le2b(N+1)d_b^N.
+\]
+\end{proof}
+
+\begin{corollary}[Fixed-stabilization degree rate]
+\label{cor:q-fixed-stabilization-degree-rate}
+Let \(b_{M,m}\) be the least common degree bound for an equivalence and its
+four automorphism maps using exactly \(m\) added variables, and put
+\(n=3+m\).  Then
+\[
+ \liminf_{M\to\infty}
+ \frac{b_{M,m}}{(\log M/\log\log M)^{1/n}}
+ \ge\left(\frac{n!}{4}\right)^{1/n}.
+\]
+In particular,
+\[
+ b_{M,0}\ge
+ \left(\frac32\frac{\log M}{\log\log M}\right)^{1/3}(1-o(1)).
+\]
+\end{corollary}
+
+\begin{proof}
+For fixed \(n\),
+\[
+ N(n,b)=4n\binom{n+b}{n}
+ =\frac4{(n-1)!}b^n+O_n(b^{n-1}),
+\]
+so
+\[
+ \log H(m,b)
+ =\frac4{(n-1)!}b^n\log b+O_n(b^n).
+\]
+Asymptotic inversion gives the result.
+\end{proof}
+
+\begin{corollary}[Stabilization--degree tradeoff]
+\label{cor:q-stabilization-degree-tradeoff}
+Every such equivalence satisfies
+\[
+ M\le
+ 2b\bigl(32(m+3)2^{m+b}+1\bigr)
+ (b+11)^{32(m+3)2^{m+b}},
+\]
+and consequently
+\[
+ m+b\ge\frac{\log\log M}{\log2}
+       -O(\log\log\log M).
+\]
+\end{corollary}
+
+\begin{proof}
+Use
+\(\binom{n+b}{n}\le2^{n+b}=2^{m+b+3}\), hence
+\(N(n,b)\le32(m+3)2^{m+b}\), and substitute in
+\cref{thm:q-effective-unframed-truncation-bound}.
+\end{proof}
+
+\begin{corollary}[Explicit unrestricted complexity rate]
+\label{cor:q-unrestricted-complexity-rate}
+Let
+\[
+ \kappa_M(q,q')=
+ \min\max\{m,\deg\Phi,\deg\Phi^{-1},
+              \deg\Psi,\deg\Psi^{-1}\}
+\]
+over all stable polynomial equivalences modulo \(s^M\).  Then
+\[
+ \boxed{
+ \kappa_M(q,q')
+ \ge\frac{\log\log M}{\log4}
+      -O(\log\log\log M),}
+\]
+or equivalently
+\[
+ \boxed{
+ \liminf_{M\to\infty}
+ \frac{\kappa_M(q,q')}{\log\log M}\ge\frac1{\log4}.}
+\]
+More explicitly, \(\kappa_M(q,q')\le B\) implies
+\[
+ M\le
+ 2B\bigl(32(B+3)4^B+1\bigr)
+ (B+11)^{32(B+3)4^B}.
+\]
+\end{corollary}
+
+The result is deliberately worst-case: it treats the coefficients of four
+bounded polynomial maps as independent variables and applies general
+elimination.  It nevertheless proves an explicit rate for arbitrary stable
+equivalences, with no frame-recovery hypothesis.  The sharp linear lower
+bound remains a geometric problem.  The explicit framed construction gives
+\(\kappa_M(q,q')\le4M-8\); matching this requires an intrinsic Artin-base
+recovery theorem for the escaping-boundary chart.
+
+The same non-effectivity argument works over an integral
+\(\C\)-algebra \(R\) that is complete and separated for the
+\(\alpha\)-adic topology, with \(\alpha\) a nonzero nonunit and
+\(q,q'\in\C\) distinct.  Strictness of the powers of \(\alpha\) gives exact
+framed degree \(M-2\) modulo \(\alpha^M\), and a complete-base stable
+equivalence would contradict the complex generic-fiber classification after
+finite-type descent.
+
+The compatible framed translations have the unique limit
+\[
+ \widehat\phi(c)=\frac{q'-q}{3}\frac{s^2c}{1+sc}
+ =\frac{q'-q}{3}\sum_{j\ge0}(-1)^js^{j+2}c^{j+1}.
+\]
+It lies in \(c\C[c][[s]]\), the \(s\)-adic completion of
+\(c\C[s,c]\), but not in \(c\C[[s]][c]\).  Equivalently, if
+\(\mathcal I_D(M)\) denotes framed isomorphisms of translation degree at
+most \(D\), then
+\[
+ \varprojlim_M\varinjlim_D\mathcal I_D(M)\ne\varnothing,
+ \qquad
+ \varinjlim_D\varprojlim_M\mathcal I_D(M)=\varnothing.
+\]
+Thus completion and the bounded-degree filtration do not commute.
+
+\begin{corollary}[Obstruction to an affine finite-presentation diagonal]
+\label{cor:q-no-affine-fp-moduli-diagonal}
+No algebraic stack can represent this stable polynomial left--right
+groupoid near the two arcs, with its exact isomorphism notion, and have an
+affine diagonal locally of finite presentation.
+\end{corollary}
+
+\begin{proof}
+If such a stack existed, the isomorphism space between the two
+\(\C[[s]]\)-objects would be affine of finite presentation, say
+\(\Spec A\).  Since \(A\) is finitely presented and
+\(\C[[s]]=\varprojlim_M\C[s]/(s^M)\), one has
+\[
+ \Hom(A,\C[[s]])
+ \simeq
+ \varprojlim_M\Hom(A,\C[s]/(s^M)).
+\]
+The compatible Artin isomorphisms would therefore algebraize, contradicting
+\cref{thm:q-stable-formal-noneffectivity}.
+\end{proof}
