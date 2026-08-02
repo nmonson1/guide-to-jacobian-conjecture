@@ -1,0 +1,38 @@
+name: Lane 7 source inventory
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/lane7-source-inventory.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Locate first-normal and dimension-five source files
+        shell: bash
+        run: |
+          mkdir -p build
+          {
+            echo "# filenames"
+            find . -type f \
+              | grep -Ei 'first[-_ ]?normal|normal[-_ ]?first|dimension[-_ ]?five|full[-_ ]?kernel' \
+              | sort || true
+            echo
+            echo "# text matches"
+            grep -RInE --exclude-dir=.git \
+              'first[- ]normal|first_normal|60,61|125,126|n5-first-normal|n5-regular-family' \
+              . || true
+          } > build/lane7-source-inventory.txt
+          sed -n '1,240p' build/lane7-source-inventory.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lane7-source-inventory
+          path: build/lane7-source-inventory.txt
+          if-no-files-found: error
