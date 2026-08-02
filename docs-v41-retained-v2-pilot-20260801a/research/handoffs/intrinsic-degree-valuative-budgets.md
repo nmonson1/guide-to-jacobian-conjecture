@@ -94,10 +94,17 @@ research-notes/lane5-degree-budgets/
 with SHA-256-pinned Python and JSON files. This is a theorem for the standard
 source filtration, not for arbitrary source automorphisms.
 
-### Exact bounded elementary-shear family
+The theorem transports through every affine source automorphism `L`, because
+`L` preserves the ordinary-degree filtration:
 
-The same fiber method now certifies 42 non-affine source presentations:
-the six coefficient-one shears
+```text
+L(k[P,Q,R]) intersect k[x,y,z]_(<=6) = span_k{1,L(Q),L(R)}.
+```
+
+### Exact elementary-shear progress
+
+The same fiber method certifies 42 non-affine source presentations: the six
+coefficient-one shears
 
 ```text
 z -> z+x^N, y -> y+x^N, x -> x+y^N,
@@ -106,18 +113,30 @@ z -> z+y^N, y -> y+z^N, x -> x+z^N
 
 for `2<=N<=8`. In every case the degree-six intersection is either `k` or
 `span_k{1,sigma(R)}`; the certificate has rank 83 or 82 respectively.
-Therefore none contains a degree-six target coordinate frame. This is an
-exact bounded family, not coverage of arbitrary coefficients, exponents,
-compositions, or wild automorphisms. The verifier and expected minors are in
-the same research-note directory.
+Therefore none contains a degree-six target coordinate frame.
 
-The older `delta(Q) <= 9` packets concern other listed normalized source
-filtrations. Their definition of `delta(Q)`, complete case inventory,
-localizations, saturations, and artifact locators are still not present in
-this public repository. The unramified `delta(Q) >= 10` family is a stated
-residual family, but closing it would not prove orbit minimality without a
-coverage theorem routing every source frame to the listed cases or residual
-family without increasing degree.
+The source torus of weights `(-1,1,2)` preserves the image subalgebra and
+conjugates a monomial-shear coefficient `c` by
+`c -> c*lambda^(w_i-w(m))`. Thus the coefficient-one certificates extend to
+every nonzero coefficient except the resonant family `z -> z+c*y^2`. In that
+family a selected maximal minor is a nonzero polynomial `Delta(c)` of degree
+at most 126, so
+
+```text
+sigma_c(k[P,Q,R]) intersect k[x,y,z]_(<=6)
+  = span_k{1,sigma_c(R)}
+```
+
+for all but finitely many coefficients. The exact proof and scope are in
+`research-notes/lane5-degree-budgets/coefficient_transport.md`.
+
+These are exact affine and elementary-shear families, not coverage of
+arbitrary exponents, compositions, or wild automorphisms. The older
+`delta(Q) <= 9` packets concern other normalized filtrations, but their
+definition, case inventory, localizations, saturations, and artifact locators
+are still absent from this public repository. Closing the residual unramified
+`delta(Q) >= 10` family would also be insufficient without a source-frame
+coverage theorem.
 
 ### Exact orbit-degree criterion
 
@@ -215,7 +234,7 @@ coordinate pole orders, the value semigroup, or the affine opening.
 **L5-T1 — Recover the remaining filtration contract.** Define `delta(Q)`,
 publish the complete case inventory, localizations, saturations, extraction
 lemma, and replay commands. Reconcile those packets with the exact
-standard-source theorem above.
+standard-source and elementary-shear theorems above.
 
 **L5-T2 — Prove source-frame coverage or find a counterexample.** Route every
 polynomial source frame, without increasing degree, to an indexed case or the
