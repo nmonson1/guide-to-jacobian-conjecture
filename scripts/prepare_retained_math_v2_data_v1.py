@@ -91,6 +91,14 @@ def main() -> int:
     parser.add_argument("--updated-at", required=True)
     parser.add_argument("--argument-id", required=True)
     parser.add_argument("--task-id", required=True)
+    parser.add_argument(
+        "--base-v1-source",
+        type=Path,
+        help=(
+            "Public v1 graph used to validate the selection; defaults to the "
+            "v1 release selected by site-state.json"
+        ),
+    )
     args = parser.parse_args()
 
     source = args.source.resolve()
@@ -162,8 +170,11 @@ def main() -> int:
         obligations, obligation_ids, "obligations"
     )
 
-    state = load_site_state(ROOT)
-    legacy_data = ROOT / "data" / state["retained_math"]["data_dir"]
+    if args.base_v1_source is None:
+        state = load_site_state(ROOT)
+        legacy_data = ROOT / "data" / state["retained_math"]["data_dir"]
+    else:
+        legacy_data = args.base_v1_source.resolve()
     legacy_graph = _load(legacy_data / "public-graph.json")
     if graph.get("base_registry", {}).get("registry_id") != legacy_graph.get(
         "registry_id"

@@ -561,7 +561,7 @@ def main() -> int:
             failures.append(f"{brief['route']}: missing canonical snapshot")
         if SITE_STATE["release_id"] not in rendered_text:
             failures.append(f"{brief['route']}: snapshot names the wrong release")
-        if '!!! tip "Current text proofs — preferred"' not in rendered_text:
+        if '!!! tip "Current proof sources — preferred"' not in rendered_text:
             failures.append(f"{brief['route']}: missing preferred text-proof notice")
         expected_headings = (
             (

@@ -25,8 +25,8 @@ The active local release candidate contains:
 - 368 stable-tagged atomic claim pages, all included in site search but kept
   out of the main navigation;
 - 534 many-to-many claim memberships across six research programs;
-- 565 retained working-mathematics units, 544 supplied support objects, and
-  32 typed relations across six overlapping program views;
+- 564 retained working-mathematics units, 544 supplied support objects, and
+  48 typed relations across six overlapping program views;
 - six version-13 reader PDFs and one companion Results and Research Register;
 - ten primary model entrypoints under `/research/handoffs/`: one portfolio
   hub plus nine first-class research lanes. Six longer program dossiers remain
@@ -55,6 +55,13 @@ The active local release candidate contains:
   public interval stays
   \(4\leq D_{\min}\leq 7\), and the state page names exhaustive
   message-to-claim reconciliation as the next post-import audit;
+- a 2 August Lane 1 repair that replaces the former short flatness handoff
+  with the exact defect module and hypotheses, the canonical/noncanonical
+  source-splitting distinction, the missing local resolvent reduction, the
+  corrected `U0/U1/U2/B` boundary taxonomy, six graph-backed reusable units,
+  complete proof bodies, the exact ADE checker, and scoped next tasks. The
+  existing Program 5 first-class argument pilot is rebased unchanged onto
+  the enlarged graph;
 - 76 collections with complete manuscript coverage, nine with partial
   coverage, and 19 for which manuscript coverage is not applicable;
 - 21 context-only private records, not exported.
@@ -82,7 +89,7 @@ manuscript links are rendered from that same pointer.
 
 The two mathematical components have different jobs. The 368 stable-tag
 claim pages preserve the legacy publication pipeline and durable public URLs;
-the 565-unit retained graph is the current progress-facing corpus for research
+the 564-unit retained graph is the current progress-facing corpus for research
 models. A retained `corrects` relation is rendered programmatically on the
 affected legacy claim and collection pages, so historical wording cannot
 silently outrank its current working replacement. Advancing either component
@@ -100,7 +107,7 @@ surfaces are:
   and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-handoffs-v13-20260801b/`: hash-pinned sanitized source for
+- `data/model-handoffs-v15-20260802b/`: hash-pinned sanitized source for
   the hub, nine lane entrypoints, and six program dossiers; logical manuscript
   slots resolve against the selected manuscript manifest, so a stale PDF
   version fails the build;

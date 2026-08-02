@@ -303,7 +303,7 @@ def run(
                 )
                 require(
                     desktop.locator(
-                        '.admonition-title:has-text("Current text proofs")'
+                        '.admonition-title:has-text("Current proof sources")'
                     ).count()
                     == 1,
                     f"model handoff lacks text-proof notice: {route}",

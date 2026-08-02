@@ -188,12 +188,15 @@ def _proof_entrypoint(
 
 def render_proof_source_page(item: dict[str, Any], source: str) -> str:
     relative = item["path"]
-    language = "bibtex" if relative.endswith(".bib") else "tex"
+    language = {
+        ".bib": "bibtex",
+        ".py": "python",
+    }.get(Path(relative).suffix, "tex")
     back = "../" * len(Path(relative).parent.parts) + "index.md"
     lines = [
         "---",
         f"title: {_yaml('Text proof source — ' + relative)}",
-        f"description: {_yaml('Sanitized current source with exact TeX-label anchors.')}",
+            f"description: {_yaml('Sanitized current source with exact labels when present.')}",
         "---",
         "",
         "# Text proof source",
@@ -201,8 +204,9 @@ def render_proof_source_page(item: dict[str, Any], source: str) -> str:
         f"`manuscripts/{relative}`",
         "",
         "This is the current sanitized source text used by the retained working "
-        "graph. Comments and private locators are omitted; mathematical content "
-        "and line numbering are preserved. PDFs are optional reading copies.",
+        "graph. TeX comments and private locators are omitted; mathematical "
+        "content and line numbering are preserved. PDFs are optional reading "
+        "copies.",
         "",
         f"Published SHA-256: `{item['sha256']}` · {item['size_bytes']:,} bytes",
         "",
@@ -794,8 +798,8 @@ def render_model_brief(
         ).relative_to("research/proof-sources").as_posix()
     source_note = [
         "",
-        '!!! tip "Current text proofs — preferred"',
-        "    Use the [current TeX source and exact label anchors]"
+        '!!! tip "Current proof sources — preferred"',
+        "    Use the [current source text and exact labels]"
         f"({source_target}) for full proof context. PDFs are optional archival",
         "    reading copies and may predate source repairs.",
     ]
