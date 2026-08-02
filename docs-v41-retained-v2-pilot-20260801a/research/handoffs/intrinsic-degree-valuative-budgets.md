@@ -94,6 +94,23 @@ research-notes/lane5-degree-budgets/
 with SHA-256-pinned Python and JSON files. This is a theorem for the standard
 source filtration, not for arbitrary source automorphisms.
 
+### Exact bounded elementary-shear family
+
+The same fiber method now certifies 42 non-affine source presentations:
+the six coefficient-one shears
+
+```text
+z -> z+x^N, y -> y+x^N, x -> x+y^N,
+z -> z+y^N, y -> y+z^N, x -> x+z^N
+```
+
+for `2<=N<=8`. In every case the degree-six intersection is either `k` or
+`span_k{1,sigma(R)}`; the certificate has rank 83 or 82 respectively.
+Therefore none contains a degree-six target coordinate frame. This is an
+exact bounded family, not coverage of arbitrary coefficients, exponents,
+compositions, or wild automorphisms. The verifier and expected minors are in
+the same research-note directory.
+
 The older `delta(Q) <= 9` packets concern other listed normalized source
 filtrations. Their definition of `delta(Q)`, complete case inventory,
 localizations, saturations, and artifact locators are still not present in
