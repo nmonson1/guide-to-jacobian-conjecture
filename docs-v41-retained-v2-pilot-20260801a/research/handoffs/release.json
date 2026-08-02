@@ -3,7 +3,7 @@
     "claim_graph_manifest_sha256": "ff2e60ed912d9f75cdaf921f5cbbb0f98bba861d4b6c97e28c1a90c1cc54d96c",
     "manuscript_manifest_sha256": "1dc62b27aed48e4c42d440880056d5b9a028e6fabafe855ab71dd274151e94d9",
     "manuscript_source_manifest_sha256": "dfeb3c9db62614d852d7e273b3876a70b2c40e79ae820b4a01f22c17ebfbf943",
-    "model_brief_manifest_sha256": "03fe88fbdf75e2320fc31a942151b9db49255674e57d6129c17496f2d59208cd",
+    "model_brief_manifest_sha256": "045ecac88da802327dc765cb936af66df057d82b6b0d3112f7ec4f76cba2c5f5",
     "retained_math_v2_manifest_sha256": "fdef2f7a0614a13248ecc4197ca4c4aefda8554d180a9579a0462362a22c90d3"
   },
   "counts": {
@@ -38,8 +38,8 @@
       "program_slug": "state-of-the-program",
       "related_programs": [],
       "route": "research/handoffs/state-of-the-program/",
-      "source_sha256": "d868936ba45b85f17e95b461e05304e4063bae0c6c3234e4e665d1f16222f80c",
-      "source_words": 3910,
+      "source_sha256": "70c4508f933e65cd802110b2baee0381759f9b5f13787630e6c7afe957581937",
+      "source_words": 4054,
       "title": "State of the Jacobian Research Program"
     },
     {
@@ -113,8 +113,8 @@
         "plane-boundary-obstructions"
       ],
       "route": "research/handoffs/intrinsic-degree-valuative-budgets/",
-      "source_sha256": "dd3b93e4521350f845077df4ec821d85c7117f3886bf4ce5188071880e092840",
-      "source_words": 426,
+      "source_sha256": "e111156334a01b6e090ec07778193b70c100979128319d605767ce18905730f8",
+      "source_words": 1454,
       "title": "Intrinsic degree and valuative budgets"
     },
     {
@@ -379,5 +379,5 @@
   "schema_version": 1,
   "site_release_id": "living-guide-public-v41-retained-v2-pilot",
   "timezone": "America/Los_Angeles",
-  "updated_at": "2026-08-01T23:00:00+00:00"
+  "updated_at": "2026-08-02T00:10:00+00:00"
 }
