@@ -1,25 +1,34 @@
 #!/usr/bin/env python3
-"""Exact symbolic checks for the Pluecker-chart marking transport."""
+"""Exact symbolic checks for the Lane 7 Pluecker marking transport."""
 
 from __future__ import annotations
 
 import itertools
+
 import sympy as sp
 
-lam = sp.symbols("lambda0:5")
-mu = sp.symbols("mu0:5")
-ell = sp.symbols("ell0:5")
+u = sp.symbols("u0:5")
+v = sp.symbols("v0:5")
+d = sp.symbols("d", nonzero=True)
+b = sp.symbols("b0:25")
+B = sp.Matrix(5, 5, b)
 
 
-def eta(i: int, j: int) -> sp.Expr:
-    return sp.expand(lam[i] * mu[j] - lam[j] * mu[i])
+def eta(i: int, j: int, second: tuple[sp.Expr, ...] | list[sp.Expr] = v) -> sp.Expr:
+    return sp.expand(u[i] * second[j] - u[j] * second[i])
 
 
 def main() -> int:
-    for i, j, k, l in itertools.combinations(range(5), 4):
-        relation = eta(i, j) * eta(k, l) - eta(i, k) * eta(j, l) + eta(i, l) * eta(j, k)
+    # The five quadratic equations for Gr(2,5).
+    for i, j, k, ell in itertools.combinations(range(5), 4):
+        relation = (
+            eta(i, j) * eta(k, ell)
+            - eta(i, k) * eta(j, ell)
+            + eta(i, ell) * eta(j, k)
+        )
         assert sp.expand(relation) == 0
 
+    # Every independent pair lies in one of these ten normalized charts.
     for i, j in itertools.combinations(range(5), 2):
         denominator = eta(i, j)
         p = [sp.cancel(eta(r, j) / denominator) for r in range(5)]
@@ -30,23 +39,32 @@ def main() -> int:
         assert sp.cancel(q[j] - 1) == 0
 
         expected_p = [
-            sp.cancel((mu[j] * lam[r] - lam[j] * mu[r]) / denominator)
+            sp.cancel((v[j] * u[r] - u[j] * v[r]) / denominator)
             for r in range(5)
         ]
         expected_q = [
-            sp.cancel((-mu[i] * lam[r] + lam[i] * mu[r]) / denominator)
+            sp.cancel((-v[i] * u[r] + u[i] * v[r]) / denominator)
             for r in range(5)
         ]
         assert all(sp.cancel(x - y) == 0 for x, y in zip(p, expected_p))
         assert all(sp.cancel(x - y) == 0 for x, y in zip(q, expected_q))
 
-        zeta = [sum(ell[r] * eta(r, s) for r in range(5)) for s in range(5)]
-        ell_p = sum(ell[r] * p[r] for r in range(5))
-        ell_q = sum(ell[r] * q[r] for r in range(5))
-        assert sp.cancel(ell_p - zeta[j] / denominator) == 0
-        assert sp.cancel(ell_q + zeta[i] / denominator) == 0
+    # On D(d), Theorem C reconstructs v=-d^{-1}Bu. Thus
+    # d*eta_ij=-(u_i(Bu)_j-u_j(Bu)_i) for every Pluecker coordinate.
+    Bu = B * sp.Matrix(u)
+    reconstructed_v = tuple(sp.cancel(-entry / d) for entry in Bu)
+    for i, j in itertools.combinations(range(5), 2):
+        phi = sp.expand(u[i] * Bu[j] - u[j] * Bu[i])
+        transported = sp.cancel(d * eta(i, j, reconstructed_v) + phi)
+        assert transported == 0
 
-    print("verified 5 Pluecker relations and all 10 normalized charts")
+    # The formerly normalized affine open is precisely eta_34 on v4=1.
+    assert sp.expand(eta(3, 4).subs(v[4], 1) - (u[3] - u[4] * v[3])) == 0
+
+    print(
+        "verified 5 Pluecker relations, all 10 normalized charts, "
+        "and d*eta_ij=-Phi_ij for the projective-kernel reconstruction"
+    )
     return 0
 
 
