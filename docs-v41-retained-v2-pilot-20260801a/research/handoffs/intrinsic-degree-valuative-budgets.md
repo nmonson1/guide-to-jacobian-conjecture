@@ -59,7 +59,7 @@ This lane overlaps [Program 2](minimum-degree-and-quartic-exclusions.md),
 [Program 6](plane-boundary-obstructions.md).  It may also constrain the
 realization problem in [Lane 6](homogeneous-realization-compression.md).
 
-## Scope repair for the existing filtration calculation
+## Reusable mathematics
 
 For a fixed source automorphism `sigma`, define
 
