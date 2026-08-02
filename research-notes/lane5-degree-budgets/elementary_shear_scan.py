@@ -101,10 +101,6 @@ def determinant_mod(matrix: list[list[int]]) -> int:
     return determinant % PRIME
 
 
-def dot(left: list[Fraction], right: list[Fraction]) -> Fraction:
-    return sum((a * b for a, b in zip(left, right)), Fraction(0))
-
-
 def constant_vector() -> list[Fraction]:
     vector = [Fraction(0)] * len(MONOMIALS)
     vector[INDEX[(0, 0, 0)]] = 1
@@ -129,7 +125,10 @@ def sheared_r_vector(kind: str, exponent: int) -> list[Fraction] | None:
     else:
         return None
     coefficients[monomial] = coefficients.get(monomial, Fraction(0)) + coefficient
-    if any(sum(monomial) > BOUND and coefficient for monomial, coefficient in coefficients.items()):
+    if any(
+        sum(monomial) > BOUND and coefficient
+        for monomial, coefficient in coefficients.items()
+    ):
         return None
     vector = [Fraction(0)] * len(MONOMIALS)
     for monomial, coefficient in coefficients.items():
@@ -193,7 +192,10 @@ def verify_case(
     if len(basis) != target_rank:
         raise AssertionError(f"{kind}, N={exponent}: target rank not reached")
     pivots = sorted(basis)
-    if pivots != [int(value) for value in expected["pivot_columns"]]:
+    nonpivots = [
+        column for column in range(len(MONOMIALS)) if column not in set(pivots)
+    ]
+    if nonpivots != [int(value) for value in expected["nonpivot_columns"]]:
         raise AssertionError(f"{kind}, N={exponent}: pivot columns changed")
 
     modular_rows = [
