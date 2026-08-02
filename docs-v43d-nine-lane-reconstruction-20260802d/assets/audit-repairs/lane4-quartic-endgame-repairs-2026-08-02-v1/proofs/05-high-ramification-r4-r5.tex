@@ -1,0 +1,456 @@
+\subsection{A complete high-ramification theorem}
+\label{subsec:complete-high-ramification}
+
+Throughout this subsection the ground field is algebraically closed of
+characteristic zero.  Put
+\[
+ K_\epsilon=H_4+\epsilon H_3+\epsilon^2H_2+\epsilon^3H_1,
+ \qquad
+ D_j=[\epsilon^j]\det JK_\epsilon .
+\]
+For a Keller map, \(D_0=\cdots=D_8=0\) and
+\(D_9=\det JH_1\ne0\).
+
+Assume that the preceding reductions place the map in the primitive
+coprime binary-pencil locus
+\[
+ H_4=(P,Q,0),\qquad P,Q\in k[x,y]_4,
+ \qquad R=(H_3)_3\in k[x,y]_3,
+\]
+with
+\[
+ U=J(Q,R),\qquad V=J(P,R),\qquad W=J(P,Q)
+\]
+all nonzero.  Write
+\[
+ \Delta=\gcd(U,V,W),\qquad
+ U=\Delta u,\quad V=\Delta v,\quad W=\Delta w,
+ \qquad r=\deg\Delta.
+\]
+The planar minors give the Hilbert--Burch syzygy
+\begin{equation}
+ u\,dP-v\,dQ+w\,dR=0,
+ \label{eq:r4-hb-syzygy}
+\end{equation}
+where
+\[
+ \deg u=\deg v=5-r,
+ \qquad
+ \deg w=6-r.
+\]
+
+\begin{theorem}[Primitive binary high ramification]
+\label{thm:complete-binary-high-ramification}
+In the preceding primitive coprime binary-pencil locus, if
+\(r\ge4\), then \(F\) is a polynomial automorphism.
+\end{theorem}
+
+\begin{proof}
+Since \(U,V\ne0\), one has \(r\le5\).  We treat \(r=5\) and
+\(r=4\) separately.
+
+\medskip
+\noindent
+\textbf{The case \(r=5\).}
+Here \(u,v\) are constants and \(w\) is linear.  Set
+\(S=uP-vQ\).  Equation \eqref{eq:r4-hb-syzygy} gives
+\[
+ dS=-w\,dR,
+ \qquad
+ dw\wedge dR=0.
+\]
+Homogeneity therefore yields
+\[
+ R=cw^3,
+ \qquad
+ S=-\frac{3c}{4}w^4.
+ \tag{H.1}
+\]
+The full third coordinate has degree three and cubic part \(cw^3\).
+The cubic-coordinate lemma straightens it while retaining \(w\) as one of
+the two residual source coordinates.  The coordinate with leading part
+\(-3cw^4/4\) then has residual plane degree at most nine: its degree-four
+part is a polynomial in \(w\), while every term involving the eliminated
+source variable has original degree at most three.  The two-variable
+Appelgate--Onishi theorem, with its two key lemmas supplied by
+Nowicki--Nakai, applies because \(9=3^2\).  Hence the residual plane map,
+and therefore \(F\), is an automorphism.
+
+\medskip
+\noindent
+\textbf{The case \(r=4\): dependent linear syzygies.}
+Now \(u,v\) are linear and \(w\) is quadratic.  Suppose first that
+\(u,v\) are dependent.  After changing the target basis of
+\(\langle P,Q\rangle\), equation \eqref{eq:r4-hb-syzygy} becomes
+\[
+ \ell\,dS+w\,dR=0,
+ \qquad
+ 4\ell S+3wR=0,                         \tag{H.2}
+\]
+with \(\ell\) linear.  If \(\ell\mid w\), write \(w=\ell m\).
+Then \(dS=-m\,dR\), so \(dm\wedge dR=0\), and homogeneity again gives
+\[
+ R=cm^3,
+ \qquad
+ S=-\frac{3c}{4}m^4.
+\]
+This is the aligned situation (H.1).
+
+If \(\ell\nmid w\), the Euler identity in (H.2) forces
+\(R=\ell T\).  Substitution into (H.2) gives
+\[
+ d\!\left(\frac{\ell^4T}{w^3}\right)=0,
+ \qquad
+ \ell^4T=cw^3.
+\]
+Because \(\gcd(\ell,w)=1\), this is impossible in the unique
+factorization domain \(k[x,y]\).  Thus the dependent branch is closed.
+
+\medskip
+\noindent
+\textbf{The case \(r=4\): independent linear syzygies.}
+Suppose now that \(u,v\) are independent.  A target change in
+\(\langle P,Q\rangle\), followed by a source change in \((x,y)\), lets
+us choose the two factors of the reduced quadratic \(w\) as the residual
+linear syzygies.  If \(w\) is a square, the formulas below show that
+\(P,Q\) have a common linear factor, contrary to primitivity.  Hence we
+may normalize
+\[
+ u=x,
+ \qquad
+ v=y,
+ \qquad
+ w=xy.
+\]
+Euler contraction and differentiation of
+\(x\,dP-y\,dQ+xy\,dR=0\) give
+\begin{equation}
+ P=-\frac14y^2R_y,
+ \qquad
+ Q=\frac14x^2R_x.                       \tag{H.3}
+\end{equation}
+Write
+\[
+ R=ax^3+bx^2y+cxy^2+dy^3.
+\]
+Coprimality of \(P,Q\) is equivalent to
+\[
+ a\ne0,
+ \qquad
+ d\ne0,
+ \qquad
+ \operatorname{Disc}(R)\ne0.           \tag{H.4}
+\]
+The common ramification quartic is
+\begin{equation}
+\begin{aligned}
+2\Gamma={}&3abx^4+(9ac+b^2)x^3y+(18ad+4bc)x^2y^2\\
+&\quad +(9bd+c^2)xy^3+3cdy^4,
+\end{aligned}
+\tag{H.5}
+\end{equation}
+and direct differentiation gives
+\[
+ J(Q,R)=x\Gamma,
+ \qquad
+ J(P,R)=y\Gamma,
+ \qquad
+ J(P,Q)=xy\Gamma.                       \tag{H.6}
+\]
+
+Write
+\[
+ H_3=(A,B,R),
+ \qquad
+ H_2=(C,D,E).
+\]
+The coefficient \(D_2=0\), together with (H.6), is
+\[
+ xA_z-yB_z+xyE_z=0.
+\]
+Consequently there are linear forms \(\ell,m\in k[x,y,z]_1\) such that
+\[
+ A_z=y(\ell-m/2),
+ \qquad
+ B_z=x(\ell+m/2),
+ \qquad
+ E_z=m.                                 \tag{H.7}
+\]
+Write \(\ell=\ell_0+\lambda z\) and \(m=m_0+\mu z\), with
+\(\ell_0,m_0\in k[x,y]_1\).  The extreme coefficients of
+\([z^3]D_3\) are
+\[
+ [y^0][z^3]D_3=\frac38a(2\lambda-\mu)^2x^3,
+ \qquad
+ [x^0][z^3]D_3=\frac38d(2\lambda+\mu)^2y^3.
+\]
+Condition (H.4) therefore gives \(\lambda=\mu=0\).  Thus
+\(\ell,m\) are binary.
+
+Put
+\[
+ \mathcal A=6R,
+ \qquad
+ \mathcal B=-3ax^3-bx^2y+cxy^2+3dy^3,
+ \qquad
+ \mathcal C=\frac12(3ax^3+bx^2y+cxy^2+3dy^3).
+\]
+One has the exact identity
+\begin{equation}
+ \mathcal A\mathcal C-\mathcal B^2=4xy\Gamma.       \tag{H.8}
+\end{equation}
+If \(u_2,v_2\) denote the coefficients of \(z^2\) in the first two
+components of \(H_2\), then the coefficient of \(z\) in \(D_3\) is
+\begin{equation}
+ \mathcal Q_{\ell,m}+2\Gamma(u_2x-v_2y),
+ \qquad
+ \mathcal Q_{\ell,m}
+ =\frac12(\mathcal A\ell^2+2\mathcal B\ell m+\mathcal C m^2).
+ \tag{H.9}
+\end{equation}
+In particular,
+\begin{equation}
+ \Gamma\mid\mathcal Q_{\ell,m}.         \tag{H.10}
+\end{equation}
+
+\smallskip
+\noindent
+\emph{Squarefree \(\Gamma\).}
+At a root of a squarefree \(\Gamma\), the symmetric matrix
+\[
+ M=\begin{pmatrix}\mathcal A&\mathcal B\\
+                   \mathcal B&\mathcal C\end{pmatrix}
+\]
+has rank one.  It cannot vanish there: otherwise Euler's identity would
+make that point a repeated root of \(R\), contrary to (H.4).  Hence
+(H.10) implies that \((\ell,m)^T\) lies in the kernel of \(M\) at every
+root of \(\Gamma\).  Since the two entries of
+\(M(\ell,m)^T\) have degree four, there are constants \(\alpha,\beta\)
+with
+\[
+ M\binom{\ell}{m}=\Gamma\binom{\alpha}{\beta}.
+\]
+Multiplication by the adjugate matrix and use of (H.8) give
+\[
+ 4xy\ell=\mathcal C\alpha-\mathcal B\beta,
+ \qquad
+ 4xym=-\mathcal B\alpha+\mathcal A\beta.
+\]
+Restriction to \(y=0\) gives \(\alpha+2\beta=0\), while restriction to
+\(x=0\) gives \(\alpha-2\beta=0\).  Thus
+\(\alpha=\beta=0\) and \(\ell=m=0\).
+
+It remains to treat repeated \(\Gamma\).
+
+\smallskip
+\noindent
+\emph{A repeated root away from \(xy=0\).}
+A diagonal source change moves such a root to \([1:1]\).  The equations
+\(\Gamma(1,1)=\partial_x\Gamma(1,1)=0\) have two components.  Their
+eliminant is
+\begin{equation}
+ (b+2c+3d)
+ (b^2+6bc+18bd+3c^2+12cd)=0.             \tag{H.11}
+\end{equation}
+On the first component, (H.4) forces
+\[
+ b=-2c-3d,
+ \qquad
+ a=c+2d,
+\]
+so \(R_x(1,1)=R_y(1,1)=0\), again contradicting primitivity.
+
+The second component is the proper rational conic
+\begin{equation}
+\begin{aligned}
+[a:b:c:d]=[&-(3u+2v)(3u^2+6uv+v^2):\\
+&6u(3u+2v)(2u+3v):\\
+&6v(3u+2v)(2u+3v):\\
+&-(u^2+6uv+3v^2)(2u+3v)].
+\end{aligned}
+\tag{H.12}
+\end{equation}
+The four coordinates in (H.12) have no common projective zero, and the
+inverse on the dense chart is \([u:v]=[b:c]\); hence (H.12) includes its
+projective endpoints.  On the affine chart \(t=v/u\), put
+\begin{equation}
+\begin{aligned}
+ a&=-(2t+3)(t^2+6t+3),\\
+ b&=6(2t+3)(3t+2),\\
+ c&=6t(2t+3)(3t+2),\\
+ d&=-(3t+2)(3t^2+6t+1).
+\end{aligned}
+\tag{H.13}
+\end{equation}
+Then
+\begin{equation}
+ \Gamma=-9(2t+3)(3t+2)(x-y)^2G_{2,t},   \tag{H.14}
+\end{equation}
+where
+\begin{equation}
+\begin{aligned}
+G_{2,t}={}&(2t^3+15t^2+24t+9)x^2\\
+&+(6t^4+49t^3+90t^2+49t+6)xy\\
+&+(9t^4+24t^3+15t^2+2t)y^2.
+\end{aligned}
+\tag{H.15}
+\end{equation}
+The relevant discriminants are
+\begin{align}
+ \operatorname{Disc}(R)
+ &=3375(t+1)^6(2t+3)^2(3t+2)^2(3t^2+14t+3),
+ \tag{H.16}\\
+ \operatorname{Disc}(G_{2,t})
+ &=(t+1)^2(2t+3)(3t+2)
+   (2t^2+11t+2)(3t^2+14t+3),             \tag{H.17}\\
+ G_{2,t}(1,1)
+ &=15(t+1)^2(t^2+3t+1).                  \tag{H.18}
+\end{align}
+Thus, on the primitive locus, the only special residual divisors are the
+\(3+1\) divisor \(t^2+3t+1=0\) and the internal \(2+2\) divisor
+\(2t^2+11t+2=0\).  The projective point \(t=\infty\) is equivalent to
+\(t=0\) under \(x\leftrightarrow y\), since
+\[
+ t^3(a,b,c,d)(1/t)=(d,c,b,a)(t).
+\]
+
+Away from the internal \(2+2\) divisor, exact row reduction of (H.10),
+including the \(3+1\) specialization, gives the unique projective
+first-normal direction
+\begin{equation}
+\begin{aligned}
+ \ell&=h\bigl((t^2+6t+3)x-(3t^2+6t+1)y\bigr),\\
+ m&=2h(t+1)\bigl((t+9)x+(9t+1)y\bigr).
+\end{aligned}
+\tag{H.19}
+\end{equation}
+Equation (H.9) then fixes
+\[
+ u_2=-\frac{2h^2(2t+3)}{3(3t+2)},
+ \qquad
+ v_2=\frac{2h^2t(3t+2)}{3(2t+3)}.
+\]
+All unrestricted binary terms and all remaining lower coefficients drop out
+of the next highest normal coefficient, which factors as
+\begin{equation}
+\begin{aligned}
+ [z^2]D_4={}&
+ \frac{24h^3(t+1)}{(2t+3)(3t+2)}\\
+ &\quad\cdot
+ \bigl((2t+3)^2(4t+1)x+(t+4)(3t+2)^2y\bigr)G_{2,t}.
+\end{aligned}
+\tag{H.20}
+\end{equation}
+Every scalar and polynomial factor in (H.20) is nonzero on the primitive
+locus.  Hence \(h=0\).
+
+On the internal \(2+2\) divisor, work over
+\[
+ K=k[t]/(2t^2+11t+2).
+\]
+The complete first-normal space is two-dimensional:
+\begin{equation}
+\begin{aligned}
+ L_0&=h,&
+ L_1&=\frac{4t}{11}h-\frac3{22}k,\\
+ M_0&=\frac{70}{11}h-
+       \left(2+\frac{4t}{11}\right)k,&
+ M_1&=k,
+\end{aligned}
+\tag{H.21}
+\end{equation}
+where \(\ell=L_0x+L_1y\) and \(m=M_0x+M_1y\).  After solving (H.9), the
+extreme coefficients of \([z^2]D_4\) are
+\begin{align}
+ [x^3z^2]D_4
+ &=\frac{12096}{1331}
+ \left(h-\frac{2t+11}{24}k\right)^2
+ \left(h+\frac{5(2t+11)}{56}k\right),       \tag{H.22}\\
+ [y^3z^2]D_4
+ &=-\frac{126(117t+22)}{1331}
+ \left(h-\frac{2t+11}{2}k\right)^2
+ \left(h+\frac{2t+11}{42}k\right).          \tag{H.23}
+\end{align}
+Both \(2t+11\) and \(117t+22\) are units in \(K\).  The projective root
+sets
+\[
+ \left\{\frac1{24},-\frac5{56}\right\},
+ \qquad
+ \left\{\frac12,-\frac1{42}\right\}
+\]
+are disjoint, so (H.22)--(H.23) imply \(h=k=0\).
+
+\smallskip
+\noindent
+\emph{A repeated root on \(xy=0\).}
+If \(\Gamma\) has a repeated root at either endpoint, (H.4)--(H.5) force
+\(b=c=0\).  After diagonal rescaling, take
+\[
+ R=x^3+y^3,
+ \qquad
+ \Gamma=9x^2y^2.
+\]
+The complete solution of (H.10) is
+\[
+ \ell=px+qy,
+ \qquad
+ m=2px-2qy,
+ \qquad
+ \frac{\mathcal Q_{\ell,m}}{\Gamma}
+ =\frac43(q^2x+p^2y).
+\]
+After solving (H.9), the next coefficient is
+\[
+ [z^2]D_4=8q^3x^3-8p^3y^3,
+\]
+so \(p=q=0\).
+
+We have now proved in every projective stratum that the first normal layer
+vanishes.  Thus \(A,B,E\) are binary.  Returning to \(D_3=0\), the most
+general remaining quadratic normal layer is
+\[
+ C=C_0(x,y)+\alpha yz,
+ \qquad
+ D=D_0(x,y)+\beta xz,
+ \qquad
+ (H_1)_3=L_{31}x+L_{32}y+(\beta-\alpha)z.
+\]
+The coefficient of \(z\) in \(D_5\), independently of every unrestricted
+binary lower term, is
+\begin{equation}
+\begin{aligned}
+\frac12\bigl(&6a\alpha^2x^3
+ +(3b\alpha^2+2b\alpha\beta+b\beta^2)x^2y\\
+&+(c\alpha^2+2c\alpha\beta+3c\beta^2)xy^2
+ +6d\beta^2y^3\bigr).
+\end{aligned}
+\tag{H.24}
+\end{equation}
+The extreme coefficients and (H.4) give \(\alpha=\beta=0\).
+Consequently all nonlinear terms of \(F\) are binary.
+
+The third column of the invertible linear part is nonzero.  A target-linear
+change sends it to \(e_3\), after which
+\[
+ F=(G_1(x,y),G_2(x,y),z+G_3(x,y)).
+\]
+The pair \((G_1,G_2)\) is a plane Keller map of degree at most four, so the
+same Appelgate--Onishi--Nowicki--Nakai theorem makes it an automorphism.
+This completes the proof.
+\end{proof}
+
+\begin{remark}[Evidence boundary]
+All identities from (H.3) through (H.24), the projective conic
+parametrization, the generic and \(3+1\) row reductions, the complete
+\(2+2\) kernel, and the endpoint calculation are reconstructed by the
+standalone exact checker
+\begin{center}
+\texttt{verify\_r4\_high\_ramification.py}.
+\end{center}
+It keeps arbitrary lower terms whenever they could enter the quoted
+coefficient, uses exact rational arithmetic, makes no random
+specializations, and divides only by factors explicitly excluded by
+primitivity.  The structural Hilbert--Burch reduction into
+\eqref{eq:r4-hb-syzygy} and the upstream routing into the primitive binary
+locus remain separate inputs.
+\end{remark}
