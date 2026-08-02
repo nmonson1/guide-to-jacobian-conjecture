@@ -90,7 +90,7 @@ manuscript links are rendered from that same pointer.
 
 The two mathematical components have different jobs. The 368 stable-tag
 claim pages preserve the legacy publication pipeline and durable public URLs;
-the 569-unit retained graph is the current progress-facing corpus for research
+the 570-unit retained graph is the current progress-facing corpus for research
 models. A retained `corrects` relation is rendered programmatically on the
 affected legacy claim and collection pages, so historical wording cannot
 silently outrank its current working replacement. Advancing either component
@@ -108,9 +108,11 @@ surfaces are:
   and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-handoffs-v18-20260802d/`: hash-pinned sanitized source for
+- `data/model-handoffs-v19-20260802a/`: hash-pinned sanitized source for
   the hub, nine lane entrypoints, six program dossiers, nine exact research
-  source packets, and the focused Lane 7 and Lane 8 executable inputs; logical
+  source packets, and the focused Lane 7 and Lane 8 executable inputs. The
+  Lane 8 packet also exposes the incomplete planar-descent strategy and its
+  six exact bounded no-go checkers; logical
   manuscript slots resolve against the selected manuscript manifest, so a
   stale PDF version fails the build;
 - `scripts/check_deployed_site.py`: production verification that GitHub Pages

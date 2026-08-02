@@ -1,7 +1,7 @@
 {
   "schema_version": 4,
-  "release_id": "living-guide-public-v45d-fourteen-share-assimilation",
-  "updated_at": "2026-08-02T19:00:00+00:00",
+  "release_id": "living-guide-public-v46-planar-descent-strategy",
+  "updated_at": "2026-08-02T21:15:00+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,19 +22,19 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-handoffs-v18-20260802d",
-    "manifest_sha256": "9ee964e9a845c9043655409c9c65570237e60e61a7eddabad1a7bb2f87aabf0e",
+    "data_dir": "model-handoffs-v19-20260802a",
+    "manifest_sha256": "03585335f7c84d553b7216f51cc0bb9bc6f8ebfad8536bcfd4825730992c2091",
     "expected_count": 16
   },
   "retained_math": {
-    "data_dir": "retained-math-v1-20260802c",
-    "manifest_sha256": "cef93378f043ce9f0f7ce2dbcfae1d01eaeb2fc693c79ae76e3edf91d97109d6",
-    "expected_units": 569,
+    "data_dir": "retained-math-v1-20260802d",
+    "manifest_sha256": "961aa2b4c932c7b96f0d61fbd0377c183d838a542223b082f5ca87e087c18e44",
+    "expected_units": 570,
     "expected_programs": 6
   },
   "retained_math_v2": {
-    "data_dir": "retained-math-v2-20260802c",
-    "manifest_sha256": "8c98e1bc2576bbb625b72175961ad5300c5353c7b8bd8e97d2e2eb7ac157e071",
+    "data_dir": "retained-math-v2-20260802d",
+    "manifest_sha256": "60ee3aeb44fb1e125826c22e2cc885ba2049773bdfec29ef6e43a984f83742af",
     "expected_units": 3,
     "expected_arguments": 1,
     "expected_evidence": 3,
@@ -42,12 +42,12 @@
     "expected_tasks": 1
   },
   "manuscript_sources": {
-    "data_dir": "manuscript-sources-v1-20260802d",
-    "manifest_sha256": "487bfa1a4f66c19516e8b69d9afba8732ca9b20b2fd1236a6f88bf8f80bbc4b2",
+    "data_dir": "manuscript-sources-v1-20260802e",
+    "manifest_sha256": "c2ca64a7756cadc90e5f9b15586256392828c7a303b2843584e8beca9c315583",
     "expected_files": 39,
     "expected_labels": 642
   },
-  "docs_dir": "docs-v45-nine-lane-intake-20260802e",
+  "docs_dir": "docs-v46-planar-descent-strategy-20260802a",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,

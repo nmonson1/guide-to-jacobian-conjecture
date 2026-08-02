@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare a write-once public release from pinned private v4/v5/v6b lanes."""
+"""Prepare a write-once public release from pinned private v4/v5/v6 lanes."""
 
 from __future__ import annotations
 
@@ -183,6 +183,13 @@ RESEARCH_PACKET_FILES = {
         "lane8-proof-queue-20260802-v1/truncated_support_certificate.py",
         "lane8-proof-queue-20260802-v1/queue.seed.json",
         "lane8-proof-queue-20260802-v1/truncated_support_certificate.json",
+        "planar-descent-no-go-20260802-v1/README.md",
+        "planar-descent-no-go-20260802-v1/three_dimensional_descent_no_go.py",
+        "planar-descent-no-go-20260802-v1/affine_plane_linear_projection_no_go.py",
+        "planar-descent-no-go-20260802-v1/y_graph_descent_no_go.py",
+        "planar-descent-no-go-20260802-v1/linear_target_coordinate_fibres.py",
+        "planar-descent-no-go-20260802-v1/hc4_linear_descent_no_go.py",
+        "planar-descent-no-go-20260802-v1/hc4_square_correction_no_go.py",
     ),
     "plane-chart-correspondence-global-attachment": (
         "lane9-wall-shear-20260802-v1/LANE9_CONTINUATION_V3_REPORT.md",
@@ -623,7 +630,7 @@ def _public_lane_source(
         source = source.replace(LANE6_SUMMARY, f"\n\n{LANE6_MARKER}")
     elif handoff_version == 4 and "retained-math-v2-selection:" in source:
         raise ValueError(f"unexpected retained-math v2 marker in {slug}")
-    elif handoff_version in {5, "6b"}:
+    elif handoff_version in {5, "6b", "6c"}:
         expected_markers = 1 if slug == "homogeneous-realization-compression" else 0
         if source.count("retained-math-v2-selection:") != expected_markers:
             raise ValueError(f"{slug}: retained-math v2 marker count changed")
@@ -651,11 +658,11 @@ def _public_lane_source(
         ),
         source,
     )
-    if handoff_version == "6b":
+    if handoff_version in {"6b", "6c"}:
         if jacobian_commit is None or not re.fullmatch(r"[0-9a-f]{40}", jacobian_commit):
-            raise ValueError("v6b requires a full 40-character Jacobian commit")
+            raise ValueError("v6 requires a full 40-character Jacobian commit")
         if source_packet_route is None:
-            raise ValueError("v6b requires a public source-packet route")
+            raise ValueError("v6 requires a public source-packet route")
 
         def research_note_link(match: re.Match[str]) -> str:
             path = match.group("path")
@@ -739,22 +746,22 @@ def main() -> int:
     parser.add_argument("--updated-at", required=True)
     parser.add_argument(
         "--jacobian-commit",
-        help="Full Jacobian source commit containing the v6b packets",
+        help="Full Jacobian source commit containing the v6 packets",
     )
     parser.add_argument(
         "--research-notes-root",
         type=Path,
-        help="Research-note root used to build public v6b source pages",
+        help="Research-note root used to build public v6 source pages",
     )
     parser.add_argument(
         "--lane7-packet",
         type=Path,
-        help="Manifest-pinned exact collision packet required for v5/v6b",
+        help="Manifest-pinned exact collision packet required for v5/v6",
     )
     parser.add_argument(
         "--lane8-packet",
         type=Path,
-        help="Pinned raw-support reconstruction directory required for v5/v6b",
+        help="Pinned raw-support reconstruction directory required for v5/v6",
     )
     args = parser.parse_args()
 
@@ -776,20 +783,20 @@ def main() -> int:
 
     lane_manifest = _load(lane_manifest_path)
     handoff_version = lane_manifest.get("handoff_version")
-    if handoff_version not in {4, 5, "6b"} or lane_manifest.get("lane_count") != 9:
-        raise ValueError("source manifest must select exactly nine v4, v5, or v6b lanes")
-    if handoff_version in {5, "6b"} and (
+    if handoff_version not in {4, 5, "6b", "6c"} or lane_manifest.get("lane_count") != 9:
+        raise ValueError("source manifest must select exactly nine v4, v5, or v6 lanes")
+    if handoff_version in {5, "6b", "6c"} and (
         args.lane7_packet is None or args.lane8_packet is None
     ):
         raise ValueError("v5 requires --lane7-packet and --lane8-packet")
-    if handoff_version == "6b" and args.jacobian_commit is None:
-        raise ValueError("v6b requires --jacobian-commit")
-    if handoff_version == "6b" and args.research_notes_root is None:
-        raise ValueError("v6b requires --research-notes-root")
-    if handoff_version != "6b" and args.jacobian_commit is not None:
-        raise ValueError("--jacobian-commit is accepted only for v6b")
-    if handoff_version != "6b" and args.research_notes_root is not None:
-        raise ValueError("--research-notes-root is accepted only for v6b")
+    if handoff_version in {"6b", "6c"} and args.jacobian_commit is None:
+        raise ValueError("v6 requires --jacobian-commit")
+    if handoff_version in {"6b", "6c"} and args.research_notes_root is None:
+        raise ValueError("v6 requires --research-notes-root")
+    if handoff_version not in {"6b", "6c"} and args.jacobian_commit is not None:
+        raise ValueError("--jacobian-commit is accepted only for v6")
+    if handoff_version not in {"6b", "6c"} and args.research_notes_root is not None:
+        raise ValueError("--research-notes-root is accepted only for v6")
     if handoff_version == 4 and (
         args.lane7_packet is not None or args.lane8_packet is not None
     ):
@@ -822,7 +829,7 @@ def main() -> int:
             jacobian_commit=args.jacobian_commit,
             source_packet_route=(
                 f"lane-{sequence}-source-packet.md"
-                if handoff_version == "6b"
+                if handoff_version in {"6b", "6c"}
                 else None
             ),
         )
@@ -867,10 +874,10 @@ def main() -> int:
         raise ValueError("retained-math v2 marker selection changed")
 
     task_inputs: list[tuple[bytes, dict[str, Any]]] = []
-    if handoff_version in {5, "6b"}:
+    if handoff_version in {5, "6b", "6c"}:
         assert args.lane7_packet is not None
         assert args.lane8_packet is not None
-        if handoff_version == "6b":
+        if handoff_version in {"6b", "6c"}:
             assert args.research_notes_root is not None
             assert args.jacobian_commit is not None
             notes_root = args.research_notes_root.resolve()
@@ -895,7 +902,7 @@ def main() -> int:
         with (output / item["source"]).open("xb") as handle:
             handle.write(payload)
     manifest = {
-        "schema_version": 6 if handoff_version == "6b" else handoff_version,
+        "schema_version": 6 if handoff_version in {"6b", "6c"} else handoff_version,
         "release_id": args.release_id,
         "updated_at": args.updated_at,
         "base_release": {

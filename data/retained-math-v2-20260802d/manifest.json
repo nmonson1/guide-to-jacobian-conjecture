@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "arguments": 1,
+    "evidence": 3,
+    "obligations": 1,
+    "tasks": 1,
+    "units": 3
+  },
+  "files": [
+    {
+      "path": "selection.json",
+      "sha256": "8aa70c4e584bf5852e6cdf70c71e17c46810a98884df58da0b4c3d7cccde961a",
+      "size_bytes": 21585
+    }
+  ],
+  "release_id": "retained-math-v2-planar-descent-strategy",
+  "schema_version": 1,
+  "selection_id": "SEL-ARG-RMU5D8E0003-FINITE-PLANE",
+  "source_manifest_sha256": "bb0ff23adffbb04376c98a71baa00c01bb1cc35bf5fc3be5f215f9996b7beb6b",
+  "source_public_graph_sha256": "9546baa872edb16859fec34fdec0d2d13f4d9d83f6c1b894359abfaddd746f41",
+  "source_registry_id": "RETAINED2-54cd1a742f7f",
+  "updated_at": "2026-08-02T21:15:00+00:00"
+}

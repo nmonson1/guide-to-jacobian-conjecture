@@ -524,6 +524,12 @@ def main() -> int:
                 "## Included files",
                 "Private-source commit:",
             )
+            if sequence == "8":
+                source_packet_markers += (
+                    "planar-descent-no-go-20260802-v1/README.md",
+                    "Status: incomplete proof strategy",
+                    "hc4_square_correction_no_go.py",
+                )
         for marker in (*markers_by_id.get(input_id, ()), *source_packet_markers):
             if marker not in text:
                 failures.append(f"{item['source']}: missing {marker!r}")
@@ -588,6 +594,17 @@ def main() -> int:
                         f"{brief['source']}: lane does not link its public "
                         "research source packet"
                     )
+                if brief.get("lane_sequence") == 8:
+                    for marker in (
+                        "idea for a proof, but not fully proved",
+                        "RMU-6D8E0011",
+                        "not a theorem and not a proof",
+                    ):
+                        if marker not in source_text:
+                            failures.append(
+                                f"{brief['source']}: incomplete strategy lacks "
+                                f"explicit boundary {marker!r}"
+                            )
             marker_ids = re.findall(
                 r"<!-- retained-math-v2-selection:([A-Z0-9-]+) -->",
                 source_text,
