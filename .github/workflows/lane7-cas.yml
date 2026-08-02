@@ -107,6 +107,7 @@ jobs:
           M2 --version
       - name: Test the corank-two locus on D(d) over F_101
         run: |
+          set -o pipefail
           cat > build/i4-char101.m2 <<'EOF'
           load "build/lane7-char101-local.m2";
           print "I4_CHAR101_BEGIN";
@@ -118,7 +119,7 @@ jobs:
           assert unit4;
           print "I4_CHAR101_END";
           EOF
-          M2 --script build/i4-char101.m2 | tee build/i4-char101.log
+          M2 --script build/i4-char101.m2 2>&1 | tee build/i4-char101.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -147,6 +148,7 @@ jobs:
           M2 --version
       - name: Compute localized maximal-minor data over F_101
         run: |
+          set -o pipefail
           cat > build/i5-char101.m2 <<'EOF'
           load "build/lane7-char101-local.m2";
           print "I5_CHAR101_BEGIN";
@@ -164,7 +166,7 @@ jobs:
           assert(codim5 == 7);
           print "I5_CHAR101_END";
           EOF
-          M2 --script build/i5-char101.m2 | tee build/i5-char101.log
+          M2 --script build/i5-char101.m2 2>&1 | tee build/i5-char101.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
