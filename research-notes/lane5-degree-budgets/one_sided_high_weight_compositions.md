@@ -172,8 +172,9 @@ lies in either of these two infinite affine-extended subgroups. Since its
 displayed degree is seven, its orbit-minimal degree is exactly seven within
 both restricted orbit classes.
 
-The subgroups are nonabelian: their generators may change different
-coordinates and may be composed in arbitrary order.
+`G_+` is nonabelian because its generators may change interacting
+coordinates. The two negative families commute with one another, so `G_-` is
+abelian.
 
 ## Exact-intersection refinement
 
