@@ -54,6 +54,7 @@ FORBIDDEN = (
     "private_locator",
     "artifact_group_id",
     "INTAKE-",
+    "github.com/nmonson1/jacobian-research",
 )
 FORBIDDEN_PATTERNS = (
     re.compile(
@@ -468,6 +469,20 @@ def main() -> int:
         "LANE8-RAW-SUPPORT-RECONSTRUCTION-V1",
     }:
         failures.append("handoff v5 must expose the exact Lane 7 and Lane 8 inputs")
+    if brief_manifest.get("schema_version") == 6:
+        expected_source_packets = {
+            f"LANE{sequence}-RESEARCH-SOURCE-PACKET-V1"
+            for sequence in range(1, 10)
+        }
+        expected_inputs = expected_source_packets | {
+            "LANE7-COLLISION-CHART-V1",
+            "LANE8-RAW-SUPPORT-RECONSTRUCTION-V1",
+        }
+        if {item.get("input_id") for item in task_inputs} != expected_inputs:
+            failures.append(
+                "handoff v6 must expose nine research packets and the exact "
+                "Lane 7 and Lane 8 inputs"
+            )
     for item in task_inputs:
         source = MODEL_BRIEF_DATA / item["source"]
         rendered = DOCS / item["route"]
@@ -496,7 +511,20 @@ def main() -> int:
                 "## Complete reconstruction program",
             ),
         }
-        for marker in markers_by_id.get(item.get("input_id"), ()):
+        input_id = str(item.get("input_id", ""))
+        source_packet_match = re.fullmatch(
+            r"LANE(?P<sequence>[1-9])-RESEARCH-SOURCE-PACKET-V1",
+            input_id,
+        )
+        source_packet_markers: tuple[str, ...] = ()
+        if source_packet_match is not None:
+            sequence = source_packet_match.group("sequence")
+            source_packet_markers = (
+                f"# Lane {sequence} exact research source packet",
+                "## Included files",
+                "Private-source commit:",
+            )
+        for marker in (*markers_by_id.get(input_id, ()), *source_packet_markers):
             if marker not in text:
                 failures.append(f"{item['source']}: missing {marker!r}")
     brief_routes: set[str] = set()
@@ -551,6 +579,15 @@ def main() -> int:
                     )
             if ".md)" not in source_text:
                 failures.append(f"{brief['source']}: lane has no deeper route")
+            if brief_manifest.get("schema_version") == 6:
+                expected_packet = (
+                    f"lane-{brief['lane_sequence']}-source-packet.md"
+                )
+                if expected_packet not in source_text:
+                    failures.append(
+                        f"{brief['source']}: lane does not link its public "
+                        "research source packet"
+                    )
             marker_ids = re.findall(
                 r"<!-- retained-math-v2-selection:([A-Z0-9-]+) -->",
                 source_text,

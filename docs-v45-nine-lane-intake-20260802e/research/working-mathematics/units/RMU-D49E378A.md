@@ -1,0 +1,16 @@
+# Quadratic coordinate
+
+`RMU-D49E378A` · `lemma`
+
+## Mathematical record
+
+`RMU-D49E378A` · `lemma`
+
+If \(f\in k[X_1,X_2,X_3]\) has degree at most two and no critical point, then
+some constant directional derivative of \(f\) is nonzero.  In particular,
+\(f\) is a coordinate.
+
+Support:
+
+- **source assertion:** The manuscript records this exact formal statement. — [`manuscripts/02-low-degree/main.tex#lem:quadratic-coordinate`](../../proof-sources/02-low-degree/main.md#label-lem-quadratic-coordinate)
+  - Full source and surrounding context: [`manuscripts/02-low-degree/main.tex#lem:quadratic-coordinate`](../../proof-sources/02-low-degree/main.md#label-lem-quadratic-coordinate)
