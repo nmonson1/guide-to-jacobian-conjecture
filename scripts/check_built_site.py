@@ -148,7 +148,7 @@ def main() -> int:
             )
         if brief.get("kind") == "program" and not linked_manuscripts:
             failures.append(f"model handoff lacks an active manuscript: /{route}")
-        if "Current text proofs — preferred" not in text:
+        if "Current proof sources — preferred" not in text:
             failures.append(f"model handoff lacks current text proofs: /{route}")
 
     release_path = site / "research/handoffs/release.json"
@@ -280,7 +280,7 @@ def main() -> int:
             failures.append(f"handoff renders YAML metadata as prose: {path.name}")
         if "Retained working graph" not in text:
             failures.append(f"handoff lacks retained graph link: {path.name}")
-        if "Current text proofs — preferred" not in text:
+        if "Current proof sources — preferred" not in text:
             failures.append(f"handoff lacks text-proof link: {path.name}")
 
     search_path = site / "search/search_index.json"
