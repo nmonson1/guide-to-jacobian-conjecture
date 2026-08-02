@@ -113,6 +113,43 @@ standard_filtration_certificate.json
   sha256 280a87b4ffb84579c56b71aec95d09e9345becc38a66a0b1ec197b0ce9d4a8fb
 ```
 
+## Exact bounded elementary-shear family
+
+The companion verifier covers the six coefficient-one elementary source
+shears
+
+```text
+z -> z+x^N,   y -> y+x^N,   x -> x+y^N,
+z -> z+y^N,   y -> y+z^N,   x -> x+z^N
+```
+
+for every integer `2<=N<=8`. In all 42 cases it constructs exact rational
+common-fiber rows and certifies a rank-82 or rank-83 minor modulo `1000003`.
+The resulting intersections are:
+
+| Shear | Exponents | Degree-six intersection |
+| --- | --- | --- |
+| `z -> z+x^N` | `N=2,3` | `span{1,sigma(R)}` |
+|  | `N=4,...,8` | `k` |
+| `y -> y+x^N` | `N=2,3,4` | `span{1,sigma(R)}` |
+|  | `N=5,...,8` | `k` |
+| `x -> x+y^N` | `N=2,...,8` | `k` |
+| `z -> z+y^N` | `N=2,3` | `span{1,sigma(R)}` |
+|  | `N=4,...,8` | `k` |
+| `y -> y+z^N` | `N=2,3,4` | `span{1,sigma(R)}` |
+|  | `N=5,...,8` | `k` |
+| `x -> x+z^N` | `N=2,...,8` | `k` |
+
+Thus none of these non-affine source changes admits three algebraically
+independent degree-at-most-six target functions. Replay with
+
+```bash
+python3 elementary_shear_scan.py
+```
+
+This is an exact bounded family, not a theorem for arbitrary coefficients,
+exponents, compositions of shears, or wild automorphisms.
+
 ## Filtered differential obstruction
 
 The transcendence-degree test has a useful refinement. For an embedded
