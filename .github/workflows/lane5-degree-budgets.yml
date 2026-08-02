@@ -1,6 +1,12 @@
 name: Lane 5 degree-budget certificates
 
 on:
+  push:
+    branches:
+      - repair/lane-5-intrinsic-degree-audit
+    paths:
+      - "research-notes/lane5-degree-budgets/**"
+      - ".github/workflows/lane5-degree-budgets.yml"
   pull_request:
     paths:
       - "research-notes/lane5-degree-budgets/**"
