@@ -1,0 +1,16 @@
+node,parent,hypotheses,owner,status,boundary
+rho1,root,rho4=1,rank-one theorem,reader proof,plane theorem
+span3-conic,root,rho4=3 and degree image 2,seven conic orbit proofs,reader proof plus exact scripts,second CAS desirable
+span3-cubic,root,rho4=3 and degree image 3,rational-cubic continuation,reader proof plus exact scripts,second CAS desirable
+span3-quartic,root,rho4=3 and degree image 4,quartic frontier theorem,reader proof,frontier preclassification
+R0,rho2,R=0,quadratic-coordinate repair,reader proof,plane theorem citation
+binary-fixed,rho2,P Q R binary and gcd(P Q)>1,fixed-factor packets,exact chart replays,proof-to-code audit
+binary-zero-minor,rho2,P Q R binary gcd=1 and one minor zero,zero-minor proposition,reader proof,plane theorem citation
+binary-fourth-power,rho2,P Q R binary gcd=1 and pencil has fourth power,fourth-power proposition,routing proof,overlap exits
+r0-2,rho2,binary coprime nonzero minors r<=2,ramification theorem,proved/assisted as stated,none
+r3,rho2,binary coprime nonzero minors r=3,v5 chart family,all named charts replay,global chart map and independent lineage
+r4,rho2,binary coprime nonzero minors r=4,high-ramification theorem,partial reader proof,complete-specialization audit
+r5,rho2,binary coprime nonzero minors r=5,high-ramification theorem,reader proof,none
+quadratic-source,rho2,nonbinary composite e=2 d=2,nine-chart theorem,chart-complete claim,proof-to-code audit
+primitive-fourth-power,rho2,nonbinary primitive gcd=1,valuation plus fourth-power proposition,routing proof,overlap exits
+nonbinary-fixed,rho2,nonbinary primitive gcd>1,valuation plus centralizer repair,reader proof,insert repaired lemma
