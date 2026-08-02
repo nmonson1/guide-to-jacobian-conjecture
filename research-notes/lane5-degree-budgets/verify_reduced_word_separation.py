@@ -23,18 +23,20 @@ def derivatives(point: tuple[Fraction, Fraction, Fraction]):
     x, y, z = point
     qx = 3 * z + 12 * x * y * z + 9 * x**2 * y**2 * z + 12 * y**2 + 18 * x * y**3
     qy = 1 + 6 * x**2 * z + 6 * x**3 * y * z + 24 * x * y + 27 * x**2 * y**2
+    qz = 3 * x * (1 + x * y) ** 2
     rx = 2 - 6 * x * y - 3 * x**2 * z
     ry = -3 * x**2
-    return qx, qy, rx, ry
+    rz = -x**3
+    return qx, qy, qz, rx, ry, rz
 
 
 def check_nested(N: int, M: int) -> dict[str, int]:
-    if N < 18 or M < 3 * N + 13:
-        raise AssertionError("nested-family hypotheses are not satisfied")
-    d1 = N + 1
-    d2 = 2 * M - 1
-    if not (d1 > WIDTH and d2 > D * d1 + WIDTH):
-        raise AssertionError("nested-family shift inequalities failed")
+    if M < 21 or N < 6 * M + 6:
+        raise AssertionError("mixed-sign nested-family hypotheses are not satisfied")
+    d1 = -N - 1
+    d2 = M - 2
+    if not (d2 > WIDTH and abs(d1) > D * d2 + WIDTH):
+        raise AssertionError("mixed-sign nested-family shift inequalities failed")
     minimum = None
     for a1 in range(D + 1):
         for a2 in range(D + 1):
@@ -64,10 +66,18 @@ def check_superincreasing(length: int) -> dict[str, object]:
                 raise AssertionError("first shift is too small")
         elif shift <= 2 * D * sum(shifts[:index]) + WIDTH:
             raise AssertionError("superincreasing recurrence failed")
+    signed = [shift if index % 2 == 0 else -shift for index, shift in enumerate(shifts)]
+    terms = []
+    for shift in signed:
+        if shift > 0:
+            terms.append({"monomial": f"z^{(shift + 1) // 2}", "shift": shift})
+        else:
+            terms.append({"monomial": f"x^{-shift - 1}", "shift": shift})
     return {
         "length": length,
-        "shifts": shifts,
-        "x_exponents_for_z_shear": [shift - 2 for shift in shifts],
+        "absolute_shifts": shifts,
+        "signed_shifts": signed,
+        "terms_for_y_shear": terms,
     }
 
 
@@ -76,15 +86,15 @@ def main() -> int:
     v = (Fraction(2), Fraction(1, 6), Fraction(-1, 8))
     if map_f(u) != map_f(v):
         raise AssertionError("common-fiber witness changed")
-    qxu, qyu, rxu, ryu = derivatives(u)
-    qxv, qyv, rxv, ryv = derivatives(v)
+    qxu, qyu, qzu, rxu, ryu, rzu = derivatives(u)
+    qxv, qyv, qzv, rxv, ryv, rzv = derivatives(v)
 
-    N, M = 18, 67
+    M, N = 21, 132
     values = {
-        "y^N*dQdx": (u[1] ** N * qxu, v[1] ** N * qxv),
-        "y^N*dRdx": (u[1] ** N * rxu, v[1] ** N * rxv),
-        "z^M*dQdy": (u[2] ** M * qyu, v[2] ** M * qyv),
-        "z^M*dRdy": (u[2] ** M * ryu, v[2] ** M * ryv),
+        "x^N*dQdy": (u[0] ** N * qyu, v[0] ** N * qyv),
+        "x^N*dRdy": (u[0] ** N * ryu, v[0] ** N * ryv),
+        "y^M*dQdz": (u[1] ** M * qzu, v[1] ** M * qzv),
+        "y^M*dRdz": (u[1] ** M * rzu, v[1] ** M * rzv),
     }
     if any(left == right for left, right in values.values()):
         raise AssertionError("a derivative witness unexpectedly became fiber-constant")
@@ -99,8 +109,8 @@ def main() -> int:
         "derivative_witnesses_distinct": list(values),
         "conclusion": (
             "Reduced words with separated Taylor shifts have constant degree-six "
-            "intersection; this includes arbitrary-length commuting words and "
-            "an explicit noncommuting nested triangular family."
+            "intersection; this includes arbitrary-length mixed-sign commuting "
+            "words and an explicit mixed-sign noncommuting triangular family."
         ),
     }
     print(json.dumps(result, indent=2, sort_keys=True))
