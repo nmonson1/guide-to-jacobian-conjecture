@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the numerical and fiber-witness claims in the reduced-word theorem."""
+"""Verify the numerical and fiber-witness claims in the mixed-sign theorem."""
 
 from __future__ import annotations
 
@@ -31,12 +31,17 @@ def derivatives(point: tuple[Fraction, Fraction, Fraction]):
 
 
 def check_nested(N: int, M: int) -> dict[str, int]:
-    if M < 21 or N < 6 * M + 6:
-        raise AssertionError("mixed-sign nested-family hypotheses are not satisfied")
+    if N < 18 or M < 21:
+        raise AssertionError("mixed-sign nested-family size hypotheses are not satisfied")
     d1 = -N - 1
     d2 = M - 2
-    if not (d2 > WIDTH and abs(d1) > D * d2 + WIDTH):
-        raise AssertionError("mixed-sign nested-family shift inequalities failed")
+    arithmetic_gap = min(
+        abs(a * (N + 1) - b * (M - 2))
+        for a in range(1, D + 1)
+        for b in range(1, D + 1)
+    )
+    if arithmetic_gap <= WIDTH:
+        raise AssertionError("mixed-sign arithmetic nonresonance failed")
     minimum = None
     for a1 in range(D + 1):
         for a2 in range(D + 1):
@@ -48,7 +53,14 @@ def check_nested(N: int, M: int) -> dict[str, int]:
                     minimum = value if minimum is None else min(minimum, value)
     if minimum is None or minimum <= WIDTH:
         raise AssertionError("nested-family support is not separated")
-    return {"N": N, "M": M, "d1": d1, "d2": d2, "minimum_shift_gap": minimum}
+    return {
+        "N": N,
+        "M": M,
+        "d1": d1,
+        "d2": d2,
+        "arithmetic_gap": arithmetic_gap,
+        "minimum_shift_gap": minimum,
+    }
 
 
 def superincreasing_shifts(length: int) -> list[int]:
@@ -108,9 +120,9 @@ def main() -> int:
         "fiber_witness_target": [str(value) for value in map_f(u)],
         "derivative_witnesses_distinct": list(values),
         "conclusion": (
-            "Reduced words with separated Taylor shifts have constant degree-six "
-            "intersection; this includes arbitrary-length mixed-sign commuting "
-            "words and an explicit mixed-sign noncommuting triangular family."
+            "Taylor no-return controls mixed-sign reduced words; full separation "
+            "gives constant degree-six intersection, including arbitrary-length "
+            "mixed-sign commuting words and a noncommuting triangular family."
         ),
     }
     print(json.dumps(result, indent=2, sort_keys=True))
