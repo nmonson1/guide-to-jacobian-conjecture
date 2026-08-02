@@ -1,0 +1,39 @@
+{
+  "arbitrary_length_example": {
+    "length": 4,
+    "shifts": [
+      19,
+      247,
+      3211,
+      41743
+    ],
+    "x_exponents_for_z_shear": [
+      17,
+      245,
+      3209,
+      41741
+    ]
+  },
+  "conclusion": "Reduced words with separated Taylor shifts have constant degree-six intersection; this includes arbitrary-length commuting words and an explicit noncommuting nested triangular family.",
+  "degree_bound": 6,
+  "derivative_witnesses_distinct": [
+    "y^N*dQdx",
+    "y^N*dRdx",
+    "z^M*dQdy",
+    "z^M*dRdy"
+  ],
+  "fiber_witness_target": [
+    "-1/9",
+    "-1/3",
+    "3"
+  ],
+  "nested_example": {
+    "M": 67,
+    "N": 18,
+    "d1": 19,
+    "d2": 133,
+    "minimum_shift_gap": 19
+  },
+  "status": "pass",
+  "weight_width": 18
+}
