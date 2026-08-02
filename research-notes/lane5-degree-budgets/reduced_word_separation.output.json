@@ -1,26 +1,44 @@
 {
   "arbitrary_length_example": {
-    "length": 4,
-    "shifts": [
+    "absolute_shifts": [
       19,
       247,
       3211,
       41743
     ],
-    "x_exponents_for_z_shear": [
-      17,
-      245,
-      3209,
-      41741
+    "length": 4,
+    "signed_shifts": [
+      19,
+      -247,
+      3211,
+      -41743
+    ],
+    "terms_for_y_shear": [
+      {
+        "monomial": "z^10",
+        "shift": 19
+      },
+      {
+        "monomial": "x^246",
+        "shift": -247
+      },
+      {
+        "monomial": "z^1606",
+        "shift": 3211
+      },
+      {
+        "monomial": "x^41742",
+        "shift": -41743
+      }
     ]
   },
-  "conclusion": "Reduced words with separated Taylor shifts have constant degree-six intersection; this includes arbitrary-length commuting words and an explicit noncommuting nested triangular family.",
+  "conclusion": "Reduced words with separated Taylor shifts have constant degree-six intersection; this includes arbitrary-length mixed-sign commuting words and an explicit mixed-sign noncommuting triangular family.",
   "degree_bound": 6,
   "derivative_witnesses_distinct": [
-    "y^N*dQdx",
-    "y^N*dRdx",
-    "z^M*dQdy",
-    "z^M*dRdy"
+    "x^N*dQdy",
+    "x^N*dRdy",
+    "y^M*dQdz",
+    "y^M*dRdz"
   ],
   "fiber_witness_target": [
     "-1/9",
@@ -28,10 +46,10 @@
     "3"
   ],
   "nested_example": {
-    "M": 67,
-    "N": 18,
-    "d1": 19,
-    "d2": 133,
+    "M": 21,
+    "N": 132,
+    "d1": -133,
+    "d2": 19,
     "minimum_shift_gap": 19
   },
   "status": "pass",
