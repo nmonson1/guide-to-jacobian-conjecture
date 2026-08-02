@@ -25,8 +25,8 @@ The active local release candidate contains:
 - 368 stable-tagged atomic claim pages, all included in site search but kept
   out of the main navigation;
 - 534 many-to-many claim memberships across six research programs;
-- 564 retained working-mathematics units, 544 supplied support objects, and
-  48 typed relations across six overlapping program views;
+- 570 retained working-mathematics units, 594 supplied support objects, and
+  71 typed relations across six overlapping program views;
 - six version-13 reader PDFs and one companion Results and Research Register;
 - ten primary model entrypoints under `/research/handoffs/`: one portfolio
   hub plus nine first-class research lanes. Six longer program dossiers remain
@@ -108,11 +108,13 @@ surfaces are:
   and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-handoffs-v19-20260802a/`: hash-pinned sanitized source for
+- `data/model-handoffs-v20-20260802c/`: hash-pinned sanitized source for
   the hub, nine lane entrypoints, six program dossiers, nine exact research
   source packets, and the focused Lane 7 and Lane 8 executable inputs. The
   Lane 8 packet also exposes the incomplete planar-descent strategy and its
-  six exact bounded no-go checkers; logical
+  six exact bounded no-go checkers. The v20c briefs state the Lane 3 stable
+  result as proved, retain the Lane 7 marking open, and separate the exact
+  Lane 8 stored-system certificate from its missing chart bridge; logical
   manuscript slots resolve against the selected manuscript manifest, so a
   stale PDF version fails the build;
 - `scripts/check_deployed_site.py`: production verification that GitHub Pages

@@ -1,0 +1,804 @@
+{
+  "schema_version": 6,
+  "release_id": "model-handoff-v20c-scoped-qualification-repairs",
+  "updated_at": "2026-08-02T22:54:06+00:00",
+  "base_release": {
+    "release_id": "model-handoff-v19-planar-descent-strategy",
+    "manifest_sha256": "03585335f7c84d553b7216f51cc0bb9bc6f8ebfad8536bcfd4825730992c2091"
+  },
+  "source_handoff": {
+    "handoff_version": "6d",
+    "manifest_sha256": "72ad279b1baf49a0c2d492c92e2f5d9ca657ae1944df8ea7e011c12c683514bc",
+    "jacobian_commit": "6fe33dcd85895cce79035527f1ef0a68b553a977"
+  },
+  "brief_count": 16,
+  "primary_entrypoint_count": 10,
+  "task_input_count": 11,
+  "task_inputs": [
+    {
+      "input_id": "LANE1-RESEARCH-SOURCE-PACKET-V1",
+      "source": "lane-1-source-packet.md",
+      "route": "research/handoffs/lane-1-source-packet.md",
+      "sha256": "17536d8407f70a5bbe3368e37da7eb649dbed63b0b6c62b2cbc0ffcc9cca0ca8",
+      "bytes": 35803,
+      "words": 4390,
+      "source_packet": {
+        "source_commit": "6fe33dcd85895cce79035527f1ef0a68b553a977",
+        "files": [
+          {
+            "path": "lane1-collision-saturation-20260802-v1/cubic-flatness-normalization-defects.md",
+            "sha256": "a3d9ccebc6cc7b36dd30c30e9c36736e15d8cb4fc45f2f256b8b1be8c3054904"
+          },
+          {
+            "path": "lane1-collision-saturation-20260802-v1/flatness-defect-repairs.tex",
+            "sha256": "cfd9064969c8a42a85ae1701c234afb0dd80c7ae76c20ee609ae92206cd2560b"
+          },
+          {
+            "path": "lane1-collision-saturation-20260802-v1/verify_collision_idempotent.py",
+            "sha256": "80e9117af525529b12dd8d36dac6c07c71e77cecec6d1819b289f65cc3fac842"
+          },
+          {
+            "path": "lane1-collision-saturation-20260802-v1/verify_standard_collision_model.py",
+            "sha256": "75f47234d04b0123f850ab42ba6c94a11d6aac7426b09edd914d12cfd26c31c5"
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE2-RESEARCH-SOURCE-PACKET-V1",
+      "source": "lane-2-source-packet.md",
+      "route": "research/handoffs/lane-2-source-packet.md",
+      "sha256": "7f02da53af2f5a159d3e754361ca62c9a2147a200178907eb6fbb05cf6fcc6e9",
+      "bytes": 102820,
+      "words": 12228,
+      "source_packet": {
+        "source_commit": "6fe33dcd85895cce79035527f1ef0a68b553a977",
+        "files": [
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260801b/lane2_exact_ordered_outer_resolution.md",
+            "sha256": "41760240268625d0571e61df35444be3fa8ade6d5da65524920729859c4b7569"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260801b/lane2_m5_resolution_addendum.md",
+            "sha256": "acf78c87030623db41c4c9dc7f676f738c1b92ae3083ca0f6e8fd42416566fcf"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260801b/lane2_universal_outer_graph_resolution.md",
+            "sha256": "a660367ffee41fb204d80d12a937be55cb1cdc82020a7276c02ab73afaf622a1"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_structural_lemmas.md",
+            "sha256": "ce2c4c6f2c3cbb55590fa7b9628321905b1ac6a08a6fc1bc7d5c70ca9aa2c3b8"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_hankel_rank_profile.md",
+            "sha256": "3907694e1edbd019aeb8f86567df3fbaecf04a1fe20448c1fda514b49730ad20"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_psc_hankel_schur.md",
+            "sha256": "dedfa121fed4c0b1ec10b663c2b1cc53a5b6b967cd458867e168e34fc952ce3d"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_m5_nu5_actual_prs_flag.md",
+            "sha256": "cdfc7d0e7c234e124aca026b93f00ce3f8d69ece4e4c4aa78c44193c46509538"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260802c/lane2_unordered_normalization_theorem.md",
+            "sha256": "b24cb8f0c001cdfd0d9931faf82fbb616b2b2da25c3ddd55b0185a225b216392"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260802c/lane2_saturated_multirees_equations.md",
+            "sha256": "00f9feb430536990b7cb324c99ca37e4059cfa3b473962e8baadc6ac6c019bec"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260802d/lane2_T0_normalization_theorem.md",
+            "sha256": "874f9affa3e59f4fb4c15d3b2ebe326f6e3e45ce9932633e9e8f38806df03193"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_structural_checks.py",
+            "sha256": "cf674d9e4ea2f6bb4547edb4a0bced69d08342412ec50d0b70bb4bc397e2ba0c"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_m5_composition_grid_checks.py",
+            "sha256": "e617708736ab3387640d53f4178a7742fd04510f376197970207352805542d68"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260802c/lane2_unordered_normalization_checks.py",
+            "sha256": "e72ecf76c6f16b42c0eece8cc072b4647b0204fce474d36c48317974bde3e247"
+          },
+          {
+            "path": "lane2-prs-boundary-20260802-v1/lane2-progress-20260802d/lane2_T0_normalization_checks.py",
+            "sha256": "d3c3ef91a5618ce62a07b325155f77636281bb3abea89fb04753af85d3afc571"
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE3-RESEARCH-SOURCE-PACKET-V1",
+      "source": "lane-3-source-packet.md",
+      "route": "research/handoffs/lane-3-source-packet.md",
+      "sha256": "525e3cbb5360df99cf6ce6d8f6189cbe9e3f0301e5edda2c98931487063c6e46",
+      "bytes": 66434,
+      "words": 7510,
+      "source_packet": {
+        "source_commit": "6fe33dcd85895cce79035527f1ef0a68b553a977",
+        "files": [
+          {
+            "path": "lane3-formal-effectivity/formal_effectivity_theorem.md",
+            "sha256": "1f01ad944f7bcc1fbc9474497f5071fd3df91d8305b043dc975513db9c7f9267"
+          },
+          {
+            "path": "lane3-formal-effectivity/formal_effectivity_insertion.tex",
+            "sha256": "fb9e1e150ea387ae272daf0c03af233d937eefd12530adfdd29d4b9185a0b6d2"
+          },
+          {
+            "path": "lane3-formal-effectivity/AUDIT.md",
+            "sha256": "2daaa07bb9a0fc327da4ceb40ebde655383429e0e05b67ed939eaf9274f80725"
+          },
+          {
+            "path": "lane3-formal-effectivity/verify_formal_effectivity.py",
+            "sha256": "fed25d2940f0fca521cde6b03d83ad96a7e7179d366ed4ac0bf99ac5c8d2632f"
+          },
+          {
+            "path": "lane3-formal-effectivity/verify_formal_effectivity_independent.py",
+            "sha256": "700170ac7053a2cdf8521189faede15107cd651e8277eb341f108602f413f46a"
+          },
+          {
+            "path": "lane3-formal-effectivity/verify_effective_unframed_bound.py",
+            "sha256": "7f5cfe5706f4b41cd2c680fce23c3e907bc0e9e98a78fc052ac7b5d3cfe4b74f"
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE4-RESEARCH-SOURCE-PACKET-V1",
+      "source": "lane-4-source-packet.md",
+      "route": "research/handoffs/lane-4-source-packet.md",
+      "sha256": "040ed6f424ec38d6abb59eb52567326820ca6b77920c9a8425cebda2e66d7d61",
+      "bytes": 120660,
+      "words": 15409,
+      "source_packet": {
+        "source_commit": "6fe33dcd85895cce79035527f1ef0a68b553a977",
+        "files": [
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/README.md",
+            "sha256": "4cc314eb0ef7e1ec0447f21db5b5a7a7209fa3bb5274429647dc323519a1e96e"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/PROOF_CODE_CROSSWALK.md",
+            "sha256": "529a23a6caf3e34ebaea3de6d1102998b7f5532d3b2f47d89704a781e19c34b7"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/case-tree/lane4-global-case-tree.md",
+            "sha256": "82393d020cad9346365fe2c388baa7cdd5abb2a2e789eaf3b5e2590998c386d9"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/case-tree/lane4-case-tree.csv",
+            "sha256": "63962c80bd4a6d61aa3e948109071b9b0393f40c3357bc5c5b0b90aa509ba5c3"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/proofs/10-structural-repairs-and-z2.tex",
+            "sha256": "34965b4639e53009826d6fe5c5e4aa8f88b8f8f53dcaf1d672759613be62a92f"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/proofs/20-conic-completion.tex",
+            "sha256": "02aee17b2f75ae7deea2961d3dd66bb12290d5873182b70156386f6dcfc38398"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/proofs/30-rational-cubic.tex",
+            "sha256": "7485acbd0d77bfd9a41763711199c1b1af490b88c9576645e604b84d100d8cec"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/proofs/40-span-three-corollary.tex",
+            "sha256": "71315a0e2adb2b80f48ca873163e0da0e041c2246b5351130b16e37909e9797a"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/proofs/50-high-ramification.tex",
+            "sha256": "c30ac4269bfcc45047b6ff4a23b2c9372f09c18cea3ee97c6dbcabac20fb2901"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/proofs/60-tau-minus-one.tex",
+            "sha256": "a818a9f2559de4f6d8b76d56e017c6d0bcfa75925f81cb7b3832728c83dccc74"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/replay_core.py",
+            "sha256": "414571f93cb504116146004b02447b03827b64d27262c93985dc266210b264d6"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/checks/conic/verify_terminal_identities.py",
+            "sha256": "dc1f6915b7256a14b84b3b28c10b12144b4f35f6010fd44807f52743ef186689"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/checks/high-ramification/verify_r4_high_ramification.py",
+            "sha256": "bf490b014a79dfeba1dd26e0fbb195d0adfe53741ad93d63736ee0a395cc8c6d"
+          },
+          {
+            "path": "lane4-quartic-endgame-20260802-v1/checks/tau-minus-one/verify_tau_minus_one.py",
+            "sha256": "3937d64a233eb6200feec829b774ac80c5714da305394242f47ad2c0f46551eb"
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE5-RESEARCH-SOURCE-PACKET-V1",
+      "source": "lane-5-source-packet.md",
+      "route": "research/handoffs/lane-5-source-packet.md",
+      "sha256": "30c8875e5c4ae9898045f8e185f49e00e3e16af5bcdaa8cdaf0a246fdbdc87d8",
+      "bytes": 82056,
+      "words": 9624,
+      "source_packet": {
+        "source_commit": "6fe33dcd85895cce79035527f1ef0a68b553a977",
+        "files": [
+          {
+            "path": "lane5-degree-budgets/README.md",
+            "sha256": "2c8f21c6c8f232976c8c563ce75efd4f1fcb5eb1c5ecb64239486c09c6be79c9"
+          },
+          {
+            "path": "lane5-degree-budgets/REDUCED_WORD_SEPARATION.md",
+            "sha256": "944ca8d8144b39dbf4a4c8ea7300c23bba8d45d92fd02ae70120185c3ffdfad9"
+          },
+          {
+            "path": "lane5-degree-budgets/coefficient_transport.md",
+            "sha256": "97fde970df9d4e74b29bdaf605b7019b4d9271a81825db329155dbe0a26e77f5"
+          },
+          {
+            "path": "lane5-degree-budgets/lacunary_polynomial_shears.md",
+            "sha256": "9d154fa986ada4d976317369050a41978d1e41ef9171e5b0945c92e273eab334"
+          },
+          {
+            "path": "lane5-degree-budgets/one_sided_high_weight_compositions.md",
+            "sha256": "43d406b08a45c66ad8fae7ea3a4fa4d42ceca361bb7213e78d831055d82581cd"
+          },
+          {
+            "path": "lane5-degree-budgets/elementary_shear_scan.py",
+            "sha256": "9c1ce67f17b0411705857e581a43cc381df2b3a6e3f2e60adce6065bb804ede8"
+          },
+          {
+            "path": "lane5-degree-budgets/all_elementary_monomial_shears.py",
+            "sha256": "fa003e761302e6a84c8988fe96d29523959a3e4418759c6482e5c014fc85794c"
+          },
+          {
+            "path": "lane5-degree-budgets/lacunary_polynomial_shears.py",
+            "sha256": "0bc025fe73e78ca1fb10b37d60ab2b7ffecccea9d5fd9e76b590f349f45f9eee"
+          },
+          {
+            "path": "lane5-degree-budgets/resonant_weight_certificate.py",
+            "sha256": "4e5c5d517619af4804a6754370eac764eced54ce6177a6003037489eb53f1877"
+          },
+          {
+            "path": "lane5-degree-budgets/standard_filtration_certificate.py",
+            "sha256": "942e3ff34aa09032ef70b410ebf6ee87595d0a4c2669ff48fdac3f2f917fb9df"
+          },
+          {
+            "path": "lane5-degree-budgets/verify_reduced_word_separation.py",
+            "sha256": "1c4995c43f7bb50a46381abd205192e1191c962c2a13be0c6f4d33aeb5c5b2e9"
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE6-RESEARCH-SOURCE-PACKET-V1",
+      "source": "lane-6-source-packet.md",
+      "route": "research/handoffs/lane-6-source-packet.md",
+      "sha256": "8f7d5c2ed600b779aa5dd8bc97bf95f8a4b8a90f39cbb09e6aeaf0c86e5592b2",
+      "bytes": 71028,
+      "words": 6956,
+      "source_packet": {
+        "source_commit": "6fe33dcd85895cce79035527f1ef0a68b553a977",
+        "files": [
+          {
+            "path": "lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/STRATIFIED_TRANSVERSE_CLASSIFICATION.md",
+            "sha256": "46c45f94fafa03340a363771c0726397053379602445b6dfdd5a5d7c0b1c4ffb"
+          },
+          {
+            "path": "lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/TAME_SOURCE_COUPLED_QUARTIC_OBSTRUCTION.md",
+            "sha256": "0050b13a9715a7e7009a2788702813185e521f57b24a8bffa7adaef086b28595"
+          },
+          {
+            "path": "lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/verify_uniform_middle_stratum.py",
+            "sha256": "2877ef50243d602d6d885640274b8538289078ae91ea2882f53bbb034b566ec6"
+          },
+          {
+            "path": "lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/verify_deepest_finite_classification.py",
+            "sha256": "27a404759dfdc47b2734c2d58aa205044e4853d32c200791ba386971605425f0"
+          },
+          {
+            "path": "lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/verify_residual_source_target_obstruction.py",
+            "sha256": "10986fb1c0cc5e16c192bffb16c1b1aeea12381d232fdc465de4429a272686a4"
+          },
+          {
+            "path": "lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/verify_tame_quadratic_jet.py",
+            "sha256": "71221a9e3f7101b233424f368ddfd38c5189b0058a92043f2d5f57f3db5b3f2d"
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE7-RESEARCH-SOURCE-PACKET-V1",
+      "source": "lane-7-source-packet.md",
+      "route": "research/handoffs/lane-7-source-packet.md",
+      "sha256": "2fe02631ce321d5ad4568375da24472f24a6b82581fdc834afc28f37ac010262",
+      "bytes": 257393,
+      "words": 25707,
+      "source_packet": {
+        "source_commit": "6fe33dcd85895cce79035527f1ef0a68b553a977",
+        "files": [
+          {
+            "path": "lane7-split-incidence-20260802-v1/lane7-split-incidence-theorem.md",
+            "sha256": "3d365808d7fc3426bbe6db5aafc981e014c654b4aea623a6c13f9ccd9d8923de"
+          },
+          {
+            "path": "lane7-split-incidence-20260802-v1/reconstruct_matrices.py",
+            "sha256": "b6bbbbec46eeffc89f1f535cfb859d3bcb1f10b1debe39217af49b7e76fd824f"
+          },
+          {
+            "path": "lane7-split-incidence-20260802-v1/verify_split_incidence_theorem.py",
+            "sha256": "dadd947874d8b1967a39e55e39c64b4c549574d32523d0440c4cb6ef09369495"
+          },
+          {
+            "path": "lane7-split-incidence-20260802-v1/verify_split_determinants.py",
+            "sha256": "ca1c168da85e42dc27a19bbf40c93b5e4185f19b3ecadb2899d5f1375ebc0319"
+          },
+          {
+            "path": "lane7-split-incidence-20260802-v1/collision_residual_matrix_M.json",
+            "sha256": "4e1a014a6616a990ac50d255fb7426a9f8ae1d06cbf5066ba52c8415da63cbda"
+          },
+          {
+            "path": "lane7-split-incidence-20260802-v1/Hv10_split_matrix_factorization.json",
+            "sha256": "a251278a145ab0cfcf249809267edb2d6529738684b5136ec5faef62c7aa3dfb"
+          },
+          {
+            "path": "lane7-split-incidence-20260802-v1/verify_split_incidence_report.json",
+            "sha256": "f0a78dce8f1f7f65a92f0d22267dfe143cc1828fbe6f2f435644276b8f505264"
+          },
+          {
+            "path": "lane7-split-incidence-20260802-v1/verify_split_determinants_report.json",
+            "sha256": "e5b108357cbb96c0b0e979f0242dd8f6c308cd521eb7f01827a8cd8dc6ca9421"
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE8-RESEARCH-SOURCE-PACKET-V1",
+      "source": "lane-8-source-packet.md",
+      "route": "research/handoffs/lane-8-source-packet.md",
+      "sha256": "d32d25c16a30b9c36ae70628e7d7b7060059684b28f459a37b94a232253b3cc6",
+      "bytes": 147177,
+      "words": 15841,
+      "source_packet": {
+        "source_commit": "6fe33dcd85895cce79035527f1ef0a68b553a977",
+        "files": [
+          {
+            "path": "lane8-proof-queue-20260802-v1/lane8-proof-queue-repair.md",
+            "sha256": "bdbe6c5557e93c3dbafac75ffbf3c833eb22d5988af9e3f7bfcbdd4b040b94f0"
+          },
+          {
+            "path": "lane8-proof-queue-20260802-v1/check_queue.py",
+            "sha256": "e1b6556645ff74e18ce04600f1d1e5ff7bcbe30e4dfeaa9ec53cadbe7b32320e"
+          },
+          {
+            "path": "lane8-proof-queue-20260802-v1/full_early_layer_reduction.py",
+            "sha256": "ed4a150374eb969e19bf8601f8f4529edae57fb457f9aae9211997fb6f83bd95"
+          },
+          {
+            "path": "lane8-proof-queue-20260802-v1/quintic_face_reconstruction.py",
+            "sha256": "e48869fb09d7afcc3c1ae08a604c7656efadf0c3588c0fca82a42817dfaf8c1f"
+          },
+          {
+            "path": "lane8-proof-queue-20260802-v1/truncated_support_certificate.py",
+            "sha256": "40daac940f6c82e76a3679495e14cd0fcadfe5a926b3053eeff2cab879401da5"
+          },
+          {
+            "path": "lane8-proof-queue-20260802-v1/queue.seed.json",
+            "sha256": "a55e0c1aaf49d834ec0004c14f64e0ba04d8d969d1af9cde5eef01da4ea28743"
+          },
+          {
+            "path": "lane8-proof-queue-20260802-v1/truncated_support_certificate.json",
+            "sha256": "f086c7eca67d51f3c48fd6311c55e8fe5012a8b1373ff6eae4746fd4c3fec6ac"
+          },
+          {
+            "path": "planar-descent-no-go-20260802-v1/README.md",
+            "sha256": "6e483b4273025c64f004a512b3de80296ff6e7479dfec51e8a484af8c5d06d60"
+          },
+          {
+            "path": "planar-descent-no-go-20260802-v1/three_dimensional_descent_no_go.py",
+            "sha256": "e5d51dd28d34f7586539f854a2f40b97591ec0a7d7728bff5acc6ef18ce829a6"
+          },
+          {
+            "path": "planar-descent-no-go-20260802-v1/affine_plane_linear_projection_no_go.py",
+            "sha256": "8ea6300b370186911f8109a2aada13679b1612428bae9d045d9c9720aaa1ab02"
+          },
+          {
+            "path": "planar-descent-no-go-20260802-v1/y_graph_descent_no_go.py",
+            "sha256": "e157ae481c1e47d234ae5a048e388955d24aebe05b102baf4e7cccb9871be09e"
+          },
+          {
+            "path": "planar-descent-no-go-20260802-v1/linear_target_coordinate_fibres.py",
+            "sha256": "3428ddee84b549dcb1f247d41d8abe9dde62c62e7dfae97820ab9d427604de3e"
+          },
+          {
+            "path": "planar-descent-no-go-20260802-v1/hc4_linear_descent_no_go.py",
+            "sha256": "8644beef8041ae41578ed84fa58697b6f0aae9726eb37086f4b040c9f2925ce4"
+          },
+          {
+            "path": "planar-descent-no-go-20260802-v1/hc4_square_correction_no_go.py",
+            "sha256": "41d933337f35705eb1031e82d54f666853206bda0ec97315e8a4f7aa0ed43b57"
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE9-RESEARCH-SOURCE-PACKET-V1",
+      "source": "lane-9-source-packet.md",
+      "route": "research/handoffs/lane-9-source-packet.md",
+      "sha256": "026e342783b75bf5e2b9e48163a119d711490b71faf0de4d434e1b05969d8b75",
+      "bytes": 103392,
+      "words": 10617,
+      "source_packet": {
+        "source_commit": "6fe33dcd85895cce79035527f1ef0a68b553a977",
+        "files": [
+          {
+            "path": "lane9-wall-shear-20260802-v1/LANE9_CONTINUATION_V3_REPORT.md",
+            "sha256": "c95708358a4bb8486d3823d15279e4acec3574fd55d2e5ad49234f032e57d510"
+          },
+          {
+            "path": "lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_GRADING_AUDIT.md",
+            "sha256": "afeec62e2950cc4a120e9b5280dfbf04d1e1c86135a290c2bc3a1f0df84df745"
+          },
+          {
+            "path": "lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_OVERLAP_THEOREM.md",
+            "sha256": "94d278bd3285f8eadc2d31901a8518b84de8e8f53ec40d0d6cfa86975e412059"
+          },
+          {
+            "path": "lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_DUAL_TRIPLE_OVERLAP.md",
+            "sha256": "43a45be475ebeadb54f553f88038e446cce9a34d3e7d17e73ae92d48260da3b0"
+          },
+          {
+            "path": "lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_REES_FLOW.md",
+            "sha256": "9f763c0acd13a068b96cef1f073b46cf1a2afa9d82fa8fa32426c812648662ab"
+          },
+          {
+            "path": "lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/F2_CYCLIC_WALL_DESCENT.md",
+            "sha256": "2485be2f147247108a3c7dd828187a4985d5086d712ccc8ad14b2dd70696cce5"
+          },
+          {
+            "path": "lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/wall_shear_master_covariance.py",
+            "sha256": "ae914d451e4ec3ab1b583c5f35c2e35c396c5596b9340dd817672961abc460cd"
+          },
+          {
+            "path": "lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/degree21_k4_jet_transport_audit.py",
+            "sha256": "4d240c1e6dc80412e1aa29fc55e7b6bf44208fb870577ab4f5ed642e7a758954"
+          },
+          {
+            "path": "lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/degree21_k4_overlap_saturation.py",
+            "sha256": "4a3c3d76037ebbae7328fe65a3e35d04ad85c3311fc72566881d5895b0511848"
+          },
+          {
+            "path": "lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/degree21_k4_triple_overlap.py",
+            "sha256": "5639081b7a0c4d72c8e4bf80170c9f43fcb45deb01146f323e1a396d65dd5988"
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE7-COLLISION-CHART-V1",
+      "source": "lane-7-collision-input.md",
+      "route": "research/handoffs/lane-7-collision-input.md",
+      "sha256": "e8ad159151d82ceda78e58dce2cc6e721d8137dfe55d6a7682dd915062096121",
+      "bytes": 58520,
+      "words": 6889,
+      "source_packet": {
+        "release_id": "program5-global-collision-v1-20260726c",
+        "manifest_sha256": "cfe5d2c08c3ae36498b7037b4da0c0e3f666c460e1f901d9cdafa8816e5937c4",
+        "collision_system_sha256": "23c607c2efc6115437fcc2979f5caff583fd1d7fa9c02f382bf10686d3e07167",
+        "macaulay2_sha256": "63b79f3a2595a250550313578033e540f0fd8dda1721de24fe2cdd405c577953"
+      }
+    },
+    {
+      "input_id": "LANE8-RAW-SUPPORT-RECONSTRUCTION-V1",
+      "source": "lane-8-reconstruction-input.md",
+      "route": "research/handoffs/lane-8-reconstruction-input.md",
+      "sha256": "8f3f5e262143a2a7b3ff8cbab5a61ecaba37f92a88996f7da411ac19085fb016",
+      "bytes": 49508,
+      "words": 4406,
+      "source_packet": {
+        "files": [
+          {
+            "path": "belyi_exact_field_relations.json",
+            "sha256": "a5b5752a5f7b90d50458fe3f3949e6731e0b607981627c56e0c04a1bf89de1c2"
+          },
+          {
+            "path": "expected_invariants.json",
+            "sha256": "04c0da97da9974665ca1348bf1b1736ffeb5231a1ff1dc1e3c9dea8a1ec564e0"
+          },
+          {
+            "path": "rebuild_lower_face_reduction.py",
+            "sha256": "921ebae8828452dcb535ab81a8561c717ddd61346a04389af568fb9dcafee53f"
+          },
+          {
+            "path": "degree-296-compact/scripts/quintic_field_fast.py",
+            "sha256": "b43871c8897512b752c9e8fa8d4f2d80571865d465940e13b36f130d07091942"
+          }
+        ]
+      }
+    }
+  ],
+  "retained_math_v2_markers": [
+    {
+      "program_slug": "homogeneous-realization-compression",
+      "argument_id": "ARG-RMU5D8E0003-FINITE-PLANE"
+    }
+  ],
+  "briefs": [
+    {
+      "kind": "cross_program",
+      "program_sequence": 0,
+      "program_slug": "state-of-the-program",
+      "title": "State of the Jacobian Research Program",
+      "source": "state-of-the-program.md",
+      "sha256": "9d80c06406ab4ce5f2669bc39674c15def4990683b6137f009e069e5c7aa6927",
+      "bytes": 21862,
+      "words": 2828,
+      "route": "research/handoffs/state-of-the-program.md",
+      "primary_entrypoint": true,
+      "display_sequence": 0,
+      "related_programs": []
+    },
+    {
+      "kind": "program",
+      "program_sequence": 1,
+      "program_slug": "cubic-marked-root-incidence-geometry",
+      "title": "Cubic Marked-Root Incidence Geometry",
+      "source": "cubic-marked-root-incidence-geometry.md",
+      "sha256": "0aecff3c927fa1ab2a0f689d450d548b3cc52fe48b090e97074a199e9f1170cb",
+      "bytes": 21386,
+      "words": 2863,
+      "route": "research/handoffs/cubic-marked-root-incidence-geometry.md",
+      "primary_entrypoint": false,
+      "display_sequence": 101,
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 2,
+      "program_slug": "minimum-degree-and-quartic-exclusions",
+      "title": "Minimum Degree and Quartic Exclusions",
+      "source": "minimum-degree-and-quartic-exclusions.md",
+      "sha256": "0842ab124bc216cfbbfd7c89d293faa39e5c9ee3c923d6530396651cfe6da3f4",
+      "bytes": 30097,
+      "words": 3971,
+      "route": "research/handoffs/minimum-degree-and-quartic-exclusions.md",
+      "primary_entrypoint": false,
+      "display_sequence": 102,
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 3,
+      "program_slug": "local-rigidity-and-deformation-algebra",
+      "title": "Local Rigidity and Deformation Algebra",
+      "source": "local-rigidity-and-deformation-algebra.md",
+      "sha256": "7d950ad48c0cdd9cde822b8456a6b7dc77f53562efcbd5e1e8e9623ae1ad77c5",
+      "bytes": 23920,
+      "words": 3267,
+      "route": "research/handoffs/local-rigidity-and-deformation-algebra.md",
+      "primary_entrypoint": false,
+      "display_sequence": 103,
+      "related_programs": [
+        "local-rigidity-and-deformation-algebra"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 4,
+      "program_slug": "stable-moduli",
+      "title": "Stable Moduli",
+      "source": "stable-moduli.md",
+      "sha256": "ad7c22499bbdf928d0b63a2885f73efe2c8c14bbd1cd9a5364a7b1de5aeadc43",
+      "bytes": 27810,
+      "words": 3615,
+      "route": "research/handoffs/stable-moduli.md",
+      "primary_entrypoint": false,
+      "display_sequence": 104,
+      "related_programs": [
+        "stable-moduli"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 5,
+      "program_slug": "homogeneous-descendants",
+      "title": "Homogeneous Descendants",
+      "source": "homogeneous-descendants.md",
+      "sha256": "b8d78f2d8b2c20838db8c340f7e5f72599dea67ca1fbc5e2f9efa3a0ee7260ed",
+      "bytes": 27806,
+      "words": 3666,
+      "route": "research/handoffs/homogeneous-descendants.md",
+      "primary_entrypoint": false,
+      "display_sequence": 105,
+      "related_programs": [
+        "homogeneous-descendants"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 6,
+      "program_slug": "plane-boundary-obstructions",
+      "title": "Plane Boundary Obstructions",
+      "source": "plane-boundary-obstructions.md",
+      "sha256": "8c5bab49a4118d2b69f496413302377b7b6d5096ecf16c21f48a63081b92727e",
+      "bytes": 27944,
+      "words": 3673,
+      "route": "research/handoffs/plane-boundary-obstructions.md",
+      "primary_entrypoint": false,
+      "display_sequence": 106,
+      "related_programs": [
+        "plane-boundary-obstructions"
+      ]
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 1,
+      "program_sequence": 11,
+      "program_slug": "cubic-flatness-normalization-defects",
+      "title": "Cubic flatness and finite normalization defects",
+      "source": "cubic-flatness-normalization-defects.md",
+      "route": "research/handoffs/cubic-flatness-normalization-defects.md",
+      "primary_entrypoint": true,
+      "display_sequence": 1,
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry",
+        "stable-moduli"
+      ],
+      "sha256": "9dd698be6c2f2aba4ce3325f9e8802bc469db43c2b58223a9cc1a0fddcdd3799",
+      "bytes": 8281,
+      "words": 1022
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 2,
+      "program_sequence": 12,
+      "program_slug": "boundary-completeness-torelli-at-infinity",
+      "title": "Boundary completeness and Torelli at infinity",
+      "source": "boundary-completeness-torelli-at-infinity.md",
+      "route": "research/handoffs/boundary-completeness-torelli-at-infinity.md",
+      "primary_entrypoint": true,
+      "display_sequence": 2,
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry",
+        "stable-moduli"
+      ],
+      "sha256": "e30cc15dcce67e57745697fd169715ec8719645e8c7504bd968c53e57b8d3db7",
+      "bytes": 6253,
+      "words": 789
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 3,
+      "program_sequence": 13,
+      "program_slug": "bounded-degree-deformation-modulus-onset",
+      "title": "Bounded-degree deformation and modulus onset",
+      "source": "bounded-degree-deformation-modulus-onset.md",
+      "route": "research/handoffs/bounded-degree-deformation-modulus-onset.md",
+      "primary_entrypoint": true,
+      "display_sequence": 3,
+      "related_programs": [
+        "local-rigidity-and-deformation-algebra",
+        "stable-moduli"
+      ],
+      "sha256": "985f603be55aebb06a48f72aa19656306225462f1719306026c01556d21f4321",
+      "bytes": 9675,
+      "words": 1117
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 4,
+      "program_sequence": 14,
+      "program_slug": "quartic-endgame",
+      "title": "The quartic endgame",
+      "source": "quartic-endgame.md",
+      "route": "research/handoffs/quartic-endgame.md",
+      "primary_entrypoint": true,
+      "display_sequence": 4,
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions"
+      ],
+      "sha256": "983f045a2c7c1ad1a15acd92e1c2cba4713f0a1ba34386ad27d93e3049509636",
+      "bytes": 6754,
+      "words": 763
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 5,
+      "program_sequence": 15,
+      "program_slug": "intrinsic-degree-valuative-budgets",
+      "title": "Intrinsic degree and valuative budgets",
+      "source": "intrinsic-degree-valuative-budgets.md",
+      "route": "research/handoffs/intrinsic-degree-valuative-budgets.md",
+      "primary_entrypoint": true,
+      "display_sequence": 5,
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions",
+        "stable-moduli",
+        "plane-boundary-obstructions"
+      ],
+      "sha256": "97b426405268d03ff498651696384917ff537663dcc9ef712fa6c673d3c1fe17",
+      "bytes": 7230,
+      "words": 881
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 6,
+      "program_sequence": 16,
+      "program_slug": "homogeneous-realization-compression",
+      "title": "Homogeneous realization and compression",
+      "source": "homogeneous-realization-compression.md",
+      "route": "research/handoffs/homogeneous-realization-compression.md",
+      "primary_entrypoint": true,
+      "display_sequence": 6,
+      "related_programs": [
+        "homogeneous-descendants",
+        "local-rigidity-and-deformation-algebra"
+      ],
+      "sha256": "2b1050e6b7e6be165aa5bfc4fb772720abe6d2389138d062c38c9ffe21393733",
+      "bytes": 6135,
+      "words": 754
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 7,
+      "program_sequence": 17,
+      "program_slug": "five-dimensional-collision-geometry",
+      "title": "Five-dimensional collision geometry",
+      "source": "five-dimensional-collision-geometry.md",
+      "route": "research/handoffs/five-dimensional-collision-geometry.md",
+      "primary_entrypoint": true,
+      "display_sequence": 7,
+      "related_programs": [
+        "homogeneous-descendants"
+      ],
+      "sha256": "6d7dd2e8b055b6f04b165d0c315ac4d52845398ce1a27245a9bb0504bdbe8c05",
+      "bytes": 8034,
+      "words": 1014
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 8,
+      "program_sequence": 18,
+      "program_slug": "plane-newton-queue-terminal-certificates",
+      "title": "Plane Newton queue and terminal certificates",
+      "source": "plane-newton-queue-terminal-certificates.md",
+      "route": "research/handoffs/plane-newton-queue-terminal-certificates.md",
+      "primary_entrypoint": true,
+      "display_sequence": 8,
+      "related_programs": [
+        "plane-boundary-obstructions"
+      ],
+      "sha256": "0f80217838d2d0e03631128ee33cb72c313515fcf74664aea15b2804299f2e20",
+      "bytes": 8839,
+      "words": 1119
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 9,
+      "program_sequence": 19,
+      "program_slug": "plane-chart-correspondence-global-attachment",
+      "title": "Plane chart correspondence and global attachment",
+      "source": "plane-chart-correspondence-global-attachment.md",
+      "route": "research/handoffs/plane-chart-correspondence-global-attachment.md",
+      "primary_entrypoint": true,
+      "display_sequence": 9,
+      "related_programs": [
+        "plane-boundary-obstructions",
+        "stable-moduli"
+      ],
+      "sha256": "118f9b118cd6e41831c355395549cef2d04f5504c0b1c6de2452d11a4bfb71fe",
+      "bytes": 8848,
+      "words": 1069
+    }
+  ]
+}

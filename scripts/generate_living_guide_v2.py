@@ -318,8 +318,8 @@ def _human(value: str) -> str:
 
 def _status_label(value: str) -> str:
     return {
-        "proof offered": "Proof offered — review pending",
-        "certificate offered": "Certificate offered — review pending",
+        "proof offered": "Proof supplied",
+        "certificate offered": "Certificate supplied",
         "open": "Open",
         "recorded": "Recorded",
     }.get(value, value.title())
@@ -328,11 +328,11 @@ def _status_label(value: str) -> str:
 def _coverage_label(value: str) -> str:
     return {
         "complete": "Exact manuscript location",
-        "partial": "Locator audit incomplete",
+        "partial": "Partial manuscript locator",
         "manuscript_attached": "Manuscript attached",
         "not_applicable": "No program manuscript claimed",
         "not_in_manuscript": "Not in program manuscript",
-        "locator_audit_needed": "Locator audit needed",
+        "locator_audit_needed": "No exact manuscript locator supplied",
     }.get(value, _human(value).title())
 
 
@@ -886,12 +886,6 @@ def render_claim(
             lines.append(
                 f"- `{locator['anchor']}` in `{locator['repo_path']}`{suffix}"
             )
-    reviews = claim["verification"].get("independent_review", [])
-    lines.extend(["", "**Independent review**", ""])
-    for review in reviews:
-        lines.append(f"- {_human(review['level']).title()}: {review['scope']}")
-    if not reviews:
-        lines.append("- None recorded.")
     evidence = claim["verification"].get("evidence", [])
     precise_evidence = [
         item
@@ -960,7 +954,6 @@ def render_collection(
         f'<p class="dek">{visible_description}</p>',
         "",
         f'<span class="status status-kind">{_human(page["kind"]).title()}</span> '
-        f'<span class="status status-draft">{_human(page["public"]["release_state"]).title()}</span> '
         f'<span class="status coverage-{coverage}">{_coverage_label(coverage)}</span>',
         "",
         "## Precise statement",
@@ -1032,12 +1025,6 @@ def render_collection(
     )
     if page["source"]:
         lines.extend(["### Public sources", "", *_source_lines(page["source"]), ""])
-    reviews = page["verification"].get("independent_review", [])
-    lines.extend(["### Independent review", ""])
-    for review in reviews:
-        lines.append(f"- {_human(review['level']).title()}: {review['scope']}")
-    if not reviews:
-        lines.append("- None recorded.")
     if page["credited_to"]:
         lines.extend(["", "## Credit", "", *_credit_lines(page["credited_to"]), ""])
     connected = sorted(

@@ -1,0 +1,1259 @@
+---
+title: "Text proof source — 06-plane-boundary/main.tex"
+description: "Sanitized current source with exact labels when present."
+---
+
+# Text proof source
+
+`manuscripts/06-plane-boundary/main.tex`
+
+This is the current sanitized source text used by the retained working graph. TeX comments and private locators are omitted; mathematical content and line numbering are preserved. PDFs are optional reading copies.
+
+Published SHA-256: `bc6bfd73fcbbfea2fa052bdfc60510d25eefed25cf339351f3db93c812a48bdc` · 39,165 bytes
+
+## Exact label anchors
+
+<a id="label-sec-introduction"></a>
+- `sec:introduction` — source line 68
+<a id="label-thm-intro-primary"></a>
+- `thm:intro-primary` — source line 112
+<a id="label-thm-intro-secondary"></a>
+- `thm:intro-secondary` — source line 215
+<a id="label-sec-faces"></a>
+- `sec:faces` — source line 260
+<a id="label-eq-ambient-ode"></a>
+- `eq:ambient-ode` — source line 277
+<a id="label-eq-ambient-tau"></a>
+- `eq:ambient-tau` — source line 282
+<a id="label-prop-ambient-passport"></a>
+- `prop:ambient-passport` — source line 287
+<a id="label-eq-ambient-derivative"></a>
+- `eq:ambient-derivative` — source line 290
+<a id="label-eq-ambient-passport"></a>
+- `eq:ambient-passport` — source line 295
+<a id="label-thm-lattice-gap"></a>
+- `thm:lattice-gap` — source line 363
+<a id="label-eq-quotient-ode"></a>
+- `eq:quotient-ode` — source line 382
+<a id="label-eq-quotient-map"></a>
+- `eq:quotient-map` — source line 388
+<a id="label-eq-quotient-derivative"></a>
+- `eq:quotient-derivative` — source line 393
+<a id="label-eq-quotient-passport"></a>
+- `eq:quotient-passport` — source line 399
+<a id="label-sec-queue"></a>
+- `sec:queue` — source line 433
+<a id="label-tab-queue"></a>
+- `tab:queue` — source line 467
+<a id="label-prop-hurwitz-count"></a>
+- `prop:hurwitz-count` — source line 471
+<a id="label-prop-f2-map"></a>
+- `prop:f2-map` — source line 507
+<a id="label-eq-f2-map"></a>
+- `eq:f2-map` — source line 520
+<a id="label-eq-126-one"></a>
+- `eq:126-one` — source line 545
+<a id="label-eq-126-two"></a>
+- `eq:126-two` — source line 565
+<a id="label-eq-face-linearization"></a>
+- `eq:face-linearization` — source line 592
+<a id="label-prop-face-rigidity"></a>
+- `prop:face-rigidity` — source line 612
+<a id="label-sec-normal-complex"></a>
+- `sec:normal-complex` — source line 648
+<a id="label-eq-master"></a>
+- `eq:master` — source line 654
+<a id="label-prop-layer"></a>
+- `prop:layer` — source line 669
+<a id="label-eq-layer"></a>
+- `eq:layer` — source line 673
+<a id="label-prop-adjoint"></a>
+- `prop:adjoint` — source line 693
+<a id="label-eq-adjoint"></a>
+- `eq:adjoint` — source line 696
+<a id="label-eq-ibp"></a>
+- `eq:ibp` — source line 710
+<a id="label-prop-index"></a>
+- `prop:index` — source line 728
+<a id="label-eq-index"></a>
+- `eq:index` — source line 739
+<a id="label-sec-secondary"></a>
+- `sec:secondary` — source line 764
+<a id="label-eq-contact"></a>
+- `eq:contact` — source line 772
+<a id="label-eq-volume"></a>
+- `eq:volume` — source line 779
+<a id="label-eq-homogeneous"></a>
+- `eq:homogeneous` — source line 787
+<a id="label-lem-resonance"></a>
+- `lem:resonance` — source line 792
+<a id="label-eq-transport-equation"></a>
+- `eq:transport-equation` — source line 809
+<a id="label-prop-contact"></a>
+- `prop:contact` — source line 816
+<a id="label-eq-contact-degree"></a>
+- `eq:contact-degree` — source line 838
+<a id="label-thm-secondary"></a>
+- `thm:secondary` — source line 870
+<a id="label-eq-h-sum"></a>
+- `eq:H-sum` — source line 882
+<a id="label-eq-h-hypergeometric"></a>
+- `eq:H-hypergeometric` — source line 884
+<a id="label-eq-h-ode"></a>
+- `eq:H-ode` — source line 888
+<a id="label-eq-secondary-w"></a>
+- `eq:secondary-W` — source line 898
+<a id="label-eq-secondary-derivative"></a>
+- `eq:secondary-derivative` — source line 903
+<a id="label-eq-secondary-passport"></a>
+- `eq:secondary-passport` — source line 909
+<a id="label-cor-417"></a>
+- `cor:417` — source line 948
+<a id="label-sec-descent"></a>
+- `sec:descent` — source line 963
+<a id="label-lem-filtered"></a>
+- `lem:filtered` — source line 969
+<a id="label-q-integrable"></a>
+- `q:integrable` — source line 1007
+<a id="label-q-finite-determinacy"></a>
+- `q:finite-determinacy` — source line 1021
+<a id="label-q-splitting"></a>
+- `q:splitting` — source line 1033
+<a id="label-sec-computation"></a>
+- `sec:computation` — source line 1041
+
+## Complete source
+
+~~~tex
+\documentclass[11pt,reqno]{amsart}
+\input{../common/preamble}
+\usepackage{mathrsfs}
+
+\title[Boundary Belyi covers and normal jets]{Boundary Belyi Covers and
+Normal-Jet Obstructions in the Plane Jacobian Problem}
+\author{Nathaniel Monson}
+\date{July 22, 2026}
+
+\begin{document}
+
+\begin{abstract}
+Newton-face differential equations are a classical tool in the plane
+Jacobian problem.  We isolate two structures carried by a face and its
+formal normal neighborhood.
+
+First, a terminal face equation
+\[
+npq-mzpq'+nzp'q=1
+\]
+defines a Belyi map.  When the polynomial lattice has gap \(g\), the relevant
+map is not the ambient degree-\(mnb\) cover but its degree-\(mnb/g\)
+quotient.  We give its passport, prove automatic connectedness, and compute
+the first five quotient Hurwitz problems arising from the complete-chain
+queue: they have \(1,1,1,2,2\) classes.  Exact formulas through maximum
+degree \(128\) are infinitesimally rigid modulo source scaling.
+
+Second, we derive the universal linear operator governing every normal
+layer of the determinant equation.  In relative variables it is a rank-one
+logarithmic connection plus multiplication by the boundary-volume form.
+An exact formal change of normal coordinate linearizes the full nonlinear
+determinant equation and decouples all normal orders on one smooth boundary
+component.  The nonlinear difficulty moves into a triangular Newton-support
+map.  For the full \((8,28)\) windows, the layer maps are injective from the
+resonant layer onward, with cokernel dimension \(r-1\) for
+\(5\le r\le11\).  The gauge complex also gives the complementary adjoint,
+an exact residue realization of every finite matrix left kernel, and a
+filtered one-layer descent criterion.  For the archived terminal
+specialization, an exact replay reconstructs every layer matrix through
+order \(8\) from this operator, identifies every compatibility functional
+with its principal-part residue, and regenerates the fifteen normalized
+obstruction equations coefficient by coefficient.  A normalized adjacent contact of
+type \((a,e)\), with \(e>a^2\), forces the explicit degree-\(e\) Belyi map
+\[
+W_{a,e}(s)=\frac{(s-1)^{e-a^2}H_{a,e}(s)^a}{s^e},
+\qquad
+H_{a,e}=\frac1e\,{}_2F_1\!\left(-a,1;1-\frac ea;s\right).
+\]
+Its passport is
+\((a^a,e-a^2),(e),(a+1,1^{e-a-1})\).
+The explicit finite computations use exact arithmetic and are supplied with
+reproducible certificates.  In particular, the displayed six-polynomial
+terminal system is empty in characteristic zero by a complete toric
+special-fiber calculation.  These results organize a terminal
+boundary-gluing program; they do not prove the plane Jacobian conjecture.
+\end{abstract}
+
+\maketitle
+
+\begin{center}
+\small\emph{Working computer-assisted manuscript.  The recovered exact
+certificates and the exact-normal-form regression check have been rerun.
+Independent implementation and specialist review remain submission
+requirements.}
+\end{center}
+
+\section{Introduction}
+\label{sec:introduction}
+
+The counterexample to the Jacobian conjecture in dimension three leaves the
+two-variable conjecture open.  The separation is geometric: the marked-root
+construction that fills an affine threefold does not directly fill an
+affine plane.  In the plane, the unresolved information accumulates at
+infinity in Newton faces, divisorial valuations, and compatibility between
+successive boundary layers.
+
+We credit Akhil Mathew as the primary human source of the problem: Mathew
+prompted Levent Alp\"oge, Alp\"oge prompted Fable, Fable produced the
+three-dimensional example, and Alp\"oge announced it publicly
+\cite{ulam2026counterexample,alpoge2026announcement}.
+
+The background here is substantial.  One-variable face differential
+equations of the form used below occur in the work of Formanek and Stothers
+on the plane Jacobian problem \cite{formanek2011stothers}.  Borisov developed
+Belyi maps and dessins in compactification frameworks for hypothetical
+plane counterexamples \cite{borisov2009geometric}.  Guccione, Guccione,
+Horruitiner, and Valqui constructed complete-chain algorithms and reduced
+the range below maximum degree \(125\) to the pair \((72,108)\) and its
+transpose \cite{guccioneEtAl2017algorithms,guccioneEtAl2022degree108}.
+Normal-boundary determinant expansions also have a recent valuative
+precursor in Bado's work \cite{bado2026valuative}.
+
+While this manuscript was being prepared, a MathOverflow answer announced a
+computer-assisted proof that a planar counterexample must have maximum
+coordinate degree at least \(125\) \cite{ratto3423degree125}.  A separate
+exact-arithmetic campaign by Santibáñez-Leal states strong certificate
+evidence at the same frontier while distinguishing that evidence from a
+complete all-coefficient proof \cite{santibanezLeal2026planar}.  We do not
+claim the degree-\(125\) bound.  The purpose of this paper is to extract
+reusable boundary theorems from an independent terminal calculation and to
+state exactly what remains missing from a global argument.
+
+\subsection{Main results}
+
+The first result corrects a tempting overcount.  A terminal face may be
+written in a fractional uniformizing variable \(z\), but the exponent
+lattice of the original polynomial pair can force both face polynomials to
+belong to \(k[z^g]\).  The actual Hurwitz problem is then a quotient by
+\(u=z^g\).
+
+\begin{theorem}[Lattice-gap quotient, informal form]
+\label{thm:intro-primary}
+Let \(m,n>1\) be coprime, let \(b\ge1\), and suppose a terminal face satisfies
+\[
+npq-mzpq'+nzp'q=1,\qquad
+\deg p=mb-1,\quad \deg q=nb.
+\]
+If \(p(z)=\bar p(z^g)\) and \(q(z)=\bar q(z^g)\), as forced by a
+complete-chain lattice gap \(g\), then \(g\mid n\) and
+\[
+\bar\tau(u)=u^{n/g}\frac{\bar p(u)^n}{\bar q(u)^m}
+\]
+is a Belyi map of degree \(mnb/g\), with passport
+\[
+\left(n^{(mb-1)/g},\frac ng\right),\qquad
+\left(m^{nb/g}\right),\qquad
+\left(\frac{(m+n)b-1}{g},
+1^{\frac{mnb-(m+n)b+1}{g}}\right).
+\]
+Every permutation triple with this passport is transitive.
+\end{theorem}
+
+Applying the theorem to the first five terminal complete-chain rows gives
+quotient degrees \(6,10,9,9,16\) and respectively \(1,1,1,2,2\) dessin
+classes.  The first row is especially useful: an ambient degree-\(30\)
+passport has eleven classes, but the gap-five lattice selects the unique
+cyclic pullback of
+\[
+\frac{u(u-1)^5}{(u^2-\frac53u+\frac59)^3}.
+\]
+
+The second group of results describes the normal direction.  At layer \(r\), new
+coefficients enter the determinant equation through a universal first-order
+operator
+\[
+\mathscr D_r^{\alpha,\beta}(a,b)
+=(\alpha-r)a\,dB_0-\beta B_0\,da
++\alpha A_0\,db+(r-\beta)b\,dA_0.
+\]
+Its formal adjoint is again explicit and converts coefficient obstructions
+into residue functionals.  The same operator occurs at every normal order,
+with lower orders appearing in the forcing term in the original
+coordinates.
+
+Writing \(S=\alpha+\beta\), relative variations turn the operator into
+\[
+\mathscr D_r(a,b)
+=A_0B_0\left(d+\frac rS\,d\log(A_0B_0)\right)\eta
++\frac{S-r}{S}\xi
+\left(\alpha A_0\,dB_0-\beta B_0\,dA_0\right).
+\]
+Off resonance, provided the boundary-volume form is nonzero, it is
+surjective over the function field, so all obstructions come from finite
+Newton and pole windows.  At \(r=S\) it becomes an exact differential and
+its cokernel is controlled by ordinary residues.  The full filtered-adjoint
+statement is proved in
+\cref{app:gauge-filtered-residues}.
+
+More strongly, put \(M_0=A_0B_0\) and make the formally invertible change
+\[
+W=\frac{M_0}{AB},\qquad
+T=sW^{1/S},\qquad
+H=\frac{\alpha\log(B/B_0)-\beta\log(A/A_0)}S.
+\]
+The complete determinant equation becomes
+\[
+\left(Sd+d\log M_0\,T\partial_T\right)H
+=
+\left(\alpha\,d\log B_0-\beta\,d\log A_0\right)
+\left(1-\frac1S T\partial_T\right)(W-1).
+\]
+Thus its normal orders decouple exactly before Newton-support conditions
+are imposed.  The inverse change is triangular on finite jets, so the
+nonlinearity is transferred to a canonical triangular support map rather
+than discarded.  For the full \((8,28)\) windows we also prove that
+\(\mathscr D_r^{2,3}\) is injective for every \(r\ge5\), and hence
+\[
+\dim\operatorname{coker}\mathscr D_r^{2,3}=r-1
+\qquad(5\le r\le11).
+\]
+See \cref{app:exact-normal-linearization}.
+
+For the stored \((8,28)\) terminal specialization this interpretation is
+also verified at the artifact level in the original layer coordinates.
+At layers \(6,7,8\), the ordinary cokernel dimensions are \(5,6,7\), while
+the nonlinear forcing has respectively \(4,5,6\) nonzero compatibility
+pairings.  After the recorded parameter normalization and removal of
+duplicates, the distinct equations occur with weights
+\[
+1,\ 3,\ 5,\ 6
+\qquad\text{at layers}\qquad
+5,\ 6,\ 7,\ 8,
+\]
+for a total of fifteen.  Each is a scalar multiple of
+\(\operatorname{Res}_0(\lambda(-\Phi_r))\) for an explicit left-null
+principal part \(\lambda\), and the resulting list agrees coefficientwise
+with the archived terminal equations.  This does not assert that the same
+coordinates preserve the sparse support conditions after the exact
+\((H,W,T)\) change; that conjugation remains part of the support problem.
+
+The third result gives the adjacent reduced cover forced by a normalized
+contact.
+
+\begin{theorem}[Secondary transport, informal form]
+\label{thm:intro-secondary}
+For integers \(a\ge1\) and \(e>a^2\), set \(\delta=e-a^2\).  The normalized
+boundary-volume transport equation has the unique polynomial-numerator
+solution
+\[
+h(s)=\frac{H_{a,e}(s)}{(s-1)^a},
+\qquad
+H_{a,e}(s)=
+\sum_{k=0}^a
+\frac{a^k a!}{(a-k)!\prod_{j=0}^k(e-aj)}s^k.
+\]
+The exceptional ratio
+\[
+W_{a,e}(s)=\frac{(s-1)^\delta H_{a,e}(s)^a}{s^e}
+\]
+is a degree-\(e\) Belyi map with passport
+\[
+(a^a,\delta),\qquad(e),\qquad(a+1,1^{e-a-1}).
+\]
+\end{theorem}
+
+For \((a,e)=(4,17)\), this recovers the degree-\(17\) secondary cover in the
+terminal \((8,28)\) calculation.  The lesson is negative but useful: reduced
+boundary covers are often forced and mutually compatible.  Any contradiction
+must live in the global normal-jet gluing, not merely in the first cover.
+
+\subsection{Scope}
+
+The statements proved here are algebraic theorems about face equations,
+lattice quotients, normal-layer operators, and the listed finite Hurwitz
+problems.  We do not prove:
+
+\begin{itemize}
+\item that every terminal complete chain has a complete finite-dimensional
+boundary deformation model;
+\item that the exact single-component formal solutions satisfy every sparse
+Newton-support and boundary-chart matching condition;
+\item that a support-compatible jet which lowers complexity belongs to the
+filtered group generated by allowable polynomial approximate roots; or
+\item the plane Jacobian conjecture.
+\end{itemize}
+
+Those distinctions will remain visible throughout the paper.
+
+\section{Face equations and their Belyi maps}
+\label{sec:faces}
+
+We work over a characteristic-zero field \(k\), embedded in \(\C\) when
+using topological language about covers.  A passport of a degree-\(D\)
+Belyi map is the ordered triple of partitions of \(D\) recording
+ramification over the three branch values.  The order of the branch values
+is immaterial for our applications.
+
+\subsection{The ambient terminal face}
+
+Let \(m,n>1\) be coprime and \(b\ge1\).  Consider polynomials
+\[
+p,q\in k[z],\qquad
+\deg p=mb-1,\quad \deg q=nb,
+\]
+satisfying
+\begin{equation}
+\label{eq:ambient-ode}
+npq-mzpq'+nzp'q=1.
+\end{equation}
+Define
+\begin{equation}
+\label{eq:ambient-tau}
+\tau(z)=z^n\frac{p(z)^n}{q(z)^m}.
+\end{equation}
+
+\begin{proposition}[Face-to-passport formula]
+\label{prop:ambient-passport}
+The rational function \(\tau\) is a degree-\(mnb\) Belyi map and
+\begin{equation}
+\label{eq:ambient-derivative}
+\tau'(z)=z^{n-1}\frac{p(z)^{n-1}}{q(z)^{m+1}}.
+\end{equation}
+Its passport is
+\begin{equation}
+\label{eq:ambient-passport}
+\left(n^{mb}\right),\qquad
+\left(m^{nb}\right),\qquad
+\left((m+n)b-1,1^{mnb-(m+n)b+1}\right).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Logarithmic differentiation of \eqref{eq:ambient-tau} gives
+\[
+\tau'
+=z^{n-1}\frac{p^{n-1}}{q^{m+1}}
+\bigl(npq+nzp'q-mzpq'\bigr).
+\]
+Equation \eqref{eq:ambient-ode} yields
+\eqref{eq:ambient-derivative}.
+
+At \(z=0\), the face equation gives \(np(0)q(0)=1\).  At a zero
+\(z_0\) of \(p\), it gives \(nz_0p'(z_0)q(z_0)=1\); hence the root is
+simple, nonzero, and not a root of \(q\).  The analogous assertion follows
+for roots of \(q\).  Thus the zero fiber of \(\tau\) has one point of
+multiplicity \(n\) at zero and \(mb-1\) further points of multiplicity
+\(n\).  The pole fiber consists of \(nb\) points of multiplicity \(m\).
+
+The numerator and denominator of \(\tau\) are coprime and both have degree
+\(mnb\), so \(\tau(\infty)\in k^\times\).  From
+\eqref{eq:ambient-derivative},
+\[
+\tau'(z)=O\!\left(z^{-(m+n)b}\right)
+\quad\text{as }z\longrightarrow\infty.
+\]
+Therefore
+\[
+\tau(z)-\tau(\infty)
+=O\!\left(z^{-((m+n)b-1)}\right),
+\]
+with nonzero leading coefficient.  The ramification contributions already
+identified total
+\begin{align*}
+mb(n-1)+nb(m-1)+((m+n)b-2)
+=2mnb-2.
+\end{align*}
+Riemann--Hurwitz leaves no additional critical point.  The rest of the
+\(\tau(\infty)\)-fiber is unramified, proving
+\eqref{eq:ambient-passport}.
+\end{proof}
+
+\begin{remark}
+Equation \eqref{eq:ambient-ode} is a member of the classical family of
+one-variable equations studied in the Formanek--Stothers approach
+\cite{formanek2011stothers}.  The content of
+\cref{prop:ambient-passport} is the complete passport forced by the stated
+endpoint degrees and normalization, not the first appearance of such an
+equation in the Jacobian problem.
+\end{remark}
+
+\subsection{The lattice quotient}
+
+In a complete-chain chart, \(z\) can be a fractional uniformizing
+coordinate.  The polynomial exponent lattice forces a gap
+\[
+g=\frac{\rho}{\gcd(\rho,\ell)}
+\]
+and restricts the face polynomials to \(k[z^g]\).  The following theorem is
+stated purely algebraically; the complete-chain theory supplies its
+hypothesis in the applications.
+
+\begin{theorem}[Lattice-gap terminal cover]
+\label{thm:lattice-gap}
+Assume the hypotheses of \cref{prop:ambient-passport} and suppose
+\[
+p(z)=\bar p(u),\qquad q(z)=\bar q(u),\qquad u=z^g,
+\]
+for an integer \(g\ge1\).  Then
+\[
+g\mid mb-1,\qquad g\mid nb,\qquad \gcd(g,b)=1,\qquad g\mid n.
+\]
+Put
+\begin{align*}
+N&=\frac ng,&
+A&=\frac{mb-1}{g},&
+B&=\frac{nb}{g},\\
+D&=\frac{mnb}{g},&
+H&=\frac{(m+n)b-1}{g}.&&
+\end{align*}
+The quotient face equation is
+\begin{equation}
+\label{eq:quotient-ode}
+N\bar p\bar q-mu\bar p\bar q'
++nu\bar p'\bar q=\frac1g,
+\end{equation}
+and
+\begin{equation}
+\label{eq:quotient-map}
+\bar\tau(u)=u^N\frac{\bar p(u)^n}{\bar q(u)^m}
+\end{equation}
+is a degree-\(D\) Belyi map with
+\begin{equation}
+\label{eq:quotient-derivative}
+\bar\tau'(u)=\frac1g
+u^{N-1}\frac{\bar p(u)^{n-1}}{\bar q(u)^{m+1}}
+\end{equation}
+and passport
+\begin{equation}
+\label{eq:quotient-passport}
+\left(n^A,N\right),\qquad
+\left(m^B\right),\qquad
+\left(H,1^{D-H}\right).
+\end{equation}
+Moreover,
+\[
+\tau(z)=\bar\tau(z^g),
+\]
+and every permutation triple with passport
+\eqref{eq:quotient-passport} is transitive.
+\end{theorem}
+
+\begin{proof}
+The degree assumptions imply \(g\mid mb-1\) and \(g\mid nb\).
+The first divisibility gives \(\gcd(g,b)=1\), so the second gives \(g\mid n\).
+Substitution into \eqref{eq:ambient-ode} and division by \(g\) yield
+\eqref{eq:quotient-ode}; logarithmic differentiation gives
+\eqref{eq:quotient-derivative}.  The proof of
+\cref{prop:ambient-passport}, with the zero multiplicity \(N\) at \(u=0\),
+gives the degree and passport.  The factorization of \(\tau\) is immediate.
+
+It remains to prove transitivity.  Let
+\((\sigma_0,\sigma_1,\sigma_\infty)\) have the stated cycle types and
+product one.  An orbit disjoint from the unique \(H\)-cycle of
+\(\sigma_\infty\) is pointwise fixed by \(\sigma_\infty\).  On that orbit,
+\(\sigma_1=\sigma_0^{-1}\), so its \(\sigma_0\)- and
+\(\sigma_1\)-cycles have equal length.  The possible lengths for
+\(\sigma_0\) are \(n\) and \(N\); the length for \(\sigma_1\) is \(m\).
+The equality \(n=m\) contradicts coprimality, while \(N=m\) would imply
+\(m\mid n\).  Hence no second orbit exists.
+\end{proof}
+
+\section{The first quotient Hurwitz problems}
+\label{sec:queue}
+
+The complete-chain algorithm of
+\cite{guccioneEtAl2017algorithms,guccioneEtAl2022degree108} supplies a
+finite queue of terminal data at each degree bound.  We apply
+\cref{thm:lattice-gap} to the first five rows at and beyond maximum degree
+\(125\).
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}llcrrlr@{}}
+\toprule
+case & terminal \(A;k\) & \((m,n)\) & \(g\) & quotient
+& quotient passport & classes\\
+\midrule
+\(F_2\), 125
+& \((7/5,2);1\) & \((3,5)\) & 5 & 6
+& \((5,1),(3^2),(3,1^3)\) & 1\\
+one-step, 126
+& \((19/7,5);2\) & \((2,3)\) & 3 & 10
+& \((3^3,1),(2^5),(8,1^2)\) & 1\\
+two-step, 126
+& \((11/6,3);1\) & \((3,2)\) & 2 & 9
+& \((2^4,1),(3^3),(7,1^2)\) & 1\\
+\(F_{24}\), 128
+& \((19/8,3);1\) & \((3,4)\) & 4 & 9
+& \((4^2,1),(3^3),(5,1^4)\) & 2\\
+one-step, 132
+& \((19/4,8);1\) & \((2,3)\) & 3 & 16
+& \((3^5,1),(2^8),(13,1^3)\) & 2\\
+\bottomrule
+\end{tabular}
+\caption{The first lattice-compatible terminal Hurwitz problems.}
+\label{tab:queue}
+\end{table}
+
+\begin{proposition}[Exact Hurwitz count]
+\label{prop:hurwitz-count}
+The final column of \cref{tab:queue} is exact.  In every row the deck group
+of every connected cover is trivial, so the weighted Hurwitz count equals
+the ordinary number of isomorphism classes.
+\end{proposition}
+
+\begin{proof}
+For conjugacy classes \(C_0,C_1,C_\infty\subseteq S_D\), the Frobenius
+character formula gives the weighted number
+\[
+\frac{|C_0||C_1||C_\infty|}{(D!)^2}
+\sum_{\chi\in\operatorname{Irr}(S_D)}
+\frac{\chi(C_0)\chi(C_1)\chi(C_\infty)}{\chi(1)}.
+\]
+The exact verifier evaluates the irreducible characters by the
+Murnaghan--Nakayama rule.  The five resulting rational numbers are
+\(1,1,1,2,2\).
+
+By \cref{thm:lattice-gap}, every triple is transitive.  In all five rows
+\(N=1\), so the first branch permutation has a unique fixed sheet.  A deck
+transformation centralizing the transitive monodromy group must preserve
+that sheet and is therefore the identity.  Thus there is no automorphism
+weight to remove.
+\end{proof}
+
+\subsection{The degree-\texorpdfstring{\(125\)}{125} quotient}
+
+For the first row, the ambient passport
+\[
+(5^6),\qquad(3^{10}),\qquad(15,1^{15})
+\]
+has eleven connected dessin classes: eight with trivial deck group, two
+with deck group \(C_3\), and one with deck group \(C_5\).  The gap is five,
+so only the last class descends to the polynomial lattice.
+
+\begin{proposition}
+\label{prop:f2-map}
+Up to source and target normalization, the unique lattice-compatible
+quotient is obtained from
+\[
+\bar p=1-u,\qquad
+\bar q=\frac15-\frac35u+\frac9{25}u^2.
+\]
+It satisfies
+\[
+\bar p\bar q-3u\bar p\bar q'+5u\bar p'\bar q=\frac15,
+\]
+and its Belyi map is
+\begin{equation}
+\label{eq:f2-map}
+\bar\tau(u)\doteq
+\frac{u(u-1)^5}
+{\left(u^2-\frac53u+\frac59\right)^3}.
+\end{equation}
+The ambient face is the cyclic pullback \(\bar\tau(z^5)\).
+\end{proposition}
+
+\begin{proof}
+Substitution proves the displayed differential equation.  The derivative
+identity and passport follow from \cref{thm:lattice-gap}.  The exact
+character and quotient-orbit enumeration proves uniqueness.
+\end{proof}
+
+\subsection{Explicit post-\texorpdfstring{\(125\)}{125} covers}
+
+For the one-step degree-\(126\) row, put
+\[
+P=u^3+u^2+\frac5{12}u+\frac1{18},
+\]
+\[
+Q=u^5+\frac32u^4+u^3+\frac13u^2+\frac5{96}u+\frac1{576}.
+\]
+The exact identity
+\begin{equation}
+\label{eq:126-one}
+uP^3-Q^2=-\frac{36u^2+28u+9}{2985984}
+\end{equation}
+gives \(\bar p=18P\), \(\bar q=192Q\).
+
+For the two-step degree-\(126\) row, one may take
+\[
+\bar p=1+\frac{20}{3}u+24u^2+\frac{288}{7}u^3+\frac{288}{7}u^4,
+\]
+\[
+\bar q=\frac12+5u+12u^2+18u^3.
+\]
+Equivalently,
+\[
+P=u^4+u^3+\frac7{12}u^2+\frac{35}{216}u+\frac7{288},
+\qquad
+Q=u^3+\frac23u^2+\frac5{18}u+\frac1{36}
+\]
+satisfy
+\begin{equation}
+\label{eq:126-two}
+uP^2-Q^3=-\frac{72u^2+39u+16}{746496}.
+\end{equation}
+
+For \(F_{24}\) there are two conjugate solutions over
+\(\mathbb Q(\sqrt6)\).  With \(\varepsilon=\pm1\),
+\[
+\bar p_\varepsilon
+=1+u+\left(\frac13+\varepsilon\frac{\sqrt6}{18}\right)u^2,
+\]
+\[
+\bar q_\varepsilon
+=\frac14+\frac58u
++\left(\frac25+\varepsilon\frac{\sqrt6}{40}\right)u^2
++\left(\frac{17}{160}
++\varepsilon\frac{11\sqrt6}{480}\right)u^3.
+\]
+Direct substitution verifies \eqref{eq:quotient-ode} in each case.
+
+\subsection{Infinitesimal rigidity}
+
+Fix the constant terms of a quotient solution and consider
+\[
+\mathcal F(p,q)=Npq-mupq'+nup'q.
+\]
+On coefficient variations with zero constant terms, its differential is
+\begin{equation}
+\label{eq:face-linearization}
+\mathscr L(\alpha,\beta)
+=N(\alpha q+p\beta)
+-mu(\alpha q'+p\beta')
++nu(\alpha'q+p'\beta).
+\end{equation}
+The endpoint relation \(N-m\deg(q)+n\deg(p)=0\) kills the top coefficient,
+so the precise linear map is
+\[
+\mathscr L:
+u k[u]_{\le \deg p}\oplus u k[u]_{\le \deg q}
+\longrightarrow
+u k[u]_{\le \deg p+\deg q-1}.
+\]
+Source scaling gives the kernel vector
+\[
+(\alpha,\beta)=(up',uq').
+\]
+
+\begin{proposition}[Rigidity of the explicit reduced covers]
+\label{prop:face-rigidity}
+For the degree-\(6\), degree-\(10\), degree-\(9\), and two conjugate
+degree-\(9\) maps above, \(\mathscr L\) is surjective and its kernel is
+exactly the source-scaling line.  Hence each normalized quotient solution
+is a reduced isolated point after quotienting by source scaling.
+\end{proposition}
+
+\begin{proof}
+The exact coefficient matrices have the following ranks and certified
+nonzero maximal minors.
+\[
+\begin{array}{@{}lccc@{}}
+\toprule
+\text{map} & (\deg p,\deg q) & \operatorname{rank}\mathscr L
+& \text{nonzero maximal minor}\\
+\midrule
+F_2,\ 125 &(1,2)&2&-36/5\\
+\text{one-step }126 &(3,5)&7&2090188800\\
+\text{two-step }126 &(4,3)&6&37791360/7\\
+F_{24},- &(2,3)&4&99/20-153\sqrt6/40\\
+F_{24},+ &(2,3)&4&99/20+153\sqrt6/40\\
+\bottomrule
+\end{array}
+\]
+In every row the domain dimension is one more than the displayed rank.
+The vector \((up',uq')\) is nonzero and lies in the kernel by
+differentiating source scaling.  It therefore spans the kernel.
+\end{proof}
+
+\begin{remark}
+\Cref{prop:face-rigidity} is a coefficient-level statement for the reduced
+cover.  It does not prove that a full boundary deformation functor splits
+étale-locally into this Hurwitz point and an independent normal-jet problem.
+\end{remark}
+
+\section{The normal-boundary determinant complex}
+\label{sec:normal-complex}
+
+Let \(E\) be a smooth boundary curve with local coordinate \(z\), and let
+\(s\) be a normal parameter.  For positive integers \(\alpha,\beta\),
+consider
+\begin{equation}
+\label{eq:master}
+\alpha AB_z-\beta A_zB
++s(A_zB_s-A_sB_z)=\Psi(z),
+\end{equation}
+where
+\[
+A=A_0+\sum_{r\ge1}s^ra_r,\qquad
+B=B_0+\sum_{r\ge1}s^rb_r.
+\]
+The order-zero equation is
+\[
+\alpha A_0B_0'-\beta A_0'B_0=\Psi.
+\]
+
+\begin{proposition}[Universal layer operator]
+\label{prop:layer}
+At normal order \(r\), the terms involving the new pair
+\((a_r,b_r)\) are
+\begin{equation}
+\label{eq:layer}
+\boxed{
+\mathscr D_r^{\alpha,\beta}(a,b)
+=(\alpha-r)a\,dB_0-\beta B_0\,da
++\alpha A_0\,db+(r-\beta)b\,dA_0.}
+\end{equation}
+Every other term at that order depends only on lower layers.
+\end{proposition}
+
+\begin{proof}
+The coefficient of \(s^r\) in the first two terms of
+\eqref{eq:master} contributes
+\[
+\alpha(aB_0'+A_0b')-\beta(a'B_0+A_0'b).
+\]
+The new part of the last term is \(rA_0'b-raB_0'\).  Combining these
+terms and multiplying by \(dz\) gives \eqref{eq:layer}.
+\end{proof}
+
+\begin{proposition}[Residue adjoint]
+\label{prop:adjoint}
+For a meromorphic scalar \(\lambda\),
+\begin{equation}
+\label{eq:adjoint}
+\boxed{
+(\mathscr D_r^{\alpha,\beta})^\vee(\lambda)
+=\left(
+\beta B_0\,d\lambda+(\alpha+\beta-r)\lambda\,dB_0,
+-\alpha A_0\,d\lambda+(r-\alpha-\beta)\lambda\,dA_0
+\right).}
+\end{equation}
+More precisely,
+\begin{align}
+\lambda\mathscr D_r(a,b)
+&-a\bigl((\mathscr D_r)^\vee\lambda\bigr)_1
+-b\bigl((\mathscr D_r)^\vee\lambda\bigr)_2\notag\\
+&=d\bigl(-\beta\lambda B_0a+\alpha\lambda A_0b\bigr).
+\label{eq:ibp}
+\end{align}
+Consequently every adjoint solution in a dual pole window gives a residue
+functional annihilating the image of \(\mathscr D_r\).
+\end{proposition}
+
+\begin{proof}
+Expand the right side of \eqref{eq:ibp}.  Summing residues on a complete
+curve kills the exact differential.
+\end{proof}
+
+If the chosen rational-differential window represents the full dual of the
+target space under the residue pairing, the kernel of
+\eqref{eq:adjoint} represents the entire cokernel.  This is the precise
+finite-window setting in which a left null vector of a monomial coefficient
+matrix becomes an intrinsic residue obstruction.
+
+\begin{proposition}[Virtual obstruction excess on \(\PP^1\)]
+\label{prop:index}
+Suppose
+\[
+\mathscr D_r:
+H^0(\PP^1,\mathcal O(d_A))\oplus
+H^0(\PP^1,\mathcal O(d_B))
+\longrightarrow
+H^0(\PP^1,\mathcal O(d_W)),
+\]
+with \(d_A,d_B,d_W\ge-1\).  The target-minus-domain dimension is
+\begin{equation}
+\label{eq:index}
+\epsilon=d_W-d_A-d_B-1.
+\end{equation}
+If \(\mathscr D_r\) is injective, its cokernel has dimension \(\epsilon\).
+\end{proposition}
+
+\begin{proof}
+Use \(h^0(\mathcal O(d))=d+1\) for \(d\ge-1\).
+\end{proof}
+
+For the independently certified full \((8,28)\) support, the windows at
+\(r\ge5\) are
+\[
+d_A=10-r,\qquad d_B=15-r,\qquad d_W=25-r.
+\]
+Thus
+\[
+\epsilon_r=r-1.
+\]
+\Cref{prop:828-layer-injectivity} proves the missing injectivity for these
+windows.  Hence this virtual excess is the actual cokernel dimension for
+\(5\le r\le11\).  The result is not used to claim the public
+degree-\(125\) theorem.
+
+\section{A universal secondary Belyi map}
+\label{sec:secondary}
+
+Let \(D=\{t=0\}\) be a boundary component with coordinate \(s\), and put
+\[
+c(s)=\frac{s}{s-1}.
+\]
+Assume target coordinates have been normalized to
+\begin{equation}
+\label{eq:contact}
+\pi=t^ac(s)+O(t^{a+1}),\qquad
+u=\sum_{j\ge1}t^jh_j(s),
+\end{equation}
+where \(a\ge1\).  Suppose the boundary-volume identity has no term below
+order \(t^{a+e-1}\) and that its first nonzero coefficient is
+\begin{equation}
+\label{eq:volume}
+d\pi\wedge du
+=-t^{a+e-1}(s-1)^{-a-2}\,ds\wedge dt
++O(t^{a+e}).
+\end{equation}
+
+At a lower order \(j\), the homogeneous equation is
+\begin{equation}
+\label{eq:homogeneous}
+jc'h_j-ach_j'=0.
+\end{equation}
+
+\begin{lemma}[Resonance and target shears]
+\label{lem:resonance}
+A nonzero rational solution of \eqref{eq:homogeneous} exists if and only if
+\(a\mid j\).  If \(j=ak\), every solution is \(h_j=Cc^k\), and its
+leading contribution \(Ct^{ak}c^k\) is removed by the target shear
+\(u\mapsto u-C\pi^k\).
+\end{lemma}
+
+\begin{proof}
+Equation \eqref{eq:homogeneous} gives \(h_j=Cc^{j/a}\).  Since
+\(\operatorname{div}(c)=(0)-(1)\), the power is rational exactly when
+\(j/a\) is an integer.  The assertion about the shear follows from
+\eqref{eq:contact}.
+\end{proof}
+
+After removing all resonant lower terms, the coefficient of
+\eqref{eq:volume} gives
+\begin{equation}
+\label{eq:transport-equation}
+ec'h-ach'=-(s-1)^{-a-2}.
+\end{equation}
+
+\subsection{The contact degree}
+
+\begin{proposition}[Contact-degree formula]
+\label{prop:contact}
+Suppose coprime integers \(m,n\) satisfy
+\[
+v_E(P)=-m,\quad v_E(Q)=-n,\qquad
+v_D(P)=-ma,\quad v_D(Q)=-na.
+\]
+Choose \(c,d\in\mathbb Z\) with \(dn-cm=1\) and set
+\[
+\pi=P^c/Q^d,\qquad \tau=Q^m/P^n.
+\]
+Assume that in the toric chart \(x=t^{-1}\) up to a unit and that
+\[
+dP\wedge dQ=x^\kappa\,dx\wedge dy
+\]
+up to a nonzero \(s\)-unit.  Put
+\[
+e_*=a(m+n)-\kappa-1.
+\]
+If \(e_*>0\), then the residue of \(\tau\) on \(D\) is constant.  After
+subtracting that constant and removing the lower resonant target shears, the
+first non-shear contact degree is
+\begin{equation}
+\label{eq:contact-degree}
+e=e_*=a(m+n)-\kappa-1.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The Bézout relation gives \(v_D(\pi)=a\) and \(v_D(\tau)=0\).  Direct
+differentiation gives
+\[
+d\pi\wedge d\tau
+=-P^{c-n-1}Q^{m-d-1}\,dP\wedge dQ.
+\]
+The monomial factor has \(t\)-order \(a(m+n+1)\), while the last wedge has
+order \(-\kappa-2\).  Thus
+\[
+\operatorname{ord}_D(d\pi\wedge d\tau)
+=a(m+n+1)-\kappa-2=a+e_*-1.
+\]
+Before assuming that the residue is constant, write
+\(\tau=\tau_0(s)+O(t)\).  The coefficient of
+\(t^{a-1}dt\wedge ds\) in \(d\pi\wedge d\tau\) is
+\(a c(s)\tau_0'(s)\).  Since \(e_*>0\), the displayed wedge order is
+strictly greater than \(a-1\), hence \(\tau_0'=0\).  After translating
+\(\tau_0\) to zero and removing the lower resonances of
+\cref{lem:resonance}, the first remaining term of order \(e\) contributes
+wedge order \(a+e-1\).  Equating orders gives
+\eqref{eq:contact-degree}.
+\end{proof}
+
+\subsection{Transport and passport}
+
+\begin{theorem}[Universal secondary-boundary transport]
+\label{thm:secondary}
+Let \(a,e\in\mathbb N\) satisfy \(e>a^2\), and put
+\(\delta=e-a^2\).  Equation \eqref{eq:transport-equation} has a unique
+solution
+\[
+h(s)=\frac{H_{a,e}(s)}{(s-1)^a}
+\]
+whose numerator is a polynomial of degree at most \(a\), where
+\begin{align}
+H_{a,e}(s)
+&=\sum_{k=0}^a
+\frac{a^k a!}{(a-k)!\prod_{j=0}^k(e-aj)}s^k
+\label{eq:H-sum}\\
+&=\frac1e\,{}_2F_1\!\left(-a,1;1-\frac ea;s\right).
+\label{eq:H-hypergeometric}
+\end{align}
+It satisfies
+\begin{equation}
+\label{eq:H-ode}
+as(s-1)H'+(e-a^2s)H=1,
+\end{equation}
+\[
+H(0)=\frac1e,\qquad H(1)=\frac1\delta,
+\]
+and \(H\) is squarefree.
+
+The exceptional ratio
+\begin{equation}
+\label{eq:secondary-W}
+W_{a,e}(s)=\frac{(s-1)^\delta H_{a,e}(s)^a}{s^e}
+\end{equation}
+is a degree-\(e\) Belyi map.  It obeys
+\begin{equation}
+\label{eq:secondary-derivative}
+W_{a,e}'(s)=
+\frac{(s-1)^{\delta-1}H_{a,e}(s)^{a-1}}{s^{e+1}},
+\end{equation}
+and its passport is
+\begin{equation}
+\label{eq:secondary-passport}
+(a^a,\delta),\qquad(e),\qquad(a+1,1^{e-a-1}).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Substitute \(h=H/(s-1)^a\) into
+\eqref{eq:transport-equation}; since \(c'=-(s-1)^{-2}\), this gives
+\eqref{eq:H-ode}.  Writing \(H=\sum h_ks^k\) gives
+\[
+h_0=\frac1e,\qquad
+h_k=\frac{a(a+1-k)}{e-ak}h_{k-1}.
+\]
+The denominators are nonzero because \(e>a^2\), and the recurrence gives
+\eqref{eq:H-sum}.  It also proves uniqueness.  The hypergeometric notation
+is the same terminating recurrence.  Evaluation at zero and one gives the
+stated endpoint values.  If \(H(s_0)=0\), then
+\eqref{eq:H-ode} gives \(as_0(s_0-1)H'(s_0)=1\); hence every root is simple
+and avoids \(0,1\).
+
+Logarithmic differentiation of \eqref{eq:secondary-W}, followed by
+\eqref{eq:H-ode}, gives
+\[
+\frac{W'}W=\frac1{s(s-1)H},
+\]
+which is \eqref{eq:secondary-derivative}.  The numerator and denominator of
+\(W\) are coprime of degree \(e\).  Over zero, the \(a\) roots of \(H\)
+have multiplicity \(a\) and \(s=1\) has multiplicity \(\delta\).  Over
+infinity, \(s=0\) has multiplicity \(e\).  At \(s=\infty\),
+\eqref{eq:secondary-derivative} shows that
+\(W-W(\infty)\) has order \(a+1\).  Finally,
+\[
+a(a-1)+(\delta-1)+(e-1)+a=2e-2,
+\]
+so Riemann--Hurwitz leaves only \(e-a-1\) unramified points in the third
+fiber and proves \eqref{eq:secondary-passport}.
+\end{proof}
+
+\begin{corollary}[The \((4,17)\) cover]
+\label{cor:417}
+For \(a=4,e=17\),
+\[
+H_{4,17}(s)
+=\frac{195+240s+320s^2+512s^3+2048s^4}{3315},
+\]
+\[
+W_{4,17}(s)=\frac{(s-1)H_{4,17}(s)^4}{s^{17}},
+\qquad
+W_{4,17}'(s)=\frac{H_{4,17}(s)^3}{s^{18}},
+\]
+with passport \((4^4,1),(17),(5,1^{12})\).
+\end{corollary}
+
+\section{Filtered residues and the remaining gluing problem}
+\label{sec:descent}
+
+The phrase ``vanishing high-pole residues lowers the Newton window'' has an
+exact linear core.
+
+\begin{lemma}[Filtered one-layer descent]
+\label{lem:filtered}
+Let \(D:U\to V\) be a linear map of finite-dimensional vector spaces and
+let \(V_{\le d}\subseteq V\) be a filtered subspace.  For
+\(\Phi\in V\), the following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item there exists \(u\in U\) such that
+\(\Phi-Du\in V_{\le d}\);
+\item every
+\[
+\lambda\in(\operatorname{im}D)^\perp
+\cap(V_{\le d})^\perp
+\]
+satisfies \(\lambda(\Phi)=0\).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Let \(q:V\to V/\operatorname{im}D\).  Condition (i) says
+\(q(\Phi)\in q(V_{\le d})\).  Finite-dimensional duality says precisely
+that every functional on the quotient vanishing on \(q(V_{\le d})\) must
+also vanish on \(q(\Phi)\).  Pulling the functionals back to \(V\) gives
+(ii).
+\end{proof}
+
+For \(\mathscr D_r\), the relevant functionals are the pole-filtered
+adjoint residue classes of \cref{prop:adjoint}.  Thus at one fixed normal
+layer their vanishing is equivalent to reducing the forcing term to the
+smaller pole window.
+
+This is not yet a descent theorem for polynomial Keller pairs.
+\Cref{thm:exact-normal-linearization} shows that the unrestricted
+determinant equation on one smooth component has no further cross-order
+compatibility obstruction.  What remains is to solve its triangular
+support equations, match the solutions across boundary charts, and realize
+a complexity-lowering finite jet by the valuation-filtered subgroup of
+allowable polynomial approximate-root operations.
+
+\begin{question}[Filtered descent]
+\label{q:integrable}
+For a terminal complete-chain boundary model, does simultaneous vanishing
+of all high-pole residue obstructions, together with the triangular support
+and chart-matching equations of
+\cref{app:exact-normal-linearization}, either force the boundary-gluing
+scheme to be empty or produce an admissible finite jet of strictly smaller
+complete-chain complexity?
+\end{question}
+
+A positive answer, together with completeness of the finite boundary model,
+would permit induction on complete-chain complexity.  Neither hypothesis is
+proved here.
+
+\begin{question}[Filtered finite-jet realization]
+\label{q:finite-determinacy}
+For a fixed complete Newton chain, through the first
+complexity-dropping weight, is every support-compatible formal jet in the
+orbit of the allowable polynomial approximate-root subgroup?
+\end{question}
+
+Ordinary local Jacobian-one jets are polynomially realizable by
+\cref{prop:finite-jet-realization}; the content of
+\cref{q:finite-determinacy} is the extra valuation filtration imposed by
+the complete chain.
+
+\begin{question}[Normal splitting]
+\label{q:splitting}
+Near one of the rigid reduced covers of
+\cref{prop:face-rigidity}, does the complete boundary deformation functor
+split étale-locally into the reduced Hurwitz point and a normal-jet
+deformation problem?  If not, which cross-terms measure the failure?
+\end{question}
+
+\section{Exact computation and reproducibility}
+\label{sec:computation}
+
+All finite computations in this paper were rerun with exact arithmetic.
+The certificate suite performs the following checks.
+
+\begin{enumerate}[label=(\arabic*)]
+\item It verifies the layer operator, the adjoint integration-by-parts
+identity, and the specialization \(\epsilon_r=r-1\).
+\item It verifies the logarithmic wedge identity underlying the exact normal
+linearization, the determinant-one diagonal jet block, the
+\((8,28)\) boundary-volume identity, and the terminal window dimensions.
+\item For \(1\le a\le8\) and \(\delta\in\{1,2,3\}\), it verifies the
+hypergeometric recurrence, squarefreeness, derivative identity, degrees,
+passports, and Riemann--Hurwitz count for \(e=a^2+\delta\).
+\item It verifies the terminal-corner arithmetic, lattice divisibilities,
+quotient equations, derivative formulas, and the explicit degree-\(6\)
+map.
+\item It evaluates the exact symmetric-group character sums, recovers the
+eleven ambient degree-\(30\) classes, and selects the unique
+lattice-compatible \(C_5\) pullback.
+\item It verifies all five quotient passports and Hurwitz counts and all
+explicit quotient maps through maximum degree \(128\).
+\item It constructs the five exact tangent matrices, proves their ranks,
+checks their scaling kernels, and records a nonzero maximal minor in each
+case.
+\item Starting from the lattice points of the two normalized Newton
+supports, it reconstructs the exact degree-\(21\) lower face and every
+deficiency layer.  For the truncated support it checks the rank-\(14\)
+Macaulay obstruction; for the full support it checks the weight-four square,
+the vertex-saturated normalization, and the resulting fifteen equations.
+\item It reconstructs every stored layer matrix through order \(8\) from
+\(\mathscr D_r^{2,3}\), converts every left-null row to a principal part,
+checks the filtered adjoint equations, and recovers every compatibility
+pairing as a residue.
+\item It applies the recorded parameter normalization, reproduces all
+fifteen archived equations coefficient by coefficient, and identifies the
+six terminal equations as a coordinate projection of that fifteen-component
+obstruction section.
+\item It verifies the five degree-\(21\) dessin representatives by explicit
+permutation triples, including their passports, transitivity, pairwise
+inequivalence, trivial deck groups, and monodromy group \(A_{21}\).
+\item It independently replays the two exact branchwise Nullstellensatz
+identities using both GMP and rational Python arithmetic.
+\item It computes mixed volume \(296\), exhausts all \(344\) proper toric
+faces, verifies the reduced \(296\)-point special algebra, and checks that
+multiplication by the sixth obstruction has nonzero determinant.
+\end{enumerate}
+
+Freshly generated JSON outputs are byte-for-byte identical to the recovered
+reference outputs.  These scripts verify the explicit identities and finite
+enumerations.  They do not verify that the complete-chain input exhausts
+every hypothetical counterexample, prove the missing gluing theorem, or
+establish novelty.
+
+The compact source distribution has four corresponding directories: terminal
+boundary calculations; the five degree-\(21\) faces and their exact Belyi
+data; independent unit-ideal replay programs; and the compact \(296\)-point
+toric certificate.  The large selected matrices, cofactors, and residue
+tables are shipped as a companion data archive.  A short computation index
+maps every computer-assisted assertion to its files.
+
+The exact unit-ideal identities and the \(296\)-point toric calculation are
+unconditional statements about their displayed polynomial systems.  Their
+interpretation as an exhaustive below-\(125\) obstruction still depends on
+the published Newton-polygon reduction from an arbitrary hypothetical
+counterexample below that bound to the two normalized supports used here.
+The original utility \texttt{lower\_face\_layers.py} was not recovered, but
+an independent exact program now regenerates the subsequent reduction from
+those two supports through the terminal obstruction systems.  Thus the
+missing utility is not a dependency of the present certificate path.
+
+\appendix
+\input{appendices/gauge-filtered-residues}
+\input{appendices/exact-normal-linearization}
+\input{appendices/degree-twenty-one-certificates}
+\input{../common/companion-register-note}
+
+\section*{AI and computational disclosure}
+
+AI systems were used extensively in exploration, symbolic-program
+development, proof drafting, source organization, and manuscript editing.
+They are not authors.  Human specialist review has not yet been completed.
+The evidence for the computer-assisted propositions is the exact certificate
+suite described above, not language-model output.
+
+\bibliographystyle{amsplain}
+\bibliography{../common/references}
+
+\end{document}
+~~~
+
+[Back to the text-source index](../index.md)

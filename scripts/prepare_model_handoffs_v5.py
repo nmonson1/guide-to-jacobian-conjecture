@@ -13,6 +13,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
+V6_HANDOFFS = {"6b", "6c", "6d"}
 FORBIDDEN = ("/fss/", "/home/", "chatgpt.com/share", "INTAKE-", "sandbox:/")
 UNIT_RE = re.compile(r"`(?P<unit>(?:RMU|JCG)-[A-Z0-9]+)`")
 MANUSCRIPT_RE = re.compile(r"`manuscripts/(?P<path>[^`]+\.(?:tex|py|bib))`")
@@ -233,8 +234,8 @@ charts over `T=0`; the finite charts and all-rank PRS theorem are supplied.
 <a id="lane-3-deformation-moduli"></a>
 ### Lane 3 — [Bounded-degree deformation and modulus onset](bounded-degree-deformation-modulus-onset.md)
 
-Either reconstruct the direct order-five Kuranishi calculation or settle the
-stable effectivity of the supplied quadratic-modulus family.
+Either reconstruct the direct order-five Kuranishi calculation or sharpen the
+proved stable-equivalence complexity of the quadratic-modulus family.
 
 <a id="lane-4-quartic-endgame"></a>
 ### Lane 4 — [The quartic endgame](quartic-endgame.md)
@@ -258,13 +259,14 @@ missing target and stable-presentation quotient.
 ### Lane 7 — [Five-dimensional collision geometry](five-dimensional-collision-geometry.md)
 
 Prove corank-two exclusion or grade six for the exact residual `10 x 5`
-matrix obtained from the globally split fifteen-equation incidence.
+matrix, retaining the intrinsic Pluecker open for genuine markings.
 
 <a id="lane-8-plane-newton-queue"></a>
 ### Lane 8 — [Plane Newton queue and terminal certificates](plane-newton-queue-terminal-certificates.md)
 
-Audit the exact public reconstruction program from the two supports to its
-terminal equations and expose the first unimplemented complementary branch.
+Route the full-support root of the exact public reconstruction program; the
+truncated root is closed, while the stored transformed certificate lacks a
+proved chart bridge.
 
 <a id="lane-9-plane-global-attachment"></a>
 ### Lane 9 — [Plane chart correspondence and global attachment](plane-chart-correspondence-global-attachment.md)
@@ -278,12 +280,12 @@ HUB_TASKS = """| Lane | Current exact on-ramp |
 | --- | --- |
 | 1 | `P1-T1`: compute the actual collision saturation |
 | 2 | `P4-L2A0`: projective completion of the quintic outer graph |
-| 3 | `P3-L3A0` or `P3-L3D`: direct reconstruction or stable effectivity |
+| 3 | `P3-L3A0` or `P3-L3D`: direct reconstruction or sharp stable complexity |
 | 4 | `P2-L4A`: audit the supplied global leaf accounting |
 | 5 | `L5-T1A`: abstract frame-covariance lemma |
 | 6 | `P5-L6A0`: upgrade the 60-direction obstruction |
-| 7 | `P5-L7A`: corank-two exclusion for the residual matrix |
-| 8 | `P6-L8A`: audit the exact reconstruction and expose the first routing gap |
+| 7 | `P5-L7A`: corank-two exclusion with the genuine-marking open |
+| 8 | `P6-L8A`: route the full-support root and expose its first gap |
 | 9 | `P6-L9A0`: realize the finite ambient wall groupoid |"""
 
 
@@ -630,7 +632,7 @@ def _public_lane_source(
         source = source.replace(LANE6_SUMMARY, f"\n\n{LANE6_MARKER}")
     elif handoff_version == 4 and "retained-math-v2-selection:" in source:
         raise ValueError(f"unexpected retained-math v2 marker in {slug}")
-    elif handoff_version in {5, "6b", "6c"}:
+    elif handoff_version == 5 or handoff_version in V6_HANDOFFS:
         expected_markers = 1 if slug == "homogeneous-realization-compression" else 0
         if source.count("retained-math-v2-selection:") != expected_markers:
             raise ValueError(f"{slug}: retained-math v2 marker count changed")
@@ -658,7 +660,7 @@ def _public_lane_source(
         ),
         source,
     )
-    if handoff_version in {"6b", "6c"}:
+    if handoff_version in V6_HANDOFFS:
         if jacobian_commit is None or not re.fullmatch(r"[0-9a-f]{40}", jacobian_commit):
             raise ValueError("v6 requires a full 40-character Jacobian commit")
         if source_packet_route is None:
@@ -736,6 +738,126 @@ known.  The six program dossiers remain deeper overlapping views."""
     return source
 
 
+def _update_program_brief(source: str, slug: str) -> str:
+    """Remove stale workflow gates from program views when mathematics moved on."""
+    if slug == "cubic-marked-root-incidence-geometry":
+        source = source.replace(
+            """**Audit checkpoint, 31 July 2026.** A full external-model audit found the
+main spine largely sound. Its repairs have now been reconciled into the
+working source: explicit retained-infinity gluing, the positive cubic case,
+the finite-flat classifying square, the `U0` correction, and the exact MCM
+comparison criterion. The text source is current; the public v12 PDF remains
+stale until rebuilt, and
+the geometric arguments still carry the specialist-review gates listed in
+the Program 1 audit record.""",
+            """**Current mathematical checkpoint.** The working source now contains
+explicit retained-infinity gluing, the positive cubic case, the finite-flat
+classifying square, the corrected `U0/U1/U2/B` taxonomy, and the exact MCM
+comparison criterion. The remaining mathematical gaps are the construction
+and identification of the actual resolvent eigensheaf, Keller-specific
+vanishing of its defect, and boundary completeness; those are the frontiers
+below.""",
+            1,
+        )
+        _validate_public(source, source=Path(slug))
+        return source
+    if slug != "stable-moduli":
+        return source
+
+    frontier_start = source.index("**(F0) Proof hardening after the v13 audit.**")
+    frontier_end = source.index("**(F1) Define the local graph models", frontier_start)
+    current_frontier = """**(F0) Stable classification and effectivity.** The complete stable
+classification of the quadratic cubic-frame family is proved, including the
+exceptional value and the `alpha=0` line
+([`RMU-9075E072`](../working-mathematics/units/RMU-9075E072.md)).  The exact
+Artin staircase then proves stable non-effectivity and divergence of
+unrestricted equivalence complexity
+([`RMU-3FEF0011`](../working-mathematics/units/RMU-3FEF0011.md)).  The live
+question is quantitative: determine the sharp unrestricted complexity modulo
+`s^M`, or construct a family with a stronger proved growth law.
+
+"""
+    source = source[:frontier_start] + current_frontier + source[frontier_end:]
+
+    source = source.replace(
+        """The newest hidden-kernel analysis makes this distinction stricter, not
+weaker. Its geometric comparison remains conditional on fixed-frame Torelli
+and a boundary exact sequence, while an explicit dual-number hidden
+automorphism shows that literal descent for the unrigidified family is false.
+Any correct theorem must rigidify or retain that stack structure. A separate
+conversation proposes formal left-right inertia and stabilized-automorphism
+descriptions, but it has no attached independent proof receipt and belongs in
+F0's audit queue.""",
+        """The hidden-kernel analysis makes this distinction stricter, not weaker.
+Its geometric comparison assumes fixed-frame Torelli and the stated boundary
+exact sequence, while an explicit dual-number hidden automorphism shows that
+literal descent for the unrigidified family is false. Any correct theorem must
+rigidify or retain that stack structure. Proposed formal-inertia and
+stabilized-automorphism descriptions are research leads until their defining
+maps and proofs are supplied.""",
+        1,
+    )
+
+    task_start = source.index("**P4-T1 — Independently harden the v13 proof chain.**")
+    task_end = source.index("**P4-T2 — Define and test", task_start)
+    current_task = """**P4-T1 — Determine sharp stable-equivalence complexity.**
+
+Status: ready.
+
+*Inputs:* the [Lane 3 brief](bounded-degree-deformation-modulus-onset.md),
+[`RMU-3FEF0011`](../working-mathematics/units/RMU-3FEF0011.md),
+[`RMU-9075E072`](../working-mathematics/units/RMU-9075E072.md), and the exact
+formal-effectivity source packet linked from that lane.
+
+*Payoff:* upgrades proved divergence to a sharp quantitative invariant, or
+finds a family with a stronger effectivity gap.
+
+*Attack:* fix the stabilization operations and a complexity measure; then
+seek matching upper and lower bounds modulo `s^M`. Keep the proved generic
+stable separation distinct from the framed linear staircase.
+
+*Done when:* the least unrestricted complexity has matching asymptotic bounds,
+or a new exact family has a stronger proved growth law.
+
+"""
+    source = source[:task_start] + current_task + source[task_end:]
+    source = source.replace(
+        "Each item is a task capsule. T1 must define the functor before proposing a\n"
+        "space; T2 must wait for explicit overlap maps.",
+        "Each item is a task capsule. T2 must define the functor before proposing a\n"
+        "space and must wait for explicit overlap maps.",
+        1,
+    )
+    source = source.replace(
+        "**P4-T3 — Clear the modulus-onset verification gate.**",
+        "**P4-T3 — Establish or withdraw the degree-eleven onset claim.**",
+        1,
+    )
+    source = source.replace(
+        "Actor: `independent_cas` plus proof audit. Status: ready.",
+        "Status: ready.",
+        1,
+    )
+    source = source.replace(
+        """The July 30 proof-audit packet is preserved at
+`code/proof-audit-2026-07-30-v1/`. Its ZIP has SHA-256
+`ffbcb8a4f8515c3f5c07aa85f870ed1cf736923bc08bcb845d1b5fe85a6932e8`.
+The attached SymPy program replays successfully. The prose audit is a
+model-generated evidence lead, not a specialist receipt; use it to target
+P4-T1 and retain its distinction between definite statement defects,
+plausible proof repairs, and unauditable constructions.""",
+        """The July 30 proof-analysis packet is preserved at
+`code/proof-audit-2026-07-30-v1/`. Its ZIP has SHA-256
+`ffbcb8a4f8515c3f5c07aa85f870ed1cf736923bc08bcb845d1b5fe85a6932e8`,
+and its attached SymPy program replays successfully. Use the packet only for
+the mathematical arguments, failure modes, and exact computations it
+contains; its broader proposed constructions remain research leads.""",
+        1,
+    )
+    _validate_public(source, source=Path(slug))
+    return source
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--base-dir", type=Path, required=True)
@@ -783,19 +905,19 @@ def main() -> int:
 
     lane_manifest = _load(lane_manifest_path)
     handoff_version = lane_manifest.get("handoff_version")
-    if handoff_version not in {4, 5, "6b", "6c"} or lane_manifest.get("lane_count") != 9:
+    if handoff_version not in {4, 5, *V6_HANDOFFS} or lane_manifest.get("lane_count") != 9:
         raise ValueError("source manifest must select exactly nine v4, v5, or v6 lanes")
-    if handoff_version in {5, "6b", "6c"} and (
+    if (handoff_version == 5 or handoff_version in V6_HANDOFFS) and (
         args.lane7_packet is None or args.lane8_packet is None
     ):
         raise ValueError("v5 requires --lane7-packet and --lane8-packet")
-    if handoff_version in {"6b", "6c"} and args.jacobian_commit is None:
+    if handoff_version in V6_HANDOFFS and args.jacobian_commit is None:
         raise ValueError("v6 requires --jacobian-commit")
-    if handoff_version in {"6b", "6c"} and args.research_notes_root is None:
+    if handoff_version in V6_HANDOFFS and args.research_notes_root is None:
         raise ValueError("v6 requires --research-notes-root")
-    if handoff_version not in {"6b", "6c"} and args.jacobian_commit is not None:
+    if handoff_version not in V6_HANDOFFS and args.jacobian_commit is not None:
         raise ValueError("--jacobian-commit is accepted only for v6")
-    if handoff_version not in {"6b", "6c"} and args.research_notes_root is not None:
+    if handoff_version not in V6_HANDOFFS and args.research_notes_root is not None:
         raise ValueError("--research-notes-root is accepted only for v6")
     if handoff_version == 4 and (
         args.lane7_packet is not None or args.lane8_packet is not None
@@ -829,7 +951,7 @@ def main() -> int:
             jacobian_commit=args.jacobian_commit,
             source_packet_route=(
                 f"lane-{sequence}-source-packet.md"
-                if handoff_version in {"6b", "6c"}
+                if handoff_version in V6_HANDOFFS
                 else None
             ),
         )
@@ -845,7 +967,9 @@ def main() -> int:
         elif item["kind"] == "cross_program":
             text = _update_hub(base_payload.decode("utf-8"))
         else:
-            text = base_payload.decode("utf-8")
+            text = _update_program_brief(
+                base_payload.decode("utf-8"), item["program_slug"]
+            )
             _validate_public(text, source=base_source)
         payload = text.encode("utf-8")
         prepared.append(
@@ -874,10 +998,10 @@ def main() -> int:
         raise ValueError("retained-math v2 marker selection changed")
 
     task_inputs: list[tuple[bytes, dict[str, Any]]] = []
-    if handoff_version in {5, "6b", "6c"}:
+    if handoff_version == 5 or handoff_version in V6_HANDOFFS:
         assert args.lane7_packet is not None
         assert args.lane8_packet is not None
-        if handoff_version in {"6b", "6c"}:
+        if handoff_version in V6_HANDOFFS:
             assert args.research_notes_root is not None
             assert args.jacobian_commit is not None
             notes_root = args.research_notes_root.resolve()
@@ -902,7 +1026,7 @@ def main() -> int:
         with (output / item["source"]).open("xb") as handle:
             handle.write(payload)
     manifest = {
-        "schema_version": 6 if handoff_version in {"6b", "6c"} else handoff_version,
+        "schema_version": 6 if handoff_version in V6_HANDOFFS else handoff_version,
         "release_id": args.release_id,
         "updated_at": args.updated_at,
         "base_release": {

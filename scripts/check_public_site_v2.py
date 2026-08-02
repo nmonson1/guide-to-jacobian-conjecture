@@ -91,6 +91,9 @@ HANDOFF_STATUS_BUREAUCRACY = (
     "last audited",
     "independent review",
     "independent specialist review",
+    "specialist review",
+    "specialist-review",
+    "review gate",
 )
 STATE_LANE_ANCHORS = tuple(
     f'<a id="{anchor}"></a>'
@@ -441,6 +444,21 @@ def main() -> int:
             failures.append(f"{path.relative_to(ROOT)}: private canonical id marker")
         _local_links(path, failures)
 
+    for public_subtree in ("claims", "collections"):
+        for path in sorted((DOCS / public_subtree).glob("*.md")):
+            text = path.read_text(encoding="utf-8").casefold()
+            for editorial_marker in (
+                "review pending",
+                "independent review",
+                "locator audit incomplete",
+                "locator audit needed",
+            ):
+                if editorial_marker in text:
+                    failures.append(
+                        f"{path.relative_to(ROOT)}: public mathematical page "
+                        f"exposes editorial workflow marker {editorial_marker!r}"
+                    )
+
     brief_manifest = json.loads(
         (MODEL_BRIEF_DATA / "manifest.json").read_text(encoding="utf-8")
     )
@@ -605,6 +623,29 @@ def main() -> int:
                                 f"{brief['source']}: incomplete strategy lacks "
                                 f"explicit boundary {marker!r}"
                             )
+                scoped_markers = {
+                    3: (
+                        "rmu-3fef0011",
+                        "rmu-9075e072",
+                        "sharp stable-equivalence complexity",
+                    ),
+                    4: ("rmu-2d4e0011", "not a missing quartic case-tree edge"),
+                    7: ("rmu-5c7e0011", "eta_ij", "pluecker-open"),
+                    8: ("rmu-6d8e0012", "full-support root"),
+                    9: ("rmu-6d8e0012", "begins at layer seven, not four"),
+                }
+                source_casefold = source_text.casefold()
+                for marker in scoped_markers.get(brief.get("lane_sequence"), ()):
+                    if marker not in source_casefold:
+                        failures.append(
+                            f"{brief['source']}: scoped repair lacks {marker!r}"
+                        )
+                if brief.get("lane_sequence") == 8 and (
+                    "after the canonical `k=4` rechart" in source_text
+                ):
+                    failures.append(
+                        f"{brief['source']}: superseded canonical k=4 bridge survived"
+                    )
             marker_ids = re.findall(
                 r"<!-- retained-math-v2-selection:([A-Z0-9-]+) -->",
                 source_text,

@@ -1,0 +1,824 @@
+\documentclass[11pt,reqno]{amsart}
+\input{../common/preamble}
+
+\title[Normal-form complexity]{Normal-Form Complexity of a Three-Sheeted
+Keller Cover}
+\author{Nathaniel Monson}
+\date{July 22, 2026}
+
+\begin{document}
+
+\begin{abstract}
+Let \(K=X+Q+C\) be a degree-at-most-three Keller map in dimension \(n\),
+with \(Q,C\) homogeneous of degrees two and three.  If the coordinate span of
+\(C\) has dimension \(r\), we give a collision-preserving cubic-homogeneous
+suspension in dimension \(n+r+1\).  Applied to the public 11-variable
+degree-three descendant of the new Jacobian counterexample, where \(r=7\),
+this recovers the 19-variable construction independently announced by Harris
+Chan.
+
+We determine the generic Jordan type of its nonlinear Jacobian as
+\((18,1)\) and give a two-point certificate that its nilpotent flag moves.
+Symmetric doubling gives an explicit Hessian-nilpotent quartic in 38
+variables, with generic Hessian type \((35,2,1)\).  A two-parameter family
+of algebraic inverse rays shows
+\[
+\Delta^m(\mathcal Q^{m+1})\ne0
+\qquad\text{for every }m\ge1,
+\]
+and identifies the inverse singularities with intersections with the
+nonproperness hypersurface.
+For the fixed 19-variable cubic tensor, we construct a 110-variable
+square-zero cubic-linear pairing and prove that every vector-Waring
+decomposition uses at least 52 cubes.  Finally, an exact 13-term functional
+is a constant nonzero quartic obstruction across a natural
+20-dimensional equivariant family of rank-six cubic compressions.  The
+example-specific statements are computer-assisted and come with exact
+rational certificates.
+\end{abstract}
+
+\maketitle
+
+\begin{center}
+\small\emph{Working computer-assisted manuscript.  The recovered exact
+certificates have been rerun.  Independent CAS reproduction and specialist
+review remain submission requirements.}
+\end{center}
+
+\section{Introduction}
+\label{sec:introduction}
+
+The classical reductions of Bass--Connell--Wright and Yagzhev make
+cubic-homogeneous maps central to the Jacobian conjecture
+\cite{bassConnellWright1982}.  Once a three-dimensional counterexample was
+announced \cite{alpoge2026announcement}, it therefore became natural to ask
+how economically that counterexample reaches the classical normal forms.
+We credit Akhil Mathew as the primary human source of the problem: Mathew
+prompted Levent Alp\"oge, Alp\"oge prompted Fable, Fable produced the
+example, and Alp\"oge announced it publicly
+\cite{ulam2026counterexample}.
+
+Atkins-Turkish publicly supplied a degree-at-most-three map in 11 variables,
+with three explicit colliding points \cite{atkinsTurkish2026}.  Its cubic
+coordinate space has dimension seven.  The construction in
+\cref{sec:suspension} consequently gives a cubic-homogeneous counterexample
+in
+\[
+11+7+1=19
+\]
+variables.  Harris Chan independently announced this special sparse lift on
+July 23, 2026 \cite{chan2026nineteen}; we make no sole-priority claim for the
+19-variable endpoint.  The reusable contribution is the rank-sensitive
+\(n+r+1\) theorem.
+
+The fixed 19-variable tensor has further structure.  Its nonlinear Jacobian
+has generic Jordan type \((18,1)\).  Classical symmetric reduction
+\cite{deBondtVanDenEssen2005symmetric} then produces a quartic potential in
+38 variables.  A 48-variable explicit Hessian witness was already public
+through the work of Santibáñez-Leal, starting from Thompson's 24-variable
+cubic map \cite{thompson2026twentyfour,santibanezLeal2026cascade}.  Our
+claims are the quantitative dimension 38, the exact Hessian Jordan type
+\((35,2,1)\), and the all-order Laplacian formula.
+
+In the cubic-linear direction, we use the pairing formalism of Gorni and
+Zampieri \cite{gorniZampieri1997}.  The existence of such pairings and the
+square-zero mechanism are not new.  For this particular tensor we prove the
+model-relative interval
+\[
+52\le N_{\mathrm{pair}}\le110.
+\]
+Neither endpoint is asserted to be sharp for arbitrary cubic-homogeneous or
+cubic-linear counterexamples.
+
+The main results are summarized as follows.
+
+\begin{theorem}[Rank-sensitive suspension]
+\label{thm:intro-suspension}
+Let \(K=X+Q+C\colon\A^n\to\A^n\) be Keller over a characteristic-zero
+field, with \(Q\) quadratic homogeneous and \(C\) cubic homogeneous.  Put
+\[
+r=\dim\operatorname{span}\set{C_1,\ldots,C_n}.
+\]
+Then \(K\) admits a cubic-homogeneous Keller suspension in dimension
+\(n+r+1\).  Every collision of \(K\) lifts explicitly to a collision of the
+suspension.
+\end{theorem}
+
+\begin{theorem}[The fixed 19-variable tensor]
+\label{thm:intro-fixed}
+For the tensor \(H\) of \cref{sec:fixed-tensor}:
+\begin{enumerate}[label=(\roman*)]
+\item \(I+H\) is a noninjective cubic-homogeneous Keller map in 19 variables;
+\item the generic Jordan type of \(JH\) is \((18,1)\);
+\item the associated 38-variable quartic \(\mathcal Q\) is Hessian nilpotent,
+has generic Hessian type \((35,2,1)\), and violates Zhao's eventual
+vanishing condition at every order; and
+\item the vector-Waring length of \(H\) is at least 52, while \(H\) has a
+full-rank square-zero pairing of length 110.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Equivariant compression obstruction]
+\label{thm:intro-obstruction}
+Let \(V\) be the space of quadratic source fields that preserve the weights;
+it has dimension \(115\).  The locus in \(V\) killing five specified cubic
+output rows contains a natural affine slice of dimension \(20\).  Each point
+on that slice has at most six linearly independent cubic coordinate
+functions.  The same functional, supported on \(13\) terms, takes the value
+\(1\) on its quartic obstruction.  Thus no point lifts through quartic order
+in the stated equivariant conjugacy model.  The original \(605\)-shift
+statement is a sparse corollary.
+\end{theorem}
+
+\Cref{thm:intro-obstruction} is deliberately model-relative.  It does not
+prove that 19 variables are globally minimal.
+
+\section{A rank-sensitive cubic suspension}
+\label{sec:suspension}
+
+Let \(k\) be a field of characteristic zero and write
+\[
+K(X)=X+Q(X)+C(X),
+\]
+where \(Q\) and \(C\) are homogeneous of degrees two and three.  Choose a
+basis \(q=(q_1,\ldots,q_r)^T\) of the coordinate span of \(C\), and a
+constant matrix \(B\in M_{n\times r}(k)\) such that
+\[
+C=Bq.
+\]
+Introduce \(w=(w_1,\ldots,w_r)\) and define
+\begin{equation}
+\label{eq:stable-map}
+\widetilde K(X,w)=
+\bigl(X+Q(X)+Bw,\ w-q(X)\bigr).
+\end{equation}
+
+\begin{lemma}
+\label{lem:stable-identity}
+The map \(\widetilde K\) is polynomially stably left--right equivalent to
+\(K\).
+\end{lemma}
+
+\begin{proof}
+Set
+\[
+S(X,w)=(X,w-q(X)),\qquad
+T(U,V)=(U+BV,V).
+\]
+Both are triangular polynomial automorphisms, and direct substitution gives
+\[
+\widetilde K=T\circ(K\times\id_{\A^r})\circ S.
+\]
+\end{proof}
+
+Adjoin a homogenizing coordinate \(t\), and put
+\begin{equation}
+\label{eq:homogeneous-suspension}
+G(X,w,t)=
+\bigl(
+X+tQ(X)+t^2Bw,\ w-q(X),\ t
+\bigr).
+\end{equation}
+Its nonlinear part is cubic homogeneous.
+
+\begin{proof}[Proof of \cref{thm:intro-suspension}]
+The Jacobian matrix in the \(X,w\) coordinates has block form
+\[
+\begin{pmatrix}
+I+tJQ(X)&t^2B\\
+-Jq(X)&I
+\end{pmatrix}.
+\]
+The Schur complement gives
+\begin{align}
+\det JG
+&=\det\bigl(I+tJQ(X)+t^2BJq(X)\bigr)\notag\\
+&=\det JK(tX)=1.\label{eq:schur}
+\end{align}
+If \(K(p)=K(p')\), then
+\[
+\widehat p=(p,q(p),1),\qquad
+\widehat p'=(p',q(p'),1)
+\]
+are distinct and satisfy
+\[
+G(\widehat p)=(K(p),0,1)=G(\widehat p').
+\]
+
+Finally, write \(G=I+H\).  Since \(H\) is cubic homogeneous,
+\[
+JH(sZ)=s^2JH(Z).
+\]
+The identity \(\det(I+JH)=1\) therefore implies
+\(\det(I+\lambda JH)=1\) as a polynomial identity in \(\lambda\).
+All nonconstant characteristic coefficients vanish, so \(JH\) is nilpotent.
+\end{proof}
+
+\begin{remark}
+For a fixed \(K\), any factorization \(C=B'q'\) through \(s\) scalar cubic
+coordinates has \(s\ge r\).  Thus \(r\) auxiliaries are optimal within the
+factorized suspension \eqref{eq:stable-map}.  This says nothing about other
+stable representatives of \(K\) or other homogenization models.
+\end{remark}
+
+\section{The fixed 19-variable tensor}
+\label{sec:fixed-tensor}
+
+We now work over \(\mathbb Q\).  In the coordinate order
+\[
+X=(x,y,z,a,b,c,d,q,s,h,k),
+\]
+let \(\Phi=(\Phi_1,\ldots,\Phi_{11})\) be the public map
+\cite{atkinsTurkish2026}:
+\begin{align*}
+\Phi_1={}&-ac-adz-3ay^2-2az-cd^2+d^2z-ds+7dy^2\\
+         &\quad+sxy+3xyz+4y^2+z,\notag\\
+\Phi_2={}&-bc-bdz-3by^2-2bz-3cdx-dq+qxy\\
+         &\quad+12xy^2+3xz+y,\notag\\
+\Phi_3={}&-hk-hxz+kx^2-3x^2y+2x,\\
+\Phi_4={}&a-d^2+2dxy,\qquad
+\Phi_5=b+3x^2y,\\
+\Phi_6={}&c+xyz+3y^2+2z,\qquad
+\Phi_7=d-xy,\\
+\Phi_8={}&bz+3cx+q,\\
+\Phi_9={}&s+az+cxy-xyz-7y^2+cd-dz,\\
+\Phi_{10}={}&h-x^2,\qquad
+\Phi_{11}=k+xz.
+\end{align*}
+Its linear part \(L=J\Phi(0)\) has determinant \(-2\).  Normalize by
+\[
+K=L^{-1}\Phi=X+Q+C.
+\]
+The coordinate cubics
+\[
+q_1=C_1,\ q_2=C_2,\ q_3=C_3,\ q_4=C_4,\
+q_5=C_5,\ q_6=C_6,\ q_7=C_9
+\]
+are linearly independent, and the remaining coordinate cubics vanish.  Thus
+\(C=Bq\), where \(B\) includes these seven coordinates into
+\(\mathbb Q^{11}\).
+
+With \(w=(w_1,\ldots,w_7)\), define
+\begin{equation}
+\label{eq:H19}
+H(X,w,t)=
+\bigl(tQ(X)+t^2Bw,\ -q(X),\ 0\bigr)
+\end{equation}
+in the coordinate order
+\[
+Z=(x,y,z,a,b,c,d,q,s,h,k,w_1,\ldots,w_7,t).
+\]
+Then \(G=I+H\) is the suspension \eqref{eq:homogeneous-suspension}.
+
+For reference, three colliding points of \(\Phi\) are
+\begin{align*}
+p_1={}&(0,0,-1/4,0,0,1/2,0,0,0,0,0),\\
+p_2={}&(1,-3/2,13/2,-9/4,9/2,-10,-3/2,3/4,-153/8,1,-13/2),\\
+p_3={}&(-1,3/2,13/2,-9/4,-9/2,-10,-3/2,-3/4,-153/8,1,13/2).
+\end{align*}
+They all map to \((-1/4,0,\ldots,0)\).  Consequently
+\[
+(p_j,q(p_j),1),\qquad j=1,2,3,
+\]
+are three colliding points of \(G\).
+
+\subsection{Generic Jordan type}
+
+Let \(A=JH\), and set
+\[
+E=xy(c+2z)+d^2z+3dy^2.
+\]
+Define two polynomial vectors
+\begin{align}
+v_1={}&2tx\,e_h+2tz\,e_k+(xk+zh)e_{w_1},
+\label{eq:v1}\\
+v_2={}&-txy\,e_a-t(dz+3y^2)e_s-Ee_{w_3}
+       +2Ee_{w_6}+xyz\,e_{w_7}.
+\label{eq:v2}
+\end{align}
+
+\begin{proposition}
+\label{prop:jordan19}
+Over \(\mathbb Q(Z)\), the matrix \(A\) has Jordan type \((18,1)\).
+\end{proposition}
+
+\begin{proof}
+Exact differentiation gives
+\[
+Av_1=Av_2=0.
+\]
+The vectors are generically independent, while the all-ones specialization
+of \(A\) has rank 17.  Hence the generic kernel has dimension two.
+
+Let \(e_t\) be the last coordinate vector.  Exact iteration gives
+\begin{equation}
+\label{eq:long-chain}
+A^{17}e_t=18t^{15}x^9y^5z^2v_2\ne0.
+\end{equation}
+By \cref{thm:intro-suspension}, \(A\) is nilpotent.  A nilpotent
+19-by-19 matrix with a two-dimensional kernel has two Jordan blocks, and
+\eqref{eq:long-chain} forces the larger block to have size at least 18.
+Thus the partition is \((18,1)\).
+\end{proof}
+
+\begin{remark}
+At the all-ones specialization the ranks of
+\(A,A^2,\ldots,A^{18}\) are
+\[
+17,16,\ldots,1,0.
+\]
+The vectors
+\[
+e_t,Ae_t,\ldots,A^{17}e_t,v_1
+\]
+specialize to a basis with determinant \(1952152956156672\).
+\end{remark}
+
+\section{A restricted compression obstruction}
+\label{sec:compression}
+
+Consider quadratic near-identity source conjugacies.  At cubic order their
+action is
+\[
+C\longmapsto C+[Q,P_2],
+\qquad
+[Q,P_2]=JQ\,P_2-JP_2\,Q.
+\]
+The shift
+\[
+P_2=-d^2e_a
+\]
+lowers the cubic coordinate-span rank from seven to six.  Its exact conjugate
+has quartic remainder
+\begin{equation}
+\label{eq:D4}
+(D_4)_z=d^3z+3d^2y^2,\qquad
+(D_4)_a=x^2y^2,\qquad
+(D_4)_c=-2d^3z-6d^2y^2.
+\end{equation}
+
+For a quartic vector field \(R\), define
+\begin{align}
+\Lambda_4(R)={}&
+[x^2y^2]R_a+4[x^2ac]R_a-\frac{20}{3}[x^2as]R_a
++9[x^2qk]R_a\notag\\
+&+3[xchk]R_a-\frac12[xd^2q]R_a-7[xshk]R_a
++\frac43[y^2ah]R_a\notag\\
+&-\frac12[ybch]R_a-[ydhk]R_a+\frac83[za^2h]R_a
++25[aqhk]R_a-2[dqhk]R_d.
+\label{eq:Lambda4}
+\end{align}
+
+\begin{proposition}
+\label{prop:compression}
+For every cubic vector field \(P_3\),
+\[
+\Lambda_4([Q,P_3])=0,
+\qquad
+\Lambda_4(D_4)=1.
+\]
+Thus \(D_4\notin\operatorname{im}[Q,-]\).
+
+Moreover, among the 605 shifts
+\[
+P_2=\lambda m e_j,
+\]
+where \(m\) is a quadratic monomial not involving \(X_j\), the shift
+\(-d^2e_a\) is the unique one that lowers the cubic span to six.
+\end{proposition}
+
+\begin{proof}
+The first statement is finite coefficient linear algebra.  Evaluating
+\eqref{eq:Lambda4} on all
+\[
+11\binom{13}{3}=3146
+\]
+cubic monomial vector fields gives zero, while direct evaluation on
+\eqref{eq:D4} gives one.  The restricted homological matrix on the 13
+displayed coefficient positions has rank 12 and augmented rank 13.
+
+For the second statement, a fixed nonzero seven-by-seven minor of the cubic
+coefficient matrix is evaluated along each of the 605 directions.  Of these,
+583 have no exceptional parameter and 22 give 27 rational roots.  Exact
+full-rank evaluation at every root leaves only \(P_2=-d^2e_a\).
+\end{proof}
+
+\begin{proposition}
+\label{prop:target-cleanup}
+Use the quadratic output corrections generated by the four outputs
+\(d,q,h,k\), which have degree at most two after the conjugacy.  Their ten
+quadratic products create a ten-dimensional quartic image.
+The \(z\)- and \(c\)-components of \(D_4\) lie outside this image.  The
+\(a\)-component has the unique preimage \(-Y_d^2\), but applying it restores
+cubic coordinate-span rank seven.
+\end{proposition}
+
+\begin{proof}
+This is another exact coefficient-matrix calculation.  The ten quartic
+images are independent.  Solving against the three nonzero components in
+\eqref{eq:D4} gives the assertions.
+\end{proof}
+
+\section{The 38-variable Hessian quartic}
+\label{sec:hessian}
+
+Let \(F(x)=x+H(x)\) be the 19-variable map.  On
+\(\A^{19}_x\times\A^{19}_y\), define the cotangent double
+\[
+\Phi_F(x,y)=\bigl(F(x),JF(x)^Ty\bigr).
+\]
+Its Jacobian is block lower triangular, with diagonal blocks \(JF\) and
+\(JF^T\), so \(\det J\Phi_F=1\).
+
+Over \(\mathbb Q(i)\), put
+\[
+T(u,v)=\left(u+iv,\frac{u-iv}{2}\right).
+\]
+The scalar block satisfies
+\[
+TT^T=
+\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+Therefore
+\[
+\mathcal G=T^{-1}\Phi_FT=I+\nabla\mathcal Q,
+\]
+where
+\begin{equation}
+\label{eq:Q38}
+\mathcal Q(u,v)=\frac12(u-iv)^TH(u+iv).
+\end{equation}
+This is a homogeneous quartic with 724 nonzero monomials.  If
+\(F(p)=F(p')\), then
+\[
+\Phi_F(p,0)=\Phi_F(p',0),
+\]
+so \(\mathcal G\) has an explicit transported collision.
+
+\begin{proposition}
+\label{prop:hessian-jordan}
+The generic Jordan type of \(\operatorname{Hess}\mathcal Q\) is
+\[
+(35,2,1).
+\]
+\end{proposition}
+
+\begin{proof}
+Before the linear twist, the nonlinear Jacobian is
+\[
+N=
+\begin{pmatrix}
+A&0\\
+\mathcal L&A^T
+\end{pmatrix},
+\qquad
+A=JH(x),\qquad
+\mathcal L=\operatorname{Hess}_x(y^TH(x)).
+\]
+The Hessian of \(\mathcal Q\) is similar to \(N\).
+
+The kernel vectors \eqref{eq:v1}--\eqref{eq:v2} satisfy
+\[
+D^2H[v_1,v_2]=D^2H[v_2,v_2]=0.
+\]
+Since they span \(\ker A\) generically, this implies
+\(\mathcal Lv_2\in\operatorname{im}A^T\).  In addition to the two kernel
+vectors \((0,\ker A^T)\), the matrix \(N\) therefore has a kernel vector
+whose first component is \(v_2\).  Hence \(\operatorname{rank}N\le35\).
+An exact all-ones specialization has rank 35.
+
+For \(k\ge1\), the lower-left block of \(N^k\) is
+\[
+\sum_{j=0}^{k-1}(A^T)^j\mathcal L A^{k-1-j}.
+\]
+Since \(A^{18}=0\), the only possible term for \(k=35\) is
+\((A^T)^{17}\mathcal L A^{17}\).  The image of \(A^{17}\) is spanned by
+\(v_2\), and \(D^2H[v_2,v_2]=0\), so this term vanishes.  Thus \(N^{35}=0\).
+At the all-ones specialization,
+\[
+(N^{34})_{38,19}=648\ne0.
+\]
+The nilpotency index is 35 and the rank is 35, so there are three blocks.
+The remaining three dimensions split as \(2+1\), proving the result.
+\end{proof}
+
+\subsection{An all-order Laplacian certificate}
+
+Let
+\[
+\bar Y=(1/2,1,0,\ldots,0,1)\in\mathbb Q^{19},
+\qquad
+\bar W=T^{-1}(\bar Y,0)
+=\left(\frac{\bar Y}{2},-\frac{i\bar Y}{2}\right).
+\]
+An exact inverse branch of the original three-dimensional map, lifted through
+the stable reductions, gives
+\begin{equation}
+\label{eq:inverse-ray-G}
+\bigl(F^{-1}(s\bar Y)\bigr)_1
+=\frac{1/\sqrt{1-s^4}-1}{s^3}
+=\sum_{r\ge1}\frac1{4^r}\binom{2r}{r}s^{4r-3}.
+\end{equation}
+Consequently
+\begin{equation}
+\label{eq:inverse-ray-Q}
+\bigl(\mathcal G^{-1}(s\bar W)\bigr)_{u_1}
+=\frac12\sum_{r\ge1}\frac1{4^r}\binom{2r}{r}s^{4r-3}.
+\end{equation}
+
+Put \(P=-\mathcal Q\), so that
+\(\mathcal G=I-\nabla P\).  Zhao's inversion formula for a
+Hessian-nilpotent potential gives homogeneous inversion terms
+\cite{zhao2007hessian}
+\[
+R_m=
+\frac{1}{2^m m!(m+1)!}\Delta^m(P^{m+1}).
+\]
+The degree of \(\nabla R_m\) is \(2m+3\).  Comparing
+\eqref{eq:inverse-ray-Q} at \(m=2r-3\) gives:
+
+\begin{theorem}
+\label{thm:laplacian}
+For every \(r\ge2\),
+\[
+\partial_{u_1}\Delta^{2r-3}
+\bigl(\mathcal Q^{2r-2}\bigr)(\bar W)
+=
+\frac{(2r-3)!(2r-2)!}{16}\binom{2r}{r}\ne0.
+\]
+In particular,
+\[
+\partial_{u_1}\Delta(\mathcal Q^2)(\bar W)=\frac34.
+\]
+\end{theorem}
+
+\begin{proof}
+The exponent \(m+1=2r-2\) is even, so
+\(P^{m+1}=\mathcal Q^{m+1}\).  Multiply the coefficient of
+\(s^{4r-3}\) in \eqref{eq:inverse-ray-Q} by
+\(2^m m!(m+1)!\).
+\end{proof}
+
+Since \(\mathcal Q\) is Hessian nilpotent,
+\(\Delta^m(\mathcal Q^m)=0\) for all \(m\ge1\), while
+\cref{thm:laplacian} gives infinitely many nonzero
+\(\Delta^m(\mathcal Q^{m+1})\).  This is an explicit failure of eventual
+vanishing in Zhao's framework.
+
+\section{A \texorpdfstring{\(52\)-to-\(110\)}{52-to-110}
+square-zero pairing interval}
+\label{sec:pairing}
+
+Let \(V=\mathbb Q^{19}\), and regard
+\[
+H\in V\otimes\Sym^3(V^*).
+\]
+Its \emph{vector-Waring length} is the least \(R\) for which
+\begin{equation}
+\label{eq:waring}
+H(z)=\sum_{\nu=1}^R b_\nu\ell_\nu(z)^3.
+\end{equation}
+
+\subsection{The lower bound}
+
+Let
+\[
+W=\operatorname{span}\set{
+\partial H_i/\partial z_j
+}\subset\Sym^2(V^*).
+\]
+Every decomposition \eqref{eq:waring} gives
+\[
+W\subset U:=\operatorname{span}\set{\ell_\nu^2}.
+\]
+Exact row reduction gives
+\begin{equation}
+\label{eq:dimW}
+\dim W=39.
+\end{equation}
+
+In the coordinate order of \cref{sec:fixed-tensor}, the 12-dimensional
+subspace
+\[
+\mathcal A=
+\langle z,c,q,s,k,w_1,\ldots,w_7\rangle
+\]
+is a common zero block:
+\[
+W|_{\mathcal A}=0.
+\]
+The coefficient system for a constant vector \(v\) satisfying
+\(JH(z)v=0\) has rank 19; a specified 19-by-19 minor has determinant 18.
+Thus the \(\ell_\nu\) span \(V^*\), and their restrictions span
+\(\mathcal A^*\).  Twelve independent restrictions have twelve independent
+squares.  It follows that
+\[
+\dim(U/W)\ge12,\qquad \dim U\ge51.
+\]
+
+\begin{proposition}
+\label{prop:waring52}
+Every vector-Waring decomposition of \(H\) has length at least 52.
+\end{proposition}
+
+\begin{proof}
+Suppose a decomposition has length at most 51.  Every preceding inequality is
+then an equality:
+\[
+R=\dim U=51,\qquad W=\ker\bigl(U\to\Sym^2(\mathcal A^*)\bigr).
+\]
+Choose a basis
+\(\alpha_1,\ldots,\alpha_{12}\) of \(\mathcal A^*\) among the restricted
+forms.  If
+\(\alpha=\sum c_j\alpha_j\) and
+\(\alpha^2\) lies in the span of the \(\alpha_j^2\), then all
+\(c_ic_j\) for \(i\ne j\) vanish.  Hence every restricted form is
+proportional to one \(\alpha_j\).
+
+Choose a complement \(V=\mathcal B\oplus\mathcal A\), with
+\(\dim\mathcal B=7\), and let
+\[
+\mathcal C=
+\operatorname{pr}_{\mathcal B^*\otimes\mathcal A^*}(W).
+\]
+The equality description forces \(\mathcal C\) to be invariant under the
+twelve coordinate projectors in the \(\alpha_j\)-basis.  Therefore its right
+stabilizer algebra
+\[
+\mathcal E=
+\set{T\in\operatorname{End}(\mathcal A^*):
+(I\otimes T)\mathcal C\subset\mathcal C}
+\]
+contains a conjugate of the full diagonal algebra.  Its commutant can then
+contain no nonzero nilpotent.
+
+Exact rational computation gives
+\[
+\dim\mathcal C=24,\qquad
+\dim\mathcal E=62,\qquad
+\dim\mathcal E'=7,
+\]
+and \(\mathcal E'\) contains the matrix unit \(E_{5,0}\), with indices
+numbered \(0,\ldots,11\).  This element is nonzero and square-zero, a
+contradiction.
+\end{proof}
+
+\subsection{The 110-variable upper construction}
+
+The supplement contains rational matrices
+\[
+B\in M_{19\times110}(\mathbb Q),\qquad
+D\in M_{110\times19}(\mathbb Q)
+\]
+satisfying
+\begin{equation}
+\label{eq:pair-data}
+\operatorname{rank}B=\operatorname{rank}D=19,\qquad
+BD=0,\qquad
+H(z)=B(Dz)^{*3}.
+\end{equation}
+Put \(A=DB\) and
+\[
+F_A(W)=W+(AW)^{*3}.
+\]
+Then \(A^2=0\) and \(\operatorname{rank}A=19\).
+
+\begin{proposition}
+\label{prop:pair110}
+The map \(F_A\colon\A^{110}\to\A^{110}\) is a noninjective Keller map.
+It is Gorni--Zampieri paired with \(G=I+H\).
+\end{proposition}
+
+\begin{proof}
+Choose a right inverse \(C\) of \(B\).  The exact data give \(AC=D\), and
+\[
+B F_A(Cz)=z+B(Dz)^{*3}=G(z).
+\]
+By Sylvester's determinant identity,
+\begin{align*}
+\det JF_A(W)
+&=\det\left(I_{110}
++3\operatorname{diag}((AW)^2)DB\right)\\
+&=\det\left(I_{19}
++3B\operatorname{diag}((DBW)^2)D\right)\\
+&=\det JG(BW)=1.
+\end{align*}
+
+If \(G(z_1)=G(z_2)\), put \(u=Cz_1\), \(v=Cz_2\), and
+\(\delta=F_A(u)-F_A(v)\).  Then \(B\delta=0\), hence
+\(A\delta=DB\delta=0\).  Thus
+\[
+F_A(v+\delta)=F_A(v)+\delta=F_A(u).
+\]
+The exact collision certificate verifies \(u\ne v+\delta\).
+\end{proof}
+
+\begin{corollary}
+\label{cor:pair-interval}
+For the fixed tensor \(H\), the minimum length of a full-rank square-zero
+pairing satisfies
+\[
+52\le N_{\mathrm{pair}}\le110.
+\]
+\end{corollary}
+
+\begin{proof}
+The lower bound is \cref{prop:waring52}; every such pairing is a
+vector-Waring decomposition.  The upper bound is \cref{prop:pair110}.
+\end{proof}
+
+\section{Exact computation and reproducibility}
+\label{sec:computation}
+
+All example-specific calculations use exact rational arithmetic.  The fresh
+audit reran:
+\begin{enumerate}[label=(\arabic*)]
+\item the public-input-to-19D collision and nilpotency certificate;
+\item the rank-seven factorization and Schur-complement identities;
+\item both kernel vectors, the length-18 Jordan chain, and the degeneration
+certificate;
+\item the 38D gradient identity, Hessian rank and index, inverse branch, and
+first Laplacian value;
+\item the 110D matrices, square-zero identity, pairing identity, Keller
+determinant transfer, and collision;
+\item the 52-cube lower-bound matrices and equality obstruction;
+\item all 3,146 monomial tests for \(\Lambda_4\);
+\item all 605 triangular monomial shifts and the ten target-cleanup
+directions; and
+\item a separate verifier using only Python rational fractions for the small
+rank, minor, circuit, and commutant certificates.
+\end{enumerate}
+
+The regenerated 724-term quartic is byte-for-byte identical to the recovered
+output.  The 110D pairing JSON and the serialized small certificates also
+match their archived inputs exactly.
+
+The source, exact serialized tensors, and successful logs are organized in
+\texttt{computational-supplement/}.  In particular,
+\texttt{fixed-tensor/} contains the 19D, 38D, and 110D constructions,
+\texttt{continuation/} contains the Waring and compression calculations, and
+the two \texttt{n5-regular-*} directories separate the collision-line
+existence theorem from the first-normal global obstruction.  The
+claim-to-file map and minimal replay commands are in
+\texttt{COMPUTATION.md}.  This organization reflects the mathematical
+lesson of the calculation: regularity on the collision line is possible,
+but global nilpotence imposes new normal-direction equations.
+
+The computations do not establish novelty, and the several SymPy scripts are
+not independent CAS implementations.  The Fraction-only checker is
+independent of SymPy but consumes serialized certificate matrices.  A public
+release should additionally reproduce the main identities in Singular,
+Macaulay2, Sage, or Magma.
+
+\section{Questions}
+\label{sec:questions}
+
+\begin{question}[Minimum homogeneous dimension]
+\label{q:min-homogeneous-dimension}
+What is the minimum dimension of a cubic-homogeneous counterexample?  The
+fixed \(19\)-variable construction gives an upper bound, while known
+low-dimensional classifications and the five-dimensional restrictions
+collected in the companion research register leave a substantial gap.
+\end{question}
+
+\begin{question}
+Can one improve the rank-sensitive complexity
+\[
+\dim K+\dim\operatorname{span}\set{(K_3)_i}
+\]
+by choosing a different degree-at-most-three stable representative?
+\end{question}
+
+\begin{question}[Intrinsic tensor and pairing ranks]
+\label{q:intrinsic-ranks}
+What are the exact vector-Waring length, pairing rank, and square-zero
+realization rank of the fixed \(19\)-variable cubic tensor?  In particular,
+can the present vector-Waring interval between \(52\) and \(110\) be closed
+without committing to one reduction algorithm?
+\end{question}
+
+\begin{question}
+Can the \(\mathfrak{sl}_{18}\) collision-monolith structure recorded in the
+companion research register be used to derive the Jordan types
+\((18,1)\) and \((35,2,1)\) without coefficient calculation?
+\end{question}
+
+\appendix
+\input{appendices/structural-extensions}
+\input{appendices/full-kernel-and-compression-progress}
+\input{../common/companion-register-note}
+
+\section*{AI and computational disclosure}
+
+AI systems were used extensively in exploration, symbolic-program
+development, proof drafting, source organization, and manuscript editing.
+They are not authors.  The public 11-variable source also discloses that its
+explicit construction and verification code were generated by ChatGPT
+\cite{atkinsTurkish2026}.  The evidence for the computer-assisted theorems is
+the exact certificate suite described in \cref{sec:computation}, not language
+model output.  Human specialist review has not yet been completed.
+
+\bibliographystyle{amsplain}
+\bibliography{../common/references}
+
+\end{document}
