@@ -1,0 +1,41 @@
+name: Lane 7 exact geometry
+
+on:
+  pull_request:
+    paths:
+      - "data/model-handoffs-v19-20260802a/lane-7-source-packet.md"
+      - "research-notes/lane7-projective-kernel-20260802/**"
+      - ".github/workflows/lane7-cas.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  packet-and-interface:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install symbolic test dependency
+        run: python -m pip install --disable-pip-version-check "sympy==1.14.0"
+      - name: Extract and hash-check the pinned Lane 7 sources
+        run: |
+          python research-notes/lane7-projective-kernel-20260802/extract_embedded_sources.py \
+            --output-dir build/lane7-sources \
+            lane7-split-incidence-20260802-v1/collision_residual_matrix_M.json \
+            lane7-split-incidence-20260802-v1/Hv10_split_matrix_factorization.json \
+            lane7-split-incidence-20260802-v1/verify_split_incidence_report.json \
+            lane7-split-incidence-20260802-v1/verify_split_determinants_report.json
+      - name: Inspect exact matrix schemas
+        run: python research-notes/lane7-projective-kernel-20260802/inspect_packet.py build/lane7-sources
+      - name: Verify Pluecker transport identities
+        run: python research-notes/lane7-projective-kernel-20260802/test_plucker_transport.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lane7-extracted-sources
+          path: build/lane7-sources
+          if-no-files-found: error
