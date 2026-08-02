@@ -32,7 +32,7 @@
       }
     ]
   },
-  "conclusion": "Reduced words with separated Taylor shifts have constant degree-six intersection; this includes arbitrary-length mixed-sign commuting words and an explicit mixed-sign noncommuting triangular family.",
+  "conclusion": "Taylor no-return controls mixed-sign reduced words; full separation gives constant degree-six intersection, including arbitrary-length mixed-sign commuting words and a noncommuting triangular family.",
   "degree_bound": 6,
   "derivative_witnesses_distinct": [
     "x^N*dQdy",
@@ -48,6 +48,7 @@
   "nested_example": {
     "M": 21,
     "N": 132,
+    "arithmetic_gap": 19,
     "d1": -133,
     "d2": 19,
     "minimum_shift_gap": 19
