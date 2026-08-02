@@ -1,47 +1,21 @@
 #!/usr/bin/env python3
-"""Check the arithmetic and exact witness for the lacunary composition theorem."""
+"""Check the arithmetic and exact witness for high-weight polynomial shears."""
 
 from __future__ import annotations
 
-import itertools
 import json
 from fractions import Fraction
 
 WIDTH = 18
-ORDER = 6
 WEIGHTS = {"x": -1, "y": 1, "z": 2}
 DIRECTIONS = (
-    ("z+xN", "z", "x"),
-    ("y+xN", "y", "x"),
-    ("x+yN", "x", "y"),
-    ("z+yN", "z", "y"),
-    ("y+zN", "y", "z"),
-    ("x+zN", "x", "z"),
+    ("z+xN", "z", "x", 17, -1),
+    ("y+xN", "y", "x", 18, -1),
+    ("x+yN", "x", "y", 18, 1),
+    ("z+yN", "z", "y", 21, 1),
+    ("y+zN", "y", "z", 10, 1),
+    ("x+zN", "x", "z", 9, 1),
 )
-EXAMPLES = {
-    "z+xN": [17, 131],
-    "y+xN": [18, 132],
-    "x+yN": [18, 132],
-    "z+yN": [21, 135],
-    "y+zN": [10, 67],
-    "x+zN": [9, 66],
-}
-
-
-def multiindices(length: int, total: int = ORDER):
-    for values in itertools.product(range(total + 1), repeat=length):
-        if sum(values) <= total:
-            yield values
-
-
-def six_step_separated(shifts: list[int]) -> bool:
-    seen: list[int] = []
-    for alpha in multiindices(len(shifts)):
-        value = sum(a * e for a, e in zip(alpha, shifts))
-        if any(abs(value - previous) <= WIDTH for previous in seen):
-            return False
-        seen.append(value)
-    return True
 
 
 def map_f(point: tuple[Fraction, Fraction, Fraction]):
@@ -74,35 +48,44 @@ def main() -> int:
     if not (map_f(u) == map_f(v) == map_f(w) == target):
         raise AssertionError("common-fiber witness changed")
 
-    derivative_table = {name: derivatives(point) for name, point in (("u",u),("v",v),("w",w))}
-    examples = []
-    for name, changed, base in DIRECTIONS:
-        exponents = EXAMPLES[name]
-        shifts = [N*WEIGHTS[base]-WEIGHTS[changed] for N in exponents]
-        if not six_step_separated(shifts):
-            raise AssertionError(f"{name}: example is not separated")
-        if not (
-            abs(shifts[0]) > WIDTH
-            and abs(shifts[1]) > WIDTH + ORDER*abs(shifts[0])
-        ):
-            raise AssertionError(f"{name}: recursive bound changed")
-        examples.append({"direction":name,"exponents":exponents,"shifts":shifts})
+    derivative_table = {
+        name: derivatives(point) for name, point in (("u",u),("v",v),("w",w))
+    }
+    thresholds = []
+    for name, changed, base, threshold, sign in DIRECTIONS:
+        shift = threshold*WEIGHTS[base]-WEIGHTS[changed]
+        previous = (threshold-1)*WEIGHTS[base]-WEIGHTS[changed]
+        if sign*shift < 19:
+            raise AssertionError(f"{name}: threshold misses the high-weight tail")
+        if sign*previous >= 19:
+            raise AssertionError(f"{name}: threshold is not minimal")
+        for exponent in range(threshold, threshold+25):
+            current = exponent*WEIGHTS[base]-WEIGHTS[changed]
+            if sign*current < 19:
+                raise AssertionError(f"{name}: tail changed sign or magnitude")
+        thresholds.append({"direction":name,"threshold":threshold,"first_shift":shift})
+
+    resonant_shift = 2*WEIGHTS["y"]-WEIGHTS["z"]
+    if resonant_shift != 0:
+        raise AssertionError("z+y^2 is no longer weight zero")
 
     result = {
         "status": "pass",
-        "degree_bound": ORDER,
-        "weight_interval": [-6, 12],
+        "degree_bound": 6,
+        "weight_interval": [-6,12],
         "weight_width": WIDTH,
+        "thresholds": thresholds,
+        "resonant_shift_z_plus_y2": resonant_shift,
         "common_fiber_target": [str(value) for value in target],
         "derivatives": {
             point: {key: str(value) for key, value in table.items()}
             for point, table in derivative_table.items()
         },
-        "two_term_examples": examples,
         "conclusion": (
-            "The exact common-fiber witness and one superlacunary two-term "
-            "example in every coordinate direction satisfy the hypotheses "
-            "of the weight-separated composition theorem."
+            "Each listed threshold is the first exponent whose derivation "
+            "weight lies strictly outside the degree-six weight window; the "
+            "exact three-point fiber supplies the D(Q),D(R) obstruction used "
+            "for arbitrary finite polynomial tails."
         ),
     }
     print(json.dumps(result, indent=2, sort_keys=True))
