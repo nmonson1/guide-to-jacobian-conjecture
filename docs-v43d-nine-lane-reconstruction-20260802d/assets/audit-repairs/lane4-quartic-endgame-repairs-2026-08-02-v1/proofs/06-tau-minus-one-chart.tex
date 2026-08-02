@@ -1,0 +1,207 @@
+% Independent tau=-1 degree-three ramification exclusion.
+% Prepared 2026-08-02 against the Program 2 (3,4) Hilbert--Burch chart.
+
+\begin{theorem}[Primitive $\tau=-1$ chart]
+\label{thm:quartic-r3-tau-minus-one}
+Let $k$ be algebraically closed of characteristic zero, and let
+\[
+ F=LX+H_2+H_3+H_4:\mathbb A_k^3\longrightarrow\mathbb A_k^3
+\]
+be Keller.  Assume the preceding Program~2 reductions place $F$ in the
+primitive coprime binary-pencil branch of common ramification degree three,
+and in the independent Hilbert--Burch chart
+\[
+ u=x^2,\qquad v=y^2,\qquad
+ w=ax^3+x^2y+xy^2+by^3,\qquad \tau=-1.
+\]
+Then the first normal layer vanishes.  Consequently this chart exits to the
+zero-normal triangular branch and contains no Keller counterexample.
+\end{theorem}
+
+\begin{proof}
+The differential Hilbert--Burch equation
+\[
+ x^2\,dP-y^2\,dQ+w\,dR=0
+\]
+reconstructs
+\begin{align*}
+ R={}&-ax^3-3x^2y+3xy^2+by^3,\\
+ P=\frac34\bigl(&a^2x^4-2abxy^3+4ax^3y-4ax^2y^2
+                    -2by^4+2x^2y^2-2xy^3-y^4\bigr),\\
+ Q=-\frac34\bigl(&2abx^3y+2ax^4-b^2y^4+4bx^2y^2-4bxy^3
+                    +x^4+2x^3y-2x^2y^2\bigr).
+\end{align*}
+Their minors have the required common cubic:
+\[
+ J(Q,R)=x^2\Delta,\qquad J(P,R)=y^2\Delta,
+ \qquad J(P,Q)=w\Delta.
+\]
+Put
+\[
+ F_1=27a^2b^2-18ab+4a+4b-1,
+ \qquad
+ G=a^2b^2-6ab-4a-4b-3.
+\]
+Exact dehomogenized resultants give
+\[
+ \operatorname{Res}_x(P(x,1),Q(x,1))
+   =-\frac{6561}{65536}F_1G^3.
+\]
+Thus primitivity implies $F_1G\ne0$.
+
+Write $A=(H_3)_1$, $B=(H_3)_2$, and $E=(H_2)_3$.  The first normal
+syzygy has the complete form
+\begin{equation}
+\label{eq:tau-minus-one-first-normal}
+ (A_z,B_z,E_z)
+ =L_0(-ax-y,x+by,1)+\mu(y^2,x^2,0),
+ \qquad L_0=l_0x+l_1y+l_2z.
+\end{equation}
+Let $D_j$ denote the $j$th coefficient of the determinant arc, using
+$H_4,H_3,H_2,H_1$ as levels $0,1,2,3$.  The coefficient of $z^3$ in
+$D_3$ is
+\[
+ \frac{3l_2^2}{4}\bigl(
+ A_*x^3+C_*x^2y-D_*xy^2-B_*y^3\bigr),
+\]
+where
+\[
+ A_*=a^2b-3a-2,\quad B_*=ab^2-3b-2,
+ \quad C_*=ab+2a+1,\quad D_*=ab+2b+1.
+\]
+If $l_2\ne0$, all four coefficients vanish.  Since
+\[
+ C_*-D_*=2(a-b),\qquad C_*\big|_{b=a}=(a+1)^2,
+\]
+this forces $(a,b)=(-1,-1)$, where $G=0$.  Hence $l_2=0$ on the
+primitive locus.
+
+Set $\lambda=l_0x+l_1y$.  The coefficient of $z$ in $D_3$ gives six
+quadrics in
+\[
+ l_0^2,\ l_0l_1,\ l_1^2,\ l_0\mu,\ l_1\mu,\mu^2,\ u_2,\ v_2,
+\]
+where $u_2,v_2$ are the $z^2$ coefficients of the first two components
+of $H_2$.  The first and last equations are
+\[
+ A_*(l_0^2-6u_2)=0,\qquad
+ B_*(l_1^2-6v_2)=0.
+\]
+We divide the remaining analysis into the complete coefficient-divisor
+stratification.
+
+\smallskip
+\noindent\emph{The open set $A_*B_*\ne0$.}
+Here $u_2=l_0^2/6$ and $v_2=l_1^2/6$.  After removing harmless scalar
+factors, the four middle equations generate the ideal $I=(f_0,f_1,f_2,f_3)$,
+where
+\begin{align*}
+ f_0={}&a^2bl_0l_1-abl_0^2-2al_0^2-3al_0l_1+4al_0\mu-2a\mu^2
+        -l_0^2-2l_0l_1+4l_0\mu,\\
+ f_1={}&a^2bl_1^2-2abl_0^2+abl_0l_1+4abl_0\mu+2al_0l_1-3al_1^2
+        +4al_1\mu-4bl_0^2\\
+      &\hspace{1.4em}-2l_0^2+l_0l_1-4l_0\mu-2l_1^2+4l_1\mu-6\mu^2,\\
+ f_2={}&ab^2l_0^2+abl_0l_1-2abl_1^2-4abl_1\mu-4al_1^2-3bl_0^2
+        +2bl_0l_1-4bl_0\mu\\
+      &\hspace{1.4em}-2l_0^2+l_0l_1-4l_0\mu-2l_1^2+4l_1\mu-6\mu^2,\\
+ f_3={}&ab^2l_0l_1-abl_1^2-3bl_0l_1-2bl_1^2-4bl_1\mu-2b\mu^2
+        -2l_0l_1-l_1^2-4l_1\mu.
+\end{align*}
+Exact Gröbner reduction gives the saturation certificates
+\begin{equation}
+\label{eq:tau-minus-one-saturation}
+ \mu^4G\in I,
+ \qquad
+ l_0^4G,\ l_1^4G\in I+(\mu).
+\end{equation}
+Thus every nonzero projective point $[l_0:l_1:\mu]$ in this open set
+forces $G=0$, contrary to primitivity.
+
+\smallskip
+\noindent\emph{The divisor $A_*=0$, with $B_*\ne0$.}
+Here $a\ne0$ and
+\[
+ b=\frac{3a+2}{a^2},\qquad
+ B_*=-\frac{2(a-2)(a+1)^2}{a^3}.
+\]
+Use $v_2=l_1^2/6$ in the four middle equations.  On the three standard
+projective charts $l_0=1$, $l_1=1$, and $\mu=1$, their exact ideals contain,
+respectively,
+\[
+ (a+1)^4,\qquad a^2(a+1)^4,\qquad a^2.
+\]
+Since $a\ne0$ and $B_*\ne0$, none has a point.  The divisor $B_*=0$,
+$A_*\ne0$, is checked independently: after
+$a=(3b+2)/b^2$ and $u_2=l_0^2/6$, the corresponding three chart ideals
+contain
+\[
+ b^2(b+1)^4,\qquad (b+1)^4,\qquad b^2.
+\]
+It likewise has no point.
+
+\smallskip
+\noindent\emph{The intersection $A_*=B_*=0$.}
+The identity
+\[
+ A_*-B_*=(a-b)(ab-3)
+\]
+shows that $ab=3$ would give $A_*=-2$, so $a=b$.  Therefore
+\[
+ (a,b)=(-1,-1)\quad\hbox{or}\quad (2,2).
+\]
+The first point has $G=0$.  At the primitive point $(2,2)$, elimination of
+$u_2,v_2$ leaves
+\begin{align*}
+ K_1&=9l_0^2-9l_0l_1-12l_1\mu+2\mu^2=0,\\
+ K_2&=9l_0l_1-12l_0\mu-9l_1^2-2\mu^2=0.
+\end{align*}
+These satisfy
+\[
+ K_1-K_2=(3l_0-3l_1+2\mu)^2,
+ \qquad
+ K_1+K_2=3(l_0+l_1)(3l_0-3l_1-4\mu).
+\]
+Consequently the nonzero first-normal solutions are exactly
+\begin{align*}
+ (l_0,l_1,\mu,u_2,v_2)
+   &=\left(h,h,0,\frac{h^2}{18},\frac{h^2}{18}\right),\\
+ (l_0,l_1,\mu,u_2,v_2)
+   &=\left(-h,h,3h,-\frac{5h^2}{6},-\frac{5h^2}{6}\right),
+ \qquad h\ne0.
+\end{align*}
+
+It remains to test the next determinant coefficient.  Keep arbitrary binary
+cubics $A_0,B_0$, arbitrary binary quadrics $C_0,D_0,E_0$, arbitrary binary
+linear forms $p,q$, and an arbitrary linear part.  Thus
+\[
+ A=A_0+zA_z,\quad B=B_0+zB_z,
+\]
+\[
+ H_2=\bigl(C_0+zp+u_2z^2,
+           D_0+zq+v_2z^2,
+           E_0+z\lambda\bigr).
+\]
+A direct exact expansion, with no specialization of these lower terms, gives
+for the two displayed branches
+\begin{align*}
+ [z^2]D_4
+   &=-\frac{h^3}{2}(x+y)(5x^2+2xy+5y^2),\\
+ [z^2]D_4
+   &=\frac{135h^3}{2}(x-y)(x+y)^2.
+\end{align*}
+Both are nonzero for $h\ne0$.  Hence the intersection has no nonzero
+first-normal solution either.
+
+We have proved that primitivity forces
+$l_0=l_1=l_2=\mu=0$.  The established zero-normal lemma then makes the third
+coordinate triangular (or makes every nonlinear term binary), and the usual
+plane Keller reduction proves that $F$ is an automorphism.
+\end{proof}
+
+\begin{remark}[Computation boundary]
+The accompanying checker reconstructs $P,Q$, the six first-normal equations,
+the saturation and projective-chart certificates, and the two unrestricted
+$[z^2]D_4$ obstructions over $\mathbb Q$.  It does not re-prove the upstream
+placement of a quartic map in this Hilbert--Burch chart or the final
+zero-normal plane theorem.
+\end{remark}
