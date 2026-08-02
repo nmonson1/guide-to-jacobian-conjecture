@@ -1,0 +1,82 @@
+[RUN] z2-conic
+[PASS] z2-conic (13.57s)
+[RUN] conic-terminal-identities
+[PASS] conic-terminal-identities (0.79s)
+[RUN] high-ramification-r4-r5
+[PASS] high-ramification-r4-r5 (10.62s)
+[RUN] tau-minus-one
+[PASS] tau-minus-one (4.01s)
+[RUN] rational-cubic-transverse-cusp
+[PASS] rational-cubic-transverse-cusp (1.34s)
+[RUN] rational-cubic-nodal-constant-minor
+[PASS] rational-cubic-nodal-constant-minor (1.08s)
+[RUN] rational-cubic-transverse-node
+[PASS] rational-cubic-transverse-node (1.42s)
+[RUN] rational-cubic-cusp-fiber-terminal
+[PASS] rational-cubic-cusp-fiber-terminal (1.44s)
+[RUN] rational-cubic-cusp-generic-terminal
+[PASS] rational-cubic-cusp-generic-terminal (4.63s)
+[RUN] rational-cubic-nodal-marked-family
+[PASS] rational-cubic-nodal-marked-family (4.43s)
+[RUN] conic-x2-scalar
+[PASS] conic-x2-scalar (18.34s)
+[RUN] conic-x2-semisimple
+[PASS] conic-x2-semisimple (9.14s)
+[RUN] conic-x2-nilpotent-1
+[PASS] conic-x2-nilpotent-1 (5.75s)
+[RUN] conic-x2-nilpotent-2
+[PASS] conic-x2-nilpotent-2 (6.15s)
+[RUN] conic-x2-second-normal-p
+[PASS] conic-x2-second-normal-p (4.36s)
+[RUN] conic-x2-second-normal-q
+[PASS] conic-x2-second-normal-q (4.28s)
+[RUN] conic-xy-scalar
+[PASS] conic-xy-scalar (25.99s)
+[RUN] conic-xy-anti-scalar
+[PASS] conic-xy-anti-scalar (5.00s)
+[RUN] conic-xy-second-normal-axis
+[PASS] conic-xy-second-normal-axis (4.51s)
+[RUN] conic-xy-second-normal-open
+[PASS] conic-xy-second-normal-open (4.54s)
+[RUN] rational-cubic-d8-cusp-transverse
+[PASS] rational-cubic-d8-cusp-transverse (3.00s)
+[RUN] rational-cubic-d8-cusp-fiber
+[PASS] rational-cubic-d8-cusp-fiber (2.99s)
+[RUN] rational-cubic-d8-node-transverse
+[PASS] rational-cubic-d8-node-transverse (3.27s)
+[RUN] rational-cubic-d8-node-fiber
+[PASS] rational-cubic-d8-node-fiber (3.01s)
+[RUN] rational-cubic-d7-cusp-transverse
+[PASS] rational-cubic-d7-cusp-transverse (4.88s)
+[RUN] rational-cubic-d7-cusp-fiber
+[PASS] rational-cubic-d7-cusp-fiber (5.52s)
+[RUN] rational-cubic-d7-node-transverse
+[PASS] rational-cubic-d7-node-transverse (5.22s)
+[RUN] rational-cubic-d7-node-fiber
+[PASS] rational-cubic-d7-node-fiber (5.11s)
+[RUN] rational-cubic-custom-cusp-smooth
+[PASS] rational-cubic-custom-cusp-smooth (5.71s)
+[RUN] rational-cubic-custom-cusp-generic
+[PASS] rational-cubic-custom-cusp-generic (7.47s)
+[RUN] rational-cubic-custom-node-smooth
+[PASS] rational-cubic-custom-node-smooth (7.42s)
+[RUN] rational-cubic-cusp-fiber-r0
+[PASS] rational-cubic-cusp-fiber-r0 (3.93s)
+[RUN] rational-cubic-cusp-fiber-r1
+[PASS] rational-cubic-cusp-fiber-r1 (4.50s)
+[RUN] rational-cubic-cusp-smooth-zero
+[PASS] rational-cubic-cusp-smooth-zero (11.54s)
+[RUN] rational-cubic-cusp-smooth-a
+[PASS] rational-cubic-cusp-smooth-a (11.93s)
+[RUN] rational-cubic-cusp-smooth-b
+[PASS] rational-cubic-cusp-smooth-b (12.14s)
+[RUN] rational-cubic-cusp-smooth-q
+[PASS] rational-cubic-cusp-smooth-q (1.12s)
+[RUN] rational-cubic-cusp-generic-q-d6
+[PASS] rational-cubic-cusp-generic-q-d6 (1.41s)
+[RUN] rational-cubic-node-marked-h2z
+[PASS] rational-cubic-node-marked-h2z (1.25s)
+[RUN] rational-cubic-node-marked-binary
+[PASS] rational-cubic-node-marked-binary (1.95s)
+PASS: 40 exact Lane 4 checks completed in 234.82s
+elapsed=3:55.37 maxrss=228896KB
