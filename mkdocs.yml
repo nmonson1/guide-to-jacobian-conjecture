@@ -48,6 +48,7 @@ nav:
     - Corrections: results/corrections.md
   - Research:
     - Text proof sources: research/proof-sources/index.md
+    - Lane 4 audit packet: research/lane4-quartic-endgame-research-packet.md
     - Retained working mathematics:
       - Overview: research/working-mathematics/index.md
       - Cubic Marked-Root Incidence Geometry: research/working-mathematics/programs/cubic-marked-root-incidence-geometry.md
