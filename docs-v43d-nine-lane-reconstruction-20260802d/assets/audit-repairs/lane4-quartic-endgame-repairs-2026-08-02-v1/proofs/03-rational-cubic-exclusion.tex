@@ -1,0 +1,122 @@
+\section{The proper rational-cubic leading image}
+\label{app:quartic-rational-cubic}
+
+\begin{theorem}[Rational-cubic leading-image exclusion]
+\label{thm:quartic-rational-cubic}
+Let $F=H_1+H_2+H_3+H_4:\mathbb A^3_{\mathbb C}\to\mathbb A^3_{\mathbb C}$
+be a quartic Keller map, with $H_1=LX$ and $L\in\operatorname{GL}_3$.
+The projective image of $H_4$ is not a nondegenerate rational cubic.
+\end{theorem}
+
+\begin{proof}
+By the leading-image factorization, write
+\[
+ H_4=G h(x,y),
+\]
+where $G$ is linear and $h$ is a basepoint-free proper cubic
+parametrization.  An irreducible rational plane cubic is cuspidal or nodal;
+we use
+\[
+ h_c=(x^3,x^2y,y^3),\qquad
+ h_n=(x^2y,xy^2,x^3+y^3).
+\]
+Write
+\[
+ \det(JH_1+\epsilon JH_2+\epsilon^2JH_3+\epsilon^3JH_4)
+ =\sum_{j=0}^9D_j\epsilon^j.
+\]
+
+If $G\notin\langle x,y\rangle$, normalize $G=z$.  Exact coefficient
+comparison in $D_8,D_7$ gives respectively
+\[
+ H_3=a h_c+\frac b2z(h_c)_x+\frac c3z(h_c)_y
+\]
+and
+\[
+ H_3=a h_n+\frac b3z(h_n)_x+\frac c3z(h_n)_y.
+\]
+These are $JH_4$ applied to constant vectors, so a source translation kills
+$H_3$.  For the cusp, $D_6=0$ then gives
+\[
+ l_0=3l_4/2,
+ \qquad l_1=l_2=l_3=l_5=l_6=l_7=l_8=0;
+\]
+for the node it gives $l_0=\cdots=l_8=0$.  In both cases
+$\det L=0$, a contradiction.
+
+Suppose now that $G\in\langle x,y\rangle$.  For the cusp, the stabilizer of
+$\langle x^3,x^2y,y^3\rangle$ acts on the normalization by scaling, so the
+marked-point orbits are represented by
+\[
+ G=x,\qquad G=y,\qquad G=x-y.
+\]
+The equation $D_8=0$ writes
+\[
+H_3=B_3(x,y)+z(\alpha v_\alpha+\beta v_\beta+\gamma v_\gamma)
+              +\delta z^2v_\delta,
+\]
+where
+\[
+ v_\alpha=(3x^2/2,xy,0),\quad
+ v_\beta=(3xy/2,y^2,0),\quad
+ v_\gamma=(0,x^2/3,y^2),\quad
+ v_\delta=(3x/2,y,0).
+\]
+For $G=x$, the $D_7$ compatibility equations leave only a possible
+$\alpha$-branch; after normalizing $\alpha=1$, one has
+$[xy^3z^2]D_6=3/2$.  For $G=y$, the possible $\alpha$- and $\gamma$-branches
+have respectively
+\[
+ [xy^3z^2]D_6=6,
+ \qquad [x^4z^2]D_6=-4/9.
+\]
+For $G=x-y$, $D_7$ kills all four amplitudes.  Hence $H_3$ is binary in
+every case.
+
+The remaining $D_7$ equations leave at most
+\[
+ H_2=B_2(x,y)+qz(3x/2,y,0).
+\]
+If $q\ne0$, normalize $q=1$.  After the linear $D_6$ compatibility
+relations, $D_5$ has, for $G=x,y,x-y$, respectively,
+\[
+ [xy^3z]D_5=-6,
+ \qquad [y^4z]D_5=-6,
+ \qquad ([xy^3z]D_5,[y^4z]D_5)=(-6,6).
+\]
+Thus $q=0$.
+
+For the node, retain the full marked family
+\[
+ H_4=(x-\lambda y)h_n.
+\]
+The $D_8$ solution has
+\[
+H_3=B_3(x,y)+z\left(
+ \frac{2a xy+b x^2}{3},
+ \frac{a y^2+2bxy}{3},
+ a x^2+b y^2
+\right).
+\]
+The $D_7$ compatibility equations include
+\[
+\begin{aligned}
+0&=\lambda a^2-2\lambda^2ab+(\lambda^3+3)b^2,\\
+0&=a^2+4\lambda ab+\lambda^2b^2,\\
+0&=\lambda(2a^2+2\lambda ab-\lambda^2b^2).
+\end{aligned}
+\]
+They imply $a=b=0$ for every finite $\lambda$.  The linear $D_7$ system on
+the nine $z$-dependent coefficients of $H_2$ has a constant maximal minor
+$12582912$, so $H_2$ is binary as well.  The point at infinity follows by
+interchanging the two node branches.
+
+We have therefore reduced every marked case to
+\[
+ F=LX+N(x,y).
+\]
+After a target linear change this is triangular over a plane Keller pair of
+degree at most four.  The low-degree plane theorem makes that pair, and
+hence $F$, an automorphism.  This contradicts the assumed counterexample
+branch and proves the theorem.
+\end{proof}
