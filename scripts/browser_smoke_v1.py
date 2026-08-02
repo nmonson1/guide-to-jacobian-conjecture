@@ -385,8 +385,10 @@ def run(
                 desktop.wait_for_timeout(500)
                 require(contrast(desktop, ".status-kind") >= 4.5,
                         f"kind badge contrast failed in {scheme}")
-                require(contrast(desktop, ".status-draft") >= 4.5,
-                        f"draft badge contrast failed in {scheme}")
+                require(
+                    contrast(desktop, '.status[class*="coverage-"]') >= 4.5,
+                    f"proof-access badge contrast failed in {scheme}",
+                )
 
             desktop.goto(base, wait_until="networkidle")
             desktop.emulate_media(reduced_motion="reduce")
