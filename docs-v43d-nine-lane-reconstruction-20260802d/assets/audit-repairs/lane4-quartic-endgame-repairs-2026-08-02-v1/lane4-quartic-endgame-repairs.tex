@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\renewcommand{\AA}{\mathbb A}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\ord}{\operatorname{ord}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcounter{externalinput}
+\crefname{externalinput}{Program 2 input}{Program 2 inputs}
+\Crefname{externalinput}{Program 2 input}{Program 2 inputs}
+
+\title{Lane 4: Quartic Endgame Repairs and Exact Reproductions}
+\author{Unrefereed research packet}
+\date{2 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This packet records candidate repairs and exact symbolic reproductions for the
+ordinary-degree-four branch of the three-dimensional Jacobian-conjecture
+program.  It repairs the leading-image and four-locus arguments, supplies an
+exact centralizer bridge and an $R=0$ route, treats three previously
+under-documented conic orbits, gives a proper rational-cubic exclusion,
+reconstructs the primitive binary $r=4,5$ high-ramification proof, and
+independently closes the $r=3$, $\tau=-1$ chart.  The arguments and programs
+are unrefereed.  They do not by themselves establish the global theorem
+$D_{\min}\geq5$; the unconditional public interval remains
+$4\leq D_{\min}\leq7$.
+\end{abstract}
+
+\section*{Scope and evidence convention}
+\refstepcounter{externalinput}\label{lem:leading-image}
+\refstepcounter{externalinput}\label{prop:four-loci}
+\refstepcounter{externalinput}\label{lem:weighted-field}
+\refstepcounter{externalinput}\label{prop:easy-branches}
+\refstepcounter{externalinput}\label{lem:quadratic-coordinate}
+The numbered results below are theorem drafts.  Each computationally assisted
+step is accompanied by exact source and output in the packet archive.  The
+programs form one SymPy lineage, not an independent second-CAS reproduction.
+Cross-references displayed as ``Program 2 input'' point to statements in the
+existing Program~2 manuscript into which the corresponding fragments are
+intended to be inserted.
+
+\input{proofs/01-structural-repairs-and-z2-conic.tex}
+\input{proofs/02-conic-completion-x2-xy.tex}
+\input{proofs/03-rational-cubic-exclusion.tex}
+\input{proofs/04-span-three-synthesis.tex}
+\input{proofs/05-high-ramification-r4-r5.tex}
+\input{proofs/06-tau-minus-one-chart.tex}
+
+\section*{Current conclusion}
+The packet gives a candidate global routing with exact support for several
+previously inaccessible leaves.  Publication-level completion still requires
+the degree-three proof-to-code crosswalk, independent reproduction of the
+remaining exceptional divisors, verification of the precise plane theorem
+used in the triangular exits, and specialist human review.  Accordingly no
+unconditional improvement of $4\leq D_{\min}\leq7$ is asserted here.
+
+\end{document}
