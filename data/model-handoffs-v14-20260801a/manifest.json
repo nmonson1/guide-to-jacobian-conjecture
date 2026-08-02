@@ -211,9 +211,9 @@
         "stable-moduli",
         "plane-boundary-obstructions"
       ],
-      "sha256": "9b6174f22d8fcd47f8e7c9491cca29cec8adb7e5436871f8b9802953f858f63b",
-      "bytes": 11772,
-      "words": 1716
+      "sha256": "8b8e88f794c10c72c4cf56497d26b1220abdccee4ae67d110e748ed5e9a53df0",
+      "bytes": 8090,
+      "words": 1141
     },
     {
       "kind": "lane",
