@@ -13,9 +13,9 @@ wt(x)=-1,  wt(y)=1,  wt(z)=2.
 ```
 
 Then `S` is graded, `P,Q,R` have weights `2,1,-1`, and `B_{<=6}` is supported
-on `[-6,12]`.
+on the interval `[-6,12]`.
 
-## Abstract theorem
+## Main theorem
 
 Let
 
@@ -23,9 +23,9 @@ Let
 Phi = exp(c_m D_m) ... exp(c_1 D_1)
 ```
 
-be an ordered composition of polynomial automorphisms, where every `c_i` is
-nonzero and every `D_i` is a homogeneous locally nilpotent derivation of torus
-weight `e_i`.
+be any finite ordered composition, where every `c_i` is nonzero and every
+`D_i` is a homogeneous locally nilpotent derivation of torus weight `e_i`.
+The derivations need not commute and may change different coordinates.
 
 Assume either
 
@@ -39,123 +39,143 @@ or
 e_i <= -19 for every i.
 ```
 
-In the positive case let `e_0=min e_i`; in the negative case let
-`e_0=max e_i`. Suppose the extremal weight occurs for exactly one derivation,
-called `D_0`, and
-
-```text
-D_0(Q) notin S,       D_0(R) notin S.
-```
-
 Then
 
 ```text
-Phi(S) intersect B_{<=6} = k.
+Phi(S) intersect B_{<=6}
+  subset S intersect B_{<=6}
+  = span_k{1,Q,R}.
 ```
 
-The derivations need not commute and may change different coordinates.
+Consequently
+
+```text
+trdeg k[Phi(S) intersect B_{<=6}] <= 2.
+```
+
+Thus no one-sided high-weight composition can produce a degree-at-most-six
+target coordinate frame. This is a genuine noncommuting composition theorem,
+not a finite scan.
 
 ## Proof
 
-Take `g in Phi(S) intersect B_{<=6}` and write
+Take
 
 ```text
-g=sum_{w=-6}^{12} g_w
+g in Phi(S) intersect B_{<=6}
 ```
 
-in torus weights. Expanding `Phi^(-1)(g)` gives the zero-order terms `g_w`,
-first-order terms `-c_i D_i(g_w)`, and finitely many higher words in the
-`D_i`. The weight of a word is the input weight plus the sum of its derivation
-weights.
-
-If every shift is positive, every nonzero word has weight at least
-`-6+19=13`; if every shift is negative, every nonzero word has weight at most
-`12-19=-7`. Thus no derivative word can collide with a zero-order term.
-Since `Phi^(-1)(g)` lies in the graded algebra `S`, every `g_w` lies in `S`.
-The standard degree-six theorem gives
+and decompose it into torus weights:
 
 ```text
-g=a+bQ+dR.
+g = sum_{w=-6}^{12} g_w.
 ```
 
-Suppose the shifts are positive. If `d!=0`, the unique lowest derivative
-weight is
+Expand `Phi^(-1)(g)`. Its zero-order terms are precisely the `g_w`. Every
+other term is obtained by applying a nonempty word in the `D_i`; its weight is
+the input weight plus the sum of the weights of that word.
+
+If all `e_i>=19`, every nonzero word has weight at least
 
 ```text
--1+e_0,
+-6+19=13.
 ```
 
-coming from `-d*c_0 D_0(R)`. Every other first-order term is higher and every
-word of length at least two has shift at least `2e_0`. Hence `D_0(R)` would
-belong to `S`, a contradiction. After `d=0`, a nonzero `b` similarly isolates
-`D_0(Q)` at weight `1+e_0`.
+If all `e_i<=-19`, every nonzero word has weight at most
 
-For negative shifts, reverse highest and lowest. A nonzero `b` first isolates
-`D_0(Q)` at the unique highest derivative weight `1+e_0`; after `b=0`, a
-nonzero `d` isolates `D_0(R)` at `-1+e_0`. Again both are impossible.
-Therefore `b=d=0` and `g` is constant.
+```text
+12-19=-7.
+```
+
+In either case, no derivative word has a weight in `[-6,12]`. Since
+`Phi^(-1)(g)` belongs to the graded algebra `S`, its weight components in that
+interval—exactly the `g_w`—belong to `S`. Hence
+
+```text
+g in S intersect B_{<=6}.
+```
+
+The standard exact certificate identifies the latter space with
+`span{1,Q,R}`, proving the theorem.
+
+Notice what is not used: commutativity, a factorization normal form, uniqueness
+of an extremal shift, or any bound on the number of factors.
 
 ## Elementary-monomial corollary
 
-For an elementary derivation
+For
 
 ```text
 D=x_j^N partial_{x_i},
 ```
 
-its weight is
+one has
 
 ```text
 e=N*wt(x_j)-wt(x_i).
 ```
 
-The exact common fiber
+Therefore any finite ordered composition of elementary monomial shears is
+covered when all factors are chosen from one of the following two one-sided
+sets.
+
+### Negative side
 
 ```text
-(-12,1/11,-8/11),
-(-10,1/11,-14/11),
-(22,-1/22,65/484)
+z -> z+c*x^N,   N>=17
+y -> y+c*x^N,   N>=18
 ```
 
-shows that `D(Q)` and `D(R)` are not in `S` for every coordinate direction
-and every `N>=2`. Consequently the theorem applies to any finite ordered
-composition of high-weight elementary monomial shears when:
-
-1. all derivation weights have the same sign and absolute value at least 19;
-2. the weight closest to zero occurs exactly once.
-
-This includes many genuinely noncommuting compositions mixing different
-coordinate directions. For example, positive-weight shears from the tails
+### Positive side
 
 ```text
-x -> x+f(y),    z -> z+g(y),
-y -> y+h(z),    x -> x+k(z)
+x -> x+c*y^N,   N>=18
+z -> z+c*y^N,   N>=21
+y -> y+c*z^N,   N>=10
+x -> x+c*z^N,   N>=9
 ```
 
-may be interleaved in any order, provided the smallest positive shift appears
-once. The analogous statement holds for the two negative-weight `x`-based
-directions.
+Factors from the same side may be mixed in any order, may repeat weights, and
+need not commute. Coefficients are arbitrary.
 
-## Repeated extremal weights
+## Exact-intersection refinement
 
-Uniqueness is only a convenient sufficient condition. If several derivations
-have the extremal weight, put
+The main theorem gives the Lane 5 obstruction without deciding which of
+`Q,R` survive. A sharper conclusion is available when the extremal
+first-order layer is nondegenerate.
+
+In the positive case let `e_0=min e_i`; in the negative case let
+`e_0=max e_i`. Put
 
 ```text
 D_* = sum_{e_i=e_0} c_i D_i.
 ```
 
-The same proof works whenever
+If
 
 ```text
-D_*(Q) notin S,       D_*(R) notin S.
+D_*(Q) notin S,       D_*(R) notin S,
 ```
 
-This reduces repeated-weight compositions to a finite common-fiber linear
-independence problem. It is the natural next extension.
+then
 
-## Boundary
+```text
+Phi(S) intersect B_{<=6}=k.
+```
 
-The theorem does not cover compositions mixing positive and negative shifts,
-low-weight derivations inside `[-18,18]`, or repeated extremal combinations
-that become fiber-constant. These are now sharply isolated interaction cases.
+Indeed, after the main theorem write `g=a+bQ+dR`. On the positive side a
+nonzero `d` isolates `D_*(R)` at the lowest derivative weight; after `d=0`, a
+nonzero `b` isolates `D_*(Q)`. On the negative side the same argument uses the
+highest derivative weight in the reverse order.
+
+For a unique extremal elementary monomial derivation, the exact three-point
+common fiber proves both nonmembership conditions, so the intersection is
+`k`. Repeated extremal weights reduce to a finite linear-independence problem
+in the quotient by fiber-constant polynomials.
+
+## Scope
+
+The theorem permits arbitrary noncommuting compositions but requires all
+nonlinear weight shifts to lie strictly on the same side of the degree-six
+window. Mixed positive/negative sequences and factors with weights in
+`[-18,18]` remain the first uncontrolled composition regimes.
