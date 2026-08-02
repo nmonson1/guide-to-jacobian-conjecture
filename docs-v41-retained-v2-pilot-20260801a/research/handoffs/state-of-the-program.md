@@ -302,51 +302,39 @@ the full left-right orbit.
 <a id="lane-5-degree-budgets"></a>
 ### Lane 5 — Intrinsic degree and valuative budgets
 
-Bridge finite-cover or boundary data to ordinary degree. The invariant object
-is the embedded inclusion `iota:A=k[u1,u2,u3] -> B=k[x1,x2,x3]`, modulo source
-and target automorphisms, not the abstract image algebra. Write `d_LR(iota)`
-for the minimum displayed coordinate degree on that full orbit.
-
-For a fixed source automorphism `sigma`, let
+Bridge finite-cover or boundary data to ordinary degree using the embedded
+inclusion `iota:A=k[u1,u2,u3] -> B=k[x1,x2,x3]` modulo source and target
+automorphisms, not the abstract image algebra. Let `d_LR(iota)` be the minimum
+coordinate degree on that orbit. For a source automorphism `sigma`, set
 
 ```text
 F_d^sigma A = {a in A : deg sigma(iota(a)) <= d},
 C_d^sigma   = k[F_d^sigma A].
 ```
 
-The existing `delta(Q) <= 9` certificates concern only the listed normalized
-filtrations and should be read as `trdeg_k C_6^sigma <= 2` for those cases.
-Their case inventory, `delta(Q)` definition, localizations, and artifact
-locators still need a public certificate contract. The unramified
-`delta(Q) >= 10` family is a residual family, but closing it alone would not
-prove orbit-minimality without a coverage theorem for arbitrary source
-coordinate frames.
+The `delta(Q) <= 9` certificates currently prove
+`trdeg_k C_6^sigma <= 2` only for listed normalized filtrations. Their case
+inventory, definition, localizations, and artifact locators still need a
+public contract. Closing the residual unramified `delta(Q) >= 10` family is
+also insufficient without source-frame coverage.
 
-A new exact criterion makes the missing quantifier explicit: if
-`d_LR(iota) <= D`, then `C_D^sigma=A` for some `sigma`, because a degree-`D`
-target coordinate frame lies in `F_D^sigma A`. Hence a universal bound
-`trdeg_k C_D^sigma <= 2` for every source automorphism would imply
-`d_LR(iota) >= D+1`. At `D=6` this would prove orbit-minimal degree seven for
-the fixed map, not a lower bound for every Keller counterexample.
+The exact orbit criterion is: if `d_LR(iota) <= D`, then
+`C_D^sigma=A` for some `sigma`; therefore a universal
+`trdeg_k C_D^sigma <= 2` implies `d_LR(iota) >= D+1`. At `D=6` this would prove
+orbit-minimal degree seven for the fixed map, not for every counterexample.
 
-There is also an exact valuative minimax formula. For divisorial valuations at
-infinity, `delta_v(f)=max(0,-v(f))`, and coordinate frames `x'` and `u'`,
+For divisorial valuations at infinity there is also an exact minimax formula:
 
 ```text
 deg_x' iota(u') =
   sup_v max_j delta_v(iota(uj')) / max_i delta_v(xi').
 ```
 
-Minimizing over source and target frames gives `d_LR(iota)`. All valuations
-give equality but are ineffective. The live geometric task is to extract a
-smaller source-equivariant family from the embedded finite cover and affine
-opening whose resulting lower bound exceeds six. Fixed compactification
-valuations must be rejected if triangular shears dilute them.
-
-The focused Lane 5 page now supplies the proof of the orbit criterion, the
-valuative formula, a simplex/Rees collapse lemma, mandatory shear tests, and
-four exact task capsules. The companion/Jordan divisor budget remains a
-presentation-sensitive Program 2 audit lens rather than an orbit invariant.
+The live task is to replace all valuations by a computable source-equivariant
+family from the embedded cover and affine opening. The focused page proves
+these statements, gives the simplex/Rees collapse lemma and shear test, and
+defines tasks `L5-T1` through `L5-T4`. The companion/Jordan budget remains a
+presentation-sensitive Program 2 audit lens.
 
 <a id="lane-6-homogeneous-compression"></a>
 ### Lane 6 — Homogeneous realization and compression
