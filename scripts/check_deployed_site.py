@@ -52,6 +52,14 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
         )
         if selection.get("selection_id") != v2["selection_id"]:
             failures.append("deployed retained-math v2 selection disagrees")
+        obligation_ids = {
+            item.get("obligation_id") for item in selection.get("obligations", [])
+        }
+        task_ids = {item.get("task_id") for item in selection.get("tasks", [])}
+        if "OBL-P5-FULL-FINITE-ROW-BASE" not in obligation_ids:
+            failures.append("deployed retained-math v2 lacks the Program 5 obligation")
+        if "TSK-P5-FULL-FINITE-ROW-BASE" not in task_ids:
+            failures.append("deployed retained-math v2 lacks the Program 5 task")
 
     active_manuscripts = {
         item["filename"] for item in expected["manuscripts"]
@@ -59,10 +67,15 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
     for handoff in expected["handoffs"]:
         route = handoff["route"]
         html = _fetch(urljoin(base_url, route)).decode("utf-8")
-        if 'class="handoff-snapshot"' not in html:
-            failures.append(f"{route}: canonical snapshot is missing")
-        if str(expected["site_release_id"]) not in html:
-            failures.append(f"{route}: selected release ID is missing")
+        if (
+            'class="handoff-snapshot"' in html
+            or str(expected["site_release_id"]) in html
+        ):
+            failures.append(f"{route}: obsolete release plumbing remains")
+        title_position = html.find("<h1")
+        identity_position = html.find('class="claim-tag"')
+        if title_position < 0 or identity_position < title_position:
+            failures.append(f"{route}: page does not lead with its title")
         linked = set(MANUSCRIPT_LINK_RE.findall(html))
         inactive = linked - active_manuscripts
         if inactive:
@@ -72,17 +85,19 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
             )
         if handoff["kind"] == "program" and not linked:
             failures.append(f"{route}: no active manuscript link")
-        if (
-            "Current proof sources — preferred" not in html
-            or "proof-sources/" not in html
+        for marker in (
+            "Sources and release",
+            "Current proof sources",
+            "Machine-readable release metadata",
+            "proof-sources/",
+            "release.json",
         ):
-            failures.append(f"{route}: current text-proof link is missing")
+            if marker not in html:
+                failures.append(f"{route}: handoff footer lacks {marker!r}")
         if handoff["program_slug"] == "homogeneous-realization-compression":
             for marker in (
                 "Compiler-owned retained result",
                 "ARG-RMU5D8E0003-FINITE-PLANE",
-                "OBL-P5-FULL-FINITE-ROW-BASE",
-                "TSK-P5-FULL-FINITE-ROW-BASE",
                 "-1152",
             ):
                 if marker not in html:
