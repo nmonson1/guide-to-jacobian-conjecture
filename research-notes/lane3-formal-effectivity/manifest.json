@@ -1,0 +1,68 @@
+{
+  "base_commit": "e6deaf7b266d5d236dab78ac3765e772e2d3edba",
+  "base_repository": "nmonson1/guide-to-jacobian-conjecture",
+  "created_at": "2026-08-02",
+  "files": [
+    {
+      "bytes": 3290,
+      "path": "AUDIT.md",
+      "sha256": "2daaa07bb9a0fc327da4ceb40ebde655383429e0e05b67ed939eaf9274f80725"
+    },
+    {
+      "bytes": 4262,
+      "path": "README.md",
+      "sha256": "d308c0772eaf03b8f46d50560c7cd1a629bf4ad0c47f483eb37d220e396d4efd"
+    },
+    {
+      "bytes": 410,
+      "path": "bibliography-additions.bib",
+      "sha256": "712b75068f38de17e5f3c4bcaa406c6293d1158b303073fab9091ba803d39279"
+    },
+    {
+      "bytes": 1191,
+      "path": "check_manifest.py",
+      "sha256": "13140fe00e4279838cbf7390f7d275d9fd3cb4600530be5bd5ad186efeebc5ca"
+    },
+    {
+      "bytes": 15916,
+      "path": "formal_effectivity_insertion.tex",
+      "sha256": "fb9e1e150ea387ae272daf0c03af233d937eefd12530adfdd29d4b9185a0b6d2"
+    },
+    {
+      "bytes": 17500,
+      "path": "formal_effectivity_theorem.md",
+      "sha256": "1ed4045476292cce9621486dedb1e8bd3a3b12e1223d82f4c6c99107fdd47a1a"
+    },
+    {
+      "bytes": 10276,
+      "path": "lane3-handoff-replacement.md",
+      "sha256": "564d94426a1394656e270d0af62d8664be7a437447943bcb2ce1429015a8c6e8"
+    },
+    {
+      "bytes": 6150,
+      "path": "verify_effective_unframed_bound.py",
+      "sha256": "7f5cfe5706f4b41cd2c680fce23c3e907bc0e9e98a78fc052ac7b5d3cfe4b74f"
+    },
+    {
+      "bytes": 14853,
+      "path": "verify_formal_effectivity.py",
+      "sha256": "fed25d2940f0fca521cde6b03d83ad96a7e7179d366ed4ac0bf99ac5c8d2632f"
+    },
+    {
+      "bytes": 4047,
+      "path": "verify_formal_effectivity_independent.py",
+      "sha256": "700170ac7053a2cdf8521189faede15107cd651e8277eb341f108602f413f46a"
+    }
+  ],
+  "generated_reports": [
+    "formal_effectivity_report.json",
+    "formal_effectivity_independent_report.json",
+    "effective_unframed_bound_report.json"
+  ],
+  "package_id": "lane3-formal-effectivity-v1",
+  "schema_version": 1,
+  "theorem_inputs": [
+    "Program 4 complete stable q-classification (proof offered; review pending)",
+    "D'Andrea-Krick-Sombra Theorem 0.5, DOI 10.24033/asens.2196"
+  ]
+}
