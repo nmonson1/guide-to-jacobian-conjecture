@@ -1,4 +1,4 @@
-# Weight-separated polynomial-shear composition theorem
+# High-weight polynomial-shear composition theorem
 
 Let
 
@@ -13,60 +13,70 @@ source-torus grading
 wt(x)=-1,  wt(y)=1,  wt(z)=2.
 ```
 
-Then `S` is graded, with `wt(P)=2`, `wt(Q)=1`, and `wt(R)=-1`, while
-`B_{<=6}` is supported on the weight interval `[-6,12]`, of width 18.
+Then `S` is graded, with
 
-This note extends the single-monomial theorem to an infinite class of genuine
-compositions.
+```text
+wt(P)=2,  wt(Q)=1,  wt(R)=-1,
+```
 
-## Exact separation condition
+while `B_{<=6}` is supported on `[-6,12]`, a weight interval of width 18.
+
+This note proves a composition theorem for arbitrary finite polynomial shears
+supported outside that weight window. No lacunarity or separation among the
+individual monomials is required.
+
+## Theorem
 
 Fix distinct coordinates `x_i,x_j`. Let
 
 ```text
-f(x_j) = sum_{nu=1}^r c_nu*x_j^(N_nu),
+f(x_j) = a_0+a_1*x_j + sum_{N in E} c_N*x_j^N,
 ```
 
-where every displayed coefficient is nonzero and every `N_nu>=2`. Put
+where `E` is finite, every `N>=2`, and every displayed `c_N` is nonzero. Put
 
 ```text
-D_nu = x_j^(N_nu) partial_{x_i},
-e_nu = N_nu*wt(x_j)-wt(x_i).
+D_N = x_j^N partial_{x_i},
+e_N = N*wt(x_j)-wt(x_i).
 ```
 
-The derivations commute and
+Assume the nonlinear shifts are all on one side of the degree-six window:
 
 ```text
-sigma_f = exp(sum c_nu D_nu)
+e_N >= 19 for every N in E,
 ```
 
-is the polynomial shear `x_i -> x_i+f(x_j)`.
-
-Call the weight list **six-step 18-separated** if
+or
 
 ```text
-abs(sum_nu (alpha_nu-beta_nu)*e_nu) > 18
+e_N <= -19 for every N in E.
 ```
 
-for every two distinct multiindices `alpha,beta in N^r` satisfying
+If `E` is nonempty and `sigma_f` is the source shear
 
 ```text
-sum alpha_nu <= 6,   sum beta_nu <= 6.
+x_i -> x_i+f(x_j),
 ```
 
-## Theorem
-
-If the weight list is six-step 18-separated, then
+then
 
 ```text
 sigma_f(S) intersect B_{<=6} = k.
 ```
 
-Thus no such finite composition of commuting elementary monomial shears can
-expose even one nonconstant element of the image algebra in source degree at
-most six.
+Thus an arbitrary number of same-direction high-weight elementary shears,
+with arbitrary coefficients and arbitrarily close exponents, cannot expose a
+nonconstant image-algebra element of source degree at most six.
 
 ## Proof
+
+The affine part `a_0+a_1*x_j` commutes with the nonlinear shear and preserves
+`B_{<=6}`. It can therefore be removed. Write
+
+```text
+D_f = sum_{N in E} c_N D_N,
+sigma_f = exp(D_f).
+```
 
 Take
 
@@ -74,54 +84,76 @@ Take
 g in sigma_f(S) intersect B_{<=6}
 ```
 
-and decompose it into torus weights:
+and decompose `g=sum_w g_w` into torus weights, where `-6<=w<=12`.
+Since each `D_N` lowers the exponent of the same coordinate `x_i`, the
+expansion of `sigma_f^(-1)(g)` stops after total derivative order six.
+
+### Positive shifts
+
+Suppose every `e_N>=19`. Every term involving at least one derivative has
+weight at least
 
 ```text
-g = sum_w g_w,       -6 <= w <= 12.
+-6+19=13,
 ```
 
-Since every `D_nu` lowers the exponent of the same coordinate `x_i`, any
-iterated derivative of total order greater than six annihilates `g`. Hence
-
-```text
-sigma_f^(-1)(g)
- = sum_w sum_{|alpha|<=6}
-   (-1)^|alpha| c^alpha/alpha! D^alpha(g_w).
-```
-
-The term indexed by `(w,alpha)` has weight
-
-```text
-w + sum alpha_nu e_nu.
-```
-
-The separation condition says that distinct pairs `(w,alpha)` have distinct
-weights: a collision would make the difference of the two shift sums have
-absolute value at most `12-(-6)=18`.
-
-Now `sigma_f^(-1)(g)` belongs to the graded algebra `S`. Therefore each term
-in the displayed expansion belongs to `S` separately. Taking `alpha=0` gives
-
-```text
-g_w in S
-```
-
-for every `w`, and hence
+whereas every zero-order term `g_w` has weight at most 12. Since
+`sigma_f^(-1)(g)` lies in the graded algebra `S`, each `g_w` lies in `S`.
+The standard filtration theorem gives
 
 ```text
 g in S intersect B_{<=6} = span{1,Q,R}.
 ```
 
-Write `g=a+bQ+dR`. For each `nu`, the first-order terms
+Write `g=a+bQ+dR`, and let `e_0` be the smallest shift occurring in `f`.
+If `d!=0`, the unique lowest-weight nonzero derivative term in
+`sigma_f^(-1)(g)` is
 
 ```text
-b D_nu(Q),       d D_nu(R)
+-d*c_0*D_0(R),       of weight -1+e_0.
 ```
 
-also occupy distinct weights and therefore belong to `S` whenever the
-corresponding coefficient is nonzero.
+Every other first-order term has larger weight, and every higher-order term
+has weight at least `-1+2e_0`. Hence `D_0(R)` would belong to `S`.
 
-The exact common fiber
+If `d=0` but `b!=0`, the unique lowest derivative term is
+
+```text
+-b*c_0*D_0(Q),       of weight 1+e_0,
+```
+
+so `D_0(Q)` would belong to `S`.
+
+### Negative shifts
+
+Suppose every `e_N<=-19`, and let `e_0` be the largest shift, meaning the one
+closest to zero. Derivative terms have weight at most
+
+```text
+12-19=-7,
+```
+
+so they cannot collide with zero-order weights, which are at least -6. Again
+`g` belongs to `span{1,Q,R}`.
+
+If `b!=0`, the unique highest-weight derivative term is
+
+```text
+-b*c_0*D_0(Q),       of weight 1+e_0.
+```
+
+After `b=0`, a nonzero `d` would make
+
+```text
+-d*c_0*D_0(R),       of weight -1+e_0,
+```
+
+the unique highest derivative term. Thus a nonconstant `g` again forces one
+of `D_0(Q),D_0(R)` to lie in `S`.
+
+### Exact common-fiber obstruction
+
+The three rational source points
 
 ```text
 u = (-12,  1/11,  -8/11)
@@ -129,13 +161,13 @@ v = (-10,  1/11, -14/11)
 w = ( 22, -1/22, 65/484)
 ```
 
-satisfies
+have the common image
 
 ```text
 F(u)=F(v)=F(w)=(0,1/11,-1320).
 ```
 
-Direct differentiation gives
+Their derivative values are
 
 ```text
              Q_x          Q_y          Q_z       R_x       R_y    R_z
@@ -144,49 +176,62 @@ v        750/1331     -8219/121      -30/121    4282/11    -300   1000
 w        -3/242              4             0       -187   -1452 -10648
 ```
 
-Multiplying the relevant derivative column by `x_j^(N_nu)` shows, in each of
-the six coordinate directions and for every `N_nu>=2`, that neither
-`D_nu(Q)` nor `D_nu(R)` is constant on this fiber. Therefore neither belongs
-to `S`. It follows that `b=d=0`, so `g` is constant. This proves the theorem.
-
-## Easily checked superlacunary condition
-
-Order the nonzero shifts so that
+For each of the six coordinate directions and every `N>=2`, multiplying the
+relevant derivative column by `x_j^N` gives unequal values on this common
+fiber. Therefore
 
 ```text
-abs(e_1) < abs(e_2) < ... < abs(e_r).
+D_N(Q) notin S,       D_N(R) notin S.
 ```
 
-The exact separation condition follows from the simpler recursive bounds
+The contradictions above force `b=d=0`. Hence `g` is constant.
+
+## Concrete thresholds
+
+The theorem applies to every polynomial whose nonlinear support is contained
+in the indicated tail:
 
 ```text
-abs(e_1) > 18,
-abs(e_s) > 18 + 6*sum_{t<s} abs(e_t)     for s>=2.
+z -> z+f(x):   every nonlinear exponent N>=17
+y -> y+f(x):   every nonlinear exponent N>=18
+x -> x+f(y):   every nonlinear exponent N>=18
+z -> z+f(y):   every nonlinear exponent N>=21
+y -> y+f(z):   every nonlinear exponent N>=10
+x -> x+f(z):   every nonlinear exponent N>=9.
 ```
 
-Indeed, for distinct `alpha,beta`, let `s` be the largest index where they
-differ. Then
+The coefficients and the number of terms are unrestricted.
+
+## Resonant-plus-tail corollary
+
+The weight-zero shear
 
 ```text
-abs(sum (alpha-beta)e)
- >= abs(e_s) - 6*sum_{t<s} abs(e_t)
- > 18.
+z -> z+a*y^2
 ```
 
-Consequently every same-direction polynomial shear whose monomial weights
-are superlacunary in this sense satisfies
+preserves the torus grading and commutes with every shear `z->z+c_N*y^N`.
+The exact resonant certificate gives its degree-six intersection as
+`span{1,sigma_a(R)}`. Repeating the proof above with this graded intermediate
+algebra shows:
 
 ```text
-sigma_f(S) intersect B_{<=6}=k.
+z -> z+a_0+a_1*y+a_2*y^2 + sum_{N>=21} c_N*y^N
 ```
 
-For a one-term polynomial this recovers the structural tails of the complete
-single-shear theorem. For several terms it gives a genuine composition result,
-with arbitrary nonzero coefficients and no bound on the number of terms.
+has degree-six intersection `k` whenever the high tail is nonzero. If the
+high tail vanishes, the exact resonant theorem applies.
 
-## Scope
+## Relation to the single-shear theorem
 
-The derivations here commute because every term changes the same coordinate
-by a polynomial in the same other coordinate. The proof does not cover
-noncommuting elementary shears, closely spaced weight shifts, or wild source
-automorphisms. Those are the remaining composition frontiers.
+For a one-term polynomial, the theorem recovers the infinite structural tails
+of `all_elementary_monomial_shears.py`. The finite exact certificates fill the
+remaining exponents. Together they prove every single monomial shear; the
+present theorem additionally closes arbitrary finite compositions inside each
+high-weight same-direction tail.
+
+## Remaining scope
+
+Closely spaced low-weight polynomial terms and noncommuting shear directions
+can produce weight collisions inside the interval `[-6,12]`. They are not
+covered here. These are now the first genuine composition cases.
