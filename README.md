@@ -100,7 +100,7 @@ surfaces are:
   and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-handoffs-v13-20260801b/`: hash-pinned sanitized source for
+- `data/model-handoffs-v14-20260801a/`: hash-pinned sanitized source for
   the hub, nine lane entrypoints, and six program dossiers; logical manuscript
   slots resolve against the selected manuscript manifest, so a stale PDF
   version fails the build;
