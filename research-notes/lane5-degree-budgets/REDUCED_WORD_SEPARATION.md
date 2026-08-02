@@ -51,41 +51,87 @@ is locally nilpotent and homogeneous of shift
 d=w(m)-w(x_i).
 \]
 
-## Reduced-word separation theorem
+## Taylor no-return theorem
 
-Let \(D\ge0\), let \(C\subseteq B\) be a graded subalgebra, and suppose
-
-\[
-C\cap B_{\le D}=k\oplus kq\oplus kr,
-\]
-
-where \(q,r\) are homogeneous of distinct weights. Let
-\(\delta_1,\ldots,\delta_t\) be homogeneous locally nilpotent derivations of
-shifts \(d_1,\ldots,d_t\), and put
+Let \(V\subseteq B\) be torus-stable and supported in a weight interval
+\([a,b]\) of width \(W=b-a\). Let \(C\subseteq B\) be a graded subalgebra,
+let \(\delta_1,\ldots,\delta_t\) be homogeneous locally nilpotent derivations
+of shifts \(d_1,\ldots,d_t\), and put
 
 \[
 \Phi=\exp(\delta_t)\cdots\exp(\delta_1).
 \]
 
-For the fixed ordered word, define \(\mathcal A_D\subset\mathbf N^t\) to be
-the finite set of multiindices \(\alpha\) for which
+For this ordered word and this finite-dimensional \(V\), let
+\(\mathcal A_V\subset\mathbf N^t\) be the finite set of multiindices
+\(\alpha\) for which
 
 \[
 \delta_1^{\alpha_1}\cdots\delta_t^{\alpha_t}
 \]
 
-is nonzero on at least one element of \(B_{\le D}\). Suppose
+is nonzero on some element of \(V\). If
 
 \[
-\left|\sum_{j=1}^t(\alpha_j-\beta_j)d_j\right|>3D
+|\alpha\cdot d|>W
 \tag{1}
 \]
 
-for every distinct \(\alpha,\beta\in\mathcal A_D\). If, for some index \(j\),
+for every nonzero \(\alpha\in\mathcal A_V\), then
+
+\[
+\boxed{\Phi(C)\cap V\subseteq C\cap V.}
+\tag{2}
+\]
+
+### Proof
+
+Take \(h\in\Phi(C)\cap V\) and put \(g=\Phi^{-1}h\in C\). The ordered
+Taylor expansion is finite:
+
+\[
+g=\sum_{\alpha\in\mathcal A_V}
+  \frac{(-1)^{|\alpha|}}{\alpha_1!\cdots\alpha_t!}
+  \delta_1^{\alpha_1}\cdots\delta_t^{\alpha_t}h.
+\tag{3}
+\]
+
+The zero-multiindex term is \(h\), supported in \([a,b]\). Every nonzero
+\(\alpha\)-term is supported in the translated interval
+\([a,b]+\alpha\cdot d\), which is disjoint from \([a,b]\) by (1). Hence the
+weight components of \(g\) inside \([a,b]\) are exactly the components of
+\(h\). Since \(g\in C\) and \(C\) is graded, those components lie in \(C\),
+so \(h\in C\cap V\). \(\square\)
+
+This strictly extends the one-sided weight-window lemma: positive and negative
+shifts may be mixed, provided no nonzero ordered Taylor word returns to the
+original window.
+
+The set \(\mathcal A_V\) is finite because \(V\) is finite dimensional and
+the ordered derivations are locally nilpotent.
+
+## Exactness under full Taylor separation
+
+Assume now
+
+\[
+C\cap B_{\le D}=k\oplus kq\oplus kr,
+\]
+
+where \(q,r\) are homogeneous of distinct weights. Suppose the stronger
+condition
+
+\[
+| (\alpha-\beta)\cdot d |>3D
+\tag{4}
+\]
+
+holds for every distinct \(\alpha,\beta\in\mathcal A_{B_{\le D}}\). If, for
+some \(j\),
 
 \[
 \delta_jq\notin C,\qquad \delta_jr\notin C,
-\tag{2}
+\tag{5}
 \]
 
 then
@@ -94,40 +140,10 @@ then
 \boxed{\Phi(C)\cap B_{\le D}=k.}
 \]
 
-### Proof
-
-Take \(h\in\Phi(C)\cap B_{\le D}\) and set \(g=\Phi^{-1}h\in C\). Expanding
-the ordered inverse word gives the finite sum
-
-\[
-g=\sum_{\alpha\in\mathcal A_D}
-  \frac{(-1)^{|\alpha|}}{\alpha_1!\cdots\alpha_t!}
-  \delta_1^{\alpha_1}\cdots\delta_t^{\alpha_t}h.
-\tag{3}
-\]
-
-All weights occurring in \(B_{\le D}\) lie in \([-D,2D]\), an interval of
-width \(3D\). The \(\alpha\)-summand in (3) has weights in
-
-\[
-[-D,2D]+\alpha\cdot d.
-\]
-
-Condition (1) makes these intervals pairwise disjoint. Since \(C\) is graded
-and \(g\in C\), every summand in (3) belongs to \(C\). The zero-multiindex
-summand gives \(h\in C\cap B_{\le D}\), so
-
-\[
-h=a+bq+cr.
-\]
-
-The \(e_j\)-summand gives \(\delta_jh\in C\). Its two nonconstant terms
-\(b\delta_jq\) and \(c\delta_jr\) have distinct weights, so gradedness puts
-each in \(C\). Condition (2) forces \(b=c=0\). Thus \(h\in k\). \(\square\)
-
-The set \(\mathcal A_D\) is finite: apply the finitely many ordered
-exponentials successively to a basis of the finite-dimensional space
-\(B_{\le D}\); local nilpotence makes every expansion finite.
+Indeed, (4) separates every Taylor multiindex block in (3). Gradedness of
+\(C\) puts each block in \(C\), including the zero block, so
+\(h=a+bq+cr\). The \(e_j\)-block gives \(\delta_jh\in C\). Its
+\(q\)- and \(r\)-parts have distinct weights, and (5) forces \(b=c=0\).
 
 ## Arbitrarily long commuting compositions with mixed signs
 
@@ -156,7 +172,7 @@ it is enough that
 
 \[
 |\gamma\cdot d|>3D
-\tag{4}
+\tag{6}
 \]
 
 for every nonzero \(\gamma\in\mathbf Z^t\) with
@@ -166,13 +182,13 @@ shifts by construction, is
 \[
 |d_1|>3D,\qquad
 |d_r|>2D\sum_{s<r}|d_s|+3D\quad(r\ge2).
-\tag{5}
+\tag{7}
 \]
 
 For Lane 5, the common-fiber witnesses from the pure-monomial theorem show
 that \(m_r\partial_{x_i}Q\) and \(m_r\partial_{x_i}R\) are outside \(S\) for
-every nonzero monomial in the other two source coordinates. Hence (4), or the
-stronger condition (5), gives
+every nonzero monomial in the other two source coordinates. Hence (6), or the
+stronger condition (7), gives
 
 \[
 \boxed{
@@ -199,7 +215,7 @@ y\longmapsto y+c_1z^{10}+c_2x^{246}+c_3z^{1606}+c_4x^{41742}.
 
 For arbitrary nonzero coefficients, its transformed image algebra has only
 constants in degree at most six. The construction continues to arbitrary word
-length by the recurrence (5).
+length by the recurrence (7).
 
 ## A genuinely mixed-sign noncommuting family
 
@@ -243,26 +259,30 @@ Indeed, \(\delta_1\) is applied first and does not increase the degree in
 Assume
 
 \[
-M\ge21,\qquad N\ge6M+6.
-\tag{6}
+N\ge18,\qquad M\ge21,
 \]
 
-Then
+and impose the finite arithmetic nonresonance condition
 
 \[
-d_2>18,\qquad |d_1|>6d_2+18.
+|a(N+1)-b(M-2)|>18
+\quad\text{for every }1\le a,b\le6.
+\tag{8}
 \]
 
-For distinct \(\alpha,\beta\in\{0,\ldots,6\}^2\), if
-\(\alpha_1=\beta_1\), their shift difference has magnitude at least
-\(d_2>18\). Otherwise it has magnitude at least
+For distinct \(\alpha,\beta\in\{0,\ldots,6\}^2\), a shift collision can only
+occur when the two coefficient differences have the same sign. Condition (8)
+then gives (4); opposite signs add the two magnitudes, while a zero coefficient
+leaves a multiple of \(N+1\) or \(M-2\), both greater than 18.
+
+A simple sufficient subfamily is
 
 \[
-|d_1|-6d_2>18.
+M\ge21,\qquad N\ge6M+6,
 \]
 
-Thus condition (1) holds despite the opposite signs. The exact common-fiber
-witness already used for the one-step theorem gives
+because then \(N+1-6(M-2)>18\). The exact common-fiber witness already used
+for the one-step theorem gives
 
 \[
 x^N\partial_yQ,\ x^N\partial_yR,
@@ -274,7 +294,7 @@ for all \(N,M\ge2\). The reduced-word theorem therefore yields
 \[
 \boxed{
 \Psi_{N,M}(S)\cap B_{\le6}=k
-\qquad(M\ge21,\ N\ge6M+6).
+\qquad\text{whenever (8) holds}.
 }
 \]
 
@@ -287,12 +307,12 @@ high-weight subgroups. Arbitrary affine source transformations applied after
 
 The theorem covers:
 
-- arbitrary finite reduced words satisfying the exact Taylor-support
-  separation condition (1);
+- arbitrary finite reduced words satisfying the Taylor no-return condition
+  (1), with exactness under the stronger separation condition (4);
 - arbitrarily long commuting polynomial shears with mixed-sign,
   superincreasing support;
 - an explicit infinite noncommuting mixed-sign triangular family.
 
-It does not yet control words whose different Taylor multiindices have nearby
-or equal total torus shifts. Those resonant mixed-sign reduced words are the
+It does not yet control words whose ordered Taylor shifts return to or overlap
+the degree-six weight window. Those resonant mixed-sign reduced words are the
 next finite or geometric frontier.
