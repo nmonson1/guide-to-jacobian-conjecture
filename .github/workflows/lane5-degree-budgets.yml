@@ -47,3 +47,7 @@ jobs:
       - name: Check high-weight polynomial-tail arithmetic
         working-directory: research-notes/lane5-degree-budgets
         run: python lacunary_polynomial_shears.py
+
+      - name: Verify mixed-sign reduced-word separation
+        working-directory: research-notes/lane5-degree-budgets
+        run: python verify_reduced_word_separation.py
