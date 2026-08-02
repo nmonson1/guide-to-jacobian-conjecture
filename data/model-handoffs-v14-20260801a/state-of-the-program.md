@@ -286,25 +286,51 @@ the full left-right orbit.
 <a id="lane-5-degree-budgets"></a>
 ### Lane 5 — Intrinsic degree and valuative budgets
 
-Bridge finite-cover or boundary data to ordinary degree. Exact calculations
-cover the listed source filtrations with `delta(Q) <= 9` and give
-`trdeg A_{<=6} <= 2`. The residual case is unramified `delta(Q) >= 10` plus a
-filtered conormal, Wronskian, or conductor theorem. Full left-right minimality
-still requires an arbitrary-orbit monotone or a non-degree-increasing
-canonical normalization. The companion/Jordan divisor budget is a useful
-Program 2 prototype, but its determinant-arc presentation is not orbit-invariant.
+Bridge finite-cover or boundary data to ordinary degree. The invariant object
+is the embedded inclusion `iota:A=k[u1,u2,u3] -> B=k[x1,x2,x3]`, modulo source
+and target automorphisms, not the abstract image algebra. Write `d_LR(iota)`
+for the minimum displayed coordinate degree on that full orbit.
 
-**31 July continuation audit; no theorem promotion.** The image subalgebra
-`A = k[P,Q,R]` absorbs target-coordinate changes; the source coordinate
-volume-form value `-4` is only a necessary anchor. “Simplex-bounded” is not
-yet a relaxation: exact simplex dimensions plus degree-one Rees generation
-force ordinary coordinate degree, while omitting generation axioms leaves no
-defined search class. The SAGBI/Abhyankar--Moh analogy remains heuristic. Do
-not search for a “cheating” filtration before axiomatizing a broader class.
-Continue via the residual conormal theorem, a higher-generated Rees test, or
-a Program 6 conductor translation. Plausible inputs include valuations, pole
-divisors, Newton data, and marked boundary multiplicities, but not dimension
-counts alone. Counterexamples to proposed budgets are useful.
+For a fixed source automorphism `sigma`, let
+
+```text
+F_d^sigma A = {a in A : deg sigma(iota(a)) <= d},
+C_d^sigma   = k[F_d^sigma A].
+```
+
+The existing `delta(Q) <= 9` certificates concern only the listed normalized
+filtrations and should be read as `trdeg_k C_6^sigma <= 2` for those cases.
+Their case inventory, `delta(Q)` definition, localizations, and artifact
+locators still need a public certificate contract. The unramified
+`delta(Q) >= 10` family is a residual family, but closing it alone would not
+prove orbit-minimality without a coverage theorem for arbitrary source
+coordinate frames.
+
+A new exact criterion makes the missing quantifier explicit: if
+`d_LR(iota) <= D`, then `C_D^sigma=A` for some `sigma`, because a degree-`D`
+target coordinate frame lies in `F_D^sigma A`. Hence a universal bound
+`trdeg_k C_D^sigma <= 2` for every source automorphism would imply
+`d_LR(iota) >= D+1`. At `D=6` this would prove orbit-minimal degree seven for
+the fixed map, not a lower bound for every Keller counterexample.
+
+There is also an exact valuative minimax formula. For divisorial valuations at
+infinity, `delta_v(f)=max(0,-v(f))`, and coordinate frames `x'` and `u'`,
+
+```text
+deg_x' iota(u') =
+  sup_v max_j delta_v(iota(uj')) / max_i delta_v(xi').
+```
+
+Minimizing over source and target frames gives `d_LR(iota)`. All valuations
+give equality but are ineffective. The live geometric task is to extract a
+smaller source-equivariant family from the embedded finite cover and affine
+opening whose resulting lower bound exceeds six. Fixed compactification
+valuations must be rejected if triangular shears dilute them.
+
+The focused Lane 5 page now supplies the proof of the orbit criterion, the
+valuative formula, a simplex/Rees collapse lemma, mandatory shear tests, and
+four exact task capsules. The companion/Jordan divisor budget remains a
+presentation-sensitive Program 2 audit lens rather than an orbit invariant.
 
 <a id="lane-6-homogeneous-compression"></a>
 ### Lane 6 — Homogeneous realization and compression
@@ -415,7 +441,7 @@ work. Use them when they match the direction you judge most valuable:
 | 2 | Program 1 `P1-T3` flatness/opening separation; Program 4 `P4-T1` proof hardening, `P4-T2` local graph definition and overlap tests |
 | 3 | Program 3 `P3-T1` exact reconstruction, `P3-T2` all-order comparison, `P3-T3` second-system reproduction; Program 4 `P4-T3` modulus-onset verification |
 | 4 | Program 2 `P2-T1` global case tree, `P2-T2` independent v5 reproduction, `P2-T3` proof/code correspondence |
-| 5 | No capsule yet; formulate an intrinsic full-orbit budget or decisive obstruction to one |
+| 5 | Lane 5 `L5-T1` certificate contract, `L5-T2` source-frame coverage, `L5-T3` canonical valuation family, `L5-T4` residual unramified theorem |
 | 6 | Program 5 `P5-T2` nonlinear 19-to-18 coupling |
 | 7 | Program 5 `P5-T1` saturated collision components, `P5-T3` obstruction on each component |
 | 8 | Program 6 `P6-T1` complete lower-face pipeline plus the independent reproduction frontier |
