@@ -1,0 +1,441 @@
+% Lane 4 proof repairs and one new conic-orbit exclusion.
+% Prepared against the 2026-08-01 Program 2 source snapshot.
+% The blocks below are intended as replacement/insertable TeX, not as a
+% modification of the hash-pinned public release.
+
+% -------------------------------------------------------------------------
+% 1. Replacement proof for lem:leading-image
+% -------------------------------------------------------------------------
+
+\begin{proof}[Replacement proof of \cref{lem:leading-image}]
+Let
+\[
+ \phi=[H_{4,1}:H_{4,2}:H_{4,3}]\colon \PP^2\dashrightarrow C_4(F)
+\]
+be the rational map defined by the leading forms.  Since \(\PP^2\)
+dominates \(C_4(F)\), restriction to a sufficiently general line shows
+that \(C_4(F)\) is unirational.  Its normalization is therefore \(\PP^1\)
+in characteristic zero.  Write the normalization map as
+\[
+ \nu=[h_0:h_1:h_2]\colon \PP^1\longrightarrow C_4(F),
+\]
+where the \(h_i\) are binary forms without a common zero.  Because \(\nu\)
+is birational and \(\deg C_4(F)=e\), the line bundle
+\(\nu^*\mathcal O_{C_4(F)}(1)\) has degree \(e\); hence the \(h_i\) may be
+chosen homogeneous of degree \(e\).
+
+The rational map \(\psi=\nu^{-1}\circ\phi\colon\PP^2\dashrightarrow\PP^1\)
+is represented by a coprime homogeneous pencil
+\[
+ \psi=[A:B],\qquad \deg A=\deg B=k\ge1.
+\]
+Consequently
+\[
+ [H_{4,1}:H_{4,2}:H_{4,3}]
+   =[h_0(A,B):h_1(A,B):h_2(A,B)].
+\]
+Put \(q_i=h_i(A,B)\).  The forms \(q_i\) have no common irreducible
+factor.  Indeed, at the generic point of a prime divisor \(\Gamma\), the
+coprimality of \(A,B\) says that they do not both vanish; their ratio gives
+a point of \(\PP^1(k(\Gamma))\), and the basepoint-free triple \(h\) cannot
+vanish there in all three coordinates.
+
+There is therefore a rational function \(\lambda\) with
+\(H_{4,i}=\lambda q_i\) for every \(i\).  Write \(\lambda=u/v\) in lowest
+terms.  Since every \(H_{4,i}\) is polynomial, \(v\) divides every \(q_i\);
+thus \(v\) is constant.  Hence \(\lambda=G\) is a polynomial form and
+\[
+ H_4=G\,h(A,B).
+\]
+Comparison of degrees gives
+\[
+ \deg G+ek=4.
+\]
+For a nondegenerate curve \(e\ge2\), the positive integral solutions are
+\[
+ (e,k,\deg G)=(2,1,2),(2,2,0),(3,1,1),(4,1,0).
+\]
+When \(e=1\), the projective leading image is a line, equivalently the
+leading target span is two.  This proves the lemma.
+\end{proof}
+
+% -------------------------------------------------------------------------
+% 2. Replacement proof for prop:four-loci
+% -------------------------------------------------------------------------
+
+\begin{proof}[Replacement proof of \cref{prop:four-loci}]
+Retain the notation
+\[
+ P=GA,\qquad Q=GB,\qquad \gcd(A,B)=1,
+ \qquad n=\deg A=\deg B=4-\deg G,
+\]
+\[
+ t=A/B,\qquad w=R^4/Q^3.
+\]
+By \cref{lem:weighted-field},
+\[
+ k(t,w)=k(s),\qquad s=A_0/B_0,
+ \qquad t=\mathcal R(s),\qquad n=ed,
+\]
+where \(A_0,B_0\) are coprime forms of degree \(d\) and
+\(\deg\mathcal R=e\).
+
+Suppose first that \(e>1\).  The possibilities are
+\[
+\begin{array}{c|c|c}
+\deg G&n&(e,d)\\ \hline
+0&4&(4,1),(2,2)\\
+1&3&(3,1)\\
+2&2&(2,1).
+\end{array}
+\]
+Consider a case with \(d=1\), so \(s\) is a pencil of two linear forms and
+\(w=\sigma(s)\).  Let an irreducible component \(\Gamma\) occur in \(G\)
+with multiplicity \(\mu\).  If \(s|_\Gamma\) is nonconstant, then
+\(A_0,B_0\), the reduced factor of \(Q\), and \(\sigma(s)\) are units at
+the generic point of \(\Gamma\).  Taking \(\Gamma\)-valuations in
+\(R^4/Q^3=\sigma(s)\) gives
+\[
+ 4\nu_\Gamma(R)=3\mu.
+\]
+Thus \(4\mid\mu\), impossible because in the displayed \(d=1\) cases
+\(\mu\le\deg G\le2\).  Hence every component of \(G\) is a fiber line of
+\(s\).  It follows that \(G,P,Q\) are polynomials in the same two linear
+forms.  Moreover \(R^4\in k(A_0,B_0)\); viewing \(R\) as a polynomial in a
+third independent linear form shows that its degree in that variable is
+zero.  Thus \(R\in k[A_0,B_0]\), and we are in locus~(i).  The only
+remaining composite case is \((e,d)=(2,2)\) with \(G=1\), which is exactly
+locus~(ii).
+
+Now suppose that \(e=1\), so \(w=\rho(t)\).  First take \(G=1\).  For a
+finite fiber \(A-\xi B\), set \(c_\xi=\ord_\xi\rho\), and at infinity set
+\[
+ c_\infty=\ord_\infty\rho+3.
+\]
+If \(\Gamma\) is a component of the corresponding quartic fiber with
+multiplicity \(m\), valuation gives
+\[
+ 4\nu_\Gamma(R)=c_\xi m.
+\]
+Therefore every \(c_\xi\) is nonnegative, and the divisor identity for
+\(\rho\) gives
+\[
+ \sum_{\xi\in\PP^1}c_\xi=3.
+\]
+Some \(c_\xi\) is odd.  For that fiber, \(4\mid m\) for every component.
+Since the fiber has degree four, it is \(\ell^4\).  This is locus~(iii).
+
+Finally assume \(e=1\) and \(G\ne1\).  Let \(\Gamma\mid G\) have
+multiplicity \(\mu\).  If \(t|_\Gamma\) were nonconstant, then \(A,B\) and
+\(\rho(t)\) would be units at the generic point of \(\Gamma\), and the same
+valuation would give
+\[
+ 4\nu_\Gamma(R)=3\mu.
+\]
+But \(1\le\mu\le\deg G\le3\), a contradiction.  Thus \(t\) is constant on
+every component of \(G\): each component is supported on a special fiber
+of the reduced pencil \(A/B\).  This is locus~(iv).  The four loci may
+overlap, as stated.
+\end{proof}
+
+% -------------------------------------------------------------------------
+% 3. A reader-manuscript proof of the R=0 branch
+% -------------------------------------------------------------------------
+
+\begin{proposition}[Vanishing cubic normal layer]
+\label{prop:quartic-r-zero-repair}
+Let \(F\colon\AA^3\to\AA^3\) be a Keller map of ordinary degree at most
+four, and suppose that after a target linear change
+\[
+ H_4=(P,Q,0),\qquad (H_3)_3=0.
+\]
+Assume the per-coordinate Appelgate--Onishi--Nagata plane theorem in the
+form used in \cref{prop:easy-branches}.  Then \(F\) is a polynomial
+automorphism.
+\end{proposition}
+
+\begin{proof}
+The third coordinate \(F_3\) has degree at most two.  Since
+\(\det JF\ne0\), its gradient has no zero: a zero gradient would make the
+third row of \(JF\) vanish.  By \cref{lem:quadratic-coordinate}, after a
+linear source change
+\[
+ F_3=\mu z+e(x,y),\qquad \mu\ne0,\qquad \deg e\le2.
+\]
+Replacing \(z\) by \(t=F_3\) is a polynomial source automorphism, with
+\[
+ z=\mu^{-1}(t-e(x,y)).
+\]
+
+Choose a nonzero target combination \(G=\alpha F_1+\beta F_2\) whose
+quartic homogeneous part has zero \(z^4\)-coefficient.  Such a combination
+exists because this is one homogeneous linear condition on
+\((\alpha,\beta)\).  After the substitution for \(z\), a monomial
+\(x^ay^bz^j\) of total degree at most four has \((x,y)\)-degree at most
+\[
+ a+b+2j\le4+j.
+\]
+The only possible degree-eight term would come from \(z^4\), which was
+killed.  Hence
+\[
+ \deg_{x,y}G\le7.
+\]
+Complete \(G\) to an invertible target combination \((G,H)\) of
+\((F_1,F_2)\).  Over \(\overline{k(t)}\), the pair \((G,H)\) is a plane
+Keller map, and one coordinate has degree at most seven.  The cited plane
+theorem makes it an automorphism.  Its inverse is unique and therefore
+descends from \(\overline{k(t)}\) to \(k(t)\).  Thus \(F\) is birational.
+A birational Keller self-map is an automorphism by the same
+Zariski-main/Ax--Grothendieck argument used in \cref{prop:easy-branches}.
+\end{proof}
+
+% -------------------------------------------------------------------------
+% 4. Exact centralizer bridge for the fixed-component endpoint
+% -------------------------------------------------------------------------
+
+\begin{lemma}[Homogeneous Hamiltonian centralizer in the nonbinary cubic case]
+\label{lem:homogeneous-cubic-centralizer}
+Let \(R\in k[x,y,z]_3\) be homogeneous, with \(x\nmid R\), and suppose that
+\(R\notin k[x,\ell]\) for every nonzero linear form
+\(\ell\in k[y,z]_1\).  Put \(K=k(x)\) and
+\[
+ \delta=J_{y,z}(R,-)\colon K[y,z]\longrightarrow K[y,z].
+\]
+Then
+\[
+ \ker\delta=K[R].
+\]
+Moreover, if \(Q\in k[x,y,z]_d\) is homogeneous and \(\delta Q=0\), then
+\[
+ Q=\sum_{0\le j\le d/3}\lambda_j x^{d-3j}R^j,
+ \qquad \lambda_j\in k.
+\]
+In particular,
+\[
+ \ker\delta\cap k[x,y,z]=k[x,R].
+\]
+\end{lemma}
+
+\begin{proof}
+Suppose that \(R\) were decomposable over an algebraic closure of \(K\):
+\(R=u(h)\) with \(\deg u>1\).  The degree of \(R\) in \((y,z)\) is at most
+three, so a nontrivial decomposition forces \(h\) to be linear in
+\((y,z)\).  The highest \((y,z)\)-homogeneous part of \(R\) is then a power
+of a linear form.  Since \(R\) is homogeneous over \(k\), its projective
+linear factor has constant direction in \(\PP^1(k)\).  Thus
+\(K[h]=K[\ell]\) for a fixed \(\ell\in k[y,z]_1\), and
+\[
+ R\in K[\ell]\cap k[x,y,z]=k[x,\ell],
+\]
+contrary to the hypothesis.  Hence \(R\) is absolutely indecomposable.
+
+The standard two-variable common-generator theorem for a vanishing
+Jacobian now gives \(\ker\delta=K[R]\): if \(J_{y,z}(R,Q)=0\), then over an
+algebraic closure of \(K\), the polynomials \(R,Q\) have a common polynomial
+generator; the indecomposability of \(R\) makes that generator affine-linear
+in \(R\), and uniqueness descends the coefficients to \(K\).
+
+Let now \(Q\) be homogeneous of degree \(d\).  Write uniquely
+\[
+ Q=\sum_j f_j(x)R^j,\qquad f_j(x)\in k(x).
+\]
+Scalar homogeneity gives
+\[
+ f_j(\lambda x)=\lambda^{d-3j}f_j(x),
+\]
+so \(f_j(x)=\lambda_jx^{d-3j}\).  Because \(x\nmid R\), a negative power
+of \(x\) cannot cancel among distinct powers of \(R\) in a polynomial
+\(Q\).  Hence only \(d-3j\ge0\) occurs.  This proves the displayed formula
+and, degree by degree, the final assertion.
+\end{proof}
+
+\begin{remark}[Use at equation (A.8)]
+In the endpoint \(H_4=(x^4,xR,0)\), equation (A.8) is
+\[
+ 4x^3J_{y,z}(m,R)-R J_{y,z}(\ell,R)=0.
+\]
+Since \(\gcd(x^3,R)=1\), the degree bounds force
+\[
+ J_{y,z}(m,R)=J_{y,z}(\ell,R)=0.
+\]
+For linear \(\ell,m\), \cref{lem:homogeneous-cubic-centralizer} gives
+\(\ell,m\in kx\).  This is the exact centralizer implication needed at the
+terminal contradiction; no stronger unqualified centralizer assertion is
+required.
+\end{remark}
+
+% -------------------------------------------------------------------------
+% 5. New exclusion of the previously untreated G=z^2 conic orbit
+% -------------------------------------------------------------------------
+
+\begin{proposition}[The double-line conic orbit off the pencil point]
+\label{prop:conic-z2-exclusion}
+No quartic Keller map has leading form
+\[
+ H_4=z^2(x^2,xy,y^2).
+\]
+\end{proposition}
+
+\begin{proof}[Exact coefficient proof]
+Put
+\[
+ n=(y^2,-2xy,x^2)^T,
+ \qquad
+ \delta=2z(x\partial_x+y\partial_y-z\partial_z).
+\]
+For \(M=n\cdot H_3\), the first normal determinant equation is
+\[
+ \delta(M)=4zM.
+\]
+Since \(M\) is homogeneous of degree five, a monomial
+\(x^ay^bz^c\) in \(M\) has
+\((x\partial_x+y\partial_y-z\partial_z)\)-weight \(5-2c\), which can never
+be two.  Hence \(M=0\).  The full cubic syzygy module of \(n\) gives
+\[
+ H_3=T(A,B)=(2xA,yA+xB,2yB),
+\]
+where
+\[
+\begin{aligned}
+A={}&a_0x^2+a_1xy+a_2xz+a_3y^2+a_4yz+a_5z^2,\\
+B={}&b_0x^2+b_1xy+b_2xz+b_3y^2+b_4yz+b_5z^2.
+\end{aligned}
+\]
+Write the three components of \(H_2\) with coefficients
+\(c_0,\ldots,c_{17}\), using the monomial order
+\[
+ (x^2,xy,xz,y^2,yz,z^2),
+\]
+and write the rows of the linear part as
+\[
+ (\ell_0,\ell_1,\ell_2),
+ (\ell_3,\ell_4,\ell_5),
+ (\ell_6,\ell_7,\ell_8).
+\]
+Let
+\[
+ D_j=[\epsilon^j]\det\bigl(L+\epsilon JH_2+
+             \epsilon^2JH_3+\epsilon^3JH_4\bigr).
+\]
+The Keller equations are \(D_j=0\) for \(1\le j\le8\), while
+\(D_0=\det L\ne0\).
+
+The exact solution of \(D_7=0\) is
+\[
+\begin{gathered}
+ b_0=a_3=0,\qquad b_1=a_0,\qquad b_3=a_1,\\
+ c_{12}=b_2^2,\qquad
+ c_{13}=2c_6-2b_2(a_2-b_4),\\
+ c_0=(a_2-b_4)^2-2a_4b_2-c_{15}+2c_7,\qquad
+ c_{17}=b_5^2,\\
+ c_1=2c_9+2a_4(a_2-b_4),\qquad
+ c_{11}=a_5b_5,\qquad c_3=a_4^2,\qquad c_5=a_5^2.
+\end{gathered}
+\]
+Put \(d=a_2-b_4\).  The six coefficients
+\([x^{5-i}y^iz]D_6\), after division by nonzero constants, are
+\[
+\begin{aligned}
+&a_0b_2^2,\\
+&b_2(2a_0d-a_1b_2),\\
+&a_0d^2-2a_0a_4b_2-2a_1db_2,\\
+&2a_0a_4d+a_1d^2-2a_1a_4b_2,\\
+&a_4(a_0a_4+2a_1d),\\
+&a_1a_4^2.
+\end{aligned}                                                    \tag{Z.1}
+\]
+
+Suppose first that \((a_0,a_1)\ne(0,0)\).  Equations (Z.1) give
+\[
+ b_2=d=a_4=0.
+\]
+The \(\GL_2\)-symmetry in \((x,y)\), together with the induced target
+change on \(\operatorname{Sym}^2\langle x,y\rangle\), normalizes
+\((a_0,a_1)=(1,0)\).  Thus
+\[
+ A=x(x+a_2z)+a_5z^2,\qquad
+ B=y(x+a_2z)+b_5z^2.
+\]
+The remaining coefficients of \(D_6\) solve linearly as
+\[
+\begin{gathered}
+ c_{14}=c_4=0,\qquad c_{16}=2c_8,\qquad c_2=2c_{10},\\
+ \ell_6=-2b_5^2+2b_5c_6,\qquad
+ \ell_7=4a_5b_5-2a_5c_6+2b_5(c_{15}-c_7)+2\ell_3,\\
+ \ell_8=-2a_2b_5^2+2b_5c_8,\qquad
+ \ell_0=2\ell_4-2a_5^2-2a_5c_{15}+2a_5c_7-2b_5c_9,\\
+ \ell_5=-2a_2a_5b_5+a_5c_8+b_5c_{10},\qquad
+ \ell_1=2a_5c_9,\qquad
+ \ell_2=-2a_2a_5^2+2a_5c_{10}.
+\end{gathered}
+\]
+Three coefficients of \(D_5\) then give, successively,
+\[
+\begin{aligned}
+[x^4z]D_5&=8(c_6-2b_5)^2,\\
+[y^4z]D_5&=8c_9^2,\\
+[x^2y^2z]D_5&=8(2a_5+c_{15}-c_7)^2.
+\end{aligned}
+\]
+After imposing their vanishing, two coefficients of \(D_4\) are
+\[
+ [x^3z]D_4=-12(c_8-2a_2b_5)^2,\qquad
+ [xy^2z]D_4=-12(c_{10}-2a_2a_5)^2.
+\]
+Finally set
+\[
+ X=b_5(2a_5+c_{15})-\ell_3,\qquad
+ Y=a_5c_{15}-\ell_4.
+\]
+The three surviving coefficients of \(D_3\) are
+\[
+ [x^2z]D_3=4X^2,\qquad
+ [xyz]D_3=-8XY,\qquad
+ [y^2z]D_3=4Y^2.
+\]
+Thus \(X=Y=0\).  Substitution into the linear part gives
+\[
+L=
+\begin{pmatrix}
+2a_5(a_5+c_{15})&0&2a_2a_5^2\\
+b_5(2a_5+c_{15})&a_5c_{15}&2a_2a_5b_5\\
+2b_5^2&2b_5c_{15}&2a_2b_5^2
+\end{pmatrix},
+\]
+whose determinant is zero.
+
+It remains to treat \(a_0=a_1=0\).  Then
+\[
+ A=z(a_2x+a_4y+a_5z),\qquad
+ B=z(b_2x+b_4y+b_5z).
+\]
+Writing \(u=(x,y)^T\), this is
+\[
+ H_3=z\,D\nu_u(Mu+qz),
+ \qquad
+ M=\begin{pmatrix}a_2&a_4\\b_2&b_4\end{pmatrix},
+ \quad q=\binom{a_5}{b_5},
+\]
+where \(\nu(u)=(x^2,xy,y^2)\).  Translations in \((x,y)\) kill \(q\), a
+translation in \(z\) removes the scalar part of \(M\), and conjugacy by
+\(\GL_2\), together with a rescaling of \(z\), reduces the traceless matrix
+\(M\) to exactly one of
+\[
+ \begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
+ \begin{pmatrix}0&1\\0&0\end{pmatrix},\qquad
+ \begin{pmatrix}0&0\\0&0\end{pmatrix}.
+\]
+In these three charts the coefficient solve for \(D_6=0\) is respectively
+\[
+\begin{array}{c|ccc}
+M&\ell_2&\ell_5&\ell_8\\ \hline
+\operatorname{diag}(1,-1)&0&0&0\\
+\begin{psmallmatrix}0&1\\0&0\end{psmallmatrix}&0&0&0\\
+0&0&0&0
+\end{array}
+\]
+(the remaining solved entries are retained in the checker).  No parameter is
+inverted.  Thus the third column of \(L\) vanishes, again contradicting
+\(\det L\ne0\).  The attached assertion-based checker verifies every
+coefficient identity over \(\mathbb Q\).
+\end{proof}
