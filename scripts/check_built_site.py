@@ -23,6 +23,9 @@ from generate_living_guide_v2 import (
     load_retained_math,
     load_retained_math_v2,
     retained_corrections,
+    retained_v2_compatibility,
+    retained_v2_graph,
+    retained_v2_is_full,
 )
 
 
@@ -197,6 +200,38 @@ def main() -> int:
     selection_path = site / "research/handoffs/retained-math-v2-pilot.json"
     if retained_v2 is None:
         failures.append("selected release does not pin retained-math v2")
+    elif retained_v2_is_full(retained_v2[1]):
+        graph_path = site / "research/working-mathematics/graph.json"
+        compatibility_path = (
+            site
+            / "research/working-mathematics/legacy-compatibility.json"
+        )
+        for path, expected_payload, label in (
+            (
+                graph_path,
+                retained_v2_graph(retained_v2[1]),
+                "retained-math v2 graph",
+            ),
+            (
+                compatibility_path,
+                retained_v2_compatibility(retained_v2[1]),
+                "legacy compatibility map",
+            ),
+        ):
+            if not path.is_file():
+                failures.append(f"built {label} is missing")
+                continue
+            try:
+                found_payload = json.loads(path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                failures.append(f"built {label} is invalid JSON")
+            else:
+                if found_payload != expected_payload:
+                    failures.append(f"built {label} disagrees")
+        if selection_path.exists():
+            failures.append(
+                "full retained-math v2 release still serves the obsolete pilot"
+            )
     elif not selection_path.is_file():
         failures.append("built retained-math v2 selection is missing")
     else:
@@ -268,19 +303,22 @@ def main() -> int:
     retained_program_pages = list(
         (site / "research/working-mathematics/programs").glob("*/index.html")
     )
-    if len(retained_unit_pages) != SITE_STATE["retained_math"]["expected_units"]:
+    expected_retained_units = SITE_STATE["retained_math"]["expected_units"]
+    expected_retained_programs = SITE_STATE["retained_math"]["expected_programs"]
+    if retained_v2 is not None and retained_v2_is_full(retained_v2[1]):
+        full_graph = retained_v2_graph(retained_v2[1])
+        expected_retained_units = full_graph["counts"]["units"]
+        expected_retained_programs = full_graph["counts"]["programs"]
+    if len(retained_unit_pages) != expected_retained_units:
         failures.append(
             "built retained-unit routes: expected "
-            f"{SITE_STATE['retained_math']['expected_units']}, found "
+            f"{expected_retained_units}, found "
             f"{len(retained_unit_pages)}"
         )
-    if (
-        len(retained_program_pages)
-        != SITE_STATE["retained_math"]["expected_programs"]
-    ):
+    if len(retained_program_pages) != expected_retained_programs:
         failures.append(
             "built retained-program routes: expected "
-            f"{SITE_STATE['retained_math']['expected_programs']}, found "
+            f"{expected_retained_programs}, found "
             f"{len(retained_program_pages)}"
         )
     source_manifest = load_manuscript_sources(ROOT)

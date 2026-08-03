@@ -1,0 +1,37 @@
+{
+  "compatibility_counts": {
+    "exact_current": 350,
+    "replacement": 15,
+    "routes": 368,
+    "valid_weaker": 3
+  },
+  "compatibility_map_id": "LEGACY-COMPAT-3353d4318a8b",
+  "files": [
+    {
+      "path": "public-graph.json",
+      "sha256": "1e27db6666285890e358b67cf198404abebcd66088b97009890fd5a7eafb98e3",
+      "size_bytes": 1227130
+    },
+    {
+      "path": "legacy-compatibility.json",
+      "sha256": "6c1b42f8bb2f96945a365dac3c892f0ee39cf109f4455adab9f898fb33e8fd9f",
+      "size_bytes": 106587
+    }
+  ],
+  "graph_counts": {
+    "arguments": 12,
+    "evidence": 611,
+    "obligations": 10,
+    "programs": 6,
+    "tasks": 6,
+    "units": 579
+  },
+  "kind": "retained-math-v2-full-public",
+  "release_id": "retained-math-v2-full-20260803c",
+  "schema_version": 2,
+  "source_compatibility_sha256": "6c1b42f8bb2f96945a365dac3c892f0ee39cf109f4455adab9f898fb33e8fd9f",
+  "source_manifest_sha256": "2a468c4e0e0967821a4b01a49d725a8796ff255c4aa182ef4fdee846f054703f",
+  "source_public_graph_sha256": "1e27db6666285890e358b67cf198404abebcd66088b97009890fd5a7eafb98e3",
+  "source_registry_id": "RETAINED2-451ced3e9a4b",
+  "updated_at": "2026-08-03T10:55:21Z"
+}
