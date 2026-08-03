@@ -31,19 +31,37 @@ class RecoverLane9ArchiveTests(unittest.TestCase):
                     '{"name":"F2 endpoint matrix block"}\n',
                 )
                 handle.writestr(
+                    "bundle/computational-supplement/hidden/"
+                    "F2_order520_endpoint_matrix.npy",
+                    b"binary matrix placeholder",
+                )
+                handle.writestr(
+                    "bundle/computational-supplement/hidden/lane9_packet.zip",
+                    b"nested archive placeholder",
+                )
+                handle.writestr(
                     "bundle/computational-supplement/unrelated/readme.md",
                     "nothing relevant\n",
                 )
             output_dir = root / "recovered"
             manifest = root / "manifest.json"
             report = recovery.recover(archive, output_dir, manifest)
+            self.assertEqual(report["schema_version"], 2)
             self.assertEqual(report["extracted_member_count"], 3)
-            self.assertEqual(report["high_order_endpoint_candidate_count"], 2)
+            self.assertEqual(report["filename_endpoint_candidate_count"], 2)
+            self.assertEqual(
+                report["unscanned_filename_endpoint_candidate_count"], 2
+            )
+            self.assertEqual(report["nested_archive_member_count"], 1)
+            self.assertEqual(report["high_order_endpoint_candidate_count"], 4)
             self.assertTrue(
                 (output_dir / "terminal-boundary/F2_degree125_boundary_seed.md").is_file()
             )
             self.assertTrue((output_dir / "hidden/order_probe.py").is_file())
             self.assertTrue((output_dir / "hidden/f2_blocks.json").is_file())
+            self.assertFalse(
+                (output_dir / "hidden/F2_order520_endpoint_matrix.npy").exists()
+            )
 
     def test_sha_pin(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
