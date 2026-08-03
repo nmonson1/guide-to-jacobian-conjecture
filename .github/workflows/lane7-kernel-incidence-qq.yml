@@ -4,7 +4,10 @@ on:
   pull_request:
     paths:
       - "data/model-handoffs-v19-20260802a/lane-7-source-packet.md"
-      - "research-notes/lane7-projective-kernel-20260802/**"
+      - "research-notes/lane7-projective-kernel-20260802/extract_embedded_sources.py"
+      - "research-notes/lane7-projective-kernel-20260802/generate_macaulay2_input.py"
+      - "research-notes/lane7-projective-kernel-20260802/generate_kernel_chart_input.py"
+      - "research-notes/lane7-projective-kernel-20260802/generate_kernel_chart_singular.py"
       - ".github/workflows/lane7-kernel-incidence-qq.yml"
   workflow_dispatch:
 
@@ -43,7 +46,7 @@ jobs:
   singular-kernel-chart-qq:
     needs: prepare
     runs-on: ubuntu-22.04
-    timeout-minutes: 120
+    timeout-minutes: 180
     strategy:
       fail-fast: false
       matrix:
