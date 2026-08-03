@@ -22,10 +22,12 @@
     ]
   },
   "admissible_operation_module": {
-    "classification_status": "definition and forced closure proved; equality with the actual complete-chain operation algebroid is not proved without the missing generator table",
-    "definition": "smallest filtered, C5-graded, mu8-equivariant Lie algebroid of divergence-free derivations preserving the nonlinear support ideal, containing the verified fixed-presentation generators and the Kummer translation arrow",
-    "forced_generators": [
-      "verified fixed-chart presentation generators (external table when supplied)",
+    "classification_status": "the minimal forced lower-bound system and support-admissible outer bound are defined; equality with the actual complete-chain operation system is not proved without the missing generator table",
+    "definition": "objectwise filtered C5-graded fixed-presentation Lie algebras of divergence-free derivations preserving the nonlinear support ideals, together with separate mu8-equivariant rechart-arrow modules; fixed operations and chart arrows are not identified",
+    "forced_fixed_operation_inputs": [
+      "verified fixed-chart presentation generators (external table when supplied)"
+    ],
+    "forced_rechart_inputs": [
       "layer-4 Kummer tangent t^4(2*z^-3*d_z-2*z^-4*t*d_t)",
       "layer-7 bare wall tangent t^7(2*z^-3*d_z+z^-4*t*d_t)",
       "transported and Lie-bracket closure terms, including layer 11"
@@ -56,7 +58,7 @@
         0
       ]
     },
-    "name": "minimal Rees-Kummer admissible Lie algebroid"
+    "name": "minimal forced admissible chart-groupoid system"
   },
   "all_exact_checks_passed": true,
   "checklist": [
@@ -78,15 +80,15 @@
     },
     {
       "item": "Publish adjacent normalization map",
-      "status": "Kummer quotient map published; ordinary complete-chain lift ruled out for this flow"
+      "status": "Kummer quotient map published; ordinary complete-chain lift ruled out for this exact flow"
     },
     {
       "item": "Identify presentation stabilizer",
-      "status": "mu_8 for the Kummer presentation; original complete-chain stabilizer table still absent"
+      "status": "Kummer deck isotropy is mu_8 with zero Lie algebra in characteristic zero; original complete-chain stabilizer remains absent"
     },
     {
       "item": "Construct g_adm",
-      "status": "minimal forced Rees-Kummer Lie algebroid constructed; equality with true module open"
+      "status": "minimal forced fixed-operation/rechart groupoid system constructed; equality with true module open"
     },
     {
       "item": "Support/residue transport for monomial charts",
@@ -118,7 +120,7 @@
     },
     {
       "item": "Match every neighboring chart",
-      "status": "current repair cannot match any ordinary same-field chart"
+      "status": "the exact quotient-translation repair is not an ordinary same-field arrow; other neighboring charts remain unclassified"
     },
     {
       "item": "Algebraize a formal solution",
@@ -164,12 +166,14 @@
       "quotient_field": "K(H,Q)=K(u,v^8)"
     },
     "index_is_invariant_under_unimodular_recharting": true,
-    "ordinary_unimodular_chart": false,
-    "presentation_stabilizer": {
+    "kummer_deck_isotropy": {
       "action_uv": "(u,v)->(u,zeta*v)",
       "action_xy": "(x,y)->(zeta^-1*x,zeta*y)",
-      "group": "mu_8"
+      "group_scheme": "mu_8",
+      "infinitesimal_lie_algebra_dimension_in_characteristic_zero": 0,
+      "original_complete_chain_stabilizer_status": "unknown without the missing approximate-root generator table"
     },
+    "ordinary_unimodular_chart": false,
     "quotient_coordinates": {
       "H": "2*x^-11*y^-3",
       "Q": "x^12*y^4",
