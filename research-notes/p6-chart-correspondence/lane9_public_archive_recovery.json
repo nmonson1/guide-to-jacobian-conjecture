@@ -149,11 +149,13 @@
       "sha256": "8f29587fea74d96f2674795bc215efce01ec7673549918ab6d12ef7f303356df"
     }
   ],
+  "filename_endpoint_candidate_count": 0,
+  "filename_endpoint_candidates": [],
   "high_order_endpoint_candidate_count": 0,
   "high_order_endpoint_candidate_members": [],
-  "interpretation": "Presence in this manifest means present in the pinned public ZIP. Absence means only that the declared filename/content scan found no small UTF-8 text member; it is not evidence about private sources.",
-  "matched_member_count": 29,
-  "matched_members": [
+  "interpretation": "Every member name in the pinned public ZIP was audited. Every small supported text member was content-scanned. Filename candidates that were not text-scanned and nested archive members are listed explicitly. Absence here is evidence only about this public ZIP, not about private or unpublished sources.",
+  "matched_text_member_count": 29,
+  "matched_text_members": [
     {
       "bytes": 36354,
       "hits": [
@@ -757,6 +759,10 @@
       "sha256": "f9bd2c4e9ddad58196eb504c7fa8e5c2c4f7fc4f57c67ab3fef67b2ba7f626aa"
     }
   ],
+  "nested_archive_member_count": 0,
+  "nested_archive_members": [],
   "scanned_text_member_count": 106,
-  "schema_version": 1
+  "schema_version": 2,
+  "unscanned_filename_endpoint_candidate_count": 0,
+  "unscanned_filename_endpoint_candidates": []
 }
