@@ -123,7 +123,17 @@ def should_extract(member: str, hits: Sequence[Mapping[str, Any]]) -> tuple[bool
     hit_labels = {str(hit["label"]) for hit in hits}
     for label in sorted(hit_labels & HIGH_ORDER_LABELS):
         reasons.append(f"content:{label}")
+    if {"f2", "matrix_block"} <= hit_labels:
+        reasons.append("content:f2+matrix_block")
     return bool(reasons), reasons
+
+
+def is_endpoint_candidate(record: Mapping[str, Any]) -> bool:
+    hit_labels = {str(hit["label"]) for hit in record["hits"]}
+    return bool(
+        {"order_510_520_530", "fresh_parameter"} & hit_labels
+        or {"f2", "matrix_block"} <= hit_labels
+    )
 
 
 def recover(
@@ -186,12 +196,7 @@ def recover(
                 )
 
     high_order_members = [
-        record["path"]
-        for record in matched
-        if any(
-            hit["label"] in {"order_510_520_530", "fresh_parameter", "matrix_block"}
-            for hit in record["hits"]
-        )
+        str(record["path"]) for record in matched if is_endpoint_candidate(record)
     ]
     report = {
         "schema_version": 1,
