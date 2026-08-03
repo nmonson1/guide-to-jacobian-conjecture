@@ -15,7 +15,7 @@ permissions:
 jobs:
   extract-and-discover:
     runs-on: ubuntu-22.04
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -37,10 +37,19 @@ jobs:
         run: |
           python research-notes/lane8-full-root-20260802/discover_entrypoints.py \
             build/lane8-source build/lane8-discovery.json
+      - name: Fetch and hash-check the public Program 6 supplement
+        run: |
+          python research-notes/lane8-full-root-20260802/fetch_program6_supplement.py \
+            --archive build/program6-supplement.zip \
+            --output-dir build/program6-supplement \
+            --listing build/program6-supplement-listing.json
       - uses: actions/upload-artifact@v4
         with:
           name: lane8-public-exact-sources
           path: |
             build/lane8-source
             build/lane8-discovery.json
+            build/program6-supplement.zip
+            build/program6-supplement
+            build/program6-supplement-listing.json
           if-no-files-found: error
