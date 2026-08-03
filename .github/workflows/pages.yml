@@ -31,6 +31,9 @@ jobs:
       - name: Install the pinned site dependencies
         run: pip install -r requirements.txt
 
+      - name: Check maintenance tooling
+        run: python -m unittest tests/test_inventory_active_tree.py
+
       - name: Check generated Living Guide pages
         run: python scripts/generate_living_guide_v2.py
 
