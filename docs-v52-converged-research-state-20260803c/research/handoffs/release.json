@@ -1,0 +1,430 @@
+{
+  "components": {
+    "claim_graph_manifest_sha256": "ff2e60ed912d9f75cdaf921f5cbbb0f98bba861d4b6c97e28c1a90c1cc54d96c",
+    "manuscript_manifest_sha256": "1dc62b27aed48e4c42d440880056d5b9a028e6fabafe855ab71dd274151e94d9",
+    "manuscript_source_manifest_sha256": "ecb40702d5c8a303222e7738a3f5c337aa0607a787e5994eee244549b5555d9b",
+    "model_brief_manifest_sha256": "68c5ed75699ba4cac5c48d25380170a1c4e27d51e5ddf1366c7efc2454b251d5",
+    "retained_math_v2_manifest_sha256": "b92d0325a5e6ce5590f60fc5ffa1a5096dd18f67875ea4e3322d2c15530361f8"
+  },
+  "counts": {
+    "context_only_private_records": 21,
+    "grouped_pages": 104,
+    "memberships": 534,
+    "open_problems": 19,
+    "pages_by_manuscript_coverage": {
+      "complete": 76,
+      "not_applicable": 19,
+      "partial": 9
+    },
+    "pages_by_release_state": {
+      "draft_public": 87,
+      "public": 17
+    },
+    "research_programs": 6,
+    "results": 85,
+    "technical_records": 368
+  },
+  "handoff_source": {
+    "count": 16,
+    "release_id": "model-handoff-v24d-source-complete",
+    "task_input_count": 11,
+    "task_inputs": [
+      {
+        "input_id": "LANE1-RESEARCH-SOURCE-PACKET-V2",
+        "route": "research/handoffs/lane-1-source-packet/",
+        "source_sha256": "36064531b8d6b6381cb3d8848b8e36dd9a434968a3bde8339676eacf2fd9fd02"
+      },
+      {
+        "input_id": "LANE2-RESEARCH-SOURCE-PACKET-V2",
+        "route": "research/handoffs/lane-2-source-packet/",
+        "source_sha256": "6274ef0f8b8199228d57743a9fe8177cfd79c622380b382e494346ff10880d2e"
+      },
+      {
+        "input_id": "LANE3-RESEARCH-SOURCE-PACKET-V2",
+        "route": "research/handoffs/lane-3-source-packet/",
+        "source_sha256": "64bf835d00ba3ec452fac4373590ac6c6ee5749a76114445ac7942985c85d2b4"
+      },
+      {
+        "input_id": "LANE4-RESEARCH-SOURCE-PACKET-V2",
+        "route": "research/handoffs/lane-4-source-packet/",
+        "source_sha256": "fde9d06e25efc3d244447264eeeffd51077a6b011c7ad69f29cace4dce2d65f2"
+      },
+      {
+        "input_id": "LANE5-RESEARCH-SOURCE-PACKET-V2",
+        "route": "research/handoffs/lane-5-source-packet/",
+        "source_sha256": "bfbde16faadc66a2ba40a0d5b587e7f8c055d350768a6acd50862934c1d813aa"
+      },
+      {
+        "input_id": "LANE6-RESEARCH-SOURCE-PACKET-V2",
+        "route": "research/handoffs/lane-6-source-packet/",
+        "source_sha256": "0a634ba383f796cb1c3ea777ef82458ea24e5a33d73e8c5a67dfcfc85abf960a"
+      },
+      {
+        "input_id": "LANE7-RESEARCH-SOURCE-PACKET-V2",
+        "route": "research/handoffs/lane-7-source-packet/",
+        "source_sha256": "f561b39dc2ce23d74421892053a104e9dcdefa54576f27d86696847413c54979"
+      },
+      {
+        "input_id": "LANE8-RESEARCH-SOURCE-PACKET-V2",
+        "route": "research/handoffs/lane-8-source-packet/",
+        "source_sha256": "22e76b2f53c7f85e6c78fe574d54d60eb3252f424faa114a04f7684b05a7a689"
+      },
+      {
+        "input_id": "LANE9-RESEARCH-SOURCE-PACKET-V2",
+        "route": "research/handoffs/lane-9-source-packet/",
+        "source_sha256": "919496a058ba9a561bd5ef6af40a446a71ee4995d60810c4b6255e98abbe3ecb"
+      },
+      {
+        "input_id": "LANE7-COLLISION-CHART-V1",
+        "route": "research/handoffs/lane-7-collision-input/",
+        "source_sha256": "e8ad159151d82ceda78e58dce2cc6e721d8137dfe55d6a7682dd915062096121"
+      },
+      {
+        "input_id": "LANE8-RAW-SUPPORT-RECONSTRUCTION-V1",
+        "route": "research/handoffs/lane-8-reconstruction-input/",
+        "source_sha256": "8f3f5e262143a2a7b3ff8cbab5a61ecaba37f92a88996f7da411ac19085fb016"
+      }
+    ],
+    "version": "v24d"
+  },
+  "handoffs": [
+    {
+      "kind": "cross_program",
+      "lane_sequence": null,
+      "primary_entrypoint": true,
+      "program_sequence": 0,
+      "program_slug": "state-of-the-program",
+      "related_programs": [],
+      "route": "research/handoffs/state-of-the-program/",
+      "source_sha256": "b3be9bfa2cbb01d8f9a1ce296f7e468179dbf0a1d8451d0ef094ea7060dfe43b",
+      "source_words": 208,
+      "title": "Current Jacobian research portfolio"
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 1,
+      "primary_entrypoint": true,
+      "program_sequence": 11,
+      "program_slug": "cubic-flatness-normalization-defects",
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry",
+        "stable-moduli"
+      ],
+      "route": "research/handoffs/cubic-flatness-normalization-defects/",
+      "source_sha256": "a3f82e87aa3fffc4a4583815eec511e5febddf8867364b7d3b1e43c93194cc7f",
+      "source_words": 491,
+      "title": "Flatness defects after cubic normalization"
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 2,
+      "primary_entrypoint": true,
+      "program_sequence": 12,
+      "program_slug": "boundary-completeness-torelli-at-infinity",
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry",
+        "stable-moduli"
+      ],
+      "route": "research/handoffs/boundary-completeness-torelli-at-infinity/",
+      "source_sha256": "100b4d4581e1fd89d46b451dc793568a024dd3164e86e0529e6feba6d361e473",
+      "source_words": 481,
+      "title": "Torelli data on the projective resultant boundary"
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 3,
+      "primary_entrypoint": true,
+      "program_sequence": 13,
+      "program_slug": "bounded-degree-deformation-modulus-onset",
+      "related_programs": [
+        "local-rigidity-and-deformation-algebra",
+        "stable-moduli"
+      ],
+      "route": "research/handoffs/bounded-degree-deformation-modulus-onset/",
+      "source_sha256": "3f5bc1cc717ac12c0624be1840a6aa5e6337ae5ee3a9096024c88569d3895717",
+      "source_words": 608,
+      "title": "Where bounded-degree source triviality first fails"
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 4,
+      "primary_entrypoint": true,
+      "program_sequence": 14,
+      "program_slug": "quartic-endgame",
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions"
+      ],
+      "route": "research/handoffs/quartic-endgame/",
+      "source_sha256": "89fd88dd2df4bb48462d8d35d3ae6c90b755497c00f37a75531af50f2e21996b",
+      "source_words": 658,
+      "title": "The quartic endgame beyond the marked local chart"
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 5,
+      "primary_entrypoint": true,
+      "program_sequence": 15,
+      "program_slug": "intrinsic-degree-valuative-budgets",
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions",
+        "stable-moduli",
+        "plane-boundary-obstructions"
+      ],
+      "route": "research/handoffs/intrinsic-degree-valuative-budgets/",
+      "source_sha256": "c3f7a1296501b14dfdbde613ea4cd35a5ba7b156d50169731f584799037dbe1c",
+      "source_words": 531,
+      "title": "Intrinsic degree budgets for polynomial automorphisms"
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 6,
+      "primary_entrypoint": true,
+      "program_sequence": 16,
+      "program_slug": "homogeneous-realization-compression",
+      "related_programs": [
+        "homogeneous-descendants",
+        "local-rigidity-and-deformation-algebra"
+      ],
+      "route": "research/handoffs/homogeneous-realization-compression/",
+      "source_sha256": "bd09869c0966c00c1d27eec9302ec89d48a8b8392c03698e18d97ba2f8c03206",
+      "source_words": 741,
+      "title": "Compression limits for homogeneous realizations"
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 7,
+      "primary_entrypoint": true,
+      "program_sequence": 17,
+      "program_slug": "five-dimensional-collision-geometry",
+      "related_programs": [
+        "homogeneous-descendants"
+      ],
+      "route": "research/handoffs/five-dimensional-collision-geometry/",
+      "source_sha256": "0e5011c33f04926f2dbba3c5d1cc5bd9d0e15074f79a41fe03473cf0b2787c0a",
+      "source_words": 516,
+      "title": "The projective kernel carrier for five-dimensional collisions"
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 8,
+      "primary_entrypoint": true,
+      "program_sequence": 18,
+      "program_slug": "plane-newton-queue-terminal-certificates",
+      "related_programs": [
+        "plane-boundary-obstructions"
+      ],
+      "route": "research/handoffs/plane-newton-queue-terminal-certificates/",
+      "source_sha256": "389a7d89b031b67fa7e7724c8cd74f2a03fc3a007d31422fe984aa313b402fee",
+      "source_words": 619,
+      "title": "The first Newton queue at and beyond degree 125"
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 9,
+      "primary_entrypoint": true,
+      "program_sequence": 19,
+      "program_slug": "plane-chart-correspondence-global-attachment",
+      "related_programs": [
+        "plane-boundary-obstructions",
+        "stable-moduli"
+      ],
+      "route": "research/handoffs/plane-chart-correspondence-global-attachment/",
+      "source_sha256": "dff0ea7ef5d67ba9b83648c108277501deef05d12053c0d4d6cd23e65361a25e",
+      "source_words": 712,
+      "title": "Recovering the actual two-chart attachment chain"
+    },
+    {
+      "kind": "program",
+      "lane_sequence": null,
+      "primary_entrypoint": false,
+      "program_sequence": 1,
+      "program_slug": "cubic-marked-root-incidence-geometry",
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry"
+      ],
+      "route": "research/handoffs/cubic-marked-root-incidence-geometry/",
+      "source_sha256": "8982bcb2928c99e659d4339897d9a9c0d2d3449111c7e8c6f342e1711b737ad6",
+      "source_words": 171,
+      "title": "Cubic Marked-Root Incidence Geometry"
+    },
+    {
+      "kind": "program",
+      "lane_sequence": null,
+      "primary_entrypoint": false,
+      "program_sequence": 2,
+      "program_slug": "minimum-degree-and-quartic-exclusions",
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions"
+      ],
+      "route": "research/handoffs/minimum-degree-and-quartic-exclusions/",
+      "source_sha256": "7c742359a64b038b778a05956896c723219a8c253cfdc2c056e53c9126674a0f",
+      "source_words": 165,
+      "title": "Minimum Degree and Quartic Exclusions"
+    },
+    {
+      "kind": "program",
+      "lane_sequence": null,
+      "primary_entrypoint": false,
+      "program_sequence": 3,
+      "program_slug": "local-rigidity-and-deformation-algebra",
+      "related_programs": [
+        "local-rigidity-and-deformation-algebra"
+      ],
+      "route": "research/handoffs/local-rigidity-and-deformation-algebra/",
+      "source_sha256": "5aa63453f0f5095ffd20a3a252d713f3f7f25bfbfc7f72c23c51566fbe7fd8bc",
+      "source_words": 168,
+      "title": "Local Rigidity and Deformation Algebra"
+    },
+    {
+      "kind": "program",
+      "lane_sequence": null,
+      "primary_entrypoint": false,
+      "program_sequence": 4,
+      "program_slug": "stable-moduli",
+      "related_programs": [
+        "stable-moduli"
+      ],
+      "route": "research/handoffs/stable-moduli/",
+      "source_sha256": "d9d31149fa18a46dd11a56d77c1dc9011e5e147352062251228cc385e4736a20",
+      "source_words": 166,
+      "title": "Stable Moduli"
+    },
+    {
+      "kind": "program",
+      "lane_sequence": null,
+      "primary_entrypoint": false,
+      "program_sequence": 5,
+      "program_slug": "homogeneous-descendants",
+      "related_programs": [
+        "homogeneous-descendants"
+      ],
+      "route": "research/handoffs/homogeneous-descendants/",
+      "source_sha256": "071a7c5eb3a1efa3dad088bbecddd01e89a9afd870f971e4fe628fb63e3c856c",
+      "source_words": 164,
+      "title": "Homogeneous Descendants"
+    },
+    {
+      "kind": "program",
+      "lane_sequence": null,
+      "primary_entrypoint": false,
+      "program_sequence": 6,
+      "program_slug": "plane-boundary-obstructions",
+      "related_programs": [
+        "plane-boundary-obstructions"
+      ],
+      "route": "research/handoffs/plane-boundary-obstructions/",
+      "source_sha256": "df127379f0904c0761907fc8d2785d9d7bf65245c4390357bf369fd540e8892f",
+      "source_words": 171,
+      "title": "Plane Boundary Obstructions"
+    }
+  ],
+  "manuscript_sources": {
+    "counts": {
+      "entrypoints": 7,
+      "files": 41,
+      "labels": 659,
+      "size_bytes": 566188
+    },
+    "index_route": "research/proof-sources/",
+    "release_id": "manuscript-sources-public-v1-20260803b",
+    "source_repository_commit": "43fe2294f74c961039a5b522f27a5982d511daa3"
+  },
+  "manuscript_version": 13,
+  "manuscripts": [
+    {
+      "filename": "01-cubic-marked-root-covers-2026-07-29-v13.pdf",
+      "pages": 21,
+      "sequence": "01",
+      "sha256": "41c52f884816692a69b188488498fb674ded1c14842c44eda0f1760d6800103c",
+      "title": "Cubic Marked-Root Covers",
+      "version": 13
+    },
+    {
+      "filename": "02-quartic-keller-maps-2026-07-29-v13.pdf",
+      "pages": 31,
+      "sequence": "02",
+      "sha256": "21d411920210633f906c4292ad1d672b7f572a3c078f035d3fc6d4d7eba68025",
+      "title": "Quartic Keller Maps and Leading Curves",
+      "version": 13
+    },
+    {
+      "filename": "03-filtered-rigidity-2026-07-29-v13.pdf",
+      "pages": 22,
+      "sequence": "03",
+      "sha256": "18f4658390d0a9566056aee505c3fb5039d17969368cb2f544a44e6ba956f427",
+      "title": "Filtered Rigidity of the Degree-Seven Jacobian Counterexample",
+      "version": 13
+    },
+    {
+      "filename": "04-boundary-rigidity-stable-moduli-2026-07-29-v13.pdf",
+      "pages": 25,
+      "sequence": "04",
+      "sha256": "f4a0da4becd2129dcb845ca4ae89be25e97cc5f38b0b639cb55e93fc10bfaa0e",
+      "title": "Boundary Rigidity and Stable Moduli",
+      "version": 13
+    },
+    {
+      "filename": "05-homogeneous-descendants-2026-07-29-v13.pdf",
+      "pages": 20,
+      "sequence": "05",
+      "sha256": "2ae5abe37511aeb434c27e0761e9621809e8a2887b6c0e58deb8994293c18f9e",
+      "title": "Normal-Form Complexity of a Three-Sheeted Keller Map",
+      "version": 13
+    },
+    {
+      "filename": "06-plane-boundary-obstructions-2026-07-29-v13.pdf",
+      "pages": 31,
+      "sequence": "06",
+      "sha256": "c8c20e3ab8d4d858f10f77ab438dd22e23ac9d9542ac7ede869fbb80cc91f22f",
+      "title": "Boundary Belyi Covers and Normal Jets",
+      "version": 13
+    },
+    {
+      "filename": "07-results-and-research-register-2026-07-29-v13.pdf",
+      "pages": 32,
+      "sequence": "07",
+      "sha256": "1170bc336beb2a2e7ff37b2dc6c95d120e24c3ffefedf5d15215a3e8492bda70",
+      "title": "Results and Research Register for Six Jacobian-Conjecture Programs",
+      "version": 13
+    }
+  ],
+  "retained_math": {
+    "counts": {
+      "programs": 6,
+      "publication_ready": 0,
+      "relations": 83,
+      "support_objects": 576,
+      "units": 574,
+      "working_units": 574
+    },
+    "registry_id": "RETAINED-5390c4e6b5aa",
+    "release_id": "retained-math-public-v1-20260803b"
+  },
+  "retained_math_v2": {
+    "compatibility_counts": {
+      "exact_current": 350,
+      "replacement": 15,
+      "routes": 368,
+      "valid_weaker": 3
+    },
+    "compatibility_map_id": "LEGACY-COMPAT-3353d4318a8b",
+    "counts": {
+      "arguments": 12,
+      "evidence": 611,
+      "obligations": 10,
+      "programs": 6,
+      "tasks": 6,
+      "units": 579
+    },
+    "machine_routes": {
+      "graph": "research/working-mathematics/graph.json",
+      "legacy_compatibility": "research/working-mathematics/legacy-compatibility.json"
+    },
+    "release_id": "retained-math-v2-full-20260803c",
+    "source_registry_id": "RETAINED2-451ced3e9a4b"
+  },
+  "schema_version": 1,
+  "site_release_id": "living-guide-public-v52-converged-research-state",
+  "timezone": "America/Los_Angeles",
+  "updated_at": "2026-08-03T12:00:00+00:00"
+}

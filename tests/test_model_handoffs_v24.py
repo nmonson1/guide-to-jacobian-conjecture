@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE = ROOT / "data" / "model-handoffs-v24-20260803b"
+PACKAGE = ROOT / "data" / "model-handoffs-v24-20260803d"
 BASE = ROOT / "data" / "model-handoffs-v23-20260803a"
 FORBIDDEN = ("/fss/", "/home/", "chatgpt.com/share", "sandbox:", "registry/")
 LANE_SECTIONS = (
@@ -39,6 +39,7 @@ class ModelHandoffsV24Tests(unittest.TestCase):
         self.assertEqual(manifest["brief_count"], 16)
         self.assertEqual(manifest["primary_entrypoint_count"], 10)
         self.assertEqual(manifest["task_input_count"], 11)
+        self.assertEqual(manifest["retained_math_v2_markers"], [])
         for item in [*manifest["briefs"], *manifest["task_inputs"]]:
             payload = (PACKAGE / item["source"]).read_bytes()
             self.assertEqual(len(payload), item["bytes"], item["source"])

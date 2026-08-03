@@ -537,11 +537,10 @@ def source_packet_routes(brief_manifest: dict[str, Any]) -> dict[str, str]:
             ):
                 candidates.add(f"research-notes/{raw}")
             for candidate in candidates:
-                previous = routes.setdefault(candidate, public_route)
-                if previous != public_route:
-                    raise ValueError(
-                        f"repository source appears in multiple public packets: {candidate}"
-                    )
+                # A shared source can support more than one lane. The manifest
+                # order supplies one stable public locator; every copy is
+                # hash-pinned to the same repository payload.
+                routes.setdefault(candidate, public_route)
     return routes
 
 

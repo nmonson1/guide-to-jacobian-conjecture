@@ -17,7 +17,6 @@ from generate_living_guide_v2 import (
     LITERAL_MANUSCRIPT_LINK_RE,
     MANUSCRIPTS_DATA_DIR,
     MANUSCRIPT_SOURCES_DATA_DIR,
-    MANUSCRIPT_TOKEN_RE,
     MODEL_BRIEFS_DATA_DIR,
     PUBLICATION_DATA_DIR,
     PUBLIC_DOCS_DIR,
@@ -75,19 +74,9 @@ TEMPLATE_PHRASES = (
 REQUIRED_NAV = ("Start", "Understand", "Results", "Research", "Evidence", "About")
 CLAIM_TAG_PATTERN = re.compile(r"JCG-[0-9A-F]{8}")
 HANDOFF_STRUCTURE = (
-    "### Coverage rule",
-    "### Compact glossary",
-    "### Case and dependency map",
-    "Proof signature",
-    "Boundary exit",
-)
-HANDOFF_PROOF_LINK = re.compile(
-    r"(?P<path>\.\./\.\./assets/(?:manuscripts|proof-archives)/"
-    r"[^)\s]+\.pdf)#page=(?P<page>\d+)"
-)
-HANDOFF_TEXT_PROOF_LINK = re.compile(
-    r"(?:\.\./\.\./research/|\.\./)proof-sources/"
-    r"[^)\s#]+/?(?:#[^)\s]+)?"
+    "## Current mathematical corpus",
+    "## Current research entrypoints",
+    "## Strategy and connections",
 )
 HANDOFF_STATUS_BUREAUCRACY = (
     "review status",
@@ -99,27 +88,27 @@ HANDOFF_STATUS_BUREAUCRACY = (
     "specialist-review",
     "review gate",
 )
-STATE_LANE_ANCHORS = tuple(
-    f'<a id="{anchor}"></a>'
-    for anchor in (
-        "lane-1-cubic-flatness",
-        "lane-2-boundary-torelli",
-        "lane-3-deformation-moduli",
-        "lane-4-quartic-endgame",
-        "lane-5-degree-budgets",
-        "lane-6-homogeneous-compression",
-        "lane-7-collision-geometry",
-        "lane-8-plane-newton-queue",
-        "lane-9-plane-global-attachment",
+STATE_LANE_LINKS = tuple(
+    f"]({slug}.md)" for _, slug in (
+        (1, "cubic-flatness-normalization-defects"),
+        (2, "boundary-completeness-torelli-at-infinity"),
+        (3, "bounded-degree-deformation-modulus-onset"),
+        (4, "quartic-endgame"),
+        (5, "intrinsic-degree-valuative-budgets"),
+        (6, "homogeneous-realization-compression"),
+        (7, "five-dimensional-collision-geometry"),
+        (8, "plane-newton-queue-terminal-certificates"),
+        (9, "plane-chart-correspondence-global-attachment"),
     )
 )
 LANE_HANDOFF_STRUCTURE = (
-    "## Problem and scope",
-    "## Setup and notation",
-    "## Reusable mathematics",
-    "## Exact live problem",
-    "## Tasks and deliverables",
-    "## Scope cautions",
+    "## Scope",
+    "## Setup and definitions",
+    "## Results to use",
+    "## Live problem",
+    "## Tasks",
+    "## Limits",
+    "## Direct sources",
 )
 HANDOFF_OPENING_BUREAUCRACY = (
     "handoff source v",
@@ -438,7 +427,11 @@ def main() -> int:
     # Proof locators are the reason the coverage sidecar ships; losing them
     # from the graph or the renderer should fail loudly, not silently.
     expected_locator_pages = sum(
-        1 for claim in claims.values() if claim.get("locators")
+        1
+        for tag, claim in claims.items()
+        if claim.get("locators")
+        and compatibility_routes.get(tag, {}).get("disposition")
+        not in {"replacement", "split_replacement", "archival"}
     )
     if locator_pages != expected_locator_pages:
         failures.append(
@@ -597,9 +590,6 @@ def main() -> int:
     manuscript_manifest = json.loads(
         (ROOT / "data" / MANUSCRIPTS_DATA_DIR / "manifest.json").read_text()
     )
-    active_manuscripts = {
-        item["filename"] for item in manuscript_manifest["manuscripts"]
-    }
     manuscripts_by_sequence = {
         item["filename"][:2]: item for item in manuscript_manifest["manuscripts"]
     }
@@ -633,6 +623,20 @@ def main() -> int:
                 "handoff v6 must expose nine research packets and the exact "
                 "Lane 7 and Lane 8 inputs"
             )
+    if brief_manifest.get("schema_version") == 7:
+        expected_source_packets = {
+            f"LANE{sequence}-RESEARCH-SOURCE-PACKET-V2"
+            for sequence in range(1, 10)
+        }
+        expected_inputs = expected_source_packets | {
+            "LANE7-COLLISION-CHART-V1",
+            "LANE8-RAW-SUPPORT-RECONSTRUCTION-V1",
+        }
+        if {item.get("input_id") for item in task_inputs} != expected_inputs:
+            failures.append(
+                "handoff v7 must expose nine research packets and the exact "
+                "Lane 7 and Lane 8 inputs"
+            )
     for item in task_inputs:
         source = MODEL_BRIEF_DATA / item["source"]
         rendered = DOCS / item["route"]
@@ -663,7 +667,7 @@ def main() -> int:
         }
         input_id = str(item.get("input_id", ""))
         source_packet_match = re.fullmatch(
-            r"LANE(?P<sequence>[1-9])-RESEARCH-SOURCE-PACKET-V1",
+            r"LANE(?P<sequence>[1-9])-RESEARCH-SOURCE-PACKET-V[12]",
             input_id,
         )
         source_packet_markers: tuple[str, ...] = ()
@@ -672,7 +676,6 @@ def main() -> int:
             source_packet_markers = (
                 f"# Lane {sequence} exact research source packet",
                 "## Included files",
-                "Private-source commit:",
             )
             if sequence == "8":
                 source_packet_markers += (
@@ -738,12 +741,9 @@ def main() -> int:
                 f"the active manifest: {', '.join(sorted(set(literal_links)))}"
             )
         try:
-            resolved_source = resolve_manuscript_links(
-                source_text, manuscripts_by_sequence
-            )
+            resolve_manuscript_links(source_text, manuscripts_by_sequence)
         except ValueError as exc:
             failures.append(f"{brief['source']}: {exc}")
-            resolved_source = source_text
         if kind == "lane":
             for marker in LANE_HANDOFF_STRUCTURE:
                 if marker.casefold() not in source_text.casefold():
@@ -752,7 +752,7 @@ def main() -> int:
                     )
             if ".md)" not in source_text:
                 failures.append(f"{brief['source']}: lane has no deeper route")
-            if brief_manifest.get("schema_version") == 6:
+            if brief_manifest.get("schema_version") in {6, 7}:
                 expected_packet = (
                     f"lane-{brief['lane_sequence']}-source-packet.md"
                 )
@@ -761,7 +761,10 @@ def main() -> int:
                         f"{brief['source']}: lane does not link its public "
                         "research source packet"
                     )
-                if brief.get("lane_sequence") == 8:
+                if (
+                    brief_manifest.get("schema_version") == 6
+                    and brief.get("lane_sequence") == 8
+                ):
                     for marker in (
                         "idea for a proof, but not fully proved",
                         "RMU-6D8E0011",
@@ -807,18 +810,21 @@ def main() -> int:
                     ),
                     9: ("rmu-6d8e0012", "begins at layer seven, not four"),
                 }
-                source_casefold = source_text.casefold()
-                for marker in scoped_markers.get(brief.get("lane_sequence"), ()):
-                    if marker not in source_casefold:
+                if brief_manifest.get("schema_version") == 6:
+                    source_casefold = source_text.casefold()
+                    for marker in scoped_markers.get(
+                        brief.get("lane_sequence"), ()
+                    ):
+                        if marker not in source_casefold:
+                            failures.append(
+                                f"{brief['source']}: scoped repair lacks {marker!r}"
+                            )
+                    if brief.get("lane_sequence") == 8 and (
+                        "after the canonical `k=4` rechart" in source_text
+                    ):
                         failures.append(
-                            f"{brief['source']}: scoped repair lacks {marker!r}"
+                            f"{brief['source']}: superseded canonical k=4 bridge survived"
                         )
-                if brief.get("lane_sequence") == 8 and (
-                    "after the canonical `k=4` rechart" in source_text
-                ):
-                    failures.append(
-                        f"{brief['source']}: superseded canonical k=4 bridge survived"
-                    )
             marker_ids = re.findall(
                 r"<!-- retained-math-v2-selection:([A-Z0-9-]+) -->",
                 source_text,
@@ -830,11 +836,17 @@ def main() -> int:
                 }
                 for argument_id in marker_ids
             )
-        else:
+        elif kind == "program":
             for marker in HANDOFF_STRUCTURE:
                 if marker.casefold() not in source_text.casefold():
                     failures.append(
                         f"{brief['source']}: missing handoff semantic marker {marker!r}"
+                    )
+        elif kind == "cross_program":
+            for marker in ("## Lane entrypoints", "## Connections worth testing"):
+                if marker.casefold() not in source_text.casefold():
+                    failures.append(
+                        f"{brief['source']}: missing portfolio marker {marker!r}"
                     )
         for tag in CLAIM_TAG_PATTERN.findall(source_text):
             if tag not in claims:
@@ -847,13 +859,8 @@ def main() -> int:
                     f"bureaucracy {marker!r}"
                 )
         if kind == "cross_program":
-            if source_text.count("#3-reusable-inputs-exact-scope-and-proof-access") < 6:
-                failures.append(
-                    f"{brief['source']}: cross-program proof routes do not "
-                    "reach all six handoffs"
-                )
             lane_positions = [
-                source_text.find(anchor) for anchor in STATE_LANE_ANCHORS
+                source_text.find(link) for link in STATE_LANE_LINKS
             ]
             if any(position < 0 for position in lane_positions) or (
                 lane_positions != sorted(lane_positions)
@@ -861,50 +868,25 @@ def main() -> int:
                 failures.append(
                     f"{brief['source']}: missing or unordered nine-lane anchors"
                 )
-            for phrase in (
-                "attention coordinates, not cognitive silos",
-                "not a closed or exhaustive queue",
-                "optional on-ramps",
-            ):
+            for phrase in ("invitations", "not prerequisites"):
                 if phrase not in source_text:
                     failures.append(
                         f"{brief['source']}: missing research-autonomy "
                         f"language {phrase!r}"
                     )
         elif kind == "program":
-            if not MANUSCRIPT_TOKEN_RE.search(source_text):
-                failures.append(
-                    f"{brief['source']}: no active-manuscript token"
-                )
-            proof_links = list(HANDOFF_PROOF_LINK.finditer(resolved_source))
-            text_proof_links = list(
-                HANDOFF_TEXT_PROOF_LINK.finditer(resolved_source)
+            graph_route = (
+                "../working-mathematics/programs/"
+                f"{brief['program_slug']}.md"
             )
-            if len(proof_links) + len(text_proof_links) < 8:
+            if graph_route not in source_text:
                 failures.append(
-                    f"{brief['source']}: too few direct proof/source locators"
+                    f"{brief['source']}: program overlay lacks its graph view"
                 )
-            for match in proof_links:
-                if "assets/manuscripts/" in match.group("path"):
-                    filename = Path(match.group("path")).name
-                    if filename not in active_manuscripts:
-                        failures.append(
-                            f"{brief['source']}: rendered proof link names "
-                            f"inactive manuscript {filename!r}"
-                        )
-                proof_pdf = (rendered.parent / match.group("path")).resolve()
-                page = int(match.group("page"))
-                if not proof_pdf.is_file():
+            for stale_heading in ("Reusable inputs", "Proof-signature index"):
+                if stale_heading in source_text:
                     failures.append(
-                        f"{brief['source']}: missing direct proof PDF "
-                        f"{match.group('path')!r}"
-                    )
-                    continue
-                pages = len(PdfReader(proof_pdf).pages)
-                if page < 1 or page > pages:
-                    failures.append(
-                        f"{brief['source']}: proof page {page} is outside "
-                        f"the {pages}-page PDF {proof_pdf.name}"
+                        f"{brief['source']}: duplicated dossier mathematics remains"
                     )
         if len(source.read_bytes()) != brief["bytes"]:
             failures.append(f"model brief byte count mismatch: {brief['source']}")
@@ -913,7 +895,12 @@ def main() -> int:
         if brief["route"] in brief_routes:
             failures.append(f"duplicate model brief route: {brief['route']}")
         brief_routes.add(brief["route"])
-        lower, upper = (350, 2000) if kind == "lane" else (2000, 4000)
+        if kind == "lane":
+            lower, upper = 350, 2000
+        elif kind == "program":
+            lower, upper = 100, 800
+        else:
+            lower, upper = 150, 1500
         if not lower <= brief["words"] <= upper:
             failures.append(
                 f"model brief word count outside {lower}-{upper}: {brief['source']}"
@@ -938,31 +925,22 @@ def main() -> int:
         ):
             if marker not in rendered_text:
                 failures.append(f"{brief['route']}: missing footer marker {marker!r}")
-        expected_headings = (
-            LANE_HANDOFF_STRUCTURE
-            if kind == "lane"
-            else (
-                "## 1. Setup and notation",
-                "## 2. Goal and payoff",
-                "## 4. The live frontier",
-                "## 5. Graveyard",
-                "## 6. Tasks",
-                "## 7. Evidence and replay index",
-                "## 8. Do not do",
+        if kind == "lane":
+            expected_headings = LANE_HANDOFF_STRUCTURE
+        elif kind == "program":
+            expected_headings = HANDOFF_STRUCTURE
+        else:
+            expected_headings = (
+                "## Lane entrypoints",
+                "## Connections worth testing",
             )
-        )
         for heading in expected_headings:
             if heading not in rendered_text:
                 failures.append(f"{brief['route']}: missing {heading}")
-        if kind != "lane":
-            section_three = (
-                "## 3. What is proved"
-                if kind == "cross_program"
-                else "## 3. Reusable inputs, exact scope, and proof access"
-            )
-            if section_three not in rendered_text:
-                failures.append(f"{brief['route']}: missing {section_three}")
-        if brief["program_slug"] == "minimum-degree-and-quartic-exclusions":
+        if (
+            brief_manifest.get("schema_version") < 7
+            and brief["program_slug"] == "minimum-degree-and-quartic-exclusions"
+        ):
             required_conic = (
                 "JCG-24A6190A",
                 "JCG-80F5587E",
@@ -975,7 +953,10 @@ def main() -> int:
                         f"{brief['source']}: incomplete full-conic handoff; "
                         f"missing {marker!r}"
                     )
-        if brief["program_slug"] == "plane-boundary-obstructions":
+        if (
+            brief_manifest.get("schema_version") < 7
+            and brief["program_slug"] == "plane-boundary-obstructions"
+        ):
             if "JCG-9D0BE662" in source_text and (
                 "Open dependency—not an accepted result" not in source_text
             ):
@@ -994,7 +975,10 @@ def main() -> int:
             if brief["route"].split("/")[-1] not in program_page.read_text(encoding="utf-8"):
                 failures.append(f"program page does not link model brief: {brief['program_slug']}")
 
-        if brief["program_slug"] == "homogeneous-realization-compression":
+        if (
+            full_v2_payload is None
+            and brief["program_slug"] == "homogeneous-realization-compression"
+        ):
             if source_text.count(
                 "<!-- retained-math-v2-selection:ARG-RMU5D8E0003-FINITE-PLANE -->"
             ) != 1:

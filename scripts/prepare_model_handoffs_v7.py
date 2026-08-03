@@ -64,6 +64,10 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "research-notes/lane1-collision-saturation-20260802-v1",
         "research-notes/finite-diagnostics-20260803-v1/verify_lane1_marked_root_benchmark.py",
         "manuscripts/01-cubic-incidence/code/verify_ade_matrix_factorizations.py",
+        "papers-release-2026-07-26-v8/01-cubic-incidence/appendices/common-zero-normalization.tex",
+        "papers-release-2026-07-26-v8/01-cubic-incidence/appendices/minimal-smooth-defect.tex",
+        "papers-release-2026-07-26-v8/01-cubic-incidence/appendices/moving-hyperplanes.tex",
+        "papers-release-2026-07-26-v8/01-cubic-incidence/appendices/quadratic-covariant-rigidity.tex",
     ),
     "boundary-completeness-torelli-at-infinity": (
         "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260801b",
@@ -74,6 +78,10 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802d/lane2_T0_normalization_theorem.md",
         "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802d/lane2_T0_normalization_checks.py",
         "research-notes/finite-diagnostics-20260803-v1/verify_lane2_infinity_boundary.py",
+        "papers-release-2026-07-26-v8/04-stable-moduli/appendices/additional-moduli.tex",
+        "papers-release-2026-07-26-v8/04-stable-moduli/appendices/logarithmic-deformations.tex",
+        "papers-release-2026-07-26-v8/04-stable-moduli/appendices/reciprocal-family.tex",
+        "papers-release-2026-07-26-v8/04-stable-moduli/appendices/weighted-lift-moduli.tex",
     ),
     "bounded-degree-deformation-modulus-onset": (
         "research-notes/lane3-formal-effectivity",
@@ -86,8 +94,11 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "research-notes/lane4-f4-contract-20260803-v1/q4-f4-local-chart-v1.json",
         "research-notes/lane4-f4-contract-20260803-v1/f4-contract.schema.json",
         "research-notes/lane4-f4-contract-20260803-v1/verify_contract_and_routing.py",
+        "research-notes/lane4-f4-contract-20260803-v1/verify_q4_f4_local_chart.py",
         "research-notes/lane4-quartic-endgame-20260802-v1/case-tree/lane4-global-case-tree.md",
         "research-notes/lane4-quartic-endgame-20260802-v1/case-tree/lane4-case-tree.csv",
+        "research-notes/lane4-quartic-endgame-20260802-v1/PROOF_CODE_CROSSWALK.md",
+        "research-notes/lane4-quartic-endgame-20260802-v1/replay_core.py",
         "manuscripts/02-low-degree/code/program-2-2026-07-29-v3/f4-marked-chart/quartic_F4_endgame_complete.md",
         "manuscripts/02-low-degree/code/program-2-2026-07-29-v3/f4-marked-chart/verify_quartic_F4_endgame.replay_fixed.py",
     ),
@@ -99,6 +110,7 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "research-tools/filtered_operation_complex",
         "research-notes/lane6-transverse-source-obstruction-20260802-v1",
         "research-notes/finite-diagnostics-20260803-v1/verify_lane6_moving_target_pilot.py",
+        "papers-release-2026-07-26-v8/05-homogeneous-descendants/appendices/monolith-prolongation.tex",
     ),
     "five-dimensional-collision-geometry": (
         "research-notes/lane7-projective-kernel-20260803-v1",
@@ -114,6 +126,10 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
     "plane-newton-queue-terminal-certificates": (
         "research-notes/lane8-full-root-closure-20260803-v1",
         "research-notes/lane89-mathematical-recovery-20260803-v1",
+        "research-notes/lane8-proof-queue-20260802-v1",
+        "research-notes/planar-descent-no-go-20260802-v1",
+        "papers-release-2026-07-26-v8/06-plane-boundary/appendices/f2-terminal-boundary.tex",
+        "papers-release-2026-07-26-v8/06-plane-boundary/appendices/six-sheet-monodromy.tex",
         "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
         "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py",
         "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_primary_belyi.py",
@@ -598,7 +614,7 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
         ),
         "task_input_count": len(task_inputs),
         "task_inputs": [item for _, item in task_inputs],
-        "retained_math_v2_markers": base_manifest.get("retained_math_v2_markers", []),
+        "retained_math_v2_markers": [],
         "briefs": [item for _, _, item in prepared_briefs],
     }
     manifest_payload = (json.dumps(manifest, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
