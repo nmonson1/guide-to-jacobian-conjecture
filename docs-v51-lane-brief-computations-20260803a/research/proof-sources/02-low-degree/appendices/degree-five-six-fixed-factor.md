@@ -1,0 +1,208 @@
+---
+title: "Text proof source — 02-low-degree/appendices/degree-five-six-fixed-factor.tex"
+description: "Sanitized current source with exact labels when present."
+---
+
+# Text proof source
+
+`manuscripts/02-low-degree/appendices/degree-five-six-fixed-factor.tex`
+
+This is the current sanitized source text used by the retained working graph. TeX comments and private locators are omitted; mathematical content and line numbering are preserved. PDFs are optional reading copies.
+
+Published SHA-256: `7dd586e007a5262f9e6969db4efa5bf375bae0f70804fe2a51b6531a4f0e1334` · 6,065 bytes
+
+## Exact label anchors
+
+<a id="label-app-degree-five-six"></a>
+- `app:degree-five-six` — source line 2
+<a id="label-lem-fixed-factor-invariant-gap"></a>
+- `lem:fixed-factor-invariant-gap` — source line 21
+<a id="label-thm-degree-five-six-fixed-factor"></a>
+- `thm:degree-five-six-fixed-factor` — source line 70
+<a id="label-thm-quintic-three-variable-cubic-factor"></a>
+- `thm:quintic-three-variable-cubic-factor` — source line 123
+<a id="label-q-binary-quintic-overlap"></a>
+- `q:binary-quintic-overlap` — source line 150
+<a id="label-q-degree-five-fixed-factor-basepoints"></a>
+- `q:degree-five-fixed-factor-basepoints` — source line 159
+<a id="label-q-primitive-sextic-conic"></a>
+- `q:primitive-sextic-conic` — source line 165
+
+## Complete source
+
+~~~tex
+\section{Fixed-factor conic strata in degrees five and six}
+\label{app:degree-five-six}
+
+This appendix pushes the conic leading-image method beyond degree four.  It
+does not classify degrees five or six: the theorem isolates an open
+basepoint boundary and a resonant primitive sextic case.
+
+Let the leading homogeneous map have the squarefree fixed-factor form
+\[
+\begin{aligned}
+H_D&=G(A^2,AB,B^2),\\
+\deg G&=g>0,\qquad \deg A=\deg B=e,\qquad D=g+2e.
+\end{aligned}
+\]
+Assume that \(A,B\) are a regular sequence and that some irreducible
+component of \(G=0\) sees a nonconstant ratio \(A/B\).  These are the
+weaker invariant-gap hypotheses used in the next lemma; they do not imply
+that the base locus of \((A,B)\) is disjoint from \(G=0\).
+
+\begin{lemma}[Invariant-degree gap]
+\label{lem:fixed-factor-invariant-gap}
+For
+\[
+\Omega=A\,dG\wedge dB-B\,dG\wedge dA+2G\,dA\wedge dB,
+\]
+let \(\delta\) be the associated homogeneous derivation.  Every nonzero
+homogeneous \(P\) satisfying \(\delta(P)=0\) has degree divisible by \(D\).
+\end{lemma}
+
+\begin{proof}
+Choose an irreducible factor \(\Gamma\mid G\), of degree \(h\), on which
+\(A/B\) is nonconstant, and write \(P=\Gamma^rQ\) with
+\(\Gamma\nmid Q\).  On the function field of \(\Gamma=0\), both the induced
+derivation and the Euler derivation annihilate \(A/B\); hence
+\(\bar\delta=cE\) for a nonzero rational function \(c\).  From
+\(\delta(GB^2)=0\) one gets
+\[
+\overline{\delta\Gamma/\Gamma}=-c(D-h).
+\]
+Reducing \(\delta(\Gamma^rQ)=0\) modulo \(\Gamma\) now yields
+\[
+c(\deg P-rD)\bar Q=0.
+\]
+Thus \(\deg P=rD\).
+\end{proof}
+
+Write a Keller jet as
+\[
+K_\varepsilon
+=H_D+\varepsilon H_{D-1}+\cdots+\varepsilon^{D-2}H_2
++\varepsilon^{D-1}LX
+\]
+and set
+\[
+\Phi(Y)=Y_1Y_3-Y_2^2,\qquad
+\Phi(K_\varepsilon)=\sum_{j\ge1}\varepsilon^jS_j.
+\]
+The chain-rule identity
+\[
+\operatorname{Jac}(K_{\varepsilon,1},K_{\varepsilon,2},\Phi(K_\varepsilon))
+=K_{\varepsilon,1}\det JK_\varepsilon
+\]
+and \cref{lem:fixed-factor-invariant-gap} imply inductively that
+\[
+S_1=\cdots=S_{D-1}=0.
+\]
+Indeed, \(\deg S_j=2D-j\), which lies strictly between \(D\) and \(2D\).
+
+\begin{theorem}[Basepoint-free fixed-factor conic exclusion]
+\label{thm:degree-five-six-fixed-factor}
+Under the preceding hypotheses, assume in addition that
+\[
+V_{\mathbf P^2}(G,A,B)=\varnothing.
+\]
+Then no nonautomorphic Keller map has one of the following leading-form
+types:
+\[
+\begin{array}{c|c}
+D=5&(g,e)=(1,2),(3,1)\\
+D=6&(g,e)=(2,2),(4,1).
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}[Proof idea]
+The additional projective basepoint-free hypothesis is used here: it says
+that \(A,B\) form a regular sequence in the homogeneous coordinate ring
+\(\C[x,y,z]/(G)\).  The vanishings \(S_1,\ldots,S_{D-1}\) combine with the
+Koszul syzygies of \((A,B)\) and the Hilbert--Burch syzygies of
+\((A,B)^2\).  They lift the
+deformed rank-one symmetric matrix to
+\[
+\widehat{\mathsf M}_\varepsilon
+=a_\varepsilon P_\varepsilon P_\varepsilon^T
++\varepsilon^3\operatorname{sym}(P_\varepsilon,Q_\varepsilon)
+\]
+after a source-independent target correction.  Consequently
+\[
+\Phi(\widehat K_\varepsilon)
+=-\varepsilon^6(P_\varepsilon\wedge Q_\varepsilon)^2.
+\]
+The chain-rule identity forces every non-\(\varepsilon\) irreducible factor
+of \(P_\varepsilon\wedge Q_\varepsilon\) to divide both of the first two
+coordinates and then the Keller determinant.  This is impossible.  The
+remaining possibility is a pure power of \(\varepsilon\); comparison of the
+lowest coefficients makes the wedge vanish and again forces the linear
+determinant to be zero.
+
+Under \texttt{code/degree-five-six/}, the file
+\path{conic_fixed_factor_d5_d6_proof_note.md} writes out the four
+graded lift identities.  The script
+\path{verify_conic_hensel_d5_d6.py} replays them exactly.
+\end{proof}
+
+The invariant-degree gap itself remains valid under the weaker hypotheses
+stated before \cref{lem:fixed-factor-invariant-gap}.  What happens when
+\(V_{\mathbf P^2}(G,A,B)\ne\varnothing\) is not settled by the lifting
+argument above and remains an open boundary problem.
+
+The \((g,e)=(3,1)\) quintic case admits a stronger boundary analysis.
+
+\begin{theorem}[Three-variable cubic-factor quintics]
+\label{thm:quintic-three-variable-cubic-factor}
+Let \(G\) be a squarefree cubic genuinely depending on \(x,y,z\).  There is
+no Keller jet with leading form
+\[
+G(x,y,z)(x^2,xy,y^2).
+\]
+Thus the only unresolved cubic-factor overlap of this shape is the binary
+case \(G\in\C[x,y]\).
+\end{theorem}
+
+\begin{proof}[Proof structure]
+At the base point \([0:0:1]\), the four conic normal equations split
+according to the multiplicity of \(G=0\) and whether the first normal linear
+form vanishes there.  The unit branch is eliminated by the rank of the
+tangent cone and, in the rank-one case, by two incompatible coefficients.
+In the regular branch a source translation removes the first syzygy.
+The remaining cusp, node, transverse line--conic, and tangent line--conic
+normal forms each collapse under two or three displayed coefficients of the
+Keller determinant.  Multiplicity three forces \(G\) to be binary.
+
+The complete normal-form ledger and decisive coefficients are recorded in
+\path{quintic_cubic_factor_basepoints.md}, under
+\texttt{code/degree-five-six/}.  The companion exact script replays every
+coefficient identity used in the case table.
+\end{proof}
+
+\begin{question}[Binary cubic-factor overlap]
+\label{q:binary-quintic-overlap}
+Can a quintic Keller map have leading form
+\[
+G(x,y)(x^2,xy,y^2)
+\]
+for a squarefree binary cubic \(G\)?
+\end{question}
+
+\begin{question}[Fixed-factor basepoints in degree five]
+\label{q:degree-five-fixed-factor-basepoints}
+Can the remaining \((g,e)=(1,2)\) quintic branches, where the base locus of
+\((A,B)\) meets \(G=0\), satisfy the Keller equations?
+\end{question}
+
+\begin{question}[Primitive sextic conic stratum]
+\label{q:primitive-sextic-conic}
+Can a degree-six Keller map have primitive conic leading form
+\[
+(A_3^2,A_3B_3,B_3^2)
+\]
+with no nonconstant fixed factor?  Here degree three is resonant, so the
+invariant-gap argument does not apply.
+\end{question}
+~~~
+
+[Back to the text-source index](../../index.md)

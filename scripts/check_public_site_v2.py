@@ -645,6 +645,8 @@ def main() -> int:
                         "rmu-3fef0011",
                         "rmu-9075e072",
                         "sharp stable-equivalence complexity",
+                        "03-direct-order-five-recovery-2026-08-03-v1.zip",
+                        "recovered order-five row spaces are exact",
                     ),
                     4: (
                         "rmu-2d4e0011",
@@ -665,7 +667,10 @@ def main() -> int:
                     8: (
                         "rmu-6d8e0013",
                         "rmu-6d8e0014",
-                        "degree-125 `f_2` support propagation",
+                        "complete-chain refinement",
+                        "maximal newton-bounded",
+                        "06-f2-support-windows-order-520-2026-08-03-v1.zip",
+                        "order-530 value is not an obstruction",
                         "strictly below `125`",
                     ),
                     9: ("rmu-6d8e0012", "begins at layer seven, not four"),

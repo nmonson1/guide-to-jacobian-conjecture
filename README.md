@@ -121,14 +121,17 @@ surfaces are:
   and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-handoffs-v22-20260803c/`: hash-pinned sanitized source for
+- `data/model-handoffs-v23-20260803a/`: hash-pinned sanitized source for
   the hub, nine lane entrypoints, six program dossiers, nine exact research
   source packets, and the focused Lane 7 and Lane 8 executable inputs. The
   Lane 8 packet also exposes the incomplete planar-descent strategy and its
   six exact bounded no-go checkers. The v20c briefs state the Lane 3 stable
   result as proved and retain the Lane 7 marking open. Lane 8 exposes the
   direct two-support closure, the below-125 proof assembly, and the exact
-  degree-125 `F_2` seed as its next on-ramp. It also
+  degree-125 `F_2` seed. The Lane 3 and Lane 8 briefs now link the recovered
+  focused computation packets directly, record what each exact replay closes,
+  and move the live tasks to independent reconstruction and actual-chain
+  refinement without upgrading either packet beyond its evidence. It also
   incorporates the Lane 4 proof repairs and Q4-F4 input contract, and the
   Lane 7 five-chart projective-kernel generators with their exact evidence
   boundary. Logical manuscript slots resolve against the selected manuscript
