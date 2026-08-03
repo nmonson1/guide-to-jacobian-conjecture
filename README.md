@@ -141,10 +141,14 @@ surfaces are:
 
 The technical-material release contains sanitized computational supplements
 for all six programs, two standalone Program 4 notes, their exact-check source
-bundle, and one focused Program 2 boundary calculation.  The Program 4
+bundle, one focused Program 2 boundary calculation, the recovered Program 3
+direct order-five replay, and the Program 6 `F_2` support/order-520 packet. The Program 4
 supplement includes the elementary one-root transition, and the Program 5
 supplement includes the global chart quintics and all seventeen sampled
-first-normal rank profiles. It does not contain
+first-normal rank profiles. The Program 3 replay certifies `H(5)=145` and no
+new quintic generator from the recovered residual cache. The `F_2` packet
+exposes the maximal support model and a verified determinant jet through
+order 520 while explicitly declining an order-530 obstruction claim. It does not contain
 raw conversations, internal evidence ledgers, private locators, or uncurated
 working trees. Every artifact is hash-pinned, and archive contents plus PDF
 text and metadata are inspected by the release and site checks.

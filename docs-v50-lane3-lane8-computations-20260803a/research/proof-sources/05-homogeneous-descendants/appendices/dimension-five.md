@@ -1,0 +1,491 @@
+---
+title: "Text proof source — 05-homogeneous-descendants/appendices/dimension-five.tex"
+description: "Sanitized current source with exact labels when present."
+---
+
+# Text proof source
+
+`manuscripts/05-homogeneous-descendants/appendices/dimension-five.tex`
+
+This is the current sanitized source text used by the retained working graph. TeX comments and private locators are omitted; mathematical content and line numbering are preserved. PDFs are optional reading copies.
+
+Published SHA-256: `a84072d222071fd40a6fa6d4054929ec59e712ec0e6a125288ae032ce029e883` · 14,693 bytes
+
+## Exact label anchors
+
+<a id="label-app-dimension-five"></a>
+- `app:dimension-five` — source line 2
+<a id="label-lem-n5-collision-independent"></a>
+- `lem:n5-collision-independent` — source line 21
+<a id="label-eq-n5-plane-equations"></a>
+- `eq:n5-plane-equations` — source line 62
+<a id="label-prop-n5-jordan-types"></a>
+- `prop:n5-jordan-types` — source line 71
+<a id="label-thm-n5-sparse"></a>
+- `thm:n5-sparse` — source line 100
+<a id="label-rem-n5-scope-correction"></a>
+- `rem:n5-scope-correction` — source line 150
+<a id="label-eq-n5-filtration-degrees"></a>
+- `eq:n5-filtration-degrees` — source line 174
+<a id="label-thm-n5-regular-family"></a>
+- `thm:n5-regular-family` — source line 216
+<a id="label-eq-first-normal-traces"></a>
+- `eq:first-normal-traces` — source line 269
+<a id="label-thm-n5-first-normal"></a>
+- `thm:n5-first-normal` — source line 275
+<a id="label-q-n5-global-first-normal"></a>
+- `q:n5-global-first-normal` — source line 369
+<a id="label-thm-n5-rank-drop"></a>
+- `thm:n5-rank-drop` — source line 402
+
+## Complete source
+
+~~~tex
+\section{The five-dimensional frontier}
+\label{app:dimension-five}
+
+The body studies explicit descendants in dimensions \(19\), \(38\), and
+\(110\).  The opposite optimization problem begins in dimension five:
+cubic-homogeneous Keller maps in dimensions three and four are known to be
+invertible, so five is the first dimension in which a cubic-homogeneous
+counterexample could occur.  This appendix records exact restrictions and a
+surviving line-level family.  Nothing here constructs a five-dimensional
+counterexample.
+
+\subsection{Collision pencils}
+
+Let
+\[
+F(x)=x+H(x),\qquad H(x)=T(x,x,x),
+\]
+where \(T\colon V^3\to V\) is symmetric and \(\dim V=5\).
+
+\begin{lemma}[Collision vectors are independent]
+\label{lem:n5-collision-independent}
+If \(u\ne0\) and \(F(v+u)=F(v)\), then \(u\) and \(v\) are linearly
+independent.
+\end{lemma}
+
+\begin{proof}
+Suppose \(v=\lambda u\).  Cubic homogeneity gives
+\[
+ H(v+u)-H(v)=cH(u),\qquad
+ c=(\lambda+1)^3-\lambda^3.
+\]
+The collision equation is \(u=-cH(u)\).  If \(c=0\), this forces \(u=0\),
+contrary to the hypothesis.  Otherwise Euler's identity gives
+\[
+ JH(u)u=3H(u)=-\frac3c u,
+\]
+so \(JH(u)\) has a nonzero eigenvalue.  On the other hand, the Keller
+identity and \(JH(tu)=t^2JH(u)\) give
+\[
+ \det(I+t^2JH(u))=1
+\]
+for every scalar \(t\).  Hence every eigenvalue of \(JH(u)\) is zero, a
+contradiction.
+\end{proof}
+
+Suppose now
+\[
+F(v+u)=F(v)
+\]
+with \(u\ne0\); linear independence follows from
+\cref{lem:n5-collision-independent}.  On
+\(\PP(\langle u,v\rangle)\), write
+\[
+M(s,t)=JH(su+tv)=s^2A+stB+t^2C,
+\]
+where
+\[
+A=JH(u),\qquad B=6T(u,v,-),\qquad C=JH(v).
+\]
+Symmetry of \(T\) and the collision give
+\begin{equation}
+\label{eq:n5-plane-equations}
+Bu=2Av,\qquad Bv=2Cu,\qquad
+u+\frac13Au+Av+Cu=0.
+\end{equation}
+Conversely, the first two identities are sufficient to extend the plane
+data to a symmetric trilinear tensor.  They do not ensure that the global
+Jacobian is nilpotent away from the plane.
+
+\begin{proposition}[Three generic Jordan strata]
+\label{prop:n5-jordan-types}
+For a five-dimensional cubic-homogeneous counterexample, the generic
+nilpotent Jordan type of \(JH\) must be one of
+\[
+(5),\qquad(4,1),\qquad(3,2).
+\]
+\end{proposition}
+
+\begin{proof}
+Known low-rank results exclude generic rank at most two in a
+five-dimensional counterexample, while nilpotence gives rank at most four.
+The nilpotent partitions of five having rank three or four are precisely the
+three displayed partitions.
+\end{proof}
+
+\subsection{A corrected sparse exclusion}
+
+Consider the square-zero two-matrix family
+\[
+H_{C,Q}(z)=C\left((Qz)^{*3}-Qz^{*3}\right).
+\]
+After a signed-permutation normalization, let \(Q=I+R\), where \(R\) has
+exactly three active rows and exactly one nonzero off-diagonal entry in each
+active row.  Impose the coordinate collision
+\[
+(I+H_{C,Q})(e_0)=(I+H_{C,Q})(e_1).
+\]
+
+\begin{theorem}[Three-row sparse exclusion]
+\label{thm:n5-sparse}
+No member of this coordinate-collision ansatz whose three directed support
+edges collectively use all five vertices is Keller.
+\end{theorem}
+
+\begin{proof}
+For one edge \(i\to j\) with coefficient \(r\), its cubic contribution is
+\[
+U=(z_i+rz_j)^3-z_i^3-rz_j^3.
+\]
+If \(b\) is the corresponding column of the compressed coefficient matrix,
+the \(z_i^2\) and \(z_iz_j\) coefficients in its contribution to the trace
+are
+\[
+3rb_j,\qquad 6rb_i+6r^2b_j.
+\]
+Thus the trace equation forces \(b_i=b_j=0\).
+
+There are \(180\) three-edge patterns with distinct source rows.
+The collision and trace constraints leave \(30\), forming three orbits under
+the evident vertex symmetries:
+\[
+\begin{array}{c|c}
+A&(0\to2,\ 3\to0,\ 4\to1),\\
+B&(2\to0,\ 3\to0,\ 4\to1),\\
+C&(2\to0,\ 3\to1,\ 4\to2).
+\end{array}
+\]
+Writing the edge coefficients as \(\alpha,\beta,\gamma\), exact
+elimination of the collision and trace equations leaves, respectively, the
+following nonzero coefficients in
+\(\operatorname{tr}(JH/3)^2\):
+\[
+\frac{18}{\beta^2-1}\quad\text{in orbit \(A\)},\qquad
+18\quad\text{in orbit \(C\)}.
+\]
+In the generic branch of orbit \(B\), two coefficients force both
+\[
+B_{1,1}=0,\qquad(\beta^3-\beta)B_{1,1}=1.
+\]
+The branches \(\alpha=\pm1\) and \(\beta=\pm1\) instead leave
+\[
+\frac{36\beta}{\beta^2-1}
+\quad\text{or}\quad
+\frac{36\alpha}{\alpha^2-1}.
+\]
+Every branch is contradictory.
+\end{proof}
+
+\begin{remark}[Scope correction]
+\label{rem:n5-scope-correction}
+The theorem is not the blanket statement that every support-\(\le4\)
+five-dimensional ansatz fails.  Its coordinate-collision, three-row, and
+one-edge-per-row hypotheses are essential.  An earlier finite-field
+experiment using only coefficients \(0,\pm1\) was vacuous for this collision
+and is not evidence for the theorem; the exact characteristic-zero argument
+above is the proof.
+\end{remark}
+
+\subsection{Everywhere-regular Jordan type
+  \texorpdfstring{\((5)\)}{(5)}}
+
+Assume \(M(s,t)\) has Jordan type \((5)\) at every point of \(\PP^1\).
+Regard it as
+\[
+M\colon\mathcal O_{\PP^1}^5\longrightarrow
+\mathcal O_{\PP^1}^5(2).
+\]
+For \(K_i=\ker M^i\) and \(L_i=K_i/K_{i-1}\), the induced maps
+\[
+L_i\longrightarrow L_{i-1}(2)
+\]
+are isomorphisms.  Since the degrees sum to zero,
+\begin{equation}
+\label{eq:n5-filtration-degrees}
+\bigl(\deg L_1,\ldots,\deg L_5\bigr)=(-4,-2,0,2,4).
+\end{equation}
+In particular, the right kernel is an
+\(\mathcal O(-4)\)-subbundle of \(\mathcal O^5\).
+
+If \(r\) is the coordinate-span dimension of a quartic kernel generator,
+the quadratic-syzygy calculation leaves only
+\[
+\begin{array}{c|c}
+r&\text{possible splitting}\\ \hline
+3&(2,2)\\
+4&(1,1,2)\\
+5&(1,1,1,1),
+\end{array}
+\]
+while \(r=2\) is impossible.
+
+In the full-span chart, normalize the kernel to the rational normal quartic
+\[
+k(s,t)=(s^4,s^3t,s^2t^2,st^3,t^4)^T.
+\]
+Its linear syzygy matrix is
+\[
+K(s,t)=
+\begin{pmatrix}
+-t&s&0&0&0\\
+0&-t&s&0&0\\
+0&0&-t&s&0\\
+0&0&0&-t&s
+\end{pmatrix}.
+\]
+The linear lifting system for the regular nilpotent quotient has rank
+\(48\) in \(56\) unknowns and hence an eight-dimensional solution space.
+On the open set where the resulting constant \(4\times4\) matrix \(T\) is
+invertible, the pencil factors as
+\[
+M(s,t)=R(s,t)T^{-1}K(s,t)
+\]
+and satisfies \(M^5=0\).
+
+\begin{theorem}[A smooth characteristic-zero collision-line family]
+\label{thm:n5-regular-family}
+The everywhere-regular type-\((5)\) equations
+\eqref{eq:n5-plane-equations} have a smooth one-dimensional family in
+characteristic zero.
+\end{theorem}
+
+\begin{proof}[Exact computer-assisted existence proof]
+In the eight-parameter full-kernel chart, the following point over
+\(\F_{11}\) satisfies the integrability and collision equations:
+\[
+a=(8,7,1,7,2,9,0,1),
+\]
+\[
+u=(7,6,3,10,4),\qquad
+v=(8,9,7,9,1).
+\]
+At this point \(\det T=1\).  The gcd of the \(4\times4\) minors of
+\(M(s,t)\) is one in \(\F_{11}[s,t]\), so the pencil is geometrically
+regular on \(\PP^1_{\overline{\F}_{11}}\).
+
+After fixing \(a_7=1\) and one coordinate of \(v\), the ten integrability
+and five collision equations are functions of \(16\) variables.  Their
+Jacobian has rank \(15\); a specified \(15\times15\) minor has determinant
+\(3\) modulo \(11\).  The multivariate Hensel lemma therefore gives a
+one-dimensional smooth characteristic-zero lift.  The two accompanying
+dimension-five supplement directories contain independent exact Hensel
+replay scripts.  They check the lift through modulus
+\[
+11^{12}=3138428376721.
+\]
+Geometric regularity is open, so it persists on the lifted family.
+\end{proof}
+
+\subsection{The first-normal obstruction}
+
+The smooth family in \cref{thm:n5-regular-family} is a family of
+collision-line data.  It does not extend to a global nilpotent Jacobian.
+Choose coordinates with \(u=e_0\), \(v=e_1\), and let
+\(n_0,n_1,n_2\) span the normal directions.  For each \(r\), put
+\[
+N_r(s,t)=
+\left.\frac{d}{d\epsilon}
+JH(su+tv+\epsilon n_r)\right|_{\epsilon=0}
+=sP_r+tQ_r.
+\]
+Tensor symmetry fixes
+\[
+P_ru=2An_r,\quad P_rv=Bn_r,\qquad
+Q_ru=Bn_r,\quad Q_rv=2Cn_r.
+\]
+The remaining first-normal tensor entries form a \(60\)-dimensional vector
+space.  Nilpotence through first normal order requires
+\begin{equation}
+\label{eq:first-normal-traces}
+\operatorname{tr}\bigl(M(s,t)^{k-1}N_r(s,t)\bigr)=0,
+\qquad r=0,1,2,\quad k=1,\ldots,5.
+\end{equation}
+
+\begin{theorem}[First-normal obstruction on the smooth residue disk]
+\label{thm:n5-first-normal}
+The complete smooth \(\mathbb Z_{11}\)-residue disk through the point in
+\cref{thm:n5-regular-family} has no extension through first normal order to
+a symmetric cubic tensor with nilpotent Jacobian.
+
+In collision-adapted coordinates, the equations for \(k\le4\) in
+\eqref{eq:first-normal-traces} have a \(60\times60\) coefficient matrix
+with determinant \(3\pmod {11}\).  Adding \(k=5\) gives
+\[
+\operatorname{rank}L=60,\qquad
+\operatorname{rank}[L\mid b]=61,
+\]
+with a selected augmented \(61\times61\) minor of determinant
+\(1\pmod {11}\).
+\end{theorem}
+
+\begin{proof}[Exact computer-assisted proof]
+At the displayed residue point, the transformed line matrices are
+\[
+A=\begin{pmatrix}
+6&4&0&10&2\\6&1&0&9&10\\8&0&0&6&2\\
+3&8&0&5&2\\3&6&0&1&10
+\end{pmatrix},
+\]
+\[
+B=\begin{pmatrix}
+8&8&1&4&7\\2&5&2&6&9\\0&2&5&4&4\\
+5&4&6&9&7\\1&8&10&3&6
+\end{pmatrix},
+\qquad
+C=\begin{pmatrix}
+4&0&5&1&3\\8&1&6&6&6\\1&8&5&6&10\\
+2&6&0&0&2\\4&7&9&1&1
+\end{pmatrix}.
+\]
+The first four trace identities form a square system in the \(60\)
+first-normal coefficients and have determinant \(3\).  Substituting its
+unique solution into the fifth identities leaves the coefficient matrix
+\[
+\begin{pmatrix}
+5&8&9&1&9&2&2&1&3&1\\
+2&2&6&2&4&6&1&7&2&5\\
+9&5&9&8&5&3&4&6&3&8
+\end{pmatrix},
+\]
+whose first three columns have determinant \(2\).  This proves
+inconsistency.  The determinants \(3\) and \(1\) are \(11\)-adic units, so
+the contradiction persists throughout the residue disk.
+
+An independent coordinate-free calculation starts with all
+\[
+5\binom73=175
+\]
+coefficients of a symmetric vector-valued cubic.  The line restrictions
+have rank \(65\); adjoining the identities through \(k=4\) gives
+coefficient and augmented ranks \((125,125)\); adjoining \(k=5\) gives
+\((125,126)\).  The remaining \(50\) variables after \(k\le4\) are exactly
+the pure-normal coefficients \(5\binom53\), which cannot affect first
+normal order.  This confirms that the obstruction is independent of the
+chosen normal complement.
+\end{proof}
+
+The same exact test was applied exhaustively to the rational points of the
+eight-parameter full-kernel chart:
+\[
+\begin{array}{c|rr}
+&\F_7&\F_{11}\\ \hline
+\text{projective parameter points}&960800&21435888\\
+\text{invertible chart matrix}&806344&19324668\\
+\text{regular collision-line solutions}&6&11\\
+\text{first-normal extensions}&0&0.
+\end{array}
+\]
+Every surviving pencil is geometrically regular over the algebraic closure,
+and every first-normal system has ranks \((60,61)\).  These enumerations
+exclude the rational points in the displayed chart and their
+good-reduction local branches; they do not classify points over finite
+extensions or other kernel-span strata.
+
+There is also an exact characteristic-zero presentation of the displayed
+collision chart.  After normalizing \(a_7=v_4=1\) and clearing the matrix
+denominator, the two integrability identities and the collision identity
+give fifteen primitive quintics in sixteen variables.  The relevant open
+condition is
+\[
+ \det(T)(u_3-u_4v_3)\ne0.
+\]
+At the recorded \(\F_{11}\)-point all fifteen equations vanish and their
+Jacobian has rank fifteen, giving a smooth one-dimensional local collision
+locus on this chart.  The exact polynomial list and a Macaulay2 saturation
+input are included in the computational supplement.  No global saturation
+or irreducible-component calculation is asserted here.
+
+\begin{question}[Global first-normal obstruction]
+\label{q:n5-global-first-normal}
+Let \(C_4\) and \(\widetilde C_4\) be the coefficient and augmented matrices
+of the first-normal identities through \(k=4\), and let \(C_5\) and
+\(\widetilde C_5\) include the fifth identity.  Is
+\[
+ \operatorname{rank}\widetilde C_5>
+ \operatorname{rank}C_5
+\]
+at every point of the regular full-kernel collision-line curve?  On the open
+locus \(\det C_4\ne0\), solving the first four identities makes this the
+nonvanishing of the familiar fifth-residual covariant
+\[
+ \Omega\in N_P^*\otimes H^0(\PP^1,\mathcal O(9)).
+\]
+At fifteen of the seventeen enumerated \(\F_7\)- and \(\F_{11}\)-points,
+\(C_4\) is invertible and the residual map has rank three.  At the other two,
+\((\operatorname{rank}C_4,\operatorname{rank}\widetilde C_4)=(59,60)\), so
+incompatibility occurs already through \(k=4\).  Thus \(\Omega\) is only an
+open-locus presentation; the global object is the cokernel or, equivalently,
+the augmented-rank condition.  A positive answer would exclude the entire
+full-kernel regular type-\((5)\) stratum, rather than only the known residue
+disk and rational points.
+\end{question}
+
+\subsection{A global rank-drop obstruction}
+
+Let \(M(x)\) be a homogeneous quadratic nilpotent \(5\times5\) matrix on
+\(\PP^4\), generically of type \((5)\), and put
+\[
+D=\set{[x]\in\PP^4:\operatorname{rank}M(x)\le3}.
+\]
+
+\begin{theorem}[Codimension-two rank drop]
+\label{thm:n5-rank-drop}
+One has
+\[
+\operatorname{codim}_{\PP^4}D\le2.
+\]
+If \(M\) extends an everywhere-regular collision line, then
+\[
+\operatorname{codim}_{\PP^4}D=2
+\]
+and \(D\) is disjoint from that line.
+\end{theorem}
+
+\begin{proof}
+Suppose \(\operatorname{codim}D\ge3\) and put
+\(U=\PP^4\setminus D\).  The regular kernel filtration on \(U\) has line
+quotients
+\[
+L_i\simeq\mathcal O_U(-4+2(i-1))
+\]
+by the same calculation as \eqref{eq:n5-filtration-degrees}.  Removing a
+codimension-at-least-three set preserves \(\operatorname{Pic}\) and
+\(\operatorname{CH}^2\).  Multiplicativity of Chern classes in the
+filtration of \(\mathcal O_U^5\) would give
+\[
+0=c_2(\mathcal O_U^5)
+=\sum_{0\le i<j\le4}(-4+2i)(-4+2j)h^2
+=-20h^2,
+\]
+contradicting \(h^2\ne0\) in \(\operatorname{CH}^2(U)\).
+
+An everywhere-regular collision line is disjoint from \(D\).  A divisor in
+\(\PP^4\) cannot be disjoint from a projective line, so \(D\) cannot have
+codimension one.  The preceding bound then forces codimension two.
+\end{proof}
+
+\begin{remark}[The remaining problem]
+\Cref{thm:n5-first-normal} eliminates the explicit smooth full-kernel
+residue disk, but not every regular type-\((5)\) collision-line component.
+The kernel-span-three and kernel-span-four strata and the generic Jordan
+types \((4,1)\) and \((3,2)\) also remain open.  Every successful global
+extension must acquire the codimension-two rank-drop surface of
+\cref{thm:n5-rank-drop}.  Thus dimension five remains possible, but the
+known regular line family is not the restriction of a counterexample.
+\end{remark}
+~~~
+
+[Back to the text-source index](../../index.md)

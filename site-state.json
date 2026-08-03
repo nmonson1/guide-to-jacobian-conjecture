@@ -1,7 +1,7 @@
 {
   "schema_version": 4,
-  "release_id": "living-guide-public-v49-pr7-pr9-harvest",
-  "updated_at": "2026-08-03T05:10:07+00:00",
+  "release_id": "living-guide-public-v50-lane3-lane8-computations",
+  "updated_at": "2026-08-03T08:20:00+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -17,9 +17,9 @@
     "expected_count": 7
   },
   "technical_materials": {
-    "data_dir": "technical-materials-v3-20260729a",
-    "manifest_sha256": "47e7eeeb3497813cc12dee77c97fdac9f8879b6b6cda51a06963127aa7bd67ce",
-    "expected_count": 10
+    "data_dir": "technical-materials-v4-20260803a",
+    "manifest_sha256": "d483e84f4c6826afc95d4afea0a498725fb9a56cde7c14e9bc5239fa1bdeaf7d",
+    "expected_count": 12
   },
   "model_briefs": {
     "data_dir": "model-handoffs-v22-20260803c",
@@ -47,7 +47,7 @@
     "expected_files": 41,
     "expected_labels": 659
   },
-  "docs_dir": "docs-v49-pr7-pr9-harvest-20260803b",
+  "docs_dir": "docs-v50-lane3-lane8-computations-20260803a",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,
