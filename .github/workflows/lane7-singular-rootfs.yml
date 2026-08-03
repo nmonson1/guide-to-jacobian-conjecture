@@ -1,0 +1,41 @@
+name: Lane 7 disposable Singular rootfs
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/lane7-singular-rootfs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-rootfs:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build a minimal Debian trixie Singular environment
+        run: |
+          set -euo pipefail
+          docker pull debian:trixie-slim
+          docker create --name lane7-singular debian:trixie-slim sleep infinity
+          docker start lane7-singular
+          docker exec lane7-singular bash -lc '
+            set -euo pipefail
+            apt-get update
+            DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends singular ca-certificates
+            rm -rf /var/lib/apt/lists/* /usr/share/doc/* /usr/share/man/*
+          '
+          docker stop lane7-singular
+          docker export lane7-singular | gzip -1 > lane7-singular-trixie-rootfs.tar.gz
+          ls -lh lane7-singular-trixie-rootfs.tar.gz
+          sha256sum lane7-singular-trixie-rootfs.tar.gz | tee lane7-singular-trixie-rootfs.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lane7-singular-trixie-rootfs
+          path: |
+            lane7-singular-trixie-rootfs.tar.gz
+            lane7-singular-trixie-rootfs.sha256
+          if-no-files-found: error
+          compression-level: 0
