@@ -4,7 +4,10 @@ on:
   pull_request:
     paths:
       - "data/model-handoffs-v19-20260802a/lane-7-source-packet.md"
-      - "research-notes/lane7-projective-kernel-20260802/**"
+      - "research-notes/lane7-projective-kernel-20260802/extract_embedded_sources.py"
+      - "research-notes/lane7-projective-kernel-20260802/generate_macaulay2_input.py"
+      - "research-notes/lane7-projective-kernel-20260802/generate_kernel_chart_input.py"
+      - "research-notes/lane7-projective-kernel-20260802/generate_kernel_chart_singular.py"
       - ".github/workflows/lane7-kernel-incidence.yml"
   workflow_dispatch:
 
@@ -32,9 +35,6 @@ jobs:
         run: |
           set -euo pipefail
           for chart in 0 1 2 3 4; do
-            python research-notes/lane7-projective-kernel-20260802/generate_kernel_chart_input.py \
-              build/lane7-sources "build/kernel-chart-${chart}-char5.m2" \
-              --chart "${chart}" --characteristic 5
             python research-notes/lane7-projective-kernel-20260802/generate_kernel_chart_singular.py \
               build/lane7-sources "build/kernel-chart-${chart}-char5.sing" \
               --chart "${chart}" --characteristic 5
@@ -43,47 +43,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: lane7-kernel-chart-inputs
-          path: |
-            build/kernel-chart-*-char5.m2
-            build/kernel-chart-*-char5.sing
+          path: build/kernel-chart-*-char5.sing
           if-no-files-found: error
-
-  macaulay2-kernel-chart-char5:
-    needs: prepare
-    runs-on: ubuntu-22.04
-    timeout-minutes: 90
-    strategy:
-      fail-fast: false
-      matrix:
-        chart: [0, 1, 2, 3, 4]
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          name: lane7-kernel-chart-inputs
-          path: build
-      - name: Install Macaulay2
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y software-properties-common
-          sudo add-apt-repository -y ppa:macaulay2/macaulay2
-          sudo apt-get update
-          sudo apt-get install -y macaulay2
-          M2 --version | tee build/macaulay2-version.txt
-      - name: Bound the dimension of kernel chart ${{ matrix.chart }}
-        run: |
-          set -o pipefail
-          M2 --script "build/kernel-chart-${{ matrix.chart }}-char5.m2" 2>&1 \
-            | tee "build/kernel-chart-${{ matrix.chart }}-char5-m2.log"
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: lane7-kernel-chart-${{ matrix.chart }}-char5-m2
-          path: |
-            build/macaulay2-version.txt
-            build/kernel-chart-${{ matrix.chart }}-char5.m2
-            build/kernel-chart-${{ matrix.chart }}-char5-m2.log
-          if-no-files-found: warn
 
   singular-kernel-chart-char5:
     needs: prepare
