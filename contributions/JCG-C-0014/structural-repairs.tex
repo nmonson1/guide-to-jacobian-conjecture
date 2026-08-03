@@ -27,26 +27,26 @@ projective image of
 \]
 is an integral curve of degree \(e\geq 1\).  Then there exist
 \begin{itemize}
-\item coprime homogeneous forms \(A,B\in k[x,y,z]_k\) of a common degree
-  \(k\geq 1\);
+\item coprime homogeneous forms \(A,B\in k[x,y,z]_m\) of a common degree
+  \(m\geq 1\);
 \item binary forms \(h_0,h_1,h_2\in k[u,v]_e\) with no common zero such that
   \(\nu=[h_0:h_1:h_2]\colon\mathbf P^1\to C\) is the normalization map; and
 \item a homogeneous form \(G\in k[x,y,z]\),
 \end{itemize}
 for which
 \[
- H_4=G\,h(A,B),\qquad \deg G+ek=4.
+ H_4=G\,h(A,B),\qquad \deg G+em=4.
 \]
 For a nondegenerate image \(e\geq2\), the numerical possibilities are exactly
 \[
- (e,k,\deg G)=(2,1,2),(2,2,0),(3,1,1),(4,1,0).
+ (e,m,\deg G)=(2,1,2),(2,2,0),(3,1,1),(4,1,0).
 \]
 The case \(e=1\) is exactly the leading-target-span-two child.
 \end{proposition}
 
 \begin{proof}
 The rational map \(\phi\) dominates \(C\).  Restricting a nonconstant
-rational generator of \(k(C)\subset k(\mathbf P^2)\) to a sufficiently
+rational function in \(k(C)\setminus k\) to a sufficiently
 general line gives a nonconstant rational map
 \(\mathbf P^1\dashrightarrow C\).  Thus \(C\) is unirational.  The
 normalization \(\widetilde C\) is therefore a smooth unirational projective
@@ -68,7 +68,7 @@ rational map
  \psi=\nu^{-1}\circ\phi\colon\mathbf P^2\dashrightarrow\mathbf P^1.
 \]
 Write \(\psi=[A:B]\) with \(A,B\) coprime homogeneous forms of one common
-degree \(k\).  Since \(C\) is a curve, \(\psi\) is nonconstant and \(k\geq1\).
+degree \(m\).  Since \(C\) is a curve, \(\psi\) is nonconstant and \(m\geq1\).
 Put
 \[
  q_i=h_i(A,B)\qquad(0\leq i\leq2).
@@ -94,7 +94,7 @@ all \(i\); the preceding paragraph forces \(v\in k^\times\).  Hence
 \(\lambda=G\) is a polynomial.  Homogeneity makes \(G\) homogeneous, and
 comparison of degrees gives
 \[
- \deg G+ek=4.
+ \deg G+em=4.
 \]
 For \(e\geq2\), enumerating the positive integral solutions yields the four
 displayed triples.  If \(e=1\), the image \(C\) is a projective line, so the
@@ -150,11 +150,11 @@ function \(\mathcal R\in k(s)\) of degree \(e\) such that
 In characteristic zero, the vanishing Jacobian together with algebraic
 independence of \(P,Q\) implies that \(R\) is algebraic over \(k(P,Q)\).
 Choose a nonzero polynomial relation and retain one source-homogeneous
-component.  Every monomial \(P^iQ^jR^m\) in that component satisfies
+component.  Every monomial \(P^iQ^jR^r\) in that component satisfies
 \[
- 4(i+j)+3m=M.
+ 4(i+j)+3r=M.
 \]
-Thus all exponents \(m\) are congruent modulo four.  After removing the
+Thus all exponents \(r\) are congruent modulo four.  After removing the
 common residual power of \(R\), the relation has the form
 \[
  \sum_{\ell} C_\ell(P,Q)R^{4\ell}=0,
