@@ -20,6 +20,22 @@ class Lane9F2TerminalFaceTests(unittest.TestCase):
         )
         self.assertEqual(report["normalized_face"]["ode_value"], "1/5")
 
+    def test_terminal_face_linearization(self) -> None:
+        linearization = face.build_report()["terminal_face_linearization"]
+        self.assertEqual(
+            linearization["matrix"],
+            [["6/5", "-2", "0"], ["-9/5", "-3", "-5"]],
+        )
+        self.assertEqual(
+            linearization["integer_scaled_matrix"],
+            [[6, -10, 0], [-9, -15, -25]],
+        )
+        self.assertEqual(linearization["rank"], 2)
+        self.assertEqual(linearization["kernel_dimension"], 1)
+        self.assertEqual(
+            linearization["kernel_generator"], ["-1", "-3/5", "18/25"]
+        )
+
     def test_degree_six_belyi_data(self) -> None:
         report = face.build_report()
         belyi = report["belyi_map"]
