@@ -1,0 +1,330 @@
+{
+  "F2_recurrence_schema": {
+    "descent_rule": "a q-th k-wall term shifts C5 character by -q*k",
+    "equations": [
+      "D_r^L*x_r^L=-Phi_r^L(x_<r^L,p_<=r)",
+      "D_r^R*x_r^R=-Phi_r^R(x_<r^R,p_<=r)",
+      "x_r^R=T_r(s)*x_r^L plus lower-order transport terms",
+      "all coefficients outside both finite Newton windows vanish"
+    ],
+    "required_missing_artifacts": [
+      "both endpoint block matrices and ordered bases",
+      "fresh-parameter ranges through and beyond order 530",
+      "overlap/normalization matrices",
+      "archived replay manifest with hashes"
+    ],
+    "safe_conclusion": "the recurrence architecture and character decomposition are exact, but no order-530 obstruction or global feasibility verdict can be inferred",
+    "status": "uninstantiated because the high-order F_2 endpoint blocks are absent",
+    "unknowns": [
+      "x_r^L in U_r^L",
+      "x_r^R in U_r^R",
+      "all fresh parameters p_r with declared C5 characters"
+    ]
+  },
+  "admissible_operation_module": {
+    "classification_status": "definition and forced closure proved; equality with the actual complete-chain operation algebroid is not proved without the missing generator table",
+    "definition": "smallest filtered, C5-graded, mu8-equivariant Lie algebroid of divergence-free derivations preserving the nonlinear support ideal, containing the verified fixed-presentation generators and the Kummer translation arrow",
+    "forced_generators": [
+      "verified fixed-chart presentation generators (external table when supplied)",
+      "layer-4 Kummer tangent t^4(2*z^-3*d_z-2*z^-4*t*d_t)",
+      "layer-7 bare wall tangent t^7(2*z^-3*d_z+z^-4*t*d_t)",
+      "transported and Lie-bracket closure terms, including layer 11"
+    ],
+    "known_rank_ladder_layers_1_to_4": {
+      "affine_polynomial": [
+        2,
+        3,
+        2,
+        1
+      ],
+      "determinant_kernel": [
+        2,
+        3,
+        3,
+        1
+      ],
+      "maximal_support_admissible_laurent": [
+        2,
+        3,
+        3,
+        1
+      ],
+      "recorded_complete_chain_input": [
+        1,
+        1,
+        2,
+        0
+      ]
+    },
+    "name": "minimal Rees-Kummer admissible Lie algebroid"
+  },
+  "all_exact_checks_passed": true,
+  "checklist": [
+    {
+      "item": "Correct public layer-four/k=4 identification",
+      "status": "verified"
+    },
+    {
+      "item": "Preserve ambient Laurent-jet transport theorem",
+      "status": "separated and retained"
+    },
+    {
+      "item": "Compare archived layer-four residual coefficientwise",
+      "status": "direct mismatch / ill-typed without overlap normalization"
+    },
+    {
+      "item": "Test Q->Q+16s against residual",
+      "status": "not a vector in the old window; conditional comparison remains"
+    },
+    {
+      "item": "Publish adjacent normalization map",
+      "status": "Kummer quotient map published; ordinary complete-chain lift ruled out for this flow"
+    },
+    {
+      "item": "Identify presentation stabilizer",
+      "status": "mu_8 for the Kummer presentation; original complete-chain stabilizer table still absent"
+    },
+    {
+      "item": "Construct g_adm",
+      "status": "minimal forced Rees-Kummer Lie algebroid constructed; equality with true module open"
+    },
+    {
+      "item": "Support/residue transport for monomial charts",
+      "status": "proved; quotient requires character modules"
+    },
+    {
+      "item": "Pairwise/triple cocycles",
+      "status": "strict on quotient/formal unit-root lift; mu_8 ambiguity algebraically"
+    },
+    {
+      "item": "Kummer quotient allowed?",
+      "status": "not in ordinary same-field atlas; allowed after root-stack/Kummer enlargement"
+    },
+    {
+      "item": "Publish real F_2 matrices/support blocks",
+      "status": "archive recovery attempted; high-order blocks not synthesized"
+    },
+    {
+      "item": "Recompute F_2 recurrence",
+      "status": "exact parameter-complete schema supplied; numerical instantiation blocked"
+    },
+    {
+      "item": "C5-equivariant descent",
+      "status": "character law and parameter bidegree proved"
+    },
+    {
+      "item": "Finite global polynomial support",
+      "status": "finite feasibility formulation supplied; instance blocked"
+    },
+    {
+      "item": "Match every neighboring chart",
+      "status": "current repair cannot match any ordinary same-field chart"
+    },
+    {
+      "item": "Algebraize a formal solution",
+      "status": "Kummer flow algebraizes only on degree-8 cover, not as same-field rational/polynomial map"
+    },
+    {
+      "item": "Chart-independent finite obstruction",
+      "status": "index-8/Kummer valuation obstruction obtained for this repair candidate"
+    }
+  ],
+  "cocycles": {
+    "quotient_translation": {
+      "inverse": "tau_-s",
+      "pairwise_cocycle": "tau_s*tau_t=tau_(s+t)",
+      "tau_s": "(H,Q)->(H,Q+16*s)",
+      "triple_cocycle": "strict"
+    },
+    "root_lift": {
+      "R_s(Q)^8": "(Q+16*s)/Q",
+      "composition_eighth_power": "((Q+16*s)/Q)*((Q+16*s+16*t)/(Q+16*s))=(Q+16*(s+t))/Q",
+      "formal_unit_root": "strict cocycle",
+      "generic_algebraic_root": "mu_8-valued ambiguity"
+    }
+  },
+  "cyclic_descent": {
+    "cyclic_group_order": 5,
+    "first_invariant_unweighted_normal_shift": 35,
+    "first_invariant_wall_order": 5,
+    "normal_rees_weight_needed_for_layer_four": -3,
+    "parameter_bidegree": [
+      -3,
+      4
+    ],
+    "parameter_character": 4,
+    "wall_index": 4
+  },
+  "lattice_and_stabilizer": {
+    "function_fields": {
+      "H_in_uv": "2*u^11*v^8",
+      "Q_in_uv": "u^-12*v^-8",
+      "adjacent_coordinates": "u=(x*y)^-1, v=y",
+      "generic_extension_degree": 8,
+      "quotient_field": "K(H,Q)=K(u,v^8)"
+    },
+    "index_is_invariant_under_unimodular_recharting": true,
+    "ordinary_unimodular_chart": false,
+    "presentation_stabilizer": {
+      "action_uv": "(u,v)->(u,zeta*v)",
+      "action_xy": "(x,y)->(zeta^-1*x,zeta*y)",
+      "group": "mu_8"
+    },
+    "quotient_coordinates": {
+      "H": "2*x^-11*y^-3",
+      "Q": "x^12*y^4",
+      "determinant": -8,
+      "exponent_matrix": [
+        [
+          -11,
+          -3
+        ],
+        [
+          12,
+          4
+        ]
+      ],
+      "smith_invariants": [
+        1,
+        8
+      ]
+    }
+  },
+  "name": "Lane 9 Kummer attachment exact audit",
+  "old_window_comparison": {
+    "Theta4_corrected": {
+      "a": "6*z^-3*p+2*z^-2*p'",
+      "b": "10*z^-2*q+2*z^-1*q'"
+    },
+    "coefficientwise_match_without_overlap_normalization": false,
+    "direct_old_window_membership": false,
+    "nonvanishing_reason": "p_0*q_0=1",
+    "old_window": {
+      "a_exponents": [
+        0,
+        6
+      ],
+      "b_exponents": [
+        0,
+        11
+      ]
+    },
+    "principal_parts": {
+      "a": [
+        {
+          "coefficient": "6*p_0",
+          "z_exponent": -3
+        },
+        {
+          "coefficient": "8*p_1",
+          "z_exponent": -2
+        },
+        {
+          "coefficient": "10*p_2",
+          "z_exponent": -1
+        }
+      ],
+      "b": [
+        {
+          "coefficient": "10*q_0",
+          "z_exponent": -2
+        },
+        {
+          "coefficient": "12*q_1",
+          "z_exponent": -1
+        }
+      ]
+    }
+  },
+  "operation_commutator": {
+    "basis_checks": {
+      "c0": {
+        "horizontal": {
+          "-4": "18"
+        },
+        "vertical": {
+          "-5": "6"
+        }
+      },
+      "c1": {
+        "horizontal": {
+          "-3": "30"
+        },
+        "vertical": {
+          "-4": "5"
+        }
+      },
+      "unit_top": {
+        "horizontal": {
+          "-2": "42"
+        },
+        "vertical": {}
+      }
+    },
+    "forced_top_terms_on_degree_21_face": {
+      "P": "336*lead(A0)*z^5",
+      "Q": "504*lead(B0)*z^9"
+    },
+    "formula": {
+      "f_11": "18*c0*z^-4+30*c1*z^-3+42*z^-2",
+      "g_11": "6*c0*z^-5+5*c1*z^-4"
+    }
+  },
+  "schema_version": 1,
+  "support_and_residue_transport": {
+    "index_eight_quotient": {
+      "residue_transport": "characterwise contragredient pairing",
+      "single_ordinary_chart_transport": false,
+      "support_transport": "the invariant chart sees one sublattice; the full coefficient space is the direct sum of the eight mu_8-character modules"
+    },
+    "ordinary_monomial_chart": {
+      "criterion": "exponent matrix lies in GL_2(Z)",
+      "pairwise_and_triple_cocycles": "strict by matrix composition",
+      "residue_transport": "contragredient pullback preserves the perfect pairing",
+      "support_transport": "finite exponent windows are carried bijectively"
+    }
+  },
+  "vector_field_and_flow": {
+    "affine_vector_field": {
+      "Vx": "-6*x^-11*y^-4",
+      "Vy": "22*x^-12*y^-3",
+      "divergence": 0,
+      "hamiltonian": "2*x^-11*y^-3"
+    },
+    "first_integral": {
+      "H": "2*x^-11*y^-3",
+      "V(H)": "0"
+    },
+    "formal_flow": {
+      "H_s": "H",
+      "Q_s": "Q+16*s",
+      "R^8": "1+16*s*M",
+      "t_s": "t*R^-1",
+      "x_s": "x*R^-3",
+      "y_s": "y*R^11",
+      "z_s": "z*R"
+    },
+    "riccati_coordinate": {
+      "M": "x^-12*y^-4",
+      "V(M)": "-16*M^2"
+    },
+    "translation_coordinate": {
+      "Q": "x^12*y^4",
+      "V(Q)": "16"
+    }
+  },
+  "weighted_divergence": {
+    "bare_pair": {
+      "defect": "-3*z^-2",
+      "f": "2*z^-3",
+      "g": "z^-4"
+    },
+    "corrected_pair": {
+      "defect": "0",
+      "f": "2*z^-3",
+      "g": "-2*z^-4"
+    },
+    "identity": "D_r Theta_r(f,g)=(f*z^2)' +(r-5)*g*z^2",
+    "uniqueness_with_fixed_horizontal_component": true
+  }
+}

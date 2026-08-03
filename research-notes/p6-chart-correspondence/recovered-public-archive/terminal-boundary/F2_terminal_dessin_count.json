@@ -1,0 +1,40 @@
+{
+  "degree21_regression": {
+    "character_sum": "31104/19019",
+    "weighted_count": "5"
+  },
+  "F2_uniformizing_degree30": {
+    "passport": [
+      "(5^6)",
+      "(3^10)",
+      "(15,1^15)"
+    ],
+    "character_sum": "20503125/12971816",
+    "weighted_hurwitz_count": "133/15",
+    "classes_with_trivial_automorphism": 8,
+    "classes_with_C3_automorphism": 2,
+    "classes_with_C5_automorphism": 1,
+    "total_connected_dessin_classes": 11
+  },
+  "F2_lattice_quotient_degree6": {
+    "passport": [
+      "(5,1)",
+      "(3^2)",
+      "(3,1^3)"
+    ],
+    "weighted_hurwitz_count": "1",
+    "connected_classes": 1,
+    "automorphism_stabilizers": [
+      1
+    ],
+    "lattice_compatible_ambient_classes": 1
+  },
+  "symmetric_quotient_formulas": {
+    "C5_quotient": "x(x-1)^5/(x^2-(5/3)x+5/9)^3",
+    "C3_parameter_polynomial": "alpha^4-5alpha^3+15alpha^2-5alpha+1",
+    "C3_quotient": "(x-1)^5(x-alpha)^5/[x(x^3+u x^2+v x+w)^3]",
+    "u": "-(5/3)(alpha+1)",
+    "v": "(5/9)(alpha^2+5alpha+1)",
+    "w": "(5/81)(alpha+1)(alpha^2-16alpha+1)"
+  }
+}

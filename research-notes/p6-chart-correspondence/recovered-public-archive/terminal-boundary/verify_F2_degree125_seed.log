@@ -1,0 +1,6 @@
+F2 edge direction: (Fraction(5, 1), Fraction(-1, 1))
+degrees in z: 60 100 common R degree: 20
+integral common-root polynomial S(x y^5) degree: 4
+chosen p-root multiplicity: 6 => double root of R/S
+child corner verified: (Fraction(7, 5), Fraction(2, 1))
+all exact F2 seed checks passed

@@ -1,0 +1,762 @@
+{
+  "archive": "docs-v7-20260726c/assets/technical-materials/06-plane-boundary-computational-supplement.zip",
+  "archive_member_count": 151,
+  "archive_sha256": "4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585",
+  "extracted_member_count": 16,
+  "extracted_members": [
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md",
+      "bytes": 4609,
+      "output_path": "recovered-public-archive/terminal-boundary/BOUNDARY_PROGRAM_README.md",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "6c4ad09b00603a899661777939736b4e78d15c7449534b1abbdf2cf0d37c17e5"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
+      "bytes": 5965,
+      "output_path": "recovered-public-archive/terminal-boundary/F2_degree125_boundary_seed.md",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "63fb30b6de06df86c9c87e968d4d72e58b9218134a9eaa8cbce978b78901eb5e"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree30_coefficient_system.json",
+      "bytes": 46956,
+      "output_path": "recovered-public-archive/terminal-boundary/F2_degree30_coefficient_system.json",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "5e0a86e664b690dbf288a04ed0fea4ed367ff2a249a77bcac50db67a567b5171"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_dessin_count.json",
+      "bytes": 1054,
+      "output_path": "recovered-public-archive/terminal-boundary/F2_terminal_dessin_count.json",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "7a7b7b35414789be24a054edd08b5e93cff78b7325bb3616ebfbe5d75768adad"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_dessin_count.log",
+      "bytes": 1202,
+      "output_path": "recovered-public-archive/terminal-boundary/F2_terminal_dessin_count.log",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "ce9c07da611264c33b4441d051b9eef85bc61b0ebbd328c24f7791a0cb352530"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_primary_passport.json",
+      "bytes": 1667,
+      "output_path": "recovered-public-archive/terminal-boundary/F2_terminal_primary_passport.json",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "33cea48ebe382a9a10b3669f899bc86015ce0b05d64c96dd48b34fb21ebb2174"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/count_F2_terminal_dessins.py",
+      "bytes": 13421,
+      "output_path": "recovered-public-archive/terminal-boundary/count_F2_terminal_dessins.py",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "8fa863b83eba510783e2defd7a439d1d836ceb47890bd5bf94605609b9508161"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/generate_F2_degree30_system.log",
+      "bytes": 373,
+      "output_path": "recovered-public-archive/terminal-boundary/generate_F2_degree30_system.log",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "9bcb44556c8391f2caaac6610aa75a308c0f59c13a9a2ad0dc7c93ece8ccf1b5"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/generate_F2_degree30_system.py",
+      "bytes": 4235,
+      "output_path": "recovered-public-archive/terminal-boundary/generate_F2_degree30_system.py",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "f9079ad861c95af85d310455bbde938a21ba3b9c3b5c5b335e6869c26da0e2c6"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/next_complete_chain_queue.json",
+      "bytes": 5728,
+      "output_path": "recovered-public-archive/terminal-boundary/next_complete_chain_queue.json",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "c161f309194a8f0e86d7b1343d5c7e192e76afb80ab5bb62f02048c28a20c50c"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
+      "bytes": 7379,
+      "output_path": "recovered-public-archive/terminal-boundary/terminal_boundary_gluing_program.md",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "d1ca56b6fa4ea8494513e1f60a0ef9b0f3fcf5bf029df8185ea833377283a09e"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi.py",
+      "bytes": 9833,
+      "output_path": "recovered-public-archive/terminal-boundary/terminal_primary_belyi.py",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "eab0a34c3f4565999fbcd09389fb059e1f4d5bf63df366cd89541549761b8fc6"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "bytes": 11727,
+      "output_path": "recovered-public-archive/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "60309805f47062ed2d3a3c8a6a9f0ad04698db44267acfa657377b2cca417ae6"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_F2_degree125_seed.log",
+      "bytes": 285,
+      "output_path": "recovered-public-archive/terminal-boundary/verify_F2_degree125_seed.log",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "f47b1aaf9ecebda95c034031562ea2bb5d8546ea1f0e7deb5811b6bf422113d2"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py",
+      "bytes": 1500,
+      "output_path": "recovered-public-archive/terminal-boundary/verify_F2_degree125_seed.py",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "6f8ad5aea64d82ef73037260721fc5a5280058ee64cea599442a1bfda2e982a8"
+    },
+    {
+      "archive_path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_post125_terminal_examples.py",
+      "bytes": 8997,
+      "output_path": "recovered-public-archive/terminal-boundary/verify_post125_terminal_examples.py",
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "8f29587fea74d96f2674795bc215efce01ec7673549918ab6d12ef7f303356df"
+    }
+  ],
+  "high_order_endpoint_candidate_count": 0,
+  "high_order_endpoint_candidate_members": [],
+  "interpretation": "Presence in this manifest means present in the pinned public ZIP. Absence means only that the declared filename/content scan found no small UTF-8 text member; it is not evidence about private sources.",
+  "matched_member_count": 29,
+  "matched_members": [
+    {
+      "bytes": 36354,
+      "hits": [
+        {
+          "count": 3,
+          "first_line": 190,
+          "first_snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md\", \"sha256\": \"63fb30b6de06df86c9c87e968d4d72e58b9218134a9eaa8cbce978b78901eb5e\" }, { \"bytes\": 46956, \"path\": \"06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree30_coefficient_system.json\", \"sha256\": \"5e0a86",
+          "label": "f2"
+        },
+        {
+          "count": 1,
+          "first_line": 240,
+          "first_snippet": "\"path\": \"06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/next_complete_chain_queue.json\", \"sha256\": \"c161f309194a8f0e86d7b1343d5c7e192e76afb80ab5bb62f02048c28a20c50c\" }, { \"bytes\": 5881, \"path\": \"06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/post125_terminal_passports.json\", \"sha256\": \"b4a8d4c2aab624e52",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/FILE_MANIFEST.json",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "25df6bfa2e730c1ec03d5352b79c13efd3ac3c78a70d84557b841321eee7bfed"
+    },
+    {
+      "bytes": 2084,
+      "hits": [
+        {
+          "count": 1,
+          "first_line": 50,
+          "first_snippet": "reduction from an arbitrary below-125 Keller pair to this terminal model, and it does not prove the degree-125 theorem or the plane Jacobian conjecture.",
+          "label": "f2"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/THEOREM_AND_DEPENDENCIES.md",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "598e9f4c0e7399ce0772179891849c2987755a06294b060f65a7915e8b291189"
+    },
+    {
+      "bytes": 34229,
+      "hits": [
+        {
+          "count": 6,
+          "first_line": 48,
+          "first_snippet": "- X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1, 2, 2, 2, 3, 3, 3, 4) ALPHA = 2 BETA = 3 S_TOTAL = ALPHA + BETA KElement = K5 ParamPoly = dict[tuple[int, ...],",
+          "label": "parameter_names"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/degree-296-compact/scripts/export_residue_audit.py",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "418ddb2911a05b65218801d09a77762ba6bf63818a3f7cb29ee2c5545cbe2680"
+    },
+    {
+      "bytes": 4609,
+      "hits": [
+        {
+          "count": 6,
+          "first_line": 8,
+          "first_snippet": "rts and counts for the first five post-125 cases, and explicit maps through the max-128 case. - `F2_degree125_boundary_seed.md` \u2014 complete-chain seed for the first degree-125 family, corrected to its unique degree-six lattice quotient. ## Exact verifiers - `boundary_complex_index.py` \u2014 verifies the universal layer/adjoint integration-by-parts identity and the current virtual obstruction excess \\(\\epsilon",
+          "label": "f2"
+        },
+        {
+          "count": 2,
+          "first_line": 15,
+          "first_snippet": "_dessins.py` \u2014 computes the eleven **ambient** degree-30 classes and proves that exactly one, the \\(C_5\\)-symmetric class, is compatible with the gap-five polynomial lattice. - `verify_post125_terminal_examples.py` \u2014 verifies the first five lattice quotient passports and exact Hurwitz counts; reconstructs the unique degree-6, degree-10, and degree-9 maps and the two conjugate max-128 degree-9 maps. -",
+          "label": "c5"
+        },
+        {
+          "count": 2,
+          "first_line": 8,
+          "first_snippet": "ive post-125 cases, and explicit maps through the max-128 case. - `F2_degree125_boundary_seed.md` \u2014 complete-chain seed for the first degree-125 family, corrected to its unique degree-six lattice quotient. ## Exact verifiers - `boundary_complex_index.py` \u2014 verifies the universal layer/adjoint integration-by-parts identity and the current virtual obstruction excess \\(\\epsilon_r=r-1\\). - `universal_boundary_tra",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/BOUNDARY_PROGRAM_README.md",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "6c4ad09b00603a899661777939736b4e78d15c7449534b1abbdf2cf0d37c17e5"
+    },
+    {
+      "bytes": 5965,
+      "hits": [
+        {
+          "count": 2,
+          "first_line": 5,
+          "first_snippet": "undary seed for the first post-125 complete-chain case ## Source data The first family at maximum degree 125 in the complete-chain table is \\[ F_2:\\qquad A_0=(5,20),\\quad A_0'=(1,0),\\quad A_1=(7/5,2), \\qquad (m,n)=(3,5). \\] This note extracts the exact terminal-edge information that is available before a full Newton-support normalization. ## 1. Starting direction and fractional coordinate The edge dif",
+          "label": "f2"
+        },
+        {
+          "count": 2,
+          "first_line": 252,
+          "first_snippet": "}. } \\] The degree-30 ambient face is the cyclic pullback \\(\\phi_6(z^5)\\). Thus only the unique \\(C_5\\)-symmetric one among the eleven ambient dessins is compatible with the polynomial lattice. ## 6. Revised next exact computation The reduced terminal map is now completely fixed. The next calculation is not an eleven-case degree-30 search. It is one \\(C_5\\)-equivariant normal-neighborhood compu",
+          "label": "c5"
+        },
+        {
+          "count": 6,
+          "first_line": 1,
+          "first_snippet": "# Boundary seed for the first post-125 complete-chain case ## Source data The first family at maximum degree 125 in the complete-chain table is \\[ F_2:\\qquad A_0=(5,20),\\quad A_0'=(1,0),\\quad A_1=(7/5,2), \\qquad (m,n)=(3,5). \\] This note extracts the exact terminal-edge information that is available before a full Newton-support normalization. ##",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "63fb30b6de06df86c9c87e968d4d72e58b9218134a9eaa8cbce978b78901eb5e"
+    },
+    {
+      "bytes": 46956,
+      "hits": [],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_degree30_coefficient_system.json",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "5e0a86e664b690dbf288a04ed0fea4ed367ff2a249a77bcac50db67a567b5171"
+    },
+    {
+      "bytes": 1054,
+      "hits": [],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_dessin_count.json",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "7a7b7b35414789be24a054edd08b5e93cff78b7325bb3616ebfbe5d75768adad"
+    },
+    {
+      "bytes": 1202,
+      "hits": [
+        {
+          "count": 1,
+          "first_line": 41,
+          "first_snippet": "(alpha^2-16alpha+1)\" } } the 11 degree-30 classes are ambient; the lattice gap selects the unique C5 pullback all character, quotient-orbit, and symmetric-map checks passed",
+          "label": "c5"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_dessin_count.log",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "ce9c07da611264c33b4441d051b9eef85bc61b0ebbd328c24f7791a0cb352530"
+    },
+    {
+      "bytes": 1667,
+      "hits": [],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/F2_terminal_primary_passport.json",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "33cea48ebe382a9a10b3669f899bc86015ce0b05d64c96dd48b34fb21ebb2174"
+    },
+    {
+      "bytes": 13421,
+      "hits": [
+        {
+          "count": 2,
+          "first_line": 2,
+          "first_snippet": "#!/usr/bin/env python3 \"\"\"Exact ambient and lattice-compatible dessin counts for the F2 corner. The fractional uniformizing passport is (5^6), (3^10), (15,1^15), degree 30. The polynomial lattice gap is five, so a genuine complete-chain face must be a C5 pullback of the quotient passport (5,1), (3^2), (3,1^3), degree 6. The script: * implements Murnaghan--Nakayama from scr",
+          "label": "f2"
+        },
+        {
+          "count": 7,
+          "first_line": 7,
+          "first_snippet": "15,1^15), degree 30. The polynomial lattice gap is five, so a genuine complete-chain face must be a C5 pullback of the quotient passport (5,1), (3^2), (3,1^3), degree 6. The script: * implements Murnaghan--Nakayama from scratch; * reproduces the known degree-21 count 5 as a regression check; * computes the F2 weighted Hurwitz number 133/15; * enumerates the C5 and C3 quotient dessins ex",
+          "label": "c5"
+        },
+        {
+          "count": 1,
+          "first_line": 6,
+          "first_snippet": "ssport is (5^6), (3^10), (15,1^15), degree 30. The polynomial lattice gap is five, so a genuine complete-chain face must be a C5 pullback of the quotient passport (5,1), (3^2), (3,1^3), degree 6. The script: * implements Murnaghan--Nakayama from scratch; * reproduces the known degree-21 count 5 as a regression check; * computes the F2 weighted Hurwitz number 133/15; * enumerates the C5 and C3 q",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/count_F2_terminal_dessins.py",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "8fa863b83eba510783e2defd7a439d1d836ceb47890bd5bf94605609b9508161"
+    },
+    {
+      "bytes": 373,
+      "hits": [
+        {
+          "count": 1,
+          "first_line": 7,
+          "first_snippet": "70 b_15: weighted degree 15, total degree 15, terms 83 ambient equations and the lattice-compatible C5 scaling orbit verified",
+          "label": "c5"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/generate_F2_degree30_system.log",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "9bcb44556c8391f2caaac6610aa75a308c0f59c13a9a2ad0dc7c93ece8ccf1b5"
+    },
+    {
+      "bytes": 4235,
+      "hits": [
+        {
+          "count": 1,
+          "first_line": 2,
+          "first_snippet": "#!/usr/bin/env python3 \"\"\"Generate the ambient F2 uniformizing-cover coefficient scheme. Normalize p(0)=1 and q(0)=1/5. The ODE 5 p q - 3 z p q' + 5 z p' q = 1 recursively determines q from p. Polynomial termination at deg(q)=10 is exactly b_11=...=b_15=0. The output records five primitive integer polynomials in a1,...,a5, weighted homog",
+          "label": "f2"
+        },
+        {
+          "count": 5,
+          "first_line": 83,
+          "first_snippet": ", equations = build() assert sp.cancel(b[0] - sp.Rational(1, 5)) == 0 # Lattice-compatible C5-pullback locus: a1=...=a4=0. c5 = {a[0]: 0, a[1]: 0, a[2]: 0, a[3]: 0, a[4]: -1} assert all(poly.as_expr().subs({a[0]: 0, a[1]: 0, a[2]: 0, a[3]: 0}) == 0 for poly in equations) assert all(poly.as_expr().subs(c5) == 0 for poly in equations) q = sp.expand(sum(b[k].subs(c5) * z**k for",
+          "label": "c5"
+        },
+        {
+          "count": 1,
+          "first_line": 11,
+          "first_snippet": "ger polynomials in a1,...,a5, weighted homogeneous of weights 11,...,15 for wt(ai)=i. A polynomial complete-chain face has lattice gap five, hence lies on the sublocus a1=a2=a3=a4=0. This sublocus is one nonzero scaling orbit; a5=-1 is the displayed representative. \"\"\" from __future__ import annotations import argparse from functools import reduce from math import gcd import json from pathlib import Path im",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/generate_F2_degree30_system.py",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "f9079ad861c95af85d310455bbde938a21ba3b9c3b5c5b335e6869c26da0e2c6"
+    },
+    {
+      "bytes": 5728,
+      "hits": [
+        {
+          "count": 2,
+          "first_line": 4,
+          "first_snippet": "[ { \"priority\": 1, \"label\": \"F2\", \"chain\": [ \"(5,20)\", \"(7/5,2)\" ], \"starting_lower_endpoint\": \"(1,0)\", \"m_n\": [ 3, 5 ], \"maximum_degree\": 125, \"reason\": \"first candidate at the post-(8,28) boundary; one-step chain; different degree ratio\", \"terminal_k\": 1, \"terminal_b\":",
+          "label": "f2"
+        },
+        {
+          "count": 1,
+          "first_line": 155,
+          "first_snippet": "3, 4 ], \"maximum_degree\": 128, \"reason\": \"different degree ratio and a two-level complete chain\", \"terminal_k\": 1, \"terminal_b\": 3, \"terminal_coordinate_exponent\": \"25/32\", \"terminal_ode\": \"4*p*q - 3*z*p*q' + 4*z*p'*q = 1\", \"terminal_direction\": [ 32, -25 ], \"lattice_gap\": 4, \"ambient_terminal_degree\": 36, \"ambient_terminal_passport\": [ \"(",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/next_complete_chain_queue.json",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "c161f309194a8f0e86d7b1343d5c7e192e76afb80ab5bb62f02048c28a20c50c"
+    },
+    {
+      "bytes": 7379,
+      "hits": [
+        {
+          "count": 4,
+          "first_line": 147,
+          "first_snippet": "queue | Priority | Complete-chain data | \\((m,n)\\) | maximum degree | |---:|---|---:|---:| | 1 | \\(F_2: (5,20)\\to(7/5,2)\\) | \\((3,5)\\) | 125 | | 2 | \\((7,35)\\to(19/7,5)\\) | \\((2,3)\\) | 126 | | 3 | \\((12,30)\\to(16/3,10)\\to(11/6,3)\\) | \\((3,2)\\) | 126 | | 4 | \\(F_{24}: (8,24)\\to(14/4,6)\\to(19/8,3)\\) | \\((3,4)\\) | 128 | | 5 | \\((11,33)\\to(19/4,8)\\) | \\((2,3)\\) | 132 | The first meaningful universality",
+          "label": "f2"
+        },
+        {
+          "count": 2,
+          "first_line": 213,
+          "first_snippet": "30 passport has eleven dessin classes, but the gap-five lattice condition selects only its unique \\(C_5\\)-symmetric pullback. The actual reduced boundary map is the unique degree-six map \\[ \\bar\\tau(u)\\doteq \\frac{u(u-1)^5}{(u^2-\\frac53u+\\frac59)^3}. \\] Thus the next universality test is a single \\(C_5\\)-equivariant normal-neighborhood computation, not eleven unrelated degree-30 calculations. Exa",
+          "label": "c5"
+        },
+        {
+          "count": 5,
+          "first_line": 139,
+          "first_snippet": "ion. ## 4. Conditional full-proof theorem A sufficient global statement is: > For every terminal complete-chain model, either its Newton-bounded boundary Kuranishi zero scheme is empty, or every zero produces a standard Keller pair of strictly smaller complete-chain complexity. Together with completeness of the boundary Kuranishi functor, this would prove the plane Jacobian conjecture by minimal counterexam",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "d1ca56b6fa4ea8494513e1f60a0ef9b0f3fcf5bf029df8185ea833377283a09e"
+    },
+    {
+      "bytes": 22432,
+      "hits": [
+        {
+          "count": 5,
+          "first_line": 425,
+          "first_snippet": "}cXcc@{}} \\toprule Priority & Complete-chain data & $(m,n)$ & maximum degree\\\\ \\midrule 1 & Family $F_2$: $A_0=(5,20)$, $A_0'=(1,0)$, final corner $(7/5,2)$ & $(3,5)$ & $125$\\\\ 2 & $(7,35)\\to(19/7,5)$ & $(2,3)$ & $126$\\\\ 3 & $(12,30)\\to(16/3,10)\\to(11/6,3)$ & $(3,2)$ & $126$\\\\ 4 & Family $F_{24}$: $(8,24)\\to(14/4,6)\\to(19/8,3)$ & $(3,4)$ & $128$\\\\ 5 & $(11,33)\\to(19/4,8)$ & $(2,3)$ & $132$\\\\ \\bottomr",
+          "label": "f2"
+        },
+        {
+          "count": 3,
+          "first_line": 444,
+          "first_snippet": "t its reduced primary map is unique and has degree six. The remaining work is therefore the exact $C_5$-equivariant normal-window and Kuranishi calculation. \\section{Lattice-gap reduction of the terminal primary cover} The complete-chain gap removes a substantial amount of spurious Hurwitz data. Let a final type-I.b corner be in the orientation \\[ \\operatorname{st}(Q)=\\left(\\frac{k}{\\ell},0\\rig",
+          "label": "c5"
+        },
+        {
+          "count": 9,
+          "first_line": 40,
+          "first_snippet": "gap to a full planar proof is isolated as an integrable gluing--descent theorem for every terminal complete chain. \\end{abstract} \\begin{tcolorbox}[colback=yellow!5,colframe=orange!60!black,title=Status] The layer, adjoint, index, resonance, hypergeometric, derivative, passport, and filtered-descent statements below are proved in this note. The terminal gluing--descent statement in Section~\\ref{sec:condition",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.tex",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "7837b4f97723090dce84e140758262a5c3ff6e0548cd5aed1f37ae1b5001494d"
+    },
+    {
+      "bytes": 7793,
+      "hits": [
+        {
+          "count": 5,
+          "first_line": 106,
+          "first_snippet": "egree | quotient degree | quotient passport | connected classes | |---|---:|---:|---:|---|---:| | \\(F_2\\), max 125 | 5 | 30 | 6 | \\((5,1),(3^2),(3,1^3)\\) | 1 | | one-step max 126 | 3 | 30 | 10 | \\((3^3,1),(2^5),(8,1^2)\\) | 1 | | two-step max 126 | 2 | 18 | 9 | \\((2^4,1),(3^3),(7,1^2)\\) | 1 | | \\(F_{24}\\), max 128 | 4 | 36 | 9 | \\((4^2,1),(3^3),(5,1^4)\\) | 2 | | one-step max 132 | 3 | 48 | 16 | \\((3^5",
+          "label": "f2"
+        },
+        {
+          "count": 3,
+          "first_line": 8,
+          "first_snippet": "al type-I.b corner, the complete-chain lattice gap forces the face polynomials to descend through a cyclic quotient. The relevant Belyi cover has degree \\[ D=\\frac{mnb}{g},\\qquad g=\\operatorname{gap}(\\rho,\\ell), \\] not the ambient degree \\(mnb\\). Its passport is \\[ \\left(n^{(mb-1)/g},\\frac ng\\right),\\qquad \\left(m^{nb/g}\\right),\\qquad \\left(\\frac{(m+n)b-1}{g},1^{D-\\frac{(m+n)b-1}{g}}\\right). \\] For the fir",
+          "label": "c5"
+        },
+        {
+          "count": 6,
+          "first_line": 8,
+          "first_snippet": "laim of a proof of the plane Jacobian conjecture. ## Executive result The first post-125 terminal complete-chain problems are much smaller than their fractional uniformizing covers suggest. For a final type-I.b corner, the complete-chain lattice gap forces the face polynomials to descend through a cyclic quotient. The relevant Belyi cover has degree \\[ D=\\frac{mnb}{g},\\qquad g=\\operatorname{gap}(\\rho,\\ell)",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_boundary_next_steps_report.md",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "2d69c2d3bceb3823c8b6a3c04bb0f09fd5f46c55e887bef05fc58b2e978b8d37"
+    },
+    {
+      "bytes": 9833,
+      "hits": [
+        {
+          "count": 2,
+          "first_line": 33,
+          "first_snippet": "the final-corner arithmetic, divisibility, passports, Riemann--Hurwitz identities, and the explicit F2 quotient/lift. \"\"\" from __future__ import annotations import argparse from dataclasses import dataclass, asdict from fractions import Fraction from math import gcd import json from pathlib import Path from typing import Iterable import sympy as sp z, u = sp.symbols(\"z u\") def _partition_text(p",
+          "label": "f2"
+        },
+        {
+          "count": 1,
+          "first_line": 232,
+          "first_snippet": "it_f2_solution() -> dict[str, str]: \"\"\"Verify the unique lattice-compatible F2 quotient and its C5 pullback.\"\"\" pbar = 1 - u qbar = sp.Rational(1, 5) - sp.Rational(3, 5) * u + sp.Rational(9, 25) * u**2 qode = sp.expand( pbar * qbar - 3 * u * pbar * sp.diff(qbar, u) + 5 * u * sp.diff(pbar, u) * qbar ) assert qode == sp.Rational(1, 5) taubar = sp.can",
+          "label": "c5"
+        },
+        {
+          "count": 3,
+          "first_line": 2,
+          "first_snippet": "#!/usr/bin/env python3 \"\"\"Exact terminal-primary Belyi formulas for type-I.b complete-chain corners. There are two distinct covers. 1. On the fractional uniformizing coordinate z=x^{-sigma/rho}y, the final face equation is n*p*q - m*z*p*q' + n*z*p'*q = 1, with deg(p)=m*b-1 and deg(q)=n*b. It defines an ambient Belyi map tau(z)=z**n*p(z)**n/q(z)**m of degree m",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi.py",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "eab0a34c3f4565999fbcd09389fb059e1f4d5bf63df366cd89541549761b8fc6"
+    },
+    {
+      "bytes": 11727,
+      "hits": [
+        {
+          "count": 8,
+          "first_line": 182,
+          "first_snippet": "ee | Lattice quotient passport | Quotient degree | Classes | |---|---:|---:|---:|---|---:|---:| | \\(F_2\\), max degree 125 | \\((3,5,2;1)\\) | 5 | 30 | \\((5,1),(3^2),(3,1^3)\\) | 6 | 1 | | one-step max 126 | \\((2,3,5;2)\\) | 3 | 30 | \\((3^3,1),(2^5),(8,1^2)\\) | 10 | 1 | | two-step max 126 | \\((3,2,3;1)\\) | 2 | 18 | \\((2^4,1),(3^3),(7,1^2)\\) | 9 | 1 | | \\(F_{24}\\), max 128 | \\((3,4,3;1)\\) | 4 | 36 | \\((4^2",
+          "label": "f2"
+        },
+        {
+          "count": 4,
+          "first_line": 217,
+          "first_snippet": "connected dessin classes: eight asymmetric, two with deck group \\(C_3\\), and one with deck group \\(C_5\\). This is an exact count, but it is **not** the polynomial complete-chain count. The gap condition requires \\(p,q\\in K[z^5]\\), so only the unique \\(C_5\\)-symmetric class survives. On \\(u=z^5\\), \\[ \\bar p(u)=1-u, \\qquad \\bar q(u)=\\frac15-\\frac35u+\\frac9{25}u^2, \\tag{4.1} \\] and \\[ \\bar p\\bar q-",
+          "label": "c5"
+        },
+        {
+          "count": 7,
+          "first_line": 3,
+          "first_snippet": "eller pairs after replacing the fractional boundary parameter by the lattice quotient forced by the complete-chain gap. The result is a finite Hurwitz problem of substantially smaller degree than the ambient uniformizing cover. It does not prove that any listed boundary map extends to a Keller pair. ## 1. Final face equation on the fractional uniformizing line Let a final regular corner of type I.b have \\[ A",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "60309805f47062ed2d3a3c8a6a9f0ad04698db44267acfa657377b2cca417ae6"
+    },
+    {
+      "bytes": 7009,
+      "hits": [
+        {
+          "count": 5,
+          "first_line": 12,
+          "first_snippet": "on, degree, and passport, and compute the first post-125 Hurwitz problems. In particular, the first degree-125 family has a unique lattice-compatible degree-six boundary map; the eleven degree-thirty dessins belong to the ambient uniformizing passport, and only one is compatible with polynomial lattice support. \\end{abstract} \\section{Uniformizing terminal equation} Let \\[ A=\\left(\\frac a\\ell,b\\right),\\qua",
+          "label": "f2"
+        },
+        {
+          "count": 2,
+          "first_line": 117,
+          "first_snippet": "h the ambient passport has eleven connected classes, the gap condition selects exactly this unique $C_5$-symmetric pullback. For the one-step degree-126 case, put \\[ P=u^3+u^2+\\frac5{12}u+\\frac1{18}, \\] \\[ Q=u^5+\\frac32u^4+u^3+\\frac13u^2+\\frac5{96}u+\\frac1{576}. \\] Then \\[ u P^3-Q^2=-\\frac{36u^2+28u+9}{2985984}. \\] Taking $\\bar p=18P$, $\\bar q=192Q$ gives equation (2.1) with $g=3$. For the two-step",
+          "label": "c5"
+        },
+        {
+          "count": 2,
+          "first_line": 12,
+          "first_snippet": "Keller pair, the fractional boundary coordinate produces an ambient Belyi map of degree $mnb$. The complete-chain lattice gap forces this map to factor through $u=z^g$. We derive the reduced differential equation, degree, and passport, and compute the first post-125 Hurwitz problems. In particular, the first degree-125 family has a unique lattice-compatible degree-six boundary map; the eleven degree-thirty des",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.tex",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "06d28b73c21c7fe40ae2570efb7b1ba0783dfd5a2f11fca28b5bfed270496c63"
+    },
+    {
+      "bytes": 285,
+      "hits": [
+        {
+          "count": 2,
+          "first_line": 1,
+          "first_snippet": "F2 edge direction: (Fraction(5, 1), Fraction(-1, 1)) degrees in z: 60 100 common R degree: 20 integral common-root polynomial S(x y^5) degree: 4 chosen p-root multiplicity: 6 => double root of R/S child corner verified: (Fraction(7, 5), Fraction(2, 1)) all exact F2 seed checks passed",
+          "label": "f2"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_F2_degree125_seed.log",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "f47b1aaf9ecebda95c034031562ea2bb5d8546ea1f0e7deb5811b6bf422113d2"
+    },
+    {
+      "bytes": 1500,
+      "hits": [
+        {
+          "count": 4,
+          "first_line": 2,
+          "first_snippet": "#!/usr/bin/env python3 \"\"\"Exact arithmetic checks for the F2, maximum-degree-125 complete-chain seed.\"\"\" from fractions import Fraction from math import gcd A0 = (Fraction(5), Fraction(20)) A0p = (Fraction(1), Fraction(0)) A1 = (Fraction(7, 5), Fraction(2)) m, n = 3, 5 # Primitive normal to the edge A0-A0'. dx = A0[0] - A0p[0] dy = A0[1] - A0p[1] g = gcd(d",
+          "label": "f2"
+        },
+        {
+          "count": 1,
+          "first_line": 2,
+          "first_snippet": "#!/usr/bin/env python3 \"\"\"Exact arithmetic checks for the F2, maximum-degree-125 complete-chain seed.\"\"\" from fractions import Fraction from math import gcd A0 = (Fraction(5), Fraction(20)) A0p = (Fraction(1), Fraction(0)) A1 = (Fraction(7, 5), Fraction(2)) m, n = 3, 5 # Primitive normal to the edge A0-A0'. dx = A0[0] - A0p[0] dy = A0[1] - A0p[1] g = gcd(dx.numerator, dy.numerator) rho = dy",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "6f8ad5aea64d82ef73037260721fc5a5280058ee64cea599442a1bfda2e982a8"
+    },
+    {
+      "bytes": 8997,
+      "hits": [
+        {
+          "count": 2,
+          "first_line": 6,
+          "first_snippet": "the lattice-compatible quotient u=z^gap. It verifies exact quotient ODEs and explicit maps for the degree-125 F2 case and the first three post-125 cases. \"\"\" from __future__ import annotations import argparse from dataclasses import asdict from fractions import Fraction import json from pathlib import Path import sympy as sp from terminal_primary_belyi import terminal_reduction, verify_explicit_f2_solut",
+          "label": "f2"
+        },
+        {
+          "count": 2,
+          "first_line": 2,
+          "first_snippet": "#!/usr/bin/env python3 \"\"\"Exact lattice-gap terminal checks for the first post-125 complete chains. The script distinguishes the ambient fractional uniformizing cover from the lattice-compatible quotient u=z^gap. It verifies exact quotient ODEs and explicit maps for the degree-125 F2 case and the first three post-125 cases. \"\"\" from __future__ import annotations import argparse from dataclas",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-boundary/verify_post125_terminal_examples.py",
+      "selected_for_extraction": true,
+      "selection_reasons": [
+        "named_terminal_F2_source"
+      ],
+      "sha256": "8f29587fea74d96f2674795bc215efce01ec7673549918ab6d12ef7f303356df"
+    },
+    {
+      "bytes": 5826,
+      "hits": [
+        {
+          "count": 3,
+          "first_line": 139,
+          "first_snippet": "conditional and independently replayed. It uses only exact integer/rational arithmetic. The global degree-125 consequence additionally depends on the correctness and exhaustiveness of the earlier symbolic reductions from the two raw Newton-polygon coefficient ideals to the branch systems. The current bundle contains the resulting systems and several intermediate artifacts, but one upstream utility file use",
+          "label": "f2"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/computational-supplement/terminal-unit-ideal/EXACT_CERTIFICATE_REPORT.md",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "f9bd2c4e9ddad58196eb504c7fa8e5c2c4f7fc4f57c67ab3fef67b2ba7f626aa"
+    },
+    {
+      "bytes": 2084,
+      "hits": [
+        {
+          "count": 1,
+          "first_line": 50,
+          "first_snippet": "reduction from an arbitrary below-125 Keller pair to this terminal model, and it does not prove the degree-125 theorem or the plane Jacobian conjecture.",
+          "label": "f2"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/THEOREM_AND_DEPENDENCIES.md",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "598e9f4c0e7399ce0772179891849c2987755a06294b060f65a7915e8b291189"
+    },
+    {
+      "bytes": 3313,
+      "hits": [
+        {
+          "count": 1,
+          "first_line": 59,
+          "first_snippet": "with scripts, exact inputs, outputs, and hashes. ## Remaining blockers - Specialist audit of the complete-chain-to-lattice-gap application. - Independent audit that the imported support enumeration, layer model, normalizations, and saturations cover every terminal vertex-saturated case. - Independent implementation of the toric face audit and finite algebra in another computer-algebra system. - Audit of",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/STATUS.md",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "b82a736a9bd29372651abc4054649f2a9ac4d13a77d174dd0a4e534132f7413b"
+    },
+    {
+      "bytes": 7603,
+      "hits": [
+        {
+          "count": 1,
+          "first_line": 200,
+          "first_snippet": "at least \\(125\\), based on a computer-assisted elimination of the same two supports \\cite{ratto3423degree125}. We credit that public theorem announcement to \\texttt{ratto3423}. The public answer does not disclose enough method to compare its computation with the certificates above. Accordingly, our claim is not priority for the degree-\\(125\\) conclusion. The potential contribution of this project is th",
+          "label": "f2"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/appendices/degree-twenty-one-certificates.tex",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "bc4ca14ab87d6eba22bc392cba94f0b0bc339511fc4a5c6bf8d432b3438f6026"
+    },
+    {
+      "bytes": 35686,
+      "hits": [
+        {
+          "count": 5,
+          "first_line": 87,
+          "first_snippet": "ing supports below maximum coordinate degree \\(125\\), with a write-up in preparation \\cite{ratto3423degree125}. A separate exact-arithmetic campaign by Santib\u00e1\u00f1ez-Leal states strong certificate evidence at the same frontier while distinguishing that evidence from a complete all-coefficient proof \\cite{santibanezLeal2026planar}. We do not claim the degree-\\(125\\) bound. The purpose of this paper is to ex",
+          "label": "f2"
+        },
+        {
+          "count": 2,
+          "first_line": 468,
+          "first_snippet": "ssin classes: eight with trivial deck group, two with deck group \\(C_3\\), and one with deck group \\(C_5\\). The gap is five, so only the last class descends to the polynomial lattice. \\begin{proposition} \\label{prop:f2-map} Up to source and target normalization, the unique lattice-compatible quotient is obtained from \\[ \\bar p=1-u,\\qquad \\bar q=\\frac15-\\frac35u+\\frac9{25}u^2. \\] It satisfies \\[ \\bar",
+          "label": "c5"
+        },
+        {
+          "count": 12,
+          "first_line": 26,
+          "first_snippet": "assport, prove automatic connectedness, and compute the first five quotient Hurwitz problems in the complete-chain queue: they have \\(1,1,1,2,2\\) classes. The explicit quotient points through maximum degree \\(128\\) are infinitesimally rigid modulo source scaling. At every normal order the new coefficients enter through one universal first-order operator. We put it in logarithmic gauge normal form, identify th",
+          "label": "complete_chain"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/manuscript/06-plane-boundary/main.tex",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "4e6d7b628ee9932c8f041032606bb024a9d2c41495c36a63a931f95f356ae8f2"
+    },
+    {
+      "bytes": 34229,
+      "hits": [
+        {
+          "count": 6,
+          "first_line": 48,
+          "first_snippet": "- X**4 + 3 * X**3 + 3 * X**2 + 26 ZERO = K.zero ONE = K.one U = K.unit NVAR = 9 ZEXP = (0,) * NVAR PARAMETER_NAMES = [\"t1_0\", \"t1_1\", \"t2_0\", \"t2_1\", \"t2_2\", \"t3_0\", \"t3_1\", \"t3_2\", \"t4_0\"] FINAL_VARIABLES = [\"x\", \"a\", \"b\", \"c\", \"d\"] FINAL_PARAMETER_INDICES = (0, 3, 6, 7, 8) PARAMETER_WEIGHTS = (1, 1, 2, 2, 2, 3, 3, 3, 4) ALPHA = 2 BETA = 3 S_TOTAL = ALPHA + BETA KElement = K5 ParamPoly = dict[tuple[int, ...],",
+          "label": "parameter_names"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/degree-296-large/scripts/export_residue_audit.py",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "418ddb2911a05b65218801d09a77762ba6bf63818a3f7cb29ee2c5545cbe2680"
+    },
+    {
+      "bytes": 5826,
+      "hits": [
+        {
+          "count": 3,
+          "first_line": 139,
+          "first_snippet": "conditional and independently replayed. It uses only exact integer/rational arithmetic. The global degree-125 consequence additionally depends on the correctness and exhaustiveness of the earlier symbolic reductions from the two raw Newton-polygon coefficient ideals to the branch systems. The current bundle contains the resulting systems and several intermediate artifacts, but one upstream utility file use",
+          "label": "f2"
+        }
+      ],
+      "path": "06-plane-boundary-computational-supplement/terminal-unit-ideal-large/EXACT_CERTIFICATE_REPORT.md",
+      "selected_for_extraction": false,
+      "selection_reasons": [],
+      "sha256": "f9bd2c4e9ddad58196eb504c7fa8e5c2c4f7fc4f57c67ab3fef67b2ba7f626aa"
+    }
+  ],
+  "scanned_text_member_count": 106,
+  "schema_version": 1
+}

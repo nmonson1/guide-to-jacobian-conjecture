@@ -1,0 +1,224 @@
+[
+  {
+    "priority": 1,
+    "label": "F2",
+    "chain": [
+      "(5,20)",
+      "(7/5,2)"
+    ],
+    "starting_lower_endpoint": "(1,0)",
+    "m_n": [
+      3,
+      5
+    ],
+    "maximum_degree": 125,
+    "reason": "first candidate at the post-(8,28) boundary; one-step chain; different degree ratio",
+    "terminal_k": 1,
+    "terminal_b": 2,
+    "terminal_coordinate_exponent": "17/25",
+    "terminal_ode": "5*p*q - 3*z*p*q' + 5*z*p'*q = 1",
+    "terminal_direction": [
+      25,
+      -17
+    ],
+    "lattice_gap": 5,
+    "ambient_terminal_degree": 30,
+    "ambient_terminal_passport": [
+      "(5^6)",
+      "(3^10)",
+      "(15,1^15)"
+    ],
+    "lattice_quotient_degree": 6,
+    "lattice_quotient_passport": [
+      "(5,1)",
+      "(3^2)",
+      "(3,1^3)"
+    ],
+    "lattice_quotient_classes": 1,
+    "deck_group": "trivial (unique fixed sheet in the first branch partition)",
+    "quotient_ode": "1*pbar*qbar - 3*u*pbar*qbar' + 5*u*pbar'*qbar = 1/5",
+    "explicit_quotient_map_available": true,
+    "ambient_connected_classes": 11,
+    "lattice_compatible_ambient_classes": 1,
+    "fixed_constant_linearization": {
+      "status": "verified surjective",
+      "kernel": "source scaling span{(u pbar'(u), u qbar'(u))}",
+      "artifact": "terminal_face_rigidity.json"
+    }
+  },
+  {
+    "priority": 2,
+    "label": "length-1 case",
+    "chain": [
+      "(7,35)",
+      "(19/7,5)"
+    ],
+    "m_n": [
+      2,
+      3
+    ],
+    "maximum_degree": 126,
+    "reason": "smallest next one-step chain after F2",
+    "terminal_k": 2,
+    "terminal_b": 5,
+    "terminal_coordinate_exponent": "11/21",
+    "terminal_ode": "3*p*q - 2*z*p*q' + 3*z*p'*q = 1",
+    "terminal_direction": [
+      21,
+      -11
+    ],
+    "lattice_gap": 3,
+    "ambient_terminal_degree": 30,
+    "ambient_terminal_passport": [
+      "(3^10)",
+      "(2^15)",
+      "(24,1^6)"
+    ],
+    "lattice_quotient_degree": 10,
+    "lattice_quotient_passport": [
+      "(3^3,1)",
+      "(2^5)",
+      "(8,1^2)"
+    ],
+    "lattice_quotient_classes": 1,
+    "deck_group": "trivial (unique fixed sheet in the first branch partition)",
+    "quotient_ode": "1*pbar*qbar - 2*u*pbar*qbar' + 3*u*pbar'*qbar = 1/3",
+    "explicit_quotient_map_available": true,
+    "fixed_constant_linearization": {
+      "status": "verified surjective",
+      "kernel": "source scaling span{(u pbar'(u), u qbar'(u))}",
+      "artifact": "terminal_face_rigidity.json"
+    }
+  },
+  {
+    "priority": 3,
+    "label": "length-2 case",
+    "chain": [
+      "(12,30)",
+      "(16/3,10)",
+      "(11/6,3)"
+    ],
+    "m_n": [
+      3,
+      2
+    ],
+    "maximum_degree": 126,
+    "reason": "first same-bound example testing compatibility across more than one corner",
+    "terminal_k": 1,
+    "terminal_b": 3,
+    "terminal_coordinate_exponent": "7/12",
+    "terminal_ode": "2*p*q - 3*z*p*q' + 2*z*p'*q = 1",
+    "terminal_direction": [
+      12,
+      -7
+    ],
+    "lattice_gap": 2,
+    "ambient_terminal_degree": 18,
+    "ambient_terminal_passport": [
+      "(2^9)",
+      "(3^6)",
+      "(14,1^4)"
+    ],
+    "lattice_quotient_degree": 9,
+    "lattice_quotient_passport": [
+      "(2^4,1)",
+      "(3^3)",
+      "(7,1^2)"
+    ],
+    "lattice_quotient_classes": 1,
+    "deck_group": "trivial (unique fixed sheet in the first branch partition)",
+    "quotient_ode": "1*pbar*qbar - 3*u*pbar*qbar' + 2*u*pbar'*qbar = 1/2",
+    "explicit_quotient_map_available": true,
+    "fixed_constant_linearization": {
+      "status": "verified surjective",
+      "kernel": "source scaling span{(u pbar'(u), u qbar'(u))}",
+      "artifact": "terminal_face_rigidity.json"
+    }
+  },
+  {
+    "priority": 4,
+    "label": "F24",
+    "chain": [
+      "(8,24)",
+      "(14/4,6)",
+      "(19/8,3)"
+    ],
+    "intermediate_endpoints": [
+      "(2,0)",
+      "(5/4,0)"
+    ],
+    "m_n": [
+      3,
+      4
+    ],
+    "maximum_degree": 128,
+    "reason": "different degree ratio and a two-level complete chain",
+    "terminal_k": 1,
+    "terminal_b": 3,
+    "terminal_coordinate_exponent": "25/32",
+    "terminal_ode": "4*p*q - 3*z*p*q' + 4*z*p'*q = 1",
+    "terminal_direction": [
+      32,
+      -25
+    ],
+    "lattice_gap": 4,
+    "ambient_terminal_degree": 36,
+    "ambient_terminal_passport": [
+      "(4^9)",
+      "(3^12)",
+      "(20,1^16)"
+    ],
+    "lattice_quotient_degree": 9,
+    "lattice_quotient_passport": [
+      "(4^2,1)",
+      "(3^3)",
+      "(5,1^4)"
+    ],
+    "lattice_quotient_classes": 2,
+    "deck_group": "trivial (unique fixed sheet in the first branch partition)",
+    "quotient_ode": "1*pbar*qbar - 3*u*pbar*qbar' + 4*u*pbar'*qbar = 1/4",
+    "explicit_quotient_map_available": true,
+    "fixed_constant_linearization": {
+      "status": "verified surjective",
+      "kernel": "source scaling span{(u pbar'(u), u qbar'(u))}",
+      "artifact": "terminal_face_rigidity.json"
+    }
+  },
+  {
+    "priority": 5,
+    "label": "length-1 case",
+    "chain": [
+      "(11,33)",
+      "(19/4,8)"
+    ],
+    "m_n": [
+      2,
+      3
+    ],
+    "maximum_degree": 132,
+    "reason": "tests scaling of residue windows at a larger terminal corner",
+    "terminal_b": 8,
+    "terminal_direction": [
+      12,
+      -7
+    ],
+    "lattice_gap": 3,
+    "ambient_terminal_degree": 48,
+    "ambient_terminal_passport": [
+      "(3^16)",
+      "(2^24)",
+      "(39,1^9)"
+    ],
+    "lattice_quotient_degree": 16,
+    "lattice_quotient_passport": [
+      "(3^5,1)",
+      "(2^8)",
+      "(13,1^3)"
+    ],
+    "lattice_quotient_classes": 2,
+    "deck_group": "trivial (unique fixed sheet in the first branch partition)",
+    "terminal_ode": "3*p*q - 2*z*p*q' + 3*z*p'*q = 1",
+    "quotient_ode": "1*pbar*qbar - 2*u*pbar*qbar' + 3*u*pbar'*qbar = 1/3",
+    "explicit_quotient_map_available": false
+  }
+]
