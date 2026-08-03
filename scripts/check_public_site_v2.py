@@ -548,6 +548,18 @@ def main() -> int:
                     "Status: incomplete proof strategy",
                     "hc4_square_correction_no_go.py",
                 )
+            elif sequence == "4":
+                source_packet_markers += (
+                    "lane4-f4-contract-20260803-v1/F4_INPUT_CONTRACT.md",
+                    "lane4-f4-contract-20260803-v1/f4-contract.schema.json",
+                    "lane4-f4-contract-20260803-v1/verify_contract_and_routing.py",
+                )
+            elif sequence == "7":
+                source_packet_markers += (
+                    "lane7-projective-kernel-20260803-v1/generate_macaulay2_input.py",
+                    "lane7-projective-kernel-20260803-v1/generate_kernel_chart_singular.py",
+                    "lane7-projective-kernel-20260803-v1/test_plucker_transport.py",
+                )
         for marker in (*markers_by_id.get(input_id, ()), *source_packet_markers):
             if marker not in text:
                 failures.append(f"{item['source']}: missing {marker!r}")
@@ -629,8 +641,22 @@ def main() -> int:
                         "rmu-9075e072",
                         "sharp stable-equivalence complexity",
                     ),
-                    4: ("rmu-2d4e0011", "not a missing quartic case-tree edge"),
-                    7: ("rmu-5c7e0011", "eta_ij", "pluecker-open"),
+                    4: (
+                        "rmu-2d4e0011",
+                        "rmu-2d4e0012",
+                        "rmu-2d4e0013",
+                        "rmu-2d4e0014",
+                        "q4-f4",
+                        "not a missing quartic case-tree edge",
+                    ),
+                    7: (
+                        "rmu-5c7e0011",
+                        "rmu-5c7e0012",
+                        "five affine charts",
+                        "characteristic-zero dimensions",
+                        r"\eta_{ij}",
+                        "pluecker-open",
+                    ),
                     8: ("rmu-6d8e0012", "full-support root"),
                     9: ("rmu-6d8e0012", "begins at layer seven, not four"),
                 }

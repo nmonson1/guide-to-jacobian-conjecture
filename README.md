@@ -25,8 +25,8 @@ The active local release candidate contains:
 - 368 stable-tagged atomic claim pages, all included in site search but kept
   out of the main navigation;
 - 534 many-to-many claim memberships across six research programs;
-- 570 retained working-mathematics units, 594 supplied support objects, and
-  71 typed relations across six overlapping program views;
+- 572 retained working-mathematics units, 572 publicly exposed support
+  objects, and 78 typed relations across six overlapping program views;
 - six version-13 reader PDFs and one companion Results and Research Register;
 - ten primary model entrypoints under `/research/handoffs/`: one portfolio
   hub plus nine first-class research lanes. Six longer program dossiers remain
@@ -63,6 +63,13 @@ The active local release candidate contains:
   global theorems. Lane 1 retains its complete defect/resolvent proof access,
   while Lane 6 preserves the compiler-owned first-class selected-plane
   argument;
+- a 3 August harvest of the useful parts of PRs 7 and 8. Lane 4 now uses the
+  repaired normalization-first leading-image factorization and expanded
+  four-loci proof, and exposes a fail-closed contract for reconstructing the
+  missing Q4-F4 system. Lane 7 now exposes exact generators for all five
+  projective-kernel charts over characteristic zero and finite fields. Those
+  generators establish the inputs to the computation, not chart dimensions,
+  corank exclusion, grade, or component structure;
 - 76 collections with complete manuscript coverage, nine with partial
   coverage, and 19 for which manuscript coverage is not applicable;
 - 21 context-only private records, not exported.
@@ -90,7 +97,7 @@ manuscript links are rendered from that same pointer.
 
 The two mathematical components have different jobs. The 368 stable-tag
 claim pages preserve the legacy publication pipeline and durable public URLs;
-the 570-unit retained graph is the current progress-facing corpus for research
+the 572-unit retained graph is the current progress-facing corpus for research
 models. A retained `corrects` relation is rendered programmatically on the
 affected legacy claim and collection pages, so historical wording cannot
 silently outrank its current working replacement. Advancing either component
@@ -108,15 +115,17 @@ surfaces are:
   and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-handoffs-v20-20260802c/`: hash-pinned sanitized source for
+- `data/model-handoffs-v21-20260803b/`: hash-pinned sanitized source for
   the hub, nine lane entrypoints, six program dossiers, nine exact research
   source packets, and the focused Lane 7 and Lane 8 executable inputs. The
   Lane 8 packet also exposes the incomplete planar-descent strategy and its
   six exact bounded no-go checkers. The v20c briefs state the Lane 3 stable
   result as proved, retain the Lane 7 marking open, and separate the exact
-  Lane 8 stored-system certificate from its missing chart bridge; logical
-  manuscript slots resolve against the selected manuscript manifest, so a
-  stale PDF version fails the build;
+  Lane 8 stored-system certificate from its missing chart bridge. It also
+  incorporates the Lane 4 proof repairs and Q4-F4 input contract, and the
+  Lane 7 five-chart projective-kernel generators with their exact evidence
+  boundary. Logical manuscript slots resolve against the selected manuscript
+  manifest, so a stale PDF version fails the build;
 - `scripts/check_deployed_site.py`: production verification that GitHub Pages
   serves the exact selected handoff release after deployment;
 - `scripts/generate_compatibility_stubs_v1.py`: historical noindex

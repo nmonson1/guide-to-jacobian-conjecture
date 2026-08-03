@@ -13,7 +13,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-V6_HANDOFFS = {"6b", "6c", "6d"}
+V6_HANDOFFS = {"6b", "6c", "6d", "6e", "6f"}
 FORBIDDEN = ("/fss/", "/home/", "chatgpt.com/share", "INTAKE-", "sandbox:/")
 UNIT_RE = re.compile(r"`(?P<unit>(?:RMU|JCG)-[A-Z0-9]+)`")
 MANUSCRIPT_RE = re.compile(r"`manuscripts/(?P<path>[^`]+\.(?:tex|py|bib))`")
@@ -130,6 +130,10 @@ RESEARCH_PACKET_FILES = {
         "lane3-formal-effectivity/verify_effective_unframed_bound.py",
     ),
     "quartic-endgame": (
+        "lane4-f4-contract-20260803-v1/README.md",
+        "lane4-f4-contract-20260803-v1/F4_INPUT_CONTRACT.md",
+        "lane4-f4-contract-20260803-v1/f4-contract.schema.json",
+        "lane4-f4-contract-20260803-v1/verify_contract_and_routing.py",
         "lane4-quartic-endgame-20260802-v1/README.md",
         "lane4-quartic-endgame-20260802-v1/PROOF_CODE_CROSSWALK.md",
         "lane4-quartic-endgame-20260802-v1/case-tree/lane4-global-case-tree.md",
@@ -167,6 +171,11 @@ RESEARCH_PACKET_FILES = {
         "lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/verify_tame_quadratic_jet.py",
     ),
     "five-dimensional-collision-geometry": (
+        "lane7-projective-kernel-20260803-v1/README.md",
+        "lane7-projective-kernel-20260803-v1/generate_macaulay2_input.py",
+        "lane7-projective-kernel-20260803-v1/generate_kernel_chart_input.py",
+        "lane7-projective-kernel-20260803-v1/generate_kernel_chart_singular.py",
+        "lane7-projective-kernel-20260803-v1/test_plucker_transport.py",
         "lane7-split-incidence-20260802-v1/lane7-split-incidence-theorem.md",
         "lane7-split-incidence-20260802-v1/reconstruct_matrices.py",
         "lane7-split-incidence-20260802-v1/verify_split_incidence_theorem.py",
@@ -240,8 +249,8 @@ proved stable-equivalence complexity of the quadratic-modulus family.
 <a id="lane-4-quartic-endgame"></a>
 ### Lane 4 — [The quartic endgame](quartic-endgame.md)
 
-Audit the supplied proof/code case tree and expose the first genuinely
-uncovered quartic branch; the core terminal packets already replay.
+Audit the remaining case-tree interfaces after the repaired leading-image and
+four-loci proofs, or reconstruct the complete fail-closed Q4-F4 input.
 
 <a id="lane-5-degree-budgets"></a>
 ### Lane 5 — [Intrinsic degree and valuative budgets](intrinsic-degree-valuative-budgets.md)
@@ -258,8 +267,8 @@ missing target and stable-presentation quotient.
 <a id="lane-7-collision-geometry"></a>
 ### Lane 7 — [Five-dimensional collision geometry](five-dimensional-collision-geometry.md)
 
-Prove corank-two exclusion or grade six for the exact residual `10 x 5`
-matrix, retaining the intrinsic Pluecker open for genuine markings.
+Run the five exact characteristic-zero projective-kernel charts, then address
+corank, grade, and the intrinsic Pluecker open for genuine markings.
 
 <a id="lane-8-plane-newton-queue"></a>
 ### Lane 8 — [Plane Newton queue and terminal certificates](plane-newton-queue-terminal-certificates.md)
@@ -281,10 +290,10 @@ HUB_TASKS = """| Lane | Current exact on-ramp |
 | 1 | `P1-T1`: compute the actual collision saturation |
 | 2 | `P4-L2A0`: projective completion of the quintic outer graph |
 | 3 | `P3-L3A0` or `P3-L3D`: direct reconstruction or sharp stable complexity |
-| 4 | `P2-L4A`: audit the supplied global leaf accounting |
+| 4 | `P2-L4A`: audit remaining edges; `P2-L4B`: reconstruct Q4-F4 |
 | 5 | `L5-T1A`: abstract frame-covariance lemma |
 | 6 | `P5-L6A0`: upgrade the 60-direction obstruction |
-| 7 | `P5-L7A`: corank-two exclusion with the genuine-marking open |
+| 7 | `P5-L7A`: exact five-chart characteristic-zero dimension run |
 | 8 | `P6-L8A`: route the full-support root and expose its first gap |
 | 9 | `P6-L9A0`: realize the finite ambient wall groupoid |"""
 
