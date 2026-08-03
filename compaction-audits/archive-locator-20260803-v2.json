@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "archive_id": "public-untracked-generated-20260803-v2",
+  "created_on": "2026-08-03",
+  "source_checkout": "/fss/monson/sites/guide-to-jacobian-conjecture",
+  "source_baseline_commit": "f6a353f27c5c82092a52f95a1af6248a65384967",
+  "source_inventory": "compaction-audits/public-baseline-f6a353f-20260803-v2b.json",
+  "source_inventory_sha256": "7122be80c673c6d3563fe8fb46cc9043853eee3acf8a9ffb101edd2a1d057e6c",
+  "path": "/fss/monson/active/jacobian/runs/repository-compaction-20260803-v2/public-untracked-generated-v2c",
+  "manifest": "/fss/monson/active/jacobian/runs/repository-compaction-20260803-v2/public-untracked-generated-v2c/manifest.json",
+  "manifest_sha256": "13d9754103e126931145cc96480624c469c1898cdf9c589083286016b59a4319",
+  "root_count": 35,
+  "regular_file_count": 20961,
+  "symlink_count": 45,
+  "apparent_size_bytes": 151253577,
+  "content_tree_sha256": "9ab0b83c72a1252098acdfa833363b0fca8fa4e84c62d0b64a8faed41f53e4fd",
+  "invalid_partial_outputs": [
+    "/fss/monson/active/jacobian/runs/repository-compaction-20260803-v2/public-untracked-generated",
+    "/fss/monson/active/jacobian/runs/repository-compaction-20260803-v2/public-untracked-generated-v2b"
+  ]
+}
