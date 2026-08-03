@@ -59,6 +59,41 @@ def as_strings(poly: Mapping[int, Fraction]) -> dict[str, str]:
     return {str(degree): str(value) for degree, value in sorted(poly.items())}
 
 
+def linearized_face(
+    alpha: Mapping[int, Fraction],
+    beta: Mapping[int, Fraction],
+    pbar: Mapping[int, Fraction],
+    qbar: Mapping[int, Fraction],
+    u: Mapping[int, Fraction],
+) -> Polynomial:
+    """Differential of p*q-3*u*p*q'+5*u*p'*q at (pbar,qbar)."""
+
+    return add(
+        multiply(alpha, qbar),
+        multiply(pbar, beta),
+        scale(
+            multiply(
+                u,
+                add(
+                    multiply(alpha, derivative(qbar)),
+                    multiply(pbar, derivative(beta)),
+                ),
+            ),
+            -3,
+        ),
+        scale(
+            multiply(
+                u,
+                add(
+                    multiply(derivative(alpha), qbar),
+                    multiply(derivative(pbar), beta),
+                ),
+            ),
+            5,
+        ),
+    )
+
+
 def build_report() -> dict[str, object]:
     u = {1: Fraction(1)}
     pbar = {0: Fraction(1), 1: Fraction(-1)}
@@ -92,6 +127,37 @@ def build_report() -> dict[str, object]:
     )
     assert cross_derivative == expected_cross_derivative
 
+    # With constants fixed, the true terminal-face tangent block has domain
+    # (delta p = a_1*u, delta q = b_1*u+b_2*u^2) and target coefficients
+    # (u,u^2).  This is real F2 data, but it is not a normal-neighborhood
+    # endpoint block at order 510, 520, or 530.
+    variation_columns = [
+        linearized_face({1: Fraction(1)}, {}, pbar, qbar, u),
+        linearized_face({}, {1: Fraction(1)}, pbar, qbar, u),
+        linearized_face({}, {2: Fraction(1)}, pbar, qbar, u),
+    ]
+    linearization_matrix = [
+        [column.get(degree, Fraction(0)) for column in variation_columns]
+        for degree in (1, 2)
+    ]
+    assert linearization_matrix == [
+        [Fraction(6, 5), Fraction(-2), Fraction(0)],
+        [Fraction(-9, 5), Fraction(-3), Fraction(-5)],
+    ]
+    integer_matrix = [
+        [5 * entry for entry in row] for row in linearization_matrix
+    ]
+    assert integer_matrix == [
+        [Fraction(6), Fraction(-10), Fraction(0)],
+        [Fraction(-9), Fraction(-15), Fraction(-25)],
+    ]
+    kernel_generator = [Fraction(-1), Fraction(-3, 5), Fraction(18, 25)]
+    assert all(
+        sum((entry * coordinate for entry, coordinate in zip(row, kernel_generator)), Fraction(0)) == 0
+        for row in linearization_matrix
+    )
+    assert linearization_matrix[0][0] * linearization_matrix[1][2] != 0
+
     # If p=a+b*u and q=c+d*u+e*u^2, coefficient comparison in the
     # quotient ODE gives the three equations below.  The displayed solution
     # is the normalization a=1,b=-1.
@@ -113,6 +179,24 @@ def build_report() -> dict[str, object]:
             "qbar": "(9*u^2-15*u+5)/25",
             "ode_value": "1/5",
         },
+        "terminal_face_linearization": {
+            "domain_support_block": ["delta_p:u", "delta_q:u", "delta_q:u^2"],
+            "target_support_block": ["u", "u^2"],
+            "matrix": [
+                [str(entry) for entry in row] for row in linearization_matrix
+            ],
+            "integer_scaled_matrix_factor": 5,
+            "integer_scaled_matrix": [
+                [int(entry) for entry in row] for row in integer_matrix
+            ],
+            "rank": 2,
+            "kernel_dimension": 1,
+            "kernel_generator": [str(entry) for entry in kernel_generator],
+            "kernel_interpretation": (
+                "source scaling u->(1+epsilon)u, namely "
+                "(delta_p,delta_q)=(u*pbar',u*qbar')"
+            ),
+        },
         "belyi_map": {
             "tau": "729*u*(u-1)^5/(9*u^2-15*u+5)^3",
             "degree": 6,
@@ -126,9 +210,10 @@ def build_report() -> dict[str, object]:
             "denominator_minus_numerator": as_strings(third_fiber),
         },
         "scope": (
-            "This reconstructs the real terminal quotient face and its degree-six "
-            "Belyi map.  It is not a reconstruction of the missing order-520 "
-            "endpoint matrices or attachment recurrence."
+            "This reconstructs the real terminal quotient face, its exact "
+            "three-to-two tangent matrix, and its degree-six Belyi map.  It is "
+            "not a reconstruction of the missing order-520 endpoint matrices "
+            "or attachment recurrence."
         ),
         "all_exact_checks_passed": True,
     }
