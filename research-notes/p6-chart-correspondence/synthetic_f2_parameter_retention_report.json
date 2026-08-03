@@ -1,0 +1,185 @@
+{
+  "all_full_parameter_systems_consistent": true,
+  "contract_name": "Synthetic F2 fresh-parameter retention diagnostic",
+  "cyclic_modulus": 5,
+  "instantiated": true,
+  "interpretation": "Only the full-parameter system defines an intrinsic finite-order test. The fresh-parameter-zero calculation is reported solely as a slice diagnostic.",
+  "orders": [
+    {
+      "all_full_parameter_blocks_consistent": true,
+      "any_slice_dependent_apparent_obstruction": true,
+      "block_count": 1,
+      "blocks": [
+        {
+          "character": 0,
+          "equations": [
+            "apparent-condition-510"
+          ],
+          "fixed_fresh_parameter_zero_slice": {
+            "augmented_rank": 1,
+            "column_count": 1,
+            "consistent": false,
+            "left_nullity": 1,
+            "nonzero_obstruction_certificates": [
+              {
+                "left_null_vector": [
+                  "1"
+                ],
+                "pairing_with_rhs": "1"
+              }
+            ],
+            "rank": 0,
+            "row_count": 1,
+            "solution_dimension": null
+          },
+          "fresh_parameter_names": [
+            "p510"
+          ],
+          "full_parameter_system": {
+            "augmented_rank": 1,
+            "column_count": 2,
+            "consistent": true,
+            "left_nullity": 0,
+            "nonzero_obstruction_certificates": [],
+            "rank": 1,
+            "row_count": 1,
+            "solution_dimension": 1
+          },
+          "name": "synthetic-character-zero",
+          "slice_dependent_apparent_obstruction": true,
+          "variables": [
+            {
+              "character": 0,
+              "kind": "left_correction",
+              "name": "x510"
+            },
+            {
+              "character": 0,
+              "kind": "fresh_parameter",
+              "name": "p510"
+            }
+          ]
+        }
+      ],
+      "order": 510
+    },
+    {
+      "all_full_parameter_blocks_consistent": true,
+      "any_slice_dependent_apparent_obstruction": true,
+      "block_count": 1,
+      "blocks": [
+        {
+          "character": 4,
+          "equations": [
+            "apparent-condition-520"
+          ],
+          "fixed_fresh_parameter_zero_slice": {
+            "augmented_rank": 1,
+            "column_count": 1,
+            "consistent": false,
+            "left_nullity": 1,
+            "nonzero_obstruction_certificates": [
+              {
+                "left_null_vector": [
+                  "1"
+                ],
+                "pairing_with_rhs": "5"
+              }
+            ],
+            "rank": 0,
+            "row_count": 1,
+            "solution_dimension": null
+          },
+          "fresh_parameter_names": [
+            "p520"
+          ],
+          "full_parameter_system": {
+            "augmented_rank": 1,
+            "column_count": 2,
+            "consistent": true,
+            "left_nullity": 0,
+            "nonzero_obstruction_certificates": [],
+            "rank": 1,
+            "row_count": 1,
+            "solution_dimension": 1
+          },
+          "name": "synthetic-character-four",
+          "slice_dependent_apparent_obstruction": true,
+          "variables": [
+            {
+              "character": 4,
+              "kind": "right_correction",
+              "name": "x520"
+            },
+            {
+              "character": 4,
+              "kind": "fresh_parameter",
+              "name": "p520"
+            }
+          ]
+        }
+      ],
+      "order": 520
+    },
+    {
+      "all_full_parameter_blocks_consistent": true,
+      "any_slice_dependent_apparent_obstruction": true,
+      "block_count": 1,
+      "blocks": [
+        {
+          "character": 3,
+          "equations": [
+            "zero-parameter-order-530-value"
+          ],
+          "fixed_fresh_parameter_zero_slice": {
+            "augmented_rank": 1,
+            "column_count": 1,
+            "consistent": false,
+            "left_nullity": 1,
+            "nonzero_obstruction_certificates": [
+              {
+                "left_null_vector": [
+                  "1"
+                ],
+                "pairing_with_rhs": "7"
+              }
+            ],
+            "rank": 0,
+            "row_count": 1,
+            "solution_dimension": null
+          },
+          "fresh_parameter_names": [
+            "p530"
+          ],
+          "full_parameter_system": {
+            "augmented_rank": 1,
+            "column_count": 2,
+            "consistent": true,
+            "left_nullity": 0,
+            "nonzero_obstruction_certificates": [],
+            "rank": 1,
+            "row_count": 1,
+            "solution_dimension": 1
+          },
+          "name": "synthetic-character-three",
+          "slice_dependent_apparent_obstruction": true,
+          "variables": [
+            {
+              "character": 3,
+              "kind": "overlap_correction",
+              "name": "x530"
+            },
+            {
+              "character": 3,
+              "kind": "fresh_parameter",
+              "name": "p530"
+            }
+          ]
+        }
+      ],
+      "order": 530
+    }
+  ],
+  "provenance": "Synthetic regression fixture only; not an F2 endpoint matrix packet.",
+  "schema_version": 1
+}
