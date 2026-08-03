@@ -1,10 +1,10 @@
 site_name: "The Jacobian Conjecture: A Living Guide"
 site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
 site_description: A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened.
-docs_dir: docs-v52-converged-research-state-20260803d
+docs_dir: docs-v54-model-ready-research-20260803h
 repo_name: nmonson1/guide-to-jacobian-conjecture
 repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
-edit_uri: edit/main/docs-v52-converged-research-state-20260803d/
+edit_uri: edit/main/docs-v54-model-ready-research-20260803h/
 
 theme:
   name: material

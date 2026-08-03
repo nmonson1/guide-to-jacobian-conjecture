@@ -1,0 +1,4465 @@
+{
+  "counts": {
+    "exact_current": 350,
+    "replacement": 15,
+    "routes": 368,
+    "valid_weaker": 3
+  },
+  "map_id": "LEGACY-COMPAT-7459041f42ce",
+  "routes": [
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0106262F",
+      "route": "claims/JCG-0106262F/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0106262F"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-015F97FF",
+      "route": "claims/JCG-015F97FF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-015F97FF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-02C45EB8",
+      "route": "claims/JCG-02C45EB8/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-02C45EB8"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-033B78BD",
+      "route": "claims/JCG-033B78BD/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-033B78BD"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0378B011",
+      "route": "claims/JCG-0378B011/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0378B011"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-037F2BD5",
+      "route": "claims/JCG-037F2BD5/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-037F2BD5"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-046E56A8",
+      "route": "claims/JCG-046E56A8/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-046E56A8"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-049C83F7",
+      "route": "claims/JCG-049C83F7/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-049C83F7"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-059D835C",
+      "route": "claims/JCG-059D835C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-059D835C"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0632B2B1",
+      "route": "claims/JCG-0632B2B1/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0632B2B1"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-068E58B0",
+      "route": "claims/JCG-068E58B0/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-068E58B0"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-06EFD647",
+      "route": "claims/JCG-06EFD647/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-06EFD647"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-075712B5",
+      "route": "claims/JCG-075712B5/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-075712B5"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0759F9E6",
+      "route": "claims/JCG-0759F9E6/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0759F9E6"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-08AE5516",
+      "route": "claims/JCG-08AE5516/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-08AE5516"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0934E7C3",
+      "route": "claims/JCG-0934E7C3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0934E7C3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-099F60DA",
+      "route": "claims/JCG-099F60DA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-099F60DA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0A4149FE",
+      "route": "claims/JCG-0A4149FE/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0A4149FE"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0A41960D",
+      "route": "claims/JCG-0A41960D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0A41960D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0A4D8C5B",
+      "route": "claims/JCG-0A4D8C5B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0A4D8C5B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0B37D36F",
+      "route": "claims/JCG-0B37D36F/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0B37D36F"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0B4E8503",
+      "route": "claims/JCG-0B4E8503/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0B4E8503"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0C43F49B",
+      "route": "claims/JCG-0C43F49B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0C43F49B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0C788598",
+      "route": "claims/JCG-0C788598/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0C788598"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0EDD5AE2",
+      "route": "claims/JCG-0EDD5AE2/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0EDD5AE2"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-0F9A20C0",
+      "route": "claims/JCG-0F9A20C0/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-0F9A20C0"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1035DE2E",
+      "route": "claims/JCG-1035DE2E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1035DE2E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-10B255A3",
+      "route": "claims/JCG-10B255A3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-10B255A3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-10BD21D3",
+      "route": "claims/JCG-10BD21D3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-10BD21D3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1183609D",
+      "route": "claims/JCG-1183609D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1183609D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-11AA7A99",
+      "route": "claims/JCG-11AA7A99/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-11AA7A99"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-121331E0",
+      "route": "claims/JCG-121331E0/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-121331E0"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-122FC9F6",
+      "route": "claims/JCG-122FC9F6/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-122FC9F6"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1295A385",
+      "route": "claims/JCG-1295A385/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1295A385"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-12CFF8C9",
+      "route": "claims/JCG-12CFF8C9/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-12CFF8C9"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-12EBB4BD",
+      "route": "claims/JCG-12EBB4BD/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-12EBB4BD"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1303D646",
+      "route": "claims/JCG-1303D646/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1303D646"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-138BEDA2",
+      "route": "claims/JCG-138BEDA2/",
+      "targets": [
+        {
+          "relation_type": "corrects",
+          "role": "replacement",
+          "statement_version": 1,
+          "unit_id": "RMU-34FBCB8D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-154408D7",
+      "route": "claims/JCG-154408D7/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-154408D7"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-15D52C7B",
+      "route": "claims/JCG-15D52C7B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-15D52C7B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-173427E9",
+      "route": "claims/JCG-173427E9/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-173427E9"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1745E634",
+      "route": "claims/JCG-1745E634/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1745E634"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-176D3DFE",
+      "route": "claims/JCG-176D3DFE/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-176D3DFE"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1AE58E51",
+      "route": "claims/JCG-1AE58E51/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1AE58E51"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1B137277",
+      "route": "claims/JCG-1B137277/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1B137277"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1B3C86D8",
+      "route": "claims/JCG-1B3C86D8/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1B3C86D8"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1B74A298",
+      "route": "claims/JCG-1B74A298/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1B74A298"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1C1790E5",
+      "route": "claims/JCG-1C1790E5/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1C1790E5"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-1D7EF048",
+      "route": "claims/JCG-1D7EF048/",
+      "targets": [
+        {
+          "relation_type": "corrects",
+          "role": "replacement",
+          "statement_version": 2,
+          "unit_id": "RMU-C1DD871B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1E683D42",
+      "route": "claims/JCG-1E683D42/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1E683D42"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-1FEDD133",
+      "route": "claims/JCG-1FEDD133/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-1FEDD133"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-21418592",
+      "route": "claims/JCG-21418592/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-21418592"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-21D61081",
+      "route": "claims/JCG-21D61081/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-21D61081"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-221985FF",
+      "route": "claims/JCG-221985FF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-221985FF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-235F8076",
+      "route": "claims/JCG-235F8076/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-235F8076"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-244F8A2E",
+      "route": "claims/JCG-244F8A2E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-244F8A2E"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-248AD7B9",
+      "route": "claims/JCG-248AD7B9/",
+      "targets": [
+        {
+          "relation_type": "supersedes",
+          "role": "replacement",
+          "statement_version": 1,
+          "unit_id": "RMU-1A8D0001"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-24A6190A",
+      "route": "claims/JCG-24A6190A/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-24A6190A"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-24C82405",
+      "route": "claims/JCG-24C82405/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-24C82405"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-24D147A4",
+      "route": "claims/JCG-24D147A4/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-24D147A4"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-24F172FB",
+      "route": "claims/JCG-24F172FB/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-24F172FB"
+        }
+      ]
+    },
+    {
+      "disposition": "valid_weaker",
+      "legacy_unit_id": "JCG-2533E53C",
+      "route": "claims/JCG-2533E53C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-2533E53C"
+        },
+        {
+          "relation_type": "strengthens",
+          "role": "stronger_result",
+          "statement_version": 1,
+          "unit_id": "RMU-6D8E0015"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-263402AA",
+      "route": "claims/JCG-263402AA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-263402AA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-266D9E33",
+      "route": "claims/JCG-266D9E33/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-266D9E33"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-26FD089B",
+      "route": "claims/JCG-26FD089B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-26FD089B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-27AF15AA",
+      "route": "claims/JCG-27AF15AA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-27AF15AA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-292A9B9D",
+      "route": "claims/JCG-292A9B9D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-292A9B9D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-295EAAC3",
+      "route": "claims/JCG-295EAAC3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-295EAAC3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-2B32290C",
+      "route": "claims/JCG-2B32290C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-2B32290C"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-2DCFC426",
+      "route": "claims/JCG-2DCFC426/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-2DCFC426"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-2E03D82B",
+      "route": "claims/JCG-2E03D82B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-2E03D82B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-2E563312",
+      "route": "claims/JCG-2E563312/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-2E563312"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-2EC7F92F",
+      "route": "claims/JCG-2EC7F92F/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-2EC7F92F"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-2F2C2F29",
+      "route": "claims/JCG-2F2C2F29/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-2F2C2F29"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-2FCDA5F0",
+      "route": "claims/JCG-2FCDA5F0/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-2FCDA5F0"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-2FF16912",
+      "route": "claims/JCG-2FF16912/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-2FF16912"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-301AAE68",
+      "route": "claims/JCG-301AAE68/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-301AAE68"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-30497402",
+      "route": "claims/JCG-30497402/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-30497402"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-30AA88CE",
+      "route": "claims/JCG-30AA88CE/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-30AA88CE"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-30AF091E",
+      "route": "claims/JCG-30AF091E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-30AF091E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-30DB849B",
+      "route": "claims/JCG-30DB849B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-30DB849B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-30FC31CC",
+      "route": "claims/JCG-30FC31CC/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-30FC31CC"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-33D30102",
+      "route": "claims/JCG-33D30102/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-33D30102"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-34460CE2",
+      "route": "claims/JCG-34460CE2/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-34460CE2"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-34B30410",
+      "route": "claims/JCG-34B30410/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-34B30410"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-35542BB2",
+      "route": "claims/JCG-35542BB2/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-35542BB2"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-35C86BCA",
+      "route": "claims/JCG-35C86BCA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-35C86BCA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-38CAAB66",
+      "route": "claims/JCG-38CAAB66/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-38CAAB66"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-39A7571B",
+      "route": "claims/JCG-39A7571B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-39A7571B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-39C9CBAF",
+      "route": "claims/JCG-39C9CBAF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-39C9CBAF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-3AC3D679",
+      "route": "claims/JCG-3AC3D679/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-3AC3D679"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-3ACE11E1",
+      "route": "claims/JCG-3ACE11E1/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-3ACE11E1"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-3AE328D9",
+      "route": "claims/JCG-3AE328D9/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-3AE328D9"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-3C448C71",
+      "route": "claims/JCG-3C448C71/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-3C448C71"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-3C99797D",
+      "route": "claims/JCG-3C99797D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-3C99797D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-3D459190",
+      "route": "claims/JCG-3D459190/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-3D459190"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-3DF84995",
+      "route": "claims/JCG-3DF84995/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-3DF84995"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-3FB0B6BB",
+      "route": "claims/JCG-3FB0B6BB/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-3FB0B6BB"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-4077AC78",
+      "route": "claims/JCG-4077AC78/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-4077AC78"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-41FFDBEF",
+      "route": "claims/JCG-41FFDBEF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-41FFDBEF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-42763317",
+      "route": "claims/JCG-42763317/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-42763317"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-427C7334",
+      "route": "claims/JCG-427C7334/",
+      "targets": [
+        {
+          "relation_type": "supersedes",
+          "role": "replacement",
+          "statement_version": 1,
+          "unit_id": "RMU-6D8E0010"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-4451EE05",
+      "route": "claims/JCG-4451EE05/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-4451EE05"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-44542689",
+      "route": "claims/JCG-44542689/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-44542689"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-44729E0B",
+      "route": "claims/JCG-44729E0B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-44729E0B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-4522AD29",
+      "route": "claims/JCG-4522AD29/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-4522AD29"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-45B208F0",
+      "route": "claims/JCG-45B208F0/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-45B208F0"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-47917D8B",
+      "route": "claims/JCG-47917D8B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-47917D8B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-488CE7D0",
+      "route": "claims/JCG-488CE7D0/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-488CE7D0"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-48D22F23",
+      "route": "claims/JCG-48D22F23/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-48D22F23"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-48D499D2",
+      "route": "claims/JCG-48D499D2/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-48D499D2"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-48D5E369",
+      "route": "claims/JCG-48D5E369/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-48D5E369"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-4AEE4BE5",
+      "route": "claims/JCG-4AEE4BE5/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-4AEE4BE5"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-4BB50BB3",
+      "route": "claims/JCG-4BB50BB3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-4BB50BB3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-4D6F79C6",
+      "route": "claims/JCG-4D6F79C6/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-4D6F79C6"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-4D953715",
+      "route": "claims/JCG-4D953715/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 2,
+          "unit_id": "JCG-4D953715"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-4DB63C3F",
+      "route": "claims/JCG-4DB63C3F/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-4DB63C3F"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-4E87842F",
+      "route": "claims/JCG-4E87842F/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-4E87842F"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-4EE846CD",
+      "route": "claims/JCG-4EE846CD/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-4EE846CD"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-504733CF",
+      "route": "claims/JCG-504733CF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-504733CF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-517C8B4B",
+      "route": "claims/JCG-517C8B4B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-517C8B4B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-517DA8F4",
+      "route": "claims/JCG-517DA8F4/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-517DA8F4"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-525A42DB",
+      "route": "claims/JCG-525A42DB/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-525A42DB"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5284E9D8",
+      "route": "claims/JCG-5284E9D8/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5284E9D8"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-52C555E4",
+      "route": "claims/JCG-52C555E4/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-52C555E4"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-531601F7",
+      "route": "claims/JCG-531601F7/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-531601F7"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5458CE4B",
+      "route": "claims/JCG-5458CE4B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5458CE4B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-55104EF2",
+      "route": "claims/JCG-55104EF2/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-55104EF2"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5542AF40",
+      "route": "claims/JCG-5542AF40/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5542AF40"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-55F1EA60",
+      "route": "claims/JCG-55F1EA60/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-55F1EA60"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-561802FA",
+      "route": "claims/JCG-561802FA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-561802FA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-566A5F84",
+      "route": "claims/JCG-566A5F84/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-566A5F84"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-57051B08",
+      "route": "claims/JCG-57051B08/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-57051B08"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5716FF00",
+      "route": "claims/JCG-5716FF00/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5716FF00"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-583DA94A",
+      "route": "claims/JCG-583DA94A/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-583DA94A"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5A780BE7",
+      "route": "claims/JCG-5A780BE7/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5A780BE7"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5B07FE34",
+      "route": "claims/JCG-5B07FE34/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5B07FE34"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5B09E55B",
+      "route": "claims/JCG-5B09E55B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5B09E55B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5C216C29",
+      "route": "claims/JCG-5C216C29/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5C216C29"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5CA10BFA",
+      "route": "claims/JCG-5CA10BFA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5CA10BFA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5D1C1BA6",
+      "route": "claims/JCG-5D1C1BA6/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5D1C1BA6"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5D7E9FFF",
+      "route": "claims/JCG-5D7E9FFF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5D7E9FFF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5E7E9377",
+      "route": "claims/JCG-5E7E9377/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5E7E9377"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5EA4BAEE",
+      "route": "claims/JCG-5EA4BAEE/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5EA4BAEE"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-5EF7883D",
+      "route": "claims/JCG-5EF7883D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-5EF7883D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-61073F6B",
+      "route": "claims/JCG-61073F6B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-61073F6B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-610C33B2",
+      "route": "claims/JCG-610C33B2/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-610C33B2"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-61450EFE",
+      "route": "claims/JCG-61450EFE/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-61450EFE"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-62422786",
+      "route": "claims/JCG-62422786/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-62422786"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-62905FD2",
+      "route": "claims/JCG-62905FD2/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-62905FD2"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-637E8694",
+      "route": "claims/JCG-637E8694/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-637E8694"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-63A2AFB3",
+      "route": "claims/JCG-63A2AFB3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-63A2AFB3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-63BF8EF3",
+      "route": "claims/JCG-63BF8EF3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-63BF8EF3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-64E18DF3",
+      "route": "claims/JCG-64E18DF3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-64E18DF3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-66049841",
+      "route": "claims/JCG-66049841/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-66049841"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-66943722",
+      "route": "claims/JCG-66943722/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-66943722"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-66D861AF",
+      "route": "claims/JCG-66D861AF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-66D861AF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-66F97916",
+      "route": "claims/JCG-66F97916/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-66F97916"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-6747671C",
+      "route": "claims/JCG-6747671C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-6747671C"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-689C15C4",
+      "route": "claims/JCG-689C15C4/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-689C15C4"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-68EE8395",
+      "route": "claims/JCG-68EE8395/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-68EE8395"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-69028659",
+      "route": "claims/JCG-69028659/",
+      "targets": [
+        {
+          "relation_type": "corrects",
+          "role": "replacement",
+          "statement_version": 1,
+          "unit_id": "RMU-A4B084FF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-69445E34",
+      "route": "claims/JCG-69445E34/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-69445E34"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-6B08BDE5",
+      "route": "claims/JCG-6B08BDE5/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-6B08BDE5"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-6B34B866",
+      "route": "claims/JCG-6B34B866/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-6B34B866"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-6B717AA1",
+      "route": "claims/JCG-6B717AA1/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-6B717AA1"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-6C67EA4C",
+      "route": "claims/JCG-6C67EA4C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-6C67EA4C"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-6E8356B3",
+      "route": "claims/JCG-6E8356B3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-6E8356B3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-6FA7D42B",
+      "route": "claims/JCG-6FA7D42B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-6FA7D42B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7058A7C2",
+      "route": "claims/JCG-7058A7C2/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7058A7C2"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-717B157D",
+      "route": "claims/JCG-717B157D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-717B157D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-720027D5",
+      "route": "claims/JCG-720027D5/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-720027D5"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7220CE67",
+      "route": "claims/JCG-7220CE67/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7220CE67"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-72A99572",
+      "route": "claims/JCG-72A99572/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-72A99572"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7312DDD7",
+      "route": "claims/JCG-7312DDD7/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7312DDD7"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7374F3AE",
+      "route": "claims/JCG-7374F3AE/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7374F3AE"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-75AE985E",
+      "route": "claims/JCG-75AE985E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-75AE985E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-764375B6",
+      "route": "claims/JCG-764375B6/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-764375B6"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-77C618B1",
+      "route": "claims/JCG-77C618B1/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-77C618B1"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-78845CD5",
+      "route": "claims/JCG-78845CD5/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-78845CD5"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7926F911",
+      "route": "claims/JCG-7926F911/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7926F911"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-79BDB7F6",
+      "route": "claims/JCG-79BDB7F6/",
+      "targets": [
+        {
+          "relation_type": "corrects",
+          "role": "replacement",
+          "statement_version": 1,
+          "unit_id": "RMU-13177F24"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-79E508CE",
+      "route": "claims/JCG-79E508CE/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-79E508CE"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7A1C4B09",
+      "route": "claims/JCG-7A1C4B09/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7A1C4B09"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7A91920F",
+      "route": "claims/JCG-7A91920F/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7A91920F"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7AFFFF85",
+      "route": "claims/JCG-7AFFFF85/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7AFFFF85"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7C0CF125",
+      "route": "claims/JCG-7C0CF125/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7C0CF125"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7D6AF6C6",
+      "route": "claims/JCG-7D6AF6C6/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7D6AF6C6"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7F0D894D",
+      "route": "claims/JCG-7F0D894D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7F0D894D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-7FB01BFA",
+      "route": "claims/JCG-7FB01BFA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-7FB01BFA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-80F5587E",
+      "route": "claims/JCG-80F5587E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-80F5587E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-82044B17",
+      "route": "claims/JCG-82044B17/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-82044B17"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-82D7FF25",
+      "route": "claims/JCG-82D7FF25/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-82D7FF25"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-83B3E951",
+      "route": "claims/JCG-83B3E951/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-83B3E951"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-859B7E20",
+      "route": "claims/JCG-859B7E20/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-859B7E20"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-85CB8EAA",
+      "route": "claims/JCG-85CB8EAA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-85CB8EAA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-86F5C9FA",
+      "route": "claims/JCG-86F5C9FA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-86F5C9FA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-871B4F98",
+      "route": "claims/JCG-871B4F98/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-871B4F98"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-87229D8B",
+      "route": "claims/JCG-87229D8B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-87229D8B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-87A24226",
+      "route": "claims/JCG-87A24226/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-87A24226"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-87B4A2F9",
+      "route": "claims/JCG-87B4A2F9/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-87B4A2F9"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-8917AD05",
+      "route": "claims/JCG-8917AD05/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-8917AD05"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-891B0275",
+      "route": "claims/JCG-891B0275/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-891B0275"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-89916A56",
+      "route": "claims/JCG-89916A56/",
+      "targets": [
+        {
+          "relation_type": "corrects",
+          "role": "replacement",
+          "statement_version": 2,
+          "unit_id": "RMU-C1DD871B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-8AA6A8C5",
+      "route": "claims/JCG-8AA6A8C5/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-8AA6A8C5"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-8C8ADE4E",
+      "route": "claims/JCG-8C8ADE4E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-8C8ADE4E"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-8DD6ECB1",
+      "route": "claims/JCG-8DD6ECB1/",
+      "targets": [
+        {
+          "relation_type": "corrects",
+          "role": "replacement",
+          "statement_version": 2,
+          "unit_id": "RMU-ED13585F"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-8EF344E1",
+      "route": "claims/JCG-8EF344E1/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-8EF344E1"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-8F25FC7B",
+      "route": "claims/JCG-8F25FC7B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-8F25FC7B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-8FF53FFF",
+      "route": "claims/JCG-8FF53FFF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-8FF53FFF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-90614345",
+      "route": "claims/JCG-90614345/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-90614345"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-9077FE2E",
+      "route": "claims/JCG-9077FE2E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-9077FE2E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-91330017",
+      "route": "claims/JCG-91330017/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-91330017"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-914949BF",
+      "route": "claims/JCG-914949BF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-914949BF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-916D6A51",
+      "route": "claims/JCG-916D6A51/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-916D6A51"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-9276A5DB",
+      "route": "claims/JCG-9276A5DB/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-9276A5DB"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-92BF786F",
+      "route": "claims/JCG-92BF786F/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-92BF786F"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-931C6D98",
+      "route": "claims/JCG-931C6D98/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-931C6D98"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-9345D4B1",
+      "route": "claims/JCG-9345D4B1/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-9345D4B1"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-9369706B",
+      "route": "claims/JCG-9369706B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-9369706B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-93A2594E",
+      "route": "claims/JCG-93A2594E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-93A2594E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-95F70298",
+      "route": "claims/JCG-95F70298/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-95F70298"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-9667172F",
+      "route": "claims/JCG-9667172F/",
+      "targets": [
+        {
+          "relation_type": "supersedes",
+          "role": "replacement",
+          "statement_version": 1,
+          "unit_id": "RMU-6C9E0010"
+        }
+      ]
+    },
+    {
+      "disposition": "valid_weaker",
+      "legacy_unit_id": "JCG-978BC8D0",
+      "route": "claims/JCG-978BC8D0/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-978BC8D0"
+        },
+        {
+          "relation_type": "strengthens",
+          "role": "stronger_result",
+          "statement_version": 1,
+          "unit_id": "RMU-5A110520"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-98E23B8A",
+      "route": "claims/JCG-98E23B8A/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-98E23B8A"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-99288D5E",
+      "route": "claims/JCG-99288D5E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-99288D5E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-998AAF47",
+      "route": "claims/JCG-998AAF47/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-998AAF47"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-99911351",
+      "route": "claims/JCG-99911351/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-99911351"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-9B9E87F1",
+      "route": "claims/JCG-9B9E87F1/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-9B9E87F1"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-9D0BE662",
+      "route": "claims/JCG-9D0BE662/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-9D0BE662"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-9D9C3DF9",
+      "route": "claims/JCG-9D9C3DF9/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-9D9C3DF9"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-9DC03A22",
+      "route": "claims/JCG-9DC03A22/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-9DC03A22"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-9E1E87CA",
+      "route": "claims/JCG-9E1E87CA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-9E1E87CA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-9E239454",
+      "route": "claims/JCG-9E239454/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-9E239454"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-9FF259CA",
+      "route": "claims/JCG-9FF259CA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-9FF259CA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-A10C42EF",
+      "route": "claims/JCG-A10C42EF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-A10C42EF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-A39E3CCD",
+      "route": "claims/JCG-A39E3CCD/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-A39E3CCD"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-A514F028",
+      "route": "claims/JCG-A514F028/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-A514F028"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-A5938472",
+      "route": "claims/JCG-A5938472/",
+      "targets": [
+        {
+          "relation_type": "supersedes",
+          "role": "replacement",
+          "statement_version": 1,
+          "unit_id": "RMU-1A8D0001"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-A6010D1B",
+      "route": "claims/JCG-A6010D1B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-A6010D1B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-A7F02148",
+      "route": "claims/JCG-A7F02148/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-A7F02148"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-A82581C7",
+      "route": "claims/JCG-A82581C7/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-A82581C7"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-A844E87D",
+      "route": "claims/JCG-A844E87D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-A844E87D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-A9379D6C",
+      "route": "claims/JCG-A9379D6C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-A9379D6C"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AA2591B9",
+      "route": "claims/JCG-AA2591B9/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AA2591B9"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AA2DF6F0",
+      "route": "claims/JCG-AA2DF6F0/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AA2DF6F0"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AA953315",
+      "route": "claims/JCG-AA953315/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AA953315"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AB20C3A8",
+      "route": "claims/JCG-AB20C3A8/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AB20C3A8"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-AB57A9B2",
+      "route": "claims/JCG-AB57A9B2/",
+      "targets": [
+        {
+          "relation_type": "supersedes",
+          "role": "replacement",
+          "statement_version": 1,
+          "unit_id": "RMU-1A8D0004"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AB6E23A3",
+      "route": "claims/JCG-AB6E23A3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AB6E23A3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AB9F57D0",
+      "route": "claims/JCG-AB9F57D0/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AB9F57D0"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-ABAA3D1A",
+      "route": "claims/JCG-ABAA3D1A/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-ABAA3D1A"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-ADA71038",
+      "route": "claims/JCG-ADA71038/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-ADA71038"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AE3C2E2B",
+      "route": "claims/JCG-AE3C2E2B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AE3C2E2B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AE3DCC7B",
+      "route": "claims/JCG-AE3DCC7B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AE3DCC7B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AE66472A",
+      "route": "claims/JCG-AE66472A/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AE66472A"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AF04161C",
+      "route": "claims/JCG-AF04161C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AF04161C"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AF23BCCD",
+      "route": "claims/JCG-AF23BCCD/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AF23BCCD"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-AF5BE0A3",
+      "route": "claims/JCG-AF5BE0A3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-AF5BE0A3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B1ADEE63",
+      "route": "claims/JCG-B1ADEE63/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B1ADEE63"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B1FF96FC",
+      "route": "claims/JCG-B1FF96FC/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B1FF96FC"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B22A5AC8",
+      "route": "claims/JCG-B22A5AC8/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B22A5AC8"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B2D60A95",
+      "route": "claims/JCG-B2D60A95/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B2D60A95"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B3286203",
+      "route": "claims/JCG-B3286203/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B3286203"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B34779A6",
+      "route": "claims/JCG-B34779A6/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B34779A6"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B3A0B330",
+      "route": "claims/JCG-B3A0B330/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B3A0B330"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B3CD96D4",
+      "route": "claims/JCG-B3CD96D4/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B3CD96D4"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B449567D",
+      "route": "claims/JCG-B449567D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B449567D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B553E2A8",
+      "route": "claims/JCG-B553E2A8/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B553E2A8"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B57FAC7A",
+      "route": "claims/JCG-B57FAC7A/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B57FAC7A"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B7122324",
+      "route": "claims/JCG-B7122324/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B7122324"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B7744F4C",
+      "route": "claims/JCG-B7744F4C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B7744F4C"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B79A737B",
+      "route": "claims/JCG-B79A737B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B79A737B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B858C93E",
+      "route": "claims/JCG-B858C93E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B858C93E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-B8EB4A61",
+      "route": "claims/JCG-B8EB4A61/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-B8EB4A61"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-BAD4B378",
+      "route": "claims/JCG-BAD4B378/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-BAD4B378"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-BBADD594",
+      "route": "claims/JCG-BBADD594/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-BBADD594"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-BBB01109",
+      "route": "claims/JCG-BBB01109/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-BBB01109"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-BC2FDB8E",
+      "route": "claims/JCG-BC2FDB8E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-BC2FDB8E"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-BCEB7F45",
+      "route": "claims/JCG-BCEB7F45/",
+      "targets": [
+        {
+          "relation_type": "supersedes",
+          "role": "replacement",
+          "statement_version": 2,
+          "unit_id": "RMU-6D8E0012"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-BD8A0F77",
+      "route": "claims/JCG-BD8A0F77/",
+      "targets": [
+        {
+          "relation_type": "supersedes",
+          "role": "replacement",
+          "statement_version": 1,
+          "unit_id": "RMU-1A8D0003"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-BE85CECB",
+      "route": "claims/JCG-BE85CECB/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-BE85CECB"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-BF1A2DBF",
+      "route": "claims/JCG-BF1A2DBF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-BF1A2DBF"
+        }
+      ]
+    },
+    {
+      "disposition": "valid_weaker",
+      "legacy_unit_id": "JCG-C04524CF",
+      "route": "claims/JCG-C04524CF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-C04524CF"
+        },
+        {
+          "relation_type": "strengthens",
+          "role": "stronger_result",
+          "statement_version": 1,
+          "unit_id": "RMU-1A8D0001"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-C42D615F",
+      "route": "claims/JCG-C42D615F/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-C42D615F"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-C4BFC4FF",
+      "route": "claims/JCG-C4BFC4FF/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-C4BFC4FF"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-C4DFAF31",
+      "route": "claims/JCG-C4DFAF31/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-C4DFAF31"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-C5D74708",
+      "route": "claims/JCG-C5D74708/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-C5D74708"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-C76E1708",
+      "route": "claims/JCG-C76E1708/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-C76E1708"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-C8A7EF37",
+      "route": "claims/JCG-C8A7EF37/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-C8A7EF37"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-C992885C",
+      "route": "claims/JCG-C992885C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-C992885C"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-C9D20922",
+      "route": "claims/JCG-C9D20922/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-C9D20922"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-CA01A7A7",
+      "route": "claims/JCG-CA01A7A7/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-CA01A7A7"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-CA966BD6",
+      "route": "claims/JCG-CA966BD6/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-CA966BD6"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-CB4F1C73",
+      "route": "claims/JCG-CB4F1C73/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-CB4F1C73"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-CC864A73",
+      "route": "claims/JCG-CC864A73/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-CC864A73"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-CDF45174",
+      "route": "claims/JCG-CDF45174/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-CDF45174"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D0FCE306",
+      "route": "claims/JCG-D0FCE306/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D0FCE306"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D10C308D",
+      "route": "claims/JCG-D10C308D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D10C308D"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-D1155E99",
+      "route": "claims/JCG-D1155E99/",
+      "targets": [
+        {
+          "relation_type": "supersedes",
+          "role": "replacement",
+          "statement_version": 2,
+          "unit_id": "RMU-3FEF0011"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D1903700",
+      "route": "claims/JCG-D1903700/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D1903700"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D1EB696A",
+      "route": "claims/JCG-D1EB696A/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D1EB696A"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D3F76EBC",
+      "route": "claims/JCG-D3F76EBC/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D3F76EBC"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D44F2B27",
+      "route": "claims/JCG-D44F2B27/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D44F2B27"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D49A43DC",
+      "route": "claims/JCG-D49A43DC/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D49A43DC"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D4C5AD93",
+      "route": "claims/JCG-D4C5AD93/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D4C5AD93"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D55D3D6A",
+      "route": "claims/JCG-D55D3D6A/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D55D3D6A"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D5D87491",
+      "route": "claims/JCG-D5D87491/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D5D87491"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D5FD24E3",
+      "route": "claims/JCG-D5FD24E3/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D5FD24E3"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D60DDF45",
+      "route": "claims/JCG-D60DDF45/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D60DDF45"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D6DA9B38",
+      "route": "claims/JCG-D6DA9B38/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D6DA9B38"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D739C229",
+      "route": "claims/JCG-D739C229/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D739C229"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D82B1D43",
+      "route": "claims/JCG-D82B1D43/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D82B1D43"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D8D0210F",
+      "route": "claims/JCG-D8D0210F/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D8D0210F"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D90A0AC4",
+      "route": "claims/JCG-D90A0AC4/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D90A0AC4"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-D9E57688",
+      "route": "claims/JCG-D9E57688/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-D9E57688"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-DA4A0F69",
+      "route": "claims/JCG-DA4A0F69/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-DA4A0F69"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-DAFBEDD5",
+      "route": "claims/JCG-DAFBEDD5/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-DAFBEDD5"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-DBB38171",
+      "route": "claims/JCG-DBB38171/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-DBB38171"
+        }
+      ]
+    },
+    {
+      "disposition": "replacement",
+      "legacy_unit_id": "JCG-DCDBDDDB",
+      "route": "claims/JCG-DCDBDDDB/",
+      "targets": [
+        {
+          "relation_type": "supersedes",
+          "role": "replacement",
+          "statement_version": 1,
+          "unit_id": "RMU-1A8D0005"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-DD13AC0E",
+      "route": "claims/JCG-DD13AC0E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-DD13AC0E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-DDAF375F",
+      "route": "claims/JCG-DDAF375F/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-DDAF375F"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-DF07974E",
+      "route": "claims/JCG-DF07974E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-DF07974E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-DF9F7A0E",
+      "route": "claims/JCG-DF9F7A0E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-DF9F7A0E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-E1675EDD",
+      "route": "claims/JCG-E1675EDD/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-E1675EDD"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-E16F7D80",
+      "route": "claims/JCG-E16F7D80/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-E16F7D80"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-E1F739D1",
+      "route": "claims/JCG-E1F739D1/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-E1F739D1"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-E2F31533",
+      "route": "claims/JCG-E2F31533/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-E2F31533"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-E48F1FF0",
+      "route": "claims/JCG-E48F1FF0/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-E48F1FF0"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-E4FA4CBB",
+      "route": "claims/JCG-E4FA4CBB/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-E4FA4CBB"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-E4FFD82B",
+      "route": "claims/JCG-E4FFD82B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-E4FFD82B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-E5D7C792",
+      "route": "claims/JCG-E5D7C792/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-E5D7C792"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-E82019D2",
+      "route": "claims/JCG-E82019D2/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-E82019D2"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-E91A93EB",
+      "route": "claims/JCG-E91A93EB/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-E91A93EB"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-E9F3362D",
+      "route": "claims/JCG-E9F3362D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-E9F3362D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-EB1B80E7",
+      "route": "claims/JCG-EB1B80E7/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-EB1B80E7"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-EB33DC0C",
+      "route": "claims/JCG-EB33DC0C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-EB33DC0C"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-EBE5D434",
+      "route": "claims/JCG-EBE5D434/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-EBE5D434"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-EC215023",
+      "route": "claims/JCG-EC215023/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-EC215023"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-ECD1CA4E",
+      "route": "claims/JCG-ECD1CA4E/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-ECD1CA4E"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-ECF242AB",
+      "route": "claims/JCG-ECF242AB/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-ECF242AB"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-ED2C6665",
+      "route": "claims/JCG-ED2C6665/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-ED2C6665"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-EFA8536B",
+      "route": "claims/JCG-EFA8536B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-EFA8536B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F12E75D6",
+      "route": "claims/JCG-F12E75D6/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F12E75D6"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F13D186D",
+      "route": "claims/JCG-F13D186D/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F13D186D"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F245F636",
+      "route": "claims/JCG-F245F636/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F245F636"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F299193A",
+      "route": "claims/JCG-F299193A/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F299193A"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F37D6027",
+      "route": "claims/JCG-F37D6027/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F37D6027"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F4C59FA0",
+      "route": "claims/JCG-F4C59FA0/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F4C59FA0"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F4E9FFD4",
+      "route": "claims/JCG-F4E9FFD4/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F4E9FFD4"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F5E7F90C",
+      "route": "claims/JCG-F5E7F90C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F5E7F90C"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F701E994",
+      "route": "claims/JCG-F701E994/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F701E994"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F7DC2C3B",
+      "route": "claims/JCG-F7DC2C3B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F7DC2C3B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F86F43AC",
+      "route": "claims/JCG-F86F43AC/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F86F43AC"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F8FAADB9",
+      "route": "claims/JCG-F8FAADB9/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F8FAADB9"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F9A5B234",
+      "route": "claims/JCG-F9A5B234/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F9A5B234"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F9D9B3FA",
+      "route": "claims/JCG-F9D9B3FA/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F9D9B3FA"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-F9F6311C",
+      "route": "claims/JCG-F9F6311C/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-F9F6311C"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-FA038812",
+      "route": "claims/JCG-FA038812/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-FA038812"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-FBD62152",
+      "route": "claims/JCG-FBD62152/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-FBD62152"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-FCD5A80B",
+      "route": "claims/JCG-FCD5A80B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-FCD5A80B"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-FD5C0C60",
+      "route": "claims/JCG-FD5C0C60/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-FD5C0C60"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-FD846076",
+      "route": "claims/JCG-FD846076/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-FD846076"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-FD961DD5",
+      "route": "claims/JCG-FD961DD5/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-FD961DD5"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-FE652BFC",
+      "route": "claims/JCG-FE652BFC/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-FE652BFC"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-FE704029",
+      "route": "claims/JCG-FE704029/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-FE704029"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-FF7A1933",
+      "route": "claims/JCG-FF7A1933/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-FF7A1933"
+        }
+      ]
+    },
+    {
+      "disposition": "exact_current",
+      "legacy_unit_id": "JCG-FFBBD77B",
+      "route": "claims/JCG-FFBBD77B/",
+      "targets": [
+        {
+          "role": "current_statement",
+          "statement_version": 1,
+          "unit_id": "JCG-FFBBD77B"
+        }
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "source_registry": {
+    "registry_id": "RETAINED2-368ac235f722",
+    "sha256": "6e389c15f1e52fe4951a0c9af29992c8ff577ad736519b962d191ffe817fbccc"
+  }
+}
