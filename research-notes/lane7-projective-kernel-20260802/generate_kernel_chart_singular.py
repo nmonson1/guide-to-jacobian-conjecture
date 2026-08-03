@@ -14,18 +14,54 @@ from generate_kernel_chart_input import parse_integral_polynomial, render_polyno
 from generate_macaulay2_input import ROW_DENOMINATOR_LCMS
 
 
+def render_integer_polynomial(poly: sp.Poly) -> str:
+    """Render an integral polynomial without rational-expression overhead."""
+    rendered: list[str] = []
+    variables = poly.gens
+    for exponents, coefficient in poly.terms():
+        value = int(coefficient)
+        if value == 0:
+            continue
+        factors: list[str] = []
+        for variable, exponent in zip(variables, exponents):
+            if exponent == 1:
+                factors.append(str(variable))
+            elif exponent > 1:
+                factors.append(f"{variable}^{exponent}")
+        monomial = "*".join(factors)
+        if not monomial:
+            term = str(value)
+        elif value == 1:
+            term = monomial
+        elif value == -1:
+            term = f"-{monomial}"
+        else:
+            term = f"{value}*{monomial}"
+        rendered.append(term)
+    if not rendered:
+        return "0"
+    return " + ".join(rendered).replace("+ -", "- ")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("source_directory", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--chart", type=int, required=True, choices=range(5))
-    parser.add_argument("--characteristic", type=int, required=True)
+    parser.add_argument(
+        "--characteristic",
+        type=int,
+        required=True,
+        help="0 for QQ; otherwise a prime not killing a row multiplier",
+    )
     args = parser.parse_args()
 
     characteristic = args.characteristic
-    if not sp.isprime(characteristic):
-        raise ValueError("kernel-chart certificates require a prime characteristic")
-    if any(scale % characteristic == 0 for scale in ROW_DENOMINATOR_LCMS):
+    if characteristic < 0 or (characteristic != 0 and not sp.isprime(characteristic)):
+        raise ValueError("characteristic must be zero or prime")
+    if characteristic and any(
+        scale % characteristic == 0 for scale in ROW_DENOMINATOR_LCMS
+    ):
         raise ValueError("chosen characteristic kills a denominator-clearing row unit")
 
     residual = json.loads(
@@ -68,20 +104,40 @@ def main() -> int:
             polynomial.as_expr() * coordinate
             for polynomial, coordinate in zip(parsed, kernel_coordinates)
         )
-        reduced = sp.Poly(expression, *all_chart_variables, modulus=characteristic)
-        equations.append(render_polynomial(reduced, characteristic))
+        if characteristic:
+            polynomial = sp.Poly(
+                expression, *all_chart_variables, modulus=characteristic
+            )
+            equations.append(render_polynomial(polynomial, characteristic))
+        else:
+            polynomial = sp.Poly(expression, *all_chart_variables, domain=sp.ZZ)
+            equations.append(render_integer_polynomial(polynomial))
 
-    determinant_poly = sp.Poly(
-        sp.sympify(determinant, locals=local_symbols),
-        *parameters,
-        modulus=characteristic,
-    )
-    determinant_text = render_polynomial(determinant_poly, characteristic)
+    determinant_expression = sp.sympify(determinant, locals=local_symbols)
+    if characteristic:
+        determinant_poly = sp.Poly(
+            determinant_expression, *parameters, modulus=characteristic
+        )
+        determinant_text = render_polynomial(determinant_poly, characteristic)
+        field_tag = f"CHAR_{characteristic}"
+    else:
+        determinant_poly = sp.Poly(
+            determinant_expression, *parameters, domain=sp.QQ
+        )
+        if any(coefficient.q != 1 for coefficient in determinant_poly.coeffs()):
+            raise ValueError("determinant has an uncleared rational coefficient")
+        determinant_poly = sp.Poly(
+            determinant_poly.as_expr(), *parameters, domain=sp.ZZ
+        )
+        determinant_text = render_integer_polynomial(determinant_poly)
+        field_tag = "QQ"
+
     variables = [str(variable) for variable in (*all_chart_variables, z)]
-    tag = f"KERNEL_CHART_{args.chart}_CHAR_{characteristic}_SINGULAR"
+    tag = f"KERNEL_CHART_{args.chart}_{field_tag}_SINGULAR"
+    ring_characteristic = characteristic if characteristic else 0
 
     lines = [
-        f"ring R = {characteristic},({','.join(variables)}),dp;",
+        f"ring R = {ring_characteristic},({','.join(variables)}),dp;",
         f"poly d = {determinant_text};",
         "ideal I =\n  " + ",\n  ".join([*equations, "z*d-1"]) + ";",
         f'print("{tag}_BEGIN");',
@@ -96,9 +152,8 @@ def main() -> int:
     ]
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text("\n\n".join(lines) + "\n", encoding="utf-8")
-    print(
-        f"wrote Singular chart {args.chart} over F_{characteristic} to {args.output}"
-    )
+    field_name = "QQ" if characteristic == 0 else f"F_{characteristic}"
+    print(f"wrote Singular chart {args.chart} over {field_name} to {args.output}")
     return 0
 
 
