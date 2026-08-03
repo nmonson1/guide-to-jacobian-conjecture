@@ -13,9 +13,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from generate_living_guide_v2 import (  # noqa: E402
+    _published_evidence_locator,
     render_compatible_claim,
     render_compatible_collection,
     render_retained_v2_unit,
+    source_packet_routes,
 )
 from prepare_retained_math_v2_data_v1 import (  # noqa: E402
     _prepare_full_materialization,
@@ -428,6 +430,39 @@ class PublicRetainedMathV2Tests(unittest.TestCase):
         self.assertNotIn("JCG-00000003", replacement)
         self.assertNotIn("review_state", exact)
         self.assertIn('"relation_type": "corrects"', machine)
+
+    def test_repository_evidence_links_to_its_public_source_packet(self) -> None:
+        manifest = {
+            "task_inputs": [
+                {
+                    "route": "research/handoffs/lane-3-source-packet.md",
+                    "source_packet": {
+                        "files": [
+                            {
+                                "path": "lane3-order5/verify.py",
+                                "repo_path": (
+                                    "research-notes/lane3-order5/verify.py"
+                                ),
+                            }
+                        ]
+                    },
+                }
+            ]
+        }
+        routes = source_packet_routes(manifest)
+        locator, inline = _published_evidence_locator(
+            {
+                "kind": "repo",
+                "repo_path": "research-notes/lane3-order5/verify.py",
+            },
+            _proof_sources(),
+            routes,
+        )
+        self.assertEqual(
+            locator,
+            "[Open the published source](../../handoffs/lane-3-source-packet.md)",
+        )
+        self.assertIsNone(inline)
 
     def test_full_package_pins_graph_and_total_map(self) -> None:
         graph_payload = (

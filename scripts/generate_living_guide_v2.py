@@ -513,6 +513,38 @@ def load(root: Path) -> tuple[
     return graph, claims, collections, programs, manuscripts, materials, briefs
 
 
+def source_packet_routes(brief_manifest: dict[str, Any]) -> dict[str, str]:
+    """Map canonical repository locators to their public source packet."""
+    routes: dict[str, str] = {}
+    for task_input in brief_manifest.get("task_inputs", []):
+        packet = task_input.get("source_packet")
+        if not isinstance(packet, dict):
+            continue
+        route = Path(task_input["route"])
+        public_route = f"../../handoffs/{route.name}"
+        for item in packet.get("files", []):
+            raw = item.get("repo_path") or item.get("path")
+            if not isinstance(raw, str) or not raw:
+                continue
+            candidates = {raw}
+            if not raw.startswith(
+                (
+                    "manuscripts/",
+                    "papers-release-",
+                    "research-notes/",
+                    "research-tools/",
+                )
+            ):
+                candidates.add(f"research-notes/{raw}")
+            for candidate in candidates:
+                previous = routes.setdefault(candidate, public_route)
+                if previous != public_route:
+                    raise ValueError(
+                        f"repository source appears in multiple public packets: {candidate}"
+                    )
+    return routes
+
+
 def resolve_manuscript_links(
     source: str, manuscripts: dict[str, dict[str, Any]]
 ) -> str:
@@ -1155,7 +1187,9 @@ def render_corrections_compatible(
 
 
 def _published_evidence_locator(
-    locator: dict[str, Any] | None, proof_sources: dict[str, Any]
+    locator: dict[str, Any] | None,
+    proof_sources: dict[str, Any],
+    source_packet_routes: dict[str, str] | None = None,
 ) -> tuple[str | None, str | None]:
     """Return a reader link and optional inline body for a public locator."""
     if locator is None:
@@ -1167,6 +1201,10 @@ def _published_evidence_locator(
         return "Inline evidence is reproduced below.", locator["body"]
     if kind != "repo":
         return None, None
+    source_packet_routes = source_packet_routes or {}
+    public_packet = source_packet_routes.get(locator["repo_path"])
+    if public_packet is not None:
+        return f"[Open the published source]({public_packet})", None
     repo_path = Path(locator["repo_path"])
     parts = repo_path.parts
     if parts and parts[0] == "manuscripts":
@@ -1207,6 +1245,7 @@ def render_retained_v2_unit(
     unit: dict[str, Any],
     graph: dict[str, Any],
     proof_sources: dict[str, Any],
+    source_packet_routes: dict[str, str] | None = None,
 ) -> str:
     """Render a current unit with math-facing edges and no audit workflow."""
     graph_unit_ids = {item["unit_id"] for item in graph["units"]}
@@ -1313,7 +1352,7 @@ def render_retained_v2_unit(
                 ]
             )
             locator, inline = _published_evidence_locator(
-                item.get("locator"), proof_sources
+                item.get("locator"), proof_sources, source_packet_routes
             )
             if locator:
                 lines.extend([f"**Source:** {locator}", ""])
@@ -2294,6 +2333,7 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     for item in brief_manifest.get("task_inputs", []):
         source_path = root / "data" / MODEL_BRIEFS_DATA_DIR / item["source"]
         outputs[docs / item["route"]] = source_path.read_text(encoding="utf-8")
+    public_source_packets = source_packet_routes(brief_manifest)
     outputs[docs / "research/handoffs/release.json"] = (
         json.dumps(release, indent=2, sort_keys=True) + "\n"
     )
@@ -2380,7 +2420,12 @@ def expected_outputs(root: Path) -> dict[Path, str]:
                 docs
                 / "research/working-mathematics/units"
                 / f"{unit['unit_id']}.md"
-            ] = render_retained_v2_unit(unit, v2_graph, proof_sources)
+            ] = render_retained_v2_unit(
+                unit,
+                v2_graph,
+                proof_sources,
+                public_source_packets,
+            )
     elif retained is not None:
         _, retained_graph = retained
         retained_data = root / "data" / SITE_STATE["retained_math"]["data_dir"]
