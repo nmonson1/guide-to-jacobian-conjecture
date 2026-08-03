@@ -51,5 +51,49 @@
   "quotient_coordinate": "u=z^5",
   "quotient_ode": "pbar*qbar-3*u*pbar*qbar'+5*u*pbar'*qbar=1/5",
   "schema_version": 1,
-  "scope": "This reconstructs the real terminal quotient face and its degree-six Belyi map.  It is not a reconstruction of the missing order-520 endpoint matrices or attachment recurrence."
+  "scope": "This reconstructs the real terminal quotient face, its exact three-to-two tangent matrix, and its degree-six Belyi map.  It is not a reconstruction of the missing order-520 endpoint matrices or attachment recurrence.",
+  "terminal_face_linearization": {
+    "domain_support_block": [
+      "delta_p:u",
+      "delta_q:u",
+      "delta_q:u^2"
+    ],
+    "integer_scaled_matrix": [
+      [
+        6,
+        -10,
+        0
+      ],
+      [
+        -9,
+        -15,
+        -25
+      ]
+    ],
+    "integer_scaled_matrix_factor": 5,
+    "kernel_dimension": 1,
+    "kernel_generator": [
+      "-1",
+      "-3/5",
+      "18/25"
+    ],
+    "kernel_interpretation": "source scaling u->(1+epsilon)u, namely (delta_p,delta_q)=(u*pbar',u*qbar')",
+    "matrix": [
+      [
+        "6/5",
+        "-2",
+        "0"
+      ],
+      [
+        "-9/5",
+        "-3",
+        "-5"
+      ]
+    ],
+    "rank": 2,
+    "target_support_block": [
+      "u",
+      "u^2"
+    ]
+  }
 }
