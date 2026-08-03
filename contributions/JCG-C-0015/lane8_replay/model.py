@@ -2,12 +2,11 @@
 from __future__ import annotations
 
 from collections import defaultdict
+import hashlib
 from dataclasses import dataclass
 import json
 from pathlib import Path
 from typing import Iterable
-
-from sympy import Poly, QQ, Symbol
 
 from .algebra import (
     K,
@@ -19,7 +18,8 @@ from .algebra import (
     constant,
     multiply,
     negate,
-    rref_transform,
+    k_vector,
+    rref_transform_details,
     scale,
     set_parameter_count,
     transform_polynomials,
@@ -28,6 +28,98 @@ from .algebra import (
 
 FIELD_POLYNOMIAL = "u^5-u^4+3*u^3+3*u^2+26"
 RawTerm = tuple[int, int]
+
+
+def _ff_trim(poly: list[int], prime: int) -> list[int]:
+    out = [coefficient % prime for coefficient in poly]
+    while out and out[-1] == 0:
+        out.pop()
+    return out
+
+
+def _ff_sub(left: list[int], right: list[int], prime: int) -> list[int]:
+    size = max(len(left), len(right))
+    return _ff_trim(
+        [
+            (left[index] if index < len(left) else 0)
+            - (right[index] if index < len(right) else 0)
+            for index in range(size)
+        ],
+        prime,
+    )
+
+
+def _ff_divmod(dividend: list[int], divisor: list[int], prime: int) -> tuple[list[int], list[int]]:
+    remainder = _ff_trim(list(dividend), prime)
+    divisor = _ff_trim(list(divisor), prime)
+    if not divisor:
+        raise ZeroDivisionError
+    if len(remainder) < len(divisor):
+        return [], remainder
+    quotient = [0] * (len(remainder) - len(divisor) + 1)
+    inverse_lead = pow(divisor[-1], -1, prime)
+    while remainder and len(remainder) >= len(divisor):
+        offset = len(remainder) - len(divisor)
+        coefficient = remainder[-1] * inverse_lead % prime
+        quotient[offset] = coefficient
+        for index, value in enumerate(divisor):
+            remainder[offset + index] = (remainder[offset + index] - coefficient * value) % prime
+        remainder = _ff_trim(remainder, prime)
+    return _ff_trim(quotient, prime), remainder
+
+
+def _ff_gcd(left: list[int], right: list[int], prime: int) -> list[int]:
+    left = _ff_trim(left, prime)
+    right = _ff_trim(right, prime)
+    while right:
+        _, remainder = _ff_divmod(left, right, prime)
+        left, right = right, remainder
+    if not left:
+        return []
+    inverse_lead = pow(left[-1], -1, prime)
+    return _ff_trim([inverse_lead * coefficient for coefficient in left], prime)
+
+
+def _ff_multiply_mod(
+    left: list[int], right: list[int], modulus: list[int], prime: int
+) -> list[int]:
+    product = [0] * max(0, len(left) + len(right) - 1)
+    for left_degree, left_coefficient in enumerate(left):
+        for right_degree, right_coefficient in enumerate(right):
+            product[left_degree + right_degree] = (
+                product[left_degree + right_degree] + left_coefficient * right_coefficient
+            ) % prime
+    _, remainder = _ff_divmod(product, modulus, prime)
+    return remainder
+
+
+def _ff_power_mod(base: list[int], exponent: int, modulus: list[int], prime: int) -> list[int]:
+    out = [1]
+    base = _ff_trim(base, prime)
+    while exponent:
+        if exponent & 1:
+            out = _ff_multiply_mod(out, base, modulus, prime)
+        base = _ff_multiply_mod(base, base, modulus, prime)
+        exponent //= 2
+    return out
+
+
+def irreducible_mod_prime(coefficients: list[int], prime: int) -> bool:
+    """Rabin irreducibility test for this prime-degree polynomial."""
+    polynomial = _ff_trim(coefficients, prime)
+    degree = len(polynomial) - 1
+    if degree != 5:
+        raise ValueError("this compact witness is specialized to degree five")
+    inverse_lead = pow(polynomial[-1], -1, prime)
+    polynomial = _ff_trim([inverse_lead * value for value in polynomial], prime)
+    x = [0, 1]
+    frobenius = x
+    for iteration in range(degree):
+        frobenius = _ff_power_mod(frobenius, prime, polynomial, prime)
+        if iteration == 0:
+            if len(_ff_gcd(polynomial, _ff_sub(frobenius, x, prime), prime)) != 1:
+                return False
+    return _ff_sub(frobenius, x, prime) == []
 
 
 @dataclass(frozen=True)
@@ -69,6 +161,7 @@ class LayerRun:
     q_solution: dict[int, dict[RawTerm, ParamPoly]]
     equations: list[tuple[int, ParamPoly]]
     layer_data: list[list[int]]
+    stage_data: list[dict]
 
 
 def hull(points: Iterable[RawTerm]) -> list[RawTerm]:
@@ -125,9 +218,8 @@ def build_face(relation_path: Path):
     displayed = data["minimal_polynomial"].replace(" ", "").replace("x", "u")
     if displayed != FIELD_POLYNOMIAL:
         raise AssertionError(displayed)
-    u = Symbol("u")
-    if not Poly(u**5 - u**4 + 3 * u**3 + 3 * u**2 + 26, u, domain=QQ).is_irreducible:
-        raise AssertionError("the displayed quintic is reducible over Q")
+    if not irreducible_mod_prime([26, 0, 3, 3, -1, 1], 67):
+        raise AssertionError("the displayed quintic failed its mod-67 irreducibility witness")
 
     p = [ONE, ONE]
     for degree in range(2, 8):
@@ -173,6 +265,7 @@ def run_layers(case: SupportCase, p_coefficients, q_coefficients) -> LayerRun:
     q_solution = {0: {(degree + 2, 2 * degree + 1): constant(value) for degree, value in enumerate(q_coefficients)}}
     equations: list[tuple[int, ParamPoly]] = []
     layer_data: list[list[int]] = []
+    stage_data: list[dict] = []
 
     def target_rows(layer: int) -> list[RawTerm]:
         rows: set[RawTerm] = set()
@@ -206,12 +299,32 @@ def run_layers(case: SupportCase, p_coefficients, q_coefficients) -> LayerRun:
                 forcing[row] = add(forcing[row], poly)
         right_hand_side = [negate(forcing[row]) for row in rows]
 
+        matrix_payload = json.dumps(
+            [[k_vector(value) for value in row] for row in matrix],
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode()
+        basis_payload = json.dumps(
+            {"rows": rows, "columns": columns}, sort_keys=True, separators=(",", ":")
+        ).encode()
         if not columns:
+            obstruction_count = sum(bool(poly) for poly in forcing.values())
             equations.extend((layer, poly) for poly in forcing.values() if poly)
-            layer_data.append([layer, 0, len(rows), 0, 0, sum(bool(poly) for poly in forcing.values())])
+            layer_data.append([layer, 0, len(rows), 0, 0, obstruction_count])
+            stage_data.append(
+                {
+                    "layer": layer,
+                    "basis_sha256": hashlib.sha256(basis_payload).hexdigest(),
+                    "matrix_sha256": hashlib.sha256(matrix_payload).hexdigest(),
+                    "pivot_columns": [],
+                    "pivot_unit_count": 0,
+                    "pivot_units_sha256": hashlib.sha256(b"[]").hexdigest(),
+                    "inverted_parameter_polynomials": [],
+                }
+            )
             continue
 
-        reduced, transform, pivots = rref_transform(matrix)
+        reduced, transform, pivots, pivot_units = rref_transform_details(matrix)
         transformed_rhs = transform_polynomials(transform, right_hand_side)
         compatibility = transformed_rhs[len(pivots):]
         equations.extend((layer, poly) for poly in compatibility if poly)
@@ -240,5 +353,32 @@ def run_layers(case: SupportCase, p_coefficients, q_coefficients) -> LayerRun:
         layer_data.append(
             [layer, len(columns), len(rows), len(pivots), len(kernel), sum(bool(poly) for poly in compatibility)]
         )
+        pivot_payload = json.dumps(
+            [k_vector(value) for value in pivot_units],
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode()
+        stage_data.append(
+            {
+                "layer": layer,
+                "basis_sha256": hashlib.sha256(basis_payload).hexdigest(),
+                "matrix_sha256": hashlib.sha256(matrix_payload).hexdigest(),
+                "pivot_columns": pivots,
+                "pivot_unit_count": len(pivot_units),
+                "pivot_units_sha256": hashlib.sha256(pivot_payload).hexdigest(),
+                "inverted_parameter_polynomials": [],
+            }
+        )
 
-    return LayerRun(case, p_support, q_support, p_layers, q_layers, p_solution, q_solution, equations, layer_data)
+    return LayerRun(
+        case,
+        p_support,
+        q_support,
+        p_layers,
+        q_layers,
+        p_solution,
+        q_solution,
+        equations,
+        layer_data,
+        stage_data,
+    )

@@ -1,0 +1,1 @@
+{"basis":["1","u","u^2","u^3","u^4"],"irreducibility_witness":{"method":"Rabin test","prime":67},"irreducible_over_Q":true,"minimal_polynomial":"u^5-u^4+3*u^3+3*u^2+26"}

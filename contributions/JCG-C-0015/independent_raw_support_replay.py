@@ -24,14 +24,15 @@ def main() -> int:
         "--relations",
         type=Path,
         default=(
-            SCRIPT_DIR
-            / "fixtures"
-            / "degree-twenty-one"
-            / "raw-support-reconstruction"
-            / "belyi_exact_field_relations.json"
+            SCRIPT_DIR / "fixtures" / "belyi_exact_field_relations.json"
         ),
     )
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--summary-only",
+        action="store_true",
+        help="write only summary.json after performing the complete exact reconstruction",
+    )
     args = parser.parse_args()
     if args.output.exists():
         raise FileExistsError(args.output)
@@ -43,15 +44,17 @@ def main() -> int:
     full_summary, full_equations, legacy, selected = analyze_full(full)
 
     args.output.mkdir(parents=True)
-    write_json(args.output / "full_equations.json", full_equations)
-    write_json(args.output / "full_exact_fivevar_w8.json", legacy)
-    write_json(args.output / "full_terminal_projection.json", selected)
+    if not args.summary_only:
+        write_json(args.output / "full_equations.json", full_equations)
+        write_json(args.output / "full_exact_fivevar_w8.json", legacy)
+        write_json(args.output / "full_terminal_projection.json", selected)
     summary = {
         "schema": "lane8-independent-raw-support-replay-v1",
         "field": {
             "minimal_polynomial": FIELD_POLYNOMIAL,
             "basis": ["1", "u", "u^2", "u^3", "u^4"],
             "irreducible_over_Q": True,
+            "irreducibility_witness": {"prime": 67, "method": "Rabin test"},
         },
         "inputs": {
             "relations_file_sha256": hashlib.sha256(args.relations.read_bytes()).hexdigest(),

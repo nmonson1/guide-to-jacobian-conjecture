@@ -8,6 +8,7 @@ from typing import Any
 
 from . import algebra
 from .algebra import (
+    ONE,
     ZERO,
     KElement,
     ParamPoly,
@@ -103,6 +104,12 @@ def analyze_truncated(run: LayerRun) -> dict[str, Any]:
     return {
         "support_sizes": {"P": len(run.p_support), "Q": len(run.q_support)},
         "layer_data": run.layer_data,
+        "stage_data": run.stage_data,
+        "origin_vertex_parameters": {
+            "P_(0,0)": "parameter_index_2",
+            "Q_(0,0)": "parameter_index_5",
+        },
+        "higher_deficiency_coefficients_projected_away": {"P": 0, "Q": 0},
         "weight_three_equation_count": len(weight_three),
         "weight_four_equation_count": len(weight_four),
         "weight_four_monomial_count": len(monomials),
@@ -211,6 +218,7 @@ def analyze_full(run: LayerRun):
         "variables": ["x", "a", "b", "c", "d"],
         "original_parameter_indices": [0, 3, 6, 7, 8],
         "layer_data": run.layer_data,
+        "stage_data": run.stage_data,
         "alpha": k_expr(alpha, symbol="x"),
         "Ptop": k_expr(p_endpoint, symbol="x"),
         "Qtop": k_expr(q_endpoint, symbol="x"),
@@ -242,6 +250,17 @@ def analyze_full(run: LayerRun):
     summary = {
         "support_sizes": {"P": len(run.p_support), "Q": len(run.q_support)},
         "layer_data": run.layer_data,
+        "stage_data": run.stage_data,
+        "origin_vertex_parameters": {
+            "P_(0,0)": "parameter_index_2",
+            "Q_(0,0)": "parameter_index_5",
+        },
+        "higher_deficiency_coefficients_projected_away": {
+            "cutoff": 8,
+            "P": 3,
+            "Q": 28,
+            "extra_vertices": {"P_(0,8)": 10, "Q_(0,12)": 15},
+        },
         "weight_four_is_square": True,
         "alpha_basis": k_vector(alpha),
         "top_P_after_square": {"t11_exponent": p_exponent, "coefficient_basis": k_vector(p_endpoint)},

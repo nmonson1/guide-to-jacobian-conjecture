@@ -11,7 +11,7 @@ PACKAGE_DIR = Path(__file__).resolve().parent
 FIELD_DIR = Path(
     os.environ.get(
         "LANE8_FIELD_DIR",
-        PACKAGE_DIR.parent / "fixtures" / "degree-296-compact" / "scripts",
+        PACKAGE_DIR.parent / "fixtures",
     )
 ).resolve()
 sys.path.insert(0, str(FIELD_DIR))
@@ -113,7 +113,7 @@ def polynomial_json(poly: ParamPoly) -> list[dict[str, Any]]:
     ]
 
 
-def rref_transform(matrix: list[list[KElement]]) -> tuple[list[list[KElement]], list[list[KElement]], list[int]]:
+def rref_transform_details(matrix: list[list[KElement]]) -> tuple[list[list[KElement]], list[list[KElement]], list[int], list[KElement]]:
     row_count = len(matrix)
     column_count = len(matrix[0]) if matrix else 0
     augmented = [
@@ -122,11 +122,13 @@ def rref_transform(matrix: list[list[KElement]]) -> tuple[list[list[KElement]], 
     ]
     pivot_row = 0
     pivots: list[int] = []
+    pivot_units: list[KElement] = []
     for column in range(column_count):
         source = next((row for row in range(pivot_row, row_count) if augmented[row][column] != ZERO), None)
         if source is None:
             continue
         augmented[pivot_row], augmented[source] = augmented[source], augmented[pivot_row]
+        pivot_units.append(augmented[pivot_row][column])
         inverse = ONE / augmented[pivot_row][column]
         augmented[pivot_row] = [inverse * value for value in augmented[pivot_row]]
         for row in range(row_count):
@@ -145,7 +147,13 @@ def rref_transform(matrix: list[list[KElement]]) -> tuple[list[list[KElement]], 
         [row[:column_count] for row in augmented],
         [row[column_count:] for row in augmented],
         pivots,
+        pivot_units,
     )
+
+
+def rref_transform(matrix: list[list[KElement]]) -> tuple[list[list[KElement]], list[list[KElement]], list[int]]:
+    reduced, transform, pivots, _ = rref_transform_details(matrix)
+    return reduced, transform, pivots
 
 
 def transform_polynomials(transform: list[list[KElement]], vector: list[ParamPoly]) -> list[ParamPoly]:
