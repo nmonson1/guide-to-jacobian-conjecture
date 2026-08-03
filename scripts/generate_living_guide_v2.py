@@ -1501,6 +1501,32 @@ def render_model_brief(
             title_line = source_lines[title_index]
             body_lines = source_lines[:title_index] + source_lines[title_index + 1 :]
         body = "\n".join(body_lines).lstrip()
+    if cross_program or lane:
+        body_lines = body.splitlines()
+        if body_lines:
+            leading = body_lines[0].strip()
+            redundant_identity = (
+                lane
+                and re.fullmatch(
+                    rf"Lane {brief['lane_sequence']} · [0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}}",
+                    leading,
+                )
+            ) or (
+                cross_program
+                and re.fullmatch(r"Updated [0-9]{1,2} [A-Za-z]+ [0-9]{4}", leading)
+            )
+            if redundant_identity:
+                body_lines = body_lines[1:]
+                if body_lines and not body_lines[0].strip():
+                    body_lines = body_lines[1:]
+                body = "\n".join(body_lines)
+        body_head, separator, compact_footer = body.rpartition("\n---\n")
+        if (
+            separator
+            and "[Release metadata](release.json)" in compact_footer
+            and "[Current proof sources]" in compact_footer
+        ):
+            body = body_head.rstrip()
     updated = datetime.fromisoformat(release["updated_at"]).strftime("%-d %B %Y")
     identity = f"{label.removeprefix('Model research brief · ')} · Updated {updated}"
     footer_links = []

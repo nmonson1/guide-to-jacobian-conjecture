@@ -13,6 +13,49 @@ from pathlib import Path
 from playwright.sync_api import Page, sync_playwright
 
 
+V7C_LANE_SEMANTIC_GROUPS = (
+    ("purpose", ("Scope", "Why this lane matters")),
+    (
+        "setup",
+        (
+            "Setup and definitions",
+            "Setup and notation",
+            "Newton-root conventions",
+            "Fixed ",
+        ),
+    ),
+    (
+        "reusable mathematics",
+        (
+            "Results to use",
+            "Reusable mathematics",
+            "Closed mathematics below 125",
+        ),
+    ),
+    ("live problem", ("Live problem",)),
+    ("ready task", ("Tasks", "Ready task ", "Interface-ready task ")),
+    (
+        "scope boundary",
+        (
+            "Limits",
+            "Non-ready follow-up",
+            "Optional exact-CAS route",
+            "Non-ready ",
+        ),
+    ),
+    ("sources", ("Direct sources", "Exact sources")),
+)
+V7C_PROGRAM_SEMANTIC_GROUPS = (
+    ("mathematical corpus", ("Current mathematical corpus",)),
+    ("research entrypoints", ("Current research entrypoints",)),
+    ("strategy", ("Strategy and connections",)),
+)
+V7C_PORTFOLIO_SEMANTIC_GROUPS = (
+    ("lane entrypoints", ("Choose a lane", "Lane entrypoints")),
+    ("connections", ("Connections worth testing",)),
+)
+
+
 def require(condition: bool, message: str) -> None:
     if not condition:
         raise AssertionError(message)
@@ -117,6 +160,27 @@ def run(
             / "manifest.json"
         ).read_text(encoding="utf-8")
     )
+    is_v7_handoff = (
+        model_brief_manifest.get("schema_version") == 7
+        and model_brief_manifest.get("source_handoff", {}).get(
+            "handoff_version"
+        )
+        in {"7c", "7d", "7e", "7f", "7g", "7h", "7i"}
+    )
+    retained_v2_manifest = None
+    if state.get("retained_math_v2") is not None:
+        retained_v2_manifest = json.loads(
+            (
+                root
+                / "data"
+                / state["retained_math_v2"]["data_dir"]
+                / "manifest.json"
+            ).read_text(encoding="utf-8")
+        )
+    full_retained_v2 = (
+        retained_v2_manifest is not None
+        and retained_v2_manifest.get("kind") == "retained-math-v2-full-public"
+    )
     first_material = materials_manifest["programs"][0]["artifacts"][0]["filename"]
     handler = functools.partial(
         QuietHandler,
@@ -188,18 +252,70 @@ def run(
                 release_response.json()["site_release_id"] == state["release_id"],
                 "machine-readable handoff release names the wrong site release",
             )
-            v2_response = desktop.context.request.get(
-                base + "research/handoffs/retained-math-v2-pilot.json"
-            )
-            require(
-                v2_response.ok,
-                "machine-readable retained-math v2 selection is not downloadable",
-            )
-            require(
-                v2_response.json()["selected_ids"]["arguments"]
-                == ["ARG-RMU5D8E0003-FINITE-PLANE"],
-                "retained-math v2 selection names the wrong pilot argument",
-            )
+            release_payload = release_response.json()
+            if full_retained_v2:
+                assert retained_v2_manifest is not None
+                retained_release = release_payload.get("retained_math_v2", {})
+                machine_routes = retained_release.get("machine_routes", {})
+                require(
+                    set(machine_routes)
+                    == {"graph", "legacy_compatibility"},
+                    "full retained-math v2 machine routes are incomplete",
+                )
+                graph_response = desktop.context.request.get(
+                    base + machine_routes.get("graph", "")
+                )
+                require(
+                    graph_response.ok,
+                    "full retained-math v2 graph is not downloadable",
+                )
+                graph_payload = graph_response.json()
+                require(
+                    graph_payload.get("registry_id")
+                    == retained_v2_manifest["source_registry_id"],
+                    "downloaded retained-math v2 graph names the wrong registry",
+                )
+                require(
+                    graph_payload.get("counts")
+                    == retained_v2_manifest["graph_counts"],
+                    "downloaded retained-math v2 graph has the wrong counts",
+                )
+                compatibility_response = desktop.context.request.get(
+                    base + machine_routes.get("legacy_compatibility", "")
+                )
+                require(
+                    compatibility_response.ok,
+                    "retained-math v2 compatibility map is not downloadable",
+                )
+                compatibility_payload = compatibility_response.json()
+                require(
+                    compatibility_payload.get("map_id")
+                    == retained_v2_manifest["compatibility_map_id"],
+                    "downloaded compatibility map has the wrong identity",
+                )
+                require(
+                    compatibility_payload.get("counts")
+                    == retained_v2_manifest["compatibility_counts"],
+                    "downloaded compatibility map has the wrong counts",
+                )
+                require(
+                    len(compatibility_payload.get("routes", []))
+                    == retained_v2_manifest["compatibility_counts"]["routes"],
+                    "downloaded compatibility map is not total",
+                )
+            else:
+                v2_response = desktop.context.request.get(
+                    base + "research/handoffs/retained-math-v2-pilot.json"
+                )
+                require(
+                    v2_response.ok,
+                    "machine-readable retained-math v2 selection is not downloadable",
+                )
+                require(
+                    v2_response.json()["selected_ids"]["arguments"]
+                    == ["ARG-RMU5D8E0003-FINITE-PLANE"],
+                    "retained-math v2 selection names the wrong pilot argument",
+                )
             source_response = desktop.context.request.get(
                 base + "research/proof-sources/"
             )
@@ -249,20 +365,36 @@ def run(
                     f"{sorted(linked_manuscripts - active_manuscripts)}",
                 )
                 if kind == "lane":
-                    require(
-                        desktop.locator(
-                            'main h2:has-text("Reusable mathematics")'
-                        ).count()
-                        == 1,
-                        f"lane handoff lacks reusable mathematics: {route}",
-                    )
-                    require(
-                        desktop.locator(
-                            'main h2:has-text("Tasks and deliverables")'
-                        ).count()
-                        == 1,
-                        f"lane handoff lacks its deliverable boundary: {route}",
-                    )
+                    if is_v7_handoff:
+                        heading_texts = [
+                            text.casefold()
+                            for text in desktop.locator("main h2").all_inner_texts()
+                        ]
+                        for name, alternatives in V7C_LANE_SEMANTIC_GROUPS:
+                            require(
+                                any(
+                                    alternative.casefold() in heading
+                                    for heading in heading_texts
+                                    for alternative in alternatives
+                                ),
+                                f"lane handoff lacks v7c semantic group "
+                                f"{name}: {route}",
+                            )
+                    else:
+                        require(
+                            desktop.locator(
+                                'main h2:has-text("Reusable mathematics")'
+                            ).count()
+                            == 1,
+                            f"lane handoff lacks reusable mathematics: {route}",
+                        )
+                        require(
+                            desktop.locator(
+                                'main h2:has-text("Tasks and deliverables")'
+                            ).count()
+                            == 1,
+                            f"lane handoff lacks its deliverable boundary: {route}",
+                        )
                     deeper_routes = desktop.locator("main a[href]").evaluate_all(
                         """links => links.filter(link =>
                           new URL(link.href).pathname.includes(
@@ -273,7 +405,11 @@ def run(
                         deeper_routes >= 1,
                         f"lane handoff lacks a deeper program route: {route}",
                     )
-                    if brief["program_slug"] == "homogeneous-realization-compression":
+                    if (
+                        not is_v7_handoff
+                        and brief["program_slug"]
+                        == "homogeneous-realization-compression"
+                    ):
                         for marker in (
                             "Compiler-owned retained result",
                             "ARG-RMU5D8E0003-FINITE-PLANE",
@@ -283,6 +419,35 @@ def run(
                                 marker in desktop.locator("main").inner_text(),
                                 f"Lane 6 v2 block lacks {marker}: {route}",
                             )
+                elif is_v7_handoff and kind == "program":
+                    heading_texts = [
+                        text.casefold()
+                        for text in desktop.locator("main h2").all_inner_texts()
+                    ]
+                    for name, alternatives in V7C_PROGRAM_SEMANTIC_GROUPS:
+                        require(
+                            any(
+                                alternative.casefold() in heading
+                                for heading in heading_texts
+                                for alternative in alternatives
+                            ),
+                            f"program handoff lacks v7c semantic group "
+                            f"{name}: {route}",
+                        )
+                elif is_v7_handoff and kind == "cross_program":
+                    heading_texts = [
+                        text.casefold()
+                        for text in desktop.locator("main h2").all_inner_texts()
+                    ]
+                    for name, alternatives in V7C_PORTFOLIO_SEMANTIC_GROUPS:
+                        require(
+                            any(
+                                alternative.casefold() in heading
+                                for heading in heading_texts
+                                for alternative in alternatives
+                            ),
+                            f"portfolio lacks v7c semantic group {name}: {route}",
+                        )
                 else:
                     require(
                         desktop.locator(
@@ -315,27 +480,53 @@ def run(
                     f"model handoff exposes YAML metadata: {route}",
                 )
                 if kind == "cross_program":
-                    require(
-                        desktop.locator(
-                            'a[href*="#3-reusable-inputs-exact-scope-and-proof-access"]'
-                        ).count()
-                        >= 6,
-                        "cross-program handoff lacks all six proof routes",
-                    )
+                    if is_v7_handoff:
+                        lane_routes = {
+                            item["route"].removesuffix(".md") + "/"
+                            for item in model_brief_manifest["briefs"]
+                            if item.get("kind") == "lane"
+                        }
+                        linked_routes = set(
+                            desktop.locator("main a[href]").evaluate_all(
+                                """links => links.map(link =>
+                                  new URL(link.href).pathname.slice(1))"""
+                            )
+                        )
+                        require(
+                            lane_routes <= linked_routes,
+                            "v7c portfolio lacks one or more lane routes",
+                        )
+                    else:
+                        require(
+                            desktop.locator(
+                                'a[href*="#3-reusable-inputs-exact-scope-and-proof-access"]'
+                            ).count()
+                            >= 6,
+                            "cross-program handoff lacks all six proof routes",
+                        )
                 elif kind == "program":
-                    require(
-                        bool(linked_manuscripts),
-                        f"model handoff lacks an active manuscript: {route}",
-                    )
-                    proof_locators = desktop.locator(
-                        'a[href*="/assets/"][href*=".pdf#page="]'
-                    ).count() + desktop.locator(
-                        'a[href*="proof-sources/"]'
-                    ).count()
-                    require(
-                        proof_locators >= 8,
-                        f"model handoff lacks direct proof/source links: {route}",
-                    )
+                    if is_v7_handoff:
+                        require(
+                            desktop.locator(
+                                'main a[href*="working-mathematics/programs/"]'
+                            ).count()
+                            >= 1,
+                            f"v7c program overlay lacks its graph view: {route}",
+                        )
+                    else:
+                        require(
+                            bool(linked_manuscripts),
+                            f"model handoff lacks an active manuscript: {route}",
+                        )
+                        proof_locators = desktop.locator(
+                            'a[href*="/assets/"][href*=".pdf#page="]'
+                        ).count() + desktop.locator(
+                            'a[href*="proof-sources/"]'
+                        ).count()
+                        require(
+                            proof_locators >= 8,
+                            f"model handoff lacks direct proof/source links: {route}",
+                        )
                 else:
                     require(
                         desktop.locator('a[href*="proof-sources/"]').count() >= 1,

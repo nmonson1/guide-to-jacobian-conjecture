@@ -110,6 +110,42 @@ LANE_HANDOFF_STRUCTURE = (
     "## Limits",
     "## Direct sources",
 )
+LANE_HANDOFF_V7C_SEMANTIC_GROUPS = (
+    ("purpose", ("## Scope", "## Why this lane matters")),
+    (
+        "setup",
+        (
+            "## Setup and definitions",
+            "## Setup and notation",
+            "## Newton-root conventions",
+            "## Fixed \\(F_2\\) chart and support",
+        ),
+    ),
+    (
+        "reusable mathematics",
+        (
+            "## Results to use",
+            "## Reusable mathematics",
+            "## Closed mathematics below 125",
+        ),
+    ),
+    ("live problem", ("## Live problem",)),
+    ("ready task", ("## Tasks", "## Ready task ", "## Interface-ready task ")),
+    (
+        "scope boundary",
+        (
+            "## Limits",
+            "## Non-ready follow-up",
+            "## Optional exact-CAS route",
+            "## Non-ready \\(F_2\\) integrations",
+        ),
+    ),
+    ("sources", ("## Direct sources", "## Exact sources")),
+)
+PORTFOLIO_V7C_SEMANTIC_GROUPS = (
+    ("lane entrypoints", ("## Choose a lane", "## Lane entrypoints")),
+    ("connections", ("## Connections worth testing",)),
+)
 HANDOFF_OPENING_BUREAUCRACY = (
     "handoff source v",
     "site release living-guide-",
@@ -129,8 +165,9 @@ def _sensitive(text: str, label: str, failures: list[str]) -> None:
     for value in FORBIDDEN:
         if value.casefold() in lowered:
             failures.append(f"{label}: forbidden publication marker {value!r}")
+    uuid_text = re.sub(r"https?://[^\s)\]}>\"']+", "", text)
     for pattern in FORBIDDEN_PATTERNS:
-        if pattern.search(text):
+        if pattern.search(uuid_text):
             failures.append(f"{label}: forbidden UUID")
 
 
@@ -600,6 +637,11 @@ def main() -> int:
     if brief_manifest.get("primary_entrypoint_count") != 10:
         failures.append("primary model-entrypoint count is not ten")
     task_inputs = brief_manifest.get("task_inputs", [])
+    is_v7_handoff = (
+        brief_manifest.get("schema_version") == 7
+        and brief_manifest.get("source_handoff", {}).get("handoff_version")
+        in {"7c", "7d", "7e", "7f", "7g", "7h", "7i"}
+    )
     if brief_manifest.get("task_input_count", 0) != len(task_inputs):
         failures.append("model task-input count mismatch")
     if brief_manifest.get("schema_version") == 5 and {
@@ -700,6 +742,29 @@ def main() -> int:
                     "lane7-projective-kernel-20260803-v1/generate_kernel_chart_singular.py",
                     "lane7-projective-kernel-20260803-v1/test_plucker_transport.py",
                 )
+            if is_v7_handoff:
+                records = item.get("source_packet", {}).get("files", [])
+                packet_anchors = [record.get("packet_anchor") for record in records]
+                if len(packet_anchors) != len(set(packet_anchors)):
+                    failures.append(f"{item['source']}: duplicate source anchors")
+                for record in records:
+                    anchor = record.get("packet_anchor")
+                    repo_path = record.get("repo_path")
+                    if not isinstance(anchor, str) or re.fullmatch(
+                        r"source-[0-9a-f]{16}", anchor
+                    ) is None:
+                        failures.append(
+                            f"{item['source']}: invalid source anchor for {repo_path}"
+                        )
+                        continue
+                    if text.count(f'id="{anchor}"') != 1:
+                        failures.append(
+                            f"{item['source']}: source anchor {anchor!r} is not unique"
+                        )
+                    if f"](#{anchor})" not in text:
+                        failures.append(
+                            f"{item['source']}: source index omits {anchor!r}"
+                        )
         for marker in (*markers_by_id.get(input_id, ()), *source_packet_markers):
             if marker not in text:
                 failures.append(f"{item['source']}: missing {marker!r}")
@@ -745,11 +810,23 @@ def main() -> int:
         except ValueError as exc:
             failures.append(f"{brief['source']}: {exc}")
         if kind == "lane":
-            for marker in LANE_HANDOFF_STRUCTURE:
-                if marker.casefold() not in source_text.casefold():
-                    failures.append(
-                        f"{brief['source']}: missing lane semantic marker {marker!r}"
-                    )
+            if is_v7_handoff:
+                for name, alternatives in LANE_HANDOFF_V7C_SEMANTIC_GROUPS:
+                    if not any(
+                        heading.casefold() in source_text.casefold()
+                        for heading in alternatives
+                    ):
+                        failures.append(
+                            f"{brief['source']}: missing v7c lane semantic "
+                            f"group {name!r}"
+                        )
+            else:
+                for marker in LANE_HANDOFF_STRUCTURE:
+                    if marker.casefold() not in source_text.casefold():
+                        failures.append(
+                            f"{brief['source']}: missing lane semantic "
+                            f"marker {marker!r}"
+                        )
             if ".md)" not in source_text:
                 failures.append(f"{brief['source']}: lane has no deeper route")
             if brief_manifest.get("schema_version") in {6, 7}:
@@ -843,11 +920,26 @@ def main() -> int:
                         f"{brief['source']}: missing handoff semantic marker {marker!r}"
                     )
         elif kind == "cross_program":
-            for marker in ("## Lane entrypoints", "## Connections worth testing"):
-                if marker.casefold() not in source_text.casefold():
-                    failures.append(
-                        f"{brief['source']}: missing portfolio marker {marker!r}"
-                    )
+            if is_v7_handoff:
+                for name, alternatives in PORTFOLIO_V7C_SEMANTIC_GROUPS:
+                    if not any(
+                        heading.casefold() in source_text.casefold()
+                        for heading in alternatives
+                    ):
+                        failures.append(
+                            f"{brief['source']}: missing v7c portfolio "
+                            f"semantic group {name!r}"
+                        )
+            else:
+                for marker in (
+                    "## Lane entrypoints",
+                    "## Connections worth testing",
+                ):
+                    if marker.casefold() not in source_text.casefold():
+                        failures.append(
+                            f"{brief['source']}: missing portfolio marker "
+                            f"{marker!r}"
+                        )
         for tag in CLAIM_TAG_PATTERN.findall(source_text):
             if tag not in claims:
                 failures.append(f"{brief['source']}: unknown claim tag {tag}")
@@ -868,12 +960,22 @@ def main() -> int:
                 failures.append(
                     f"{brief['source']}: missing or unordered nine-lane anchors"
                 )
-            for phrase in ("invitations", "not prerequisites"):
-                if phrase not in source_text:
-                    failures.append(
-                        f"{brief['source']}: missing research-autonomy "
-                        f"language {phrase!r}"
-                    )
+            autonomy_phrases = (
+                ("invitations",),
+                (
+                    "rather than dependencies",
+                    "not prerequisites",
+                )
+                if is_v7_handoff
+                else ("not prerequisites",),
+            )
+            for alternatives in autonomy_phrases:
+                if any(phrase in source_text for phrase in alternatives):
+                    continue
+                failures.append(
+                    f"{brief['source']}: missing research-autonomy "
+                    f"language {' or '.join(repr(value) for value in alternatives)}"
+                )
         elif kind == "program":
             graph_route = (
                 "../working-mathematics/programs/"
@@ -925,18 +1027,51 @@ def main() -> int:
         ):
             if marker not in rendered_text:
                 failures.append(f"{brief['route']}: missing footer marker {marker!r}")
-        if kind == "lane":
+        if kind == "lane" and is_v7_handoff:
+            expected_heading_groups = LANE_HANDOFF_V7C_SEMANTIC_GROUPS
+            expected_headings: tuple[str, ...] = ()
+        elif kind == "lane":
+            expected_heading_groups = ()
             expected_headings = LANE_HANDOFF_STRUCTURE
         elif kind == "program":
+            expected_heading_groups = ()
             expected_headings = HANDOFF_STRUCTURE
+        elif is_v7_handoff:
+            expected_heading_groups = PORTFOLIO_V7C_SEMANTIC_GROUPS
+            expected_headings = ()
         else:
+            expected_heading_groups = ()
             expected_headings = (
                 "## Lane entrypoints",
                 "## Connections worth testing",
             )
+        for name, alternatives in expected_heading_groups:
+            if not any(heading in rendered_text for heading in alternatives):
+                failures.append(
+                    f"{brief['route']}: missing v7c lane semantic group {name!r}"
+                )
         for heading in expected_headings:
             if heading not in rendered_text:
                 failures.append(f"{brief['route']}: missing {heading}")
+        if is_v7_handoff and kind in {"lane", "cross_program"}:
+            if kind == "lane":
+                redundant_identity = (
+                    f"Lane {brief['lane_sequence']} · 2026-08-03"
+                )
+            else:
+                redundant_identity = "\nUpdated 3 August 2026\n"
+            if redundant_identity in rendered_text:
+                failures.append(
+                    f"{brief['route']}: duplicate source identity remains"
+                )
+            if rendered_text.count("## Sources and release") != 1:
+                failures.append(
+                    f"{brief['route']}: expected one rendered release footer"
+                )
+            if "\n---\n[Portfolio](state-of-the-program.md)" in rendered_text:
+                failures.append(
+                    f"{brief['route']}: duplicate compact footer remains"
+                )
         if (
             brief_manifest.get("schema_version") < 7
             and brief["program_slug"] == "minimum-degree-and-quartic-exclusions"

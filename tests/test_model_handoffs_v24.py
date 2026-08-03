@@ -9,7 +9,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = ROOT / "data" / "model-handoffs-v24-20260803d"
-BASE = ROOT / "data" / "model-handoffs-v23-20260803a"
 FORBIDDEN = ("/fss/", "/home/", "chatgpt.com/share", "sandbox:", "registry/")
 LANE_SECTIONS = (
     "## Scope",
@@ -30,7 +29,6 @@ class ModelHandoffsV24Tests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.manifest = json.loads((PACKAGE / "manifest.json").read_text())
-        cls.base_manifest = json.loads((BASE / "manifest.json").read_text())
 
     def test_manifest_and_all_payload_hashes(self) -> None:
         manifest = self.manifest

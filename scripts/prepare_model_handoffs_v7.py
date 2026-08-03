@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the public, write-once model-handoff package from private handoff v7.
+"""Build a public, write-once model-handoff package from a v7c-v7i handoff.
 
 The nine focused lane pages and portfolio are taken from the manifest-pinned
 private handoff.  The six deeper program dossiers are compact overlays on the
@@ -62,12 +62,13 @@ TEXT_SUFFIXES = {".csv", ".json", ".m2", ".md", ".py", ".sage", ".tex"}
 PACKET_INPUTS: dict[str, tuple[str, ...]] = {
     "cubic-flatness-normalization-defects": (
         "research-notes/lane1-collision-saturation-20260802-v1",
+        "research-notes/lane1-collision-saturation-20260803-v2",
         "research-notes/finite-diagnostics-20260803-v1/verify_lane1_marked_root_benchmark.py",
         "manuscripts/01-cubic-incidence/code/verify_ade_matrix_factorizations.py",
-        "papers-release-2026-07-26-v8/01-cubic-incidence/appendices/common-zero-normalization.tex",
-        "papers-release-2026-07-26-v8/01-cubic-incidence/appendices/minimal-smooth-defect.tex",
-        "papers-release-2026-07-26-v8/01-cubic-incidence/appendices/moving-hyperplanes.tex",
-        "papers-release-2026-07-26-v8/01-cubic-incidence/appendices/quadratic-covariant-rigidity.tex",
+        "manuscripts/01-cubic-incidence/appendices/common-zero-normalization.tex",
+        "manuscripts/01-cubic-incidence/appendices/minimal-smooth-defect.tex",
+        "manuscripts/01-cubic-incidence/appendices/moving-hyperplanes.tex",
+        "manuscripts/01-cubic-incidence/appendices/quadratic-covariant-rigidity.tex",
     ),
     "boundary-completeness-torelli-at-infinity": (
         "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260801b",
@@ -77,11 +78,10 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802c/lane2_unordered_normalization_checks.py",
         "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802d/lane2_T0_normalization_theorem.md",
         "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802d/lane2_T0_normalization_checks.py",
-        "research-notes/finite-diagnostics-20260803-v1/verify_lane2_infinity_boundary.py",
-        "papers-release-2026-07-26-v8/04-stable-moduli/appendices/additional-moduli.tex",
-        "papers-release-2026-07-26-v8/04-stable-moduli/appendices/logarithmic-deformations.tex",
-        "papers-release-2026-07-26-v8/04-stable-moduli/appendices/reciprocal-family.tex",
-        "papers-release-2026-07-26-v8/04-stable-moduli/appendices/weighted-lift-moduli.tex",
+        "manuscripts/04-stable-moduli/appendices/additional-moduli.tex",
+        "manuscripts/04-stable-moduli/appendices/logarithmic-deformations.tex",
+        "manuscripts/04-stable-moduli/appendices/reciprocal-family.tex",
+        "manuscripts/04-stable-moduli/appendices/weighted-lift-moduli.tex",
     ),
     "bounded-degree-deformation-modulus-onset": (
         "research-notes/lane3-formal-effectivity",
@@ -99,6 +99,7 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "research-notes/lane4-quartic-endgame-20260802-v1/case-tree/lane4-case-tree.csv",
         "research-notes/lane4-quartic-endgame-20260802-v1/PROOF_CODE_CROSSWALK.md",
         "research-notes/lane4-quartic-endgame-20260802-v1/replay_core.py",
+        "research-notes/lane4-quartic-endgame-20260802-v1/proofs/10-structural-repairs-and-z2.tex",
         "manuscripts/02-low-degree/code/program-2-2026-07-29-v3/f4-marked-chart/quartic_F4_endgame_complete.md",
         "manuscripts/02-low-degree/code/program-2-2026-07-29-v3/f4-marked-chart/verify_quartic_F4_endgame.replay_fixed.py",
     ),
@@ -110,9 +111,10 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "research-tools/filtered_operation_complex",
         "research-notes/lane6-transverse-source-obstruction-20260802-v1",
         "research-notes/finite-diagnostics-20260803-v1/verify_lane6_moving_target_pilot.py",
-        "papers-release-2026-07-26-v8/05-homogeneous-descendants/appendices/monolith-prolongation.tex",
+        "manuscripts/05-homogeneous-descendants/appendices/monolith-prolongation.tex",
     ),
     "five-dimensional-collision-geometry": (
+        "research-notes/lane7-component-inputs-20260803-v1",
         "research-notes/lane7-projective-kernel-20260803-v1",
         "research-notes/lane7-split-incidence-20260802-v1/lane7-split-incidence-theorem.md",
         "research-notes/lane7-split-incidence-20260802-v1/reconstruct_matrices.py",
@@ -124,22 +126,23 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "research-notes/lane7-split-incidence-20260802-v1/verify_split_determinants_report.json",
     ),
     "plane-newton-queue-terminal-certificates": (
+        "research-notes/lane8-f2-support-determinacy-audit-20260803-v1",
         "research-notes/lane8-full-root-closure-20260803-v1",
         "research-notes/lane89-mathematical-recovery-20260803-v1",
         "research-notes/lane8-proof-queue-20260802-v1",
         "research-notes/planar-descent-no-go-20260802-v1",
-        "papers-release-2026-07-26-v8/06-plane-boundary/appendices/f2-terminal-boundary.tex",
-        "papers-release-2026-07-26-v8/06-plane-boundary/appendices/six-sheet-monodromy.tex",
+        "manuscripts/06-plane-boundary/appendices/f2-terminal-boundary.tex",
+        "manuscripts/06-plane-boundary/appendices/six-sheet-monodromy.tex",
         "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
+        "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_boundary_gluing_program.md",
         "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py",
         "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_primary_belyi.py",
         "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_face_rigidity.py",
     ),
     "plane-chart-correspondence-global-attachment": (
         "research-notes/lane89-mathematical-recovery-20260803-v1",
-        "research-notes/p6-chart-correspondence/LANE9_F2_PARAMETER_COMPLETE_RECURRENCE.md",
+        "research-notes/p6-chart-correspondence/LANE9_F2_PARAMETER_COMPLETE_RECURRENCE_V2.md",
         "research-notes/p6-chart-correspondence/lane9_f2_attachment_recurrence.py",
-        "research-notes/lane9-wall-shear-20260802-v1/README.md",
         "research-notes/lane9-wall-shear-20260802-v1/LANE9_CONTINUATION_V3_REPORT.md",
         "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_GRADING_AUDIT.md",
         "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_OVERLAP_THEOREM.md",
@@ -157,6 +160,11 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
 
 def _sha256(payload: bytes) -> str:
     return hashlib.sha256(payload).hexdigest()
+
+
+def _source_anchor(repo_path: str) -> str:
+    """Return a compact stable anchor for one canonical source path."""
+    return f"source-{_sha256(repo_path.encode('utf-8'))[:16]}"
 
 
 def _load(path: Path) -> dict[str, Any]:
@@ -211,7 +219,7 @@ def _selected_files(repo_root: Path, slug: str) -> list[Path]:
 
 def _source_packet(
     *, sequence: int, slug: str, repo_root: Path, source_commit: str
-) -> tuple[bytes, dict[str, Any], set[str]]:
+) -> tuple[bytes, dict[str, Any], dict[str, str]]:
     paths = _selected_files(repo_root, slug)
     records: list[dict[str, Any]] = []
     payloads: list[tuple[str, str]] = []
@@ -223,6 +231,7 @@ def _source_packet(
         record = {
             "repo_path": repo_path,
             "packet_path": repo_path,
+            "packet_anchor": _source_anchor(repo_path),
             "sha256": _sha256(payload),
             "bytes": len(payload),
         }
@@ -243,7 +252,9 @@ def _source_packet(
         "",
     ]
     parts.extend(
-        f"- `{record['repo_path']}` — `{record['sha256']}`" for record in records
+        f"- [`{record['repo_path']}`](#{record['packet_anchor']}) — "
+        f"`{record['sha256']}`"
+        for record in records
     )
     language = {
         ".csv": "csv",
@@ -255,12 +266,19 @@ def _source_packet(
         ".tex": "tex",
     }
     for repo_path, source_text in payloads:
+        source_anchor = _source_anchor(repo_path)
         normalized = "\n".join(
             line.rstrip() for line in source_text.rstrip().splitlines()
         )
-        escaped = html.escape(normalized, quote=False).replace("[", "&#91;").replace("]", "&#93;")
+        escaped = (
+            html.escape(normalized, quote=False)
+            .replace("[", "&#91;")
+            .replace("]", "&#93;")
+        )
         parts.extend(
             [
+                "",
+                f'<a id="{source_anchor}"></a>',
                 "",
                 f"## `{repo_path}`",
                 "",
@@ -286,7 +304,9 @@ def _source_packet(
             "files": records,
         },
     }
-    return payload, item, {record["repo_path"] for record in records}
+    return payload, item, {
+        record["repo_path"]: record["packet_anchor"] for record in records
+    }
 
 
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
@@ -294,19 +314,38 @@ UNIT_PATH_RE = re.compile(r"^/fss/.*/units/(?P<unit>(?:RMU|JCG)-[A-Z0-9]+)\.md$"
 
 
 def _public_lane_source(
-    source: str, *, sequence: int, slug: str, packet_paths: set[str]
+    source: str,
+    *,
+    sequence: int,
+    slug: str,
+    packet_anchors: dict[str, str],
 ) -> str:
-    footer = "\n---\n[Portfolio](../README.md) · private v7 candidate · v6h preserved\n"
-    if source.count(footer) != 1:
-        raise ValueError(f"{slug}: private footer changed or is missing")
-    source = source.replace(
-        footer,
-        "\n---\n[Portfolio](state-of-the-program.md) · "
-        f"[Exact source packet](lane-{sequence}-source-packet.md) · "
-        "[Release metadata](release.json) · "
-        "[Retained mathematics](../working-mathematics/index.md) · "
-        "[Current proof sources](../proof-sources/index.md)\n",
+    footer_links = [
+        "[Portfolio](state-of-the-program.md)",
+        f"[Exact source packet](lane-{sequence}-source-packet.md)",
+    ]
+    if sequence == 7:
+        footer_links.append(
+            "[Exact collision-chart input](lane-7-collision-input.md)"
+        )
+    if sequence == 8:
+        footer_links.append(
+            "[Raw-support reconstruction input](lane-8-reconstruction-input.md)"
+        )
+    footer_links.extend(
+        [
+            "[Release metadata](release.json)",
+            "[Retained mathematics](../working-mathematics/index.md)",
+            "[Current proof sources](../proof-sources/index.md)",
+        ]
     )
+    source, footer_replacements = re.subn(
+        r"\n---\n(?:\[Portfolio\]\(\.\./README\.md\)|Successor handoff v7[c-i])[^\n]*\n\Z",
+        "\n---\n" + " · ".join(footer_links) + "\n",
+        source,
+    )
+    if footer_replacements != 1:
+        raise ValueError(f"{slug}: private v7c-v7i footer changed or is missing")
 
     def replace_link(match: re.Match[str]) -> str:
         label, target = match.group(1), match.group(2)
@@ -323,74 +362,75 @@ def _public_lane_source(
         if repo_path.startswith("manuscripts/") and repo_path.endswith(".tex"):
             proof_path = Path(repo_path.removeprefix("manuscripts/")).with_suffix(".md")
             return f"[{label}](../proof-sources/{proof_path.as_posix()})"
-        if repo_path.endswith((".md", ".py", ".json", ".csv", ".m2", ".sage")):
-            if repo_path not in packet_paths:
-                raise ValueError(f"{slug}: linked input missing from source packet: {repo_path}")
-        else:
-            prefix = repo_path + "/"
-            if not any(path.startswith(prefix) for path in packet_paths):
-                raise ValueError(f"{slug}: linked input directory missing from packet: {repo_path}")
-        return f"[{label}](lane-{sequence}-source-packet.md)"
+        anchor = packet_anchors.get(repo_path)
+        if anchor is None:
+            raise ValueError(
+                f"{slug}: linked input missing from source packet: {repo_path}"
+            )
+        return f"[{label}](lane-{sequence}-source-packet.md#{anchor})"
 
     source = LINK_RE.sub(replace_link, source)
     if "../../../" in source or "](/fss/" in source:
         raise ValueError(f"{slug}: repository-only link survived transformation")
-    required = (
-        "## Scope",
-        "## Setup and definitions",
-        "## Results to use",
-        "## Live problem",
-        "## Tasks",
-        "## Limits",
-        "## Direct sources",
+    required_groups = (
+        ("## Scope", "## Why this lane matters"),
+        (
+            "## Setup and definitions",
+            "## Setup and notation",
+            "## Newton-root conventions",
+            "## Fixed \\(F_2\\) chart and support",
+        ),
+        (
+            "## Results to use",
+            "## Reusable mathematics",
+            "## Closed mathematics below 125",
+        ),
+        ("## Live problem",),
+        ("## Tasks", "## Ready task ", "## Interface-ready task "),
+        ("## Direct sources", "## Exact sources"),
     )
-    missing = [heading for heading in required if heading not in source]
+    missing = [
+        " or ".join(group)
+        for group in required_groups
+        if not any(heading in source for heading in group)
+    ]
     if missing:
-        raise ValueError(f"{slug}: missing v7 sections: {missing}")
+        raise ValueError(f"{slug}: missing v7 section groups: {missing}")
     _validate_public(source, source=Path(slug))
     return source
 
 
 def _public_portfolio(source: str) -> str:
-    source = source.replace("# Research handoff v7", "# Current Jacobian research portfolio", 1)
-    source = source.replace("Portfolio · 2026-08-03", "Updated 3 August 2026", 1)
-    private_intro = """This private, immutable candidate is the model-facing research surface for nine
-independent but connected programs. Each lane states the objects before using
-them, separates reusable results from examples, and starts its task list at the
-actual frontier. Markdown and TeX are the primary mathematical interfaces;
-programs are linked only where they replay or construct an exact finite object.
-
-The portfolio does not change any canonical selector, site, release file, or
-historical handoff. In particular, v6h remains immutable."""
-    public_intro = """These nine independent but connected lanes are the current model-facing
-research surface. Each lane defines its objects before use, separates known
-results from examples and open problems, and begins at the actual frontier.
-Markdown and TeX are the primary mathematical interfaces; programs appear
-where they replay or construct an exact finite object."""
-    if source.count(private_intro) != 1:
-        raise ValueError("portfolio private introduction changed")
-    source = source.replace(private_intro, public_intro, 1)
-    old_footer = "\n---\nPrivate candidate · v7 · historical sources and selectors unchanged\n"
+    if not source.startswith("# Nine research directions around the Jacobian conjecture\n"):
+        raise ValueError("portfolio v7 title changed")
+    if source.count("Research portfolio · 2026-08-03") != 1:
+        raise ValueError("portfolio v7 date line changed")
+    source = source.replace(
+        "Research portfolio · 2026-08-03", "Updated 3 August 2026", 1
+    )
     new_footer = (
         "\n---\n[Release metadata](release.json) · "
         "[Retained mathematics](../working-mathematics/index.md) · "
         "[Current proof sources](../proof-sources/index.md)\n"
     )
-    if source.count(old_footer) != 1:
-        raise ValueError("portfolio private footer changed")
-    source = source.replace(old_footer, new_footer, 1)
+    source, footer_replacements = re.subn(
+        r"\n---\nSuccessor handoff v7[c-i][^\n]*\n\Z", new_footer, source
+    )
+    if footer_replacements != 1:
+        raise ValueError("portfolio v7 footer changed")
     source = source.replace("lanes/", "")
     _validate_public(source, source=Path("state-of-the-program.md"))
     return source
 
 
-def _verified_v7_sources(
+def _verified_handoff_sources(
     *, lane_source_dir: Path, lane_manifest_path: Path
-) -> tuple[dict[str, str], str]:
+) -> tuple[dict[str, str], str, str]:
     manifest_payload = lane_manifest_path.read_bytes()
     manifest = _load(lane_manifest_path)
-    if manifest.get("handoff_version") != "7" or manifest.get("lane_count") != 9:
-        raise ValueError("source manifest must select exactly nine v7 lanes")
+    handoff_version = manifest.get("handoff_version")
+    if handoff_version not in {"7c", "7d", "7e", "7f", "7g", "7h", "7i"} or manifest.get("lane_count") != 9:
+        raise ValueError("source manifest must select exactly nine v7c-v7i lanes")
     lanes = manifest.get("lanes")
     if lanes != [{"lane": sequence, "slug": slug} for sequence, slug in LANES]:
         raise ValueError("v7 lane order or membership changed")
@@ -415,7 +455,7 @@ def _verified_v7_sources(
         ):
             raise ValueError(f"v7 source differs from manifest: {path}")
         sources[key] = text
-    return sources, _sha256(manifest_payload)
+    return sources, _sha256(manifest_payload), handoff_version
 
 
 def _program_overlay(
@@ -523,17 +563,25 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
 
     base_manifest_path = base / "manifest.json"
     base_manifest = _load(base_manifest_path)
-    if base_manifest.get("brief_count") != 16 or base_manifest.get("primary_entrypoint_count") != 10:
+    if (
+        base_manifest.get("brief_count") != 16
+        or base_manifest.get("primary_entrypoint_count") != 10
+    ):
         raise ValueError("base package must contain sixteen briefs and ten entrypoints")
-    v7_sources, v7_manifest_sha = _verified_v7_sources(
-        lane_source_dir=lane_source_dir, lane_manifest_path=lane_manifest_path
+    handoff_sources, handoff_manifest_sha, handoff_version = (
+        _verified_handoff_sources(
+            lane_source_dir=lane_source_dir,
+            lane_manifest_path=lane_manifest_path,
+        )
     )
     retained_graph_payload = retained_graph_path.read_bytes()
     retained_graph = _load(retained_graph_path)
     if retained_graph.get("schema_version") != 2:
         raise ValueError("program dossiers require retained graph schema v2")
 
-    packet_outputs: dict[str, tuple[bytes, dict[str, Any], set[str]]] = {}
+    packet_outputs: dict[
+        str, tuple[bytes, dict[str, Any], dict[str, str]]
+    ] = {}
     for sequence, slug in LANES:
         packet_outputs[slug] = _source_packet(
             sequence=sequence,
@@ -545,7 +593,9 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
     prepared_briefs: list[tuple[str, bytes, dict[str, Any]]] = []
     brief_by_slug = {item["program_slug"]: item for item in base_manifest["briefs"]}
     portfolio_item = brief_by_slug["state-of-the-program"]
-    portfolio_payload = _public_portfolio(v7_sources["state-of-the-program"]).encode("utf-8")
+    portfolio_payload = _public_portfolio(
+        handoff_sources["state-of-the-program"]
+    ).encode("utf-8")
     prepared_briefs.append(
         (
             portfolio_item["source"],
@@ -568,9 +618,12 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
 
     for sequence, slug in LANES:
         item = brief_by_slug[slug]
-        packet_paths = packet_outputs[slug][2]
+        packet_anchors = packet_outputs[slug][2]
         text = _public_lane_source(
-            v7_sources[slug], sequence=sequence, slug=slug, packet_paths=packet_paths
+            handoff_sources[slug],
+            sequence=sequence,
+            slug=slug,
+            packet_anchors=packet_anchors,
         )
         payload = text.encode("utf-8")
         title = text.splitlines()[0].removeprefix("# ")
@@ -599,8 +652,8 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
             "manifest_sha256": _sha256(base_manifest_path.read_bytes()),
         },
         "source_handoff": {
-            "handoff_version": "7",
-            "manifest_sha256": v7_manifest_sha,
+            "handoff_version": handoff_version,
+            "manifest_sha256": handoff_manifest_sha,
             "jacobian_commit": args.jacobian_commit,
         },
         "program_dossiers": {
