@@ -68,6 +68,7 @@ def archive(
     inventory_path: Path,
     source_root: Path,
     destination: Path,
+    archive_id: str | None = None,
 ) -> dict:
     if destination.exists():
         raise FileExistsError(destination)
@@ -88,7 +89,7 @@ def archive(
         raise RuntimeError("copied generated archive does not match its source")
     manifest = {
         "schema_version": 1,
-        "archive_id": "public-untracked-generated-20260803-v2",
+        "archive_id": archive_id or f"{inventory['inventory_id']}-archive",
         "created_on": "2026-08-03",
         "source_repository": str(source_root),
         "source_baseline_commit": inventory["baseline_commit"],
@@ -114,6 +115,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--inventory", type=Path, required=True)
     parser.add_argument("--source-root", type=Path, required=True)
     parser.add_argument("--destination", type=Path, required=True)
+    parser.add_argument("--archive-id")
     return parser.parse_args()
 
 
@@ -123,6 +125,7 @@ def main() -> int:
         inventory_path=args.inventory.resolve(),
         source_root=args.source_root.resolve(),
         destination=args.destination,
+        archive_id=args.archive_id,
     )
     print(json.dumps({key: value for key, value in manifest.items() if key != "files"}, indent=2))
     return 0

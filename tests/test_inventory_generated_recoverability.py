@@ -70,7 +70,9 @@ class GeneratedRecoverabilityTests(unittest.TestCase):
                 inventory_path=inventory,
                 source_root=source,
                 destination=destination,
+                archive_id="test-archive",
             )
+            self.assertEqual(manifest["archive_id"], "test-archive")
             self.assertEqual(manifest["copied_roots"], ["docs-v1"])
             self.assertTrue((destination / "docs-v1" / "index.md").is_file())
             self.assertTrue((destination / "docs-v1" / "current.md").is_symlink())
