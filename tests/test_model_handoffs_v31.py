@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = ROOT / "data" / "model-handoffs-v31-20260803a"
 EXPECTED_SOURCE_COMMIT = "e23eef3f4b4450f504edaca64a4fd5ab3f0f72df"
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+FORBIDDEN = ("/fss/", "/home/", "chatgpt.com/share", "sandbox:", "registry/")
 SEMANTIC_GROUPS = {
     "purpose": ("## Scope", "## Why this lane matters"),
     "setup": (
@@ -111,6 +112,56 @@ class ModelHandoffsV31Tests(unittest.TestCase):
             for anchor in anchors:
                 self.assertRegex(anchor, r"^source-[0-9a-f]{16}$")
                 self.assertEqual(text.count(f'id="{anchor}"'), 1)
+
+    def test_program_dossiers_are_compact_graph_overlays(self) -> None:
+        programs = {
+            item["program_slug"]: item
+            for item in self.manifest["briefs"]
+            if item["kind"] == "program"
+        }
+        self.assertEqual(len(programs), 6)
+        self.assertEqual(
+            self.manifest["program_dossiers"]["kind"],
+            "generated_graph_view_overlays",
+        )
+        for slug, item in programs.items():
+            text = (PACKAGE / item["source"]).read_text(encoding="utf-8")
+            self.assertIn(f"../working-mathematics/programs/{slug}.md", text)
+            self.assertIn("## Current research entrypoints", text)
+            self.assertIn("does not copy theorem statements", text)
+            self.assertNotIn("Reusable inputs", text)
+            self.assertNotIn("Proof-signature index", text)
+            self.assertNotIn("../../claims/", text)
+            self.assertNotIn("{{MANUSCRIPT_", text)
+
+    def test_source_packet_metadata_and_publication_boundary(self) -> None:
+        packets = [
+            item
+            for item in self.manifest["task_inputs"]
+            if item["input_id"].endswith("RESEARCH-SOURCE-PACKET-V2")
+        ]
+        self.assertEqual(len(packets), 9)
+        for item in packets:
+            metadata = item["source_packet"]
+            self.assertEqual(metadata["source_root"], "jacobian_repository")
+            self.assertRegex(metadata["source_commit"], r"^[0-9a-f]{40}$")
+            text = (PACKAGE / item["source"]).read_text(encoding="utf-8")
+            self.assertTrue(metadata["files"], item["source"])
+            for record in metadata["files"]:
+                repo_path = record["repo_path"]
+                self.assertEqual(record["packet_path"], repo_path)
+                self.assertFalse(Path(repo_path).is_absolute(), repo_path)
+                self.assertNotIn("..", Path(repo_path).parts)
+                self.assertRegex(record["sha256"], r"^[0-9a-f]{64}$")
+                self.assertIn(f"## `{repo_path}`", text)
+                self.assertIn(record["sha256"], text)
+
+        for path in PACKAGE.iterdir():
+            if not path.is_file():
+                continue
+            lowered = path.read_text(encoding="utf-8").casefold()
+            for marker in FORBIDDEN:
+                self.assertNotIn(marker.casefold(), lowered, f"{marker}: {path.name}")
 
     def test_repaired_lane_inputs_and_scopes_are_public(self) -> None:
         lane2 = (PACKAGE / "boundary-completeness-torelli-at-infinity.md").read_text()
