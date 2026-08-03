@@ -276,10 +276,14 @@ def lattice_and_stabilizer_checks() -> dict[str, object]:
             "quotient_field": "K(H,Q)=K(u,v^8)",
             "generic_extension_degree": 8,
         },
-        "presentation_stabilizer": {
-            "group": "mu_8",
+        "kummer_deck_isotropy": {
+            "group_scheme": "mu_8",
             "action_uv": "(u,v)->(u,zeta*v)",
             "action_xy": "(x,y)->(zeta^-1*x,zeta*y)",
+            "infinitesimal_lie_algebra_dimension_in_characteristic_zero": 0,
+            "original_complete_chain_stabilizer_status": (
+                "unknown without the missing approximate-root generator table"
+            ),
         },
         "ordinary_unimodular_chart": False,
         "index_is_invariant_under_unimodular_recharting": True,
@@ -348,15 +352,17 @@ def support_transport_checks() -> dict[str, object]:
 
 def admissible_module_checks() -> dict[str, object]:
     return {
-        "name": "minimal Rees-Kummer admissible Lie algebroid",
+        "name": "minimal forced admissible chart-groupoid system",
         "definition": (
-            "smallest filtered, C5-graded, mu8-equivariant Lie algebroid of "
-            "divergence-free derivations preserving the nonlinear support ideal, "
-            "containing the verified fixed-presentation generators and the Kummer "
-            "translation arrow"
+            "objectwise filtered C5-graded fixed-presentation Lie algebras of "
+            "divergence-free derivations preserving the nonlinear support ideals, "
+            "together with separate mu8-equivariant rechart-arrow modules; fixed "
+            "operations and chart arrows are not identified"
         ),
-        "forced_generators": [
+        "forced_fixed_operation_inputs": [
             "verified fixed-chart presentation generators (external table when supplied)",
+        ],
+        "forced_rechart_inputs": [
             "layer-4 Kummer tangent t^4(2*z^-3*d_z-2*z^-4*t*d_t)",
             "layer-7 bare wall tangent t^7(2*z^-3*d_z+z^-4*t*d_t)",
             "transported and Lie-bracket closure terms, including layer 11",
@@ -368,8 +374,9 @@ def admissible_module_checks() -> dict[str, object]:
             "recorded_complete_chain_input": [1, 1, 2, 0],
         },
         "classification_status": (
-            "definition and forced closure proved; equality with the actual complete-chain "
-            "operation algebroid is not proved without the missing generator table"
+            "the minimal forced lower-bound system and support-admissible outer bound "
+            "are defined; equality with the actual complete-chain operation system is "
+            "not proved without the missing generator table"
         ),
     }
 
@@ -408,9 +415,9 @@ def checklist_statuses() -> list[dict[str, str]]:
         {"item": "Preserve ambient Laurent-jet transport theorem", "status": "separated and retained"},
         {"item": "Compare archived layer-four residual coefficientwise", "status": "direct mismatch / ill-typed without overlap normalization"},
         {"item": "Test Q->Q+16s against residual", "status": "not a vector in the old window; conditional comparison remains"},
-        {"item": "Publish adjacent normalization map", "status": "Kummer quotient map published; ordinary complete-chain lift ruled out for this flow"},
-        {"item": "Identify presentation stabilizer", "status": "mu_8 for the Kummer presentation; original complete-chain stabilizer table still absent"},
-        {"item": "Construct g_adm", "status": "minimal forced Rees-Kummer Lie algebroid constructed; equality with true module open"},
+        {"item": "Publish adjacent normalization map", "status": "Kummer quotient map published; ordinary complete-chain lift ruled out for this exact flow"},
+        {"item": "Identify presentation stabilizer", "status": "Kummer deck isotropy is mu_8 with zero Lie algebra in characteristic zero; original complete-chain stabilizer remains absent"},
+        {"item": "Construct g_adm", "status": "minimal forced fixed-operation/rechart groupoid system constructed; equality with true module open"},
         {"item": "Support/residue transport for monomial charts", "status": "proved; quotient requires character modules"},
         {"item": "Pairwise/triple cocycles", "status": "strict on quotient/formal unit-root lift; mu_8 ambiguity algebraically"},
         {"item": "Kummer quotient allowed?", "status": "not in ordinary same-field atlas; allowed after root-stack/Kummer enlargement"},
@@ -418,7 +425,7 @@ def checklist_statuses() -> list[dict[str, str]]:
         {"item": "Recompute F_2 recurrence", "status": "exact parameter-complete schema supplied; numerical instantiation blocked"},
         {"item": "C5-equivariant descent", "status": "character law and parameter bidegree proved"},
         {"item": "Finite global polynomial support", "status": "finite feasibility formulation supplied; instance blocked"},
-        {"item": "Match every neighboring chart", "status": "current repair cannot match any ordinary same-field chart"},
+        {"item": "Match every neighboring chart", "status": "the exact quotient-translation repair is not an ordinary same-field arrow; other neighboring charts remain unclassified"},
         {"item": "Algebraize a formal solution", "status": "Kummer flow algebraizes only on degree-8 cover, not as same-field rational/polynomial map"},
         {"item": "Chart-independent finite obstruction", "status": "index-8/Kummer valuation obstruction obtained for this repair candidate"},
     ]
