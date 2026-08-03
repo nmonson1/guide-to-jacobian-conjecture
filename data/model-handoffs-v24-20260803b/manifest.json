@@ -1,0 +1,1826 @@
+{
+  "schema_version": 7,
+  "release_id": "model-handoff-v24b-graph-dossiers",
+  "updated_at": "2026-08-03T12:00:00Z",
+  "base_release": {
+    "release_id": "model-handoff-v23-focused-computations",
+    "manifest_sha256": "aa92a9d8f8ed2c892c6274f69f03ad988378a25fdcdfae125c14634afed7fad2"
+  },
+  "source_handoff": {
+    "handoff_version": "7",
+    "manifest_sha256": "95a18a0747f5955f55ca4c7ea520b7f21218ad597d0fa19be3b77ec72f36c5ef",
+    "jacobian_commit": "a84db9c18ab401b1273eba6da1ec132dfd3f9ba5"
+  },
+  "program_dossiers": {
+    "kind": "generated_graph_view_overlays",
+    "retained_registry_id": "RETAINED2-451ced3e9a4b",
+    "retained_graph_sha256": "1e27db6666285890e358b67cf198404abebcd66088b97009890fd5a7eafb98e3"
+  },
+  "brief_count": 16,
+  "primary_entrypoint_count": 10,
+  "task_input_count": 11,
+  "task_inputs": [
+    {
+      "input_id": "LANE1-RESEARCH-SOURCE-PACKET-V2",
+      "source": "lane-1-source-packet.md",
+      "route": "research/handoffs/lane-1-source-packet.md",
+      "sha256": "bdcc4d403332099b867d3f8d7a47535d8545379035f015605edd5fbe43ec1e5e",
+      "bytes": 52979,
+      "words": 6197,
+      "source_packet": {
+        "source_root": "jacobian_repository",
+        "source_commit": "a84db9c18ab401b1273eba6da1ec132dfd3f9ba5",
+        "files": [
+          {
+            "repo_path": "manuscripts/01-cubic-incidence/code/verify_ade_matrix_factorizations.py",
+            "packet_path": "manuscripts/01-cubic-incidence/code/verify_ade_matrix_factorizations.py",
+            "sha256": "c85a7462c73f776676897468ff3d421efb7d1b828fa84b1fd90c400cf225cb71",
+            "bytes": 3423
+          },
+          {
+            "repo_path": "research-notes/finite-diagnostics-20260803-v1/verify_lane1_marked_root_benchmark.py",
+            "packet_path": "research-notes/finite-diagnostics-20260803-v1/verify_lane1_marked_root_benchmark.py",
+            "sha256": "8a8f19d6685f9e40af06d1a27ee6f1f3f03e0750f1dc4afbf02b2377107bb99d",
+            "bytes": 5302
+          },
+          {
+            "repo_path": "research-notes/lane1-collision-saturation-20260802-v1/INTEGRATION-v8.md",
+            "packet_path": "research-notes/lane1-collision-saturation-20260802-v1/INTEGRATION-v8.md",
+            "sha256": "d454c71f9cd4c2fe4bdb19544a636592ccad52a768f45e6ba1a0d11a5761a58e",
+            "bytes": 3708
+          },
+          {
+            "repo_path": "research-notes/lane1-collision-saturation-20260802-v1/cubic-flatness-normalization-defects.md",
+            "packet_path": "research-notes/lane1-collision-saturation-20260802-v1/cubic-flatness-normalization-defects.md",
+            "sha256": "a3d9ccebc6cc7b36dd30c30e9c36736e15d8cb4fc45f2f256b8b1be8c3054904",
+            "bytes": 8944
+          },
+          {
+            "repo_path": "research-notes/lane1-collision-saturation-20260802-v1/flatness-defect-repairs.tex",
+            "packet_path": "research-notes/lane1-collision-saturation-20260802-v1/flatness-defect-repairs.tex",
+            "sha256": "cfd9064969c8a42a85ae1701c234afb0dd80c7ae76c20ee609ae92206cd2560b",
+            "bytes": 19550
+          },
+          {
+            "repo_path": "research-notes/lane1-collision-saturation-20260802-v1/lane1-collision-v8-manifest.json",
+            "packet_path": "research-notes/lane1-collision-saturation-20260802-v1/lane1-collision-v8-manifest.json",
+            "sha256": "247bf32b22350cf724573eb52492e424a643d3a2279c675ec3aad604f6ffbb2b",
+            "bytes": 3401
+          },
+          {
+            "repo_path": "research-notes/lane1-collision-saturation-20260802-v1/verify_collision_idempotent.py",
+            "packet_path": "research-notes/lane1-collision-saturation-20260802-v1/verify_collision_idempotent.py",
+            "sha256": "80e9117af525529b12dd8d36dac6c07c71e77cecec6d1819b289f65cc3fac842",
+            "bytes": 3474
+          },
+          {
+            "repo_path": "research-notes/lane1-collision-saturation-20260802-v1/verify_standard_collision_model.py",
+            "packet_path": "research-notes/lane1-collision-saturation-20260802-v1/verify_standard_collision_model.py",
+            "sha256": "75f47234d04b0123f850ab42ba6c94a11d6aac7426b09edd914d12cfd26c31c5",
+            "bytes": 935
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE2-RESEARCH-SOURCE-PACKET-V2",
+      "source": "lane-2-source-packet.md",
+      "route": "research/handoffs/lane-2-source-packet.md",
+      "sha256": "2788afad7c5526190c8d9722bd6cf661f0e2741cecaa4a63f71685d476b3e72c",
+      "bytes": 135221,
+      "words": 16671,
+      "source_packet": {
+        "source_root": "jacobian_repository",
+        "source_commit": "a84db9c18ab401b1273eba6da1ec132dfd3f9ba5",
+        "files": [
+          {
+            "repo_path": "research-notes/finite-diagnostics-20260803-v1/verify_lane2_infinity_boundary.py",
+            "packet_path": "research-notes/finite-diagnostics-20260803-v1/verify_lane2_infinity_boundary.py",
+            "sha256": "475d0ef6fa5446fab802cf28334d418bcdc203019d064efed4278a054e89e154",
+            "bytes": 3653
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260801b/lane2_exact_ordered_outer_resolution.md",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260801b/lane2_exact_ordered_outer_resolution.md",
+            "sha256": "41760240268625d0571e61df35444be3fa8ade6d5da65524920729859c4b7569",
+            "bytes": 12837
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260801b/lane2_exact_ordered_outer_resolution_checks.py",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260801b/lane2_exact_ordered_outer_resolution_checks.py",
+            "sha256": "06abbed9b5303bdf4c778ae0546189eebdf54b6e9a19c4601cc619ffdb5c5db4",
+            "bytes": 8739
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260801b/lane2_m5_resolution_addendum.md",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260801b/lane2_m5_resolution_addendum.md",
+            "sha256": "acf78c87030623db41c4c9dc7f676f738c1b92ae3083ca0f6e8fd42416566fcf",
+            "bytes": 2843
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260801b/lane2_universal_outer_graph_resolution.md",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260801b/lane2_universal_outer_graph_resolution.md",
+            "sha256": "a660367ffee41fb204d80d12a937be55cb1cdc82020a7276c02ab73afaf622a1",
+            "bytes": 4665
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_hankel_rank_profile.md",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_hankel_rank_profile.md",
+            "sha256": "3907694e1edbd019aeb8f86567df3fbaecf04a1fe20448c1fda514b49730ad20",
+            "bytes": 6859
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_hankel_rank_profile_checks.py",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_hankel_rank_profile_checks.py",
+            "sha256": "b10ea931dac362a2afc8ec6651a7e0ec1e536da6240a87e6e2e4d0d668372011",
+            "bytes": 6799
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_psc_hankel_schur.md",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_psc_hankel_schur.md",
+            "sha256": "dedfa121fed4c0b1ec10b663c2b1cc53a5b6b967cd458867e168e34fc952ce3d",
+            "bytes": 7590
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_psc_hankel_schur_checks.py",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_psc_hankel_schur_checks.py",
+            "sha256": "b3ac19fcd1210541ac9cb07ec08b096e85bb49437b7d6ea25de24c3e07593de1",
+            "bytes": 4799
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_structural_checks.py",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_structural_checks.py",
+            "sha256": "cf674d9e4ea2f6bb4547edb4a0bced69d08342412ec50d0b70bb4bc397e2ba0c",
+            "bytes": 4502
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_structural_lemmas.md",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_all_rank_structural_lemmas.md",
+            "sha256": "ce2c4c6f2c3cbb55590fa7b9628321905b1ac6a08a6fc1bc7d5c70ca9aa2c3b8",
+            "bytes": 7884
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_m5_composition_grid_checks.py",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_m5_composition_grid_checks.py",
+            "sha256": "e617708736ab3387640d53f4178a7742fd04510f376197970207352805542d68",
+            "bytes": 4682
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_m5_nu5_actual_flag_checks.py",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_m5_nu5_actual_flag_checks.py",
+            "sha256": "40fcd64554f8a9a12e7d05b3ca8d4b2dcfb15241904c9c004f969714ad89970b",
+            "bytes": 5433
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_m5_nu5_actual_prs_flag.md",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a/lane2_m5_nu5_actual_prs_flag.md",
+            "sha256": "cdfc7d0e7c234e124aca026b93f00ce3f8d69ece4e4c4aa78c44193c46509538",
+            "bytes": 9347
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802c/lane2_saturated_multirees_equations.md",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802c/lane2_saturated_multirees_equations.md",
+            "sha256": "00f9feb430536990b7cb324c99ca37e4059cfa3b473962e8baadc6ac6c019bec",
+            "bytes": 1990
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802c/lane2_unordered_normalization_checks.py",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802c/lane2_unordered_normalization_checks.py",
+            "sha256": "e72ecf76c6f16b42c0eece8cc072b4647b0204fce474d36c48317974bde3e247",
+            "bytes": 7018
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802c/lane2_unordered_normalization_theorem.md",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802c/lane2_unordered_normalization_theorem.md",
+            "sha256": "b24cb8f0c001cdfd0d9931faf82fbb616b2b2da25c3ddd55b0185a225b216392",
+            "bytes": 8938
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802d/lane2_T0_normalization_checks.py",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802d/lane2_T0_normalization_checks.py",
+            "sha256": "d3c3ef91a5618ce62a07b325155f77636281bb3abea89fb04753af85d3afc571",
+            "bytes": 5004
+          },
+          {
+            "repo_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802d/lane2_T0_normalization_theorem.md",
+            "packet_path": "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802d/lane2_T0_normalization_theorem.md",
+            "sha256": "874f9affa3e59f4fb4c15d3b2ebe326f6e3e45ce9932633e9e8f38806df03193",
+            "bytes": 8610
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE3-RESEARCH-SOURCE-PACKET-V2",
+      "source": "lane-3-source-packet.md",
+      "route": "research/handoffs/lane-3-source-packet.md",
+      "sha256": "64bf835d00ba3ec452fac4373590ac6c6ee5749a76114445ac7942985c85d2b4",
+      "bytes": 177985,
+      "words": 17914,
+      "source_packet": {
+        "source_root": "jacobian_repository",
+        "source_commit": "a84db9c18ab401b1273eba6da1ec132dfd3f9ba5",
+        "files": [
+          {
+            "repo_path": "research-notes/lane3-formal-effectivity/AUDIT.md",
+            "packet_path": "research-notes/lane3-formal-effectivity/AUDIT.md",
+            "sha256": "2daaa07bb9a0fc327da4ceb40ebde655383429e0e05b67ed939eaf9274f80725",
+            "bytes": 3290
+          },
+          {
+            "repo_path": "research-notes/lane3-formal-effectivity/README.md",
+            "packet_path": "research-notes/lane3-formal-effectivity/README.md",
+            "sha256": "d308c0772eaf03b8f46d50560c7cd1a629bf4ad0c47f483eb37d220e396d4efd",
+            "bytes": 4262
+          },
+          {
+            "repo_path": "research-notes/lane3-formal-effectivity/check_manifest.py",
+            "packet_path": "research-notes/lane3-formal-effectivity/check_manifest.py",
+            "sha256": "13140fe00e4279838cbf7390f7d275d9fd3cb4600530be5bd5ad186efeebc5ca",
+            "bytes": 1191
+          },
+          {
+            "repo_path": "research-notes/lane3-formal-effectivity/formal_effectivity_insertion.tex",
+            "packet_path": "research-notes/lane3-formal-effectivity/formal_effectivity_insertion.tex",
+            "sha256": "fb9e1e150ea387ae272daf0c03af233d937eefd12530adfdd29d4b9185a0b6d2",
+            "bytes": 15916
+          },
+          {
+            "repo_path": "research-notes/lane3-formal-effectivity/formal_effectivity_theorem.md",
+            "packet_path": "research-notes/lane3-formal-effectivity/formal_effectivity_theorem.md",
+            "sha256": "1f01ad944f7bcc1fbc9474497f5071fd3df91d8305b043dc975513db9c7f9267",
+            "bytes": 17598
+          },
+          {
+            "repo_path": "research-notes/lane3-formal-effectivity/lane3-handoff-replacement.md",
+            "packet_path": "research-notes/lane3-formal-effectivity/lane3-handoff-replacement.md",
+            "sha256": "564d94426a1394656e270d0af62d8664be7a437447943bcb2ce1429015a8c6e8",
+            "bytes": 10276
+          },
+          {
+            "repo_path": "research-notes/lane3-formal-effectivity/manifest.json",
+            "packet_path": "research-notes/lane3-formal-effectivity/manifest.json",
+            "sha256": "6640a9dcf0da9b47d93db5d368da2807a61da64908c77f9477f3369f8d7b0813",
+            "bytes": 2199
+          },
+          {
+            "repo_path": "research-notes/lane3-formal-effectivity/verify_effective_unframed_bound.py",
+            "packet_path": "research-notes/lane3-formal-effectivity/verify_effective_unframed_bound.py",
+            "sha256": "7f5cfe5706f4b41cd2c680fce23c3e907bc0e9e98a78fc052ac7b5d3cfe4b74f",
+            "bytes": 6150
+          },
+          {
+            "repo_path": "research-notes/lane3-formal-effectivity/verify_formal_effectivity.py",
+            "packet_path": "research-notes/lane3-formal-effectivity/verify_formal_effectivity.py",
+            "sha256": "fed25d2940f0fca521cde6b03d83ad96a7e7179d366ed4ac0bf99ac5c8d2632f",
+            "bytes": 14853
+          },
+          {
+            "repo_path": "research-notes/lane3-formal-effectivity/verify_formal_effectivity_independent.py",
+            "packet_path": "research-notes/lane3-formal-effectivity/verify_formal_effectivity_independent.py",
+            "sha256": "700170ac7053a2cdf8521189faede15107cd651e8277eb341f108602f413f46a",
+            "bytes": 4047
+          },
+          {
+            "repo_path": "research-notes/lane3-order5-recovery-20260803-v1/AUDIT.md",
+            "packet_path": "research-notes/lane3-order5-recovery-20260803-v1/AUDIT.md",
+            "sha256": "5aec7b0b85a182d14b46991dcd849d25caf8822758dd8c734f822835e6fb6d0f",
+            "bytes": 870
+          },
+          {
+            "repo_path": "research-notes/lane3-order5-recovery-20260803-v1/README.md",
+            "packet_path": "research-notes/lane3-order5-recovery-20260803-v1/README.md",
+            "sha256": "778c1e21d3c91a6c41fe03821c31aaa5911e44a06fc6200216807f08b3f92e29",
+            "bytes": 2006
+          },
+          {
+            "repo_path": "research-notes/lane3-order5-recovery-20260803-v1/verify_order5_recovery.py",
+            "packet_path": "research-notes/lane3-order5-recovery-20260803-v1/verify_order5_recovery.py",
+            "sha256": "3edf0aa77f4078ca6a694132acb23b5503c60ba4b4159dec5f7dfb61718bbf5a",
+            "bytes": 18151
+          },
+          {
+            "repo_path": "research-notes/lane3-recovery-integration-20260803-v1/README.md",
+            "packet_path": "research-notes/lane3-recovery-integration-20260803-v1/README.md",
+            "sha256": "3c3bca61d0597864bf11764dbf733621cf13a9ef846941393fce391e34b9ea9d",
+            "bytes": 6279,
+            "public_transform": "checkout-only locators replaced by portable placeholders"
+          },
+          {
+            "repo_path": "research-notes/lane3-recovery-integration-20260803-v1/check_lane3_recovery.py",
+            "packet_path": "research-notes/lane3-recovery-integration-20260803-v1/check_lane3_recovery.py",
+            "sha256": "0fd36045016a6daa5f4c62d0f7c2bf89ec3e8fab8383215213763798c37fed31",
+            "bytes": 13618
+          },
+          {
+            "repo_path": "research-notes/lane3-recovery-integration-20260803-v1/manifest.json",
+            "packet_path": "research-notes/lane3-recovery-integration-20260803-v1/manifest.json",
+            "sha256": "1cefa739d294f728601a890f6d9f37e86b20ebd074b4eafa89d23ddf9fd65ccc",
+            "bytes": 6635
+          },
+          {
+            "repo_path": "research-notes/lane3-recovery-integration-20260803-v1/raw-formal-effectivity-reports/effective_unframed_bound_report.json",
+            "packet_path": "research-notes/lane3-recovery-integration-20260803-v1/raw-formal-effectivity-reports/effective_unframed_bound_report.json",
+            "sha256": "29ebf7cb96eec3d6671078ae5eb2cce369e7bfc9b89428500eab9d966c0a7f9c",
+            "bytes": 12169
+          },
+          {
+            "repo_path": "research-notes/lane3-recovery-integration-20260803-v1/raw-formal-effectivity-reports/formal_effectivity_independent_report.json",
+            "packet_path": "research-notes/lane3-recovery-integration-20260803-v1/raw-formal-effectivity-reports/formal_effectivity_independent_report.json",
+            "sha256": "6495bcc8bcab16479caae583bbdab0ecf5fd806c245bd8370858b7fff806a184",
+            "bytes": 14058
+          },
+          {
+            "repo_path": "research-notes/lane3-recovery-integration-20260803-v1/raw-formal-effectivity-reports/formal_effectivity_report.json",
+            "packet_path": "research-notes/lane3-recovery-integration-20260803-v1/raw-formal-effectivity-reports/formal_effectivity_report.json",
+            "sha256": "8e3403dc5259ff05fb1b0d7eb44e7108f0a8faa0a61916926562b0d5df004f01",
+            "bytes": 13242
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE4-RESEARCH-SOURCE-PACKET-V2",
+      "source": "lane-4-source-packet.md",
+      "route": "research/handoffs/lane-4-source-packet.md",
+      "sha256": "1e0e8565474f48fdd75c2a1a35bd9a01ab5ddbbcba6652cfce5883e353de2bd2",
+      "bytes": 60065,
+      "words": 6327,
+      "source_packet": {
+        "source_root": "jacobian_repository",
+        "source_commit": "a84db9c18ab401b1273eba6da1ec132dfd3f9ba5",
+        "files": [
+          {
+            "repo_path": "manuscripts/02-low-degree/code/program-2-2026-07-29-v3/f4-marked-chart/quartic_F4_endgame_complete.md",
+            "packet_path": "manuscripts/02-low-degree/code/program-2-2026-07-29-v3/f4-marked-chart/quartic_F4_endgame_complete.md",
+            "sha256": "51373ef59b0d8ca705048e4c88f615f8f23aba34918de4f16e01cb564669999a",
+            "bytes": 11115
+          },
+          {
+            "repo_path": "manuscripts/02-low-degree/code/program-2-2026-07-29-v3/f4-marked-chart/verify_quartic_F4_endgame.replay_fixed.py",
+            "packet_path": "manuscripts/02-low-degree/code/program-2-2026-07-29-v3/f4-marked-chart/verify_quartic_F4_endgame.replay_fixed.py",
+            "sha256": "c36723303aadbd669d130e988de76419b4ce0ea739a5ebf99b984b4fc754d94f",
+            "bytes": 6723
+          },
+          {
+            "repo_path": "research-notes/lane4-f4-contract-20260803-v1/F4_INPUT_CONTRACT.md",
+            "packet_path": "research-notes/lane4-f4-contract-20260803-v1/F4_INPUT_CONTRACT.md",
+            "sha256": "d8bf85998e9377cba79e551b381ee0ba7dd12f990b78ce39854b551a3bddf61a",
+            "bytes": 5156
+          },
+          {
+            "repo_path": "research-notes/lane4-f4-contract-20260803-v1/LOCAL_CHART_RECOVERY.md",
+            "packet_path": "research-notes/lane4-f4-contract-20260803-v1/LOCAL_CHART_RECOVERY.md",
+            "sha256": "59ce235b71eaa9fa22c437c6aef1b448ee5e342da9554808420c5cadd38efb79",
+            "bytes": 2011
+          },
+          {
+            "repo_path": "research-notes/lane4-f4-contract-20260803-v1/f4-contract.schema.json",
+            "packet_path": "research-notes/lane4-f4-contract-20260803-v1/f4-contract.schema.json",
+            "sha256": "65291074944b53aa1581ab4e93694c384987a0115fb59e1802ba63a9bcb82340",
+            "bytes": 8077
+          },
+          {
+            "repo_path": "research-notes/lane4-f4-contract-20260803-v1/q4-f4-local-chart-v1.json",
+            "packet_path": "research-notes/lane4-f4-contract-20260803-v1/q4-f4-local-chart-v1.json",
+            "sha256": "1a139d0a832c48a07b73d6acbe51efc82c11ff40afb6b55a709aeb867659ebe2",
+            "bytes": 5850
+          },
+          {
+            "repo_path": "research-notes/lane4-f4-contract-20260803-v1/verify_contract_and_routing.py",
+            "packet_path": "research-notes/lane4-f4-contract-20260803-v1/verify_contract_and_routing.py",
+            "sha256": "6a64525606f8e21897befcb5a8cf71f2715eb116a8cd8218bebaecd2d11f9bc6",
+            "bytes": 4102
+          },
+          {
+            "repo_path": "research-notes/lane4-quartic-endgame-20260802-v1/case-tree/lane4-case-tree.csv",
+            "packet_path": "research-notes/lane4-quartic-endgame-20260802-v1/case-tree/lane4-case-tree.csv",
+            "sha256": "63962c80bd4a6d61aa3e948109071b9b0393f40c3357bc5c5b0b90aa509ba5c3",
+            "bytes": 2283
+          },
+          {
+            "repo_path": "research-notes/lane4-quartic-endgame-20260802-v1/case-tree/lane4-global-case-tree.md",
+            "packet_path": "research-notes/lane4-quartic-endgame-20260802-v1/case-tree/lane4-global-case-tree.md",
+            "sha256": "82393d020cad9346365fe2c388baa7cdd5abb2a2e789eaf3b5e2590998c386d9",
+            "bytes": 10350
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE5-RESEARCH-SOURCE-PACKET-V2",
+      "source": "lane-5-source-packet.md",
+      "route": "research/handoffs/lane-5-source-packet.md",
+      "sha256": "bfbde16faadc66a2ba40a0d5b587e7f8c055d350768a6acd50862934c1d813aa",
+      "bytes": 130164,
+      "words": 10277,
+      "source_packet": {
+        "source_root": "jacobian_repository",
+        "source_commit": "a84db9c18ab401b1273eba6da1ec132dfd3f9ba5",
+        "files": [
+          {
+            "repo_path": "research-notes/finite-diagnostics-20260803-v1/verify_lane5_encoded_shear_packet.py",
+            "packet_path": "research-notes/finite-diagnostics-20260803-v1/verify_lane5_encoded_shear_packet.py",
+            "sha256": "553f4bed9eae63afbfbf5a60354fbd89615f27da0ef3fde11226ccfad15d8493",
+            "bytes": 3260
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/README.md",
+            "packet_path": "research-notes/lane5-degree-budgets/README.md",
+            "sha256": "2c8f21c6c8f232976c8c563ce75efd4f1fcb5eb1c5ecb64239486c09c6be79c9",
+            "bytes": 9891
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/REDUCED_WORD_SEPARATION.md",
+            "packet_path": "research-notes/lane5-degree-budgets/REDUCED_WORD_SEPARATION.md",
+            "sha256": "944ca8d8144b39dbf4a4c8ea7300c23bba8d45d92fd02ae70120185c3ffdfad9",
+            "bytes": 7204
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/all_elementary_monomial_shears.json",
+            "packet_path": "research-notes/lane5-degree-budgets/all_elementary_monomial_shears.json",
+            "sha256": "4d169769582009f33ddf58430621cc0bd61a6d65262904a26e282d891c4e809c",
+            "bytes": 12092
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/all_elementary_monomial_shears.py",
+            "packet_path": "research-notes/lane5-degree-budgets/all_elementary_monomial_shears.py",
+            "sha256": "fa003e761302e6a84c8988fe96d29523959a3e4418759c6482e5c014fc85794c",
+            "bytes": 6161
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/coefficient_transport.md",
+            "packet_path": "research-notes/lane5-degree-budgets/coefficient_transport.md",
+            "sha256": "97fde970df9d4e74b29bdaf605b7019b4d9271a81825db329155dbe0a26e77f5",
+            "bytes": 2835
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/elementary_shear_scan.json",
+            "packet_path": "research-notes/lane5-degree-budgets/elementary_shear_scan.json",
+            "sha256": "a5a02b00fdd1bd489fb5f4e4b5c870a681c728c13f2e6724ea960f37228bf906",
+            "bytes": 6208
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/elementary_shear_scan.py",
+            "packet_path": "research-notes/lane5-degree-budgets/elementary_shear_scan.py",
+            "sha256": "9c1ce67f17b0411705857e581a43cc381df2b3a6e3f2e60adce6065bb804ede8",
+            "bytes": 9042
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/lacunary_polynomial_shears.md",
+            "packet_path": "research-notes/lane5-degree-budgets/lacunary_polynomial_shears.md",
+            "sha256": "9d154fa986ada4d976317369050a41978d1e41ef9171e5b0945c92e273eab334",
+            "bytes": 5705
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/lacunary_polynomial_shears.py",
+            "packet_path": "research-notes/lane5-degree-budgets/lacunary_polynomial_shears.py",
+            "sha256": "0bc025fe73e78ca1fb10b37d60ab2b7ffecccea9d5fd9e76b590f349f45f9eee",
+            "bytes": 3278
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/one_sided_high_weight_compositions.md",
+            "packet_path": "research-notes/lane5-degree-budgets/one_sided_high_weight_compositions.md",
+            "sha256": "43d406b08a45c66ad8fae7ea3a4fa4d42ceca361bb7213e78d831055d82581cd",
+            "bytes": 6856
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/one_sided_high_weight_semigroup.md",
+            "packet_path": "research-notes/lane5-degree-budgets/one_sided_high_weight_semigroup.md",
+            "sha256": "e8d98c34261b506290dd7dec55fddf1feda32f0fb5dce0eb6e8eb57a7dad81ae",
+            "bytes": 379
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/reduced_word_separation.output.json",
+            "packet_path": "research-notes/lane5-degree-budgets/reduced_word_separation.output.json",
+            "sha256": "1c1d623ccb44b101994bc5f12b33bfed8fe7f25778f8171a462d95f1d7f35f55",
+            "bytes": 1107
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/resonant_weight_certificate.json",
+            "packet_path": "research-notes/lane5-degree-budgets/resonant_weight_certificate.json",
+            "sha256": "4a805712a1208ce0c79e595ae56effc797efd1c6507fe78be94f007b9983af48",
+            "bytes": 11070
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/resonant_weight_certificate.py",
+            "packet_path": "research-notes/lane5-degree-budgets/resonant_weight_certificate.py",
+            "sha256": "4e5c5d517619af4804a6754370eac764eced54ce6177a6003037489eb53f1877",
+            "bytes": 8671
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/standard_filtration_certificate.json",
+            "packet_path": "research-notes/lane5-degree-budgets/standard_filtration_certificate.json",
+            "sha256": "280a87b4ffb84579c56b71aec95d09e9345becc38a66a0b1ec197b0ce9d4a8fb",
+            "bytes": 5962
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/standard_filtration_certificate.py",
+            "packet_path": "research-notes/lane5-degree-budgets/standard_filtration_certificate.py",
+            "sha256": "942e3ff34aa09032ef70b410ebf6ee87595d0a4c2669ff48fdac3f2f917fb9df",
+            "bytes": 10444
+          },
+          {
+            "repo_path": "research-notes/lane5-degree-budgets/verify_reduced_word_separation.py",
+            "packet_path": "research-notes/lane5-degree-budgets/verify_reduced_word_separation.py",
+            "sha256": "1c4995c43f7bb50a46381abd205192e1191c962c2a13be0c6f4d33aeb5c5b2e9",
+            "bytes": 4462
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE6-RESEARCH-SOURCE-PACKET-V2",
+      "source": "lane-6-source-packet.md",
+      "route": "research/handoffs/lane-6-source-packet.md",
+      "sha256": "b5b971507ae563f2ae56729d7fa8f8f2356a92dbc120bf2351d9a7db2b1fce0e",
+      "bytes": 614898,
+      "words": 49437,
+      "source_packet": {
+        "source_root": "jacobian_repository",
+        "source_commit": "a84db9c18ab401b1273eba6da1ec132dfd3f9ba5",
+        "files": [
+          {
+            "repo_path": "research-notes/finite-diagnostics-20260803-v1/verify_lane6_moving_target_pilot.py",
+            "packet_path": "research-notes/finite-diagnostics-20260803-v1/verify_lane6_moving_target_pilot.py",
+            "sha256": "3ac119291b33441d9dde663e71f3173846977b0354ea19d1ca743e5d0e8debd6",
+            "bytes": 2469
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/README.md",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/README.md",
+            "sha256": "3c7fb27b29157b80470025245a9f883095851da673352a52e055e5b6f15658b6",
+            "bytes": 1993
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/STRATIFIED_TRANSVERSE_CLASSIFICATION.md",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/STRATIFIED_TRANSVERSE_CLASSIFICATION.md",
+            "sha256": "46c45f94fafa03340a363771c0726397053379602445b6dfdd5a5d7c0b1c4ffb",
+            "bytes": 6681
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/core_model.py",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/core_model.py",
+            "sha256": "b24eb4ee3d1fdbde16ba20610ba29c94c8523936739bcd9ce24a59793f47f8a9",
+            "bytes": 5820
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/curve_family_compression_functional.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/curve_family_compression_functional.json",
+            "sha256": "7e702473eda8d899e8640159460f315b25b8564f5c604b2d5aba7f40ba441208",
+            "bytes": 2282
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/deepest_finite_classification.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/deepest_finite_classification.json",
+            "sha256": "7d63932b4b4227fe58c2c91318472f783b724e5e7efe31be8142ee6fcf411611",
+            "bytes": 1310
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/deepest_r0_residual_classification.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/deepest_r0_residual_classification.json",
+            "sha256": "f1f0920151dcfa5d2154078ae540e2d2a32617b2d618ce99549827d8c6673fe8",
+            "bytes": 947
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/evaluate_compression_functional_on_curve_family.py",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/evaluate_compression_functional_on_curve_family.py",
+            "sha256": "ac421754a42edc6dd73e1372094ab5ffd6765933e90329256ea5b424cca89257",
+            "bytes": 3136
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/exact_transverse_rational_curve.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/exact_transverse_rational_curve.json",
+            "sha256": "a899283bd8854e36d0374f86576758810dbb1285c004683103aedd8c99401a01",
+            "bytes": 7089
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/row_family_exact_local_schur.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/row_family_exact_local_schur.json",
+            "sha256": "a98c763cb9001ae366cd8b8bbc68632a12e513ea91bc87c6f091f6f1201e8844",
+            "bytes": 1423
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/stratified_transverse_theorem_certificate.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/stratified_transverse_theorem_certificate.json",
+            "sha256": "5063c83d76b267c1990bd51aab6c0d1684e4ddb9586e1656f87132be2fe33e42",
+            "bytes": 1186
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/uniform_middle_stratum_certificate.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/uniform_middle_stratum_certificate.json",
+            "sha256": "2c43318d99167e31878347b7b1f945380f0acc020ee09eddf65dd5e2ee1cca9e",
+            "bytes": 2370
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/verify_deepest_finite_classification.py",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/verify_deepest_finite_classification.py",
+            "sha256": "27a404759dfdc47b2734c2d58aa205044e4853d32c200791ba386971605425f0",
+            "bytes": 5413
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/verify_deepest_r0_residual.py",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/verify_deepest_r0_residual.py",
+            "sha256": "fe8f09c944e2d7693bd3e466cd929325823e35e96f1c4f9371d718b2577f69ec",
+            "bytes": 5230
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/verify_exact_residual_rational_curve.py",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/verify_exact_residual_rational_curve.py",
+            "sha256": "55d5b1a4cd213abe185513d5c26927d9d44986fc65ab56f165d6703d1d913c9d",
+            "bytes": 6884
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/verify_uniform_middle_stratum.py",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/stratified-transverse/verify_uniform_middle_stratum.py",
+            "sha256": "2877ef50243d602d6d885640274b8538289078ae91ea2882f53bbb034b566ec6",
+            "bytes": 13663
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/README.md",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/README.md",
+            "sha256": "03fed955b2e257ab010ea969b5ffa48a9a8a56388eaa13645c5140f1407e72a7",
+            "bytes": 761
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/TAME_SOURCE_COUPLED_QUARTIC_OBSTRUCTION.md",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/TAME_SOURCE_COUPLED_QUARTIC_OBSTRUCTION.md",
+            "sha256": "0050b13a9715a7e7009a2788702813185e521f57b24a8bffa7adaef086b28595",
+            "bytes": 8360
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/core_model.py",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/core_model.py",
+            "sha256": "b24eb4ee3d1fdbde16ba20610ba29c94c8523936739bcd9ce24a59793f47f8a9",
+            "bytes": 5820
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/exact_transverse_rational_curve.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/exact_transverse_rational_curve.json",
+            "sha256": "a899283bd8854e36d0374f86576758810dbb1285c004683103aedd8c99401a01",
+            "bytes": 7089
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/full726_special_invisible_weight_space.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/full726_special_invisible_weight_space.json",
+            "sha256": "7d277f5916a8fbb4bc561f8b14ab4baadf5e0a6868ae5ada01b0c7874411f508",
+            "bytes": 10175
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/lane6_tame_source_coupled_theorem_certificate.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/lane6_tame_source_coupled_theorem_certificate.json",
+            "sha256": "222335232878c3d82b03c56d95fc9aff52ca7289d4df95de8c29c8e349adae08",
+            "bytes": 1780
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/residual_full_source_target_obstruction.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/residual_full_source_target_obstruction.json",
+            "sha256": "1d2c77dc81d19d0876b73195dd120aac45f2487ccb1be5b1d7453deec7f907cc",
+            "bytes": 3101
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/tame_residual_quadratic_jet.json",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/tame_residual_quadratic_jet.json",
+            "sha256": "9c83afe374c996bf78f986888aef35860b870bd131057fad61c50f183c09e7fa",
+            "bytes": 19862
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/verify_exact_residual_rational_curve.py",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/verify_exact_residual_rational_curve.py",
+            "sha256": "55d5b1a4cd213abe185513d5c26927d9d44986fc65ab56f165d6703d1d913c9d",
+            "bytes": 6884
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/verify_residual_source_target_obstruction.py",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/verify_residual_source_target_obstruction.py",
+            "sha256": "10986fb1c0cc5e16c192bffb16c1b1aeea12381d232fdc465de4429a272686a4",
+            "bytes": 21734
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/verify_tame_quadratic_jet.py",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/verify_tame_quadratic_jet.py",
+            "sha256": "71221a9e3f7101b233424f368ddfd38c5189b0058a92043f2d5f57f3db5b3f2d",
+            "bytes": 8280
+          },
+          {
+            "repo_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/verify_uniform_middle_stratum.py",
+            "packet_path": "research-notes/lane6-transverse-source-obstruction-20260802-v1/tame-source-coupled/verify_uniform_middle_stratum.py",
+            "sha256": "2877ef50243d602d6d885640274b8538289078ae91ea2882f53bbb034b566ec6",
+            "bytes": 13663
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/PROGRAM5_TANGENT_BRIDGE.md",
+            "packet_path": "research-tools/filtered_operation_complex/PROGRAM5_TANGENT_BRIDGE.md",
+            "sha256": "d61f0aafc161864f89dea29905fed617a9ad170abd337592f099e5b02ecf3e30",
+            "bytes": 6182
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/PROGRAM5_THIRD_ORDER_AUDIT.md",
+            "packet_path": "research-tools/filtered_operation_complex/PROGRAM5_THIRD_ORDER_AUDIT.md",
+            "sha256": "82cb0860ad660688338ae1105994f8415393c20c58b0728f38c62c9f3e6755d8",
+            "bytes": 3232
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/PROVENANCE.md",
+            "packet_path": "research-tools/filtered_operation_complex/PROVENANCE.md",
+            "sha256": "079f46c2ac957e74e7be047985fbb1c0da9757977a5649efa481af2351435104",
+            "bytes": 1116,
+            "public_transform": "checkout-only locators replaced by portable placeholders"
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/README.md",
+            "packet_path": "research-tools/filtered_operation_complex/README.md",
+            "sha256": "662f657c012b244756003be812ea7cbc5f926b2efb8fb4c991f32a79472a49ce",
+            "bytes": 11565
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/__init__.py",
+            "packet_path": "research-tools/filtered_operation_complex/__init__.py",
+            "sha256": "d9578bc00d61c48f59b6e9706ccdf77f0cdd294814be23bec5a0527720efb21f",
+            "bytes": 364
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/__main__.py",
+            "packet_path": "research-tools/filtered_operation_complex/__main__.py",
+            "sha256": "889f673c2145e28095264339dbb3be024859a0bd7242435c479850567be2fd49",
+            "bytes": 49
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/__init__.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/__init__.py",
+            "sha256": "262894ec4a39b9c494d3e4e8bfb17edc71ad120f86236037b7b3a2a0af7abe59",
+            "bytes": 63
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_compression_export.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_compression_export.py",
+            "sha256": "bb5e14b5ce2f2048ffb8fb7490e1bd17c5e7dc4512479f9f51a92aa39418100a",
+            "bytes": 22498
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_algebraic_fourth_order_kuranishi.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_algebraic_fourth_order_kuranishi.py",
+            "sha256": "14d22f9a013c371ff40ffac6ac98c9b135af7c96939d1e18315aa990f3b0745b",
+            "bytes": 17245
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_exceptional_finite_lines.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_exceptional_finite_lines.py",
+            "sha256": "f2af3bd1d62e82622503f67379822f1a34f254040c87dfbffa13206ce8fe5133",
+            "bytes": 6829
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_first_order_base_scan.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_first_order_base_scan.py",
+            "sha256": "fd415cc96af46f2f6e5e8c646160c9f94c120e642e6e24731b4b37e6e3935e26",
+            "bytes": 10036
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_formal_arc.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_formal_arc.py",
+            "sha256": "70c446a3afe255b325e584af90f8249b432a6bdd6d1d1eced1166da1306e75a4",
+            "bytes": 16213
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_formal_lift_engine.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_formal_lift_engine.py",
+            "sha256": "a4fbded93c8ec266177f54ce42d3ec0c45d94c5de780c63a73e2209257659e13",
+            "bytes": 13998
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_fourth_order_kuranishi.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_fourth_order_kuranishi.py",
+            "sha256": "c880921805af2001eb3400e0e2170427d17656af6a8953154fd19bbe48a46ab6",
+            "bytes": 20517
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_generic_line_obstruction.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_generic_line_obstruction.py",
+            "sha256": "33623b1ef305b4b5459d490c1352629e5750fb62af7ad4ef84e75c633ddf0496",
+            "bytes": 15868
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_infinity_fibre_formal_scan.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_infinity_fibre_formal_scan.py",
+            "sha256": "e8c2d1643f63a68bcfe0b9daf24665e24dc8186301cf4bb9b2bb5b2950e4a03e",
+            "bytes": 4558
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_line_formal_arc.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_line_formal_arc.py",
+            "sha256": "23b98d35541b5cc4638a39facada8bb6482ff67ea213a2aadfd55d16812ef12a",
+            "bytes": 22692
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_line_scan.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_line_scan.py",
+            "sha256": "2ca1dfa21d0b9626dfee6b41ab2a267edbff7a1725e46c5aa9d6e7e0dafb85cb",
+            "bytes": 20145
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_schur_model.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_schur_model.py",
+            "sha256": "ce0dcb85ea43cb5debbd8aaf0d2f523d2d5957cd152a4350c601686f52ae366f",
+            "bytes": 11499
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_second_order.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_second_order.py",
+            "sha256": "60366c1b93ec5dca3ff9856d08008ec3bf6893f2b78d44961236035d59dd6a6c",
+            "bytes": 17505
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_third_order_lift.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_rank_six_third_order_lift.py",
+            "sha256": "a4409982fa446153d89daf8237ed832b14ae70416fa5d9112d0fe7bbd481ab2c",
+            "bytes": 24320
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_row_killing.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_row_killing.py",
+            "sha256": "d7125243959b523964c214b0e044fb609b959f3baa4f19db2d509228927dc78b",
+            "bytes": 6315
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program5_tangent_bridge.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program5_tangent_bridge.py",
+            "sha256": "aacef299879832e9210e27d8c3613d18d23e0bc514cd94335600b1f7839270c5",
+            "bytes": 11780
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/adapters/program6_legacy.py",
+            "packet_path": "research-tools/filtered_operation_complex/adapters/program6_legacy.py",
+            "sha256": "dee61745a54bb0887c8115cc06610444ef836f022dbe754f5331117b28c8599e",
+            "bytes": 6670
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/core.py",
+            "packet_path": "research-tools/filtered_operation_complex/core.py",
+            "sha256": "15906c873e68480efa5d53add11a8f218bb85bff9de0c2e64755370733aa5f7f",
+            "bytes": 5736
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/examples/program5_row_killing_template.json",
+            "packet_path": "research-tools/filtered_operation_complex/examples/program5_row_killing_template.json",
+            "sha256": "804b1b7c6e76b03712696607b2db75873d94d26922ca95980a3ea6be009ffc87",
+            "bytes": 1015
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/examples/two_chart_rational.json",
+            "packet_path": "research-tools/filtered_operation_complex/examples/two_chart_rational.json",
+            "sha256": "644aa7ec811026f3761460c4362d4a3de13be25274ec675e9c98bd27727dca89",
+            "bytes": 4420
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/fields.py",
+            "packet_path": "research-tools/filtered_operation_complex/fields.py",
+            "sha256": "18c8f073ab46f039a82ca9e372f1a75a3ca1a6db0c2ba589cb952add282415b8",
+            "bytes": 8470
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/layer.py",
+            "packet_path": "research-tools/filtered_operation_complex/layer.py",
+            "sha256": "ad2bf820fb8664d01f9ea29aadcee0a02ea2be67cbe9b379b47514e4dbfbfcc8",
+            "bytes": 19505
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/linear.py",
+            "packet_path": "research-tools/filtered_operation_complex/linear.py",
+            "sha256": "669a92c42108fd686aaa7f98cf0373e8ad119c5722eb4175182aca60b05eaf26",
+            "bytes": 9854
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/schema-v1.json",
+            "packet_path": "research-tools/filtered_operation_complex/schema-v1.json",
+            "sha256": "e3c00322b8aacfc4c562d3ee1b9095bf21dbab5277a11cd4d6083e4426f1f4d5",
+            "bytes": 8329
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_algebraic_fourth_order_kuranishi.py",
+            "packet_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_algebraic_fourth_order_kuranishi.py",
+            "sha256": "fac9ccb87a14b3876b9349cdc83ecd0f56bf1aafa98ea6a98b57c12be02da835",
+            "bytes": 4208
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_exceptional_finite_lines.py",
+            "packet_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_exceptional_finite_lines.py",
+            "sha256": "f43f42030f0770e5b3fa8779d7c15f4f4092d2e8a882259c288a6cd835b2565f",
+            "bytes": 2553
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_first_order_base_scan.py",
+            "packet_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_first_order_base_scan.py",
+            "sha256": "bf5bb45fde7f70da8b9e4b4e5fc222e80c2f623821de2bd97e9bfdf4b5fdf79e",
+            "bytes": 2327
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_fourth_order_kuranishi.py",
+            "packet_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_fourth_order_kuranishi.py",
+            "sha256": "b7c9fcc9ecc0ec56ec35ee9388e504875a874f213565b37a8bc062bca76366f5",
+            "bytes": 3510
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_generic_line_obstruction.py",
+            "packet_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_generic_line_obstruction.py",
+            "sha256": "260c8c82e508e92bffe509bdd6ef3cea95d26bd64356e3dc8d9fe4f5fac6f685",
+            "bytes": 3858
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_infinity_fibre_formal_scan.py",
+            "packet_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_infinity_fibre_formal_scan.py",
+            "sha256": "2b0f10f1c89323711dc5ca83bed641e64f56c18a74fd4ac333b15d8572ce9dba",
+            "bytes": 3430
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_rank_six_line_formal_arc.py",
+            "packet_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_rank_six_line_formal_arc.py",
+            "sha256": "0f8bfd311e33a8bd4403d90514b1395e7a10fa9d82d8583001ea4d8c0eac85f3",
+            "bytes": 3268
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_rank_six_line_scan.py",
+            "packet_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_rank_six_line_scan.py",
+            "sha256": "89c115fb63b4b7c42a7b6d26d011a38624938c5cbab53ea79b3dab15198826f6",
+            "bytes": 3950
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_third_order_lift.py",
+            "packet_path": "research-tools/filtered_operation_complex/symbolic_tests/test_program5_third_order_lift.py",
+            "sha256": "d36f6ea8ca1c48818e7b8ab65d656983ae2a0cc7704f3874adb76154421052bc",
+            "bytes": 2339
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/tests/test_adapters.py",
+            "packet_path": "research-tools/filtered_operation_complex/tests/test_adapters.py",
+            "sha256": "002931267640d048276c3c0c58092fd3a9fb8f265d4189c9b5826ed691723b7f",
+            "bytes": 2752
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/tests/test_examples.py",
+            "packet_path": "research-tools/filtered_operation_complex/tests/test_examples.py",
+            "sha256": "73a905cfc77b50fe0572fc2f1bb661cb503b2d0a880d636c2f583345ab68575d",
+            "bytes": 836
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/tests/test_filtered_operation_complex.py",
+            "packet_path": "research-tools/filtered_operation_complex/tests/test_filtered_operation_complex.py",
+            "sha256": "8831d60a2dcb7669753e1f5c9075659a30b86dad8208121d658169f05b63bf94",
+            "bytes": 8254
+          },
+          {
+            "repo_path": "research-tools/filtered_operation_complex/transition.py",
+            "packet_path": "research-tools/filtered_operation_complex/transition.py",
+            "sha256": "6ddf4f0c9b40605a4392b1c63b51aa863c0ce9f183f13fc7ab047563e578c4e1",
+            "bytes": 16406
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE7-RESEARCH-SOURCE-PACKET-V2",
+      "source": "lane-7-source-packet.md",
+      "route": "research/handoffs/lane-7-source-packet.md",
+      "sha256": "f561b39dc2ce23d74421892053a104e9dcdefa54576f27d86696847413c54979",
+      "bytes": 301792,
+      "words": 29684,
+      "source_packet": {
+        "source_root": "jacobian_repository",
+        "source_commit": "a84db9c18ab401b1273eba6da1ec132dfd3f9ba5",
+        "files": [
+          {
+            "repo_path": "research-notes/lane7-projective-kernel-20260803-v1/README.md",
+            "packet_path": "research-notes/lane7-projective-kernel-20260803-v1/README.md",
+            "sha256": "d6675732ee52f61e4fb113d3c45521f5d8be557b4c2359a87fb2d93fa35970bd",
+            "bytes": 4714
+          },
+          {
+            "repo_path": "research-notes/lane7-projective-kernel-20260803-v1/generate_kernel_chart_input.py",
+            "packet_path": "research-notes/lane7-projective-kernel-20260803-v1/generate_kernel_chart_input.py",
+            "sha256": "3a5c8dd3c3aa5d57f2cbb139dad970f96c7c0eaf247b7978fef4d6c3db28dc87",
+            "bytes": 6702
+          },
+          {
+            "repo_path": "research-notes/lane7-projective-kernel-20260803-v1/generate_kernel_chart_macaulay2.py",
+            "packet_path": "research-notes/lane7-projective-kernel-20260803-v1/generate_kernel_chart_macaulay2.py",
+            "sha256": "28778c1c2f0240ef6b8fbc3075eb8840361a491534ce4f5059197834563ff0e1",
+            "bytes": 6411
+          },
+          {
+            "repo_path": "research-notes/lane7-projective-kernel-20260803-v1/generate_kernel_chart_singular.py",
+            "packet_path": "research-notes/lane7-projective-kernel-20260803-v1/generate_kernel_chart_singular.py",
+            "sha256": "290697bd851eecc2509b09cf440966874cf51fc9c011dc1bd9fcc7fa69af5de7",
+            "bytes": 6581
+          },
+          {
+            "repo_path": "research-notes/lane7-projective-kernel-20260803-v1/generate_macaulay2_input.py",
+            "packet_path": "research-notes/lane7-projective-kernel-20260803-v1/generate_macaulay2_input.py",
+            "sha256": "5e417707876d39efc5f780ba95cff9f33c9f209b8b14b76a9484e70c12eaef01",
+            "bytes": 5194
+          },
+          {
+            "repo_path": "research-notes/lane7-projective-kernel-20260803-v1/prepare_five_chart_runs.py",
+            "packet_path": "research-notes/lane7-projective-kernel-20260803-v1/prepare_five_chart_runs.py",
+            "sha256": "5f207a222cc03379033f778981471f9e0e7211b62913c3c009eef7c20ca3bf1c",
+            "bytes": 7278
+          },
+          {
+            "repo_path": "research-notes/lane7-projective-kernel-20260803-v1/test_kernel_chart_macaulay2.py",
+            "packet_path": "research-notes/lane7-projective-kernel-20260803-v1/test_kernel_chart_macaulay2.py",
+            "sha256": "7d9c338cadaae22811ad4e40128b89c78a407d305dd3a8a9c25d6fcf8714bb3a",
+            "bytes": 1866
+          },
+          {
+            "repo_path": "research-notes/lane7-projective-kernel-20260803-v1/test_plucker_transport.py",
+            "packet_path": "research-notes/lane7-projective-kernel-20260803-v1/test_plucker_transport.py",
+            "sha256": "22ca784d94dee019eee780909e1e615b6311b4e668e140847a2f8d37f6d39e30",
+            "bytes": 2405
+          },
+          {
+            "repo_path": "research-notes/lane7-split-incidence-20260802-v1/Hv10_split_matrix_factorization.json",
+            "packet_path": "research-notes/lane7-split-incidence-20260802-v1/Hv10_split_matrix_factorization.json",
+            "sha256": "a251278a145ab0cfcf249809267edb2d6529738684b5136ec5faef62c7aa3dfb",
+            "bytes": 11073
+          },
+          {
+            "repo_path": "research-notes/lane7-split-incidence-20260802-v1/collision_residual_matrix_M.json",
+            "packet_path": "research-notes/lane7-split-incidence-20260802-v1/collision_residual_matrix_M.json",
+            "sha256": "4e1a014a6616a990ac50d255fb7426a9f8ae1d06cbf5066ba52c8415da63cbda",
+            "bytes": 223681
+          },
+          {
+            "repo_path": "research-notes/lane7-split-incidence-20260802-v1/lane7-split-incidence-theorem.md",
+            "packet_path": "research-notes/lane7-split-incidence-20260802-v1/lane7-split-incidence-theorem.md",
+            "sha256": "3d365808d7fc3426bbe6db5aafc981e014c654b4aea623a6c13f9ccd9d8923de",
+            "bytes": 6806
+          },
+          {
+            "repo_path": "research-notes/lane7-split-incidence-20260802-v1/reconstruct_matrices.py",
+            "packet_path": "research-notes/lane7-split-incidence-20260802-v1/reconstruct_matrices.py",
+            "sha256": "b6bbbbec46eeffc89f1f535cfb859d3bcb1f10b1debe39217af49b7e76fd824f",
+            "bytes": 4312
+          },
+          {
+            "repo_path": "research-notes/lane7-split-incidence-20260802-v1/verify_split_determinants.py",
+            "packet_path": "research-notes/lane7-split-incidence-20260802-v1/verify_split_determinants.py",
+            "sha256": "ca1c168da85e42dc27a19bbf40c93b5e4185f19b3ecadb2899d5f1375ebc0319",
+            "bytes": 1996
+          },
+          {
+            "repo_path": "research-notes/lane7-split-incidence-20260802-v1/verify_split_determinants_report.json",
+            "packet_path": "research-notes/lane7-split-incidence-20260802-v1/verify_split_determinants_report.json",
+            "sha256": "e5b108357cbb96c0b0e979f0242dd8f6c308cd521eb7f01827a8cd8dc6ca9421",
+            "bytes": 1160
+          },
+          {
+            "repo_path": "research-notes/lane7-split-incidence-20260802-v1/verify_split_incidence_report.json",
+            "packet_path": "research-notes/lane7-split-incidence-20260802-v1/verify_split_incidence_report.json",
+            "sha256": "f0a78dce8f1f7f65a92f0d22267dfe143cc1828fbe6f2f435644276b8f505264",
+            "bytes": 1562
+          },
+          {
+            "repo_path": "research-notes/lane7-split-incidence-20260802-v1/verify_split_incidence_theorem.py",
+            "packet_path": "research-notes/lane7-split-incidence-20260802-v1/verify_split_incidence_theorem.py",
+            "sha256": "dadd947874d8b1967a39e55e39c64b4c549574d32523d0440c4cb6ef09369495",
+            "bytes": 2439
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE8-RESEARCH-SOURCE-PACKET-V2",
+      "source": "lane-8-source-packet.md",
+      "route": "research/handoffs/lane-8-source-packet.md",
+      "sha256": "9eb0ea123de4d1c83bcd8f59ee9d76b4a0a662af8b31936bd61893a2b03e3415",
+      "bytes": 209393,
+      "words": 16795,
+      "source_packet": {
+        "source_root": "jacobian_repository",
+        "source_commit": "a84db9c18ab401b1273eba6da1ec132dfd3f9ba5",
+        "files": [
+          {
+            "repo_path": "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
+            "packet_path": "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
+            "sha256": "63fb30b6de06df86c9c87e968d4d72e58b9218134a9eaa8cbce978b78901eb5e",
+            "bytes": 5965
+          },
+          {
+            "repo_path": "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_face_rigidity.py",
+            "packet_path": "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_face_rigidity.py",
+            "sha256": "dcb23b88c89bb3588d48e98826abe3289ce040a469ca610666b17baae8acaa1f",
+            "bytes": 4875
+          },
+          {
+            "repo_path": "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_primary_belyi.py",
+            "packet_path": "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_primary_belyi.py",
+            "sha256": "eab0a34c3f4565999fbcd09389fb059e1f4d5bf63df366cd89541549761b8fc6",
+            "bytes": 9833
+          },
+          {
+            "repo_path": "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py",
+            "packet_path": "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py",
+            "sha256": "6f8ad5aea64d82ef73037260721fc5a5280058ee64cea599442a1bfda2e982a8",
+            "bytes": 1500
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/FULL_ROOT_CLOSURE_PROOF.md",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/FULL_ROOT_CLOSURE_PROOF.md",
+            "sha256": "2eeb8b32471a6d0cc46bbdb35adb3e58a9aaa055c44fb3399970f53e9eb1e670",
+            "bytes": 16843
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/README.md",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/README.md",
+            "sha256": "f778eb819886a64aba4080fcbc8aafd60978534191a32fffb6261cdabceac7f0",
+            "bytes": 3442,
+            "public_transform": "checkout-only locators replaced by portable placeholders"
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/fixtures/belyi_exact_field_relations.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/fixtures/belyi_exact_field_relations.json",
+            "sha256": "5f20a89c3b832fea512f16a9452762d461f0fd783266ad91cbe72972ed38e7b8",
+            "bytes": 2247
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/fixtures/quintic_field_fast.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/fixtures/quintic_field_fast.py",
+            "sha256": "028cac6094ae01d090c4cefecc62bd77261d8e5218c013e7af4457e864610600",
+            "bytes": 6858
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/independent_raw_support_replay.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/independent_raw_support_replay.py",
+            "sha256": "5e84c9b9a3ef77c1de5f28555a28d2f207212b774bc96df3f91b1f37799aab4d",
+            "bytes": 3468
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_replay/__init__.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_replay/__init__.py",
+            "sha256": "6e3ae27694039dcde9afa57b47fdf2cfd6342b9a7b9e974be6e2d11617e8e743",
+            "bytes": 59
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_replay/algebra.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_replay/algebra.py",
+            "sha256": "c58a83f670c9923ce869238cf05c6606fc82a246839e5e1fa280d932dd0b866d",
+            "bytes": 6232
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_replay/certificates.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_replay/certificates.py",
+            "sha256": "283712dc265bc84610447a5cf82dd89fe8961b7f607de63c4b325552c5c41e35",
+            "bytes": 12386
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_replay/model.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_replay/model.py",
+            "sha256": "1a889d955b8b418aeb1057aca28b650a57cd75a9677a5ec12607655990a32925",
+            "bytes": 14459
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/__init__.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/__init__.py",
+            "sha256": "4ac68f5246a7355d04b56e49ed0c64991faac404c0e0778ba3986021ddfcce05",
+            "bytes": 66
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/common.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/common.py",
+            "sha256": "92cdc645684c0ab8a19564662582a4359966e5b41a9ab09d8851f41faf86fb45",
+            "bytes": 4128
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/main.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/main.py",
+            "sha256": "fdc4a3702ce0af6518015982781fa60548d9ac0f30041e47e6bd6a5ba758477a",
+            "bytes": 2326
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/manifest.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/manifest.py",
+            "sha256": "96aeb1cba0f3def1c093cb6fc3afd463acba0baceb7c44ac0f8ec51ace0bbda1",
+            "bytes": 2586
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/queue.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/queue.py",
+            "sha256": "bee8d52836d66ae32fab49d1649588d5b1ce3834d7a92c92a8d255d8e65930ff",
+            "bytes": 4609
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/replay.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/replay.py",
+            "sha256": "11e1b0d3c1c911d6fc8a8cc8fddfd884372883abc888a6d5e5b85af2c762ee89",
+            "bytes": 3988
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/sources.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/lane8_validator/sources.py",
+            "sha256": "7ea4610feae292d43075f3bef50c4efafa8ea2fc57ecb98d8d652cd5b817d849",
+            "bytes": 2421
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/checklist.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/checklist.json",
+            "sha256": "2312b467dec0fff15b908897e968b2a34ba1d3e81fa03830befec622962728bf",
+            "bytes": 2025
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/field.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/field.json",
+            "sha256": "3c6a00f6bcdd09ac265c16d1eb4904b0514840a80e5f8f957dcbd1c1eadb5a1f",
+            "bytes": 170
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/queue.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/queue.json",
+            "sha256": "f9b33f5cb5e6f2e377f2fb0612ee677533ae2f21c4dc2cf4a17a8d24a6642df1",
+            "bytes": 4987
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/replay-full-stages.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/replay-full-stages.json",
+            "sha256": "3eeb2c0a05a13da832725c50bde31b9ae73e60c6c2181ef0569cc96e1804ab69",
+            "bytes": 3033
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/replay-truncated-stages.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/replay-truncated-stages.json",
+            "sha256": "fb2eda00f7dae9c88097a8483a662a2bb8d0b6c5d09d47956f66e964c04eba38",
+            "bytes": 1820
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/replay.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/replay.json",
+            "sha256": "3e7097a74558459ce015d2d981a12da799c2e5d13f55d3559d04323a3e068797",
+            "bytes": 2810
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/sources.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/sources.json",
+            "sha256": "868b7e17b46833237b8af60b1ff1a3e14eb45fdd0d547c1776aca9fd867d9143",
+            "bytes": 2035,
+            "public_transform": "checkout-only locators replaced by portable placeholders"
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s0-face.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s0-face.json",
+            "sha256": "b990c851803ca3e6eaa9fb96369e0fdd4d61c8207ffe6604479f77951f4d5fa8",
+            "bytes": 1162
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s1-truncated-layers.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s1-truncated-layers.json",
+            "sha256": "fea1e27b5bf454086ed54c22769cf0a8630597f9c57271d05a88d994986acb2d",
+            "bytes": 2755
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s2-full-layers-1-4.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s2-full-layers-1-4.json",
+            "sha256": "8373c5d01f9f0169546fa765013e9be4a8f606d64985ff2d01e687e88bcf3b9e",
+            "bytes": 4187
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s3-full-square-routing.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s3-full-square-routing.json",
+            "sha256": "c0cf6fda83dfcdedcc9ef7542bc60b74c28a83a2e9951cca4b6b6700f0b3df49",
+            "bytes": 1423
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s4-full-normalization.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s4-full-normalization.json",
+            "sha256": "36a3527486717f3783ee397cb2f1550a268870e74f06079eeae3e7d810eb52b1",
+            "bytes": 1373
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s5-full-layers-5-8.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s5-full-layers-5-8.json",
+            "sha256": "571411d3d5a4de71474dfb3cebf74acd2d6d6f932b723e40b5a49f76d8f2b942",
+            "bytes": 4215
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s6-toric-projection.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s6-toric-projection.json",
+            "sha256": "3c2dfac77827825813c81f6498f392f250208e607ee100c046e70e005e2da744",
+            "bytes": 689
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s7-toric-terminal.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s7-toric-terminal.json",
+            "sha256": "fdcd3abc9161325c98fa86f60be3b54116472fe0907a2eeb9e71f1efeea5bb84",
+            "bytes": 775
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s8-adjacent-stored.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s8-adjacent-stored.json",
+            "sha256": "4a06becb7c2e0658d689a51348394066998da04f6ae813c82d3d89f5466ad9a6",
+            "bytes": 1008
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s9-lane9-order-obstruction.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/stages/s9-lane9-order-obstruction.json",
+            "sha256": "92724d87d97a1178dce887a07dae3d979b3fc705e4eb7c3311c620711eb281fd",
+            "bytes": 802
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/terminal-certificates.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/terminal-certificates.json",
+            "sha256": "73c42edbafc6716a1a9bff0a6b87c9c38225362dc3ae72b969c64f59386f8191",
+            "bytes": 860
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/theorem-scope.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/theorem-scope.json",
+            "sha256": "6f68bfa513ad7b5a512784fde54dfb0ab58aadefe257837bbc6287e12b1d1910",
+            "bytes": 692
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/variable-systems.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/manifest/variable-systems.json",
+            "sha256": "e8c52d635bb504082f7e3b98201798cb683efed6ae58c0e60907388537616275",
+            "bytes": 1310
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/stage-manifest.json",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/stage-manifest.json",
+            "sha256": "8b725f4751785075a3a3f61ebba9921588d547d4a026f213bf7c473ec10d7c73",
+            "bytes": 1406
+          },
+          {
+            "repo_path": "research-notes/lane8-full-root-closure-20260803-v1/verify_lane8_packet.py",
+            "packet_path": "research-notes/lane8-full-root-closure-20260803-v1/verify_lane8_packet.py",
+            "sha256": "35a40633f1e229adadf42150b2f370a75403fc2232bcb8214011bae1a39013a1",
+            "bytes": 167
+          },
+          {
+            "repo_path": "research-notes/lane89-mathematical-recovery-20260803-v1/README.md",
+            "packet_path": "research-notes/lane89-mathematical-recovery-20260803-v1/README.md",
+            "sha256": "d91dea30f97b84627a5f470a62042d7b08113e1099e8a2ceb917d9fe0b3b04ab",
+            "bytes": 6485
+          },
+          {
+            "repo_path": "research-notes/lane89-mathematical-recovery-20260803-v1/evidence.json",
+            "packet_path": "research-notes/lane89-mathematical-recovery-20260803-v1/evidence.json",
+            "sha256": "85f9d954c411ae8c712a5fe3b750438b404395f8783cda56806c966549b24042",
+            "bytes": 2808,
+            "public_transform": "checkout-only locators replaced by portable placeholders"
+          },
+          {
+            "repo_path": "research-notes/lane89-mathematical-recovery-20260803-v1/run_f2_omega530_fresh_parameter.py",
+            "packet_path": "research-notes/lane89-mathematical-recovery-20260803-v1/run_f2_omega530_fresh_parameter.py",
+            "sha256": "9ddebd48cf42375304756cd116248ab0be41d42282018f72d425bc9dc580ee11",
+            "bytes": 11142
+          },
+          {
+            "repo_path": "research-notes/lane89-mathematical-recovery-20260803-v1/verify_lane89_recovery.py",
+            "packet_path": "research-notes/lane89-mathematical-recovery-20260803-v1/verify_lane89_recovery.py",
+            "sha256": "97fb0634bccd4ecd863bda23e018156205431ae5e1ebe87d2adb7a75bd6be177",
+            "bytes": 16987
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE9-RESEARCH-SOURCE-PACKET-V2",
+      "source": "lane-9-source-packet.md",
+      "route": "research/handoffs/lane-9-source-packet.md",
+      "sha256": "919496a058ba9a561bd5ef6af40a446a71ee4995d60810c4b6255e98abbe3ecb",
+      "bytes": 172451,
+      "words": 16819,
+      "source_packet": {
+        "source_root": "jacobian_repository",
+        "source_commit": "a84db9c18ab401b1273eba6da1ec132dfd3f9ba5",
+        "files": [
+          {
+            "repo_path": "research-notes/finite-diagnostics-20260803-v1/verify_lane9_wall_groupoid_packet.py",
+            "packet_path": "research-notes/finite-diagnostics-20260803-v1/verify_lane9_wall_groupoid_packet.py",
+            "sha256": "e71abf9aa41e4de9dbe78dd103a9c61a8b0c772bf45e3a37e0df18f19112aebc",
+            "bytes": 3537
+          },
+          {
+            "repo_path": "research-notes/lane89-mathematical-recovery-20260803-v1/README.md",
+            "packet_path": "research-notes/lane89-mathematical-recovery-20260803-v1/README.md",
+            "sha256": "d91dea30f97b84627a5f470a62042d7b08113e1099e8a2ceb917d9fe0b3b04ab",
+            "bytes": 6485
+          },
+          {
+            "repo_path": "research-notes/lane89-mathematical-recovery-20260803-v1/evidence.json",
+            "packet_path": "research-notes/lane89-mathematical-recovery-20260803-v1/evidence.json",
+            "sha256": "85f9d954c411ae8c712a5fe3b750438b404395f8783cda56806c966549b24042",
+            "bytes": 2808,
+            "public_transform": "checkout-only locators replaced by portable placeholders"
+          },
+          {
+            "repo_path": "research-notes/lane89-mathematical-recovery-20260803-v1/run_f2_omega530_fresh_parameter.py",
+            "packet_path": "research-notes/lane89-mathematical-recovery-20260803-v1/run_f2_omega530_fresh_parameter.py",
+            "sha256": "9ddebd48cf42375304756cd116248ab0be41d42282018f72d425bc9dc580ee11",
+            "bytes": 11142
+          },
+          {
+            "repo_path": "research-notes/lane89-mathematical-recovery-20260803-v1/verify_lane89_recovery.py",
+            "packet_path": "research-notes/lane89-mathematical-recovery-20260803-v1/verify_lane89_recovery.py",
+            "sha256": "97fb0634bccd4ecd863bda23e018156205431ae5e1ebe87d2adb7a75bd6be177",
+            "bytes": 16987
+          },
+          {
+            "repo_path": "research-notes/lane9-wall-shear-20260802-v1/LANE9_CONTINUATION_V3_REPORT.md",
+            "packet_path": "research-notes/lane9-wall-shear-20260802-v1/LANE9_CONTINUATION_V3_REPORT.md",
+            "sha256": "c95708358a4bb8486d3823d15279e4acec3574fd55d2e5ad49234f032e57d510",
+            "bytes": 7592
+          },
+          {
+            "repo_path": "research-notes/lane9-wall-shear-20260802-v1/README.md",
+            "packet_path": "research-notes/lane9-wall-shear-20260802-v1/README.md",
+            "sha256": "4c400dd7cec74320f4631e573ee8b1e87e4b5642f21b93976c18f496afca12a7",
+            "bytes": 6179
+          },
+          {
+            "repo_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/F2_CYCLIC_WALL_DESCENT.md",
+            "packet_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/F2_CYCLIC_WALL_DESCENT.md",
+            "sha256": "2485be2f147247108a3c7dd828187a4985d5086d712ccc8ad14b2dd70696cce5",
+            "bytes": 4123
+          },
+          {
+            "repo_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_DUAL_TRIPLE_OVERLAP.md",
+            "packet_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_DUAL_TRIPLE_OVERLAP.md",
+            "sha256": "43a45be475ebeadb54f553f88038e446cce9a34d3e7d17e73ae92d48260da3b0",
+            "bytes": 5320
+          },
+          {
+            "repo_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_GRADING_AUDIT.md",
+            "packet_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_GRADING_AUDIT.md",
+            "sha256": "afeec62e2950cc4a120e9b5280dfbf04d1e1c86135a290c2bc3a1f0df84df745",
+            "bytes": 15856
+          },
+          {
+            "repo_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_OVERLAP_THEOREM.md",
+            "packet_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_OVERLAP_THEOREM.md",
+            "sha256": "94d278bd3285f8eadc2d31901a8518b84de8e8f53ec40d0d6cfa86975e412059",
+            "bytes": 6160
+          },
+          {
+            "repo_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_REES_FLOW.md",
+            "packet_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_REES_FLOW.md",
+            "sha256": "9f763c0acd13a068b96cef1f073b46cf1a2afa9d82fa8fa32426c812648662ab",
+            "bytes": 5170
+          },
+          {
+            "repo_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/degree21_k4_jet_transport_audit.py",
+            "packet_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/degree21_k4_jet_transport_audit.py",
+            "sha256": "4d240c1e6dc80412e1aa29fc55e7b6bf44208fb870577ab4f5ed642e7a758954",
+            "bytes": 10110
+          },
+          {
+            "repo_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/degree21_k4_overlap_saturation.py",
+            "packet_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/degree21_k4_overlap_saturation.py",
+            "sha256": "4a3c3d76037ebbae7328fe65a3e35d04ad85c3311fc72566881d5895b0511848",
+            "bytes": 14966
+          },
+          {
+            "repo_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/degree21_k4_triple_overlap.py",
+            "packet_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/degree21_k4_triple_overlap.py",
+            "sha256": "5639081b7a0c4d72c8e4bf80170c9f43fcb45deb01146f323e1a396d65dd5988",
+            "bytes": 11160
+          },
+          {
+            "repo_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/wall_shear_master_covariance.py",
+            "packet_path": "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/wall_shear_master_covariance.py",
+            "sha256": "ae914d451e4ec3ab1b583c5f35c2e35c396c5596b9340dd817672961abc460cd",
+            "bytes": 15355
+          },
+          {
+            "repo_path": "research-notes/p6-chart-correspondence/LANE9_F2_PARAMETER_COMPLETE_RECURRENCE.md",
+            "packet_path": "research-notes/p6-chart-correspondence/LANE9_F2_PARAMETER_COMPLETE_RECURRENCE.md",
+            "sha256": "3974cbe379942e4d4766d5e879d3a370adfde4eaea4936532f940a66253c3bb1",
+            "bytes": 6138
+          },
+          {
+            "repo_path": "research-notes/p6-chart-correspondence/lane9_f2_attachment_recurrence.py",
+            "packet_path": "research-notes/p6-chart-correspondence/lane9_f2_attachment_recurrence.py",
+            "sha256": "f3c1719ae04ceb10f335b67d6aaa38bfa03c14186c2c8d32d9ba24262046563b",
+            "bytes": 10935
+          }
+        ]
+      }
+    },
+    {
+      "input_id": "LANE7-COLLISION-CHART-V1",
+      "source": "lane-7-collision-input.md",
+      "route": "research/handoffs/lane-7-collision-input.md",
+      "sha256": "e8ad159151d82ceda78e58dce2cc6e721d8137dfe55d6a7682dd915062096121",
+      "bytes": 58520,
+      "words": 6889,
+      "source_packet": {
+        "release_id": "program5-global-collision-v1-20260726c",
+        "manifest_sha256": "cfe5d2c08c3ae36498b7037b4da0c0e3f666c460e1f901d9cdafa8816e5937c4",
+        "collision_system_sha256": "23c607c2efc6115437fcc2979f5caff583fd1d7fa9c02f382bf10686d3e07167",
+        "macaulay2_sha256": "63b79f3a2595a250550313578033e540f0fd8dda1721de24fe2cdd405c577953"
+      }
+    },
+    {
+      "input_id": "LANE8-RAW-SUPPORT-RECONSTRUCTION-V1",
+      "source": "lane-8-reconstruction-input.md",
+      "route": "research/handoffs/lane-8-reconstruction-input.md",
+      "sha256": "8f3f5e262143a2a7b3ff8cbab5a61ecaba37f92a88996f7da411ac19085fb016",
+      "bytes": 49508,
+      "words": 4406,
+      "source_packet": {
+        "files": [
+          {
+            "path": "belyi_exact_field_relations.json",
+            "sha256": "a5b5752a5f7b90d50458fe3f3949e6731e0b607981627c56e0c04a1bf89de1c2"
+          },
+          {
+            "path": "expected_invariants.json",
+            "sha256": "04c0da97da9974665ca1348bf1b1736ffeb5231a1ff1dc1e3c9dea8a1ec564e0"
+          },
+          {
+            "path": "rebuild_lower_face_reduction.py",
+            "sha256": "921ebae8828452dcb535ab81a8561c717ddd61346a04389af568fb9dcafee53f"
+          },
+          {
+            "path": "degree-296-compact/scripts/quintic_field_fast.py",
+            "sha256": "b43871c8897512b752c9e8fa8d4f2d80571865d465940e13b36f130d07091942"
+          }
+        ]
+      }
+    }
+  ],
+  "retained_math_v2_markers": [
+    {
+      "program_slug": "homogeneous-realization-compression",
+      "argument_id": "ARG-RMU5D8E0003-FINITE-PLANE"
+    }
+  ],
+  "briefs": [
+    {
+      "kind": "cross_program",
+      "program_sequence": 0,
+      "program_slug": "state-of-the-program",
+      "title": "Current Jacobian research portfolio",
+      "source": "state-of-the-program.md",
+      "sha256": "b3be9bfa2cbb01d8f9a1ce296f7e468179dbf0a1d8451d0ef094ea7060dfe43b",
+      "bytes": 1973,
+      "words": 208,
+      "route": "research/handoffs/state-of-the-program.md",
+      "primary_entrypoint": true,
+      "display_sequence": 0,
+      "related_programs": []
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 1,
+      "program_sequence": 11,
+      "program_slug": "cubic-flatness-normalization-defects",
+      "title": "Flatness defects after cubic normalization",
+      "source": "cubic-flatness-normalization-defects.md",
+      "route": "research/handoffs/cubic-flatness-normalization-defects.md",
+      "primary_entrypoint": true,
+      "display_sequence": 1,
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry",
+        "stable-moduli"
+      ],
+      "sha256": "a3f82e87aa3fffc4a4583815eec511e5febddf8867364b7d3b1e43c93194cc7f",
+      "bytes": 3869,
+      "words": 491
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 2,
+      "program_sequence": 12,
+      "program_slug": "boundary-completeness-torelli-at-infinity",
+      "title": "Torelli data on the projective resultant boundary",
+      "source": "boundary-completeness-torelli-at-infinity.md",
+      "route": "research/handoffs/boundary-completeness-torelli-at-infinity.md",
+      "primary_entrypoint": true,
+      "display_sequence": 2,
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry",
+        "stable-moduli"
+      ],
+      "sha256": "100b4d4581e1fd89d46b451dc793568a024dd3164e86e0529e6feba6d361e473",
+      "bytes": 3829,
+      "words": 481
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 3,
+      "program_sequence": 13,
+      "program_slug": "bounded-degree-deformation-modulus-onset",
+      "title": "Where bounded-degree source triviality first fails",
+      "source": "bounded-degree-deformation-modulus-onset.md",
+      "route": "research/handoffs/bounded-degree-deformation-modulus-onset.md",
+      "primary_entrypoint": true,
+      "display_sequence": 3,
+      "related_programs": [
+        "local-rigidity-and-deformation-algebra",
+        "stable-moduli"
+      ],
+      "sha256": "3f5bc1cc717ac12c0624be1840a6aa5e6337ae5ee3a9096024c88569d3895717",
+      "bytes": 4744,
+      "words": 608
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 4,
+      "program_sequence": 14,
+      "program_slug": "quartic-endgame",
+      "title": "The quartic endgame beyond the marked local chart",
+      "source": "quartic-endgame.md",
+      "route": "research/handoffs/quartic-endgame.md",
+      "primary_entrypoint": true,
+      "display_sequence": 4,
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions"
+      ],
+      "sha256": "89fd88dd2df4bb48462d8d35d3ae6c90b755497c00f37a75531af50f2e21996b",
+      "bytes": 5287,
+      "words": 658
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 5,
+      "program_sequence": 15,
+      "program_slug": "intrinsic-degree-valuative-budgets",
+      "title": "Intrinsic degree budgets for polynomial automorphisms",
+      "source": "intrinsic-degree-valuative-budgets.md",
+      "route": "research/handoffs/intrinsic-degree-valuative-budgets.md",
+      "primary_entrypoint": true,
+      "display_sequence": 5,
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions",
+        "stable-moduli",
+        "plane-boundary-obstructions"
+      ],
+      "sha256": "c3f7a1296501b14dfdbde613ea4cd35a5ba7b156d50169731f584799037dbe1c",
+      "bytes": 4105,
+      "words": 531
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 6,
+      "program_sequence": 16,
+      "program_slug": "homogeneous-realization-compression",
+      "title": "Compression limits for homogeneous realizations",
+      "source": "homogeneous-realization-compression.md",
+      "route": "research/handoffs/homogeneous-realization-compression.md",
+      "primary_entrypoint": true,
+      "display_sequence": 6,
+      "related_programs": [
+        "homogeneous-descendants",
+        "local-rigidity-and-deformation-algebra"
+      ],
+      "sha256": "bd09869c0966c00c1d27eec9302ec89d48a8b8392c03698e18d97ba2f8c03206",
+      "bytes": 5877,
+      "words": 741
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 7,
+      "program_sequence": 17,
+      "program_slug": "five-dimensional-collision-geometry",
+      "title": "The projective kernel carrier for five-dimensional collisions",
+      "source": "five-dimensional-collision-geometry.md",
+      "route": "research/handoffs/five-dimensional-collision-geometry.md",
+      "primary_entrypoint": true,
+      "display_sequence": 7,
+      "related_programs": [
+        "homogeneous-descendants"
+      ],
+      "sha256": "0e5011c33f04926f2dbba3c5d1cc5bd9d0e15074f79a41fe03473cf0b2787c0a",
+      "bytes": 4038,
+      "words": 516
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 8,
+      "program_sequence": 18,
+      "program_slug": "plane-newton-queue-terminal-certificates",
+      "title": "The first Newton queue at and beyond degree 125",
+      "source": "plane-newton-queue-terminal-certificates.md",
+      "route": "research/handoffs/plane-newton-queue-terminal-certificates.md",
+      "primary_entrypoint": true,
+      "display_sequence": 8,
+      "related_programs": [
+        "plane-boundary-obstructions"
+      ],
+      "sha256": "389a7d89b031b67fa7e7724c8cd74f2a03fc3a007d31422fe984aa313b402fee",
+      "bytes": 4713,
+      "words": 619
+    },
+    {
+      "kind": "lane",
+      "lane_sequence": 9,
+      "program_sequence": 19,
+      "program_slug": "plane-chart-correspondence-global-attachment",
+      "title": "Recovering the actual two-chart attachment chain",
+      "source": "plane-chart-correspondence-global-attachment.md",
+      "route": "research/handoffs/plane-chart-correspondence-global-attachment.md",
+      "primary_entrypoint": true,
+      "display_sequence": 9,
+      "related_programs": [
+        "plane-boundary-obstructions",
+        "stable-moduli"
+      ],
+      "sha256": "dff0ea7ef5d67ba9b83648c108277501deef05d12053c0d4d6cd23e65361a25e",
+      "bytes": 5807,
+      "words": 712
+    },
+    {
+      "kind": "program",
+      "program_sequence": 1,
+      "program_slug": "cubic-marked-root-incidence-geometry",
+      "title": "Cubic Marked-Root Incidence Geometry",
+      "source": "cubic-marked-root-incidence-geometry.md",
+      "sha256": "8982bcb2928c99e659d4339897d9a9c0d2d3449111c7e8c6f342e1711b737ad6",
+      "bytes": 1355,
+      "words": 171,
+      "route": "research/handoffs/cubic-marked-root-incidence-geometry.md",
+      "primary_entrypoint": false,
+      "display_sequence": 101,
+      "related_programs": [
+        "cubic-marked-root-incidence-geometry"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 2,
+      "program_slug": "minimum-degree-and-quartic-exclusions",
+      "title": "Minimum Degree and Quartic Exclusions",
+      "source": "minimum-degree-and-quartic-exclusions.md",
+      "sha256": "7c742359a64b038b778a05956896c723219a8c253cfdc2c056e53c9126674a0f",
+      "bytes": 1270,
+      "words": 165,
+      "route": "research/handoffs/minimum-degree-and-quartic-exclusions.md",
+      "primary_entrypoint": false,
+      "display_sequence": 102,
+      "related_programs": [
+        "minimum-degree-and-quartic-exclusions"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 3,
+      "program_slug": "local-rigidity-and-deformation-algebra",
+      "title": "Local Rigidity and Deformation Algebra",
+      "source": "local-rigidity-and-deformation-algebra.md",
+      "sha256": "5aa63453f0f5095ffd20a3a252d713f3f7f25bfbfc7f72c23c51566fbe7fd8bc",
+      "bytes": 1326,
+      "words": 168,
+      "route": "research/handoffs/local-rigidity-and-deformation-algebra.md",
+      "primary_entrypoint": false,
+      "display_sequence": 103,
+      "related_programs": [
+        "local-rigidity-and-deformation-algebra"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 4,
+      "program_slug": "stable-moduli",
+      "title": "Stable Moduli",
+      "source": "stable-moduli.md",
+      "sha256": "d9d31149fa18a46dd11a56d77c1dc9011e5e147352062251228cc385e4736a20",
+      "bytes": 1337,
+      "words": 166,
+      "route": "research/handoffs/stable-moduli.md",
+      "primary_entrypoint": false,
+      "display_sequence": 104,
+      "related_programs": [
+        "stable-moduli"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 5,
+      "program_slug": "homogeneous-descendants",
+      "title": "Homogeneous Descendants",
+      "source": "homogeneous-descendants.md",
+      "sha256": "071a7c5eb3a1efa3dad088bbecddd01e89a9afd870f971e4fe628fb63e3c856c",
+      "bytes": 1373,
+      "words": 164,
+      "route": "research/handoffs/homogeneous-descendants.md",
+      "primary_entrypoint": false,
+      "display_sequence": 105,
+      "related_programs": [
+        "homogeneous-descendants"
+      ]
+    },
+    {
+      "kind": "program",
+      "program_sequence": 6,
+      "program_slug": "plane-boundary-obstructions",
+      "title": "Plane Boundary Obstructions",
+      "source": "plane-boundary-obstructions.md",
+      "sha256": "df127379f0904c0761907fc8d2785d9d7bf65245c4390357bf369fd540e8892f",
+      "bytes": 1412,
+      "words": 171,
+      "route": "research/handoffs/plane-boundary-obstructions.md",
+      "primary_entrypoint": false,
+      "display_sequence": 106,
+      "related_programs": [
+        "plane-boundary-obstructions"
+      ]
+    }
+  ]
+}

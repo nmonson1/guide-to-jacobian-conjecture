@@ -2,10 +2,11 @@
 """Build the public, write-once model-handoff package from private handoff v7.
 
 The nine focused lane pages and portfolio are taken from the manifest-pinned
-private handoff.  The six deeper program dossiers and two specialized exact
-input pages are inherited byte-for-byte from the preceding public package.
-Repository-only links are rewritten to public proof, retained-mathematics, or
-lane source-packet routes.
+private handoff.  The six deeper program dossiers are compact overlays on the
+compiler-owned program graph views; they do not repeat theorem statements.
+Two specialized exact input pages are inherited from the preceding public
+package.  Repository-only links are rewritten to public proof,
+retained-mathematics, or lane source-packet routes.
 """
 
 from __future__ import annotations
@@ -32,6 +33,27 @@ LANES = (
     (8, "plane-newton-queue-terminal-certificates"),
     (9, "plane-chart-correspondence-global-attachment"),
 )
+PROGRAM_LANES = {
+    "cubic-marked-root-incidence-geometry": (
+        (1, "cubic-flatness-normalization-defects"),
+    ),
+    "minimum-degree-and-quartic-exclusions": ((4, "quartic-endgame"),),
+    "local-rigidity-and-deformation-algebra": (
+        (3, "bounded-degree-deformation-modulus-onset"),
+    ),
+    "stable-moduli": (
+        (2, "boundary-completeness-torelli-at-infinity"),
+        (5, "intrinsic-degree-valuative-budgets"),
+    ),
+    "homogeneous-descendants": (
+        (6, "homogeneous-realization-compression"),
+        (7, "five-dimensional-collision-geometry"),
+    ),
+    "plane-boundary-obstructions": (
+        (8, "plane-newton-queue-terminal-certificates"),
+        (9, "plane-chart-correspondence-global-attachment"),
+    ),
+}
 TEXT_SUFFIXES = {".csv", ".json", ".m2", ".md", ".py", ".sage", ".tex"}
 
 
@@ -380,11 +402,59 @@ def _verified_v7_sources(
     return sources, _sha256(manifest_payload)
 
 
-def _base_payload(base: Path, item: dict[str, Any]) -> bytes:
-    payload = (base / item["source"]).read_bytes()
-    if len(payload) != item["bytes"] or _sha256(payload) != item["sha256"]:
-        raise ValueError(f"base package file differs from manifest: {item['source']}")
-    return payload
+def _program_overlay(
+    item: dict[str, Any], retained_graph: dict[str, Any]
+) -> bytes:
+    slug = item["program_slug"]
+    programs = {
+        program["slug"]: program for program in retained_graph["programs"]
+    }
+    if set(programs) != set(PROGRAM_LANES):
+        raise ValueError("retained graph program set disagrees with dossier map")
+    program = programs[slug]
+    lane_lines = [
+        f"- [Lane {sequence}: {lane_slug.replace('-', ' ')}]({lane_slug}.md)"
+        for sequence, lane_slug in PROGRAM_LANES[slug]
+    ]
+    text = "\n".join(
+        [
+            f"# {program['title']}",
+            "",
+            program["summary"],
+            "",
+            "## Current mathematical corpus",
+            "",
+            "The exact current statements, hypotheses, dependencies, arguments,",
+            "evidence, and limitations for this subject are compiled from the",
+            "retained mathematical graph:",
+            "",
+            f"[Open the current {program['title']} graph view]"
+            f"(../working-mathematics/programs/{slug}.md)",
+            "",
+            "That generated view is authoritative for reusable mathematics. This",
+            "page deliberately does not copy theorem statements or proof chains.",
+            "",
+            "## Current research entrypoints",
+            "",
+            *lane_lines,
+            "",
+            "Each lane defines its objects, separates established results from",
+            "examples and open problems, and links the exact source inputs needed",
+            "for its advertised tasks.",
+            "",
+            "## Strategy and connections",
+            "",
+            "Use this program as an overlapping subject view, not as a partition",
+            "of the project. Follow dependencies into other program graph views",
+            "when the mathematics crosses a boundary. The listed tasks are useful",
+            "next steps, but other sound connections and stronger routes are welcome.",
+            "",
+            "[Back to the research portfolio](state-of-the-program.md)",
+            "",
+        ]
+    )
+    _validate_public(text, source=Path(item["source"]))
+    return text.encode("utf-8")
 
 
 def _write_new(path: Path, payload: bytes) -> None:
@@ -426,6 +496,7 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
     repo_root = args.jacobian_repo.resolve()
     lane_source_dir = args.lane_source_dir.resolve()
     lane_manifest_path = args.lane_manifest.resolve()
+    retained_graph_path = args.retained_graph.resolve()
     output = args.output_dir.resolve()
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing path: {output}")
@@ -441,6 +512,10 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
     v7_sources, v7_manifest_sha = _verified_v7_sources(
         lane_source_dir=lane_source_dir, lane_manifest_path=lane_manifest_path
     )
+    retained_graph_payload = retained_graph_path.read_bytes()
+    retained_graph = _load(retained_graph_path)
+    if retained_graph.get("schema_version") != 2:
+        raise ValueError("program dossiers require retained graph schema v2")
 
     packet_outputs: dict[str, tuple[bytes, dict[str, Any], set[str]]] = {}
     for sequence, slug in LANES:
@@ -470,9 +545,10 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
     for item in base_manifest["briefs"]:
         if item["kind"] != "program":
             continue
-        payload = _base_payload(base, item)
-        _validate_public(payload.decode("utf-8"), source=base / item["source"])
-        prepared_briefs.append((item["source"], payload, item))
+        payload = _program_overlay(item, retained_graph)
+        prepared_briefs.append(
+            (item["source"], payload, _manifest_item(item, payload))
+        )
 
     for sequence, slug in LANES:
         item = brief_by_slug[slug]
@@ -511,6 +587,11 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
             "manifest_sha256": v7_manifest_sha,
             "jacobian_commit": args.jacobian_commit,
         },
+        "program_dossiers": {
+            "kind": "generated_graph_view_overlays",
+            "retained_registry_id": retained_graph["registry_id"],
+            "retained_graph_sha256": _sha256(retained_graph_payload),
+        },
         "brief_count": len(prepared_briefs),
         "primary_entrypoint_count": sum(
             bool(item["primary_entrypoint"]) for _, _, item in prepared_briefs
@@ -538,6 +619,7 @@ def main() -> int:
     parser.add_argument("--jacobian-repo", type=Path, required=True)
     parser.add_argument("--lane-source-dir", type=Path, required=True)
     parser.add_argument("--lane-manifest", type=Path, required=True)
+    parser.add_argument("--retained-graph", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--release-id", required=True)
     parser.add_argument("--updated-at", required=True)

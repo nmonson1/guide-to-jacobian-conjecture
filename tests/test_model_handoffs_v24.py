@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE = ROOT / "data" / "model-handoffs-v24-20260803a"
+PACKAGE = ROOT / "data" / "model-handoffs-v24-20260803b"
 BASE = ROOT / "data" / "model-handoffs-v23-20260803a"
 FORBIDDEN = ("/fss/", "/home/", "chatgpt.com/share", "sandbox:", "registry/")
 LANE_SECTIONS = (
@@ -44,25 +44,28 @@ class ModelHandoffsV24Tests(unittest.TestCase):
             self.assertEqual(len(payload), item["bytes"], item["source"])
             self.assertEqual(_sha256(payload), item["sha256"], item["source"])
 
-    def test_six_program_dossiers_are_inherited_byte_for_byte(self) -> None:
+    def test_six_program_dossiers_are_compact_graph_overlays(self) -> None:
         current = {
             item["program_slug"]: item
             for item in self.manifest["briefs"]
             if item["kind"] == "program"
         }
-        base = {
-            item["program_slug"]: item
-            for item in self.base_manifest["briefs"]
-            if item["kind"] == "program"
-        }
-        self.assertEqual(set(current), set(base))
         self.assertEqual(len(current), 6)
-        for slug in current:
-            self.assertEqual(
-                (PACKAGE / current[slug]["source"]).read_bytes(),
-                (BASE / base[slug]["source"]).read_bytes(),
-                slug,
+        dossier_source = self.manifest["program_dossiers"]
+        self.assertEqual(
+            dossier_source["kind"], "generated_graph_view_overlays"
+        )
+        for slug, item in current.items():
+            text = (PACKAGE / item["source"]).read_text()
+            self.assertIn(
+                f"../working-mathematics/programs/{slug}.md", text
             )
+            self.assertIn("## Current research entrypoints", text)
+            self.assertIn("does not copy theorem statements", text)
+            self.assertNotIn("Reusable inputs", text)
+            self.assertNotIn("Proof-signature index", text)
+            self.assertNotIn("../../claims/", text)
+            self.assertNotIn("{{MANUSCRIPT_", text)
 
     def test_focused_pages_have_v7_structure_and_public_footer(self) -> None:
         lanes = [item for item in self.manifest["briefs"] if item["kind"] == "lane"]
