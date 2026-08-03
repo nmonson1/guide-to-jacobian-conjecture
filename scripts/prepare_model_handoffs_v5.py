@@ -13,7 +13,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-V6_HANDOFFS = {"6b", "6c", "6d", "6e", "6f"}
+V6_HANDOFFS = {"6b", "6c", "6d", "6e", "6f", "6g"}
 FORBIDDEN = ("/fss/", "/home/", "chatgpt.com/share", "INTAKE-", "sandbox:/")
 UNIT_RE = re.compile(r"`(?P<unit>(?:RMU|JCG)-[A-Z0-9]+)`")
 MANUSCRIPT_RE = re.compile(r"`manuscripts/(?P<path>[^`]+\.(?:tex|py|bib))`")
@@ -186,6 +186,9 @@ RESEARCH_PACKET_FILES = {
         "lane7-split-incidence-20260802-v1/verify_split_determinants_report.json",
     ),
     "plane-newton-queue-terminal-certificates": (
+        "lane8-full-root-closure-20260803-v1/FULL_ROOT_CLOSURE_PROOF.md",
+        "lane8-full-root-closure-20260803-v1/independent_raw_support_replay.py",
+        "lane8-full-root-closure-20260803-v1/verify_lane8_packet.py",
         "lane8-proof-queue-20260802-v1/lane8-proof-queue-repair.md",
         "lane8-proof-queue-20260802-v1/check_queue.py",
         "lane8-proof-queue-20260802-v1/full_early_layer_reduction.py",
@@ -200,6 +203,12 @@ RESEARCH_PACKET_FILES = {
         "planar-descent-no-go-20260802-v1/linear_target_coordinate_fibres.py",
         "planar-descent-no-go-20260802-v1/hc4_linear_descent_no_go.py",
         "planar-descent-no-go-20260802-v1/hc4_square_correction_no_go.py",
+        "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/F2_degree125_boundary_seed.md",
+        "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/next_complete_chain_queue.json",
+        "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_primary_belyi_reduction.md",
+        "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py",
+        "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_primary_belyi.py",
+        "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_face_rigidity.py",
     ),
     "plane-chart-correspondence-global-attachment": (
         "lane9-wall-shear-20260802-v1/LANE9_CONTINUATION_V3_REPORT.md",
@@ -273,9 +282,8 @@ corank, grade, and the intrinsic Pluecker open for genuine markings.
 <a id="lane-8-plane-newton-queue"></a>
 ### Lane 8 — [Plane Newton queue and terminal certificates](plane-newton-queue-terminal-certificates.md)
 
-Route the full-support root of the exact public reconstruction program; the
-truncated root is closed, while the stored transformed certificate lacks a
-proved chart bridge.
+Propagate the explicit degree-`125` `F_2` seed through its complete Newton
+chain; both strict below-`125` support roots are now closed directly.
 
 <a id="lane-9-plane-global-attachment"></a>
 ### Lane 9 — [Plane chart correspondence and global attachment](plane-chart-correspondence-global-attachment.md)
@@ -294,7 +302,7 @@ HUB_TASKS = """| Lane | Current exact on-ramp |
 | 5 | `L5-T1A`: abstract frame-covariance lemma |
 | 6 | `P5-L6A0`: upgrade the 60-direction obstruction |
 | 7 | `P5-L7A`: exact five-chart characteristic-zero dimension run |
-| 8 | `P6-L8A`: route the full-support root and expose its first gap |
+| 8 | `P6-L8A`: propagate the degree-125 `F_2` support chain |
 | 9 | `P6-L9A0`: realize the finite ambient wall groupoid |"""
 
 
@@ -335,7 +343,11 @@ def _prepare_research_packet(
     ]
     payloads: list[tuple[str, bytes]] = []
     for relative in selected:
-        path = notes_root / relative
+        path = (
+            notes_root.parent / relative
+            if relative.startswith("manuscripts/")
+            else notes_root / relative
+        )
         payload = path.read_bytes()
         text = payload.decode("utf-8")
         _validate_public(text, source=path)
@@ -662,13 +674,18 @@ def _public_lane_source(
         ),
         source,
     )
-    source = MANUSCRIPT_RE.sub(
-        lambda match: (
-            f"[`manuscripts/{match.group('path')}`]"
+    packet_files = set(RESEARCH_PACKET_FILES.get(slug, ()))
+
+    def manuscript_link(match: re.Match[str]) -> str:
+        full_path = f"manuscripts/{match.group('path')}"
+        if source_packet_route is not None and full_path in packet_files:
+            return f"[`{full_path}`]({source_packet_route})"
+        return (
+            f"[`{full_path}`]"
             f"(../proof-sources/{Path(match.group('path')).with_suffix('.md').as_posix()})"
-        ),
-        source,
-    )
+        )
+
+    source = MANUSCRIPT_RE.sub(manuscript_link, source)
     if handoff_version in V6_HANDOFFS:
         if jacobian_commit is None or not re.fullmatch(r"[0-9a-f]{40}", jacobian_commit):
             raise ValueError("v6 requires a full 40-character Jacobian commit")
@@ -680,6 +697,20 @@ def _public_lane_source(
             return f"[`{path}`]({source_packet_route})"
 
         source = RESEARCH_NOTE_RE.sub(research_note_link, source)
+        for packet_path in packet_files:
+            token = f"`{packet_path}`"
+            if token in source:
+                source = source.replace(
+                    token,
+                    f"[`{packet_path}`]({source_packet_route})",
+                )
+            if packet_path.startswith("manuscripts/"):
+                basename_token = f"`{Path(packet_path).name}`"
+                if basename_token in source:
+                    source = source.replace(
+                        basename_token,
+                        f"[`{Path(packet_path).name}`]({source_packet_route})",
+                    )
         if re.search(r"(?<!\[)`research-notes/", source):
             raise ValueError(f"{slug}: unlinked research-note locator survived")
     if handoff_version == 4:
@@ -710,14 +741,29 @@ def _public_lane_source(
 
 
 def _update_hub(source: str) -> str:
+    old_plane_row = """| P6 stored terminal exclusion | Identify the layer-four kernel as a `k=4` rechart; force a common approximate root in the adjacent chart; close the remaining branches by exact affine/toric certificates. **Output:** no gluing for the stored degree-21 terminal system. | The below-125 implication is **open** pending upstream exhaustiveness. | [Program 6 exact inputs and proofs](../../research/handoffs/plane-boundary-obstructions.md#3-reusable-inputs-exact-scope-and-proof-access) · open dependency [`JCG-9D0BE662`](../../claims/JCG-9D0BE662.md) |"""
+    new_plane_row = """| P6 exclusion below maximum coordinate degree 125 | Use the published GGHV reduction to the two normalized `(8,28)` supports; reconstruct every raw deficiency layer; close the truncated root by an exact Macaulay spanning minor and the full root by its exhaustive square split plus the compact six-equation toric terminal. **Output:** no characteristic-zero plane Keller counterexample with maximum coordinate degree below 125. | The literature reduction and compact toric theorem are explicit dependencies; this says nothing at degree 125 or above and does not prove the plane conjecture. | [`RMU-6D8E0013`](../working-mathematics/units/RMU-6D8E0013.md) · [`RMU-6D8E0014`](../working-mathematics/units/RMU-6D8E0014.md) · [Lane 8 proof and exact packet](plane-newton-queue-terminal-certificates.md) |"""
+    if source.count(old_plane_row) != 1:
+        raise ValueError("portfolio has no unique stale Program 6 row")
+    source = source.replace(old_plane_row, new_plane_row, 1)
+    old_plane_caution = """The public degree-below-125 plane theorem is credited external context;
+the project's terminal certificates do not erase the upstream dependency."""
+    new_plane_caution = """The degree-below-125 plane theorem is now an explicit proof assembly: the
+finite Newton reduction is credited to GGHV, while the exact two-support
+closure is internal and independently replayed. No novelty or priority claim
+is made for the numerical bound."""
+    if source.count(old_plane_caution) != 1:
+        raise ValueError("portfolio has no unique stale below-125 caution")
+    source = source.replace(old_plane_caution, new_plane_caution, 1)
     old_start = source.index("## 4. The live frontier\n")
     old_end = source.index("## 5. Graveyard", old_start)
     source = source[:old_start] + HUB_FRONTIER + source[old_end:]
-    source = source.replace(
-        "**Research state:** mathematical checkpoint 1 August 2026.",
-        "**Research state:** mathematical checkpoint 2 August 2026.",
-        1,
-    )
+    for prior_date in ("1 August 2026", "2 August 2026"):
+        source = source.replace(
+            f"**Research state:** mathematical checkpoint {prior_date}.",
+            "**Research state:** mathematical checkpoint 3 August 2026.",
+            1,
+        )
     tasks_start = source.index("## 6. Tasks\n")
     old_table_start = source.index("| Lane |", tasks_start)
     old_table_end = source.index("\n\nBefore substantial work", old_table_start)
@@ -726,6 +772,7 @@ def _update_hub(source: str) -> str:
         "**2 August manual reconstruction.**",
         "**2 August self-containment repair.**",
         "**2 August mathematical refresh.**",
+        "**3 August mathematical refresh.**",
     )
     found_reconstruction_markers = [
         marker for marker in reconstruction_markers if marker in source
@@ -734,10 +781,12 @@ def _update_hub(source: str) -> str:
         raise ValueError("portfolio reconstruction marker is missing or ambiguous")
     reconstruction_start = source.index(found_reconstruction_markers[0])
     reconstruction_end = source.index("\n\n## 4. The live frontier", reconstruction_start)
-    reconstruction = """**2 August mathematical refresh.** The nine focused pages now include the
+    reconstruction = """**3 August mathematical refresh.** The nine focused pages now include the
 selectively retained results from the latest lane investigations, link their
 proof and computation boundaries, and move each ready task past what is now
-known.  The six program dossiers remain deeper overlapping views."""
+known. Lane 8 now begins at the degree-125 boundary after a direct closure of
+both strict below-125 support roots. The six program dossiers remain deeper
+overlapping views."""
     source = (
         source[:reconstruction_start]
         + reconstruction
@@ -771,6 +820,9 @@ below.""",
         _validate_public(source, source=Path(slug))
         return source
     if slug != "stable-moduli":
+        return source
+    if "**(F0) Stable classification and effectivity.**" in source:
+        _validate_public(source, source=Path(slug))
         return source
 
     frontier_start = source.index("**(F0) Proof hardening after the v13 audit.**")

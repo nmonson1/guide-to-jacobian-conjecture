@@ -544,6 +544,11 @@ def main() -> int:
             )
             if sequence == "8":
                 source_packet_markers += (
+                    "lane8-full-root-closure-20260803-v1/FULL_ROOT_CLOSURE_PROOF.md",
+                    "lane8-full-root-closure-20260803-v1/verify_lane8_packet.py",
+                    "F2_degree125_boundary_seed.md",
+                    "terminal_primary_belyi.py",
+                    "terminal_face_rigidity.py",
                     "planar-descent-no-go-20260802-v1/README.md",
                     "Status: incomplete proof strategy",
                     "hc4_square_correction_no_go.py",
@@ -657,7 +662,12 @@ def main() -> int:
                         r"\eta_{ij}",
                         "pluecker-open",
                     ),
-                    8: ("rmu-6d8e0012", "full-support root"),
+                    8: (
+                        "rmu-6d8e0013",
+                        "rmu-6d8e0014",
+                        "degree-125 `f_2` support propagation",
+                        "strictly below `125`",
+                    ),
                     9: ("rmu-6d8e0012", "begins at layer seven, not four"),
                 }
                 source_casefold = source_text.casefold()

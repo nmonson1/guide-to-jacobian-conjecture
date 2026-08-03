@@ -1,7 +1,7 @@
 {
   "schema_version": 4,
-  "release_id": "living-guide-public-v48-pr7-pr8-harvest",
-  "updated_at": "2026-08-03T03:22:07+00:00",
+  "release_id": "living-guide-public-v49-pr7-pr9-harvest",
+  "updated_at": "2026-08-03T05:10:07+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,19 +22,19 @@
     "expected_count": 10
   },
   "model_briefs": {
-    "data_dir": "model-handoffs-v21-20260803b",
-    "manifest_sha256": "0836b29817b898e289c32e8994fae01543427ea21e1665b5c7e907c3082b29f8",
+    "data_dir": "model-handoffs-v22-20260803c",
+    "manifest_sha256": "2bff68b8f83ac5b5bb78f6e5c9dcacaedf9a9132737df8e31fd32cf29c0bab63",
     "expected_count": 16
   },
   "retained_math": {
-    "data_dir": "retained-math-v1-20260803a",
-    "manifest_sha256": "6ad5be6c5ead97764970b757898fbe7043eb54b17b531cc1b5d0cda4532936d5",
-    "expected_units": 572,
+    "data_dir": "retained-math-v1-20260803b",
+    "manifest_sha256": "f42627f384db7a68101c9f2194981182860cc46bd0de244ffc7937d4747dd770",
+    "expected_units": 574,
     "expected_programs": 6
   },
   "retained_math_v2": {
-    "data_dir": "retained-math-v2-20260803a",
-    "manifest_sha256": "26d89ab924bc52827a9468ecf81a84a63a0f7703b91f095784286fec6b2246b4",
+    "data_dir": "retained-math-v2-20260803b",
+    "manifest_sha256": "d4ee869fd680c0defad69267b66dc7bea6fee54f57a2f2a282159afee77fa654",
     "expected_units": 3,
     "expected_arguments": 1,
     "expected_evidence": 3,
@@ -42,12 +42,12 @@
     "expected_tasks": 1
   },
   "manuscript_sources": {
-    "data_dir": "manuscript-sources-v1-20260803a",
-    "manifest_sha256": "f61171a51e2721381db46fe43a8145ed5ab4d663b0fe98802eaf16624463e607",
+    "data_dir": "manuscript-sources-v1-20260803b",
+    "manifest_sha256": "ecb40702d5c8a303222e7738a3f5c337aa0607a787e5994eee244549b5555d9b",
     "expected_files": 41,
-    "expected_labels": 657
+    "expected_labels": 659
   },
-  "docs_dir": "docs-v48-pr7-pr8-harvest-20260803c",
+  "docs_dir": "docs-v49-pr7-pr9-harvest-20260803b",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,

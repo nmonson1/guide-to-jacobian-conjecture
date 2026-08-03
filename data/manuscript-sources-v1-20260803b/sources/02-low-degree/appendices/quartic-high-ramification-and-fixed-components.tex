@@ -1,0 +1,345 @@
+\section{High ramification and fixed components}
+\label{app:quartic-high-ramification-fixed-components}
+
+This appendix continues the target-span-two filtration of
+\cref{app:quartic-frontier-and-ramification}.  Its conclusions are
+conditional on the leading-curve and four-loci reductions stated in the
+main text, and on the low-degree plane and cubic-coordinate theorems used
+there.  The fixed-component argument also uses the standard fact that the
+polynomial Jacobian centralizer of an indecomposable polynomial in two
+variables is its polynomial ring.  Full proof notes, finite chart lists,
+and exact programs are preserved in
+\begin{center}
+\texttt{code/program-2-2026-07-29-v2/}.
+\end{center}
+Every supplied program was source-reviewed and replayed successfully.  This
+verifies the encoded identities and finite exceptional charts; it is not an
+independent proof that the upstream geometric reductions are exhaustive.
+
+\subsection{Primitive high ramification and edge cases}
+
+Let
+\[
+ H_4=(P,Q,0),\qquad P,Q\in k[x,y]_4,\qquad \gcd(P,Q)=1,
+\]
+and put \(R=(H_3)_3\in k[x,y]_3\).  Define
+\[
+ U=J(Q,R),\qquad V=J(P,R),\qquad W=J(P,Q),
+\]
+and, when all three minors are nonzero,
+\[
+ H=\gcd(U,V,W),\qquad r=\deg H.
+\]
+
+\begin{theorem}[Primitive binary high ramification]
+\label{thm:quartic-high-ramification}
+Assume the Program~2 reductions place a quartic Keller map in the
+primitive coprime binary-pencil locus above.  If \(r=4\) or \(r=5\), then
+the map is a polynomial automorphism.
+\end{theorem}
+
+\begin{proof}
+Write \(U=Hu,V=Hv,W=Hw\).  The planar minors satisfy
+\[
+ u\,dP-v\,dQ+w\,dR=0,                       \tag{A.1}
+\]
+with
+\[
+ \deg u=\deg v=5-r,\qquad \deg w=6-r.
+\]
+For \(r=5\), \(u,v\) are constants.  If \(S=uP-vQ\), then
+\[
+ dS=-w\,dR,\qquad dw\wedge dR=0,
+\]
+so homogeneity gives
+\[
+ R=cw^3,\qquad S=-\frac{3c}{4}w^4.
+\]
+The resulting aligned cube--fourth-power pair is automorphic by the
+cubic-coordinate and plane-degree reduction.
+
+For \(r=4\), first suppose \(u,v\) are dependent.  After a target change,
+\[
+ \ell\,dS+w\,dR=0,\qquad 4\ell S+3wR=0.     \tag{A.2}
+\]
+If \(\ell\mid w\), equation (A.2) again produces an aligned
+cube--fourth-power pair.  If \(\ell\nmid w\), it forces
+\(\ell^4T=cw^3\) with \(R=\ell T\), which is incompatible with unique
+factorization.
+
+Now suppose \(u,v\) are independent and choose \(u=x,v=y\).  Euler
+contraction and differentiation of (A.1) give
+\[
+ P=\frac{wR_x-3Rw_x}{4},\qquad
+ Q=\frac{3Rw_y-wR_y}{4}.                    \tag{A.3}
+\]
+If the residual quadratic \(w\) is a square, (A.3) makes \(P,Q\) share a
+linear factor, contrary to primitivity.  If \(w\) is reduced, the
+determinant arc reduces the first transverse normal direction to two
+binary linear forms \(\ell,m\).  The necessary divisibility is
+\[
+ \Gamma\mid
+ \frac12\bigl(\mathcal A\ell^2+
+ 2\mathcal B\ell m+\mathcal C m^2\bigr),
+ \qquad
+ \mathcal A\mathcal C-\mathcal B^2=4xy\Gamma.       \tag{A.4}
+\]
+For squarefree \(\Gamma\), reduction modulo \(\Gamma\) gives
+\(\ell=m=0\).  The repeated-root incidence has two components: one violates
+\(\gcd(P,Q)=1\), and the other is a rational conic.  The exact homogeneous
+parametrization checks its affine chart, its omitted point at infinity, and
+the \(2+2\) divisor, where the complete first-normal kernel is two
+dimensional.  In each chart the next determinant coefficient kills the
+kernel.  A later coefficient then kills the remaining quadratic normal
+directions.  All nonlinear terms are binary, so a target change reduces the
+map to a plane Keller pair with one coordinate of degree at most four.
+\end{proof}
+
+\begin{proposition}[Fourth-power and zero-minor boundaries]
+\label{prop:quartic-fourth-power-zero-minor}
+Subject to the same structural inputs:
+\begin{enumerate}[label=(\roman*)]
+\item if a primitive coprime leading pencil contains a fourth power, then
+its cubic and quadratic normal layers route it to the binary,
+quadratic-source, or aligned pure-power branch, so it creates no additional
+open leaf;
+\item if one of \(U,V,W\) vanishes, including the separate case \(R=0\),
+then the map is a polynomial automorphism.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For (i), normalize \(H_4=(x^4,Q,0)\), \(x\nmid Q\).  The highest
+determinant equation makes \(Q(1,u,v)\) and \(R(1,u,v)\) algebraically
+dependent.  Their common polynomial generator has degree one or two,
+routing respectively to the binary or quadratic-source branch; a constant
+generator gives an aligned pure power.  If \(R=0\), the same argument
+applies to \(E=(H_2)_3\).
+
+For (ii), if \(J(Q,R)=0\) with \(Q,R\ne0\), Euler's identity gives
+\[
+ 3R\,dQ-4Q\,dR=0,
+\]
+and hence \(Q=\alpha L^4,R=\beta L^3\).  The other one-minor case is
+symmetric, and two vanishing minors with \(R\ne0\) contradict target span
+two.  When \(R=0\), the next determinant equation is
+\[
+ J(P,Q)E_z=0,
+\]
+so \(F_3=e(x,y)+\mu z\), \(\deg e\le2\).  Straightening this coordinate
+reduces the remaining two coordinates to a plane Keller map with a
+coordinate of degree at most seven; the corrected low-degree plane theorem
+applies.
+\end{proof}
+
+\subsection{The corrected fixed-component valuation}
+
+Write
+\[
+ P=GA,\qquad Q=GB,\qquad \gcd(A,B)=1,
+\]
+where \(g=\deg G\), and again put \(R=(H_3)_3\).  In this primitive branch
+define
+\[
+ t=A/B,\qquad \frac{R^4}{Q^3}=\rho(t).
+\]
+
+\begin{lemma}[Fixed-component valuation]
+\label{lem:fixed-component-valuation}
+Let an irreducible component \(\Gamma\) occur in \(G\) with multiplicity
+\(s\) and in the reduced special fiber \(A-\xi B\) with multiplicity
+\(m\).  Put
+\[
+ c_\xi=\operatorname{ord}_\xi\rho
+ \quad(\xi\ne\infty),\qquad
+ c_\infty=\operatorname{ord}_\infty\rho+3.
+\]
+Then
+\[
+ 4\nu_\Gamma(R)=3s+c_\xi m,\qquad
+ \sum_{\xi\in\PP^1}c_\xi=3.                 \tag{A.5}
+\]
+For a nonfixed component in the same fiber, equation (A.5) holds with
+\(s=0\).
+\end{lemma}
+
+\begin{proof}
+At a finite fiber, \(B\) is a unit along \(\Gamma\), and
+\(\nu_\Gamma(t-\xi)=m\).  Taking the valuation of
+\(R^4/Q^3=\rho(t)\) gives the first identity.  At infinity, \(B\) has
+order \(m\), producing the added \(3\) in the definition of
+\(c_\infty\).  The second identity is the degree-zero divisor identity for
+\(\rho\), with that adjustment.
+\end{proof}
+
+The term \(3s\) is essential, and the numbers \(c_\xi\) need not be
+nonnegative: a pole of \(\rho\) can be cancelled by \(G^3\).  Thus any
+earlier provisional closure that omitted \(3s\) or imposed
+\(c_\xi\ge0\) at every fixed fiber is superseded by
+\cref{lem:fixed-component-valuation}.
+
+\begin{corollary}[Exceptional valuation at an isolated basepoint]
+\label{cor:quartic-fixed-component-basepoint-valuation}
+Let \(p\in\PP^2\) be a common zero of \(G,A,B\), blow up \(p\), and let
+\(E\) be the exceptional divisor.  Put
+\[
+ g=\nu_E(G),\qquad a=\nu_E(A),\qquad b=\nu_E(B),\qquad
+ r=\nu_E(R).
+\]
+If \(a=b\) and the residue of \(A/B\) in \(k(E)\) is not identically a
+zero or pole of \(\rho\), then
+\[
+ 4r=3(g+b),\qquad\text{and consequently}\qquad 4\mid g+b.
+\]
+In particular, the configuration \(g=a=b=1\) with nonconstant residual
+ratio \(A/B\) is impossible.
+\end{corollary}
+
+\begin{proof}
+The identity \(Q=GB\) and the primitive relation
+\(R^4/Q^3=\rho(A/B)\) give
+\[
+ 4r-3(g+b)=\nu_E\!\left(\rho(A/B)\right).
+\]
+Under the stated residue hypothesis, \(A/B\) is a unit at the generic point
+of \(E\) and its image is neither a zero nor a pole of \(\rho\).  The
+right-hand side is therefore zero.  The divisibility follows because
+\(\gcd(3,4)=1\); if \(g=b=1\), it would require \(4r=6\).
+\end{proof}
+
+\begin{theorem}[Genuinely nonbinary fixed components]
+\label{thm:quartic-nonbinary-fixed-components}
+Assume the four-loci reduction and the polynomial-centralizer fact stated
+at the beginning of this appendix.  Every genuinely nonbinary primitive
+fixed-component branch is closed.
+\end{theorem}
+
+\begin{proof}
+If \(\deg G=2\), equations (A.5) for a fixed line and the residual
+nonfixed line give incompatible congruences modulo four, unless the whole
+reduced fiber is fixed; that endpoint is the already-recorded same-fiber
+rank-one chart.
+
+If \(\deg G=1\), let \(m\in\{1,2,3\}\) be the multiplicity of the fixed
+line in its reduced cubic fiber.  Multiplicity one conflicts with the
+valuation on the residual factor, and multiplicity two is impossible
+modulo four.  For multiplicity three, the only possibilities are the
+aligned automorphic case or
+\[
+ H_4=(x^4,xR,0),\qquad (H_3)_3=R,\qquad x\nmid R.   \tag{A.6}
+\]
+The binary common-generator subcase stays in the binary tree.  In the
+genuinely nonbinary subcase, the Hamiltonian derivation
+\(\delta=J_{y,z}(R,-)\) has kernel \(k(x)[R]\).  The first two normal
+equations give, after target changes,
+\[
+\begin{aligned}
+ A&=ax^3,&
+ B&=xE+\frac a4R-\frac\gamma4x^3,\\
+ C&=\mu x^2,&
+ D&=xL_3+\frac a4E-\frac\nu4x^2.
+\end{aligned}                                      \tag{A.7}
+\]
+Reassembly yields
+\[
+ F_1=f(x)+\ell,\qquad
+ F_2=(x+a/4)F_3+p(x)+m.
+\]
+The homogeneous degree-five determinant equation is
+\[
+ 4x^3\det(dx,dm,dR)-R\det(dx,d\ell,dR)=0.          \tag{A.8}
+\]
+Since \(x\nmid R\), both determinants in (A.8) vanish.  Nonbinary
+primitivity then forces \(\ell,m\in kx\), making two differential rows
+dependent and contradicting the Keller condition.
+\end{proof}
+
+\subsection{Binary fixed factors}
+
+\begin{theorem}[Binary fixed-factor exclusion]
+\label{thm:quartic-binary-fixed-factors}
+Assume the Program~2 reductions reach a binary leading pencil
+\[
+ H_4=(P,Q,0)
+\]
+with a nonconstant greatest common divisor \(G\).  If
+\(\deg G=1,2,\) or \(3\), then every quartic Keller map in the corresponding
+stratum is a polynomial automorphism.
+\end{theorem}
+
+\begin{proof}[Computer-assisted proof]
+For \(\deg G=3\), normalize \(H_4=(xG,yG,0)\).  The three multiplicity
+types of \(G\) are squarefree, double-plus-simple, and a triple line.  On
+the squarefree chart, the first-normal determinant is
+\[
+ -6^6\operatorname{Disc}(G)\operatorname{Res}(G,R)^2.
+\]
+The exact root-incidence sweep closes its resultant divisor.  Separate
+exact sweeps of the double-line and triple-line types either kill the normal
+amplitudes or give a triangular degree drop.
+
+For \(\deg G=1\), the valuation reduction normalizes
+\[
+ H_4=(x^4,xB,0),\qquad x\nmid B.
+\]
+There are two affine orbits for the residual cubic:
+\[
+ B=y^3,\qquad B=y^3+x^2y.
+\]
+In general coordinates the first-normal determinant is
+\[
+ 248832\,b_3^3r_3^4\Theta,
+\]
+where
+\[
+\begin{aligned}
+\Theta={}&3b_1^2r_3^2-4b_1b_2r_2r_3-6b_1b_3r_1r_3
++4b_1b_3r_2^2\\
+&+4b_2^2r_1r_3-4b_2b_3r_1r_2+3b_3^2r_1^2.
+\end{aligned}
+\]
+The exact exceptional-divisor sweep treats the projective endpoints and
+the resonant vertex; the latter reassembles to a plane reduction.
+
+For \(\deg G=2\), the coprime residual quadratic pencil is a secant of the
+Veronese conic and can be normalized as
+\[
+ P=x^2G,\qquad Q=y^2G.
+\]
+Writing
+\[
+ G=g_0x^2+g_1xy+g_2y^2,\qquad
+ R=r_0x^3+r_1x^2y+r_2xy^2+r_3y^3,
+\]
+the \(8\)-by-\(8\) first-normal determinant factors exactly as
+\begin{equation}
+\begin{aligned}
+41472&(4g_0g_2-g_1^2)
+(-4g_0r_1+3g_1r_0)\\
+&\quad\cdot(-3g_1r_3+4g_2r_2)
+\operatorname{Res}(G,R)^2.
+\end{aligned}
+\tag{A.9}
+\end{equation}
+The four divisors in (A.9), all their intersections, rank jumps,
+projective endpoints, and the final aligned resonance are covered by 38
+exact replay groups.  No continuity argument across an inverted factor is
+used.  Off the divisors the normal matrix is invertible; on every divisor
+the determinant arc either produces a unit obstruction or reduces to a
+plane automorphism.
+\end{proof}
+
+\begin{corollary}[Revised quartic frontier]
+\label{cor:quartic-revised-frontier}
+Conditional on the complete upstream routing into the recorded Program~2
+charts, the only unresolved degree-four calculation is the exceptional
+triple-ramification \(F_4\) compatibility system.  A separate global
+case-tree audit must still verify that the leading-curve and four-loci
+reductions route every quartic map into exactly one recorded terminal
+chart.
+\end{corollary}
+
+This corollary is not a proof that ordinary degree four is impossible and
+does not establish \(D_{\min}\ge5\).  Independent specialist proof review
+and reproduction of the new exact calculations also remain publication
+requirements.

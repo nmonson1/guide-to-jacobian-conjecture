@@ -25,8 +25,8 @@ The active local release candidate contains:
 - 368 stable-tagged atomic claim pages, all included in site search but kept
   out of the main navigation;
 - 534 many-to-many claim memberships across six research programs;
-- 572 retained working-mathematics units, 572 publicly exposed support
-  objects, and 78 typed relations across six overlapping program views;
+- 574 retained working-mathematics units, 576 publicly exposed support
+  objects, and 83 typed relations across six overlapping program views;
 - six version-13 reader PDFs and one companion Results and Research Register;
 - ten primary model entrypoints under `/research/handoffs/`: one portfolio
   hub plus nine first-class research lanes. Six longer program dossiers remain
@@ -70,6 +70,12 @@ The active local release candidate contains:
   projective-kernel charts over characteristic zero and finite fields. Those
   generators establish the inputs to the computation, not chart dimensions,
   corank exclusion, grade, or component structure;
+- a selective PR 9 harvest that reconstructs both normalized `(8,28)`
+  support roots directly and closes them with exact complement accounting.
+  Combined with the cited published reduction, this proves that a plane
+  Keller counterexample in characteristic zero has maximum coordinate degree
+  at least 125, without using the unattached adjacent-chart terminal. Lane 8
+  now begins with the explicit degree-125 `F_2` support-propagation problem;
 - 76 collections with complete manuscript coverage, nine with partial
   coverage, and 19 for which manuscript coverage is not applicable;
 - 21 context-only private records, not exported.
@@ -97,7 +103,7 @@ manuscript links are rendered from that same pointer.
 
 The two mathematical components have different jobs. The 368 stable-tag
 claim pages preserve the legacy publication pipeline and durable public URLs;
-the 572-unit retained graph is the current progress-facing corpus for research
+the 574-unit retained graph is the current progress-facing corpus for research
 models. A retained `corrects` relation is rendered programmatically on the
 affected legacy claim and collection pages, so historical wording cannot
 silently outrank its current working replacement. Advancing either component
@@ -115,13 +121,14 @@ surfaces are:
   and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-handoffs-v21-20260803b/`: hash-pinned sanitized source for
+- `data/model-handoffs-v22-20260803c/`: hash-pinned sanitized source for
   the hub, nine lane entrypoints, six program dossiers, nine exact research
   source packets, and the focused Lane 7 and Lane 8 executable inputs. The
   Lane 8 packet also exposes the incomplete planar-descent strategy and its
   six exact bounded no-go checkers. The v20c briefs state the Lane 3 stable
-  result as proved, retain the Lane 7 marking open, and separate the exact
-  Lane 8 stored-system certificate from its missing chart bridge. It also
+  result as proved and retain the Lane 7 marking open. Lane 8 exposes the
+  direct two-support closure, the below-125 proof assembly, and the exact
+  degree-125 `F_2` seed as its next on-ramp. It also
   incorporates the Lane 4 proof repairs and Q4-F4 input contract, and the
   Lane 7 five-chart projective-kernel generators with their exact evidence
   boundary. Logical manuscript slots resolve against the selected manuscript

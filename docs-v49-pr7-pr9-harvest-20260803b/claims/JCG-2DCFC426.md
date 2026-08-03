@@ -1,0 +1,29 @@
+---
+title: "In the analyzed cubic-incidence families, additional boundary roots yield infinitely many stably left-right inequivalent maps, detectable by omitted-boundary components and curve genera."
+description: "In the analyzed cubic-incidence families, additional boundary roots yield infinitely many stably left-right inequivalent maps, detectable by omitted-boundary components and curve genera."
+---
+
+<p class="claim-tag">JCG-2DCFC426</p>
+# In the analyzed cubic-incidence families, additional boundary roots yield infinitely many stably left-right inequivalent maps, detectable by omitted-boundary components and curve genera.
+
+<span class="status status-kind">Claim</span> <span class="status status-draft">Proof supplied</span> <span class="status">Core</span>
+
+## Exact statement
+
+In the analyzed cubic-incidence families, additional boundary roots yield infinitely many stably left-right inequivalent maps, detectable by omitted-boundary components and curve genera.
+
+Statement version `1`. The public tag is stable; statement revisions increment the version rather than replacing the tag.
+
+## Appears in
+
+- [Eta Family Stable Moduli](../collections/eta-family-stable-moduli.md) — defining, supporting result
+
+## Proof access and evidence boundary
+
+- [Eta Family Stable Moduli](../collections/eta-family-stable-moduli.md): **Exact manuscript location**
+
+## Proof locators
+
+- `supp-note-04-001` in `papers-release-2026-07-26-v8/04-stable-moduli/appendices/additional-results-and-leads.tex` (version-8 supplementary statement with explicit evidence boundary)
+
+[Browse all claims](../results/all-claims.md)
