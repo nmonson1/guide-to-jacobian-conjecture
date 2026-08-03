@@ -1,0 +1,78 @@
+name: Lane 7 exact QQ kernel dimensions
+
+on:
+  pull_request:
+    paths:
+      - "data/model-handoffs-v19-20260802a/lane-7-source-packet.md"
+      - "research-notes/lane7-projective-kernel-20260802/**"
+      - ".github/workflows/lane7-kernel-incidence-qq.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install exact input dependency
+        run: python -m pip install --disable-pip-version-check "sympy==1.14.0"
+      - name: Extract the exact residual matrix and generate QQ charts
+        run: |
+          set -euo pipefail
+          python research-notes/lane7-projective-kernel-20260802/extract_embedded_sources.py \
+            --output-dir build/lane7-sources \
+            lane7-split-incidence-20260802-v1/collision_residual_matrix_M.json \
+            lane7-split-incidence-20260802-v1/Hv10_split_matrix_factorization.json
+          for chart in 0 1 2 3 4; do
+            python research-notes/lane7-projective-kernel-20260802/generate_kernel_chart_singular.py \
+              build/lane7-sources "build/kernel-chart-${chart}-qq.sing" \
+              --chart "${chart}" --characteristic 0
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lane7-kernel-chart-qq-inputs
+          path: build/kernel-chart-*-qq.sing
+          if-no-files-found: error
+
+  singular-kernel-chart-qq:
+    needs: prepare
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        chart: [0, 1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: lane7-kernel-chart-qq-inputs
+          path: build
+      - name: Install Singular
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y singular
+          Singular --version | tee build/singular-version.txt
+      - name: Compute the exact QQ dimension of kernel chart ${{ matrix.chart }}
+        run: |
+          set -o pipefail
+          Singular "build/kernel-chart-${{ matrix.chart }}-qq.sing" 2>&1 \
+            | tee "build/kernel-chart-${{ matrix.chart }}-qq-singular.log"
+          grep -Eq \
+            "KERNEL_CHART_${{ matrix.chart }}_QQ_SINGULAR_DIM=(-1|0|1)$" \
+            "build/kernel-chart-${{ matrix.chart }}-qq-singular.log"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lane7-kernel-chart-${{ matrix.chart }}-qq-singular
+          path: |
+            build/singular-version.txt
+            build/kernel-chart-${{ matrix.chart }}-qq.sing
+            build/kernel-chart-${{ matrix.chart }}-qq-singular.log
+          if-no-files-found: warn
