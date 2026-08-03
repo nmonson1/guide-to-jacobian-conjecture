@@ -13,9 +13,9 @@ permissions:
   contents: read
 
 jobs:
-  extract-and-discover:
+  exact-replay:
     runs-on: ubuntu-22.04
-    timeout-minutes: 40
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,7 +24,9 @@ jobs:
       - name: Install exact symbolic dependency
         run: python -m pip install --disable-pip-version-check "sympy==1.14.0"
       - name: Compile the audit harness
-        run: python -m py_compile research-notes/lane8-full-root-20260802/*.py
+        run: |
+          find research-notes/lane8-full-root-20260802 -name '*.py' -print0 \
+            | xargs -0 -r python -m py_compile
       - name: Extract and hash-check public Lane 8 sources
         run: |
           python research-notes/lane8-full-root-20260802/extract_embedded_sources.py \
@@ -37,6 +39,30 @@ jobs:
         run: |
           python research-notes/lane8-full-root-20260802/discover_entrypoints.py \
             build/lane8-source build/lane8-discovery.json
+      - name: Independently rebuild both raw-support roots
+        env:
+          LANE8_FIELD_DIR: ${{ github.workspace }}/build/lane8-source/degree-296-compact/scripts
+        run: |
+          python research-notes/lane8-full-root-20260802/independent_raw_support_replay.py \
+            --relations build/lane8-source/degree-twenty-one/raw-support-reconstruction/belyi_exact_field_relations.json \
+            --output build/lane8-independent-replay
+      - name: Replay the published raw-support reconstruction
+        run: |
+          python build/lane8-source/degree-twenty-one/raw-support-reconstruction/rebuild_lower_face_reduction.py \
+            --case both --output build/lane8-published-replay
+      - name: Compare independent and published reconstruction invariants
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          independent = json.loads(Path('build/lane8-independent-replay/summary.json').read_text())
+          expected = json.loads(Path('build/lane8-source/degree-twenty-one/raw-support-reconstruction/raw_reconstruction_expected.json').read_text())
+          assert independent['truncated']['layer_data'] == expected['truncated']['layer_data']
+          assert independent['full']['layer_data'] == expected['full']['layer_data']
+          assert independent['truncated']['minor_determinant_sha256'] == expected['truncated']['minor_determinant_sha256']
+          assert independent['full']['final_equation_sha256'] == expected['full']['final_equation_sha256']
+          print('independent/public raw-support invariants: PASS')
+          PY
       - name: Fetch and hash-check the public Program 6 supplement
         run: |
           python research-notes/lane8-full-root-20260802/fetch_program6_supplement.py \
@@ -45,10 +71,12 @@ jobs:
             --listing build/program6-supplement-listing.json
       - uses: actions/upload-artifact@v4
         with:
-          name: lane8-public-exact-sources
+          name: lane8-exact-replay
           path: |
             build/lane8-source
             build/lane8-discovery.json
+            build/lane8-independent-replay
+            build/lane8-published-replay
             build/program6-supplement.zip
             build/program6-supplement
             build/program6-supplement-listing.json
