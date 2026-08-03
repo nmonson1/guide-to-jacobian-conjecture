@@ -34,11 +34,43 @@ def _fetch(url: str) -> bytes:
         return response.read()
 
 
+def _release_url(base_url: str, route: str, cache_key: str) -> str:
+    url = urljoin(base_url, route)
+    separator = "&" if "?" in url else "?"
+    return f"{url}{separator}release={cache_key}"
+
+
+def _load_retained_v2(
+    base_url: str, metadata: dict[str, Any], cache_key: str
+) -> tuple[dict[str, Any], list[str]]:
+    failures: list[str] = []
+    if machine_route := metadata.get("machine_route"):
+        payload = json.loads(
+            _fetch(_release_url(base_url, machine_route, cache_key)).decode("utf-8")
+        )
+        if payload.get("selection_id") != metadata.get("selection_id"):
+            failures.append("deployed retained-math v2 selection disagrees")
+        return payload, failures
+
+    machine_routes = metadata.get("machine_routes", {})
+    graph_route = machine_routes.get("graph")
+    if not graph_route:
+        return {}, ["expected retained-math v2 metadata lacks a graph route"]
+    payload = json.loads(
+        _fetch(_release_url(base_url, graph_route, cache_key)).decode("utf-8")
+    )
+    if payload.get("registry_id") != metadata.get("source_registry_id"):
+        failures.append("deployed retained-math v2 registry disagrees")
+    if payload.get("counts") != metadata.get("counts"):
+        failures.append("deployed retained-math v2 counts disagree")
+    return payload, failures
+
+
 def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
     failures: list[str] = []
     cache_key = quote(str(expected["site_release_id"]), safe="")
-    release_url = urljoin(
-        base_url, f"research/handoffs/release.json?release={cache_key}"
+    release_url = _release_url(
+        base_url, "research/handoffs/release.json", cache_key
     )
     release = json.loads(_fetch(release_url))
     if release != expected:
@@ -47,11 +79,8 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
     if v2 is None:
         failures.append("expected release does not name retained-math v2")
     else:
-        selection = json.loads(
-            _fetch(urljoin(base_url, v2["machine_route"])).decode("utf-8")
-        )
-        if selection.get("selection_id") != v2["selection_id"]:
-            failures.append("deployed retained-math v2 selection disagrees")
+        selection, retained_failures = _load_retained_v2(base_url, v2, cache_key)
+        failures.extend(retained_failures)
         obligation_ids = {
             item.get("obligation_id") for item in selection.get("obligations", [])
         }
@@ -66,7 +95,7 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
     }
     for handoff in expected["handoffs"]:
         route = handoff["route"]
-        html = _fetch(urljoin(base_url, route)).decode("utf-8")
+        html = _fetch(_release_url(base_url, route, cache_key)).decode("utf-8")
         if (
             'class="handoff-snapshot"' in html
             or str(expected["site_release_id"]) in html
@@ -83,8 +112,10 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
                 f"{route}: inactive manuscript link(s): "
                 f"{', '.join(sorted(inactive))}"
             )
-        if handoff["kind"] == "program" and not linked:
-            failures.append(f"{route}: no active manuscript link")
+        if handoff["kind"] == "program":
+            graph_marker = f"Open the current {handoff['title']} graph view"
+            if graph_marker not in html:
+                failures.append(f"{route}: no current mathematical graph view")
         for marker in (
             "Sources and release",
             "Current proof sources",
@@ -96,22 +127,25 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
                 failures.append(f"{route}: handoff footer lacks {marker!r}")
         if handoff["program_slug"] == "homogeneous-realization-compression":
             for marker in (
-                "Compiler-owned retained result",
-                "ARG-RMU5D8E0003-FINITE-PLANE",
-                "-1152",
+                "L6-T1",
+                "chain-homotopy",
+                "presentation-groupoid criterion",
             ):
                 if marker not in html:
-                    failures.append(f"{route}: retained-math v2 lacks {marker}")
+                    failures.append(f"{route}: current Lane 6 task lacks {marker}")
     source_index = _fetch(
-        urljoin(base_url, expected["manuscript_sources"]["index_route"])
+        _release_url(
+            base_url, expected["manuscript_sources"]["index_route"], cache_key
+        )
     ).decode("utf-8")
     if "Current text proof sources" not in source_index:
         failures.append("deployed text-proof source index is missing")
     exact_source = _fetch(
-        urljoin(
+        _release_url(
             base_url,
             "research/proof-sources/01-cubic-incidence/appendices/"
             "cubic-resolvent-defects/",
+            cache_key,
         )
     ).decode("utf-8")
     if 'id="label-prop-cubic-divisorial-trichotomy"' not in exact_source:
