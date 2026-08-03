@@ -1,0 +1,278 @@
+% Additive Lane 4 structural proof repairs.
+% This file is not included by a canonical manuscript and carries no theorem
+% promotion by itself.
+
+\section{Structural routing repairs for the quartic audit}
+
+Throughout, \(k\) is an algebraically closed field of characteristic zero.
+The statements below are candidate reader proofs for the two global routing
+interfaces denoted \texttt{AUDIT-LEAD-FACT} and
+\texttt{AUDIT-FOUR-LOCI}.  Their purpose is to remove shortcuts from the
+argument and to make every complementary case visible.  They still require
+specialist review before use in a theorem-bearing manuscript.
+
+\subsection{Leading-image factorization via the actual normalization}
+
+\begin{proposition}[Leading-image factorization without a relative-closure shortcut]
+\label{prop:lane4-leading-image-direct}
+Let
+\[
+ H_4=(H_{4,1},H_{4,2},H_{4,3})\in k[x,y,z]_4^3
+\]
+be nonzero, and suppose that the closure \(C\subset \mathbf P^2\) of the
+projective image of
+\[
+ \phi=[H_{4,1}:H_{4,2}:H_{4,3}]
+ \colon \mathbf P^2\dashrightarrow \mathbf P^2
+\]
+is an integral curve of degree \(e\geq 1\).  Then there exist
+\begin{itemize}
+\item coprime homogeneous forms \(A,B\in k[x,y,z]_k\) of a common degree
+  \(k\geq 1\);
+\item binary forms \(h_0,h_1,h_2\in k[u,v]_e\) with no common zero such that
+  \(\nu=[h_0:h_1:h_2]\colon\mathbf P^1\to C\) is the normalization map; and
+\item a homogeneous form \(G\in k[x,y,z]\),
+\end{itemize}
+for which
+\[
+ H_4=G\,h(A,B),\qquad \deg G+ek=4.
+\]
+For a nondegenerate image \(e\geq2\), the numerical possibilities are exactly
+\[
+ (e,k,\deg G)=(2,1,2),(2,2,0),(3,1,1),(4,1,0).
+\]
+The case \(e=1\) is exactly the leading-target-span-two child.
+\end{proposition}
+
+\begin{proof}
+The rational map \(\phi\) dominates \(C\).  Restricting a nonconstant
+rational generator of \(k(C)\subset k(\mathbf P^2)\) to a sufficiently
+general line gives a nonconstant rational map
+\(\mathbf P^1\dashrightarrow C\).  Thus \(C\) is unirational.  The
+normalization \(\widetilde C\) is therefore a smooth unirational projective
+curve, hence \(\widetilde C\simeq\mathbf P^1\) in characteristic zero.
+
+Let
+\[
+ \nu=[h_0:h_1:h_2]\colon\mathbf P^1\longrightarrow C
+\]
+be the normalization map.  Because \(\nu\) is finite birational and
+\(\deg C=e\), the line bundle \(\nu^*\mathcal O_C(1)\) has degree \(e\).
+After choosing homogeneous coordinates \([u:v]\) on \(\mathbf P^1\), the
+three sections defining \(\nu\) are therefore binary forms of degree \(e\)
+without a common zero.
+
+The rational inverse of \(\nu\) on the generic point of \(C\) gives a
+rational map
+\[
+ \psi=\nu^{-1}\circ\phi\colon\mathbf P^2\dashrightarrow\mathbf P^1.
+\]
+Write \(\psi=[A:B]\) with \(A,B\) coprime homogeneous forms of one common
+degree \(k\).  Since \(C\) is a curve, \(\psi\) is nonconstant and \(k\geq1\).
+Put
+\[
+ q_i=h_i(A,B)\qquad(0\leq i\leq2).
+\]
+Then
+\[
+ [H_{4,1}:H_{4,2}:H_{4,3}]=[q_0:q_1:q_2]
+\]
+as rational maps.
+
+The forms \(q_0,q_1,q_2\) have no common irreducible divisor.  Indeed, let
+\(\Gamma\) be a prime divisor of \(\mathbf P^2\).  Coprimality of \(A,B\)
+means that they do not both vanish at the generic point of \(\Gamma\), so
+\([A:B]\) gives a point of \(\mathbf P^1(k(\Gamma))\).  If \(\Gamma\)
+divided all \(q_i\), the three \(h_i\) would vanish at that point after a
+field extension, contradicting basepoint-freeness of \(\nu\).
+
+Projective equality gives a common rational multiplier
+\(\lambda\in k(x,y,z)^\times\) such that \(H_{4,i}=\lambda q_i\) for all
+\(i\).  Write \(\lambda=u/v\) in lowest terms.  Since every \(H_{4,i}\) is
+polynomial, \(v\mid u q_i\).  Coprimality of \(u,v\) gives \(v\mid q_i\) for
+all \(i\); the preceding paragraph forces \(v\in k^\times\).  Hence
+\(\lambda=G\) is a polynomial.  Homogeneity makes \(G\) homogeneous, and
+comparison of degrees gives
+\[
+ \deg G+ek=4.
+\]
+For \(e\geq2\), enumerating the positive integral solutions yields the four
+displayed triples.  If \(e=1\), the image \(C\) is a projective line, so the
+three leading coordinates span a two-dimensional target subspace; conversely
+a target-span-two leading map has line image unless it degenerates to the
+rank-one child.
+\end{proof}
+
+\begin{remark}[Why relative algebraic closure does not prove properness]
+\label{rem:lane4-relative-closure-warning}
+Relative algebraic closure is useful for detecting a primitive source
+pencil, but it does not by itself prove that a parametrization of the image
+curve is birational.  For example,
+\[
+ [x:y:z]\longmapsto[x^2:y^2:0]
+\]
+has image a line.  Its image field is
+\(k((x/y)^2)\), while its relative algebraic closure in
+\(k(x/y,z/y)\) contains \(k(x/y)\).  Rewriting the image ratios using
+\(s=x/y\) produces the degree-two map \([s^2:1:0]\), not the normalization
+map.  The proposition avoids this error by choosing the normalization of
+\(C\) first and only then forming \(\psi=\nu^{-1}\circ\phi\).
+\end{remark}
+
+\subsection{The weighted one-variable field}
+
+\begin{lemma}[Quartic--cubic weighted field]
+\label{lem:lane4-weighted-field}
+Let \(P,Q\in k[x,y,z]_4\) be algebraically independent and let
+\(0\ne R\in k[x,y,z]_3\) satisfy
+\[
+ \operatorname{Jac}(P,Q,R)=0.
+\]
+Write
+\[
+ P=GA,\qquad Q=GB,\qquad \gcd(A,B)=1,\qquad
+ n=\deg A=\deg B,
+\]
+and put
+\[
+ t=A/B,\qquad w=R^4/Q^3.
+\]
+Then \(w\) is algebraic over \(k(t)\).  Moreover, there are coprime
+homogeneous forms \(A_0,B_0\) of a common degree \(d\) and a rational
+function \(\mathcal R\in k(s)\) of degree \(e\) such that
+\[
+ k(t,w)=k(s),\qquad s=A_0/B_0,\qquad
+ t=\mathcal R(s),\qquad n=ed.
+\]
+\end{lemma}
+
+\begin{proof}
+In characteristic zero, the vanishing Jacobian together with algebraic
+independence of \(P,Q\) implies that \(R\) is algebraic over \(k(P,Q)\).
+Choose a nonzero polynomial relation and retain one source-homogeneous
+component.  Every monomial \(P^iQ^jR^m\) in that component satisfies
+\[
+ 4(i+j)+3m=M.
+\]
+Thus all exponents \(m\) are congruent modulo four.  After removing the
+common residual power of \(R\), the relation has the form
+\[
+ \sum_{\ell} C_\ell(P,Q)R^{4\ell}=0,
+ \qquad \deg C_\ell=N-3\ell.
+\]
+Dividing by \(Q^N\) gives a polynomial relation for
+\(w=R^4/Q^3\) over \(k(t)\).
+
+The field \(k(t,w)\) has transcendence degree one and is the function field
+of a curve dominated by \(\mathbf P^2\).  Restriction to a sufficiently
+general line makes that curve unirational; hence it is rational.  Therefore
+\(k(t,w)=k(s)\).  Represent \(s\) by a reduced homogeneous pencil
+\(A_0/B_0\) of common degree \(d\).
+
+Write \(\mathcal R=U/V\), with coprime binary forms \(U,V\) of degree \(e\).
+The substitutions \(U(A_0,B_0)\) and \(V(A_0,B_0)\) remain coprime: the
+binary resultant identities express powers of \(A_0\) and \(B_0\) in their
+ideal, so a common prime divisor would divide both \(A_0\) and \(B_0\).
+Since
+\[
+ A/B=U(A_0,B_0)/V(A_0,B_0)
+\]
+and both ratios are reduced, comparison of degrees gives \(n=ed\).
+\end{proof}
+
+\subsection{Four structural loci with the valuation complements retained}
+
+\begin{proposition}[Four-loci cover]
+\label{prop:lane4-four-loci}
+Under the hypotheses of \cref{lem:lane4-weighted-field}, every leading
+triple \((P,Q,R)\) lies in at least one of the following loci:
+\begin{enumerate}
+\item \(P,Q,R\) belong to a polynomial ring in two independent linear forms;
+\item \(G=1\) and
+\[
+ P=U(A_0,B_0),\qquad Q=V(A_0,B_0),
+\]
+where \(A_0,B_0\) are coprime quadrics and \(U,V\) are binary quadratics;
+\item \(G=1\), the reduced pencil \(A/B\) is composition-primitive, and the
+pencil contains a fourth power \(\ell^4\);
+\item the reduced pencil \(A/B\) is composition-primitive, \(G\ne1\), and
+every irreducible component of \(G\) is supported on a special fiber of
+\(A/B\).
+\end{enumerate}
+The assertion is a cover, not a claim that the four loci are disjoint.
+\end{proposition}
+
+\begin{proof}
+Use the notation \(n=ed\) from \cref{lem:lane4-weighted-field}.
+
+Suppose first that \(e>1\).  Since \(n=4-\deg G\), the possibilities with
+\(d\geq1\) are
+\[
+\begin{array}{c|c|c}
+\deg G&n&(e,d)\\ \hline
+0&4&(4,1),(2,2)\\
+1&3&(3,1)\\
+2&2&(2,1).
+\end{array}
+\]
+In every \(d=1\) case, \(s=A_0/B_0\) is a pencil of two independent linear
+forms, and the reduced forms \(A,B\) are binary in those forms.  Let
+\(\Gamma\) occur in \(G\) with multiplicity \(\mu\).  If \(s\) is
+nonconstant on \(\Gamma\), then \(B\) and every nonzero rational function of
+\(s\) are units at the generic point of \(\Gamma\).  Taking
+\(\Gamma\)-valuations in
+\[
+ R^4/Q^3=\sigma(s)
+\]
+gives
+\[
+ 4\nu_\Gamma(R)=3\mu.
+\]
+For the displayed \(d=1\) cases with \(G\ne1\), one has
+\(1\leq\mu\leq\deg G\leq2\), so this is impossible.  Hence every component of
+\(G\) is a fiber line of \(s\), and \(G,P,Q\) are binary in the same two
+linear forms.  Since \(R^4\) is binary as well, expansion in a third
+independent linear form gives \(\deg_{\mathrm{third}}R=0\); thus \(R\) is
+binary.  This is locus (1).  The sole nonbinary composite case is
+\((e,d)=(2,2)\) with \(G=1\), which is locus (2).
+
+Now suppose \(e=1\), so \(w=\rho(t)\).  First take \(G=1\).  For a finite
+fiber \(A-\xi B\), set \(c_\xi=\operatorname{ord}_\xi\rho\); at infinity set
+\[
+ c_\infty=\operatorname{ord}_\infty\rho+3.
+\]
+If an irreducible component \(\Gamma\) occurs in the corresponding quartic
+fiber with multiplicity \(m\), valuation gives
+\[
+ 4\nu_\Gamma(R)=c_\xi m.
+\]
+Consequently every \(c_\xi\geq0\).  The degree-zero divisor identity for
+\(\rho\), with the denominator adjustment at infinity, gives
+\[
+ \sum_{\xi\in\mathbf P^1}c_\xi=3.
+\]
+At least one \(c_\xi\) is odd.  For that fiber,
+\(4\mid c_\xi m\), hence \(4\mid m\) for every irreducible component.
+Because the total degree is four, the fiber is \(\ell^4\).  This is
+locus (3).
+
+Finally take \(e=1\) and \(G\ne1\).  Let \(\Gamma\mid G\) have multiplicity
+\(\mu\).  If \(t=A/B\) is nonconstant on \(\Gamma\), then \(A,B\), and
+\(\rho(t)\) are units at its generic point, and valuation gives
+\[
+ 4\nu_\Gamma(R)=3\mu.
+\]
+But \(1\leq\mu\leq\deg G\leq3\), which is impossible.  Therefore \(t\) is
+constant on every component of \(G\), so each such component is supported on
+a special fiber.  This is locus (4).
+\end{proof}
+
+\begin{remark}[Ownership and signs]
+\label{rem:lane4-four-loci-ownership}
+For a disjoint case tree, first extract the full gcd \(G\), then test whether
+the resulting field generator is binary, then assign the quadratic-source
+and fourth-power cases, and only afterwards call the fixed-component owner.
+The nonnegativity \(c_\xi\geq0\) was used only in the coprime case \(G=1\).
+For \(G\ne1\), poles of \(\rho\) may be cancelled by \(G^3\), so imposing
+\(c_\xi\geq0\) there would incorrectly delete fixed-component branches.
+\end{remark}
