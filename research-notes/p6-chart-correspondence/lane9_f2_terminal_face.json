@@ -1,0 +1,55 @@
+{
+  "all_exact_checks_passed": true,
+  "belyi_map": {
+    "degree": 6,
+    "derivative": "-3645*(u-1)^4/(9*u^2-15*u+5)^4",
+    "passport": [
+      "(5,1)",
+      "(3,3)",
+      "(3,1,1,1)"
+    ],
+    "tau": "729*u*(u-1)^5/(9*u^2-15*u+5)^3",
+    "tau_minus_one_finite_numerator": "135*u^3-405*u^2+396*u-125"
+  },
+  "cleared_polynomials": {
+    "denominator": {
+      "0": "125",
+      "1": "-1125",
+      "2": "4050",
+      "3": "-7425",
+      "4": "7290",
+      "5": "-3645",
+      "6": "729"
+    },
+    "denominator_minus_numerator": {
+      "0": "125",
+      "1": "-396",
+      "2": "405",
+      "3": "-135"
+    },
+    "numerator": {
+      "1": "-729",
+      "2": "3645",
+      "3": "-7290",
+      "4": "7290",
+      "5": "-3645",
+      "6": "729"
+    }
+  },
+  "coefficient_equations": [
+    "a*c=1/5",
+    "a*d=3*b*c",
+    "5*a*e=3*b*d"
+  ],
+  "family": "F_2 terminal complete-chain quotient",
+  "lattice_gap": 5,
+  "normalized_face": {
+    "ode_value": "1/5",
+    "pbar": "1-u",
+    "qbar": "(9*u^2-15*u+5)/25"
+  },
+  "quotient_coordinate": "u=z^5",
+  "quotient_ode": "pbar*qbar-3*u*pbar*qbar'+5*u*pbar'*qbar=1/5",
+  "schema_version": 1,
+  "scope": "This reconstructs the real terminal quotient face and its degree-six Belyi map.  It is not a reconstruction of the missing order-520 endpoint matrices or attachment recurrence."
+}
