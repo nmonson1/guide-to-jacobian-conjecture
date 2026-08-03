@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "name": "Synthetic F2 fresh-parameter retention diagnostic",
+  "provenance": "Synthetic regression fixture only; not an F2 endpoint matrix packet.",
+  "cyclic_modulus": 5,
+  "orders": [
+    {
+      "order": 510,
+      "blocks": [
+        {
+          "name": "synthetic-character-zero",
+          "character": 0,
+          "variables": [
+            {
+              "name": "x510",
+              "kind": "left_correction",
+              "character": 0
+            },
+            {
+              "name": "p510",
+              "kind": "fresh_parameter",
+              "character": 0
+            }
+          ],
+          "equations": [
+            "apparent-condition-510"
+          ],
+          "matrix": [
+            [
+              "0",
+              "2"
+            ]
+          ],
+          "rhs": [
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 520,
+      "blocks": [
+        {
+          "name": "synthetic-character-four",
+          "character": 4,
+          "variables": [
+            {
+              "name": "x520",
+              "kind": "right_correction",
+              "character": 4
+            },
+            {
+              "name": "p520",
+              "kind": "fresh_parameter",
+              "character": 4
+            }
+          ],
+          "equations": [
+            "apparent-condition-520"
+          ],
+          "matrix": [
+            [
+              "0",
+              "-3"
+            ]
+          ],
+          "rhs": [
+            "5"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 530,
+      "blocks": [
+        {
+          "name": "synthetic-character-three",
+          "character": 3,
+          "variables": [
+            {
+              "name": "x530",
+              "kind": "overlap_correction",
+              "character": 3
+            },
+            {
+              "name": "p530",
+              "kind": "fresh_parameter",
+              "character": 3
+            }
+          ],
+          "equations": [
+            "zero-parameter-order-530-value"
+          ],
+          "matrix": [
+            [
+              "0",
+              "1"
+            ]
+          ],
+          "rhs": [
+            "7"
+          ]
+        }
+      ]
+    }
+  ]
+}
