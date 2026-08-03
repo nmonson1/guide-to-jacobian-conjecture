@@ -57,3 +57,28 @@ made after the first coherent v52 candidate was committed. It selects
 That exact 165-root list is safe to apply only if `5773af3` is the release
 freeze. If review produces another release commit or suffix, rerun the tool
 and use the successor inventory instead.
+
+## Symlink-boundary measurement
+
+`public-candidate-5a132e6-20260803-v3.json` remeasured the converged v52c
+content and identified 165 inactive roots containing 57,005 tracked files and
+1,075,984,995 apparent bytes.  Its SHA-256 is
+`308828f3466693832382ca7333e7b40af9fa3f6dfadfbaf7008557e6b425d967`.
+It was not used as a deletion authority: inspection found that v52c retained
+two checkout-relative asset symlinks into inactive `docs-v8-20260727a`.
+
+The three failed integration candidates found beside the selected release
+are preserved in the write-once archive identified by
+`archive-locator-v52-integration-20260803-v1.json`.  That archive was verified
+against every regular-file hash and symlink target before removal.
+
+## Final v52d deletion authority
+
+The asset dependency was repaired by generating a new, self-contained v52d
+tree.  `public-candidate-913dd63-20260803-v4.json` is the final pre-removal
+inventory.  It selects one docs root and eight data roots, and its exact
+inactive pathspec contains 166 roots, 58,188 tracked files, and
+1,189,475,324 apparent bytes.  Its SHA-256 is
+`061849a8a2eeed39cb7793a3ea0f12d3fa68a94ca7f673e0ed99a3f1b4fe6b91`.
+The selected v52d tree contains no symlinks.  The mathematical generated files
+are byte-identical to v52c; only `release.json` changes its release metadata.

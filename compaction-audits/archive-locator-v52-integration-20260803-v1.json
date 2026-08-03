@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "archive_id": "public-integration-untracked-v52-20260803-v1",
+  "created_on": "2026-08-03",
+  "source_baseline_commit": "dd024206008d5fa533020812816e8707f00d542f",
+  "archive_source_inventory_sha256": "5555d92ebb08a616d24a9373295f3a27262e9987afca7d040f1be477d41aa3ef",
+  "release_freeze_inventory": "compaction-audits/public-candidate-5a132e6-20260803-v3.json",
+  "release_freeze_inventory_sha256": "308828f3466693832382ca7333e7b40af9fa3f6dfadfbaf7008557e6b425d967",
+  "path": "/fss/monson/active/jacobian/runs/repository-compaction-20260803-v2/public-integration-untracked-v52-v1",
+  "manifest": "/fss/monson/active/jacobian/runs/repository-compaction-20260803-v2/public-integration-untracked-v52-v1/manifest.json",
+  "manifest_sha256": "7b204d6268c4e0083295a7f203ad69be81721ef1f442fbbc7def4046166b0d02",
+  "root_count": 3,
+  "regular_file_count": 2390,
+  "symlink_count": 4,
+  "apparent_size_bytes": 229111614,
+  "content_tree_sha256": "6e311f87e225ebecb846177be4e80e79e31e2531ebdac54ef53249a21e5bd80d",
+  "source_roots": [
+    "data/model-handoffs-v24-20260803c",
+    "docs-v52-converged-research-state-20260803a",
+    "docs-v52-converged-research-state-20260803b"
+  ]
+}
