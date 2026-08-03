@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Recover the public Lane 9/F2 text packet from the Program 6 ZIP archive.
+"""Recover the public Lane 9/F2 packet from the Program 6 ZIP archive.
 
 The archive is already committed in the public repository but is too large for
 ordinary code browsing.  This utility performs a deterministic, hash-pinned
-scan and extracts only small UTF-8 text members relevant to Lane 9.  It never
-constructs matrices that are not present in the archive.
+audit of every member name, scans every small UTF-8 text member, and extracts
+only the relevant text packet.  It never constructs matrices that are not
+present in the archive.
 """
 
 from __future__ import annotations
@@ -30,6 +31,7 @@ TEXT_SUFFIXES = {
     ".csv",
     ".tsv",
 }
+ARCHIVE_SUFFIXES = {".zip", ".tar", ".tgz", ".gz", ".bz2", ".xz", ".7z"}
 MAX_TEXT_BYTES = 2_000_000
 
 CONTENT_PATTERNS: Mapping[str, re.Pattern[str]] = {
@@ -42,6 +44,18 @@ CONTENT_PATTERNS: Mapping[str, re.Pattern[str]] = {
     "fresh_parameter": re.compile(r"fresh\s+parameters?|new\s+parameters?", re.I),
     "matrix_block": re.compile(r"(?:matrix|support)[-_ ]?(?:block|blocks)|block[-_ ]?matrix", re.I),
     "parameter_names": re.compile(r"PARAMETER_NAMES|t1_0|t4_0", re.I),
+}
+
+FILENAME_ENDPOINT_PATTERNS: Mapping[str, re.Pattern[str]] = {
+    "order_510_520_530": re.compile(r"(?:510|520|530)", re.I),
+    "lane9_or_wall": re.compile(
+        r"lane[-_ ]?9|wall[-_ ]?shear|chart[-_ ]?correspondence", re.I
+    ),
+    "f2_endpoint_language": re.compile(
+        r"F_?2.*(?:endpoint|attach|normal[-_ ]?neigh|recurr|fresh|"
+        r"matrix[-_ ]?block|support[-_ ]?block)",
+        re.I,
+    ),
 }
 
 KNOWN_TERMINAL_BASENAMES = {
@@ -113,12 +127,23 @@ def scan_text(text: str) -> list[dict[str, Any]]:
     return hits
 
 
+def scan_filename(member: str) -> list[str]:
+    return [
+        label
+        for label, pattern in FILENAME_ENDPOINT_PATTERNS.items()
+        if pattern.search(member)
+    ]
+
+
 def should_extract(member: str, hits: Sequence[Mapping[str, Any]]) -> tuple[bool, list[str]]:
     path = PurePosixPath(member)
     reasons: list[str] = []
     terminal = "terminal-boundary" in path.parts
     basename = path.name
-    if terminal and (basename in KNOWN_TERMINAL_BASENAMES or re.search(r"F_?2", basename, re.I)):
+    if terminal and (
+        basename in KNOWN_TERMINAL_BASENAMES
+        or re.search(r"F_?2", basename, re.I)
+    ):
         reasons.append("named_terminal_F2_source")
     hit_labels = {str(hit["label"]) for hit in hits}
     for label in sorted(hit_labels & HIGH_ORDER_LABELS):
@@ -128,7 +153,7 @@ def should_extract(member: str, hits: Sequence[Mapping[str, Any]]) -> tuple[bool
     return bool(reasons), reasons
 
 
-def is_endpoint_candidate(record: Mapping[str, Any]) -> bool:
+def is_text_endpoint_candidate(record: Mapping[str, Any]) -> bool:
     hit_labels = {str(hit["label"]) for hit in record["hits"]}
     return bool(
         {"order_510_520_530", "fresh_parameter"} & hit_labels
@@ -151,6 +176,9 @@ def recover(
     output_dir.mkdir(parents=True, exist_ok=True)
     matched: list[dict[str, Any]] = []
     extracted: list[dict[str, Any]] = []
+    filename_candidates: list[dict[str, Any]] = []
+    nested_archive_members: list[dict[str, Any]] = []
+    scanned_text_paths: set[str] = set()
     scanned_text_members = 0
     archive_member_count = 0
 
@@ -161,13 +189,38 @@ def recover(
             if info.is_dir():
                 continue
             path = PurePosixPath(info.filename)
-            if path.suffix.lower() not in TEXT_SUFFIXES or info.file_size > MAX_TEXT_BYTES:
+            suffix = path.suffix.lower()
+            filename_labels = scan_filename(info.filename)
+            if filename_labels:
+                filename_candidates.append(
+                    {
+                        "path": info.filename,
+                        "bytes": info.file_size,
+                        "filename_labels": filename_labels,
+                        "text_scanned": (
+                            suffix in TEXT_SUFFIXES and info.file_size <= MAX_TEXT_BYTES
+                        ),
+                    }
+                )
+            if suffix in ARCHIVE_SUFFIXES:
+                nested_archive_members.append(
+                    {
+                        "path": info.filename,
+                        "bytes": info.file_size,
+                        "suffix": suffix,
+                    }
+                )
+
+            if suffix not in TEXT_SUFFIXES or info.file_size > MAX_TEXT_BYTES:
                 continue
             scanned_text_members += 1
+            scanned_text_paths.add(info.filename)
             raw = handle.read(info)
             text = raw.decode("utf-8", errors="replace")
             hits = scan_text(text)
-            name_hit = bool(re.search(r"F_?2|lane[-_ ]?9|wall[-_ ]?shear", path.name, re.I))
+            name_hit = bool(
+                re.search(r"F_?2|lane[-_ ]?9|wall[-_ ]?shear", path.name, re.I)
+            )
             if not hits and not name_hit:
                 continue
             extract, reasons = should_extract(info.filename, hits)
@@ -195,25 +248,45 @@ def recover(
                     }
                 )
 
-    high_order_members = [
-        str(record["path"]) for record in matched if is_endpoint_candidate(record)
+    text_candidate_paths = {
+        str(record["path"])
+        for record in matched
+        if is_text_endpoint_candidate(record)
+    }
+    filename_candidate_paths = {str(record["path"]) for record in filename_candidates}
+    high_order_members = sorted(text_candidate_paths | filename_candidate_paths)
+    unscanned_filename_candidates = [
+        record
+        for record in filename_candidates
+        if str(record["path"]) not in scanned_text_paths
     ]
+
     report = {
-        "schema_version": 1,
+        "schema_version": 2,
         "archive": str(archive),
         "archive_sha256": archive_sha,
         "archive_member_count": archive_member_count,
         "scanned_text_member_count": scanned_text_members,
-        "matched_member_count": len(matched),
+        "matched_text_member_count": len(matched),
         "extracted_member_count": len(extracted),
+        "filename_endpoint_candidate_count": len(filename_candidates),
+        "filename_endpoint_candidates": filename_candidates,
+        "unscanned_filename_endpoint_candidate_count": len(
+            unscanned_filename_candidates
+        ),
+        "unscanned_filename_endpoint_candidates": unscanned_filename_candidates,
+        "nested_archive_member_count": len(nested_archive_members),
+        "nested_archive_members": nested_archive_members,
         "high_order_endpoint_candidate_count": len(high_order_members),
         "high_order_endpoint_candidate_members": high_order_members,
-        "matched_members": matched,
+        "matched_text_members": matched,
         "extracted_members": extracted,
         "interpretation": (
-            "Presence in this manifest means present in the pinned public ZIP. "
-            "Absence means only that the declared filename/content scan found no "
-            "small UTF-8 text member; it is not evidence about private sources."
+            "Every member name in the pinned public ZIP was audited. Every "
+            "small supported text member was content-scanned. Filename candidates "
+            "that were not text-scanned and nested archive members are listed "
+            "explicitly. Absence here is evidence only about this public ZIP, not "
+            "about private or unpublished sources."
         ),
     }
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
