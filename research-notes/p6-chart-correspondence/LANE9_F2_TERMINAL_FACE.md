@@ -97,7 +97,7 @@ normal-neighborhood endpoint matrices.
 
 ## Degree-six map
 
-The associated normalized secondary map is
+The associated normalized quotient Belyi map is
 
 ```text
 tau(u)=729*u*(u-1)^5/(9*u^2-15*u+5)^3.       (5)
