@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a public, write-once model-handoff package from a v7c-v7i handoff.
+"""Build a public, write-once model-handoff package from a v7c-v7j handoff.
 
 The nine focused lane pages and portfolio are taken from the manifest-pinned
 private handoff.  The six deeper program dossiers are compact overlays on the
@@ -63,6 +63,7 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
     "cubic-flatness-normalization-defects": (
         "research-notes/lane1-collision-saturation-20260802-v1",
         "research-notes/lane1-collision-saturation-20260803-v2",
+        "research-notes/lane1-models-20260803-v1",
         "research-notes/finite-diagnostics-20260803-v1/verify_lane1_marked_root_benchmark.py",
         "manuscripts/01-cubic-incidence/code/verify_ade_matrix_factorizations.py",
         "manuscripts/01-cubic-incidence/appendices/common-zero-normalization.tex",
@@ -71,6 +72,8 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "manuscripts/01-cubic-incidence/appendices/quadratic-covariant-rigidity.tex",
     ),
     "boundary-completeness-torelli-at-infinity": (
+        "research-notes/lane2-projective-normalization-20260803-v1",
+        "research-notes/lane2-adjacent-merge-20260803-v1",
         "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260801b",
         "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802a",
         "research-notes/lane2-prs-boundary-20260802-v1/lane2-progress-20260802c/lane2_unordered_normalization_theorem.md",
@@ -105,6 +108,7 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
     ),
     "intrinsic-degree-valuative-budgets": (
         "research-notes/lane5-degree-budgets",
+        "research-notes/lane5-collision-transport-20260803-v1",
         "research-notes/finite-diagnostics-20260803-v1/verify_lane5_encoded_shear_packet.py",
     ),
     "homogeneous-realization-compression": (
@@ -414,7 +418,7 @@ def _public_portfolio(source: str) -> str:
         "[Current proof sources](../proof-sources/index.md)\n"
     )
     source, footer_replacements = re.subn(
-        r"\n---\nSuccessor handoff v7[c-i][^\n]*\n\Z", new_footer, source
+        r"\n---\nSuccessor handoff v7[c-j][^\n]*\n\Z", new_footer, source
     )
     if footer_replacements != 1:
         raise ValueError("portfolio v7 footer changed")
@@ -429,8 +433,8 @@ def _verified_handoff_sources(
     manifest_payload = lane_manifest_path.read_bytes()
     manifest = _load(lane_manifest_path)
     handoff_version = manifest.get("handoff_version")
-    if handoff_version not in {"7c", "7d", "7e", "7f", "7g", "7h", "7i"} or manifest.get("lane_count") != 9:
-        raise ValueError("source manifest must select exactly nine v7c-v7i lanes")
+    if handoff_version not in {"7c", "7d", "7e", "7f", "7g", "7h", "7i", "7j"} or manifest.get("lane_count") != 9:
+        raise ValueError("source manifest must select exactly nine v7c-v7j lanes")
     lanes = manifest.get("lanes")
     if lanes != [{"lane": sequence, "slug": slug} for sequence, slug in LANES]:
         raise ValueError("v7 lane order or membership changed")

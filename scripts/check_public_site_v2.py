@@ -640,7 +640,7 @@ def main() -> int:
     is_v7_handoff = (
         brief_manifest.get("schema_version") == 7
         and brief_manifest.get("source_handoff", {}).get("handoff_version")
-        in {"7c", "7d", "7e", "7f", "7g", "7h", "7i"}
+        in {"7c", "7d", "7e", "7f", "7g", "7h", "7i", "7j"}
     )
     if brief_manifest.get("task_input_count", 0) != len(task_inputs):
         failures.append("model task-input count mismatch")

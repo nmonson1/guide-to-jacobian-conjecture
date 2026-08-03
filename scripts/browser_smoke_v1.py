@@ -165,7 +165,7 @@ def run(
         and model_brief_manifest.get("source_handoff", {}).get(
             "handoff_version"
         )
-        in {"7c", "7d", "7e", "7f", "7g", "7h", "7i"}
+        in {"7c", "7d", "7e", "7f", "7g", "7h", "7i", "7j"}
     )
     retained_v2_manifest = None
     if state.get("retained_math_v2") is not None:
