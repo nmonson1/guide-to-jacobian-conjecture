@@ -141,15 +141,28 @@ def main() -> int:
         f"poly d = {determinant_text};",
         "ideal I =\n  " + ",\n  ".join([*equations, "z*d-1"]) + ";",
         f'print("{tag}_BEGIN");',
-        "ideal J = slimgb(I);",
-        "int dimI = dim(J);",
-        "int codimI = nvars(basering)-dimI;",
-        f'print("{tag}_DIM="+string(dimI));',
-        f'print("{tag}_CODIM="+string(codimI));',
-        f'print("{tag}_GB_SIZE="+string(size(J)));',
-        f'print("{tag}_END");',
-        "exit;",
     ]
+    if characteristic:
+        lines.append("ideal J = slimgb(I);")
+    else:
+        lines.extend(
+            [
+                'LIB "modstd.lib";',
+                "// modStd uses modular images, rational reconstruction, and an exact final test.",
+                "ideal J = modStd(I);",
+            ]
+        )
+    lines.extend(
+        [
+            "int dimI = dim(J);",
+            "int codimI = nvars(basering)-dimI;",
+            f'print("{tag}_DIM="+string(dimI));',
+            f'print("{tag}_CODIM="+string(codimI));',
+            f'print("{tag}_GB_SIZE="+string(size(J)));',
+            f'print("{tag}_END");',
+            "exit;",
+        ]
+    )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text("\n\n".join(lines) + "\n", encoding="utf-8")
     field_name = "QQ" if characteristic == 0 else f"F_{characteristic}"
