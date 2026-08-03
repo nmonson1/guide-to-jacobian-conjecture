@@ -1,7 +1,7 @@
 {
   "schema_version": 4,
-  "release_id": "living-guide-public-v52-converged-research-state",
-  "updated_at": "2026-08-03T12:00:00+00:00",
+  "release_id": "living-guide-public-v52d-converged-research-state",
+  "updated_at": "2026-08-03T14:00:00+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -47,7 +47,7 @@
     "expected_files": 41,
     "expected_labels": 659
   },
-  "docs_dir": "docs-v52-converged-research-state-20260803c",
+  "docs_dir": "docs-v52-converged-research-state-20260803d",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,

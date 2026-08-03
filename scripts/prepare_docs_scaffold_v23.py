@@ -43,7 +43,7 @@ def main() -> int:
     shutil.copytree(
         source / "assets",
         output / "assets",
-        symlinks=True,
+        symlinks=False,
         copy_function=shutil.copy2,
         ignore=ignore,
     )

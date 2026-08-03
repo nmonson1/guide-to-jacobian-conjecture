@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import os
 import shutil
 from pathlib import Path
 
@@ -21,6 +20,26 @@ GENERATED_NAMESPACES = {
     Path("research/working-mathematics/programs"),
     Path("research/working-mathematics/units"),
 }
+
+
+def copy_static_entry(source: Path, target: Path) -> int:
+    """Copy one scaffold entry without retaining checkout-relative symlinks."""
+    if source.is_symlink():
+        resolved = source.resolve(strict=True)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if resolved.is_dir():
+            shutil.copytree(resolved, target, symlinks=False, copy_function=shutil.copy2)
+            return sum(item.is_file() for item in target.rglob("*"))
+        shutil.copy2(resolved, target)
+        return 1
+    if source.is_dir():
+        target.mkdir(parents=True, exist_ok=True)
+        return 0
+    if source.is_file():
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, target)
+        return 1
+    return 0
 
 
 def main() -> int:
@@ -53,15 +72,7 @@ def main() -> int:
             for namespace in GENERATED_NAMESPACES
         ):
             continue
-        if source.is_symlink():
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.symlink_to(os.readlink(source))
-        elif source.is_dir():
-            target.mkdir(parents=True, exist_ok=True)
-        elif source.is_file():
-            target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(source, target)
-            copied += 1
+        copied += copy_static_entry(source, target)
     print(
         f"Prepared {output.name} with {copied} static files; "
         f"reserved {len(generated)} generated paths."
