@@ -44,3 +44,16 @@ The inventory also records branch ancestry and missing/prunable worktree
 metadata. Only branches whose tips are ancestors of the final integration
 commit are automatic branch-deletion candidates. A missing worktree does not
 make a branch with branch-only commits disposable.
+
+## First v52 candidate measurement
+
+`public-candidate-5773af3-20260803-v2.json` is a second write-once inventory
+made after the first coherent v52 candidate was committed. It selects
+`docs-v52-converged-research-state-20260803c` and eight data roots, totalling
+2,330 files and 126,698,076 bytes. The exact inactive pathspec has 165 roots,
+57,005 files, and 1,075,984,995 bytes. Its SHA-256 is
+`d9fd7e22b676e0fb317ff02f9f48391691e720d8ecaffe3bafb3338d06b69c9b`.
+
+That exact 165-root list is safe to apply only if `5773af3` is the release
+freeze. If review produces another release commit or suffix, rerun the tool
+and use the successor inventory instead.
