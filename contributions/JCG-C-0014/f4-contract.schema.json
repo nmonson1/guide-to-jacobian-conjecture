@@ -1,0 +1,270 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nmonson1.github.io/guide-to-jacobian-conjecture/schemas/lane4-f4-contract-v1.json",
+  "title": "Lane 4 Q4-F4 exact input contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "branch_id",
+    "status",
+    "provenance",
+    "coefficient_field",
+    "symbols",
+    "leading_data",
+    "lower_layers",
+    "chart",
+    "determinant_contract",
+    "sample_reconstructions"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "branch_id": {"const": "Q4-F4"},
+    "status": {"const": "complete"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "sources"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256", "role"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "role": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "coefficient_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base_field",
+        "parameters",
+        "algebraic_symbol",
+        "minimal_polynomial",
+        "localization_factors"
+      ],
+      "properties": {
+        "base_field": {"const": "Q"},
+        "parameters": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "algebraic_symbol": {"type": "string", "minLength": 1},
+        "minimal_polynomial": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["expression", "variable_order", "sha256"],
+          "properties": {
+            "expression": {"type": "string", "minLength": 1},
+            "variable_order": {
+              "type": "array",
+              "minItems": 2,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "localization_factors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "expression", "zero_owner"],
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "expression": {"type": "string", "minLength": 1},
+              "zero_owner": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "symbols": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_variables",
+        "parameter_order",
+        "h3_coefficients",
+        "h2_coefficients",
+        "linear_coefficients"
+      ],
+      "properties": {
+        "source_variables": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "parameter_order": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "h3_coefficients": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "h2_coefficients": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "linear_coefficients": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "leading_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["P", "Q", "R", "checks"],
+      "properties": {
+        "P": {"type": "string", "minLength": 1},
+        "Q": {"type": "string", "minLength": 1},
+        "R": {"type": "string", "minLength": 1},
+        "checks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "degrees",
+            "coprime_PQ",
+            "hilbert_burch_type",
+            "ramification_degree"
+          ],
+          "properties": {
+            "degrees": {"type": "array", "const": [4, 4, 3]},
+            "coprime_PQ": {"const": true},
+            "hilbert_burch_type": {"const": [3, 4]},
+            "ramification_degree": {"const": 3}
+          }
+        }
+      }
+    },
+    "lower_layers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["H3", "H2", "L", "gauges"],
+      "properties": {
+        "H3": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "H2": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "L": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {"type": "string", "minLength": 1}
+          }
+        },
+        "gauges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["coefficient", "action", "invertibility_condition"],
+            "properties": {
+              "coefficient": {"type": "string", "minLength": 1},
+              "action": {"type": "string", "minLength": 1},
+              "invertibility_condition": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "chart": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inherited_hypotheses", "open_product", "complement_routes"],
+      "properties": {
+        "inherited_hypotheses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "open_product": {"type": "string", "minLength": 1},
+        "complement_routes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["factor_id", "owner"],
+            "properties": {
+              "factor_id": {"type": "string", "minLength": 1},
+              "owner": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "determinant_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "map_expression",
+        "layer_convention",
+        "already_solved_layers",
+        "required_layers",
+        "linear_invertibility_equation"
+      ],
+      "properties": {
+        "map_expression": {"type": "string", "minLength": 1},
+        "layer_convention": {"type": "string", "minLength": 1},
+        "already_solved_layers": {
+          "type": "array",
+          "items": {"type": "integer"}
+        },
+        "required_layers": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "integer"},
+          "contains": {"const": 6}
+        },
+        "linear_invertibility_equation": {"type": "string", "minLength": 1}
+      }
+    },
+    "sample_reconstructions": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["parameters", "expected_sha256", "expected_obstructions"],
+        "properties": {
+          "parameters": {"type": "object"},
+          "expected_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "expected_obstructions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    }
+  }
+}
