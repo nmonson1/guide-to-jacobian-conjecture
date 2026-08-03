@@ -331,7 +331,7 @@ monomial changes: it is the index-eight character-lattice defect, equivalently
 the valuation-one Kummer defect in (6.5).  It obstructs this repair candidate,
 not all possible repairs and not a polynomial Keller pair.
 
-## 7. Category decision and presentation stabilizer
+## 7. Category decision, deck isotropy, and the unresolved complete-chain stabilizer
 
 The quotient is not an allowed object in the current ordinary atlas if chart
 objects are required to be same-function-field monomial charts.  There are two
@@ -341,10 +341,12 @@ mathematically coherent enlargements:
 2. use the quotient/root-stack presentation with invariant field
    `K(H,Q)=K(u,v^8)` and remember the eight character modules.
 
-In either formulation the presentation stabilizer is exactly `mu_8`, acting
-as in (6.4).  This answers the stabilizer question for the candidate chart.
-It does not recover the missing nonlinear stabilizer of the original
-complete-chain presentation.
+In either formulation the **discrete Kummer deck isotropy** is `mu_8`, acting
+as in (6.4).  In characteristic zero its Lie algebra is zero.  This determines
+the isotropy of the candidate root cover; it does **not** identify the
+infinitesimal stabilizer of the original complete-chain presentation.  That
+stabilizer remains unavailable without the missing approximate-root generator
+table and action map.
 
 On the quotient, translations form a strict additive groupoid:
 
@@ -407,25 +409,35 @@ not after forgetting the seven nontrivial character blocks.  Any proposed
 complete-chain attachment through `(H,Q)` must publish these blocks and their
 normalization maps.
 
-## 9. The forced admissible operation module
+## 9. The forced admissible operation groupoid
 
-The correct object is a filtered **Lie algebroid over the chart groupoid**, not
-a single unrestricted Laurent Lie algebra.  Define the minimal Rees-Kummer
-admissible algebroid to be the smallest system satisfying all of the following:
+The correct object is an objectwise system of fixed-presentation Lie algebras
+**plus separate rechart-arrow modules**, not a single unrestricted Laurent Lie
+algebra that treats chart changes as gauge.  For each chart `c`, let
+`g_c^fix` be the filtered Lie algebra of divergence-free derivations tangent
+to the nonlinear complete-chain support ideal.  For each admissible arrow
+`a:c->d`, retain a separate rechart module and the induced transport maps on
+operations, coefficients, equation densities, adjoints, and forcing terms.
 
-1. on each chart it consists of divergence-free derivations preserving the
-   nonlinear Newton-support ideal;
-2. it is graded by normal order and by the `C_5` character;
-3. on Kummer objects it is `mu_8`-equivariant and retains all character
-   modules in (8.1);
-4. it contains every verified fixed-presentation complete-chain generator;
-5. it contains the Kummer chart arrow (3.4) and the bare layer-seven wall
-   arrow;
-6. it is closed under overlap transport and Lie brackets.
+The minimal forced system is the smallest such chart-groupoid datum satisfying
+all of the following:
 
-This is a precise construction, although equality with the unknown full
-complete-chain algebroid cannot be proved until the original generator table
-is supplied.
+1. each `g_c^fix` is graded by normal order and by the `C_5` character;
+2. Kummer chart objects are `mu_8`-equivariant and retain every character
+   module in (8.1);
+3. each `g_c^fix` contains every verified fixed-presentation complete-chain
+   generator available for that chart;
+4. the arrow modules contain the Kummer chart direction (3.4), the bare
+   layer-seven wall direction, and their transported closure terms;
+5. fixed operations and rechart arrows are never identified merely because
+   their ambient actions lie in a determinant kernel;
+6. the full system is closed under overlap transport and the relevant Lie
+   brackets.
+
+This constructs a precise lower-bound chart-groupoid system.  The maximal
+support-admissible Laurent derivations give an outer bound.  Equality with the
+unknown true complete-chain system cannot be proved until the original
+generator table is supplied.
 
 The closure requirement is substantive.  A general support-admissible
 layer-four field is
@@ -457,7 +469,7 @@ Acting on the degree-21 leading face, the top terms are
 
 The stored layer-eleven window allows no `P` correction and only `Q`
 exponents `0,...,4`.  Thus carrying a layer-four direction through the wall
-forces a new adjacent-chart operation coordinate at layer eleven.  The old
+forces a new adjacent-chart rechart coordinate at layer eleven.  The old
 fixed-chart operation module cannot be transported unchanged.
 
 This explains both failures of the naive choices:
@@ -508,10 +520,12 @@ present and writes their byte counts and SHA-256 hashes to
 lane9_public_archive_recovery.json.
 ```
 
-It also searches every small UTF-8 member for order `510`, `520`, or `530`,
-fresh-parameter declarations, wall/chart code, and matrix/support-block
-language.  The generated manifest is the evidence boundary: files listed
-there are recovered; unlisted high-order blocks are not invented.
+It audits every archive member name and scans every small supported UTF-8 text
+member for order `510`, `520`, or `530`, fresh-parameter declarations,
+wall/chart code, and matrix/support-block language.  Binary or oversized
+filename candidates and nested archives are listed separately.  The generated
+manifest is the evidence boundary: files listed there are recovered; missing
+high-order blocks are not invented.
 
 The exact parameter-complete recurrence that must be instantiated is
 
@@ -548,7 +562,8 @@ neighboring complete-chain chart.
 The formal unit-root flow (5.5) algebraizes as a finite degree-eight Kummer
 cover.  It does **not** algebraize as a rational self-map of `K(x,y)`, and a
 fortiori not as a polynomial automorphism of the affine plane.  This is a
-complete algebraization verdict for the proposed repair candidate.
+complete algebraization verdict for the proposed exact quotient-translation
+repair candidate.
 
 It is not a verdict for an arbitrary surviving `F_2` formal solution, because
 the high-order recurrence has not been instantiated.  Ordinary finite-jet
@@ -565,7 +580,8 @@ equivalently the valuation-one failure of the radicand in (6.5) to be an
 eighth power.  It rules out the corrected quotient translation as an arrow in
 the ordinary same-field atlas.  It does not rule out:
 
-- a different same-field adjacent chart with another tangent;
+- a different same-field adjacent chart with another tangent or higher-order
+  normalization;
 - a Kummer/root-stack enlargement of the atlas;
 - a global polynomial Keller pair by any unrelated argument.
 
@@ -578,16 +594,16 @@ the ordinary same-field atlas.  It does not rule out:
 | 3 | Compare archived residual with corrected candidate | Direct coefficientwise match fails: (4.3) is outside `U_4`. | Requires a published overlap-normalization map for any indirect comparison. |
 | 4 | Test `Q->Q+16s` against the residual | Exact translation proved, but it is not an old-window vector. | Same missing overlap map. |
 | 5 | Publish adjacent normalization map | Published the exact Kummer quotient `(x,y)->(H,Q)` and inverse root formulas. | It is not an ordinary complete-chain chart; another ordinary chart is not found. |
-| 6 | Identify presentation stabilizer | Candidate stabilizer is `mu_8`; reconstructed linear source stabilizers are zero in the maximal layers. | Original nonlinear complete-chain stabilizer table remains absent. |
-| 7 | Construct `g_adm` | Minimal forced Rees-Kummer Lie algebroid defined; layer-eleven closure proved. | Equality with the actual complete-chain algebroid is unproved. |
+| 6 | Identify presentation stabilizer | The candidate cover has discrete deck isotropy `mu_8` and zero infinitesimal deck Lie algebra in characteristic zero. | The original nonlinear complete-chain stabilizer table remains absent. |
+| 7 | Construct `g_adm` | Minimal forced objectwise fixed-operation system plus separate rechart-arrow modules defined; layer-eleven closure proved. | Equality with the actual complete-chain system is unproved. |
 | 8 | Support/residue transport for monomial charts | Proved for `GL_2(Z)` charts and characterwise for the index-eight quotient. | Concrete F2 windows still need the missing blocks. |
 | 9 | Pairwise/triple cocycles | Strict on quotient and formal unit-root lift; `mu_8` ambiguity algebraically. | Full neighboring-chart atlas not enumerated. |
 | 10 | Decide whether Kummer quotient is allowed | No in the ordinary same-field atlas; yes after Kummer/root-stack enlargement. | Repository must choose and formalize the enlarged category. |
-| 11 | Publish real `F_2` matrices/support blocks | Public archive recovery is hash-pinned and automated. | High-order endpoint blocks not present in the recovered packet are not replaced. |
+| 11 | Publish real `F_2` matrices/support blocks | Public archive recovery is hash-pinned and automated; a real terminal-face matrix is published separately. | High-order endpoint blocks not present in the recovered packet are not replaced. |
 | 12 | Recompute `F_2` recurrence with all parameters | Exact full-parameter schema (11.1)--(11.2) supplied. | Numerical replay blocked by missing ordered matrices/parameter ranges. |
 | 13 | Impose `C_5` descent | Character law, first invariant order, and bidegree `(-3,4)` proved. | Must be applied to the missing full groupoid recurrence. |
 | 14 | Impose finite global polynomial support | Reduced to a finite block feasibility problem. | No instance can be solved without the high-order blocks. |
-| 15 | Match every neighboring chart | This candidate cannot match any ordinary same-field chart. | Other charts are not classified; Kummer atlas not globally assembled. |
+| 15 | Match every neighboring chart | The exact quotient-translation repair cannot be an ordinary same-field chart arrow. | Other neighboring charts are not classified; the Kummer atlas is not globally assembled. |
 | 16 | Algebraize a surviving formal solution | Candidate algebraizes only on a degree-eight Kummer cover, not rationally/polynomially on the original plane. | General F2 formal solutions unavailable. |
 | 17 | Produce chart-independent finite obstruction | Index-eight/valuation obstruction proved for this repair candidate. | It is not a global obstruction to all attachments or Keller pairs. |
 
