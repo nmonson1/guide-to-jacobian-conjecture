@@ -10,6 +10,11 @@ import re
 from pathlib import Path
 from typing import Any
 
+from retained_math_v2_public import (
+    load_json,
+    validate_legacy_compatibility,
+    validate_public_v2_graph,
+)
 from site_state import load_site_state
 
 
@@ -83,14 +88,102 @@ def _validate_legacy_units(
                 raise ValueError(f"v2/v1 unit drift for {unit_id}: {field}")
 
 
+def _prepare_full_materialization(
+    *,
+    graph: dict[str, Any],
+    graph_payload: bytes,
+    source_manifest_payload: bytes,
+    compatibility_path: Path,
+    legacy_claim_graph_path: Path,
+    output: Path,
+    release_id: str,
+    updated_at: str,
+) -> dict[str, Any]:
+    """Write a pinned, complete public v2 graph and total route map."""
+    if output.exists():
+        raise FileExistsError(f"refusing to overwrite existing path: {output}")
+    graph_counts = validate_public_v2_graph(graph)
+    compatibility = load_json(compatibility_path)
+    compatibility_payload = compatibility_path.read_bytes()
+    claim_graph = load_json(legacy_claim_graph_path)
+    legacy_ids = {
+        item["tag"] for item in claim_graph.get("claims", [])
+    }
+    if len(legacy_ids) != len(claim_graph.get("claims", [])):
+        raise ValueError("legacy public claim graph has duplicate stable tags")
+    compatibility_counts = validate_legacy_compatibility(
+        compatibility,
+        graph=graph,
+        expected_legacy_ids=legacy_ids,
+        schema_path=ROOT / "schemas/legacy-compatibility-v1.schema.json",
+    )
+
+    files = []
+    for relative, payload in (
+        ("public-graph.json", graph_payload),
+        ("legacy-compatibility.json", compatibility_payload),
+    ):
+        _write_once(output / relative, payload)
+        files.append(
+            {
+                "path": relative,
+                "sha256": _sha256(payload),
+                "size_bytes": len(payload),
+            }
+        )
+    manifest = {
+        "schema_version": 2,
+        "kind": "retained-math-v2-full-public",
+        "release_id": release_id,
+        "updated_at": updated_at,
+        "source_registry_id": graph["registry_id"],
+        "source_manifest_sha256": _sha256(source_manifest_payload),
+        "source_public_graph_sha256": _sha256(graph_payload),
+        "source_compatibility_sha256": _sha256(compatibility_payload),
+        "compatibility_map_id": compatibility["map_id"],
+        "graph_counts": graph_counts,
+        "compatibility_counts": compatibility_counts,
+        "files": files,
+    }
+    manifest_payload = (
+        json.dumps(manifest, indent=2, ensure_ascii=False, sort_keys=True) + "\n"
+    ).encode("utf-8")
+    _write_once(output / "manifest.json", manifest_payload)
+    return {
+        "output_dir": str(output),
+        "release_id": release_id,
+        "registry_id": graph["registry_id"],
+        "compatibility_map_id": compatibility["map_id"],
+        "graph_counts": graph_counts,
+        "compatibility_counts": compatibility_counts,
+        "manifest_sha256": _sha256(manifest_payload),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--release-id", required=True)
     parser.add_argument("--updated-at", required=True)
-    parser.add_argument("--argument-id", required=True)
-    parser.add_argument("--task-id", required=True)
+    parser.add_argument("--argument-id")
+    parser.add_argument("--task-id")
+    parser.add_argument(
+        "--compatibility-map",
+        type=Path,
+        help=(
+            "Build a full materialization using this total legacy-route map; "
+            "omit to retain the bounded pilot-selection mode"
+        ),
+    )
+    parser.add_argument(
+        "--legacy-claim-graph",
+        type=Path,
+        help=(
+            "Claim graph whose stable tags define compatibility totality; "
+            "defaults to the release selected by site-state.json"
+        ),
+    )
     parser.add_argument(
         "--base-v1-source",
         type=Path,
@@ -122,6 +215,39 @@ def main() -> int:
         raise ValueError("source manifest does not pin public-graph.json")
     if graph.get("registry_id") != source_manifest.get("registry_id"):
         raise ValueError("source manifest and public graph registry disagree")
+
+    if args.compatibility_map is not None:
+        if args.argument_id is not None or args.task_id is not None:
+            raise ValueError(
+                "full materialization cannot also select one argument or task"
+            )
+        if args.legacy_claim_graph is None:
+            state = load_site_state(ROOT)
+            legacy_claim_graph_path = (
+                ROOT
+                / "data"
+                / state["claim_graph"]["data_dir"]
+                / "claim-graph.json"
+            )
+        else:
+            legacy_claim_graph_path = args.legacy_claim_graph.resolve()
+        result = _prepare_full_materialization(
+            graph=graph,
+            graph_payload=source_graph_payload,
+            source_manifest_payload=source_manifest_payload,
+            compatibility_path=args.compatibility_map.resolve(),
+            legacy_claim_graph_path=legacy_claim_graph_path,
+            output=output,
+            release_id=args.release_id,
+            updated_at=args.updated_at,
+        )
+        print(json.dumps(result, indent=2, sort_keys=True))
+        return 0
+
+    if args.argument_id is None or args.task_id is None:
+        raise ValueError(
+            "pilot-selection mode requires both --argument-id and --task-id"
+        )
 
     units = _index(graph["units"], "unit_id")
     arguments = _index(graph["arguments"], "argument_id")

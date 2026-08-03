@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://guide-to-jacobian-conjecture.org/schemas/legacy-compatibility-v1.schema.json",
+  "title": "Stable legacy-route compatibility map",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "map_id", "source_registry", "counts", "routes"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "map_id": {"type": "string", "pattern": "^LEGACY-COMPAT-[a-f0-9]{12}$"},
+    "source_registry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registry_id", "sha256"],
+      "properties": {
+        "registry_id": {"type": "string", "pattern": "^RETAINED2-[A-Za-z0-9._-]+$"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0},
+      "required": ["routes"]
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["legacy_unit_id", "route", "disposition", "targets"],
+        "properties": {
+          "legacy_unit_id": {"type": "string", "pattern": "^JCG-[A-F0-9]{8}$"},
+          "route": {"type": "string", "pattern": "^claims/JCG-[A-F0-9]{8}/$"},
+          "disposition": {
+            "enum": ["exact_current", "valid_weaker", "replacement", "split_replacement", "archival"]
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["unit_id", "statement_version", "role"],
+              "properties": {
+                "unit_id": {"type": "string", "pattern": "^(?:JCG|RMU)-[A-F0-9]{8}$"},
+                "statement_version": {"type": "integer", "minimum": 1},
+                "role": {"enum": ["current_statement", "replacement", "stronger_result"]},
+                "relation_type": {"enum": ["corrects", "strengthens", "supersedes"]}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

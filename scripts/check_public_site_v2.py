@@ -23,12 +23,16 @@ from generate_living_guide_v2 import (
     PUBLIC_DOCS_DIR,
     SITE_STATE,
     TECHNICAL_MATERIALS_DATA_DIR,
+    _protect_formula_like_markdown,
     build_release_metadata,
     load_manuscript_sources,
     load_retained_math,
     load_retained_math_v2,
     proof_source_route,
     retained_corrections,
+    retained_v2_compatibility,
+    retained_v2_graph,
+    retained_v2_is_full,
     resolve_manuscript_links,
 )
 
@@ -213,6 +217,30 @@ def main() -> int:
         failures.append(f"expected {expected['grouped_pages']} collection pages")
     if len(program_files) != expected["research_programs"]:
         failures.append(f"expected {expected['research_programs']} program pages")
+    retained_v2 = load_retained_math_v2(ROOT)
+    full_v2_payload = (
+        retained_v2[1]
+        if retained_v2 is not None and retained_v2_is_full(retained_v2[1])
+        else None
+    )
+    full_v2_graph = (
+        retained_v2_graph(full_v2_payload)
+        if full_v2_payload is not None
+        else None
+    )
+    full_compatibility = (
+        retained_v2_compatibility(full_v2_payload)
+        if full_v2_payload is not None
+        else None
+    )
+    compatibility_routes = (
+        {
+            item["legacy_unit_id"]: item
+            for item in full_compatibility["routes"]
+        }
+        if full_compatibility is not None
+        else {}
+    )
     retained = load_retained_math(ROOT)
     corrections: dict[str, dict[str, object]] = {}
     retained_unit_ids: set[str] = set()
@@ -220,7 +248,8 @@ def main() -> int:
         failures.append("selected release does not pin retained mathematics")
     else:
         retained_manifest, retained_graph = retained
-        corrections = retained_corrections(retained)
+        if full_v2_payload is None:
+            corrections = retained_corrections(retained)
         retained_unit_ids = {
             unit["unit_id"] for unit in retained_graph["units"]
         }
@@ -238,38 +267,66 @@ def main() -> int:
             != retained_state["expected_programs"]
         ):
             failures.append("retained-math program count disagrees with site state")
-        if len(retained_units) != retained_state["expected_units"]:
+        expected_retained_units = (
+            full_v2_graph["counts"]["units"]
+            if full_v2_graph is not None
+            else retained_state["expected_units"]
+        )
+        expected_retained_programs = (
+            full_v2_graph["counts"]["programs"]
+            if full_v2_graph is not None
+            else retained_state["expected_programs"]
+        )
+        if len(retained_units) != expected_retained_units:
             failures.append("retained working-unit page count changed")
-        if len(retained_programs) != retained_state["expected_programs"]:
+        if len(retained_programs) != expected_retained_programs:
             failures.append("retained program-view page count changed")
         if retained_manifest["source_registry_id"] != retained_graph["registry_id"]:
             failures.append("retained registry identity disagrees")
-    retained_v2 = load_retained_math_v2(ROOT)
     v2_selection: dict[str, object] | None = None
     if retained_v2 is None:
         failures.append("selected release does not pin retained-math v2")
     else:
         _, v2_selection = retained_v2
-        expected_v2_ids = {
-            "arguments": ["ARG-RMU5D8E0003-FINITE-PLANE"],
-            "evidence": [
-                "EVD-RMU5D8E0003-EXCEPTIONAL-CUBIC",
-                "EVD-RMU5D8E0003-GENERIC-CUBIC",
-                "EVD-RMU5D8E0003-QUARTIC-SEPARATOR",
-            ],
-            "obligations": ["OBL-P5-FULL-FINITE-ROW-BASE"],
-            "tasks": ["TSK-P5-FULL-FINITE-ROW-BASE"],
-            "units": ["RMU-5D8E0001", "RMU-5D8E0002", "RMU-5D8E0003"],
-        }
-        if v2_selection["selected_ids"] != expected_v2_ids:
-            failures.append("retained-math v2 pilot selection changed")
-        machine_selection = (
-            DOCS / "research/handoffs/retained-math-v2-pilot.json"
-        )
-        if not machine_selection.is_file():
-            failures.append("machine-readable retained-math v2 selection is missing")
-        elif json.loads(machine_selection.read_text(encoding="utf-8")) != v2_selection:
-            failures.append("rendered retained-math v2 selection disagrees")
+        if retained_v2_is_full(v2_selection):
+            graph = retained_v2_graph(v2_selection)
+            compatibility = retained_v2_compatibility(v2_selection)
+            assert compatibility is not None
+            if compatibility["counts"]["routes"] != len(claims):
+                failures.append("full retained-math compatibility is not total")
+            for relative, value in (
+                ("research/working-mathematics/graph.json", graph),
+                (
+                    "research/working-mathematics/legacy-compatibility.json",
+                    compatibility,
+                ),
+            ):
+                machine = DOCS / relative
+                if not machine.is_file():
+                    failures.append(f"missing machine-readable retained math: {relative}")
+                elif json.loads(machine.read_text(encoding="utf-8")) != value:
+                    failures.append(f"rendered retained math disagrees: {relative}")
+        else:
+            expected_v2_ids = {
+                "arguments": ["ARG-RMU5D8E0003-FINITE-PLANE"],
+                "evidence": [
+                    "EVD-RMU5D8E0003-EXCEPTIONAL-CUBIC",
+                    "EVD-RMU5D8E0003-GENERIC-CUBIC",
+                    "EVD-RMU5D8E0003-QUARTIC-SEPARATOR",
+                ],
+                "obligations": ["OBL-P5-FULL-FINITE-ROW-BASE"],
+                "tasks": ["TSK-P5-FULL-FINITE-ROW-BASE"],
+                "units": ["RMU-5D8E0001", "RMU-5D8E0002", "RMU-5D8E0003"],
+            }
+            if v2_selection["selected_ids"] != expected_v2_ids:
+                failures.append("retained-math v2 pilot selection changed")
+            machine_selection = (
+                DOCS / "research/handoffs/retained-math-v2-pilot.json"
+            )
+            if not machine_selection.is_file():
+                failures.append("machine-readable retained-math v2 selection is missing")
+            elif json.loads(machine_selection.read_text(encoding="utf-8")) != v2_selection:
+                failures.append("rendered retained-math v2 selection disagrees")
     source_manifest = load_manuscript_sources(ROOT)
     source_files: dict[str, dict[str, object]] = {}
     if source_manifest is None:
@@ -332,7 +389,13 @@ def main() -> int:
         text = path.read_text(encoding="utf-8")
         if path.stem not in claims:
             failures.append(f"{path.relative_to(ROOT)}: unknown public tag")
-        for heading in ("## Exact statement", "## Appears in", "## Proof access and evidence boundary"):
+        disposition = compatibility_routes.get(path.stem, {}).get("disposition")
+        required_headings = (
+            ()
+            if disposition in {"replacement", "split_replacement", "archival"}
+            else ("## Exact statement", "## Appears in", "## Proof access and evidence boundary")
+        )
+        for heading in required_headings:
             if heading not in text:
                 failures.append(f"{path.relative_to(ROOT)}: missing {heading}")
         if "## Proof locators" in text:
@@ -432,6 +495,75 @@ def main() -> int:
             failures.append(
                 f"results/corrections.md omits retained correction {unit_id}"
             )
+
+    if full_v2_graph is not None:
+        v2_units = {item["unit_id"]: item for item in full_v2_graph["units"]}
+        for tag, route in compatibility_routes.items():
+            page = DOCS / "claims" / f"{tag}.md"
+            text = page.read_text(encoding="utf-8")
+            disposition = route["disposition"]
+            if disposition in {"replacement", "split_replacement", "archival"}:
+                if claims[tag]["statement"] in text:
+                    failures.append(
+                        f"{page.relative_to(ROOT)}: stale historical statement is rendered"
+                    )
+            if disposition in {"exact_current", "valid_weaker"}:
+                target = next(
+                    item
+                    for item in route["targets"]
+                    if item["role"] == "current_statement"
+                )
+                current_statement = _protect_formula_like_markdown(
+                    v2_units[target["unit_id"]]["statement"]
+                )
+                if current_statement not in text:
+                    failures.append(
+                        f"{page.relative_to(ROOT)}: current mathematics is missing"
+                    )
+            if disposition == "valid_weaker" and (
+                "A stronger current result is available" not in text
+            ):
+                failures.append(
+                    f"{page.relative_to(ROOT)}: valid weaker route lacks stronger link"
+                )
+            if disposition in {"replacement", "split_replacement"}:
+                for target in route["targets"]:
+                    if target["unit_id"] not in text:
+                        failures.append(
+                            f"{page.relative_to(ROOT)}: replacement target is missing"
+                        )
+            if disposition == "archival":
+                if "Historical claim" not in text:
+                    failures.append(
+                        f"{page.relative_to(ROOT)}: archival status is unclear"
+                    )
+                for membership in claims[tag]["memberships"]:
+                    collection = (
+                        DOCS
+                        / "collections"
+                        / f"{membership['collection_slug']}.md"
+                    )
+                    if tag in collection.read_text(encoding="utf-8"):
+                        failures.append(
+                            f"{collection.relative_to(ROOT)}: archival route remains in current collection"
+                        )
+        for unit in full_v2_graph["units"]:
+            page = (
+                DOCS
+                / "research/working-mathematics/units"
+                / f"{unit['unit_id']}.md"
+            )
+            text = page.read_text(encoding="utf-8")
+            for relation in ("corrects", "strengthens", "supersedes"):
+                if f"- `{relation}`" in text:
+                    failures.append(
+                        f"{page.relative_to(ROOT)}: backward compatibility relation is rendered"
+                    )
+            for marker in ("review_state", "audit_current", "last audited"):
+                if marker in text.casefold():
+                    failures.append(
+                        f"{page.relative_to(ROOT)}: internal workflow marker {marker!r}"
+                    )
 
     for path in DOCS.rglob("*.md"):
         text = path.read_text(encoding="utf-8")

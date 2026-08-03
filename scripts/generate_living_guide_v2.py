@@ -13,6 +13,12 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from retained_math_v2_public import (
+    FORWARD_RELATIONS,
+    compatibility_by_id,
+    validate_legacy_compatibility,
+    validate_public_v2_graph,
+)
 from site_state import load_site_state
 
 
@@ -91,6 +97,51 @@ def load_retained_math_v2(
         return None
     data = root / "data" / component["data_dir"]
     manifest = _load(data / "manifest.json")
+    if manifest.get("kind") == "retained-math-v2-full-public":
+        graph_path = data / "public-graph.json"
+        compatibility_path = data / "legacy-compatibility.json"
+        graph = _load(graph_path)
+        compatibility = _load(compatibility_path)
+        pinned = {item["path"]: item for item in manifest.get("files", [])}
+        if set(pinned) != {"public-graph.json", "legacy-compatibility.json"}:
+            raise ValueError(
+                "full retained-math v2 manifest must pin graph and compatibility map"
+            )
+        for path in (graph_path, compatibility_path):
+            item = pinned[path.name]
+            payload = path.read_bytes()
+            if len(payload) != item["size_bytes"]:
+                raise ValueError(f"retained-math v2 byte count mismatch: {path.name}")
+            if hashlib.sha256(payload).hexdigest() != item["sha256"]:
+                raise ValueError(f"retained-math v2 digest mismatch: {path.name}")
+        graph_counts = validate_public_v2_graph(graph)
+        state = load_site_state(root)
+        claim_graph = _load(
+            root
+            / "data"
+            / state["claim_graph"]["data_dir"]
+            / "claim-graph.json"
+        )
+        legacy_ids = {item["tag"] for item in claim_graph["claims"]}
+        compatibility_counts = validate_legacy_compatibility(
+            compatibility,
+            graph=graph,
+            expected_legacy_ids=legacy_ids,
+            schema_path=root / "schemas/legacy-compatibility-v1.schema.json",
+        )
+        if manifest.get("source_registry_id") != graph.get("registry_id"):
+            raise ValueError("retained-math v2 source registry disagrees")
+        if manifest.get("compatibility_map_id") != compatibility.get("map_id"):
+            raise ValueError("retained-math v2 compatibility identity disagrees")
+        if manifest.get("graph_counts") != graph_counts:
+            raise ValueError("retained-math v2 graph counts disagree")
+        if manifest.get("compatibility_counts") != compatibility_counts:
+            raise ValueError("retained-math v2 compatibility counts disagree")
+        return manifest, {
+            "format": "full",
+            "graph": graph,
+            "compatibility": compatibility,
+        }
     selection = _load(data / "selection.json")
     if manifest.get("selection_id") != selection.get("selection_id"):
         raise ValueError("retained-math v2 manifest and selection disagree")
@@ -136,6 +187,23 @@ def load_retained_math_v2(
     ]:
         raise ValueError("retained-math v2 and v1 registries disagree")
     return manifest, selection
+
+
+def retained_v2_is_full(payload: dict[str, Any]) -> bool:
+    return payload.get("format") == "full"
+
+
+def retained_v2_graph(payload: dict[str, Any]) -> dict[str, Any]:
+    """Return the renderable object arrays from either public package format."""
+    return payload["graph"] if retained_v2_is_full(payload) else payload
+
+
+def retained_v2_compatibility(
+    payload: dict[str, Any],
+) -> dict[str, Any] | None:
+    if not retained_v2_is_full(payload):
+        return None
+    return payload["compatibility"]
 
 
 def load_manuscript_sources(root: Path) -> dict[str, Any] | None:
@@ -567,18 +635,36 @@ def build_release_metadata(root: Path) -> dict[str, Any]:
         }
     retained_v2 = load_retained_math_v2(root)
     if retained_v2 is not None:
-        manifest, selection = retained_v2
+        manifest, payload = retained_v2
         release["components"]["retained_math_v2_manifest_sha256"] = state[
             "retained_math_v2"
         ]["manifest_sha256"]
-        release["retained_math_v2"] = {
-            "release_id": manifest["release_id"],
-            "source_registry_id": manifest["source_registry_id"],
-            "selection_id": selection["selection_id"],
-            "selected_ids": selection["selected_ids"],
-            "counts": selection["counts"],
-            "machine_route": "research/handoffs/retained-math-v2-pilot.json",
-        }
+        if retained_v2_is_full(payload):
+            graph = retained_v2_graph(payload)
+            compatibility = retained_v2_compatibility(payload)
+            assert compatibility is not None
+            release["retained_math_v2"] = {
+                "release_id": manifest["release_id"],
+                "source_registry_id": manifest["source_registry_id"],
+                "counts": graph["counts"],
+                "compatibility_map_id": compatibility["map_id"],
+                "compatibility_counts": compatibility["counts"],
+                "machine_routes": {
+                    "graph": "research/working-mathematics/graph.json",
+                    "legacy_compatibility": (
+                        "research/working-mathematics/legacy-compatibility.json"
+                    ),
+                },
+            }
+        else:
+            release["retained_math_v2"] = {
+                "release_id": manifest["release_id"],
+                "source_registry_id": manifest["source_registry_id"],
+                "selection_id": payload["selection_id"],
+                "selected_ids": payload["selected_ids"],
+                "counts": payload["counts"],
+                "machine_route": "research/handoffs/retained-math-v2-pilot.json",
+            }
     return release
 
 
@@ -611,14 +697,25 @@ def render_retained_math_v2_selection(
     evidence = {item["evidence_id"]: item for item in selection["evidence"]}
     unit = units[argument["conclusion_unit_ids"][0]]
 
+    if "selection_id" in selection:
+        provenance_lines = [
+            "    rendered from one retained-math v2 selection. The",
+            "    [machine-readable selection](retained-math-v2-pilot.json) is pinned",
+            "    by the handoff release metadata.",
+        ]
+    else:
+        provenance_lines = [
+            "    rendered from the complete retained-math v2 graph. The",
+            "    [machine-readable graph](../working-mathematics/graph.json) preserves",
+            "    its argument, evidence, and relation edges.",
+        ]
+
     lines = [
         "### Compiler-owned retained result",
         "",
         '!!! info "First-class retained mathematics"',
         "    This result, its exact argument, and its evidence boundary are",
-        "    rendered from one retained-math v2 selection. The",
-        "    [machine-readable selection](retained-math-v2-pilot.json) is pinned",
-        "    by the handoff release metadata.",
+        *provenance_lines,
         "",
         f"#### {unit['title']}",
         "",
@@ -698,6 +795,615 @@ def expand_retained_math_v2_markers(
     if len(found) != len(set(found)):
         raise ValueError("duplicate retained-math v2 marker")
     return rendered
+
+
+def _compatibility_targets(
+    route: dict[str, Any], units: dict[str, dict[str, Any]], role: str
+) -> list[dict[str, Any]]:
+    return [
+        units[target["unit_id"]]
+        for target in route["targets"]
+        if target["role"] == role
+    ]
+
+
+def _append_before_browse(page: str, lines: list[str]) -> str:
+    marker = "\n[Browse all claims](../results/all-claims.md)\n"
+    if marker not in page:
+        raise ValueError("claim renderer lacks all-claims footer")
+    return page.replace(marker, "\n" + "\n".join(lines) + marker, 1)
+
+
+def _protect_formula_like_markdown(text: str) -> str:
+    """Keep bracketed formulas from being parsed as relative Markdown links."""
+    pattern = re.compile(r"\[([^\]\n]+)\]\(([^)\n]+)\)")
+
+    def replace(match: re.Match[str]) -> str:
+        target = match.group(2).strip()
+        if (
+            "://" in target
+            or "/" in target
+            or "#" in target
+            or target.endswith((".md", ".json", ".pdf", ".zip"))
+        ):
+            return match.group(0)
+        return f"[{match.group(1)}&#93;({match.group(2)})"
+
+    return pattern.sub(replace, text)
+
+
+def render_compatible_claim(
+    claim: dict[str, Any],
+    collections: dict[str, dict[str, Any]],
+    route: dict[str, Any],
+    units: dict[str, dict[str, Any]],
+) -> str:
+    """Render one stable claim URL according to the total forward map."""
+    disposition = route["disposition"]
+    if disposition in {"exact_current", "valid_weaker"}:
+        current = _compatibility_targets(route, units, "current_statement")[0]
+        rendered_claim = {
+            **claim,
+            "title": current["title"],
+            "statement": current["statement"],
+            "statement_version": current["statement_version"],
+        }
+        stronger = _compatibility_targets(route, units, "stronger_result")
+        correction = None
+        if stronger:
+            correction = {**stronger[0], "_forward_relation": "strengthens"}
+        page = render_claim(rendered_claim, collections, correction)
+        extra = [
+            "## Current retained record",
+            "",
+            f"[Open the full mathematical unit](../research/working-mathematics/units/{current['unit_id']}.md)",
+            "",
+            "The linked unit carries its first-class arguments, evidence, source locators, and machine-readable relations.",
+            "",
+        ]
+        if len(stronger) > 1:
+            extra.extend(["Other stronger current formulations:", ""])
+            extra.extend(
+                f"- [{unit['title']}](../research/working-mathematics/units/{unit['unit_id']}.md)"
+                for unit in stronger[1:]
+            )
+            extra.append("")
+        return _protect_formula_like_markdown(_append_before_browse(page, extra))
+
+    if disposition in {"replacement", "split_replacement"}:
+        replacements = _compatibility_targets(route, units, "replacement")
+        lines = [
+            "---",
+            f"title: {_yaml('Replaced claim ' + claim['tag'])}",
+            f"description: {_yaml('This stable claim route points to current replacement mathematics.')}",
+            "---",
+            "",
+            f'<p class="claim-tag">{claim["tag"]}</p>',
+            "# Replaced claim",
+            "",
+            '!!! warning "Use the current replacement mathematics"',
+            "    This stable URL is preserved for continuity, but its earlier",
+            "    statement is superseded and is intentionally not reproduced here.",
+            "",
+            "## Current replacement" if len(replacements) == 1 else "## Current replacements",
+            "",
+        ]
+        for unit in replacements:
+            lines.extend(
+                [
+                    f"### [{unit['title']}](../research/working-mathematics/units/{unit['unit_id']}.md)",
+                    "",
+                    f"`{unit['unit_id']}` · statement version `{unit['statement_version']}`",
+                    "",
+                    unit["statement"],
+                    "",
+                ]
+            )
+        lines.extend(
+            [
+                "## Historical status",
+                "",
+                "This route records that an earlier public statement existed. It is not part of the current result collections.",
+                "",
+                "[Browse all claims](../results/all-claims.md)",
+                "",
+            ]
+        )
+        return _protect_formula_like_markdown("\n".join(lines))
+
+    if disposition != "archival":
+        raise ValueError(f"unknown compatibility disposition: {disposition}")
+    return _protect_formula_like_markdown("\n".join(
+        [
+            "---",
+            f"title: {_yaml('Historical claim ' + claim['tag'])}",
+            f"description: {_yaml('A preserved historical claim route with no current mathematical target.')}",
+            "robots: noindex, nofollow",
+            "---",
+            "",
+            f'<p class="claim-tag">{claim["tag"]}</p>',
+            "# Historical claim",
+            "",
+            '!!! warning "Historical record"',
+            "    This stable URL is preserved as publication history. The earlier",
+            "    wording is intentionally not reproduced, and the current retained",
+            "    graph supplies no forward replacement.",
+            "",
+            "This record is excluded from current result and open-problem collections.",
+            "",
+            "[Browse all claims](../results/all-claims.md)",
+            "",
+        ]
+    ))
+
+
+def render_compatible_collection(
+    page: dict[str, Any],
+    claims: dict[str, dict[str, Any]],
+    collections: dict[str, dict[str, Any]],
+    routes: dict[str, dict[str, Any]],
+    units: dict[str, dict[str, Any]],
+) -> str:
+    """Render a current collection without reviving archival mathematics."""
+    coverage = page["manuscript_coverage"]["status"]
+    has_historical_members = any(
+        routes[tag]["disposition"]
+        in {"replacement", "split_replacement", "archival"}
+        for tag in page["member_tags"]
+    )
+    visible_description = (
+        "This current collection omits historical wording. Replaced records "
+        "point to their current retained mathematics."
+        if has_historical_members
+        else page["description"]
+    )
+    precise_statement = (
+        "Current mathematical statements are listed unit by unit below; "
+        "superseded and archival wording is not reproduced."
+        if has_historical_members
+        else page["statement"]
+    )
+    lines = [
+        "---",
+        f"title: {_yaml(page['title'])}",
+        f"description: {_yaml(visible_description)}",
+        "---",
+        "",
+        f"# {page['title']}",
+        "",
+        f'<p class="dek">{visible_description}</p>',
+        "",
+        f'<span class="status status-kind">{_human(page["kind"]).title()}</span> '
+        f'<span class="status coverage-{coverage}">{_coverage_label(coverage)}</span>',
+        "",
+        "## Precise statement",
+        "",
+        precise_statement,
+        "",
+        "## Claims in this result package",
+        "",
+    ]
+    for tag in page["member_tags"]:
+        route = routes[tag]
+        disposition = route["disposition"]
+        if disposition == "archival":
+            continue
+        claim = claims[tag]
+        membership = next(
+            item
+            for item in claim["memberships"]
+            if item["collection_slug"] == page["slug"]
+        )
+        if disposition in {"replacement", "split_replacement"}:
+            replacements = _compatibility_targets(route, units, "replacement")
+            lines.extend(
+                [
+                    f"### [{tag} · Replaced historical record](../claims/{tag}.md)",
+                    "",
+                    '!!! warning "Replaced working statement"',
+                    "    The earlier wording is suppressed. Continue with the current replacement mathematics below.",
+                    "",
+                ]
+            )
+            for unit in replacements:
+                lines.extend(
+                    [
+                        f"- [{unit['title']}](../research/working-mathematics/units/{unit['unit_id']}.md): {unit['statement']}",
+                        "",
+                    ]
+                )
+        else:
+            current = _compatibility_targets(
+                route, units, "current_statement"
+            )[0]
+            lines.extend(
+                [
+                    f"### [{tag} · {current['title']}](../claims/{tag}.md)",
+                    "",
+                    current["statement"],
+                    "",
+                ]
+            )
+            stronger = _compatibility_targets(route, units, "stronger_result")
+            if stronger:
+                lines.extend(
+                    [
+                        '!!! info "Stronger current result available"',
+                        "    The statement above remains valid. A stronger current formulation is available:",
+                        "",
+                        *[
+                            f"    - [{unit['title']}](../research/working-mathematics/units/{unit['unit_id']}.md)"
+                            for unit in stronger
+                        ],
+                        "",
+                    ]
+                )
+        lines.extend(
+            [
+                f"*{_human(membership['inclusion']).title()} · "
+                f"{_human(membership['role']).title()} · {_status_label(claim['status'])}*",
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            "## Evidence and manuscript boundary",
+            "",
+            page["source_treatment"],
+            "",
+            page["manuscript_coverage"]["coverage_rule"],
+            "",
+        ]
+    )
+    if page["source"]:
+        lines.extend(["### Public sources", "", *_source_lines(page["source"]), ""])
+    if page["credited_to"]:
+        lines.extend(
+            ["## Credit", "", *_credit_lines(page["credited_to"]), ""]
+        )
+    connected = sorted(
+        set(page["connections"].get("depends_on", []))
+        | set(page["connections"].get("shares_claims_with", []))
+    )
+    if connected:
+        lines.extend(["## Connections", ""])
+        for slug in connected:
+            if slug in collections:
+                lines.append(
+                    f"- [{collections[slug]['title']}](../collections/{slug}.md)"
+                )
+        lines.append("")
+    lines.extend(["[Back to Results](../results/index.md)", ""])
+    return _protect_formula_like_markdown("\n".join(lines))
+
+
+def render_all_claims_compatible(
+    claims: dict[str, dict[str, Any]],
+    routes: dict[str, dict[str, Any]],
+    units: dict[str, dict[str, Any]],
+) -> str:
+    lines = [
+        "---",
+        'title: "All claims"',
+        'description: "The complete stable-route claim catalogue."',
+        "---",
+        "",
+        "# All claims",
+        "",
+        '<p class="dek">Every legacy public claim URL remains resolvable. Current, replaced, and archival dispositions are stated explicitly.</p>',
+        "",
+        '<div class="claim-list" markdown>',
+        "",
+    ]
+    for tag in sorted(claims):
+        route = routes[tag]
+        disposition = route["disposition"]
+        if disposition in {"exact_current", "valid_weaker"}:
+            current = _compatibility_targets(
+                route, units, "current_statement"
+            )[0]
+            title = current["title"]
+        elif disposition in {"replacement", "split_replacement"}:
+            title = "Replaced historical claim"
+        else:
+            title = "Historical claim"
+        lines.append(
+            f"- [`{tag}`](../claims/{tag}.md) **{title}** — "
+            f"{_human(disposition)}"
+        )
+    lines.extend(["", "</div>", ""])
+    return _protect_formula_like_markdown("\n".join(lines))
+
+
+def render_corrections_compatible(
+    routes: dict[str, dict[str, Any]], units: dict[str, dict[str, Any]]
+) -> str:
+    lines = [
+        "---",
+        'title: "Corrections and scope changes"',
+        'description: "Stable routes whose current mathematical disposition points forward."',
+        "---",
+        "",
+        "# Corrections and scope changes",
+        "",
+        '<p class="dek">Earlier wording is suppressed when it has been corrected or superseded.</p>',
+        "",
+    ]
+    for tag, route in sorted(routes.items()):
+        if route["disposition"] not in {
+            "valid_weaker",
+            "replacement",
+            "split_replacement",
+        }:
+            continue
+        lines.extend([f"## [{tag}](../claims/{tag}.md)", ""])
+        role = (
+            "stronger_result"
+            if route["disposition"] == "valid_weaker"
+            else "replacement"
+        )
+        for unit in _compatibility_targets(route, units, role):
+            lines.extend(
+                [
+                    f"- [{unit['title']}](../research/working-mathematics/units/{unit['unit_id']}.md)",
+                    "",
+                    unit["statement"],
+                    "",
+                ]
+            )
+    return _protect_formula_like_markdown("\n".join(lines))
+
+
+def _published_evidence_locator(
+    locator: dict[str, Any] | None, proof_sources: dict[str, Any]
+) -> tuple[str | None, str | None]:
+    """Return a reader link and optional inline body for a public locator."""
+    if locator is None:
+        return None, None
+    kind = locator.get("kind")
+    if kind == "external":
+        return f"[Open the pinned source]({locator['url']})", None
+    if kind == "inline":
+        return "Inline evidence is reproduced below.", locator["body"]
+    if kind != "repo":
+        return None, None
+    repo_path = Path(locator["repo_path"])
+    parts = repo_path.parts
+    if parts and parts[0] == "manuscripts":
+        relative = Path(*parts[1:])
+    elif parts and parts[0].startswith("papers-release-"):
+        relative = Path(*parts[1:])
+    else:
+        relative = None
+    if relative is not None:
+        sources = {item["path"]: item for item in proof_sources["files"]}
+        item = sources.get(relative.as_posix())
+        if item is not None:
+            route = proof_source_route(relative.as_posix()).relative_to(
+                "research/proof-sources"
+            )
+            anchor = locator.get("anchor")
+            fragment = ""
+            if anchor:
+                label = next(
+                    (
+                        value
+                        for value in item["labels"]
+                        if value["label"] == anchor or value["anchor"] == anchor
+                    ),
+                    None,
+                )
+                if label is not None:
+                    fragment = f"#{label['anchor']}"
+            return (
+                f"[Open the published source](../../proof-sources/{route.as_posix()}{fragment})",
+                None,
+            )
+    suffix = f"#{locator['anchor']}" if locator.get("anchor") else ""
+    return f"Source path: `{locator['repo_path']}{suffix}`", None
+
+
+def render_retained_v2_unit(
+    unit: dict[str, Any],
+    graph: dict[str, Any],
+    proof_sources: dict[str, Any],
+) -> str:
+    """Render a current unit with math-facing edges and no audit workflow."""
+    graph_unit_ids = {item["unit_id"] for item in graph["units"]}
+    arguments = {item["argument_id"]: item for item in graph["arguments"]}
+    evidence = {item["evidence_id"]: item for item in graph["evidence"]}
+    lines = [
+        "---",
+        f"title: {_yaml(unit['title'])}",
+        f"description: {_yaml(unit['statement'])}",
+        "---",
+        "",
+        f"# {unit['title']}",
+        "",
+        f"`{unit['unit_id']}` · `{unit['unit_type']}` · statement version `{unit['statement_version']}`",
+        "",
+        "## Exact statement",
+        "",
+        unit["statement"],
+        "",
+    ]
+    for heading, values in (
+        ("Hypotheses", unit["hypotheses"]),
+        ("Applies to", unit["exact_scope"]["applies_to"]),
+        ("Limitations", unit["exact_scope"]["limitations"]),
+    ):
+        if values:
+            lines.extend([f"## {heading}", "", *_bullet_lines(values), ""])
+    selected_arguments = [
+        arguments[argument_id] for argument_id in unit.get("argument_ids", [])
+    ]
+    if selected_arguments:
+        lines.extend(["## Arguments", ""])
+        for argument in selected_arguments:
+            lines.extend(
+                [
+                    f"### {argument['title']}",
+                    "",
+                    f"`{argument['argument_id']}` · `{argument['argument_type']}`",
+                    "",
+                    argument["summary"],
+                    "",
+                    argument["body"],
+                    "",
+                ]
+            )
+            if argument["premise_unit_ids"]:
+                lines.extend(
+                    [
+                        "Premise units:",
+                        "",
+                        *[
+                            (
+                                f"- [`{unit_id}`]({unit_id}.md)"
+                                if unit_id in graph_unit_ids
+                                else f"- `{unit_id}` (external graph reference)"
+                            )
+                            for unit_id in argument["premise_unit_ids"]
+                        ],
+                        "",
+                    ]
+                )
+            if argument["depends_on_argument_ids"]:
+                lines.extend(
+                    [
+                        "Argument dependencies:",
+                        "",
+                        *[
+                            f"- `{argument_id}`"
+                            for argument_id in argument["depends_on_argument_ids"]
+                        ],
+                        "",
+                    ]
+                )
+            if argument["does_not_establish"]:
+                lines.extend(
+                    [
+                        "Does not establish:",
+                        "",
+                        *_bullet_lines(argument["does_not_establish"]),
+                        "",
+                    ]
+                )
+    evidence_ids = list(unit.get("evidence_ids", []))
+    for argument in selected_arguments:
+        evidence_ids.extend(argument["evidence_ids"])
+    selected_evidence = [
+        evidence[evidence_id]
+        for evidence_id in dict.fromkeys(evidence_ids)
+        if evidence_id in evidence
+    ]
+    if selected_evidence:
+        lines.extend(["## Evidence and source access", ""])
+        for item in selected_evidence:
+            lines.extend(
+                [
+                    f"### {item['title']}",
+                    "",
+                    f"`{item['evidence_id']}` · `{item['kind']}`",
+                    "",
+                    item["summary"],
+                    "",
+                    f"**Establishes:** {item['establishes']}",
+                    "",
+                ]
+            )
+            locator, inline = _published_evidence_locator(
+                item.get("locator"), proof_sources
+            )
+            if locator:
+                lines.extend([f"**Source:** {locator}", ""])
+            if inline:
+                lines.extend([inline, ""])
+            replay = item.get("replay")
+            if replay:
+                lines.extend(["Replay commands:", ""])
+                lines.extend(f"- `{command}`" for command in replay["commands"])
+                lines.append("")
+            if item["does_not_establish"]:
+                lines.extend(
+                    [
+                        "Does not establish:",
+                        "",
+                        *_bullet_lines(item["does_not_establish"]),
+                        "",
+                    ]
+                )
+    visible_relations = [
+        relation
+        for relation in unit.get("relations", [])
+        if relation.get("relation_type") not in FORWARD_RELATIONS
+    ]
+    if visible_relations:
+        lines.extend(["## Mathematical connections", ""])
+        for relation in visible_relations:
+            target = relation["target_unit_id"]
+            note = f" — {relation['note']}" if relation.get("note") else ""
+            target_label = (
+                f"[`{target}`]({target}.md)"
+                if target in graph_unit_ids
+                else f"`{target}` (external graph reference)"
+            )
+            lines.append(
+                f"- `{relation['relation_type']}` {target_label}{note}"
+            )
+        lines.append("")
+    attribution = unit.get("attribution", {})
+    if attribution.get("credited_to") or attribution.get("citations"):
+        lines.extend(["## Attribution and citations", ""])
+        lines.extend(
+            f"- Credit: {value}" for value in attribution.get("credited_to", [])
+        )
+        lines.extend(
+            f"- Citation: {value}" for value in attribution.get("citations", [])
+        )
+        lines.append("")
+    lines.extend(
+        [
+            "[Machine-readable graph](../graph.json)",
+            "",
+        ]
+    )
+    return _protect_formula_like_markdown("\n".join(lines))
+
+
+def render_retained_v2_program(
+    program: dict[str, Any], graph: dict[str, Any]
+) -> str:
+    units = [
+        unit
+        for unit in graph["units"]
+        if program["slug"] in unit["memberships"]["programs"]
+    ]
+    lines = [
+        "---",
+        f"title: {_yaml(program['title'])}",
+        f"description: {_yaml(program['summary'])}",
+        "---",
+        "",
+        f"# {program['title']}",
+        "",
+        program["summary"],
+        "",
+        f"This current view contains **{len(units)} retained units**.",
+        "",
+    ]
+    for unit in sorted(units, key=lambda item: item["title"].casefold()):
+        lines.extend(
+            [
+                f"## [{unit['title']}](../units/{unit['unit_id']}.md)",
+                "",
+                unit["statement"],
+                "",
+                f"`{unit['unit_id']}` · `{unit['unit_type']}`",
+                "",
+            ]
+        )
+    return _protect_formula_like_markdown("\n".join(lines))
 
 
 def render_model_brief(
@@ -1529,14 +2235,45 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     ):
         raise ValueError("manuscript sources and retained graph disagree")
     corrections = retained_corrections(retained)
+    v2_payload = retained_v2[1]
+    full_v2 = retained_v2_is_full(v2_payload)
+    v2_graph = retained_v2_graph(v2_payload)
+    compatibility_routes: dict[str, dict[str, Any]] = {}
+    v2_units: dict[str, dict[str, Any]] = {}
+    if full_v2:
+        compatibility = retained_v2_compatibility(v2_payload)
+        assert compatibility is not None
+        compatibility_routes = compatibility_by_id(compatibility)
+        v2_units = {item["unit_id"]: item for item in v2_graph["units"]}
     for claim in claims.values():
-        outputs[docs / "claims" / f"{claim['tag']}.md"] = render_claim(
-            claim, collections, corrections.get(claim["tag"])
-        )
+        if full_v2:
+            outputs[docs / "claims" / f"{claim['tag']}.md"] = (
+                render_compatible_claim(
+                    claim,
+                    collections,
+                    compatibility_routes[claim["tag"]],
+                    v2_units,
+                )
+            )
+        else:
+            outputs[docs / "claims" / f"{claim['tag']}.md"] = render_claim(
+                claim, collections, corrections.get(claim["tag"])
+            )
     for page in collections.values():
-        outputs[docs / "collections" / f"{page['slug']}.md"] = render_collection(
-            page, claims, collections, corrections
-        )
+        if full_v2:
+            outputs[docs / "collections" / f"{page['slug']}.md"] = (
+                render_compatible_collection(
+                    page,
+                    claims,
+                    collections,
+                    compatibility_routes,
+                    v2_units,
+                )
+            )
+        else:
+            outputs[docs / "collections" / f"{page['slug']}.md"] = render_collection(
+                page, claims, collections, corrections
+            )
     for program in programs.values():
         outputs[
             docs / "research/programs" / f"{program['slug']}.md"
@@ -1551,7 +2288,7 @@ def expected_outputs(root: Path) -> dict[Path, str]:
             manuscripts,
             release,
             proof_sources,
-            retained_v2[1],
+            v2_graph,
         )
     brief_manifest = _load(root / "data" / MODEL_BRIEFS_DATA_DIR / "manifest.json")
     for item in brief_manifest.get("task_inputs", []):
@@ -1560,21 +2297,41 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     outputs[docs / "research/handoffs/release.json"] = (
         json.dumps(release, indent=2, sort_keys=True) + "\n"
     )
-    outputs[docs / "research/handoffs/retained-math-v2-pilot.json"] = (
-        json.dumps(retained_v2[1], indent=2, ensure_ascii=False, sort_keys=True)
-        + "\n"
-    )
+    if full_v2:
+        compatibility = retained_v2_compatibility(v2_payload)
+        assert compatibility is not None
+        outputs[docs / "research/working-mathematics/graph.json"] = (
+            json.dumps(v2_graph, indent=2, ensure_ascii=False, sort_keys=True)
+            + "\n"
+        )
+        outputs[
+            docs / "research/working-mathematics/legacy-compatibility.json"
+        ] = (
+            json.dumps(
+                compatibility, indent=2, ensure_ascii=False, sort_keys=True
+            )
+            + "\n"
+        )
+    else:
+        outputs[docs / "research/handoffs/retained-math-v2-pilot.json"] = (
+            json.dumps(v2_payload, indent=2, ensure_ascii=False, sort_keys=True)
+            + "\n"
+        )
     outputs[docs / "results/index.md"] = render_results_index(
         collections, claims
     )
-    outputs[docs / "results/all-claims.md"] = render_all_claims(
-        claims, corrections
+    outputs[docs / "results/all-claims.md"] = (
+        render_all_claims_compatible(claims, compatibility_routes, v2_units)
+        if full_v2
+        else render_all_claims(claims, corrections)
     )
     outputs[docs / "results/open-problems.md"] = render_open_problems(
         collections, claims
     )
-    outputs[docs / "results/corrections.md"] = render_corrections(
-        claims, corrections
+    outputs[docs / "results/corrections.md"] = (
+        render_corrections_compatible(compatibility_routes, v2_units)
+        if full_v2
+        else render_corrections(claims, corrections)
     )
     outputs[docs / "research/index.md"] = render_research_index(
         programs, collections, claims, briefs
@@ -1593,7 +2350,38 @@ def expected_outputs(root: Path) -> dict[Path, str]:
                 item, source_path.read_text(encoding="utf-8")
             )
         )
-    if retained is not None:
+    if full_v2:
+        program_links = "\n".join(
+            f"- [{program['title']}](programs/{program['slug']}.md)"
+            for program in v2_graph["programs"]
+        )
+        counts = v2_graph["counts"]
+        outputs[docs / "research/working-mathematics/index.md"] = (
+            "# Retained working mathematics\n\n"
+            "This current view is compiled from first-class mathematical units, "
+            "arguments, evidence, and typed relations. Historical route mapping "
+            "is kept separate from the progress-facing mathematics.\n\n"
+            f"The graph contains **{counts['units']} current units**, "
+            f"**{counts['arguments']} arguments**, and "
+            f"**{counts['evidence']} evidence objects** across "
+            f"{counts['programs']} overlapping program views.\n\n"
+            f"{program_links}\n\n"
+            "[Machine-readable graph](graph.json) · "
+            "[Legacy route compatibility](legacy-compatibility.json)\n"
+        )
+        for program in v2_graph["programs"]:
+            outputs[
+                docs
+                / "research/working-mathematics/programs"
+                / f"{program['slug']}.md"
+            ] = render_retained_v2_program(program, v2_graph)
+        for unit in v2_graph["units"]:
+            outputs[
+                docs
+                / "research/working-mathematics/units"
+                / f"{unit['unit_id']}.md"
+            ] = render_retained_v2_unit(unit, v2_graph, proof_sources)
+    elif retained is not None:
         _, retained_graph = retained
         retained_data = root / "data" / SITE_STATE["retained_math"]["data_dir"]
         retained_programs = retained_graph["programs"]
