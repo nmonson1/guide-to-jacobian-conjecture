@@ -1,0 +1,62 @@
+name: Audit Lane 9 Kummer attachment
+
+on:
+  pull_request:
+    types: [synchronize]
+    paths:
+      - 'research-notes/p6-chart-correspondence/**'
+      - '.github/workflows/lane9-kummer-attachment.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lane9-kummer-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 0
+
+      - name: Run exact Lane 9 tests
+        working-directory: research-notes/p6-chart-correspondence
+        run: |
+          python -m unittest -v \
+            test_lane9_kummer_attachment.py \
+            test_recover_lane9_public_archive.py
+
+      - name: Regenerate the exact Kummer audit
+        run: |
+          python research-notes/p6-chart-correspondence/lane9_kummer_attachment.py \
+            --output research-notes/p6-chart-correspondence/lane9_kummer_attachment.json
+
+      - name: Recover the public F2 and high-order source trail
+        run: |
+          rm -rf research-notes/p6-chart-correspondence/recovered-public-archive
+          python research-notes/p6-chart-correspondence/recover_lane9_public_archive.py \
+            docs-v7-20260726c/assets/technical-materials/06-plane-boundary-computational-supplement.zip \
+            --expected-sha256 4238149caa6e8a73723368e997b8c714a99258600268f14a008c5e514ecea585 \
+            --output-dir research-notes/p6-chart-correspondence/recovered-public-archive \
+            --manifest research-notes/p6-chart-correspondence/lane9_public_archive_recovery.json
+
+      - name: Commit deterministic recovered outputs
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add \
+            research-notes/p6-chart-correspondence/lane9_kummer_attachment.json \
+            research-notes/p6-chart-correspondence/lane9_public_archive_recovery.json \
+            research-notes/p6-chart-correspondence/recovered-public-archive
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+            exit 0
+          fi
+          git commit -m 'Recover public Lane 9 archive packet'
+          git push origin HEAD:${{ github.head_ref || github.ref_name }}
