@@ -25,8 +25,8 @@ The active local release candidate contains:
 - 368 stable-tagged atomic claim pages, all included in site search but kept
   out of the main navigation;
 - 534 many-to-many claim memberships across six research programs;
-- 574 retained working-mathematics units, 576 publicly exposed support
-  objects, and 83 typed relations across six overlapping program views;
+- 587 retained working-mathematics units and 619 first-class public evidence
+  objects across six overlapping program views;
 - six version-13 reader PDFs and one companion Results and Research Register;
 - ten primary model entrypoints under `/research/handoffs/`: one portfolio
   hub plus nine first-class research lanes. Six longer program dossiers remain
@@ -76,6 +76,14 @@ The active local release candidate contains:
   Keller counterexample in characteristic zero has maximum coordinate degree
   at least 125, without using the unattached adjacent-chart terminal. Lane 8
   now begins with the explicit degree-125 `F_2` support-propagation problem;
+- a 3 August five-conversation assimilation for Lanes 1, 2, and 5. Lane 1
+  now exposes an exact marked-root benchmark, an elliptic-cone non-MCM
+  boundary model, and a smooth type-IV test object without presenting either
+  cone as a Keller map. Lane 2 records the completed four-chart normalization
+  of the fixed quintic graph and moves its frontier to the actual all-rank PRS
+  specialization and Torelli tuple. Lane 5 adds relative-derivation covariance
+  and uniform collision-pole exclusions for high-degree triangular words,
+  while retaining the low-weight mixed-return word as the live calculation;
 - 76 collections with complete manuscript coverage, nine with partial
   coverage, and 19 for which manuscript coverage is not applicable;
 - 21 context-only private records, not exported.
@@ -103,7 +111,7 @@ manuscript links are rendered from that same pointer.
 
 The two mathematical components have different jobs. The 368 stable-tag
 claim pages preserve the legacy publication pipeline and durable public URLs;
-the 574-unit retained graph is the current progress-facing corpus for research
+the 587-unit retained graph is the current progress-facing corpus for research
 models. A retained `corrects` relation is rendered programmatically on the
 affected legacy claim and collection pages, so historical wording cannot
 silently outrank its current working replacement. Advancing either component
@@ -121,7 +129,7 @@ surfaces are:
   and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-handoffs-v23-20260803a/`: hash-pinned sanitized source for
+- `data/model-handoffs-v32-20260803a/`: hash-pinned sanitized source for
   the hub, nine lane entrypoints, six program dossiers, nine exact research
   source packets, and the focused Lane 7 and Lane 8 executable inputs. The
   Lane 8 packet also exposes the incomplete planar-descent strategy and its

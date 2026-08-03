@@ -1,7 +1,7 @@
 {
   "schema_version": 4,
-  "release_id": "living-guide-public-v54h-final-accepted",
-  "updated_at": "2026-08-03T20:15:00+00:00",
+  "release_id": "living-guide-public-v55a-five-share",
+  "updated_at": "2026-08-03T21:10:00+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,32 +22,32 @@
     "expected_count": 12
   },
   "model_briefs": {
-    "data_dir": "model-handoffs-v31-20260803a",
-    "manifest_sha256": "8f6dbe1064fbdf88d42b5b5d8ee4897484e7970058d3a8ebe27063edeb75f8a0",
+    "data_dir": "model-handoffs-v32-20260803a",
+    "manifest_sha256": "40157aed1705a482799febc7298d593f99e74f9d085b4fd3e3949da4cfcecd36",
     "expected_count": 16
   },
   "retained_math": {
-    "data_dir": "retained-math-v1-20260803b",
-    "manifest_sha256": "f42627f384db7a68101c9f2194981182860cc46bd0de244ffc7937d4747dd770",
-    "expected_units": 574,
+    "data_dir": "retained-math-v1-20260803c",
+    "manifest_sha256": "d650ce801a6d41b4ae00730b63d446fd9afac75d3b673597093d087b5df1f247",
+    "expected_units": 587,
     "expected_programs": 6
   },
   "retained_math_v2": {
-    "data_dir": "retained-math-v2-20260803e",
-    "manifest_sha256": "1a1ad187290036c51c02b929ff33661c37a2fb769371f1b6afcaa557a7ef6a6f",
-    "expected_units": 579,
+    "data_dir": "retained-math-v2-20260803f",
+    "manifest_sha256": "449cf158de4131e02110039e01a4f66d853a976296915acf76464a5e085a901e",
+    "expected_units": 587,
     "expected_arguments": 12,
-    "expected_evidence": 611,
+    "expected_evidence": 619,
     "expected_obligations": 10,
     "expected_tasks": 6
   },
   "manuscript_sources": {
-    "data_dir": "manuscript-sources-v1-20260803b",
-    "manifest_sha256": "ecb40702d5c8a303222e7738a3f5c337aa0607a787e5994eee244549b5555d9b",
+    "data_dir": "manuscript-sources-v1-20260803c",
+    "manifest_sha256": "6e4959df160571b284414da1ba8bee5806a9a4d54b9c88aacf0a94d67047bb24",
     "expected_files": 41,
     "expected_labels": 659
   },
-  "docs_dir": "docs-v54-model-ready-research-20260803h",
+  "docs_dir": "docs-v55-five-share-research-20260803b",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,
