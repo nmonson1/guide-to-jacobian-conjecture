@@ -13,6 +13,35 @@ specialist review before use in a theorem-bearing manuscript.
 
 \subsection{Leading-image factorization via the actual normalization}
 
+\begin{lemma}[Singular homogeneous Jacobian forces a curve image]
+\label{lem:lane4-leading-image-dimension}
+Let \(H=(H_1,H_2,H_3)\) be a nonzero homogeneous polynomial map of one
+positive degree \(d\), and suppose
+\[
+ \det JH=0.
+\]
+Then the closure of the projective image of
+\[
+ [H_1:H_2:H_3]\colon\mathbf P^2\dashrightarrow\mathbf P^2
+\]
+has dimension at most one.
+\end{lemma}
+
+\begin{proof}
+Suppose instead that the projective image has dimension two.  At a general
+point \(x\) outside the base locus, the projective differential has rank two.
+Choose tangent lifts \(v_1,v_2\in k^3\) such that the classes of
+\(JH(x)v_1,JH(x)v_2\) are independent modulo the radial target line
+\(kH(x)\).  Euler's identity gives
+\[
+ JH(x)x=dH(x).
+\]
+Consequently \(JH(x)x,JH(x)v_1,JH(x)v_2\) are linearly independent: reducing
+a relation modulo \(kH(x)\) first kills the coefficients of the two tangent
+vectors, and the remaining radial coefficient then vanishes.  Thus
+\(\operatorname{rank}JH(x)=3\), contradicting \(\det JH=0\).
+\end{proof}
+
 \begin{proposition}[Leading-image factorization without a relative-closure shortcut]
 \label{prop:lane4-leading-image-direct}
 Let
@@ -45,9 +74,11 @@ The case \(e=1\) is exactly the leading-target-span-two child.
 \end{proposition}
 
 \begin{proof}
-The rational map \(\phi\) dominates \(C\).  Restricting a nonconstant
-rational function in \(k(C)\setminus k\) to a sufficiently
-general line gives a nonconstant rational map
+The rational map \(\phi\) dominates \(C\).  Choose a nonconstant
+rational function \(f\in k(C)\setminus k\).  The pullback \(\phi^*f\)
+is nonconstant on \(\mathbf P^2\), and its restriction to a sufficiently
+general line remains nonconstant.  Equivalently, the restriction of
+\(\phi\) to that line gives a nonconstant rational map
 \(\mathbf P^1\dashrightarrow C\).  Thus \(C\) is unirational.  The
 normalization \(\widetilde C\) is therefore a smooth unirational projective
 curve, hence \(\widetilde C\simeq\mathbf P^1\) in characteristic zero.
@@ -103,6 +134,23 @@ a target-span-two leading map has line image unless it degenerates to the
 rank-one child.
 \end{proof}
 
+\begin{corollary}[The span-three entry to the curve tree]
+\label{cor:lane4-span-three-entry}
+Let \(H_4\in k[x,y,z]_4^3\) satisfy \(\det JH_4=0\), and suppose its three
+coordinate forms have target span three.  Then its projective image is a
+nondegenerate integral curve, so
+\cref{prop:lane4-leading-image-direct} applies with \(e\geq2\).
+\end{corollary}
+
+\begin{proof}
+By \cref{lem:lane4-leading-image-dimension}, the image has dimension at most
+one.  It cannot be a point, because then all three coordinates are
+proportional, and it cannot be a line, because a line in the target imposes
+one nonzero constant linear relation on the three coordinate forms.  Hence it
+is a nondegenerate curve.  The image closure of an irreducible variety is
+irreducible, so its reduced closure is integral.
+\end{proof}
+
 \begin{remark}[Why relative algebraic closure does not prove properness]
 \label{rem:lane4-relative-closure-warning}
 Relative algebraic closure is useful for detecting a primitive source
@@ -150,11 +198,11 @@ function \(\mathcal R\in k(s)\) of degree \(e\) such that
 In characteristic zero, the vanishing Jacobian together with algebraic
 independence of \(P,Q\) implies that \(R\) is algebraic over \(k(P,Q)\).
 Choose a nonzero polynomial relation and retain one source-homogeneous
-component.  Every monomial \(P^iQ^jR^r\) in that component satisfies
+component.  Every monomial \(P^iQ^jR^m\) in that component satisfies
 \[
- 4(i+j)+3r=M.
+ 4(i+j)+3m=M.
 \]
-Thus all exponents \(r\) are congruent modulo four.  After removing the
+Thus all exponents \(m\) are congruent modulo four.  After removing the
 common residual power of \(R\), the relation has the form
 \[
  \sum_{\ell} C_\ell(P,Q)R^{4\ell}=0,
@@ -164,8 +212,10 @@ Dividing by \(Q^N\) gives a polynomial relation for
 \(w=R^4/Q^3\) over \(k(t)\).
 
 The field \(k(t,w)\) has transcendence degree one and is the function field
-of a curve dominated by \(\mathbf P^2\).  Restriction to a sufficiently
-general line makes that curve unirational; hence it is rational.  Therefore
+of a curve dominated by \(\mathbf P^2\).  Pull back a nonconstant rational
+function on that curve and restrict it, together with the dominant rational
+map, to a sufficiently general line.  The resulting nonconstant map from
+\(\mathbf P^1\) makes the curve unirational; hence it is rational.  Therefore
 \(k(t,w)=k(s)\).  Represent \(s\) by a reduced homogeneous pencil
 \(A_0/B_0\) of common degree \(d\).
 
@@ -231,9 +281,12 @@ gives
 For the displayed \(d=1\) cases with \(G\ne1\), one has
 \(1\leq\mu\leq\deg G\leq2\), so this is impossible.  Hence every component of
 \(G\) is a fiber line of \(s\), and \(G,P,Q\) are binary in the same two
-linear forms.  Since \(R^4\) is binary as well, expansion in a third
-independent linear form gives \(\deg_{\mathrm{third}}R=0\); thus \(R\) is
-binary.  This is locus (1).  The sole nonbinary composite case is
+linear forms.  The identity \(R^4=Q^3\sigma(s)\) shows that \(R^4\) belongs
+to their rational function field.  Choose a third independent linear form
+\(c\).  Writing \(R\) as a polynomial in \(c\), the leading
+\(c\)-coefficient of \(R^4\) is the fourth power of the leading
+coefficient of \(R\); it cannot vanish in a domain.  Since the right-hand
+side has \(c\)-degree zero, \(R\) has \(c\)-degree zero and is binary.  This is locus (1).  The sole nonbinary composite case is
 \((e,d)=(2,2)\) with \(G=1\), which is locus (2).
 
 Now suppose \(e=1\), so \(w=\rho(t)\).  First take \(G=1\).  For a finite
