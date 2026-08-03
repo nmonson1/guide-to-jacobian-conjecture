@@ -30,12 +30,15 @@ jobs:
         run: |
           python -m unittest -v \
             test_lane9_kummer_attachment.py \
+            test_lane9_f2_terminal_face.py \
             test_recover_lane9_public_archive.py
 
       - name: Regenerate the exact Kummer audit
         run: |
           python research-notes/p6-chart-correspondence/lane9_kummer_attachment.py \
             --output research-notes/p6-chart-correspondence/lane9_kummer_attachment.json
+          python research-notes/p6-chart-correspondence/lane9_f2_terminal_face.py \
+            --output research-notes/p6-chart-correspondence/lane9_f2_terminal_face.json
 
       - name: Recover the public F2 and high-order source trail
         run: |
@@ -52,6 +55,7 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add \
             research-notes/p6-chart-correspondence/lane9_kummer_attachment.json \
+            research-notes/p6-chart-correspondence/lane9_f2_terminal_face.json \
             research-notes/p6-chart-correspondence/lane9_public_archive_recovery.json \
             research-notes/p6-chart-correspondence/recovered-public-archive
           if git diff --cached --quiet; then
