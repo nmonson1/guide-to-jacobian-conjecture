@@ -149,8 +149,13 @@ def main() -> int:
                 f"model handoff links inactive manuscript(s): /{route}: "
                 f"{', '.join(sorted(inactive))}"
             )
-        if brief.get("kind") == "program" and not linked_manuscripts:
-            failures.append(f"model handoff lacks an active manuscript: /{route}")
+        if brief.get("kind") == "program" and (
+            "Current mathematical corpus" not in text
+            or "working-mathematics/programs" not in text
+        ):
+            failures.append(
+                f"program handoff lacks its generated graph view: /{route}"
+            )
         if "Sources and release" not in text or "Current proof sources" not in text:
             failures.append(f"model handoff lacks current text proofs: /{route}")
         if "Machine-readable release metadata" not in text:
@@ -243,19 +248,22 @@ def main() -> int:
             if found_selection != retained_v2[1]:
                 failures.append("built retained-math v2 selection disagrees")
 
-    lane_six = (
-        site
-        / "research/handoffs/homogeneous-realization-compression/index.html"
-    )
-    lane_six_text = lane_six.read_text(encoding="utf-8") if lane_six.is_file() else ""
-    for marker in (
-        "Compiler-owned retained result",
-        "ARG-RMU5D8E0003-FINITE-PLANE",
-        "g(r)=(r-4)(r^2-8r+64)",
-        "-1152",
-    ):
-        if marker not in lane_six_text:
-            failures.append(f"built Lane 6 v2 block lacks {marker!r}")
+    if retained_v2 is not None and not retained_v2_is_full(retained_v2[1]):
+        lane_six = (
+            site
+            / "research/handoffs/homogeneous-realization-compression/index.html"
+        )
+        lane_six_text = (
+            lane_six.read_text(encoding="utf-8") if lane_six.is_file() else ""
+        )
+        for marker in (
+            "Compiler-owned retained result",
+            "ARG-RMU5D8E0003-FINITE-PLANE",
+            "g(r)=(r-4)(r^2-8r+64)",
+            "-1152",
+        ):
+            if marker not in lane_six_text:
+                failures.append(f"built Lane 6 v2 block lacks {marker!r}")
 
     result_pages = list((site / "collections").glob("*/index.html"))
     claim_pages = list((site / "claims").glob("*/index.html"))
@@ -271,20 +279,57 @@ def main() -> int:
             "built claim routes: expected "
             f"{expected['technical_records']}, found {len(claim_pages)}"
         )
-    for tag, correction in retained_corrections(load_retained_math(ROOT)).items():
-        page = site / "claims" / tag / "index.html"
-        text = page.read_text(encoding="utf-8") if page.is_file() else ""
-        expected_notice = (
-            "Replaced by current working mathematics"
-            if correction["_forward_relation"] in {"corrects", "supersedes"}
-            else "A stronger current result is available"
-        )
-        if expected_notice not in text:
-            failures.append(f"built forward-linked claim lacks its notice: {tag}")
-        if correction["unit_id"] not in text:
-            failures.append(
-                f"built corrected claim does not link {correction['unit_id']}: {tag}"
+    if retained_v2 is not None and retained_v2_is_full(retained_v2[1]):
+        compatibility = retained_v2_compatibility(retained_v2[1])
+        assert compatibility is not None
+        for route in compatibility["routes"]:
+            disposition = route["disposition"]
+            if disposition not in {
+                "replacement",
+                "split_replacement",
+                "valid_weaker",
+            }:
+                continue
+            tag = route["legacy_unit_id"]
+            page = site / "claims" / tag / "index.html"
+            text = page.read_text(encoding="utf-8") if page.is_file() else ""
+            expected_notice = (
+                "A stronger current result is available"
+                if disposition == "valid_weaker"
+                else "Use the current replacement mathematics"
             )
+            if expected_notice not in text:
+                failures.append(
+                    f"built forward-linked claim lacks its notice: {tag}"
+                )
+            for target in route["targets"]:
+                if target["role"] in {"replacement", "stronger_result"} and (
+                    target["unit_id"] not in text
+                ):
+                    failures.append(
+                        f"built forward-linked claim does not link "
+                        f"{target['unit_id']}: {tag}"
+                    )
+    else:
+        retained_value = load_retained_math(ROOT)
+        if retained_value is not None:
+            for tag, correction in retained_corrections(retained_value).items():
+                page = site / "claims" / tag / "index.html"
+                text = page.read_text(encoding="utf-8") if page.is_file() else ""
+                expected_notice = (
+                    "Replaced by current working mathematics"
+                    if correction["_forward_relation"] in {"corrects", "supersedes"}
+                    else "A stronger current result is available"
+                )
+                if expected_notice not in text:
+                    failures.append(
+                        f"built forward-linked claim lacks its notice: {tag}"
+                    )
+                if correction["unit_id"] not in text:
+                    failures.append(
+                        f"built corrected claim does not link "
+                        f"{correction['unit_id']}: {tag}"
+                    )
     if len(program_pages) != expected["research_programs"]:
         failures.append(
             "built program routes: expected "
