@@ -21,6 +21,13 @@ ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT_LINK_RE = re.compile(
     r"""assets/manuscripts/(?P<filename>[^"'?&#\s]+\.pdf)"""
 )
+FULL_ROW_OBLIGATION_ID = "OBL-P5-FULL-FINITE-ROW-BASE"
+FULL_ROW_TASK_ID = "TSK-L6-FULL-ROW-BASE-V3"
+LANE6_INTERFACE_MARKERS = (
+    "TSK-L6-L9-OBSTRUCTION-GROUPOID-SCHEMA-V3",
+    "chain-homotopy",
+    "fail-closed obstruction-groupoid interface",
+)
 
 
 def _fetch(url: str) -> bytes:
@@ -85,10 +92,10 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
             item.get("obligation_id") for item in selection.get("obligations", [])
         }
         task_ids = {item.get("task_id") for item in selection.get("tasks", [])}
-        if "OBL-P5-FULL-FINITE-ROW-BASE" not in obligation_ids:
-            failures.append("deployed retained-math v2 lacks the Program 5 obligation")
-        if "TSK-P5-FULL-FINITE-ROW-BASE" not in task_ids:
-            failures.append("deployed retained-math v2 lacks the Program 5 task")
+        if FULL_ROW_OBLIGATION_ID not in obligation_ids:
+            failures.append("deployed retained-math v2 lacks the full-row obligation")
+        if FULL_ROW_TASK_ID not in task_ids:
+            failures.append("deployed retained-math v2 lacks the current Lane 6 full-row task")
 
     active_manuscripts = {
         item["filename"] for item in expected["manuscripts"]
@@ -126,11 +133,7 @@ def _check(base_url: str, expected: dict[str, Any]) -> list[str]:
             if marker not in html:
                 failures.append(f"{route}: handoff footer lacks {marker!r}")
         if handoff["program_slug"] == "homogeneous-realization-compression":
-            for marker in (
-                "L6-T1",
-                "chain-homotopy",
-                "presentation-groupoid criterion",
-            ):
+            for marker in LANE6_INTERFACE_MARKERS:
                 if marker not in html:
                     failures.append(f"{route}: current Lane 6 task lacks {marker}")
     source_index = _fetch(

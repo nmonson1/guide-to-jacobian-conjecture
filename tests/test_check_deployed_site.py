@@ -14,6 +14,29 @@ import check_deployed_site  # noqa: E402
 
 
 class DeployedRetainedMathTests(unittest.TestCase):
+    def test_live_contract_tracks_current_lane_6_graph_and_handoff(self) -> None:
+        state = json.loads((ROOT / "site-state.json").read_text(encoding="utf-8"))
+        retained = state["retained_math_v2"]["data_dir"]
+        graph = json.loads(
+            (ROOT / "data" / retained / "public-graph.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        task_ids = {item["task_id"] for item in graph["tasks"]}
+        obligation_ids = {
+            item["obligation_id"] for item in graph["obligations"]
+        }
+        self.assertIn(check_deployed_site.FULL_ROW_TASK_ID, task_ids)
+        self.assertIn(check_deployed_site.FULL_ROW_OBLIGATION_ID, obligation_ids)
+
+        lane6 = (
+            ROOT
+            / state["docs_dir"]
+            / "research/handoffs/homogeneous-realization-compression.md"
+        ).read_text(encoding="utf-8")
+        for marker in check_deployed_site.LANE6_INTERFACE_MARKERS:
+            self.assertIn(marker, lane6)
+
     def test_loads_full_graph_machine_route(self) -> None:
         graph = {
             "registry_id": "RETAINED2-test",
