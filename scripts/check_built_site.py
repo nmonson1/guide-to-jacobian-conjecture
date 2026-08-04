@@ -26,6 +26,7 @@ from generate_living_guide_v2 import (
     retained_v2_compatibility,
     retained_v2_graph,
     retained_v2_is_full,
+    task_input_is_binary,
 )
 
 
@@ -162,6 +163,27 @@ def main() -> int:
             failures.append(f"model handoff lacks release metadata footer: /{route}")
 
     for item in brief_manifest.get("task_inputs", []):
+        if task_input_is_binary(item):
+            path = site / item["route"]
+            if not path.is_file():
+                failures.append(
+                    f"missing binary model task input: /{item['route']}"
+                )
+            else:
+                payload = path.read_bytes()
+                if hashlib.sha256(payload).hexdigest() != item["sha256"]:
+                    failures.append(
+                        f"binary model task input differs from its manifest: /{item['route']}"
+                    )
+                expected_magic = {
+                    "KMRAT001": b"KMRAT001",
+                    "ZIP": b"PK\x03\x04",
+                }.get(item.get("binary_format"))
+                if expected_magic is not None and not payload.startswith(expected_magic):
+                    failures.append(
+                        f"binary model task input has the wrong magic: /{item['route']}"
+                    )
+            continue
         route = item["route"].removesuffix(".md")
         path = site / route / "index.html"
         if not path.is_file():

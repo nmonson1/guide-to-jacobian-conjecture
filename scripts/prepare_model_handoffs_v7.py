@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a public, write-once model-handoff package from a v7c-v7j handoff.
+"""Build a public, write-once model-handoff package from a v7 handoff.
 
 The nine focused lane pages and portfolio are taken from the manifest-pinned
 private handoff.  The six deeper program dossiers are compact overlays on the
@@ -14,8 +14,10 @@ from __future__ import annotations
 import argparse
 import hashlib
 import html
+import io
 import json
 import re
+import zipfile
 from pathlib import Path
 from typing import Any
 
@@ -90,6 +92,12 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "research-notes/lane3-formal-effectivity",
         "research-notes/lane3-recovery-integration-20260803-v1",
         "research-notes/lane3-order5-recovery-20260803-v1",
+        "research-notes/program3-rational-beta2-audit-20260803-v1",
+        "manuscripts/03-local-rigidity/code/rational-betti",
+        "manuscripts/03-local-rigidity/code/rational-betti/koszul_rank_q.cpp",
+        "manuscripts/03-local-rigidity/code/rational-betti/run_rational_betti_block.sh",
+        "manuscripts/03-local-rigidity/code/rational-betti/program3_rational_betti.slurm",
+        "manuscripts/03-local-rigidity/appendices/border-basis-and-betti.tex",
     ),
     "quartic-endgame": (
         "research-notes/lane4-f4-contract-20260803-v1/F4_INPUT_CONTRACT.md",
@@ -109,17 +117,23 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
     "intrinsic-degree-valuative-budgets": (
         "research-notes/lane5-degree-budgets",
         "research-notes/lane5-collision-transport-20260803-v1",
+        "research-notes/lane5-mixed-return-20260803-v1",
         "research-notes/finite-diagnostics-20260803-v1/verify_lane5_encoded_shear_packet.py",
     ),
     "homogeneous-realization-compression": (
         "research-tools/filtered_operation_complex",
         "research-notes/lane6-transverse-source-obstruction-20260802-v1",
+        "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_OVERLAP_THEOREM.md",
+        "research-notes/lane9-wall-shear-20260802-v1/research-notes/p6-chart-correspondence/WALL_SHEAR_DUAL_TRIPLE_OVERLAP.md",
         "research-notes/finite-diagnostics-20260803-v1/verify_lane6_moving_target_pilot.py",
+        "manuscripts/05-homogeneous-descendants/code/extensions_verifier.py",
         "manuscripts/05-homogeneous-descendants/appendices/monolith-prolongation.tex",
     ),
     "five-dimensional-collision-geometry": (
         "research-notes/lane7-component-inputs-20260803-v1",
         "research-notes/lane7-projective-kernel-20260803-v1",
+        "research-notes/lane7-job-accounting-20260803-v1",
+        "research-notes/lane7-small-witness-20260804-v1",
         "research-notes/lane7-split-incidence-20260802-v1/lane7-split-incidence-theorem.md",
         "research-notes/lane7-split-incidence-20260802-v1/reconstruct_matrices.py",
         "research-notes/lane7-split-incidence-20260802-v1/verify_split_incidence_theorem.py",
@@ -131,6 +145,7 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
     ),
     "plane-newton-queue-terminal-certificates": (
         "research-notes/lane8-f2-support-determinacy-audit-20260803-v1",
+        "research-notes/lane8-f2-root-divisibility-20260804-v1",
         "research-notes/lane8-full-root-closure-20260803-v1",
         "research-notes/lane89-mathematical-recovery-20260803-v1",
         "research-notes/lane8-proof-queue-20260802-v1",
@@ -142,8 +157,11 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/verify_F2_degree125_seed.py",
         "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_primary_belyi.py",
         "manuscripts/06-plane-boundary/computational-supplement/terminal-boundary/terminal_face_rigidity.py",
+        "manuscripts/06-plane-boundary/computational-supplement/degree-296-compact/THEOREM_AND_DEPENDENCIES.md",
     ),
     "plane-chart-correspondence-global-attachment": (
+        "research-tools/filtered_operation_complex",
+        "research-notes/lane8-f2-root-divisibility-20260804-v1",
         "research-notes/lane89-mathematical-recovery-20260803-v1",
         "research-notes/p6-chart-correspondence/LANE9_F2_PARAMETER_COMPLETE_RECURRENCE_V2.md",
         "research-notes/p6-chart-correspondence/lane9_f2_attachment_recurrence.py",
@@ -169,6 +187,37 @@ def _sha256(payload: bytes) -> str:
 def _source_anchor(repo_path: str) -> str:
     """Return a compact stable anchor for one canonical source path."""
     return f"source-{_sha256(repo_path.encode('utf-8'))[:16]}"
+
+
+def _deterministic_source_zip(files: list[tuple[str, bytes]]) -> bytes:
+    """Return a deterministic ZIP of sanitized repository-relative files."""
+    stream = io.BytesIO()
+    with zipfile.ZipFile(
+        stream,
+        mode="w",
+        compression=zipfile.ZIP_DEFLATED,
+        compresslevel=9,
+        strict_timestamps=True,
+    ) as archive:
+        for repo_path, payload in sorted(files):
+            path = Path(repo_path)
+            if (
+                path.is_absolute()
+                or ".." in path.parts
+                or path.as_posix() != repo_path
+            ):
+                raise ValueError(f"unsafe source archive path: {repo_path}")
+            info = zipfile.ZipInfo(repo_path, date_time=(1980, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.create_system = 3
+            info.external_attr = 0o100644 << 16
+            archive.writestr(
+                info,
+                payload,
+                compress_type=zipfile.ZIP_DEFLATED,
+                compresslevel=9,
+            )
+    return stream.getvalue()
 
 
 def _load(path: Path) -> dict[str, Any]:
@@ -223,26 +272,39 @@ def _selected_files(repo_root: Path, slug: str) -> list[Path]:
 
 def _source_packet(
     *, sequence: int, slug: str, repo_root: Path, source_commit: str
-) -> tuple[bytes, dict[str, Any], dict[str, str]]:
+) -> tuple[
+    bytes,
+    dict[str, Any],
+    dict[str, str],
+    bytes,
+    dict[str, Any],
+]:
     paths = _selected_files(repo_root, slug)
     records: list[dict[str, Any]] = []
     payloads: list[tuple[str, str]] = []
+    public_files: list[tuple[str, bytes]] = []
     for path in paths:
         repo_path = path.relative_to(repo_root).as_posix()
         payload = path.read_bytes()
         text, transformed = _portable_source_text(payload.decode("utf-8"))
         _validate_public(text, source=path)
+        public_payload = text.encode("utf-8")
         record = {
             "repo_path": repo_path,
             "packet_path": repo_path,
             "packet_anchor": _source_anchor(repo_path),
             "sha256": _sha256(payload),
             "bytes": len(payload),
+            "public_sha256": _sha256(public_payload),
+            "public_bytes": len(public_payload),
         }
         if transformed:
-            record["public_transform"] = "checkout-only locators replaced by portable placeholders"
+            record["public_transform"] = (
+                "checkout-only locators replaced by portable placeholders"
+            )
         records.append(record)
         payloads.append((repo_path, text))
+        public_files.append((repo_path, public_payload))
 
     parts = [
         f"# Lane {sequence} exact research source packet",
@@ -308,9 +370,38 @@ def _source_packet(
             "files": records,
         },
     }
-    return payload, item, {
-        record["repo_path"]: record["packet_anchor"] for record in records
+    archive_payload = _deterministic_source_zip(public_files)
+    archive_item = {
+        "input_id": f"LANE{sequence}-SOURCE-TREE-ARCHIVE-V1",
+        "kind": "runnable_source_archive",
+        "title": f"Lane {sequence} optional runnable source tree",
+        "source": f"lane-{sequence}-source-files.zip",
+        "route": f"research/inputs/lane-{sequence}-source-files.zip",
+        "media_type": "application/zip",
+        "binary_format": "ZIP",
+        "sha256": _sha256(archive_payload),
+        "bytes": len(archive_payload),
+        "source_packet_input_id": item["input_id"],
+        "source_tree": {
+            "source_root": "jacobian_repository",
+            "source_commit": source_commit,
+            "files": [
+                {
+                    "path": repo_path,
+                    "sha256": _sha256(public_payload),
+                    "bytes": len(public_payload),
+                }
+                for repo_path, public_payload in public_files
+            ],
+        },
     }
+    return (
+        payload,
+        item,
+        {record["repo_path"]: record["packet_anchor"] for record in records},
+        archive_payload,
+        archive_item,
+    )
 
 
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
@@ -327,6 +418,7 @@ def _public_lane_source(
     footer_links = [
         "[Portfolio](state-of-the-program.md)",
         f"[Exact source packet](lane-{sequence}-source-packet.md)",
+        f"[Optional runnable source ZIP](../inputs/lane-{sequence}-source-files.zip)",
     ]
     if sequence == 7:
         footer_links.append(
@@ -374,6 +466,11 @@ def _public_lane_source(
         return f"[{label}](lane-{sequence}-source-packet.md#{anchor})"
 
     source = LINK_RE.sub(replace_link, source)
+    source = source.replace(
+        "https://nmonson1.github.io/guide-to-jacobian-conjecture/"
+        "research/inputs/lane3-exact-multiplier.bin",
+        "../inputs/lane3-exact-multiplier.bin",
+    )
     if "../../../" in source or "](/fss/" in source:
         raise ValueError(f"{slug}: repository-only link survived transformation")
     required_groups = (
@@ -383,6 +480,7 @@ def _public_lane_source(
             "## Setup and notation",
             "## Newton-root conventions",
             "## Fixed \\(F_2\\) chart and support",
+            "## Ambient coefficient windows for Lane 8's \\(F_2\\) family",
         ),
         (
             "## Results to use",
@@ -390,7 +488,12 @@ def _public_lane_source(
             "## Closed mathematics below 125",
         ),
         ("## Live problem",),
-        ("## Tasks", "## Ready task ", "## Interface-ready task "),
+        (
+            "## Current tasks",
+            "## Tasks",
+            "## Ready task ",
+            "## Interface-ready task ",
+        ),
         ("## Direct sources", "## Exact sources"),
     )
     missing = [
@@ -407,24 +510,60 @@ def _public_lane_source(
 def _public_portfolio(source: str) -> str:
     if not source.startswith("# Nine research directions around the Jacobian conjecture\n"):
         raise ValueError("portfolio v7 title changed")
-    if source.count("Research portfolio · 2026-08-03") != 1:
-        raise ValueError("portfolio v7 date line changed")
-    source = source.replace(
-        "Research portfolio · 2026-08-03", "Updated 3 August 2026", 1
+    source, date_replacements = re.subn(
+        r"Research portfolio · 2026-08-(03|04)",
+        lambda match: f"Updated {int(match.group(1))} August 2026",
+        source,
+        count=1,
     )
+    if date_replacements != 1:
+        raise ValueError("portfolio v7 date line changed")
     new_footer = (
         "\n---\n[Release metadata](release.json) · "
         "[Retained mathematics](../working-mathematics/index.md) · "
         "[Current proof sources](../proof-sources/index.md)\n"
     )
     source, footer_replacements = re.subn(
-        r"\n---\nSuccessor handoff v7[c-j][^\n]*\n\Z", new_footer, source
+        r"\n---\nSuccessor handoff v7[a-z][^\n]*\n\Z", new_footer, source
     )
     if footer_replacements != 1:
         raise ValueError("portfolio v7 footer changed")
     source = source.replace("lanes/", "")
+    source = source.replace(
+        "[current research-task roadmap](TASK_ROADMAP.md)",
+        "[current research-task roadmap](../tasks/index.md)",
+    )
+    verifier_anchor = _source_anchor(
+        "research-notes/lane5-degree-budgets/verify_baseline_counterexample.py"
+    )
+    source = source.replace(
+        "[public verifier](../../research-notes/lane5-degree-budgets/verify_baseline_counterexample.py)",
+        f"[public verifier](lane-5-source-packet.md#{verifier_anchor})",
+    )
     _validate_public(source, source=Path("state-of-the-program.md"))
     return source
+
+
+def _public_task_roadmap(source: str) -> bytes:
+    if not source.startswith("# Current research-task roadmap\n"):
+        raise ValueError("task roadmap title changed")
+    rendered = re.sub(
+        r"\(lanes/([^)]+)\.md\)",
+        r"(../handoffs/\1.md)",
+        source,
+    )
+    rendered = rendered.replace(
+        "[Back to the portfolio](README.md)",
+        "[Back to the portfolio](../handoffs/state-of-the-program.md)",
+    )
+    rendered = rendered.rstrip() + "\n\n---\n"
+    rendered += (
+        "[Release metadata](../handoffs/release.json) · "
+        "[Retained mathematics](../working-mathematics/index.md) · "
+        "[Current proof sources](../proof-sources/index.md)\n"
+    )
+    _validate_public(rendered, source=Path("research-task-roadmap.md"))
+    return rendered.encode("utf-8")
 
 
 def _verified_handoff_sources(
@@ -433,8 +572,8 @@ def _verified_handoff_sources(
     manifest_payload = lane_manifest_path.read_bytes()
     manifest = _load(lane_manifest_path)
     handoff_version = manifest.get("handoff_version")
-    if handoff_version not in {"7c", "7d", "7e", "7f", "7g", "7h", "7i", "7j"} or manifest.get("lane_count") != 9:
-        raise ValueError("source manifest must select exactly nine v7c-v7j lanes")
+    if re.fullmatch(r"7[a-z]", str(handoff_version)) is None or manifest.get("lane_count") != 9:
+        raise ValueError("source manifest must select exactly nine version-7 lanes")
     lanes = manifest.get("lanes")
     if lanes != [{"lane": sequence, "slug": slug} for sequence, slug in LANES]:
         raise ValueError("v7 lane order or membership changed")
@@ -442,7 +581,10 @@ def _verified_handoff_sources(
 
     sources: dict[str, str] = {}
     portfolio = lane_source_dir / "README.md"
-    paths = [("state-of-the-program", portfolio)] + [
+    paths = [
+        ("state-of-the-program", portfolio),
+        ("task-roadmap", lane_source_dir / "TASK_ROADMAP.md"),
+    ] + [
         (slug, lane_source_dir / "lanes" / f"{slug}.md") for _, slug in LANES
     ]
     for key, path in paths:
@@ -551,6 +693,25 @@ def _copy_auxiliary_inputs(base: Path, base_manifest: dict[str, Any]) -> list[tu
     return prepared
 
 
+def _lane3_multiplier_input(path: Path) -> tuple[bytes, dict[str, Any]]:
+    """Package the exact rational multiplier as a directly runnable input."""
+    payload = path.read_bytes()
+    if not payload.startswith(b"KMRAT001"):
+        raise ValueError(f"Lane 3 multiplier has the wrong magic: {path}")
+    item = {
+        "input_id": "LANE3-EXACT-MULTIPLIER-V1",
+        "kind": "exact_binary_input",
+        "title": "Lane 3 exact rational multiplication data",
+        "source": "lane3-exact-multiplier.bin",
+        "route": "research/inputs/lane3-exact-multiplier.bin",
+        "media_type": "application/octet-stream",
+        "binary_format": "KMRAT001",
+        "sha256": _sha256(payload),
+        "bytes": len(payload),
+    }
+    return payload, item
+
+
 def build(args: argparse.Namespace) -> dict[str, Any]:
     base = args.base_dir.resolve()
     repo_root = args.jacobian_repo.resolve()
@@ -584,7 +745,8 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
         raise ValueError("program dossiers require retained graph schema v2")
 
     packet_outputs: dict[
-        str, tuple[bytes, dict[str, Any], dict[str, str]]
+        str,
+        tuple[bytes, dict[str, Any], dict[str, str], bytes, dict[str, Any]],
     ] = {}
     for sequence, slug in LANES:
         packet_outputs[slug] = _source_packet(
@@ -600,6 +762,7 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
     portfolio_payload = _public_portfolio(
         handoff_sources["state-of-the-program"]
     ).encode("utf-8")
+    task_roadmap_payload = _public_task_roadmap(handoff_sources["task-roadmap"])
     prepared_briefs.append(
         (
             portfolio_item["source"],
@@ -637,9 +800,14 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
 
     prepared_briefs.sort(key=lambda prepared: prepared[2]["display_sequence"])
     auxiliary = _copy_auxiliary_inputs(base, base_manifest)
+    lane3_multiplier = _lane3_multiplier_input(
+        args.lane3_multiplier.resolve()
+    )
     task_inputs = [
         (packet_outputs[slug][0], packet_outputs[slug][1]) for _, slug in LANES
-    ] + auxiliary
+    ] + [
+        (packet_outputs[slug][3], packet_outputs[slug][4]) for _, slug in LANES
+    ] + auxiliary + [lane3_multiplier]
 
     output.mkdir()
     for name, payload, _ in prepared_briefs:
@@ -671,9 +839,17 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
         ),
         "task_input_count": len(task_inputs),
         "task_inputs": [item for _, item in task_inputs],
+        "task_roadmap": {
+            "source": "research-task-roadmap.md",
+            "route": "research/tasks/index.md",
+            "sha256": _sha256(task_roadmap_payload),
+            "bytes": len(task_roadmap_payload),
+            "words": len(task_roadmap_payload.decode("utf-8").split()),
+        },
         "retained_math_v2_markers": [],
         "briefs": [item for _, _, item in prepared_briefs],
     }
+    _write_new(output / "research-task-roadmap.md", task_roadmap_payload)
     manifest_payload = (json.dumps(manifest, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
     _write_new(output / "manifest.json", manifest_payload)
     return {
@@ -693,6 +869,7 @@ def main() -> int:
     parser.add_argument("--lane-source-dir", type=Path, required=True)
     parser.add_argument("--lane-manifest", type=Path, required=True)
     parser.add_argument("--retained-graph", type=Path, required=True)
+    parser.add_argument("--lane3-multiplier", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--release-id", required=True)
     parser.add_argument("--updated-at", required=True)

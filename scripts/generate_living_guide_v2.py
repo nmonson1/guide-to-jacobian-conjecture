@@ -500,6 +500,28 @@ def load(root: Path) -> tuple[
             raise ValueError(f"model task-input digest mismatch: {source}")
         if item["route"] in brief_routes:
             raise ValueError(f"model task-input route collides with brief: {item['route']}")
+    task_roadmap = brief_manifest.get("task_roadmap")
+    if not isinstance(task_roadmap, dict):
+        raise ValueError("model handoff package does not define a task roadmap")
+    roadmap_source = (
+        root
+        / "data"
+        / state["model_briefs"]["data_dir"]
+        / task_roadmap["source"]
+    )
+    if not roadmap_source.is_file():
+        raise ValueError(f"missing research-task roadmap: {roadmap_source}")
+    roadmap_payload = roadmap_source.read_bytes()
+    if (
+        len(roadmap_payload) != task_roadmap["bytes"]
+        or hashlib.sha256(roadmap_payload).hexdigest()
+        != task_roadmap["sha256"]
+    ):
+        raise ValueError("research-task roadmap differs from its manifest")
+    if task_roadmap["route"] in brief_routes or task_roadmap["route"] in {
+        item["route"] for item in task_inputs
+    }:
+        raise ValueError("research-task roadmap route collides with handoff data")
     expected = state["expected_counts"]
     if graph["counts"] != {
         "claims": expected["technical_records"],
@@ -542,6 +564,12 @@ def source_packet_routes(brief_manifest: dict[str, Any]) -> dict[str, str]:
                 # hash-pinned to the same repository payload.
                 routes.setdefault(candidate, public_route)
     return routes
+
+
+def task_input_is_binary(item: dict[str, Any]) -> bool:
+    """Return whether a task input is copied byte-for-byte instead of rendered."""
+    media_type = item.get("media_type")
+    return isinstance(media_type, str) and not media_type.startswith("text/")
 
 
 def resolve_manuscript_links(
@@ -642,11 +670,22 @@ def build_release_metadata(root: Path) -> dict[str, Any]:
             "task_inputs": [
                 {
                     "input_id": item["input_id"],
-                    "route": item["route"].removesuffix(".md") + "/",
+                    "route": (
+                        item["route"]
+                        if task_input_is_binary(item)
+                        else item["route"].removesuffix(".md") + "/"
+                    ),
                     "source_sha256": item["sha256"],
                 }
                 for item in brief_manifest.get("task_inputs", [])
             ],
+            "task_roadmap": {
+                "route": brief_manifest["task_roadmap"]["route"].removesuffix(
+                    ".md"
+                )
+                + "/",
+                "source_sha256": brief_manifest["task_roadmap"]["sha256"],
+            },
         },
         "handoffs": handoffs,
         "manuscript_sources": {
@@ -1532,6 +1571,11 @@ def render_model_brief(
     footer_links = []
     if retained_target is not None:
         footer_links.append(f"[Retained working mathematics]({retained_target})")
+    if lane:
+        footer_links.append(
+            "[Optional runnable source ZIP]"
+            f"(../inputs/lane-{brief['lane_sequence']}-source-files.zip)"
+        )
     footer_links.extend(
         [
             f"[Current proof sources]({source_target})",
@@ -2111,7 +2155,9 @@ def render_research_index(
         "",
         "## Model-ready handoffs",
         "",
-        "A model-ready handoff is a single self-contained web page, not a download bundle. It records enough setup, known results, dead ends, tasks, and evidence boundaries to begin useful work without access to private conversations.",
+        "A model-ready handoff is a single self-contained web page. Optional source-tree archives support local execution, but no download is required to read the setup, known results, tasks, and evidence boundaries.",
+        "",
+        "[Open the current research-task roadmap](tasks/index.md) for every ready and blocked task, its effort profile, dependencies, and exact missing inputs.",
         "",
     ]
     primary = sorted(
@@ -2279,7 +2325,7 @@ def render_materials(materials: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
-def expected_outputs(root: Path) -> dict[Path, str]:
+def expected_outputs(root: Path) -> dict[Path, str | bytes]:
     _, claims, collections, programs, manuscripts, materials, briefs = load(root)
     release = build_release_metadata(root)
     docs = root / PUBLIC_DOCS_DIR
@@ -2357,7 +2403,18 @@ def expected_outputs(root: Path) -> dict[Path, str]:
     brief_manifest = _load(root / "data" / MODEL_BRIEFS_DATA_DIR / "manifest.json")
     for item in brief_manifest.get("task_inputs", []):
         source_path = root / "data" / MODEL_BRIEFS_DATA_DIR / item["source"]
-        outputs[docs / item["route"]] = source_path.read_text(encoding="utf-8")
+        outputs[docs / item["route"]] = (
+            source_path.read_bytes()
+            if task_input_is_binary(item)
+            else source_path.read_text(encoding="utf-8")
+        )
+    task_roadmap = brief_manifest["task_roadmap"]
+    roadmap_source = (
+        root / "data" / MODEL_BRIEFS_DATA_DIR / task_roadmap["source"]
+    )
+    outputs[docs / task_roadmap["route"]] = roadmap_source.read_text(
+        encoding="utf-8"
+    )
     public_source_packets = source_packet_routes(brief_manifest)
     outputs[docs / "research/handoffs/release.json"] = (
         json.dumps(release, indent=2, sort_keys=True) + "\n"
@@ -2500,13 +2557,19 @@ def main() -> int:
             if path.exists():
                 raise FileExistsError(f"refusing to overwrite generated page: {path}")
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(content, encoding="utf-8")
+            if isinstance(content, bytes):
+                path.write_bytes(content)
+            else:
+                path.write_text(content, encoding="utf-8")
         print(f"Generated {len(outputs)} graph-native pages.")
         return 0
     failures = []
     for path, expected in sorted(outputs.items()):
         if not path.is_file():
             failures.append(f"missing generated file: {path.relative_to(root)}")
+        elif isinstance(expected, bytes):
+            if path.read_bytes() != expected:
+                failures.append(f"stale generated file: {path.relative_to(root)}")
         elif path.read_text(encoding="utf-8") != expected:
             failures.append(f"stale generated file: {path.relative_to(root)}")
     expected_paths = set(outputs)
@@ -2515,6 +2578,7 @@ def main() -> int:
         root / PUBLIC_DOCS_DIR / "collections",
         root / PUBLIC_DOCS_DIR / "research/programs",
         root / PUBLIC_DOCS_DIR / "research/handoffs",
+        root / PUBLIC_DOCS_DIR / "research/tasks",
         root / PUBLIC_DOCS_DIR / "research/proof-sources",
         root / PUBLIC_DOCS_DIR / "research/working-mathematics/programs",
         root / PUBLIC_DOCS_DIR / "research/working-mathematics/units",

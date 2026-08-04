@@ -7,6 +7,7 @@ import hashlib
 import json
 import re
 import sys
+import zipfile
 from datetime import datetime
 from pathlib import Path
 
@@ -33,6 +34,7 @@ from generate_living_guide_v2 import (
     retained_v2_graph,
     retained_v2_is_full,
     resolve_manuscript_links,
+    task_input_is_binary,
 )
 
 
@@ -119,6 +121,7 @@ LANE_HANDOFF_V7C_SEMANTIC_GROUPS = (
             "## Setup and notation",
             "## Newton-root conventions",
             "## Fixed \\(F_2\\) chart and support",
+            "## Ambient coefficient windows for Lane 8's \\(F_2\\) family",
         ),
     ),
     (
@@ -130,7 +133,15 @@ LANE_HANDOFF_V7C_SEMANTIC_GROUPS = (
         ),
     ),
     ("live problem", ("## Live problem",)),
-    ("ready task", ("## Tasks", "## Ready task ", "## Interface-ready task ")),
+    (
+        "ready task",
+        (
+            "## Current tasks",
+            "## Tasks",
+            "## Ready task ",
+            "## Interface-ready task ",
+        ),
+    ),
     (
         "scope boundary",
         (
@@ -138,6 +149,7 @@ LANE_HANDOFF_V7C_SEMANTIC_GROUPS = (
             "## Non-ready follow-up",
             "## Optional exact-CAS route",
             "## Non-ready \\(F_2\\) integrations",
+            "**Mathematical limits.**",
         ),
     ),
     ("sources", ("## Direct sources", "## Exact sources")),
@@ -627,6 +639,7 @@ def main() -> int:
     manuscript_manifest = json.loads(
         (ROOT / "data" / MANUSCRIPTS_DATA_DIR / "manifest.json").read_text()
     )
+    expected_release = build_release_metadata(ROOT)
     manuscripts_by_sequence = {
         item["filename"][:2]: item for item in manuscript_manifest["manuscripts"]
     }
@@ -637,13 +650,61 @@ def main() -> int:
     if brief_manifest.get("primary_entrypoint_count") != 10:
         failures.append("primary model-entrypoint count is not ten")
     task_inputs = brief_manifest.get("task_inputs", [])
+    task_roadmap = brief_manifest.get("task_roadmap")
+    if not isinstance(task_roadmap, dict):
+        failures.append("model handoff manifest lacks its task roadmap")
+    else:
+        roadmap_source = MODEL_BRIEF_DATA / task_roadmap.get("source", "")
+        roadmap_route = DOCS / task_roadmap.get("route", "")
+        if not roadmap_source.is_file():
+            failures.append("model handoff task-roadmap source is missing")
+        else:
+            roadmap_payload = roadmap_source.read_bytes()
+            if (
+                len(roadmap_payload) != task_roadmap.get("bytes")
+                or _sha(roadmap_source) != task_roadmap.get("sha256")
+            ):
+                failures.append("model handoff task roadmap is not hash-pinned")
+        if not roadmap_route.is_file():
+            failures.append("rendered research-task roadmap is missing")
+        elif full_v2_graph is not None:
+            roadmap_text = roadmap_route.read_text(encoding="utf-8")
+            roadmap_task_ids = re.findall(
+                r"(?m)^`(TSK-[A-Z0-9-]+)` ·", roadmap_text
+            )
+            expected_task_ids = [
+                task["task_id"]
+                for task in full_v2_graph["tasks"]
+                for _ in task.get("lane_ids", [])
+            ]
+            if sorted(roadmap_task_ids) != sorted(expected_task_ids):
+                failures.append(
+                    "research-task roadmap disagrees with active graph tasks"
+                )
+            for marker in ("**Ready now**", "**Blocked**", "Blocked on:"):
+                if marker not in roadmap_text:
+                    failures.append(
+                        f"research-task roadmap lacks {marker!r}"
+                    )
     is_v7_handoff = (
         brief_manifest.get("schema_version") == 7
-        and brief_manifest.get("source_handoff", {}).get("handoff_version")
-        in {"7c", "7d", "7e", "7f", "7g", "7h", "7i", "7j"}
+        and re.fullmatch(
+            r"7[a-z]",
+            str(
+                brief_manifest.get("source_handoff", {}).get(
+                    "handoff_version", ""
+                )
+            ),
+        )
+        is not None
     )
     if brief_manifest.get("task_input_count", 0) != len(task_inputs):
         failures.append("model task-input count mismatch")
+    task_inputs_by_id = {
+        item.get("input_id"): item
+        for item in task_inputs
+        if isinstance(item.get("input_id"), str)
+    }
     if brief_manifest.get("schema_version") == 5 and {
         item.get("input_id") for item in task_inputs
     } != {
@@ -671,13 +732,17 @@ def main() -> int:
             for sequence in range(1, 10)
         }
         expected_inputs = expected_source_packets | {
+            "LANE3-EXACT-MULTIPLIER-V1",
             "LANE7-COLLISION-CHART-V1",
             "LANE8-RAW-SUPPORT-RECONSTRUCTION-V1",
+        } | {
+            f"LANE{sequence}-SOURCE-TREE-ARCHIVE-V1"
+            for sequence in range(1, 10)
         }
         if {item.get("input_id") for item in task_inputs} != expected_inputs:
             failures.append(
-                "handoff v7 must expose nine research packets and the exact "
-                "Lane 7 and Lane 8 inputs"
+                "handoff v7 must expose nine research packets, nine optional "
+                "source archives, and the exact Lane 3, Lane 7, and Lane 8 inputs"
             )
     for item in task_inputs:
         source = MODEL_BRIEF_DATA / item["source"]
@@ -689,6 +754,137 @@ def main() -> int:
             failures.append(f"model task-input byte count mismatch: {item['source']}")
         if not rendered.is_file() or _sha(rendered) != item["sha256"]:
             failures.append(f"model task-input render mismatch: {item['route']}")
+        if task_input_is_binary(item):
+            payload = source.read_bytes()
+            input_id = str(item.get("input_id", ""))
+            expected_magic = {
+                "KMRAT001": b"KMRAT001",
+                "ZIP": b"PK\x03\x04",
+            }.get(item.get("binary_format"))
+            if expected_magic is not None and not payload.startswith(
+                expected_magic
+            ):
+                failures.append(
+                    f"binary task input has the wrong magic: {item['source']}"
+                )
+            if item.get("media_type") == "application/octet-stream":
+                if input_id != "LANE3-EXACT-MULTIPLIER-V1":
+                    failures.append(f"unknown exact binary task input: {item['source']}")
+                if item.get("binary_format") != "KMRAT001":
+                    failures.append("Lane 3 exact multiplier format is not pinned")
+            elif item.get("media_type") == "application/zip":
+                archive_match = re.fullmatch(
+                    r"LANE(?P<sequence>[1-9])-SOURCE-TREE-ARCHIVE-V1",
+                    input_id,
+                )
+                if archive_match is None or item.get("binary_format") != "ZIP":
+                    failures.append(f"invalid lane source archive: {item['source']}")
+                source_tree = item.get("source_tree", {})
+                source_files = (
+                    source_tree.get("files", [])
+                    if isinstance(source_tree, dict)
+                    else []
+                )
+                if not source_files:
+                    failures.append(
+                        f"lane source archive has no files: {item['source']}"
+                    )
+                elif archive_match is not None:
+                    sequence = archive_match.group("sequence")
+                    packet = task_inputs_by_id.get(
+                        f"LANE{sequence}-RESEARCH-SOURCE-PACKET-V2"
+                    )
+                    packet_files = {
+                        record.get("repo_path"): record
+                        for record in (
+                            packet.get("source_packet", {}).get("files", [])
+                            if isinstance(packet, dict)
+                            else []
+                        )
+                    }
+                    expected_archive_files = {
+                        record.get("path"): record for record in source_files
+                    }
+                    if set(packet_files) != set(expected_archive_files):
+                        failures.append(
+                            f"lane source archive membership differs from its packet: "
+                            f"{item['source']}"
+                        )
+                    try:
+                        with zipfile.ZipFile(source) as archive:
+                            names = archive.namelist()
+                            if len(names) != len(set(names)) or set(names) != set(
+                                expected_archive_files
+                            ):
+                                failures.append(
+                                    f"lane source archive contains unexpected paths: "
+                                    f"{item['source']}"
+                                )
+                            for name in names:
+                                path = Path(name)
+                                if path.is_absolute() or ".." in path.parts:
+                                    failures.append(
+                                        f"lane source archive contains an unsafe path: "
+                                        f"{item['source']}: {name}"
+                                    )
+                                    continue
+                                member = archive.read(name)
+                                record = expected_archive_files.get(name, {})
+                                if (
+                                    len(member) != record.get("bytes")
+                                    or hashlib.sha256(member).hexdigest()
+                                    != record.get("sha256")
+                                ):
+                                    failures.append(
+                                        f"lane source archive member differs from its "
+                                        f"manifest: {item['source']}: {name}"
+                                    )
+                                packet_record = packet_files.get(name, {})
+                                if (
+                                    packet_record.get("public_bytes")
+                                    != len(member)
+                                    or packet_record.get("public_sha256")
+                                    != hashlib.sha256(member).hexdigest()
+                                ):
+                                    failures.append(
+                                        f"lane source archive member differs from the "
+                                        f"sanitized packet payload: {item['source']}: "
+                                        f"{name}"
+                                    )
+                                try:
+                                    member_text = member.decode("utf-8")
+                                except UnicodeDecodeError:
+                                    failures.append(
+                                        f"lane source archive member is not UTF-8: "
+                                        f"{item['source']}: {name}"
+                                    )
+                                else:
+                                    _sensitive(
+                                        member_text,
+                                        f"{item['source']}:{name}",
+                                        failures,
+                                    )
+                    except zipfile.BadZipFile:
+                        failures.append(
+                            f"lane source archive is not a valid ZIP: {item['source']}"
+                        )
+            else:
+                failures.append(f"unknown binary task-input media type: {item['source']}")
+            release_input = next(
+                (
+                    candidate
+                    for candidate in expected_release["handoff_source"][
+                        "task_inputs"
+                    ]
+                    if candidate["input_id"] == item["input_id"]
+                ),
+                None,
+            )
+            if release_input is None or release_input["route"] != item["route"]:
+                failures.append(
+                    "binary release route is missing or has a directory suffix"
+                )
+            continue
         text = source.read_text(encoding="utf-8")
         markers_by_id = {
             "LANE7-COLLISION-CHART-V1": (
@@ -837,6 +1033,17 @@ def main() -> int:
                     failures.append(
                         f"{brief['source']}: lane does not link its public "
                         "research source packet"
+                    )
+                expected_archive = (
+                    f"../inputs/lane-{brief['lane_sequence']}-source-files.zip"
+                )
+                if (
+                    brief_manifest.get("schema_version") == 7
+                    and expected_archive not in source_text
+                ):
+                    failures.append(
+                        f"{brief['source']}: lane does not link its optional "
+                        "runnable source archive"
                     )
                 if (
                     brief_manifest.get("schema_version") == 6
@@ -998,7 +1205,9 @@ def main() -> int:
             failures.append(f"duplicate model brief route: {brief['route']}")
         brief_routes.add(brief["route"])
         if kind == "lane":
-            lower, upper = 350, 2000
+            # Graph-compiled task cards make the most technically supplied lane
+            # slightly longer than the historical 2,000-word presentation cap.
+            lower, upper = 350, 2200
         elif kind == "program":
             lower, upper = 100, 800
         else:
@@ -1183,7 +1392,6 @@ def main() -> int:
             failures.append(f"manuscript page count mismatch: {item['filename']}")
 
     release_path = DOCS / "research/handoffs/release.json"
-    expected_release = build_release_metadata(ROOT)
     if not release_path.is_file():
         failures.append("machine-readable handoff release is missing")
     else:

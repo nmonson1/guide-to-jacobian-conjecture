@@ -5,8 +5,10 @@ from __future__ import annotations
 
 import argparse
 import functools
+import hashlib
 import http.server
 import json
+import re
 import threading
 from pathlib import Path
 
@@ -22,6 +24,7 @@ V7C_LANE_SEMANTIC_GROUPS = (
             "Setup and notation",
             "Newton-root conventions",
             "Fixed ",
+            "Ambient coefficient windows",
         ),
     ),
     (
@@ -33,7 +36,10 @@ V7C_LANE_SEMANTIC_GROUPS = (
         ),
     ),
     ("live problem", ("Live problem",)),
-    ("ready task", ("Tasks", "Ready task ", "Interface-ready task ")),
+    (
+        "ready task",
+        ("Current tasks", "Tasks", "Ready task ", "Interface-ready task "),
+    ),
     (
         "scope boundary",
         (
@@ -41,6 +47,7 @@ V7C_LANE_SEMANTIC_GROUPS = (
             "Non-ready follow-up",
             "Optional exact-CAS route",
             "Non-ready ",
+            "Mathematical limits",
         ),
     ),
     ("sources", ("Direct sources", "Exact sources")),
@@ -165,7 +172,15 @@ def run(
         and model_brief_manifest.get("source_handoff", {}).get(
             "handoff_version"
         )
-        in {"7c", "7d", "7e", "7f", "7g", "7h", "7i", "7j"}
+        and re.fullmatch(
+            r"7[a-z]",
+            str(
+                model_brief_manifest.get("source_handoff", {}).get(
+                    "handoff_version", ""
+                )
+            ),
+        )
+        is not None
     )
     retained_v2_manifest = None
     if state.get("retained_math_v2") is not None:
@@ -219,8 +234,27 @@ def run(
                 route = brief["route"].removesuffix(".md") + "/"
                 check_page(desktop, base + route)
             for item in model_brief_manifest.get("task_inputs", []):
-                route = item["route"].removesuffix(".md") + "/"
-                check_page(desktop, base + route)
+                route = item["route"]
+                if route.endswith(".md"):
+                    route = route.removesuffix(".md") + "/"
+                    check_page(desktop, base + route)
+                else:
+                    response = desktop.request.get(base + route)
+                    require(response.ok, f"failed to load binary input {base + route}")
+                    payload = response.body()
+                    require(
+                        hashlib.sha256(payload).hexdigest() == item["sha256"],
+                        f"binary input has the wrong hash: {base + route}",
+                    )
+                    expected_magic = {
+                        "KMRAT001": b"KMRAT001",
+                        "ZIP": b"PK\x03\x04",
+                    }.get(item.get("binary_format"))
+                    if expected_magic is not None:
+                        require(
+                            payload.startswith(expected_magic),
+                            f"binary input has the wrong magic: {base + route}",
+                        )
 
             desktop.goto(base + "counterexample/", wait_until="networkidle")
             desktop.wait_for_selector("mjx-container", timeout=15_000)
@@ -368,8 +402,13 @@ def run(
                     if is_v7_handoff:
                         heading_texts = [
                             text.casefold()
-                            for text in desktop.locator("main h2").all_inner_texts()
+                            for text in desktop.locator(
+                                "main h2, main h3"
+                            ).all_inner_texts()
                         ]
+                        heading_texts.append(
+                            desktop.locator("main").inner_text().casefold()
+                        )
                         for name, alternatives in V7C_LANE_SEMANTIC_GROUPS:
                             require(
                                 any(

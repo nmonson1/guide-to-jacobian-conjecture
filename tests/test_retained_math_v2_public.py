@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from generate_living_guide_v2 import (  # noqa: E402
     _published_evidence_locator,
+    render_model_brief,
     render_compatible_claim,
     render_compatible_collection,
     render_retained_v2_unit,
@@ -31,6 +32,30 @@ from retained_math_v2_public import (  # noqa: E402
 
 SCHEMA = ROOT / "schemas/legacy-compatibility-v1.schema.json"
 ZERO_SHA = "0" * 64
+
+
+class ModelBriefRenderingTests(unittest.TestCase):
+    def test_lane_footer_keeps_runnable_source_archive(self) -> None:
+        rendered = render_model_brief(
+            {
+                "kind": "lane",
+                "lane_sequence": 4,
+                "title": "Test lane",
+            },
+            "# Test lane\n\nA self-contained problem.",
+            {},
+            {
+                "updated_at": "2026-08-04T00:00:00+00:00",
+                "retained_math": {},
+            },
+            {},
+            {},
+        )
+
+        self.assertIn(
+            "[Optional runnable source ZIP](../inputs/lane-4-source-files.zip)",
+            rendered,
+        )
 
 
 def _unit(
