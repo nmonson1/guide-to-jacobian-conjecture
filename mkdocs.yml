@@ -1,10 +1,10 @@
 site_name: "The Jacobian Conjecture: A Living Guide"
 site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
 site_description: A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened.
-docs_dir: docs-v55-five-share-research-20260803b
+docs_dir: docs-v56-converged-research-20260804j
 repo_name: nmonson1/guide-to-jacobian-conjecture
 repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
-edit_uri: edit/main/docs-v55-five-share-research-20260803b/
+edit_uri: edit/main/docs-v56-converged-research-20260804j/
 
 theme:
   name: material
@@ -48,6 +48,7 @@ nav:
     - Corrections: results/corrections.md
   - Research:
     - Text proof sources: research/proof-sources/index.md
+    - Current task roadmap: research/tasks/index.md
     - Retained working mathematics:
       - Overview: research/working-mathematics/index.md
       - Cubic Marked-Root Incidence Geometry: research/working-mathematics/programs/cubic-marked-root-incidence-geometry.md
@@ -114,9 +115,9 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 
 extra:
-  status_date: 3 August 2026, Pacific time
+  status_date: 4 August 2026, Pacific time
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/nmonson1/guide-to-jacobian-conjecture
 
-copyright: Working draft updated 3 August 2026, Pacific time.
+copyright: Working draft updated 4 August 2026, Pacific time.

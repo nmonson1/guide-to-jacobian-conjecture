@@ -1,7 +1,7 @@
 {
   "schema_version": 4,
-  "release_id": "living-guide-public-v55a-five-share",
-  "updated_at": "2026-08-03T21:10:00+00:00",
+  "release_id": "living-guide-public-v56-converged-research",
+  "updated_at": "2026-08-04T03:46:35+00:00",
   "timezone": "America/Los_Angeles",
   "publication": {
     "data_dir": "publication-v7-v13-20260729a",
@@ -22,32 +22,32 @@
     "expected_count": 12
   },
   "model_briefs": {
-    "data_dir": "model-handoffs-v32-20260803a",
-    "manifest_sha256": "40157aed1705a482799febc7298d593f99e74f9d085b4fd3e3949da4cfcecd36",
+    "data_dir": "model-handoffs-v40-20260804a",
+    "manifest_sha256": "afdea8c4f92fc71400a62ecfc72c894c166e7a7d57d02361d9cf53928209e704",
     "expected_count": 16
   },
   "retained_math": {
-    "data_dir": "retained-math-v1-20260803c",
-    "manifest_sha256": "d650ce801a6d41b4ae00730b63d446fd9afac75d3b673597093d087b5df1f247",
-    "expected_units": 587,
+    "data_dir": "retained-math-v1-20260803d",
+    "manifest_sha256": "5cf623c0da4fe0985de9bfdcab5a017d0d5df27335c48db41a3961b2a606c6c8",
+    "expected_units": 589,
     "expected_programs": 6
   },
   "retained_math_v2": {
-    "data_dir": "retained-math-v2-20260803f",
-    "manifest_sha256": "449cf158de4131e02110039e01a4f66d853a976296915acf76464a5e085a901e",
-    "expected_units": 587,
-    "expected_arguments": 12,
-    "expected_evidence": 619,
-    "expected_obligations": 10,
-    "expected_tasks": 6
+    "data_dir": "retained-math-v2-20260804k",
+    "manifest_sha256": "02fa7fd5390a0f811fe2d8a17336e896359878d0564e464e1468a7254195de9d",
+    "expected_units": 589,
+    "expected_arguments": 13,
+    "expected_evidence": 624,
+    "expected_obligations": 22,
+    "expected_tasks": 25
   },
   "manuscript_sources": {
-    "data_dir": "manuscript-sources-v1-20260803c",
-    "manifest_sha256": "6e4959df160571b284414da1ba8bee5806a9a4d54b9c88aacf0a94d67047bb24",
+    "data_dir": "manuscript-sources-v1-20260803d",
+    "manifest_sha256": "e16bef714cdf86719fa8b67263524413a63982cb787bc7bafc26113f7ea8c9fe",
     "expected_files": 41,
-    "expected_labels": 659
+    "expected_labels": 660
   },
-  "docs_dir": "docs-v55-five-share-research-20260803b",
+  "docs_dir": "docs-v56-converged-research-20260804j",
   "expected_counts": {
     "grouped_pages": 104,
     "results": 85,

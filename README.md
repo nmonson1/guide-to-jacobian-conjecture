@@ -111,7 +111,7 @@ manuscript links are rendered from that same pointer.
 
 The two mathematical components have different jobs. The 368 stable-tag
 claim pages preserve the legacy publication pipeline and durable public URLs;
-the 587-unit retained graph is the current progress-facing corpus for research
+the 589-unit retained graph is the current progress-facing corpus for research
 models. A retained `corrects` relation is rendered programmatically on the
 affected legacy claim and collection pages, so historical wording cannot
 silently outrank its current working replacement. Advancing either component
@@ -126,14 +126,16 @@ surfaces are:
 - `scripts/generate_living_guide_v2.py`: deterministic renderer for stable
   claim pages, result/open-problem collections, programs, retained
   working-mathematics units, evidence and catalogue pages, model handoffs,
-  and the machine-readable handoff release;
+  the graph-compiled task roadmap, and the machine-readable handoff release;
 - `scripts/check_public_site_v2.py`: source-data, content, leak, proof-access,
   search, release-coherence, and route validation;
-- `data/model-handoffs-v32-20260803a/`: hash-pinned sanitized source for
+- `data/model-handoffs-v40-20260804a/`: hash-pinned sanitized source for
   the hub, nine lane entrypoints, six program dossiers, nine exact research
-  source packets, and the focused Lane 7 and Lane 8 executable inputs. The
+  source packets, nine optional runnable source-tree archives, one compact task
+  roadmap, the exact Lane 3 multiplier, and the focused Lane 7 and Lane 8
+  executable inputs. The
   Lane 8 packet also exposes the incomplete planar-descent strategy and its
-  six exact bounded no-go checkers. The v20c briefs state the Lane 3 stable
+  six exact bounded no-go checkers. The current briefs state the Lane 3 stable
   result as proved and retain the Lane 7 marking open. Lane 8 exposes the
   direct two-support closure, the below-125 proof assembly, and the exact
   degree-125 `F_2` seed. The Lane 3 and Lane 8 briefs now link the recovered
@@ -141,8 +143,12 @@ surfaces are:
   and move the live tasks to independent reconstruction and actual-chain
   refinement without upgrading either packet beyond its evidence. It also
   incorporates the Lane 4 proof repairs and Q4-F4 input contract, and the
-  Lane 7 five-chart projective-kernel generators with their exact evidence
-  boundary. Logical manuscript slots resolve against the selected manuscript
+  Lane 7 five-chart projective-kernel generators and its smaller six-minor,
+  block-filter, and collinearity workflows with their exact evidence
+  boundaries. It additionally exposes the exact rational `beta_2=354` receipt,
+  the Lane 5 25-case mixed-return certificate, and bounded Lane 7 job
+  accounting, and Lane 8's exact 202-block linear root-divisibility
+  coordinates. Logical manuscript slots resolve against the selected manuscript
   manifest, so a stale PDF version fails the build;
 - `scripts/check_deployed_site.py`: production verification that GitHub Pages
   serves the exact selected handoff release after deployment;
