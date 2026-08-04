@@ -144,7 +144,7 @@ PACKET_INPUTS: dict[str, tuple[str, ...]] = {
         "research-notes/lane7-split-incidence-20260802-v1/verify_split_determinants_report.json",
     ),
     "plane-newton-queue-terminal-certificates": (
-        "research-notes/lane8-f2-support-determinacy-audit-20260803-v1",
+        "research-notes/lane8-f2-support-determinacy-audit-20260803-v1/README.md",
         "research-notes/lane8-f2-root-divisibility-20260804-v1",
         "research-notes/lane8-full-root-closure-20260803-v1",
         "research-notes/lane89-mathematical-recovery-20260803-v1",
@@ -287,6 +287,24 @@ def _source_packet(
         repo_path = path.relative_to(repo_root).as_posix()
         payload = path.read_bytes()
         text, transformed = _portable_source_text(payload.decode("utf-8"))
+        if repo_path == (
+            "research-notes/"
+            "lane8-f2-support-determinacy-audit-20260803-v1/README.md"
+        ):
+            text = (
+                "> **Current status (4 August 2026).** This is a historical "
+                "pre-recovery audit. Its statement that inherited linear "
+                "relations were not supplied is superseded by "
+                "research-notes/lane8-f2-root-divisibility-20260804-v1/"
+                "README.md, which gives exact 202-block coordinates and a "
+                "triangular inverse. It is retained here only for its "
+                "distinction among complete corner chains, maximal support "
+                "envelopes, actual transported supports, convex polygons, "
+                "and normal windows. Do not use its old task-readiness "
+                "conclusions.\n\n"
+                + text
+            )
+            transformed = True
         _validate_public(text, source=path)
         public_payload = text.encode("utf-8")
         record = {

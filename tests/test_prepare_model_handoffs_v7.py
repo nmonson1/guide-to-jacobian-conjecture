@@ -112,6 +112,42 @@ class PrepareModelHandoffsV7Tests(unittest.TestCase):
             hashlib.sha256(archived).hexdigest(),
         )
 
+    def test_historical_lane8_audit_carries_current_status_notice(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            relative = (
+                "research-notes/"
+                "lane8-f2-support-determinacy-audit-20260803-v1/README.md"
+            )
+            source_path = root / relative
+            source_path.parent.mkdir(parents=True)
+            source_path.write_text(
+                "# Historical audit\n\nThe relations are not supplied.\n",
+                encoding="utf-8",
+            )
+            slug = "synthetic-lane"
+            with mock.patch.dict(handoffs.PACKET_INPUTS, {slug: (relative,)}):
+                packet, _, _, archive_payload, archive_item = (
+                    handoffs._source_packet(
+                        sequence=8,
+                        slug=slug,
+                        repo_root=root,
+                        source_commit="c" * 40,
+                    )
+                )
+
+        packet_text = packet.decode("utf-8")
+        self.assertIn("historical pre-recovery audit", packet_text)
+        self.assertIn("exact 202-block coordinates", packet_text)
+        self.assertIn("Do not use its old task-readiness conclusions", packet_text)
+        self.assertEqual(
+            [item["path"] for item in archive_item["source_tree"]["files"]],
+            [relative],
+        )
+        with zipfile.ZipFile(BytesIO(archive_payload)) as archive:
+            archived = archive.read(relative).decode("utf-8")
+        self.assertTrue(archived.startswith("> **Current status"))
+
     def test_lane_links_target_exact_packet_file_and_specialized_routes(
         self,
     ) -> None:
