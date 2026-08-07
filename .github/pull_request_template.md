@@ -1,31 +1,27 @@
-## Record changed
+## Reader need
 
-Which contribution, claim, assessment, or infrastructure object changes?
+What page would someone want to visit, and what does this change help them
+understand or do?
 
-## Source and version
+## Mathematical scope
 
-- **Primary source:**
-- **Pinned revision, hash, DOI, or retrieval date:**
+State the exact result or exposition change. What does it not prove?
 
-## Exact effect
+## Sources and credit
 
-What field or assertion changes, and why?
+List primary sources, stable versions or retrieval dates, and each person's
+role. Call out any precedence or attribution change explicitly.
 
-## Boundary
+## Editorial state
 
-What does this change not establish? Does it make any claim about priority?
+- [ ] Every substantive page is hand-authored.
+- [ ] New pages begin as `unread` in `editorial/reviews.json`.
+- [ ] I did not approve a page on the owner's behalf.
+- [ ] External developments known to be relevant are credited and sourced.
 
-## Credit and assessment
+## Checks
 
-Who supplied the source, correction, implementation, and checking? Describe AI
-assistance. Do not call evidence an assessment unless the assessor, method,
-scope, and reviewed version are recorded.
-
-## Checklist
-
-- [ ] Contribution, claim, assessment, and exposition remain distinct.
-- [ ] Source and evidence versions are pinned where possible.
-- [ ] I did not silently adjudicate authorship or priority.
-- [ ] `scripts/validate_records.py` passes.
-- [ ] `scripts/check_public_site_v2.py` passes.
-- [ ] `mkdocs build --strict` passes.
+- [ ] `python -m unittest discover -s tests`
+- [ ] `python scripts/check_site.py`
+- [ ] `mkdocs build --strict`
+- [ ] `python scripts/check_built_site.py site`

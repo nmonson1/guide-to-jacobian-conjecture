@@ -16,4 +16,3 @@ document$.subscribe(() => {
     window.MathJax.typesetPromise();
   }
 });
-

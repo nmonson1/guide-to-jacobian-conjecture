@@ -1,9 +1,6 @@
-name: Build and deploy the guide
+name: Build and deploy the guide manually
 
 on:
-  push:
-    branches: [main]
-  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -12,8 +9,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: pages-manual
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -28,59 +25,31 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Install the pinned site dependencies
+      - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Check maintenance tooling
-        run: >-
-          python -m unittest
-          tests/test_inventory_active_tree.py
-          tests/test_inventory_generated_recoverability.py
-
-      - name: Check generated Living Guide pages
-        run: python scripts/generate_living_guide_v2.py
-
-      - name: Check the publication boundary
-        run: python scripts/check_public_site_v2.py
-
-      - name: Build the site
-        run: mkdocs build --strict
-
-      - name: Check the built site
-        run: python scripts/check_built_site.py site
-
-      - name: Install the pinned browser
-        run: python -m playwright install --with-deps chromium
-
-      - name: Test desktop, mobile, themes, math, PDFs, and accessibility
-        run: python scripts/browser_smoke_v1.py --site-dir site
+      - name: Run local-equivalent checks
+        run: |
+          python -m unittest discover -s tests
+          python scripts/check_site.py
+          mkdocs build --strict
+          python scripts/check_built_site.py site
 
       - name: Configure GitHub Pages
-        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v6
 
       - name: Upload the Pages artifact
-        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
   deploy:
-    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Check out the repository
-        uses: actions/checkout@v6
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-
-      - name: Verify the deployed handoff release
-        run: >-
-          python scripts/check_deployed_site.py
-          --base-url "${{ steps.deployment.outputs.page_url }}"

@@ -1,7 +1,7 @@
 name: Correction
 description: Report a mathematical, sourcing, or presentation error
 title: "[Correction]: "
-labels: [correction, records]
+labels: [correction]
 body:
   - type: input
     id: location
@@ -27,6 +27,6 @@ body:
   - type: input
     id: record
     attributes:
-      label: Public result or open-problem page
+      label: Related result or background page
       description: If applicable, give the page title or public URL.
       placeholder: The Three-Dimensional Counterexample
