@@ -9,7 +9,8 @@
         {"title": "The counterexample", "path": "start/counterexample.md"},
         {"title": "How the counterexample works", "path": "background/marked-root-geometry.md"},
         {"title": "The plane case", "path": "background/plane-case.md"},
-        {"title": "Tao's digestion", "path": "start/tao-digestion.md"}
+        {"title": "Tao's digestion", "path": "start/tao-digestion.md"},
+        {"title": "Background reading", "path": "background/background-reading.md"}
       ]
     },
     {
