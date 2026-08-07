@@ -1,35 +1,106 @@
 ---
-title: Guide to the Jacobian Conjecture
-description: The conjecture, the three-dimensional counterexample, and a source-linked claim record.
+title: "The Jacobian conjecture, after the counterexample"
+description: "A reader's guide to the counterexample in three variables, the surviving plane problem, and the mathematics opened by it."
 ---
 
-# Guide to the Jacobian Conjecture
+<div class="hero" markdown>
+<div class="hero-copy" markdown>
 
-The classical Jacobian conjecture asked whether a polynomial self-map of complex affine space with nonzero constant Jacobian determinant must have a polynomial inverse. A three-dimensional counterexample announced by Levent Alpöge in July 2026 shows that the answer is no in every dimension at least three. The plane case remains open.
+<p class="eyebrow">A hand-authored mathematical guide</p>
 
-## Status by dimension
+# The conjecture failed in three dimensions. The plane case did not.
 
-- **Dimension 1:** true. A one-variable polynomial with nonzero constant derivative is linear.
-- **Dimension 2:** [open](story-v1/plane-case.md).
-- **Dimensions 3 and above:** [false](story-v1/conjecture-and-counterexample.md).
+For nearly a century, the Jacobian conjecture asked whether a polynomial map
+with nonzero constant Jacobian determinant must have a polynomial inverse. An
+explicit counterexample announced in July 2026 answers **no** in every
+dimension at least three. The two-dimensional problem remains open.
 
-## The counterexample in one screen
+[See the counterexample](start/counterexample.md){ .md-button .md-button--primary }
+[Start with the conjecture](start/conjecture.md){ .md-button }
 
-Put \(A=1+xy\) and define \(F=(P,Q,R)\) by
+</div>
+<div class="hero-panel" markdown>
+
+## The shortest version
+
+There is an explicit polynomial map
+\(F\colon \mathbf C^3\to\mathbf C^3\) such that
+
 \[
-P=A^3z+y^2A(4+3xy),\qquad
-Q=y+3xA^2z+3xy^2(4+3xy),\qquad
-R=2x-3x^2y-x^3z.
+\det DF=-2,
 \]
-This is the map referred to below.
 
-Two exact facts do the work: the Jacobian determinant is the constant −2, and three distinct rational points have one common image. The second fact prevents injectivity; the first satisfies the Keller hypothesis. Adding identity coordinates gives counterexamples in every higher dimension.
+but three distinct points have the same image. The derivative is invertible
+everywhere; the map itself is not.
 
-[Read the exact certificate](certificate.md){ .md-button .md-button--primary }
-[Explore the mathematical stories](stories-v1.md){ .md-button }
+The extra variable is essential to the known construction. Nothing here
+turns it into a counterexample in the plane.
 
-## What this site records
+</div>
+</div>
 
-The guide begins with six mathematical stories. Externally sourced theorems and open problems appear in the result catalogue beneath them. Precise claim records preserve sources, credit, evidence, and limitations, but remain technical records rather than ordinary navigation.
+## Choose a route
 
-The [chronology](chronology-v2.md) links dated events and contributions to the mathematical record. Readers who want exact statements can follow a result page into its deeper technical records.
+<div class="card-grid" markdown>
+
+<div class="story-card" markdown>
+
+### See the map
+
+Read the formula, the two finite checks, the construction behind them, and
+the exact limits of the result.
+
+[Read the counterexample](start/counterexample.md)
+
+</div>
+
+<div class="story-card" markdown>
+
+### Understand the geometry
+
+Mark one root of a binary cubic and then forget which root was marked. That
+picture explains both local regularity and global collision.
+
+[See the marked-root construction](background/marked-root-geometry.md)
+
+</div>
+
+<div class="story-card" markdown>
+
+### Follow the plane problem
+
+The two-variable conjecture is still open. Learn what is known below degree
+125 and why a three-dimensional example does not descend by taking a slice.
+
+[Read about the plane case](background/plane-case.md)
+
+</div>
+
+<div class="story-card" markdown>
+
+### Read Tao's digestion
+
+Terence Tao's essay reconstructs the example from geometric first
+principles. This guide republishes it in full, with credit and a link to the
+canonical edition.
+
+[Read Tao's essay](start/tao-digestion.md)
+
+</div>
+
+</div>
+
+## Beyond the announcement
+
+The [mathematical ideas](ideas/index.md) are short bridges into covers,
+monodromy, discriminants, normalization, Newton--Puiseux expansions, and
+dessins. The [four research fronts](fronts/index.md) organize questions by
+mathematical dependence rather than by project history. The [major-results
+shelf](results/index.md) is selective; the [external-developments ledger](developments/index.md)
+is deliberately inclusive.
+
+This is a public working draft by **Nathaniel Monson**. Every page is written
+for a human reader. A page can be shared by direct URL while under editorial
+review, but only an exact owner-approved version enters ordinary navigation,
+search, and the sitemap. See the [editorial policy](about/editorial-policy.md)
+and [AI-assistance note](about/ai-assistance.md).

@@ -1,7 +1,7 @@
 name: Source improvement
 description: Add, replace, or correct a reference
 title: "[Source]: "
-labels: [sources, records]
+labels: [sources]
 body:
   - type: input
     id: source

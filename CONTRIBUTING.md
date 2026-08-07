@@ -1,56 +1,66 @@
 # Contributing
 
-This is an unannounced public working draft. The most useful contributions
-right now are:
+The most useful contributions improve a page a reader might genuinely want
+to use: clearer exposition, a corrected theorem statement, a missing external
+development, better credit, or a stronger primary source.
 
-- a better primary source;
-- a correction to a statement or its scope;
-- a correction to role-specific credit;
-- a more precise description of what a proof, computation, or formalization
-  checks;
-- an accessibility or presentation fix.
+## Content rules
 
-Use the
-[source-improvement form](https://github.com/nmonson1/guide-to-jacobian-conjecture/issues/new?template=source.yml)
-or open a focused issue.
+- Substantive pages are hand-authored. Do not generate a page for every
+  internal claim, record, lane, or computation.
+- The guide is selective about our work and inclusive about external work.
+- Credit people for distinct roles: question, construction, proof,
+  computation, exposition, formalization, correction, or other actual role.
+- Prefer primary sources and describe their form accurately. An announcement
+  is not a refereed paper; a computation has only the scope its inputs and
+  certificates support.
+- Keep the guide nontechnical in proof length, not imprecise in statement.
+  Link full proofs and computations rather than reproducing every step.
+- Do not add raw conversations, private paths, internal research identifiers,
+  or unsanitized working artifacts.
+- Do not treat AI output as a source. Historical claims need a citable public
+  record, and mathematical claims need a proof route.
 
-## Keep the publication concepts separate
+Our aim is to record every relevant external contribution known to us.
+Omissions are mistakes to be corrected, not editorial judgments that the work
+was unimportant.
 
-- `source` records where a statement, proof, exposition, formalization, or
-  check was encountered;
-- `credited_to` records a person and role, together with the basis for that
-  attribution;
-- `ai_assistance` records the system, purpose, role, and responsible human;
-- `evidence_present` records the kind and scope of available evidence;
-- `source_form` distinguishes announcements, working manuscripts, preprints,
-  repositories, and refereed publications;
-- `independent_review` records exactly what, if anything, was independently
-  checked.
+Authorship and AI assistance are disclosed once, project-wide, in
+`docs/about/ai-assistance.md`. Do not add generic AI boilerplate to every
+mathematics page; add a page-specific note only when the computational or
+formal method matters to the result itself.
 
-Please do not compress these fields into one confidence or publication-status
-label.
+## Result-page shape
 
-## Public-boundary rules
+A major result page normally contains:
 
-Do not add raw conversations, ChatGPT share links, private filesystem paths,
-internal archive locators, private record identifiers, working TeX trees, or
-unsanitized computational artifacts. Public code and formalizations should be
-linked at stable public revisions.
+1. a headline, including name and date for external work;
+2. “What is true and why,” one compressed paragraph that makes a nearby
+   expert unsurprised by the proof;
+3. the precise definitions, hypotheses, and conclusion;
+4. discussion or a longer proof sketch, including importance and limits;
+5. links to primary sources and relevant computations.
 
-AI-assisted work must identify the system and purpose. A human contributor
-remains responsible for every submitted assertion.
+A computation page may be a navigational cul-de-sac: enough detail to replay
+the proof or calculation, but no conceptual dependency that a reader needed
+to understand the result page.
 
-## Before opening a pull request
+## Editorial workflow
 
-Run:
+New pages must be entered in both `editorial/navigation.json` and
+`editorial/reviews.json`, initially as `unread`. Do not mark a page approved on
+someone else's behalf. Approval pins the exact Markdown hash; subsequent edits
+automatically remove the page from ordinary navigation, search, and the
+sitemap until it is reviewed again.
+
+Before opening a pull request, run:
 
 ```bash
-uv run --with-requirements requirements.txt python scripts/generate_living_guide_v1.py
-uv run --with-requirements requirements.txt python scripts/generate_compatibility_stubs_v1.py
-uv run --with-requirements requirements.txt python scripts/check_public_site.py
+uv run --with-requirements requirements.txt python -m unittest discover -s tests
+uv run --with-requirements requirements.txt python scripts/check_site.py
 uv run --with-requirements requirements.txt mkdocs build --strict --site-dir /tmp/jacobian-guide-preview
 uv run --with-requirements requirements.txt python scripts/check_built_site.py /tmp/jacobian-guide-preview
 ```
 
-Keep a pull request focused, preserve exact source versions and dates, and say
-what the proposed change does not establish.
+In the pull request, identify the reader need, mathematical scope, sources,
+credit changes, and what the change does not establish.

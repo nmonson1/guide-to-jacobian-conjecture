@@ -2,27 +2,17 @@
 
 {% block announce %}
 <span class="announce-copy">
-  Unannounced working draft · Noindex · Updated {{ config.extra.status_date }} ·
-  <a href="{{ 'about/' | url }}">What that means</a>
+  Public working draft · Reviewed pages are listed; other pages remain available by direct link
 </span>
 {% endblock %}
 
 {% block extrahead %}
   {{ super() }}
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="{{ page.meta.robots if page and page.meta and page.meta.robots else 'noindex, nofollow' }}">
   <meta name="theme-color" content="#123a3b">
-  <meta name="author" content="The Jacobian Conjecture: A Living Guide contributors">
+  <meta name="author" content="Nathaniel Monson">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="The Jacobian Conjecture: A Living Guide">
-  <meta property="og:description" content="A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened.">
-  <meta property="og:url" content="https://nmonson1.github.io/guide-to-jacobian-conjecture/">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "The Jacobian Conjecture: A Living Guide",
-    "url": "https://nmonson1.github.io/guide-to-jacobian-conjecture/",
-    "description": "A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened."
-  }
-  </script>
+  <meta property="og:title" content="{{ page.title if page else config.site_name }}">
+  <meta property="og:description" content="{{ page.meta.description if page and page.meta and page.meta.description else config.site_description }}">
+  <meta property="og:url" content="{{ page.canonical_url if page else config.site_url }}">
 {% endblock %}

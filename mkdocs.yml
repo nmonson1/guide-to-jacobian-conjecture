@@ -1,10 +1,10 @@
-site_name: "The Jacobian Conjecture: A Living Guide"
+site_name: "The Jacobian Conjecture: A Guide"
 site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
-site_description: A reader-first guide to the counterexample, its geometry, the surviving plane case, and the research it has opened.
-docs_dir: docs-v56-converged-research-20260804j
+site_description: A hand-authored guide to the Jacobian conjecture, its counterexample in dimensions at least three, the surviving plane case, and the mathematics around them.
+docs_dir: docs
 repo_name: nmonson1/guide-to-jacobian-conjecture
 repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
-edit_uri: edit/main/docs-v56-converged-research-20260804j/
+edit_uri: edit/main/docs/
 
 theme:
   name: material
@@ -17,12 +17,10 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.indexes
     - navigation.top
     - toc.follow
     - search.suggest
     - search.highlight
-    - content.code.copy
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: jacobian-light
@@ -35,58 +33,18 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
 
+# The editorial hook replaces this bootstrap navigation with the hand-authored
+# navigation entries whose exact page versions have been owner-approved.
 nav:
-  - Start: index.md
-  - Understand:
-    - Counterexample: counterexample.md
-    - Geometry: geometry.md
-    - Plane Case: plane-case.md
-  - Results:
-    - Highlights: results/index.md
-    - All claims: results/all-claims.md
-    - Open problems: results/open-problems.md
-    - Corrections: results/corrections.md
-  - Research:
-    - Text proof sources: research/proof-sources/index.md
-    - Current task roadmap: research/tasks/index.md
-    - Retained working mathematics:
-      - Overview: research/working-mathematics/index.md
-      - Cubic Marked-Root Incidence Geometry: research/working-mathematics/programs/cubic-marked-root-incidence-geometry.md
-      - Minimum Degree and Quartic Exclusions: research/working-mathematics/programs/minimum-degree-and-quartic-exclusions.md
-      - Local Rigidity and Deformation Algebra: research/working-mathematics/programs/local-rigidity-and-deformation-algebra.md
-      - Stable Moduli: research/working-mathematics/programs/stable-moduli.md
-      - Homogeneous Descendants: research/working-mathematics/programs/homogeneous-descendants.md
-      - Plane Boundary Obstructions: research/working-mathematics/programs/plane-boundary-obstructions.md
-    - State of the program: research/index.md
-    - Model-ready handoffs:
-      - Portfolio hub: research/handoffs/state-of-the-program.md
-      - "Lane 1 · Cubic flatness": research/handoffs/cubic-flatness-normalization-defects.md
-      - "Lane 2 · Boundary and Torelli": research/handoffs/boundary-completeness-torelli-at-infinity.md
-      - "Lane 3 · Deformation and moduli": research/handoffs/bounded-degree-deformation-modulus-onset.md
-      - "Lane 4 · Quartic endgame": research/handoffs/quartic-endgame.md
-      - "Lane 5 · Degree budgets": research/handoffs/intrinsic-degree-valuative-budgets.md
-      - "Lane 6 · Homogeneous compression": research/handoffs/homogeneous-realization-compression.md
-      - "Lane 7 · Collision geometry": research/handoffs/five-dimensional-collision-geometry.md
-      - "Lane 8 · Plane Newton queue": research/handoffs/plane-newton-queue-terminal-certificates.md
-      - "Lane 9 · Plane global attachment": research/handoffs/plane-chart-correspondence-global-attachment.md
-      - "Dossier · Cubic incidence": research/handoffs/cubic-marked-root-incidence-geometry.md
-      - "Dossier · Quartic exclusions": research/handoffs/minimum-degree-and-quartic-exclusions.md
-      - "Dossier · Local rigidity": research/handoffs/local-rigidity-and-deformation-algebra.md
-      - "Dossier · Stable moduli": research/handoffs/stable-moduli.md
-      - "Dossier · Homogeneous descendants": research/handoffs/homogeneous-descendants.md
-      - "Dossier · Plane boundary": research/handoffs/plane-boundary-obstructions.md
-    - Programs:
-      - Cubic incidence: research/programs/cubic-marked-root-incidence-geometry.md
-      - Quartic exclusions: research/programs/minimum-degree-and-quartic-exclusions.md
-      - Local rigidity: research/programs/local-rigidity-and-deformation-algebra.md
-      - Stable moduli: research/programs/stable-moduli.md
-      - Homogeneous descendants: research/programs/homogeneous-descendants.md
-      - Plane boundary: research/programs/plane-boundary-obstructions.md
-    - Working papers: research/papers.md
-  - Evidence:
-    - Proof index: evidence/index.md
-    - Technical materials: evidence/materials.md
-  - About: about.md
+  - Draft home: index.md
+
+# Every hand-authored page is built, even while it is deliberately absent from
+# ordinary navigation. The editorial hook controls listing and search.
+not_in_nav: |
+  **/*
+
+hooks:
+  - hooks/editorial.py
 
 markdown_extensions:
   - admonition
@@ -99,9 +57,6 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
   - pymdownx.superfences
 
 plugins:
@@ -115,9 +70,9 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 
 extra:
-  status_date: 4 August 2026, Pacific time
+  status_date: 7 August 2026
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/nmonson1/guide-to-jacobian-conjecture
 
-copyright: Working draft updated 4 August 2026, Pacific time.
+copyright: Nathaniel Monson · Public working draft · Updated 7 August 2026.

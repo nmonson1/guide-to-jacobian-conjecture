@@ -1,20 +1,6 @@
 site/
-.cache/
-.venv/
 __pycache__/
 *.pyc
+.cache/
+.venv/
 /private-notes/
-
-# Superseded local staging from the first publication-v2 rendering pass.
-/data/publication-v2/
-/docs/assets/manuscripts/
-/docs/research/
-/docs/results/
-/docs/technical/
-/docs-v2-20260724/
-/docs-v2-20260724b/
-/data/publication-v2-v7-20260724d/
-/docs-v2-20260724c/
-/data/publication-v2-v7-20260724f/
-/data/publication-v2-v7-20260725a/
-/docs-v2-20260724e/
