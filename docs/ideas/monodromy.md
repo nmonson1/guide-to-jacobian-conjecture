@@ -1,52 +1,75 @@
 ---
 title: "Covers and monodromy: how the sheets move"
-description: "A conceptual introduction to generic degree, monodromy, and composition-primality for Keller maps."
+description: "Generic degree, continuation around loops, and the block systems that reveal factorization."
 ---
 
 # Covers and monodromy: how the sheets move
 
 Away from exceptional target values, a generically finite polynomial map has
-a fixed number \(d\) of preimages. This number is its **generic degree**.
-For the marked-cubic counterexample, \(d=3\): the three points correspond to
+a fixed number \(d\) of preimages. This is its **generic degree**. For the
+marked-cubic counterexample, \(d=3\): the three source points correspond to
 the three possible marked roots.
 
-Choose a regular target value and label its \(d\) preimages. Move the target
-around a loop that avoids the exceptional locus. When the loop returns, the
-preimages return too, but their labels may be permuted. All permutations
-obtained in this way form the **monodromy group**.
+Generic degree counts the sheets. Monodromy records how continuation along
+loops connects them.
 
-## A toy cover
+## Follow one root around a loop
 
-For \(z\mapsto z^d\), a nonzero target \(w\) has \(d\) roots. Move \(w\)
-once around the origin. Each chosen root moves continuously to the next root,
-so the labels undergo a \(d\)-cycle. This is monodromy in its simplest form:
-the fibers have not collided along the loop, but their labels return
-permuted.
+For the map \(z\mapsto z^d\), choose a nonzero target \(w\) and label its
+\(d\) roots. Move \(w\) once around the origin. Each root moves continuously,
+and when the loop closes it has arrived at the next root.
 
-## What monodromy remembers
+<figure class="math-figure">
+  <img src="../assets/images/monodromy-loop.svg" alt="A loop around an exceptional target value cyclically permuting three sheets of a cover.">
+  <figcaption>Continuation around a loop returns to the same target point and may permute its preimages.</figcaption>
+</figure>
 
-Generic degree only counts sheets. Monodromy records how tightly they are
-connected. A transitive group means the cover is connected. The full
-symmetric group \(S_d\) means that, from the viewpoint of continuation along
-loops, the sheets have no hidden partition.
+The permutations obtained from all such loops form the **monodromy group**.
+For a connected cover the action on the sheets is transitive: every sheet can
+be reached from every other by continuation.
 
-That last point matters for composition. If a map factors nontrivially as
-\(F=G\circ H\), the sheets of \(F\) come in blocks: first choose a preimage
-under \(G\), then one under \(H\). Monodromy must preserve this block system.
-A primitive monodromy group therefore obstructs nontrivial factorization of
-the generic cover.
+<div class="pause-check" markdown>
 
-## What monodromy does not remember
+**Pause and check.** For \(z\mapsto z^3\), start with the positive real cube
+root of \(w\). After one counterclockwise turn of \(w\), which cube root do
+you reach?
 
-Two polynomial maps can define the same abstract function-field extension
-while having different affine charts and different behavior at infinity.
-Monodromy is powerful, but it cannot by itself recognize which open part of
-a finite cover is affine space. That is why the post-counterexample program
-uses monodromy together with discriminants, conductors, and boundary data.
+</div>
+
+## What the permutation group reveals
+
+Suppose a map factors as
+
+\[
+F=G\circ H.
+\]
+
+A point in a generic fiber of \(F\) is chosen in two stages: first a preimage
+under \(G\), then a preimage under \(H\). The sheets therefore come in blocks,
+and monodromy must preserve that block system.
+
+A primitive monodromy group has no nontrivial block system. Primitivity is
+therefore a strong obstruction to decomposing the generic cover. For prime
+generic degree, transitivity already forces primitivity.
+
+This is one reason the degree-three example is structurally clean: a
+transitive action on three sheets has very little room to decompose.
+
+## The affine chart adds another layer
+
+Monodromy belongs to the generic finite cover. Two polynomial maps can have
+the same function-field extension and the same monodromy while using
+different affine opens inside the finite completion. Their deleted
+boundaries may have different geometry, and affineness can hold for one
+opening and fail for another.
+
+Monodromy answers one precise question: how continuation glues the generic
+sheets. Discriminants, normalization, and boundary data then recover the
+geometry that the permutation action leaves out.
+
+[Next: discriminants and root collisions](discriminants.md){ .md-button .md-button--primary }
 
 ## Sources
 
 - [David Speyer, Secret Blogging Seminar discussion](https://sbseminar.wordpress.com/2026/07/20/the-new-counterexample-to-the-jacobian-conjecture/)
 - [Shuhong Gao, arXiv:2608.00222](https://arxiv.org/abs/2608.00222)
-
-[Next: discriminants and actual root collisions](discriminants.md){ .md-button }

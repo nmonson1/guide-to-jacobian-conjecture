@@ -1,50 +1,113 @@
 ---
-title: "Front II: boundary reconstruction and globalization"
-description: "What infinity remembers, and why a valid local boundary model may still fail to come from a polynomial map."
+title: "Reconstructing the map from infinity"
+description: "Why global noninvertibility lives at the boundary and what a local-to-global reconstruction theorem would have to prove."
 ---
 
-# Front II: boundary reconstruction and globalization
+# Reconstructing the map from infinity
 
-!!! info "For researchers"
-    The shortest entry route is [discriminants](../ideas/discriminants.md),
-    followed by [Newton--Puiseux expansions](../ideas/newton-puiseux.md).
+<p class="dek">A Keller map has no finite branch point that can explain a
+collision. Any global failure must be carried by nonproperness, and
+compactification turns that failure into boundary geometry.</p>
 
-A noninvertible Keller map cannot fail locally at a finite point. Its failure
-must be visible at infinity. The boundary is therefore not bookkeeping added
-after the map is understood; it is where global noninvertibility lives.
+## The escape mechanism
 
-## The story so far
+Let
 
-In the three-sheeted example, the discriminant normalization and its marked
-curves recover parameters that survive polynomial stabilization. In the
-plane problem, a hypothetical counterexample gives valuations and
-Newton--Puiseux branches at infinity. Their leading faces can force Belyi
-maps, which turn part of the boundary into finite permutation data.
+\[
+F\colon X=\mathbf A^n\longrightarrow Y=\mathbf A^n
+\]
 
-The work below degree 125 illustrates the chain and its logical seams. A
-published global classification reduces every candidate to two supports. A
-separate project calculation classifies the five degree-21 dessins forced by
-their leading-face equation. An external announcement says a terminal
-computer calculation eliminates both full supports, but its detailed
-write-up is still in preparation. The face classification alone is not the
-global exclusion.
+have constant nonzero Jacobian. Near every finite source point, \(F\) is an
+analytic isomorphism. If \(F\) is noninjective, it must also be nonproper:
+there is a sequence \(x_k\) escaping to infinity while \(F(x_k)\) remains
+bounded.
 
-## The main open question
+Choose the finite normalization of the target and write
 
-Which finite collection of boundary invariants is complete enough to recover
-an affine opening—or prove that no opening exists? Local models can be
-mutually compatible and still fail a later gluing equation. Conversely, a
-coordinate calculation may hide that two models represent the same
-intrinsic valuation.
+\[
+X\hookrightarrow Z\xrightarrow{\pi}Y,
+\qquad
+D=Z\setminus X.
+\]
 
-## Places to enter
+Because \(Z\to Y\) is finite and therefore proper, a subsequence of \(x_k\)
+converges in \(Z\). Its limit lies in \(D\): the finite cover contains the
+point that the affine source has omitted.
+
+<figure class="math-figure">
+  <img src="../assets/images/escape-to-infinity.svg" alt="A sequence in the affine source approaching a deleted boundary while its images remain bounded in the target.">
+  <figcaption>The finite completion converts escape to infinity into an ordinary limit on the boundary.</figcaption>
+</figure>
+
+This is the precise sense in which global noninvertibility lives at infinity.
+The boundary records which sheets can leave the affine chart and how they
+meet in the finite completion.
+
+## The marked-cubic model
+
+For the first counterexample, \(Z\) is the full marked-root cover and \(D\)
+contains the repeated marked roots. The discriminant normalization and the
+curves marked by the boundary retain information that survives polynomial
+coordinate changes and stabilization.
+
+In a family of cubic-frame openings, this boundary data recovers a modulus
+\(q\). Adjoining identity variables adds affine factors to the normalization
+and boundary. The marked configuration from which \(q\) is read remains in
+every fiber.
+
+The lesson is concrete: a parameter that looks removable in the polynomial
+formula may be rigidly recorded by the way boundary components meet.
+
+## From local branches to a global polynomial map
+
+The plane problem begins with valuations and Puiseux branches at infinity.
+Their leading terms determine Newton faces, and some face equations produce
+Belyi maps and dessins. These are powerful local models of the boundary.
+
+Globalization asks for more. The local branches must fit together on one
+compactification, satisfy every later compatibility equation, and arise from
+global polynomials \(P\) and \(Q\). A valid leading face can fail at a later
+Puiseux layer. Several locally consistent charts can fail to glue. A rational
+construction can fail to be polynomial.
+
+The current work below degree \(125\) displays this chain clearly:
+
+\[
+\text{global degree reduction}
+\longrightarrow
+\text{two Newton supports}
+\longrightarrow
+\text{five leading dessins}
+\longrightarrow
+\text{terminal compatibility equations}.
+\]
+
+Each arrow is a theorem that must preserve every remaining global candidate.
+
+## Where to see the mechanism
 
 - [Discriminants](../ideas/discriminants.md)
+- [Normalization](../ideas/normalization.md)
 - [Newton--Puiseux expansions](../ideas/newton-puiseux.md)
 - [Dessins d'enfants](../ideas/dessins.md)
 - [Stable cubic-frame classification](../results/stable-cubic-frames.md)
-- [Five degree-21 dessins](../results/degree-21-dessins.md)
 
-The concrete target is an exact local-to-global theorem: state the boundary
-data, reconstruct the affine opening, and identify precisely where
-polynomiality or affineness enters.
+## The missing local-to-global theorem
+
+The natural theorem would start from a finite collection of boundary data—
+valuations, conductors, intersection numbers, local equations, and gluing
+maps—and decide whether they determine an affine opening
+
+\[
+Z\setminus D\simeq\mathbf A^n
+\]
+
+with a polynomial Keller map to \(\mathbf A^n\).
+
+Such a theorem would explain the three-dimensional example intrinsically and
+turn plane exclusions into failures of a stated reconstruction criterion.
+It would also identify the exact stage at which affineness or polynomiality
+enters, making those global conditions visible in the theorem statement. It
+would turn “behavior at infinity” from a slogan into a reconstruction
+criterion.
+

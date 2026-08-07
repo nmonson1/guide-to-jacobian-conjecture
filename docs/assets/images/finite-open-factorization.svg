@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" role="img" aria-labelledby="title desc">
+  <title id="title">Finite-open factorization</title>
+  <desc id="desc">The affine source X is an open subset of a normal variety Z. The complement D is the deleted boundary. The map from Z to the affine target Y is finite.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0d6567"/>
+    </marker>
+    <style>
+      .paper{fill:#fbf9f3}.outer{fill:#e6efe9;stroke:#0d6567;stroke-width:3}.open{fill:#d8ecea;stroke:#0d6567;stroke-width:2}.boundary{fill:#f5cfc8;stroke:#a63a30;stroke-width:2;stroke-dasharray:8 7}.target{fill:#f4e5cc;stroke:#a63a30;stroke-width:3}.arrow{fill:none;stroke:#0d6567;stroke-width:3;marker-end:url(#arrow)}.label{font:600 25px Georgia,serif;fill:#183638}.small{font:500 18px system-ui,sans-serif;fill:#586b6c}
+    </style>
+  </defs>
+  <rect class="paper" width="980" height="470" rx="24"/>
+
+  <rect class="outer" x="70" y="70" width="460" height="310" rx="34"/>
+  <text class="label" x="95" y="110">Z: finite normalization</text>
+  <rect class="open" x="115" y="145" width="290" height="188" rx="44"/>
+  <text class="label" x="172" y="215">X: affine source</text>
+  <text class="small" x="178" y="253">X is open in Z</text>
+  <text class="small" x="150" y="286">the Keller map is defined here</text>
+
+  <path class="boundary" d="M423 139 C495 165,505 244,467 318 C450 349,420 359,398 328 C429 285,435 207,398 166 C393 153,402 142,423 139 Z"/>
+  <text class="label" x="440" y="217">D</text>
+  <text class="small" x="414" y="250">deleted</text>
+  <text class="small" x="408" y="276">boundary</text>
+
+  <rect class="target" x="690" y="130" width="235" height="205" rx="42"/>
+  <text class="label" x="750" y="202">Y: target</text>
+  <text class="small" x="743" y="238">affine n-space</text>
+  <text class="small" x="716" y="270">base of the finite cover</text>
+
+  <path class="arrow" d="M535 225 H675"/>
+  <text class="small" x="581" y="203">finite</text>
+
+  <text class="small" x="70" y="425">The extension K(Y) ⊂ K(X) fixes Z → Y. The polynomial presentation also chooses D.</text>
+</svg>

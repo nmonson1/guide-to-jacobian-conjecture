@@ -1,51 +1,61 @@
 ---
 title: "Credit and sources"
-description: "The attribution, chronology, source, and evidence rules used throughout the guide."
+description: "How the guide separates exposition, evidence, chronology, and role-specific attribution."
 ---
 
 # Credit and sources
 
+The guide aims to make mathematical credit ordinary and inspectable. Posing a
+question, finding a construction, announcing it, proving a theorem, explaining
+the mechanism, formalizing a calculation, and generalizing the result are
+different contributions. Names are attached to those roles rather than
+compressed into one vague authorship label.
+
+## The reading layer and the audit layer
+
+An expository page should tell the mathematical story at the pace required by
+the ideas. Its final link leads to the [proof and evidence
+ledger](../results/evidence-ledger.md), where the reader can inspect proof
+routes, formal checks, working manuscripts, publication status, attribution,
+and scope.
+
+The [external-developments ledger](../developments/index.md) is broader and
+chronological. It records relevant contributions even when they do not merit a
+standalone explanatory page.
+
 Our aim is to record every relevant external contribution known to us.
-Omissions are mistakes to be corrected, not editorial judgments that the
-work was unimportant.
-
-## Attribution rules
-
-- Credit is role-specific: posing a question, finding a construction,
-  announcing it, explaining it, formalizing it, and generalizing it are
-  different contributions.
-- Dates attached to an external result describe the cited public record.
-- If an external source predates our work on the same result, the result is
-  credited to that source; later project duplication is omitted.
-- If project work was public first and another author later obtained the same
-  result independently, the chronology may record both.
-- If a later result is strictly more general, the page says what was
-  generalized and preserves credit for the earlier case.
-
-These rules are meant to make priority boring: a reader should be able to
-follow the links and see why each name is present.
+Omissions are mistakes to be corrected, not editorial judgments that the work
+was unimportant.
 
 ## Source rules
 
-We prefer primary sources: papers, author posts, source repositories,
-formalization pull requests, and archived computation records. A secondary
-source may orient a reader but should not be the only support for a precise
-mathematical claim when a primary source is available.
+Primary sources are preferred: papers, preprints, author posts, pinned source
+repositories, formalization pull requests, and archived computation records.
+A secondary source may orient the reader, but a precise mathematical claim
+should point to the strongest public source available.
 
-A link supports only the scope stated beside it. A kernel-checked
-determinant calculation does not by itself verify a geometric
-interpretation; a terminal Gröbner certificate does not by itself prove the
-global reduction leading to that terminal system.
+A source supports only the claim it actually checks. A kernel-checked Jacobian
+identity verifies that identity in the encoded setting; it does not supply the
+geometric construction. A terminal Gröbner certificate verifies its terminal
+system; the global reduction to that system needs its own proof. These
+distinctions belong in the ledger because they are part of the evidence
+structure.
 
-## What inclusion means
+## Chronology and priority
 
-An external-development entry records that the work exists and states what
-its source claims. A major-result page says that the guide regards the
-result as sufficiently important and sufficiently sourced to explain. In
-neither case does inclusion claim that this project has independently
-reproved every step.
+Dates refer to a cited public record. Close timestamps do not reveal when work
+was first found or privately circulated. When the public record supports only
+coarse chronology, the guide says so and avoids manufacturing a finer priority
+story.
 
-For project theorems, the page uses ordinary mathematical language—*theorem*,
-*proposition*, or *calculation*—and links to the proof. If only an idea or
-partial argument exists, the page says that instead. Editorial or review
-status is reported separately from mathematical status.
+If an earlier public source establishes a result, that result is credited to
+the earlier source. Independent later work may still be recorded for its own
+role: verification, a new proof, a generalization, or a useful reconstruction.
+
+## Project results
+
+For project theorems, the reading page states the result in ordinary
+mathematical language. The ledger identifies the pinned manuscript or
+certificate, the computational boundary, independent replication when known,
+and the current review status. Editorial approval is reported separately from
+mathematical evidence and is never presented as peer review.

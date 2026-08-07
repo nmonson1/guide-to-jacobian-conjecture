@@ -1,26 +1,34 @@
 ---
 title: "Six mathematical ideas behind the new landscape"
-description: "Short, self-contained bridges from the counterexample to the ideas used to understand it and the surviving plane problem."
+description: "Six short bridges from the counterexample to the geometry of covers, boundary, and the surviving plane problem."
 ---
 
 # Six mathematical ideas behind the new landscape
 
-These essays are not prerequisites arranged as a textbook. Each answers one
-question that appears naturally after seeing the counterexample.
+The counterexample raises a sequence of questions. Each essay begins at one
+of them and develops the machinery needed to see the answer.
 
-1. [**Local versus global**](local-and-global.md): how can an invertible
-   derivative coexist with a collision?
-2. [**Covers and monodromy**](monodromy.md): what does a generic fiber do
-   when the target moves around a loop?
-3. [**Discriminants**](discriminants.md): where do roots collide, and why can
-   sheets disappear without ramification in the affine chart?
-4. [**Normalization**](normalization.md): how do we separate branches that a
-   singular equation has glued together?
-5. [**Newton--Puiseux expansions**](newton-puiseux.md): how can the leading
-   terms at infinity constrain a hypothetical plane counterexample?
-6. [**Dessins d'enfants**](dessins.md): why does a problem about polynomial
-   maps lead to finite permutation data drawn on a sphere?
+1. [**Local versus global**](local-and-global.md) — How can every derivative
+   be invertible while two distant points have the same image?
+2. [**Covers and monodromy**](monodromy.md) — How do the generic sheets move
+   when the target travels around a loop?
+3. [**Discriminants**](discriminants.md) — Where do roots collide in the
+   finite cover, and how is that collision seen from the affine chart?
+4. [**Normalization**](normalization.md) — What canonical finite cover lies
+   behind a generically finite polynomial map?
+5. [**Newton--Puiseux expansions**](newton-puiseux.md) — How can one follow an
+   escaping branch and read its successive constraints at infinity?
+6. [**Dessins d'enfants**](dessins.md) — Why can a boundary equation collapse
+   to a finite problem about permutations and graphs on a sphere?
 
-An expert can use these as orientation and follow the sources at the bottom
-of each page. A newcomer can read them in order and return to the formulas
-only when the geometric picture is in place.
+A newcomer can read them in this order. An expert can enter at the question
+that matters and use the sources for the full theory. The recurring picture
+is
+
+\[
+X\hookrightarrow Z\longrightarrow Y:
+\]
+
+an affine source inside a finite cover of the target, with the deleted
+boundary carrying the global information that the Jacobian determinant
+cannot see.

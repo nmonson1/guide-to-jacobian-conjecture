@@ -7,6 +7,7 @@
         {"title": "Guide home", "path": "index.md"},
         {"title": "The conjecture", "path": "start/conjecture.md"},
         {"title": "The counterexample", "path": "start/counterexample.md"},
+        {"title": "Three views of the counterexample", "path": "start/three-views.md"},
         {"title": "How the counterexample works", "path": "background/marked-root-geometry.md"},
         {"title": "The plane case", "path": "background/plane-case.md"},
         {"title": "Tao's digestion", "path": "start/tao-digestion.md"},
@@ -29,10 +30,10 @@
       "title": "Research fronts",
       "pages": [
         {"title": "Four fronts", "path": "fronts/index.md"},
-        {"title": "Cover and collision geometry", "path": "fronts/cover-and-collision.md"},
-        {"title": "Boundary and globalization", "path": "fronts/boundary-and-globalization.md"},
-        {"title": "Deformation and transport", "path": "fronts/deformation-and-transport.md"},
-        {"title": "Framing and low degree", "path": "fronts/framing-and-degree.md"}
+        {"title": "The cover behind the formula", "path": "fronts/cover-and-collision.md"},
+        {"title": "Reconstructing the map from infinity", "path": "fronts/boundary-and-globalization.md"},
+        {"title": "Which deformations are genuine?", "path": "fronts/deformation-and-transport.md"},
+        {"title": "How small can a counterexample be?", "path": "fronts/framing-and-degree.md"}
       ]
     },
     {
@@ -41,12 +42,13 @@
         {"title": "Major results", "path": "results/index.md"},
         {"title": "Every generic degree", "path": "results/every-generic-degree.md"},
         {"title": "Cubic-homogeneous counterexample", "path": "results/cubic-homogeneous.md"},
-        {"title": "Characteristic-two plane counterexample", "path": "results/characteristic-two.md"},
+        {"title": "Characteristic-two counterexamples", "path": "results/characteristic-two.md"},
         {"title": "The announced plane degree bound 125", "path": "results/below-125.md"},
-        {"title": "Stable cubic-frame classification", "path": "results/stable-cubic-frames.md"},
-        {"title": "Two-block stable uniqueness", "path": "results/two-block-uniqueness.md"},
+        {"title": "A modulus at infinity", "path": "results/stable-cubic-frames.md"},
+        {"title": "The exceptional cubic two-block chart", "path": "results/two-block-uniqueness.md"},
         {"title": "Five degree-21 dessins", "path": "results/degree-21-dessins.md"},
         {"title": "The length-584 local algebra", "path": "results/length-584.md"},
+        {"title": "Proof and evidence ledger", "path": "results/evidence-ledger.md"},
         {"title": "Relevant external developments", "path": "developments/index.md"}
       ]
     },

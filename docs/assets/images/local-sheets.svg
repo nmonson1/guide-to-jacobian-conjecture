@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <title id="title">Three local sheets over one target neighborhood</title>
+  <desc id="desc">Three disjoint source neighborhoods U1, U2, and U3 each map isomorphically to the same target neighborhood V. Points p1, p2, and p3 map to one point y.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0d6567"/>
+    </marker>
+    <style>
+      .paper{fill:#fbf9f3}.sheet{fill:#e6efe9;stroke:#0d6567;stroke-width:3}.target{fill:#f4e5cc;stroke:#a63a30;stroke-width:3}.arrow{fill:none;stroke:#0d6567;stroke-width:3;marker-end:url(#arrow)}.label{font:600 25px Georgia,serif;fill:#183638}.small{font:500 19px system-ui,sans-serif;fill:#586b6c}.point{fill:#a63a30}.dash{stroke-dasharray:8 8}
+    </style>
+  </defs>
+  <rect class="paper" width="900" height="430" rx="24"/>
+  <text class="small" x="52" y="48">source: three disjoint neighborhoods</text>
+  <text class="small" x="638" y="48">target</text>
+
+  <rect class="sheet" x="55" y="78" width="285" height="82" rx="38"/>
+  <rect class="sheet" x="55" y="175" width="285" height="82" rx="38"/>
+  <rect class="sheet" x="55" y="272" width="285" height="82" rx="38"/>
+  <text class="label" x="82" y="128">U₁</text>
+  <text class="label" x="82" y="225">U₂</text>
+  <text class="label" x="82" y="322">U₃</text>
+  <circle class="point" cx="245" cy="119" r="8"/>
+  <circle class="point" cx="245" cy="216" r="8"/>
+  <circle class="point" cx="245" cy="313" r="8"/>
+  <text class="small" x="260" y="126">p₁</text>
+  <text class="small" x="260" y="223">p₂</text>
+  <text class="small" x="260" y="320">p₃</text>
+
+  <ellipse class="target" cx="700" cy="216" rx="145" ry="112"/>
+  <text class="label" x="681" y="154">V</text>
+  <circle class="point" cx="700" cy="216" r="9"/>
+  <text class="small" x="718" y="223">y</text>
+
+  <path class="arrow" d="M342 118 C470 118, 515 170, 560 198"/>
+  <path class="arrow" d="M342 216 C455 216, 505 216, 548 216"/>
+  <path class="arrow" d="M342 314 C470 314, 515 262, 560 234"/>
+  <text class="small" x="395" y="103">isomorphism</text>
+  <text class="small" x="395" y="202">isomorphism</text>
+  <text class="small" x="395" y="337">isomorphism</text>
+
+  <text class="small" x="55" y="398">Each local map is one-to-one; the global map has three sheets over V.</text>
+</svg>

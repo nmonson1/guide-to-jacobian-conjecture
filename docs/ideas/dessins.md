@@ -1,49 +1,87 @@
 ---
-title: "Dessins d'enfants: turning boundary equations into permutations"
-description: "Why Belyi maps and dessins give finite combinatorial models for Newton faces."
+title: "Dessins d'enfants: from boundary equations to permutations"
+description: "How a Belyi map turns a geometric boundary problem into finite combinatorics on a sphere."
 ---
 
-# Dessins d'enfants: turning boundary equations into permutations
+# Dessins d'enfants: from boundary equations to permutations
 
-A **Belyi map** is a map from an algebraic curve to the projective line that
-branches only over \(0\), \(1\), and \(\infty\). Its inverse image of the
-interval \([0,1]\) is a bipartite graph embedded in the curve—a *dessin
+A **Belyi map** is a map from an algebraic curve to the projective line whose
+branch values lie in \(\{0,1,\infty\}\). The inverse image of the interval
+\([0,1]\) is a bipartite graph embedded in the curve, called a *dessin
 d'enfant*.
 
-For a map of degree \(d\), loops around \(0\), \(1\), and \(\infty\) give
-three permutations of \(d\) sheets. Their cycle lengths record the
-ramification, their product is the identity, and transitivity says the cover
-is connected. A ramification **passport** therefore turns a geometric
-classification into a finite permutation problem.
+The striking feature is compression. A branched cover described by equations
+can be encoded by a finite graph—or equivalently by three permutations.
 
-For a degree-two toy example, \(z\mapsto z^2\) is branched only over \(0\)
-and \(\infty\), which is allowed because those points are a subset of
-\(\{0,1,\infty\}\). The sheet permutations around \(0,1,\infty\) are a
-transposition, the identity, and a transposition. This tiny permutation
-triple already records the whole connected cover.
+## The smallest example
 
-## Why dessins arise here
+For \(z\mapsto z^2\), the only branch values are \(0\) and \(\infty\). The
+preimage of \([0,1]\) is the interval from \(-1\) to \(1\), with a black
+vertex over \(0\) and white vertices over \(1\):
+
+<figure class="math-figure">
+  <img src="../assets/images/dessin.svg" alt="The dessin of z squared, with one black vertex over zero joined to two white vertices over one, together with its permutation triple.">
+  <figcaption>The graph and the permutation triple encode the same degree-two cover.</figcaption>
+</figure>
+
+For a degree-\(d\) Belyi map, loops around \(0\), \(1\), and \(\infty\) give
+permutations
+
+\[
+\sigma_0,\qquad\sigma_1,\qquad\sigma_\infty
+\]
+
+of the \(d\) sheets, with
+
+\[
+\sigma_0\sigma_1\sigma_\infty=1.
+\]
+
+Their cycle lengths record the ramification. Transitivity records
+connectedness. The three cycle partitions form the **passport** of the
+dessin.
+
+## Why Belyi maps appear at infinity
 
 On a Newton face of a hypothetical plane Keller map, the constant-Jacobian
-equation can force a rational function whose derivative has zeros and poles
-in exactly three fibers. That function is a Belyi map. The allowable face is
-then constrained by a passport, and one can enumerate the corresponding
-dessins before reconstructing exact coefficients.
+equation can reduce to a differential identity for two one-variable
+polynomials. Repackaging that identity produces a rational function whose
+critical values lie over \(0\), \(1\), and \(\infty\). The boundary problem
+has become a Belyi problem.
 
-In the degree-21 boundary calculation, the forced passport has exactly five
-connected dessins. They form one arithmetic orbit and have monodromy
-\(A_{21}\). This is a substantial exact classification of the face data.
+The passport is often restrictive enough to enumerate every connected
+permutation triple. This produces a finite list of dessins from which the
+exact coefficients can be reconstructed.
 
-## What a dessin does not prove
+## The degree-21 compression
 
-A dessin controls one boundary layer. It does not guarantee that the layer
-extends to a global polynomial Keller pair. Later compatibility equations
-must still be solved, and the logical route from a global candidate to the
-chosen face must be explicit.
+For the two Newton supports remaining below degree \(125\), the forced
+leading-face equation produces a degree-21 Belyi map with passport
 
-[Read the degree-21 result](../results/degree-21-dessins.md){ .md-button }
+\[
+(2^{10}1),\qquad(3^7),\qquad(17\,1^4).
+\]
+
+There are exactly five connected dessins with this passport. They form one
+arithmetic orbit and have monodromy group \(A_{21}\).
+
+This is a remarkable reduction: an infinite-looking boundary coefficient
+problem collapses to five exact combinatorial models.
+
+## The remaining globalization problem
+
+A dessin determines one boundary layer. To obtain a global polynomial Keller
+pair, every later Puiseux layer must exist and satisfy the Jacobian equations.
+The route from a global candidate to the chosen Newton face must also be
+complete.
+
+Thus the five dessins are exact candidate boundary models. They become a
+degree exclusion only after the later compatibility equations eliminate all
+five in every globally admissible support.
+
+[Read the degree-21 classification](../results/degree-21-dessins.md){ .md-button .md-button--primary }
 
 ## Sources
 
 - [Guccione–Guccione–Horruitiner–Valqui, arXiv:2204.14178](https://arxiv.org/abs/2204.14178)
-- [Public working manuscript and certificates in this repository's history](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/06-plane-boundary/appendices/degree-twenty-one-certificates.tex)
+- [Proof and evidence record for the degree-21 classification](../results/evidence-ledger.md#five-degree-21-dessins)

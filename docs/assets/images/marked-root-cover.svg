@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">The marked-root cover</title>
+  <desc id="desc">The simple marked-root space is an open subset of the full marked-root incidence space. Forgetting the root maps the incidence space finitely to cubic coefficient space. A generic cubic has three marked roots; repeated marked roots lie on the deleted boundary.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0d6567"/>
+    </marker>
+    <style>
+      .paper{fill:#fbf9f3}.box{fill:#e6efe9;stroke:#0d6567;stroke-width:3}.target{fill:#f4e5cc;stroke:#a63a30;stroke-width:3}.boundary{fill:#f7d7d2;stroke:#a63a30;stroke-width:2;stroke-dasharray:8 7}.arrow{fill:none;stroke:#0d6567;stroke-width:3;marker-end:url(#arrow)}.label{font:600 24px Georgia,serif;fill:#183638}.small{font:500 18px system-ui,sans-serif;fill:#586b6c}.root{fill:#c9821b;stroke:#183638;stroke-width:1.5}.repeat{fill:#a63a30}.fiber{stroke:#586b6c;stroke-width:2;stroke-dasharray:5 6}
+    </style>
+  </defs>
+  <rect class="paper" width="1000" height="520" rx="24"/>
+
+  <rect class="box" x="48" y="92" width="250" height="315" rx="24"/>
+  <text class="label" x="77" y="132">simple-root open</text>
+  <text class="small" x="77" y="166">affine 3-space chart</text>
+  <circle class="root" cx="110" cy="230" r="11"/>
+  <circle class="root" cx="173" cy="230" r="11"/>
+  <circle class="root" cx="236" cy="230" r="11"/>
+  <text class="small" x="87" y="268">three choices over</text>
+  <text class="small" x="92" y="292">a generic cubic</text>
+  <path class="fiber" d="M85 330 H260"/>
+  <text class="small" x="82" y="365">every retained root</text>
+  <text class="small" x="101" y="389">is simple</text>
+
+  <rect class="box" x="382" y="64" width="260" height="371" rx="24"/>
+  <text class="label" x="414" y="106">full marked-root cover</text>
+  <text class="small" x="414" y="139">finite completion I</text>
+  <circle class="root" cx="450" cy="215" r="11"/>
+  <circle class="root" cx="512" cy="215" r="11"/>
+  <circle class="root" cx="574" cy="215" r="11"/>
+  <rect class="boundary" x="414" y="292" width="196" height="94" rx="18"/>
+  <circle class="repeat" cx="465" cy="337" r="12"/>
+  <circle class="repeat" cx="486" cy="337" r="12"/>
+  <text class="small" x="512" y="330">repeated</text>
+  <text class="small" x="512" y="354">marked roots</text>
+  <text class="small" x="431" y="415">deleted boundary</text>
+
+  <rect class="target" x="752" y="122" width="205" height="250" rx="34"/>
+  <text class="label" x="779" y="158">cubic coefficient</text>
+  <text class="label" x="825" y="187">space</text>
+  <text class="small" x="782" y="218">forget the mark</text>
+  <path class="fiber" d="M790 255 H920"/>
+  <circle class="root" cx="820" cy="255" r="9"/>
+  <circle class="root" cx="855" cy="255" r="9"/>
+  <circle class="root" cx="890" cy="255" r="9"/>
+  <text class="small" x="797" y="293">generic fiber: 3</text>
+  <path class="fiber" d="M790 325 H920"/>
+  <circle class="repeat" cx="846" cy="325" r="9"/>
+  <circle class="repeat" cx="864" cy="325" r="9"/>
+  <text class="small" x="780" y="356">discriminant fiber</text>
+
+  <path class="arrow" d="M300 250 H370"/>
+  <text class="small" x="306" y="229">open</text>
+  <path class="arrow" d="M645 250 H739"/>
+  <text class="small" x="659" y="229">finite</text>
+
+  <text class="small" x="48" y="478">Deleting the repeated-root boundary removes ramification and keeps the three generic choices.</text>
+</svg>

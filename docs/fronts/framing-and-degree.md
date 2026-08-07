@@ -1,52 +1,87 @@
 ---
-title: "Front IV: framing complexity and low-degree exclusion"
-description: "How to measure simplicity after counterexamples exist, and how low-degree cases are ruled out."
+title: "How small can a counterexample be?"
+description: "The competing notions of size for Keller maps and the different arguments needed to minimize each one."
 ---
 
-# Front IV: framing complexity and low-degree exclusion
+# How small can a counterexample be?
 
-!!! info "For researchers"
-    “Smallest” has several inequivalent meanings here. The result pages below
-    keep generic degree, ordinary degree, and ambient dimension separate.
+<p class="dek">Once counterexamples exist, “smallest” separates into several
+mathematical problems. A map can be small as a cover, large as a formula, and
+smaller again after a change of normal form.</p>
 
-Once counterexamples exist, “the smallest one” is not a single question.
-One can minimize ordinary degree, generic degree, source dimension, number of
-monomials, cubic-homogeneous dimension, or complexity of the boundary. These
-measures behave differently under stabilization and normal-form reductions.
+## Six notions of size
 
-## The story so far
+For a polynomial map \(F\colon\mathbf A^n\to\mathbf A^n\), one may try to
+minimize:
 
-The first map has generic degree three. Gallagher's construction realizes
-every generic degree at least three, so generic degree measures the cover
-rather than proximity to the first formula. Thompson's 24-variable example
-shows that the counterexample reaches the strict cubic-homogeneous normal
-form, but does not establish the minimum dimension in that form.
+| Measure | What it sees | Typical behavior |
+| --- | --- | --- |
+| Ambient dimension \(n\) | Number of variables | Increases under stabilization and degree reduction |
+| Ordinary degree | Largest degree of a coordinate | Changes under coordinate transformations and suspensions |
+| Generic degree | Number of points in a typical fiber | Intrinsic to the function-field extension |
+| Sparsity | Number of monomial terms | Highly presentation-dependent |
+| Normal-form dimension | Cost of reaching cubic-homogeneous or cubic-linear form | Depends on the chosen reduction |
+| Boundary complexity | Components, singularities, and intersection data at infinity | Often survives equivalence more robustly |
 
-For the plane problem, an announced computer-assisted result places ordinary
-degree at least 125. The published portion progressively compresses the
-leading geometry into two Newton supports; the terminal exclusion has been
-announced, but its full write-up is still in preparation.
+A theorem about one row rarely settles another. This is why low-degree
+classification, minimal dimension, and intrinsic cover complexity have
+developed into distinct fronts.
 
-The two-block stable-uniqueness theorem approaches simplicity from the other
-side: within a broad multiplication-incidence construction, the cubic
-\((1,2)\) chart is the only case that is stably affine.
+## What the first examples already show
 
-## The main open questions
+The original map has ordinary degree seven, ambient dimension three, and
+generic degree three. Subsequent constructions realize every generic degree
+\(d\ge3\) already in dimension three. Generic degree is therefore a property
+of the cover, largely independent of how closely the coordinates resemble
+the first formula.
+
+William Thompson's 24-variable map reaches the strict cubic-homogeneous form
+\(U+H(U)\), with \(H\) homogeneous cubic. It supplies a concrete upper bound
+on the dimension required by that construction. Finding the smallest
+cubic-homogeneous dimension is a separate optimization problem.
+
+Within a broad two-block multiplication construction, the \((1,2)\) cubic
+chart is uniquely capable of becoming affine space after stabilization. Here
+simplicity is measured geometrically: can the incidence open become affine
+space after unused variables are added?
+
+## Low-degree exclusion in the plane
+
+A plane counterexample would have highly constrained behavior at infinity.
+Degree bounds convert that geometry into a finite list of Newton polygons,
+valuations, and support systems. The current announced result places the
+maximum coordinate degree at least \(125\).
+
+A complete low-degree exclusion has two essential parts. A global reduction
+must send every map in the stated degree range to one of the terminal
+systems, and exact calculation must then eliminate each system.
+
+## Questions with distinct answers
 
 - What is the smallest dimension of a cubic-homogeneous counterexample?
-- Which ordinary degrees are possible in dimension three?
-- Is there any characteristic-zero plane counterexample at all—and, if so,
-  how far above 125 must its degree lie?
-- Which complexity measures are intrinsic to the cover, and which belong
-  only to a chosen presentation?
+- Which ordinary degrees occur in dimension three?
+- Can one lower the number of monomials without increasing dimension?
+- Which boundary complexities occur for a given generic degree?
+- Is there any characteristic-zero plane counterexample?
+- Which measures survive stable polynomial equivalence?
 
-## Places to enter
+Each question requires its own notion of equivalence, and that equivalence
+belongs in the theorem statement.
+
+## Problems to compare
 
 - [Every generic degree](../results/every-generic-degree.md)
 - [The 24-variable cubic-homogeneous map](../results/cubic-homogeneous.md)
 - [The announced plane degree bound 125](../results/below-125.md)
 - [Two-block stable uniqueness](../results/two-block-uniqueness.md)
 
-The concrete target is a proved exclusion of a precisely stated class,
-together with the reduction showing that the class captures every candidate
-under discussion.
+## Toward a complexity theory
+
+A useful complexity theory would attach several measurements to each
+counterexample and track how they change under coordinate transformation,
+stabilization, and normal-form reduction. Even a partial theorem relating
+ordinary degree to intrinsic boundary data would connect two currently
+different kinds of search. Any claim about the smallest counterexample must
+therefore begin by naming the quantity being minimized and the transformations
+allowed.
+

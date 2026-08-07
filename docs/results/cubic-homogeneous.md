@@ -1,21 +1,49 @@
 ---
-title: "William Thompson (21 July 2026): a cubic-homogeneous counterexample in 24 variables"
-description: "An explicit counterexample in the classical cubic-homogeneous normal form, with exact certificates."
+title: "A cubic-homogeneous counterexample in 24 variables"
+description: "William Thompson's explicit counterexample in the classical normal form U plus a homogeneous cubic map."
 ---
 
-# William Thompson (21 July 2026): a cubic-homogeneous counterexample in 24 variables
+# A cubic-homogeneous counterexample in 24 variables
 
-<p class="byline">Construction, certificate package, and verifier programs by
-William Thompson</p>
+<p class="byline">Construction, exact certificate package, and verifier
+programs by William Thompson · 21 July 2026</p>
 
-## What is true and why
+Classical reduction theorems made maps of the form
 
-Classical reduction theorems made maps of the form \(X+H(X)\), with \(H\)
-homogeneous cubic, central to the Jacobian conjecture. Thompson converted the
-new counterexample into this strict normal form while keeping the result
-explicit enough to check term by term.
+\[
+G(U)=U+H(U),
+\]
 
-## Precise result
+with \(H\) homogeneous cubic, central to the Jacobian conjecture. Before the
+counterexample, this normal form concentrated the general problem into a
+highly structured class. Thompson showed that the new failure survives the
+reduction explicitly.
+
+## Why the normal form matters
+
+For \(G=I+H\) with \(H\) homogeneous cubic, the Jacobian matrix is
+
+\[
+DG=I+DH,
+\]
+
+and \(DH\) is homogeneous quadratic. Scaling \(U\) by \(\lambda\) scales
+\(DH(U)\) by \(\lambda^2\). Hence the identity
+\(\det(I+DH)=1\) gives
+
+\[
+\det(I+tDH(U))=1
+\]
+
+for every \(t\in\mathbf C\). The nonconstant coefficients of this determinant
+are the elementary symmetric functions of the eigenvalues of \(DH(U)\); all
+of them vanish, so \(DH(U)\) is nilpotent. Cubic-linear reductions and
+connections with Hessian maps are now visible directly in the coordinates.
+
+The normal form is therefore more than a degree bound. It is the coordinate
+language in which much of the classical theory was developed.
+
+## The 24-variable map
 
 There is an explicit polynomial map
 
@@ -32,19 +60,24 @@ such that every nonzero component of \(H\) is homogeneous of degree three,
 and two displayed distinct rational points have the same image. The map has
 54 nonzero cubic monomials.
 
-## Discussion
+The determinant and collision are certified by exact arithmetic and verifier
+programs. Thus the counterexample lies inside the strict cubic-homogeneous
+class used by the Bass--Connell--Wright and Yagzhev reductions.
 
-The importance of the result is structural rather than dimensional. It
-places a concrete counterexample inside the normal form used by the
-Bass–Connell–Wright and Yagzhev reductions, so questions about nilpotent
-Jacobian matrices, cubic-linear forms, and the neighboring Hessian
-conjecture can be tested on an exact example.
+## What becomes possible
 
-Twenty-four is an upper bound supplied by this construction, not a proof of
-minimality. Smaller cubic-homogeneous presentations are a separate problem.
+A concrete normal-form example can be used as a test object for questions
+that were previously posed only under the conjectural assumption that every
+such map was invertible. One can now examine:
 
-## Sources and verification
+- the nilpotent structure of \(DH\);
+- further cubic-linear compression;
+- minimal dimension in cubic-homogeneous form;
+- stable equivalence between different reductions;
+- consequences for neighboring Hessian and unipotent-Jacobian problems.
 
-- [Thompson's repository, pinned revision](https://github.com/wtho704/explicit-cubic-homogeneous-jacobian-counterexample/tree/45a7616fdf5a20c065564f2676190093722696b9)
-- [Archived release on Zenodo](https://doi.org/10.5281/zenodo.21466221)
-- [Bass–Connell–Wright, “The Jacobian conjecture: reduction of degree and formal expansion of the inverse”](https://doi.org/10.1090/S0273-0979-1982-15032-7)
+The dimension \(24\) is an upper bound produced by this construction. Smaller
+cubic-homogeneous presentations may exist, and their minimum dimension is a
+natural framing problem.
+
+[Proof, sources, and verification](evidence-ledger.md#the-24-variable-cubic-homogeneous-map){ .evidence-link }
