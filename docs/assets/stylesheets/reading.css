@@ -1,0 +1,31 @@
+/* Reading and mathematical-figure refinements layered over extra.css. */
+.md-typeset {
+  font-size: 0.94rem;
+}
+
+.md-typeset img[src*="assets/images/"] {
+  background: #fffdf8;
+  border: 1px solid var(--jac-line);
+  border-radius: 0.9rem;
+  box-shadow: 0 10px 30px rgba(26, 50, 51, 0.08);
+  display: block;
+  margin: 1.8rem auto;
+  max-height: 30rem;
+  padding: 0.7rem;
+  width: min(100%, 58rem);
+}
+
+[data-md-color-scheme="jacobian-dark"] .md-typeset img[src*="assets/images/"] {
+  background: #f8f4ea;
+}
+
+@media (max-width: 40rem) {
+  .md-typeset {
+    font-size: 0.9rem;
+  }
+
+  .md-typeset img[src*="assets/images/"] {
+    border-radius: 0.55rem;
+    padding: 0.35rem;
+  }
+}

@@ -1,10 +1,4 @@
-"""MkDocs hook for the guide's public-but-unlisted editorial workflow.
-
-Every Markdown page is built and can be visited by URL. Only an exact file
-version recorded as approved is admitted to the ordinary navigation, search
-index, or sitemap. This module deliberately controls discoverability only; it
-does not claim mathematical or peer review.
-"""
+"""MkDocs editorial gating for public drafts and approved guide pages."""
 
 from __future__ import annotations
 
@@ -20,7 +14,6 @@ from xml.etree import ElementTree
 from mkdocs.exceptions import ConfigurationError
 from mkdocs.plugins import event_priority
 
-
 ALLOWED_STATUSES = {"unread", "needs_revision", "approved"}
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
@@ -33,21 +26,17 @@ _review_page_path = "review/index.md"
 
 
 def sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for block in iter(lambda: handle.read(65536), b""):
-            digest.update(block)
-    return digest.hexdigest()
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def effective_status(record: dict[str, Any], current_hash: str) -> str:
-    """Return the status that applies to the current bytes on disk."""
-
     if record.get("status") != "approved":
         return str(record.get("status"))
-    if record.get("reviewed_sha256") == current_hash:
-        return "approved"
-    return "changed_since_review"
+    return (
+        "approved"
+        if record.get("reviewed_sha256") == current_hash
+        else "changed_since_review"
+    )
 
 
 def page_url(path: str) -> str:
@@ -62,9 +51,7 @@ def _load_json(path: Path) -> dict[str, Any]:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
-        raise ConfigurationError(
-            f"Cannot load {path.relative_to(ROOT)}: {exc}"
-        ) from exc
+        raise ConfigurationError(f"Cannot load {path.relative_to(ROOT)}: {exc}") from exc
 
 
 def load_editorial_state() -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
@@ -81,12 +68,12 @@ def load_editorial_state() -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
     missing = sorted(markdown_paths - ledger_paths)
     stale = sorted(ledger_paths - markdown_paths)
     if missing or stale:
-        parts = []
+        messages = []
         if missing:
-            parts.append(f"missing review records: {', '.join(missing)}")
+            messages.append("missing review records: " + ", ".join(missing))
         if stale:
-            parts.append(f"review records for missing pages: {', '.join(stale)}")
-        raise ConfigurationError("; ".join(parts))
+            messages.append("review records for missing pages: " + ", ".join(stale))
+        raise ConfigurationError("; ".join(messages))
 
     state: dict[str, dict[str, Any]] = {}
     for path in sorted(markdown_paths):
@@ -96,17 +83,17 @@ def load_editorial_state() -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
                 f"{path}: status must be one of {sorted(ALLOWED_STATUSES)}"
             )
         current_hash = sha256_file(DOCS / path)
-        current_status = effective_status(record, current_hash)
+        status = effective_status(record, current_hash)
         state[path] = {
             **record,
             "sha256": current_hash,
-            "effective_status": current_status,
-            "approved": current_status == "approved",
+            "effective_status": status,
+            "approved": status == "approved",
             "url": page_url(path),
+            "in_navigation": True,
         }
 
-    titles: dict[str, str] = {}
-    nav_paths: set[str] = set()
+    placed: set[str] = set()
     sections = navigation.get("sections")
     if not isinstance(sections, list):
         raise ConfigurationError("editorial/navigation.json must contain sections")
@@ -114,25 +101,29 @@ def load_editorial_state() -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
         for page in section.get("pages", []):
             path = page.get("path")
             title = page.get("title")
+            in_navigation = page.get("nav", True)
             if path not in state or not isinstance(title, str):
                 raise ConfigurationError(f"invalid navigation entry: {page!r}")
-            if path in nav_paths:
+            if not isinstance(in_navigation, bool):
+                raise ConfigurationError(f"{path}: nav must be true or false")
+            if path in placed:
                 raise ConfigurationError(f"duplicate navigation entry: {path}")
-            nav_paths.add(path)
-            titles[path] = title
+            placed.add(path)
+            state[path]["in_navigation"] = in_navigation
 
-    review_page = navigation.get("review_page", {})
-    review_path = review_page.get("path")
+    review = navigation.get("review_page", {})
+    review_path = review.get("path")
     if review_path not in state:
         raise ConfigurationError("navigation review_page must name a tracked page")
     if state[review_path]["approved"]:
         raise ConfigurationError("the review workspace must remain unlisted")
-    titles[review_path] = str(review_page.get("title", "Review workspace"))
+    state[review_path]["in_navigation"] = False
 
-    unplaced = markdown_paths - nav_paths - {review_path}
+    unplaced = markdown_paths - placed - {review_path}
     if unplaced:
         raise ConfigurationError(
-            "pages missing from hand-authored navigation: " + ", ".join(sorted(unplaced))
+            "pages missing from hand-authored placement: "
+            + ", ".join(sorted(unplaced))
         )
     return state, navigation
 
@@ -142,21 +133,21 @@ def on_config(config: Any) -> Any:
     global _state, _titles, _review_page_path
     _state, navigation = load_editorial_state()
     _titles = {}
-
-    approved_nav: list[dict[str, Any]] = []
+    nav = []
     for section in navigation["sections"]:
         pages = []
         for page in section["pages"]:
-            _titles[page["path"]] = page["title"]
-            if _state[page["path"]]["approved"]:
-                pages.append({page["title"]: page["path"]})
+            path = page["path"]
+            _titles[path] = page["title"]
+            if _state[path]["approved"] and _state[path]["in_navigation"]:
+                pages.append({page["title"]: path})
         if pages:
-            approved_nav.append({section["title"]: pages})
+            nav.append({section["title"]: pages})
 
-    review_page = navigation["review_page"]
-    _review_page_path = review_page["path"]
-    _titles[review_page["path"]] = review_page["title"]
-    config["nav"] = approved_nav
+    review = navigation["review_page"]
+    _review_page_path = review["path"]
+    _titles[_review_page_path] = review["title"]
+    config["nav"] = nav
     config.setdefault("extra", {})["has_approved_pages"] = any(
         record["approved"]
         for path, record in _state.items()
@@ -168,8 +159,7 @@ def on_config(config: Any) -> Any:
 def public_approved_urls(
     state: dict[str, dict[str, Any]], review_page_path: str
 ) -> set[str]:
-    """Return listed URLs, never including the unlisted review workspace."""
-
+    """Return indexed approved URLs, including contextual pages."""
     return {
         record["url"]
         for path, record in state.items()
@@ -182,15 +172,15 @@ def _review_list_html() -> str:
     for path, record in _state.items():
         if path == _review_page_path:
             continue
-        title = html.escape(_titles.get(path, path))
-        source_path = html.escape(path)
         status = record["effective_status"]
         label = status.replace("_", " ")
-        url = html.escape(f"../{record['url']}", quote=True)
+        if not record["in_navigation"]:
+            label += " · contextual"
         items.append(
             "<li>"
-            f'<a href="{url}">{title}</a>'
-            f"<code>{source_path}</code>"
+            f'<a href="../{html.escape(record["url"], quote=True)}">'
+            f'{html.escape(_titles.get(path, path))}</a>'
+            f"<code>{html.escape(path)}</code>"
             f'<span class="review-status review-status--{status}">{label}</span>'
             "</li>"
         )
@@ -217,33 +207,32 @@ def on_page_markdown(markdown: str, page: Any, config: Any, files: Any) -> str:
         markdown = markdown.replace(
             marker,
             '<div id="review-pages" aria-describedby="review-count">'
-            f"{_review_list_html()}</div>",
+            + _review_list_html()
+            + "</div>",
         )
-
     if record["approved"]:
         return markdown
 
-    if status == "changed_since_review":
-        message = (
-            "This page changed after its last approval. It remains public for review, "
-            "but is not included in the guide's navigation, search, or sitemap."
-        )
-    elif status == "needs_revision":
-        message = (
+    messages = {
+        "changed_since_review": (
+            "This page changed after its last approval. It remains public for "
+            "review, but is not included in navigation, search, or the sitemap."
+        ),
+        "needs_revision": (
             "This page is being revised. It remains public for review, but is not "
-            "included in the guide's navigation, search, or sitemap."
-        )
-    else:
-        message = (
-            "This editorial draft is public for review, but has not yet been read by "
-            "the guide's owner. It is not included in navigation, search, or the sitemap."
-        )
-    banner = (
+            "included in navigation, search, or the sitemap."
+        ),
+        "unread": (
+            "This editorial draft is public for review, but has not yet been read "
+            "by the guide's owner. It is not included in navigation, search, or "
+            "the sitemap."
+        ),
+    }
+    return (
         f'<aside class="editorial-state" data-editorial-status="{status}">'
-        f'<strong>Editorial status: {status.replace("_", " ")}.</strong> {message}'
-        "</aside>\n\n"
+        f'<strong>Editorial status: {status.replace("_", " ")}.</strong> '
+        f'{messages[status]}</aside>\n\n{markdown}'
     )
-    return banner + markdown
 
 
 def _filter_search(site_dir: Path, approved_urls: set[str]) -> None:
@@ -256,12 +245,11 @@ def _filter_search(site_dir: Path, approved_urls: set[str]) -> None:
     (review_dir / "all-pages-search-index.json").write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-
-    def approved(entry: dict[str, Any]) -> bool:
-        location = str(entry.get("location", "")).split("#", 1)[0]
-        return location in approved_urls
-
-    payload["docs"] = [entry for entry in payload.get("docs", []) if approved(entry)]
+    payload["docs"] = [
+        entry
+        for entry in payload.get("docs", [])
+        if str(entry.get("location", "")).split("#", 1)[0] in approved_urls
+    ]
     search_file.write_text(
         json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
         encoding="utf-8",
@@ -269,23 +257,23 @@ def _filter_search(site_dir: Path, approved_urls: set[str]) -> None:
 
 
 def _filter_sitemap(site_dir: Path, site_url: str, approved_urls: set[str]) -> None:
-    sitemap_file = site_dir / "sitemap.xml"
-    if not sitemap_file.exists():
+    sitemap = site_dir / "sitemap.xml"
+    if not sitemap.exists():
         return
     namespace = "http://www.sitemaps.org/schemas/sitemap/0.9"
     ElementTree.register_namespace("", namespace)
-    tree = ElementTree.parse(sitemap_file)
+    tree = ElementTree.parse(sitemap)
     root = tree.getroot()
-    approved_locations = {urljoin(site_url, url) for url in approved_urls}
+    allowed = {urljoin(site_url, url) for url in approved_urls}
     for node in list(root):
         location = node.find(f"{{{namespace}}}loc")
-        if location is None or (location.text or "") not in approved_locations:
+        if location is None or (location.text or "") not in allowed:
             root.remove(node)
-    tree.write(sitemap_file, encoding="utf-8", xml_declaration=True)
+    tree.write(sitemap, encoding="utf-8", xml_declaration=True)
     compressed = site_dir / "sitemap.xml.gz"
     if compressed.exists():
         with gzip.open(compressed, "wb") as handle:
-            handle.write(sitemap_file.read_bytes())
+            handle.write(sitemap.read_bytes())
 
 
 @event_priority(-100)
@@ -306,6 +294,7 @@ def on_post_build(config: Any) -> None:
                 "reviewed_at": record.get("reviewed_at"),
                 "url": record["url"],
                 "approved": record["approved"],
+                "in_navigation": record["in_navigation"],
             }
             for path, record in _state.items()
         ],

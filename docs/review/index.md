@@ -6,17 +6,19 @@ description: "A public but unlisted index of guide pages and their exact-version
 # Unlisted review workspace
 
 This page lets invited readers reach every draft before it enters the guide's
-ordinary navigation. The pages are public; the distinction is editorial, not
-a privacy boundary.
+indexed public surface. The pages are public; the distinction is editorial,
+not a privacy boundary.
 
 - **Unread:** the owner has not yet reviewed this version.
 - **Needs revision:** the owner has reviewed it and requested changes.
 - **Changed since review:** a previously approved file has changed.
-- **Approved:** this exact file version is eligible for navigation, search,
-  and the sitemap.
+- **Approved:** this exact file version is eligible for search and the
+  sitemap. The navigation manifest separately decides whether it receives a
+  persistent menu item or is linked contextually from another page.
 
-Approval here is not mathematical peer review. It means only that the guide's
-owner has looked over this exact version and wants it listed.
+Approval here is not mathematical peer review or a correctness badge. It
+means only that the guide's owner has looked over this exact version and wants
+it included in the indexed guide.
 
 <label class="review-filter-label" for="review-filter">Filter by title, path, or status</label>
 <input id="review-filter" class="review-filter" type="search" placeholder="Try: counterexample or unread" autocomplete="off">

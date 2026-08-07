@@ -33,9 +33,11 @@ polynomial with nonzero constant derivative is linear. Many important
 special classes in higher dimensions are also known to be invertible.
 
 What the derivative does **not** control is behavior at infinity. Distinct
-points can have the same image without a finite critical point if sheets of
-the map separate and reconnect through infinity. That is precisely the
-loophole used by the three-dimensional counterexample.
+points can have the same image without a finite critical point when sheets of
+the map escape through infinity. That is precisely the loophole used by the
+three-dimensional counterexample.
+
+[What the Jacobian condition misses](what-the-jacobian-condition-misses.md){ .md-button }
 
 ## The status now
 

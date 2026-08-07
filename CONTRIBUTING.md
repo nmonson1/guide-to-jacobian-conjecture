@@ -48,10 +48,14 @@ to understand the result page.
 ## Editorial workflow
 
 New pages must be entered in both `editorial/navigation.json` and
-`editorial/reviews.json`, initially as `unread`. Do not mark a page approved on
-someone else's behalf. Approval pins the exact Markdown hash; subsequent edits
-automatically remove the page from ordinary navigation, search, and the
-sitemap until it is reviewed again.
+`editorial/reviews.json`, initially as `unread`. Every page is placed in a
+section, but a contextual specialist page may set `"nav": false` so that an
+approved version remains searchable and linkable without entering persistent
+navigation.
+
+Do not mark a page approved on someone else's behalf. Approval pins the exact
+Markdown hash; subsequent edits automatically remove the page from
+navigation, search, and the sitemap until it is reviewed again.
 
 Before opening a pull request, run:
 

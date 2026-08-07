@@ -1,14 +1,15 @@
 ---
-title: "A stable classification of a family of cubic frames"
+title: "Infinitely many stably inequivalent cubic-frame families"
 description: "A one-parameter modulus of three-sheeted Keller openings survives arbitrary stabilization."
 ---
 
-# A stable classification of a family of cubic frames
+# Infinitely many stably inequivalent cubic-frame families
 
-!!! info "Reading level"
-    This is a specialist classification theorem. The first section explains
-    the invariant geometrically; the exact family and equivalence relation
-    are stated next.
+<p class="dek">A boundary invariant distinguishes a continuum of
+three-sheeted counterexample families even after arbitrary stabilization.</p>
+
+!!! info "Technical subtitle"
+    Stable classification of a quadratic family of cubic frames.
 
 ## What is true and why
 
@@ -32,7 +33,7 @@ B_{\alpha,\beta}(c)=-2-4\alpha c+\beta c^2,
 let \(G_{\alpha,\beta}\) be the associated cubic-frame Keller map. Every
 member has determinant \(-2\), generic degree three, and is nonproper.
 
-The stable polynomial left–right equivalence classes are
+The stable polynomial left--right equivalence classes are
 
 \[
 \{\mathcal O_0\}\;\sqcup\;\{\mathcal O_q:q\in\mathbf C\},
@@ -64,16 +65,24 @@ after stabilization.
 At \(q=-2\), the singular component meets the plane singularly; this
 intrinsic event separates the exceptional orbit.
 
+## Why it matters
+
+The theorem shows that the first counterexample is not a single isolated
+formula wearing many coordinate disguises. Even within one controlled
+three-sheeted construction, genuinely different stable polynomial types
+remain. The boundary at infinity detects distinctions invisible in the
+generic degree alone.
+
 ## What it does not prove
 
 This classifies the displayed quadratic cubic-frame family, not all
 degree-three Keller maps and not all finite three-sheeted openings.
 
-## Proof source and status
+## Public proof route
 
-- [Working manuscript source, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/04-stable-moduli/main.tex)
-- [Working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/04-boundary-rigidity-stable-moduli-2026-07-29-v13.pdf)
+- [Working manuscript source, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/04-stable-moduli/main.tex) — theorem statements and proof source.
+- [Working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/04-boundary-rigidity-stable-moduli-2026-07-29-v13.pdf) — reader-facing snapshot dated 29 July 2026.
 
-This is a theorem of the project, authored by Nathaniel Monson. The linked
-working manuscript contains the proof and exact checks; it is not presented
-as journal peer review.
+This is a theorem claimed in the linked project manuscript, authored by
+Nathaniel Monson. Its appearance in the guide is not a separate independent
+verification of that proof.

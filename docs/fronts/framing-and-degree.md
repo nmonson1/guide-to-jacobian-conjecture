@@ -1,52 +1,97 @@
 ---
-title: "Front IV: framing complexity and low-degree exclusion"
-description: "How to measure simplicity after counterexamples exist, and how low-degree cases are ruled out."
+title: "How small can a counterexample be?"
+description: "The framing-and-degree front: ordinary degree, generic degree, dimension, sparsity, and the logic of low-complexity exclusions."
 ---
 
-# Front IV: framing complexity and low-degree exclusion
+# How small can a counterexample be?
 
-!!! info "For researchers"
-    “Smallest” has several inequivalent meanings here. The result pages below
-    keep generic degree, ordinary degree, and ambient dimension separate.
+<p class="dek">Once counterexamples exist, “the smallest one” is not a
+single question. Different complexity measures see different parts of the
+geometry.</p>
 
-Once counterexamples exist, “the smallest one” is not a single question.
-One can minimize ordinary degree, generic degree, source dimension, number of
-monomials, cubic-homogeneous dimension, or complexity of the boundary. These
-measures behave differently under stabilization and normal-form reductions.
+!!! info "Keep the measures separate"
+    Generic degree, ordinary coordinate degree, ambient dimension, number of
+    monomials, and boundary complexity are not interchangeable.
 
-## The story so far
+## The running example
 
-The first map has generic degree three. Gallagher's construction realizes
-every generic degree at least three, so generic degree measures the cover
-rather than proximity to the first formula. Thompson's 24-variable example
-shows that the counterexample reaches the strict cubic-homogeneous normal
-form, but does not establish the minimum dimension in that form.
+The first map is three-dimensional, has ordinary component degrees
+\((7,6,4)\), and has generic degree three. Those numbers describe different
+features:
 
-For the plane problem, an announced computer-assisted result places ordinary
-degree at least 125. The published portion progressively compresses the
-leading geometry into two Newton supports; the terminal exclusion has been
-announced, but its full write-up is still in preparation.
+- ordinary degree measures one chosen polynomial presentation;
+- generic degree counts sheets of the finite cover;
+- dimension measures the ambient affine space;
+- sparsity measures how much of the formula is actually used.
 
-The two-block stable-uniqueness theorem approaches simplicity from the other
-side: within a broad multiplication-incidence construction, the cubic
-\((1,2)\) chart is the only case that is stably affine.
+Adding identity variables preserves the counterexample but changes the
+ambient dimension. Polynomial coordinate changes can alter ordinary degree
+without changing generic degree. Normal-form reductions can lower degree only
+by introducing many variables.
 
-## The main open questions
+## Established landmarks
 
-- What is the smallest dimension of a cubic-homogeneous counterexample?
-- Which ordinary degrees are possible in dimension three?
-- Is there any characteristic-zero plane counterexample at all—and, if so,
-  how far above 125 must its degree lie?
-- Which complexity measures are intrinsic to the cover, and which belong
-  only to a chosen presentation?
+### Every generic degree occurs
 
-## Places to enter
+The first example has three sheets, but three is not minimal in the sense of
+being rigid or unique. Three-dimensional Keller maps exist with every generic
+degree \(d\ge3\).
 
-- [Every generic degree](../results/every-generic-degree.md)
-- [The 24-variable cubic-homogeneous map](../results/cubic-homogeneous.md)
-- [The announced plane degree bound 125](../results/below-125.md)
-- [Two-block stable uniqueness](../results/two-block-uniqueness.md)
+[Read every generic degree](../results/every-generic-degree.md)
 
-The concrete target is a proved exclusion of a precisely stated class,
-together with the reduction showing that the class captures every candidate
-under discussion.
+### Cubic-homogeneous form is possible in 24 variables
+
+A strict map \(U+H(U)\), with \(H\) homogeneous cubic, gives an explicit
+counterexample in dimension 24. The result is structurally important because
+it reaches the classical reduction normal form; 24 is an upper bound, not a
+minimality theorem.
+
+[Read the 24-variable construction](../results/cubic-homogeneous.md)
+
+### The plane has a much larger announced degree bound
+
+An announced computer-assisted theorem says that a characteristic-zero plane
+counterexample must have maximum coordinate degree at least 125. The bound is
+about ordinary degree in two variables and does not constrain the displayed
+three-dimensional map.
+
+[Read the announced bound](../results/below-125.md)
+
+### The marked-root affine chart is exceptional in its construction class
+
+Within the tangent, nonosculating two-block multiplication construction, the
+linear-times-quadratic chart is the only case that becomes affine space, even
+after stabilization. This is a structural notion of smallness rather than a
+numerical degree bound.
+
+[Read the exceptional-chart theorem](../results/two-block-uniqueness.md)
+
+## Open questions
+
+1. What is the minimum ordinary degree of a counterexample in three
+   variables?
+2. What is the minimum dimension of a strict cubic-homogeneous
+   counterexample?
+3. Can sparsity or symmetry force stronger lower bounds than ordinary degree
+   alone?
+4. Is there any characteristic-zero plane counterexample—and, if so, how far
+   above 125 must its degree lie?
+5. Which complexity measures can be recovered from the intrinsic finite
+   cover, and which depend irreducibly on a frame?
+
+## Common logical traps
+
+- A lower bound in one dimension does not automatically stabilize to another.
+- Generic degree is not ordinary polynomial degree.
+- A terminal calculation is not a global exclusion without an exhaustive
+  reduction.
+- A normal-form dimension is an upper bound unless minimality is separately
+  proved.
+
+## A useful target
+
+A satisfactory low-complexity theorem has two parts: an exclusion of a
+precisely stated class and a reduction proving that every candidate under
+discussion belongs to that class.
+
+**State reviewed through:** 7 August 2026.

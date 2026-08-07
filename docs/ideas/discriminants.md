@@ -1,19 +1,93 @@
 ---
 title: "Discriminants: where roots collide"
-description: "How a discriminant locates repeated roots, branch behavior, and the boundary of the marked-root counterexample."
+description: "A worked introduction to repeated roots, ramification, and the conversion of a finite collision into affine sheet loss."
 ---
 
 # Discriminants: where roots collide
 
-For a one-variable polynomial, the discriminant is a polynomial in the
-coefficients that vanishes exactly when the polynomial has a repeated root.
-For a family of cubics, its zero set is a hypersurface in coefficient space.
+A discriminant is an equation in parameter space for the place where a
+polynomial acquires a repeated root. It translates a geometric event—two
+sheets meeting—into an algebraic equation in the coefficients.
 
-For example, the quadratic \(t^2+bt+c\) has discriminant
-\(b^2-4c\). When this number is nonzero, the two roots are distinct. When it
-vanishes, both roots equal \(-b/2\). The discriminant is therefore an
-equation in the **parameter space** \((b,c)\) for the place where two sheets
-of the root cover meet.
+## Worked example: deriving the quadratic discriminant
+
+Let
+
+\[
+q(t)=t^2+bt+c.
+\]
+
+A number \(r\) is a repeated root exactly when
+
+\[
+q(r)=0,
+\qquad
+q'(r)=2r+b=0.
+\]
+
+The second equation gives \(r=-b/2\). Substituting into the first gives
+
+\[
+\frac{b^2}{4}-\frac{b^2}{2}+c=0,
+\]
+
+or
+
+\[
+\boxed{b^2-4c=0.}
+\]
+
+Thus the discriminant
+
+\[
+\Delta=b^2-4c
+\]
+
+vanishes precisely when the two roots coincide.
+
+The formula can also be read from the roots. If
+\(q(t)=(t-r_1)(t-r_2)\), then
+
+\[
+\Delta=(r_1-r_2)^2.
+\]
+
+The square makes the expression symmetric, so it can be written in the
+coefficients even though the individual roots cannot be globally labeled.
+
+## The local model of a collision
+
+The simplest two-sheeted branched cover is
+
+\[
+s\longmapsto t=s^2.
+\]
+
+For \(t\ne0\), the fibre consists of \(\pm\sqrt t\). At \(t=0\), the two
+points meet at \(s=0\), where the derivative vanishes. This is ordinary
+ramification.
+
+Now delete the ramification point from the source:
+
+\[
+\mathbf C^\times\longrightarrow\mathbf C,
+\qquad s\longmapsto s^2.
+\]
+
+The derivative is nonzero everywhere on the remaining source. Generic fibres
+still have two points, but the fibre over \(0\) is empty. The finite cover has
+a collision; the affine open has lost two sheets through its deleted
+boundary.
+
+This toy map is not a polynomial self-map of affine space, but it isolates
+the exact distinction used by the counterexample.
+
+## Cubics and singular discriminants
+
+For a family of cubics, the discriminant is a hypersurface in the
+three-dimensional coefficient space. A smooth point of that hypersurface
+usually represents one double root and one simple root. A singular point can
+represent a more degenerate event, such as a triple root.
 
 The marked-root construction has two related spaces:
 
@@ -21,32 +95,41 @@ The marked-root construction has two related spaces:
 - the affine source obtained by deleting points where the chosen root is
   repeated.
 
-Over a cubic with three distinct roots, the finite map has three points.
-Over the discriminant, some choices coalesce. The finite cover records that
-collision as ramification. The affine counterexample has deleted the
-ramified points, so the same target can instead appear to have lost sheets at
-infinity.
+The finite cover ramifies over the discriminant. The affine Keller map has
+deleted the ramified points, so its Jacobian stays nonzero and the same target
+locus becomes a nonproperness boundary.
 
-## Why this distinction matters
+![Deleting the ramification point converts a finite collision into missing affine sheets.](../assets/images/finite-open-factorization.svg)
 
-The Jacobian determinant of the affine map stays nonzero because the
-repeated-root points are absent from its source. The discriminant has not
-disappeared; it has become boundary information. Its singularities record
-more complicated collisions, such as a triple root.
+## Algebra, geometry, and affine behavior
 
-The discriminant therefore links three descriptions of the same event:
+The discriminant links three descriptions of one event:
 
-- algebra: a resultant or determinant vanishes;
-- geometry: roots collide in the finite cover;
-- affine behavior: sheets escape through the deleted boundary.
+- **algebra:** a resultant or determinant vanishes;
+- **finite geometry:** roots collide and the cover ramifies;
+- **affine geometry:** deleted ramification points appear as sheets escaping
+  through infinity.
 
-To use this information intrinsically, one often passes to the
-[normalization](normalization.md), which separates the branches of the
-discriminant itself.
+Its normalization can then separate the branches of the discriminant itself,
+and its conductor measures where the singular discriminant differs from that
+normalization.
 
-## Sources
+## What a discriminant does not tell you
 
-- [Terence Tao, geometric digestion](https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/)
-- [Unbylined Ulam technical note](https://www.ulam.ai/research/jacobian.pdf)
+The discriminant identifies exceptional target values. By itself it does not
+specify:
 
-[Next: normalization separates singular branches](normalization.md){ .md-button }
+- which points have been removed from the source;
+- whether the remaining source is affine space;
+- whether a local model globalizes to a polynomial map;
+- whether two coordinate descriptions encode the same intrinsic boundary.
+
+## Where to read next
+
+| Level | Recommendation | Use it for |
+| --- | --- | --- |
+| Computational introduction | Cox, Little, and O'Shea, *Ideals, Varieties, and Algorithms*, sections on resultants | Eliminating a variable and detecting common roots. |
+| Structural reference | Gelfand, Kapranov, and Zelevinsky, *Discriminants, Resultants, and Multidimensional Determinants* | The general geometry of discriminants and resultants. |
+| This example | [Terence Tao's geometric digestion](https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/) | How the resultant and repeated-root locus enter the construction. |
+
+[Next: normalization restores the finite object](normalization.md){ .md-button }

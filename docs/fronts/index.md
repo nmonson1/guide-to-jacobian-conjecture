@@ -1,43 +1,44 @@
 ---
 title: "Four research fronts"
-description: "Four connected stories that organize the mathematics opened by the counterexample."
+description: "Four connected questions that organize the mathematics opened by the counterexample."
 ---
 
 # Four research fronts
 
 !!! info "For researchers"
-    These pages are maps of open terrain, not background lessons. New readers
-    may prefer the [six mathematical ideas](../ideas/index.md) first.
+    These pages map open terrain rather than teach prerequisites. New readers
+    may prefer the [five mathematical ideas](../ideas/index.md) first.
 
-The four fronts group the mathematics at its natural joints. A front is not
-a claim or a checklist; it is a story about several results and the question
-connecting them.
+The four fronts group the mathematics at its natural joints. A front is not a
+claim database or a task checklist. It is a story: a running example, several
+established landmarks, and a small number of questions whose answers would
+change how the subject is organized.
 
-## 1. [Intrinsic cover and collision geometry](cover-and-collision.md)
+## 1. [What does the finite cover remember?](cover-and-collision.md)
 
-What does a locally invertible polynomial map remember before coordinates
-are chosen? The finite cover, its monodromy, its collision spaces, and the
-algebra of lost sheets belong here.
+Before coordinates and compactifications are chosen, a generically finite
+Keller map has a function-field extension, a finite normalization, monodromy,
+and collision correspondences. Which of those data recognize the affine
+opening?
 
-## 2. [Boundary reconstruction and globalization](boundary-and-globalization.md)
+## 2. [What does infinity remember?](boundary-and-globalization.md)
 
-Which data at infinity determine the affine opening, and when do compatible
-local descriptions glue to a global polynomial map? This connects
-normalization, conductors, Newton faces, and the surviving plane problem.
+Noninvertibility cannot appear as finite ramification. It must be encoded by
+the boundary through which sheets escape. Which boundary data are complete,
+and when do local descriptions glue to a global polynomial map?
 
-## 3. [Deformation and presentation transport](deformation-and-transport.md)
+## 3. [What survives a change of presentation?](deformation-and-transport.md)
 
-Which features persist when a map is deformed, stabilized, or converted into
-a classical normal form? This front separates intrinsic geometry from
-artifacts of a degree cutoff or coordinate presentation.
+Degree cutoffs, coordinate choices, stabilization, and classical normal-form
+reductions expose different structures. Which observed obstructions are
+intrinsic, and which belong only to one presentation?
 
-## 4. [Framing complexity and low-degree exclusion](framing-and-degree.md)
+## 4. [How small can a counterexample be?](framing-and-degree.md)
 
-How simple can a counterexample be, and which low-degree possibilities can
-be ruled out? Generic degree, ordinary degree, dimension, sparsity, and
-boundary complexity are different measures and require different arguments.
+Ordinary degree, generic degree, ambient dimension, number of monomials, and
+boundary complexity are inequivalent notions of size. What lower bounds are
+proved, and what does each measure actually detect?
 
-The fronts overlap on purpose. A low-degree exclusion may depend on a
-boundary invariant; a deformation invariant may be discovered in the
-collision algebra. The grouping is a navigational aid, not a partition of
-theorems.
+The fronts overlap on purpose. A low-degree exclusion may use a boundary
+invariant; a deformation invariant may be discovered in a collision algebra.
+The grouping is a navigational aid, not a partition of theorems.

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="340" viewBox="0 0 960 340" role="img" aria-labelledby="title desc">
+  <title id="title">Mark a root, then forget it</title>
+  <desc id="desc">Three copies of the same cubic, with different roots marked, map to one unmarked cubic.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0d6567"/>
+    </marker>
+    <style>
+      .box{fill:#edf5f2;stroke:#0d6567;stroke-width:3}
+      .target{fill:#f3eadb;stroke:#a63a30;stroke-width:3}
+      .root{fill:#fff;stroke:#183638;stroke-width:3}
+      .mark{fill:#a63a30;stroke:#fff;stroke-width:3}
+      .line{stroke:#183638;stroke-width:3}
+      .arrow{stroke:#0d6567;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .label{font:600 19px system-ui,sans-serif;fill:#183638}
+      .small{font:500 15px system-ui,sans-serif;fill:#455f61}
+    </style>
+  </defs>
+  <text x="88" y="34" class="label">cubic + marked root</text>
+  <text x="720" y="34" class="label">unmarked cubic</text>
+
+  <g transform="translate(45,60)">
+    <rect width="390" height="70" rx="18" class="box"/>
+    <line x1="60" y1="36" x2="315" y2="36" class="line"/>
+    <circle cx="105" cy="36" r="12" class="mark"/>
+    <circle cx="190" cy="36" r="12" class="root"/>
+    <circle cx="275" cy="36" r="12" class="root"/>
+    <text x="325" y="42" class="small">mark 1</text>
+  </g>
+  <g transform="translate(45,145)">
+    <rect width="390" height="70" rx="18" class="box"/>
+    <line x1="60" y1="36" x2="315" y2="36" class="line"/>
+    <circle cx="105" cy="36" r="12" class="root"/>
+    <circle cx="190" cy="36" r="12" class="mark"/>
+    <circle cx="275" cy="36" r="12" class="root"/>
+    <text x="325" y="42" class="small">mark 2</text>
+  </g>
+  <g transform="translate(45,230)">
+    <rect width="390" height="70" rx="18" class="box"/>
+    <line x1="60" y1="36" x2="315" y2="36" class="line"/>
+    <circle cx="105" cy="36" r="12" class="root"/>
+    <circle cx="190" cy="36" r="12" class="root"/>
+    <circle cx="275" cy="36" r="12" class="mark"/>
+    <text x="325" y="42" class="small">mark 3</text>
+  </g>
+
+  <rect x="690" y="118" width="220" height="110" rx="24" class="target"/>
+  <line x1="730" y1="173" x2="870" y2="173" class="line"/>
+  <circle cx="760" cy="173" r="12" class="root"/>
+  <circle cx="800" cy="173" r="12" class="root"/>
+  <circle cx="840" cy="173" r="12" class="root"/>
+  <text x="738" y="260" class="small">same coefficients</text>
+
+  <path d="M445 95 C560 95 575 140 680 155" class="arrow"/>
+  <path d="M445 180 L680 180" class="arrow"/>
+  <path d="M445 265 C560 265 575 220 680 205" class="arrow"/>
+  <text x="500" y="164" class="small">forget the mark</text>
+</svg>

@@ -27,6 +27,8 @@ the cubic. The resulting incidence space consists of pairs
 For a cubic with three distinct roots there are three possible markings.
 Forgetting the mark is therefore generically three-to-one.
 
+![Three marked versions of one cubic become one point after the mark is forgotten.](../assets/images/marked-root-cover.svg)
+
 ## A one-variable toy model
 
 Take
@@ -81,9 +83,11 @@ root was deleted from the source chart, so some points of a limiting fiber
 run out through the boundary. The map can lose sheets without developing a
 finite critical point.
 
-That boundary behavior is why [local and global invertibility](../ideas/local-and-global.md),
-[discriminants](../ideas/discriminants.md), and [normalization](../ideas/normalization.md)
-are central to the post-counterexample story.
+That boundary behavior is why [what the Jacobian condition
+misses](../start/what-the-jacobian-condition-misses.md),
+[discriminants](../ideas/discriminants.md), and
+[normalization](../ideas/normalization.md) are central to the
+post-counterexample story.
 
 ## Sources
 

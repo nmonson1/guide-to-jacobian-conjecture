@@ -55,7 +55,10 @@ class EditorialStateTests(unittest.TestCase):
     def test_directory_urls_are_stable(self) -> None:
         self.assertEqual(page_url("index.md"), "")
         self.assertEqual(page_url("about/index.md"), "about/")
-        self.assertEqual(page_url("start/conjecture.md"), "start/conjecture/")
+        self.assertEqual(
+            page_url("start/what-the-jacobian-condition-misses.md"),
+            "start/what-the-jacobian-condition-misses/",
+        )
 
     def test_all_pages_begin_unapproved_in_this_draft(self) -> None:
         ledger = json.loads(
@@ -64,6 +67,36 @@ class EditorialStateTests(unittest.TestCase):
         self.assertTrue(ledger["pages"])
         self.assertTrue(
             all(record["status"] == "unread" for record in ledger["pages"].values())
+        )
+
+    def test_contextual_pages_are_placed_but_not_in_persistent_navigation(self) -> None:
+        state, navigation = load_editorial_state()
+        contextual = {
+            page["path"]
+            for section in navigation["sections"]
+            for page in section["pages"]
+            if page.get("nav", True) is False
+        }
+        self.assertTrue(contextual)
+        self.assertTrue(all(not state[path]["in_navigation"] for path in contextual))
+
+    def test_contextual_approval_still_enters_search_and_sitemap_set(self) -> None:
+        state = {
+            "index.md": {"approved": True, "url": "", "in_navigation": True},
+            "results/specialist.md": {
+                "approved": True,
+                "url": "results/specialist/",
+                "in_navigation": False,
+            },
+            "review/index.md": {
+                "approved": True,
+                "url": "review/",
+                "in_navigation": False,
+            },
+        }
+        self.assertEqual(
+            public_approved_urls(state, "review/index.md"),
+            {"", "results/specialist/"},
         )
 
     def test_review_workspace_is_never_publicly_listable(self) -> None:

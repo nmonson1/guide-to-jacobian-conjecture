@@ -1,26 +1,29 @@
 ---
-title: "Six mathematical ideas behind the new landscape"
+title: "Five mathematical ideas behind the new landscape"
 description: "Short, self-contained bridges from the counterexample to the ideas used to understand it and the surviving plane problem."
 ---
 
-# Six mathematical ideas behind the new landscape
+# Five mathematical ideas behind the new landscape
 
-These essays are not prerequisites arranged as a textbook. Each answers one
-question that appears naturally after seeing the counterexample.
+These essays are not prerequisites arranged as a textbook. Each begins with a
+worked example, develops one reusable idea, and then explains how that idea
+enters the Jacobian story.
 
-1. [**Local versus global**](local-and-global.md): how can an invertible
-   derivative coexist with a collision?
-2. [**Covers and monodromy**](monodromy.md): what does a generic fiber do
+The guide's central local-versus-global perspective now appears in
+[what the Jacobian condition controls—and what it
+misses](../start/what-the-jacobian-condition-misses.md).
+
+1. [**Covers and monodromy**](monodromy.md): what does a generic fibre do
    when the target moves around a loop?
-3. [**Discriminants**](discriminants.md): where do roots collide, and why can
+2. [**Discriminants**](discriminants.md): where do roots collide, and why can
    sheets disappear without ramification in the affine chart?
-4. [**Normalization**](normalization.md): how do we separate branches that a
-   singular equation has glued together?
-5. [**Newton--Puiseux expansions**](newton-puiseux.md): how can the leading
-   terms at infinity constrain a hypothetical plane counterexample?
-6. [**Dessins d'enfants**](dessins.md): why does a problem about polynomial
-   maps lead to finite permutation data drawn on a sphere?
+3. [**Normalization**](normalization.md): how do we restore the finite object
+   behind an affine map and separate singular branches?
+4. [**Newton--Puiseux expansions**](newton-puiseux.md): how do edge slopes and
+   fractional series describe branches at infinity?
+5. [**Dessins d'enfants**](dessins.md): how does a branched cover become a
+   graph and a finite permutation problem?
 
-An expert can use these as orientation and follow the sources at the bottom
-of each page. A newcomer can read them in order and return to the formulas
-only when the geometric picture is in place.
+An expert can use these pages as orientation and follow the annotated reading
+suggestions. A first-year graduate student can read them in order and return
+to the research pages once the geometric picture is in place.
