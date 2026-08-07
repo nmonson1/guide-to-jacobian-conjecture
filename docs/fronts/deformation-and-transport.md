@@ -1,47 +1,89 @@
 ---
-title: "Front III: deformation and presentation transport"
-description: "Which structures survive deformations, stabilization, and passage to classical normal forms?"
+title: "What survives a change of presentation?"
+description: "The deformation-and-transport front: bounded slices, stabilization, normal forms, and intrinsic versus presentation-dependent obstructions."
 ---
 
-# Front III: deformation and presentation transport
+# What survives a change of presentation?
 
-!!! info "For researchers"
-    This page compares several equivalence relations. The result pages state
-    their degree bounds, slices, and stabilization conventions precisely.
+<p class="dek">The same cover can be written by many polynomial maps. Degree
+cutoffs, coordinate changes, stabilization, and classical normal-form
+reductions preserve different amounts of information.</p>
 
-The same generic cover can be written by many polynomial maps. Adding
-identity coordinates, changing source and target coordinates, or suspending
-to a cubic-homogeneous map may preserve some structures and destroy others.
-This front asks for a disciplined account of what moves with the map.
+!!! info "Entry route"
+    The pages below state their degree bounds, slices, and equivalence
+    relations precisely. Those qualifications are part of the mathematics.
 
-## The story so far
+## The running example
 
-Unrestricted infinitesimal Keller deformations are closely related to
-volume-preserving source changes, but an ordinary degree bound cuts that
-coordinate orbit nontransversely. For the fixed degree-seven map, a specified
-bounded-degree transverse slice is reduced-isolated and has a nonreduced
-local algebra of length 584.
+The fixed counterexample has ordinary degree seven. One can study nearby
+maps in a bounded coefficient space, add unused variables, or convert the map
+into cubic-homogeneous and Hessian forms. Each operation answers a different
+question.
 
-Elsewhere, boundary geometry supplies invariants under arbitrary stable
-left–right equivalence. In a concrete cubic-frame family, the parameter
-\(q\) survives even after adjoining any number of identity variables. At the
-same time, classical suspensions carry the counterexample into
-cubic-homogeneous and Hessian forms.
+- A bounded coefficient slice asks about nearby formulas of controlled
+  degree.
+- Stable left--right equivalence asks what survives polynomial coordinate
+  changes after adding identity variables.
+- A classical suspension asks whether the failure persists in a restrictive
+  normal form.
 
-## The main open question
+Confusing these equivalence relations can turn a correct local calculation
+into a false global statement.
 
-Can intrinsic deformation objects be compared cleanly with finite,
-degree-bounded coefficient schemes? A result about a chosen slice is not
-automatically a statement about unrestricted deformations. A formal
-equivalence may also require degrees that grow with the order and therefore
-fail to produce one polynomial equivalence.
+## Established landmarks
 
-## Places to enter
+### The bounded degree-seven slice is isolated but nonreduced
 
-- [A transverse local algebra of length 584](../results/length-584.md)
-- [Stable cubic-frame classification](../results/stable-cubic-frames.md)
-- [The cubic-homogeneous normal form](../results/cubic-homogeneous.md)
+After fixing a normalized affine quotient and a transverse degree-at-most-seven
+slice, the counterexample is the only reduced point nearby. The local ring
+nevertheless has length 584, recording infinitesimal directions that survive
+for several orders before becoming obstructed.
 
-The immediate target is a comparison theorem between an intrinsic
-deformation object and a finite coefficient scheme, with the equivalence
-relation, degree bound, and filtration made explicit.
+[Read the bounded-slice result](../results/length-584.md)
+
+### Some boundary parameters survive arbitrary stabilization
+
+A parameter in a concrete cubic-frame family can be read from normalized
+boundary geometry. Because the invariant persists after multiplying by
+arbitrary affine-space factors, it distinguishes stable polynomial
+left--right equivalence classes.
+
+[Read the stable classification](../results/stable-cubic-frames.md)
+
+### The counterexample reaches classical normal forms
+
+The new failure can be transported to a strict cubic-homogeneous map
+\(U+H(U)\) with \(H\) homogeneous cubic. This connects the explicit example
+to the Bass--Connell--Wright and Yagzhev reduction framework.
+
+[Read the cubic-homogeneous counterexample](../results/cubic-homogeneous.md)
+
+## Open questions
+
+1. **Intrinsic versus bounded deformation theory.** Which canonical
+   deformation object controls the finite Kuranishi slice, and how does the
+   degree cutoff select a finite part of it?
+2. **Effectivity.** When formal equivalences exist to every finite order, is
+   there one polynomial equivalence of uniformly bounded complexity?
+3. **Transport of obstructions.** Which classes survive every allowed change
+   of presentation, and what hypotheses are needed to compare the relevant
+   complexes?
+4. **Compression.** How small can a cubic-homogeneous or other normal-form
+   realization be without losing the collision?
+
+## Common logical traps
+
+- Isolation in a bounded slice is not isolation among all polynomial maps.
+- Formal equivalence to every order need not give a single polynomial
+  equivalence.
+- A computation in one chart does not automatically survive another chart.
+- Stabilization can preserve some invariants while destroying degree-based
+  ones.
+
+## A useful target
+
+The immediate goal is a comparison theorem between an intrinsic deformation
+object and a finite coefficient scheme, with the equivalence relation, degree
+bound, and filtration stated as part of the theorem.
+
+**State reviewed through:** 7 August 2026.

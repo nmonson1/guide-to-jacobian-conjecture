@@ -1,6 +1,6 @@
 ---
 title: "Editorial and publication policy"
-description: "How public drafts, owner review, navigation, search, and result selection work."
+description: "How public drafts, exact-version approval, indexing, navigation, and result selection work."
 ---
 
 # Editorial and publication policy
@@ -11,21 +11,32 @@ not automatically place a page in the reader-facing guide.
 
 ## Exact-version approval
 
-The guide owner reviews an exact version of each Markdown file. Only an
-approved file hash enters ordinary navigation, site search, and the sitemap.
-If the file changes, it automatically returns to
-**changed since review** until the new version is read.
+The guide owner reviews an exact version of each Markdown file. An approved
+file is eligible for site search and the sitemap. If the file changes, it
+automatically returns to **changed since review** until the new version is
+read.
 
 The possible editorial states are:
 
 - **unread** — public by direct URL, not yet read by the owner;
 - **needs revision** — public by direct URL, with revision requested;
-- **approved** — this exact version is listed and indexed;
+- **approved** — this exact version is indexed;
 - **changed since review** — a previously approved page has changed.
 
 This is editorial review, not peer review or a mathematical correctness
 badge. The [review workspace](../review/index.md) is itself reachable only by
 direct URL and is never added to the listed guide.
+
+## Approval is not the same as primary navigation
+
+Some approved pages are useful destinations without deserving a permanent
+slot in the top-level navigation. The hand-authored navigation manifest can
+mark such a page as contextual. It remains indexed, appears in the sitemap,
+and is linked from a shelf, front, or related essay, but does not enlarge the
+persistent menu.
+
+This distinction keeps the visible site map small while allowing specialist
+pages to remain durable and discoverable.
 
 ## Page selection
 
@@ -41,3 +52,6 @@ The normal result-page structure is:
 3. a precise statement with definitions and hypotheses;
 4. proof architecture, significance, and explicit limits;
 5. primary sources, computation, and status.
+
+A result's inclusion does not mean that the guide has independently checked
+its proof. The linked mathematical source is the proof-bearing object.

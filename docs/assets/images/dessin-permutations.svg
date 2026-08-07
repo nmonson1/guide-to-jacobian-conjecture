@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">A degree-two dessin and its permutation triple</title>
+  <desc id="desc">Two black vertices are joined to one white vertex by two edges. The permutations are identity around zero and a transposition around one and infinity.</desc>
+  <style>
+    .edge{stroke:#0d6567;stroke-width:8;fill:none;stroke-linecap:round}
+    .black{fill:#183638;stroke:#fff;stroke-width:4}
+    .white{fill:#fff;stroke:#a63a30;stroke-width:5}
+    .box{fill:#f3eadb;stroke:#a63a30;stroke-width:3}
+    .label{font:600 20px system-ui,sans-serif;fill:#183638}
+    .math{font:500 21px Georgia,serif;fill:#183638}
+    .small{font:500 16px system-ui,sans-serif;fill:#455f61}
+  </style>
+  <text x="120" y="42" class="label">dessin of β(z)=4z(1−z)</text>
+  <path d="M95 185 C180 105 255 105 340 185" class="edge"/>
+  <path d="M340 185 C425 265 500 265 585 185" class="edge"/>
+  <circle cx="95" cy="185" r="22" class="black"/>
+  <circle cx="340" cy="185" r="24" class="white"/>
+  <circle cx="585" cy="185" r="22" class="black"/>
+  <text x="74" y="230" class="small">0</text>
+  <text x="327" y="230" class="small">1/2</text>
+  <text x="574" y="230" class="small">1</text>
+  <text x="80" y="285" class="small">black = β⁻¹(0)</text>
+  <text x="320" y="285" class="small">white = β⁻¹(1)</text>
+
+  <rect x="650" y="80" width="215" height="205" rx="24" class="box"/>
+  <text x="690" y="120" class="label">permutations</text>
+  <text x="688" y="165" class="math">σ₀ = id</text>
+  <text x="688" y="205" class="math">σ₁ = (12)</text>
+  <text x="688" y="245" class="math">σ∞ = (12)</text>
+  <text x="675" y="320" class="small">2 + 1 + 1 − 2 = 2 ⇒ genus 0</text>
+</svg>

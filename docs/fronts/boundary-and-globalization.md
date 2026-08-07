@@ -1,50 +1,97 @@
 ---
-title: "Front II: boundary reconstruction and globalization"
-description: "What infinity remembers, and why a valid local boundary model may still fail to come from a polynomial map."
+title: "What does infinity remember?"
+description: "The boundary-and-globalization front: discriminants, valuations, Newton faces, dessins, and local-to-global reconstruction."
 ---
 
-# Front II: boundary reconstruction and globalization
+# What does infinity remember?
 
-!!! info "For researchers"
-    The shortest entry route is [discriminants](../ideas/discriminants.md),
-    followed by [Newton--Puiseux expansions](../ideas/newton-puiseux.md).
+<p class="dek">A noninvertible Keller map cannot fail at a finite critical
+point. Its failure must be encoded by the boundary through which sheets
+escape.</p>
 
-A noninvertible Keller map cannot fail locally at a finite point. Its failure
-must be visible at infinity. The boundary is therefore not bookkeeping added
-after the map is understood; it is where global noninvertibility lives.
+!!! info "Entry route"
+    Read [discriminants](../ideas/discriminants.md), then
+    [Newton--Puiseux expansions](../ideas/newton-puiseux.md) and
+    [dessins d'enfants](../ideas/dessins.md).
 
-## The story so far
+## The running example
 
-In the three-sheeted example, the discriminant normalization and its marked
-curves recover parameters that survive polynomial stabilization. In the
-plane problem, a hypothetical counterexample gives valuations and
-Newton--Puiseux branches at infinity. Their leading faces can force Belyi
-maps, which turn part of the boundary into finite permutation data.
+In the marked-cubic map, the finite cover ramifies along the discriminant.
+The affine source deletes the repeated marked roots, so the same locus becomes
+a nonproperness boundary rather than a critical-value locus. The
+normalization of that discriminant and the way it meets other boundary
+components retain geometric information that survives coordinate changes and
+stabilization.
 
-The work below degree 125 illustrates the chain and its logical seams. A
-published global classification reduces every candidate to two supports. A
-separate project calculation classifies the five degree-21 dessins forced by
-their leading-face equation. An external announcement says a terminal
-computer calculation eliminates both full supports, but its detailed
-write-up is still in preparation. The face classification alone is not the
-global exclusion.
+This suggests a general principle:
 
-## The main open question
+> The boundary is not bookkeeping added after the affine map is understood.
+> It is where global noninvertibility is stored.
 
-Which finite collection of boundary invariants is complete enough to recover
-an affine opening—or prove that no opening exists? Local models can be
-mutually compatible and still fail a later gluing equation. Conversely, a
-coordinate calculation may hide that two models represent the same
-intrinsic valuation.
+## Established landmarks
 
-## Places to enter
+### Boundary geometry can carry stable moduli
 
-- [Discriminants](../ideas/discriminants.md)
-- [Newton--Puiseux expansions](../ideas/newton-puiseux.md)
-- [Dessins d'enfants](../ideas/dessins.md)
-- [Stable cubic-frame classification](../results/stable-cubic-frames.md)
-- [Five degree-21 dessins](../results/degree-21-dessins.md)
+In a concrete family of three-sheeted maps, a parameter can be recovered from
+how a normalized singular discriminant component meets a distinguished plane
+at infinity. That parameter survives arbitrary stabilization by unused
+coordinates.
 
-The concrete target is an exact local-to-global theorem: state the boundary
-data, reconstruct the affine opening, and identify precisely where
-polynomiality or affineness enters.
+[Read the stable cubic-frame classification](../results/stable-cubic-frames.md)
+
+### Newton data compress the plane problem
+
+For a hypothetical plane counterexample, escaping branches determine
+valuations and Newton--Puiseux expansions. Their leading faces severely
+restrict the possible supports of the coordinate polynomials. The published
+below-125 reduction ultimately leaves two explicit support configurations.
+
+[Read the plane case](../background/plane-case.md)
+
+### Some leading faces become finite Hurwitz problems
+
+For the last supports below 125, the leading-face equation forces a degree-21
+Belyi map. The associated passport has exactly five connected dessins. This
+turns an infinite-looking coefficient problem into five exact boundary
+models.
+
+[Read the five boundary covers](../results/degree-21-dessins.md)
+
+### Terminal exclusion and global reduction are separate obligations
+
+An external announcement reports that an exact computation eliminates the
+two full supports below 125. The published global reduction and the terminal
+calculation play different roles; neither can silently substitute for the
+other.
+
+[Read the announced degree bound](../results/below-125.md)
+
+## Open questions
+
+1. **Completeness of boundary data.** Which finite collection of normalized
+   branches, conductors, residues, and overlap maps determines an affine
+   opening?
+2. **Local-to-global attachment.** When compatible formal solutions on
+   separate charts exist, what obstruction prevents them from gluing to one
+   polynomial map?
+3. **Coordinate independence.** Which Newton or Rees constructions compute an
+   intrinsic invariant rather than an artifact of one compactification?
+4. **The degree-125 frontier.** What are the actual components of the first
+   surviving formal systems, and which of them are reachable from a global
+   plane Keller map?
+
+## Common logical traps
+
+- A valid leading face need not extend to a complete Puiseux branch.
+- A complete formal branch need not algebraize to a global polynomial map.
+- A terminal certificate excludes only the branch rigorously routed to its
+  input system.
+- Equivalent valuations can look different in different boundary charts.
+
+## A useful target
+
+The ideal result would state a finite package of boundary data, prove a
+reconstruction or obstruction theorem, and identify exactly where affineness
+and polynomiality enter the argument.
+
+**State reviewed through:** 7 August 2026.

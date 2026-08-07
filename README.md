@@ -4,8 +4,8 @@ Source for a hand-authored public guide to the Jacobian conjecture, the 2026
 counterexample in dimension three, the surviving plane problem, and the
 research landscape opened by the example.
 
-The guide is written by Nathaniel Monson, with project-wide AI assistance
-disclosed in `docs/about/ai-assistance.md`.
+The guide is edited and primarily written by Nathaniel Monson, with
+project-wide AI assistance disclosed in `docs/about/ai-assistance.md`.
 
 The guide is intentionally not a mirror of the research-state repository.
 That repository owns detailed proofs, computations, working claims, and
@@ -16,9 +16,10 @@ results, and a source-based catalogue of external developments.
 ## Editorial publication model
 
 Every Markdown page in `docs/` is public and hand-authored. A page can be
-shared by direct URL before it is listed. Ordinary navigation, the main search
-index, and the sitemap contain only exact file versions recorded as approved
-in `editorial/reviews.json`.
+shared by direct URL before it is listed. Site search and the sitemap contain
+only exact file versions recorded as approved in `editorial/reviews.json`.
+The persistent navigation is a smaller hand-authored selection: approved
+contextual pages can remain indexed without receiving a permanent menu item.
 
 The effective states are:
 
@@ -36,9 +37,11 @@ python scripts/review_pages.py approve docs/start/counterexample.md
 python scripts/review_pages.py needs-revision docs/fronts/index.md
 ```
 
-`editorial/navigation.json` is the hand-authored intended navigation order.
-The MkDocs hook builds every page, filters the reader-facing surfaces, and
-produces the unlisted reviewer index at `/review/`.
+`editorial/navigation.json` is the hand-authored page placement and menu
+order. Set `"nav": false` on a page that should be approved, indexed, and
+linked contextually without entering the persistent navigation. The MkDocs
+hook builds every page, filters the reader-facing surfaces, and produces the
+unlisted reviewer index at `/review/`.
 
 An approved page may not link to an unapproved page. This keeps drafts from
 leaking back into ordinary browsing through inline links and makes the

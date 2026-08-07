@@ -1,14 +1,16 @@
 ---
-title: "A transverse local algebra of length 584"
-description: "The bounded degree-seven deformation slice is reduced-isolated but carries a precisely computed nonreduced thickening."
+title: "The degree-seven example is isolated in a bounded slice—but not infinitesimally rigid"
+description: "The normalized degree-at-most-seven deformation slice has one reduced point and a transverse local algebra of length 584."
 ---
 
-# A transverse local algebra of length 584
+# The degree-seven example is isolated in a bounded slice—but not infinitesimally rigid
 
-!!! info "Reading level"
-    This is a specialist, computer-assisted result about the local geometry
-    of a bounded coefficient scheme. The conceptual point is in the first
-    and third sections; the numerical statement uses local algebra.
+<p class="dek">No genuine nearby family survives in one normalized
+bounded-degree slice, yet many infinitesimal directions persist to high
+order before becoming obstructed.</p>
+
+!!! info "Technical subtitle"
+    A transverse local algebra of length 584.
 
 ## What is true and why
 
@@ -36,7 +38,7 @@ Then
 \mathfrak m^9=0\ne\mathfrak m^8,
 \]
 
-and its Hilbert–Samuel function is
+and its Hilbert--Samuel function is
 
 \[
 (1,10,44,108,157,145,86,30,3).
@@ -55,6 +57,14 @@ survive for several orders before the equations obstruct them. The number
 584 is the scheme-theoretic transverse multiplicity—not a count of nearby
 maps and not a global count of counterexamples.
 
+The conceptual conclusion is the contrast:
+
+\[
+\text{reduced isolation}
+\qquad\text{but}\qquad
+\text{high-order infinitesimal thickness}.
+\]
+
 ## Proof architecture
 
 The calculation constructs the Kuranishi equations exactly over
@@ -70,15 +80,12 @@ The result is local, degree-bounded, and relative to a specified affine
 quotient and slice. It does not say that the counterexample is isolated under
 arbitrary polynomial equivalence or among maps of unbounded degree.
 
-## Proof source and status
+## Public proof route
 
-- [Working manuscript source, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/03-local-rigidity/main.tex)
-- [Working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/03-filtered-rigidity-2026-07-29-v13.pdf)
-- [Exact computational supplement, pinned ZIP](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/docs-v56-converged-research-20260804j/assets/technical-materials/03-local-rigidity-computational-supplement.zip)
+- [Working manuscript source, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/03-local-rigidity/main.tex) — definitions of the slice and proof source.
+- [Working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/03-filtered-rigidity-2026-07-29-v13.pdf) — reader-facing snapshot dated 29 July 2026.
+- [Exact computational supplement, pinned ZIP](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/docs-v56-converged-research-20260804j/assets/technical-materials/03-local-rigidity-computational-supplement.zip) — begin with `COMPUTATION.md`; the independent border-basis replay is in `code/border-basis/REPRODUCIBILITY.md`.
 
-This is an exact computer-assisted theorem of the project, authored by
-Nathaniel Monson. The linked manuscript states the slice conventions and
-certificate contract. In the ZIP, begin with `COMPUTATION.md`; the independent
-border-basis replay is documented in
-`code/border-basis/REPRODUCIBILITY.md`. This is not presented as journal peer
-review.
+This is an exact computer-assisted theorem claimed in the linked project
+source, authored by Nathaniel Monson. Its appearance in the guide is not a
+separate independent verification of the computation or proof.

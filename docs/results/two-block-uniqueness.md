@@ -1,14 +1,15 @@
 ---
-title: "Stable uniqueness for nonosculating two-block multiplication charts"
-description: "Among tangent but nonosculating two-block incidence opens, only the cubic (1,2) chart becomes affine space, even after stabilization."
+title: "The marked-root affine-space construction is exceptional"
+description: "Among tangent, nonosculating two-block incidence opens, only the linear-times-quadratic chart becomes affine space, even after stabilization."
 ---
 
-# Stable uniqueness for nonosculating two-block multiplication charts
+# The marked-root affine-space construction is exceptional
 
-!!! info "Reading level"
-    The first section gives the geometric conclusion. The precise statement
-    is written for readers comfortable with projective varieties and divisor
-    class groups.
+<p class="dek">The recipe “multiply two binary forms, remove the common-root
+locus, and cut by a tangent hyperplane” almost never produces affine space.</p>
+
+!!! info "Technical subtitle"
+    Stable uniqueness for nonosculating two-block multiplication charts.
 
 ## What is true and why
 
@@ -52,13 +53,21 @@ The surviving case is already \(\mathbf A^3\) without stabilization.
 ## Proof architecture
 
 The divisor classes of the two deleted loci first rule out nonadjacent block
-sizes. For larger adjacent sizes, a deficit in the Hodge–Deligne polynomial
+sizes. For larger adjacent sizes, a deficit in the Hodge--Deligne polynomial
 survives multiplication by every affine-space factor. The positive
 \((1,2)\) case is closed by an explicit coordinate isomorphism that includes
 the retained section at infinity.
 
 The argument is scheme-theoretic and does not assume that all roots are
 simple.
+
+## Why it matters
+
+The theorem isolates the genuinely exceptional step in the counterexample.
+Marking a factor and forgetting it is easy; making the simple-root open into
+ordinary affine space is not. The result therefore supports the view that
+affine-opening recognition is a central problem rather than a routine
+coordinate choice.
 
 ## What it does not prove
 
@@ -67,10 +76,11 @@ multiplication-incidence construction. It says nothing about osculating
 hyperplanes and is not a uniqueness theorem for all cubic Keller
 presentations or all possible routes to affine space.
 
-## Proof source and status
+## Public proof route
 
-- [Working manuscript source, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/01-cubic-incidence/main.tex)
-- [Working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/01-cubic-marked-root-covers-2026-07-29-v13.pdf)
+- [Working manuscript source, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/01-cubic-incidence/main.tex) — theorem and proof source.
+- [Working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/01-cubic-marked-root-covers-2026-07-29-v13.pdf) — reader-facing snapshot dated 29 July 2026.
 
-This is a theorem of the project, authored by Nathaniel Monson. The linked
-working manuscript contains the proof and its computational checker.
+This is a theorem claimed in the linked project manuscript, authored by
+Nathaniel Monson. Its appearance in the guide is not a separate independent
+verification of that proof.

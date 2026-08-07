@@ -1,9 +1,12 @@
 ---
-title: "Five degree-21 dessins on the last supports below 125"
-description: "The exact Belyi-map classification forced by the two surviving Newton supports."
+title: "The last low-degree plane supports force exactly five boundary covers"
+description: "The exact degree-21 Belyi-map classification forced by the two surviving Newton supports below 125."
 ---
 
-# Five degree-21 dessins on the last supports below 125
+# The last low-degree plane supports force exactly five boundary covers
+
+<p class="dek">A leading-face differential equation reduces an infinite
+coefficient problem to five explicit dessins of degree 21.</p>
 
 !!! info "Reading level"
     This is a specialist, computer-assisted boundary classification. Read
@@ -55,10 +58,21 @@ and have monodromy group \(A_{21}\).
 ## Why it matters
 
 An apparently infinite coefficient problem has become a list of five exact
-boundary models. Those five are candidate inputs for terminal globalization
-calculations; this classification does not supply the still-unpublished
-terminal proof announced by ratto3423. The residue degree also distinguishes
-this boundary from a previously proposed degree-16 “Three-dessin” model.
+boundary models. The result is also a clean example of the explanatory chain
+
+\[
+\text{Newton face}
+\longrightarrow
+\text{differential equation}
+\longrightarrow
+\text{Belyi map}
+\longrightarrow
+\text{finite permutation census}.
+\]
+
+Those five models are candidate inputs for later globalization calculations;
+this classification does not supply the still-unpublished terminal proof
+announced by ratto3423.
 
 ## What it does not prove
 
@@ -66,14 +80,12 @@ A face solution need not extend to a global polynomial Keller pair. The
 theorem classifies the forced lower face; later layer equations are required
 to exclude the two full supports.
 
-## Proof source and status
+## Public proof route
 
-- [Certificate manuscript, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/06-plane-boundary/appendices/degree-twenty-one-certificates.tex)
-- [Plane-boundary working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/06-plane-boundary-obstructions-2026-07-29-v13.pdf)
-- [Exact computational supplement, pinned ZIP](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/docs-v56-converged-research-20260804j/assets/technical-materials/06-plane-boundary-computational-supplement.zip)
+- [Certificate manuscript, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/06-plane-boundary/appendices/degree-twenty-one-certificates.tex) — statement, enumeration, and reconstructed coefficients.
+- [Plane-boundary working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/06-plane-boundary-obstructions-2026-07-29-v13.pdf) — reader-facing snapshot dated 29 July 2026.
+- [Exact computational supplement, pinned ZIP](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/docs-v56-converged-research-20260804j/assets/technical-materials/06-plane-boundary-computational-supplement.zip) — begin with `COMPUTATION.md`, then `computational-supplement/degree-twenty-one/README.md`.
 
-This is an exact computer-assisted theorem of the project, authored by
-Nathaniel Monson. Its enumeration, coefficient reconstruction, and replay
-certificates are part of the linked public source snapshot. In the ZIP,
-begin with `COMPUTATION.md`; the degree-21 replay is documented in
-`computational-supplement/degree-twenty-one/README.md`.
+This is an exact computer-assisted theorem claimed in the linked project
+source, authored by Nathaniel Monson. Its appearance in the guide is not a
+separate independent verification of the certificates or proof.

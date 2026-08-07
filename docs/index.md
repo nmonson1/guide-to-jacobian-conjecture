@@ -16,7 +16,7 @@ explicit counterexample announced in July 2026 answers **no** in every
 dimension at least three. The two-dimensional problem remains open.
 
 [See the counterexample](start/counterexample.md){ .md-button .md-button--primary }
-[Start with the conjecture](start/conjecture.md){ .md-button }
+[What the Jacobian condition misses](start/what-the-jacobian-condition-misses.md){ .md-button }
 
 </div>
 <div class="hero-panel" markdown>
@@ -90,17 +90,21 @@ canonical edition.
 
 </div>
 
-## Beyond the announcement
+## The organizing idea
 
-The [mathematical ideas](ideas/index.md) are short bridges into covers,
-monodromy, discriminants, normalization, Newton--Puiseux expansions, and
-dessins. The [four research fronts](fronts/index.md) organize questions by
-mathematical dependence rather than by project history. The [major-results
-shelf](results/index.md) is selective; the [external-developments ledger](developments/index.md)
-is deliberately inclusive.
+The Jacobian determinant controls local behavior at finite points. The global
+problem is whether sheets of the associated finite cover can disappear
+through infinity. The guide develops that distinction in
+[what the Jacobian condition controls—and what it misses](start/what-the-jacobian-condition-misses.md).
 
-This is a public working draft by **Nathaniel Monson**. Every page is written
-for a human reader. A page can be shared by direct URL while under editorial
-review, but only an exact owner-approved version enters ordinary navigation,
-search, and the sitemap. See the [editorial policy](about/editorial-policy.md)
-and [AI-assistance note](about/ai-assistance.md).
+Beyond the start path, the [mathematical ideas](ideas/index.md) are short
+bridges into covers, monodromy, discriminants, normalization,
+Newton--Puiseux expansions, and dessins. The [four research
+fronts](fronts/index.md) organize questions by mathematical dependence rather
+than project history. The [major-results shelf](results/index.md) is
+selective; the [external-developments ledger](developments/index.md) is
+deliberately inclusive.
+
+This is a public working draft by **Nathaniel Monson**. See [about the
+guide](about/index.md), the [editorial policy](about/editorial-policy.md), and
+the [AI-assistance note](about/ai-assistance.md).
