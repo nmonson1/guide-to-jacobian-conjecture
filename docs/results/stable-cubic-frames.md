@@ -64,16 +64,35 @@ after stabilization.
 At \(q=-2\), the singular component meets the plane singularly; this
 intrinsic event separates the exceptional orbit.
 
+## The boundary-Torelli viewpoint
+
+The quotient \(q=\beta/\alpha^2\) is not important merely as a convenient
+coefficient ratio. The normalized boundary, together with its markings,
+**reconstructs** it. In that sense this is a Torelli theorem: the geometry at
+infinity remembers the point of the family.
+
+The project proves a broader version for admissible cubic frames. A
+relative-Jacobian blowup of the discriminant boundary recovers the complete
+root divisor, including common roots of arbitrary multiplicity, and stable
+polynomial equivalence again creates no new identifications beyond ordinary
+equivalence. This guide keeps the quadratic \(q\)-family as the main example
+because its invariant can be seen directly from two marked curves.
+
 ## What it does not prove
 
 This classifies the displayed quadratic cubic-frame family, not all
-degree-three Keller maps and not all finite three-sheeted openings.
+degree-three Keller maps and not all finite three-sheeted openings. The
+broader admissible-frame theorem still belongs to a chosen cubic-frame
+construction; it is not a boundary-Torelli theorem for arbitrary Keller
+openings.
 
 ## Proof source and status
 
 - [Working manuscript source, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/04-stable-moduli/main.tex)
 - [Working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/04-boundary-rigidity-stable-moduli-2026-07-29-v13.pdf)
 
-This is a theorem of the project, authored by Nathaniel Monson. The linked
-working manuscript contains the proof and exact checks; it is not presented
-as journal peer review.
+The \(q\)-classification is a theorem of the project, authored by Nathaniel
+Monson. The linked working manuscript contains its proof and exact checks; it
+is not presented as journal peer review. The all-multiplicity extension is
+recorded in the current authored state and should be added to the next pinned
+public source bundle.

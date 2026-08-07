@@ -1,6 +1,6 @@
 ---
 title: "Front III: deformation and presentation transport"
-description: "Which structures survive deformations, stabilization, and passage to classical normal forms?"
+description: "Which structures survive deformations, stabilization, and passage between polynomial presentations?"
 ---
 
 # Front III: deformation and presentation transport
@@ -19,28 +19,43 @@ This front asks for a disciplined account of what moves with the map.
 Unrestricted infinitesimal Keller deformations are closely related to
 volume-preserving source changes, but an ordinary degree bound cuts that
 coordinate orbit nontransversely. For the fixed degree-seven map, a specified
-bounded-degree transverse slice is reduced-isolated and has a nonreduced
-local algebra of length 584.
+bounded-degree transverse slice is reduced-isolated and has a nonreduced local
+algebra of length 584.
 
-Elsewhere, boundary geometry supplies invariants under arbitrary stable
-left–right equivalence. In a concrete cubic-frame family, the parameter
-\(q\) survives even after adjoining any number of identity variables. At the
-same time, classical suspensions carry the counterexample into
-cubic-homogeneous and Hessian forms.
+Boundary geometry also supplies invariants under arbitrary stable left–right
+equivalence. In a concrete cubic-frame family, the parameter \(q\) survives
+even after adjoining any number of identity variables.
+
+The formal-effectivity theorem shows why finite-order calculations need a
+complexity estimate. Two complete Keller families can be compatibly
+polynomially equivalent modulo every \(s^M\), while the least degree of the
+coordinate correction grows with \(M\). There is then no one polynomial
+stable equivalence over \(\mathbf C[[s]]\). By contrast, a compatible tower
+inside one fixed degree and stabilization bound is effective.
+
+Classical suspensions carry the counterexample into cubic-homogeneous form.
+The rank-sensitive version reaches 19 variables while preserving the
+collision and generic \(S_3\)-cover.
 
 ## The main open question
 
 Can intrinsic deformation objects be compared cleanly with finite,
 degree-bounded coefficient schemes? A result about a chosen slice is not
-automatically a statement about unrestricted deformations. A formal
-equivalence may also require degrees that grow with the order and therefore
-fail to produce one polynomial equivalence.
+automatically a statement about unrestricted deformations. Likewise, an
+obstruction transported through a finite list of presentation moves becomes
+intrinsic only after that list is proved exhaustive.
+
+The formal-effectivity example isolates a concrete missing ingredient:
+**filtration rectification**. One must show that a relevant formal or stable
+equivalence stays in a uniformly bounded polynomial presentation class, or
+prove that it genuinely escapes.
 
 ## Places to enter
 
 - [A transverse local algebra of length 584](../results/length-584.md)
+- [Formal equivalence can outrun polynomial degree](../results/formal-effectivity.md)
 - [Stable cubic-frame classification](../results/stable-cubic-frames.md)
-- [The cubic-homogeneous normal form](../results/cubic-homogeneous.md)
+- [Cubic-homogeneous counterexamples](../results/cubic-homogeneous.md)
 
 The immediate target is a comparison theorem between an intrinsic
 deformation object and a finite coefficient scheme, with the equivalence
