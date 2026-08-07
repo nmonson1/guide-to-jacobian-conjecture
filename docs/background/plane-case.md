@@ -1,61 +1,86 @@
 ---
-title: "The plane case: still open, with an announced degree bound of 125"
-description: "What survived the three-dimensional counterexample, what the degree-125 bound means, and why slicing does not settle the plane."
+title: "The plane case: what survived"
+description: "Why the three-dimensional construction does not descend to the plane, how a plane counterexample would fail at infinity, and the current degree frontier."
 ---
 
-# The plane case: still open, with an announced degree bound of 125
+# The plane case: what survived
 
 The Jacobian conjecture for
-\(F\colon\mathbf C^2\to\mathbf C^2\) remains open. The 2026 construction
-uses a three-dimensional marked-root space, and there is no operation that
-simply removes its third coordinate while preserving all the required
-properties.
 
-## The announced low-degree theorem
+\[
+F=(P,Q)\colon\mathbf C^2\longrightarrow\mathbf C^2
+\]
 
-Write \(F=(P,Q)\). A computer-assisted argument announced by the
-MathOverflow user **ratto3423** on 23 July 2026, building on the published
-reduction of Jorge A. Guccione, Juan J. Guccione, Rodrigo Horruitiner, and
-Christian Valqui, announces:
+remains open. The three-dimensional counterexample identifies the loophole in
+the classical argument: sheets can escape through infinity. Producing that
+behavior in the plane requires a different construction.
 
-> **Announced computer-assisted theorem.** A counterexample over characteristic zero must satisfy
-> \(\max(\deg P,\deg Q)\ge 125\).
+## Why the third coordinate cannot simply be removed
 
-The inequality is important: degree \(125\) itself is **not** excluded.
+A first attempt is to restrict the known map to a plane in its source. Three
+separate difficulties appear.
 
-The 2022 paper had already reduced every case below 125 to the exceptional
-degree pair \((72,108)\), up to order. Its Newton-polygon analysis left two
-explicit support configurations. The later announcement says its computation
-closes both. As of 7 August 2026, the MathOverflow source says that a write-up
-is in preparation and does not expose the full terminal certificate. The
-statement should therefore be read as the current announced bound, with a
-published proof still to be linked.
+1. A source plane usually maps to a curved surface, so the restriction is
+   not a polynomial self-map of a target plane.
+2. Even for compatible source and target slices, the determinant of the
+   restricted derivative is a minor of the full Jacobian matrix, and that
+   minor need not be constant.
+3. Eliminating the third variable generally produces a rational relation
+   rather than a polynomial self-map of \(\mathbf A^2\).
 
-[Read the result page](../results/below-125.md){ .md-button .md-button--primary }
-
-## Why a slice of the three-dimensional map is not enough
-
-A plane in the source need not map into a plane in the target. Even if one
-chooses compatible two-dimensional slices, the restricted derivative is not
-the full three-dimensional Jacobian determinant, so its determinant need not
-remain constant. Eliminating one variable can also replace a polynomial map
-by a rational relation.
-
-The plane problem therefore asks for new geometry, not a smaller display of
-the known formula.
+The third variable is part of the marked-root chart that makes the source
+\(\mathbf A^3\). Removing it destroys the chart on which the polynomial
+construction depends.
 
 ## What a plane counterexample would have to do
 
-It would be a nonproper étale polynomial map of the affine plane: locally
-invertible everywhere, yet with sheets lost at infinity. Compactifying such
-a map forces strong arithmetic and combinatorial restrictions on its
-boundary curves. Newton polygons, valuations, Puiseux expansions, and dessins
-encode different parts of that boundary data.
+A plane Keller map is étale at every finite point. If it were noninvertible,
+it would have to be nonproper: some sequence \(x_k\in\mathbf C^2\) would
+escape to infinity while \(F(x_k)\) remained bounded.
 
-These restrictions have driven the degree lower bound upward, but they have
-not proved that no plane counterexample exists.
+<figure class="math-figure">
+  <img src="../assets/images/escape-to-infinity.svg" alt="A sequence in the affine source approaching the boundary of a compactification while its images converge to a finite target point.">
+  <figcaption>A hypothetical plane counterexample must lose sheets through the boundary; no finite critical point is available.</figcaption>
+</figure>
 
-## Sources
+Compactifying the source turns that escape into geometry of boundary curves.
+Their valuations, intersections, Puiseux expansions, and Newton polygons are
+highly constrained. Much of the plane literature can be read as an attempt
+to show that no boundary configuration satisfies all of those constraints at
+once.
 
-- [Guccione–Guccione–Horruitiner–Valqui, arXiv:2204.14178](https://arxiv.org/abs/2204.14178)
-- [ratto3423, MathOverflow answer announcing the terminal calculation](https://mathoverflow.net/a/513493)
+## The current degree frontier
+
+A published 2022 reduction of Guccione, Guccione, Horruitiner, and Valqui
+excludes every maximum coordinate degree below \(125\) except the pair
+\((72,108)\), up to order, and reduces that pair to two explicit support
+configurations.
+
+On 23 July 2026, the MathOverflow user **ratto3423** announced a
+computer-assisted calculation eliminating those final supports. The announced
+conclusion is
+
+\[
+\max\{\deg P,\deg Q\}\ge125
+\]
+
+for any characteristic-zero plane counterexample. Degree \(125\) itself
+remains possible. The [proof and evidence
+ledger](../results/evidence-ledger.md#the-announced-plane-degree-bound-125)
+separates the published reduction from the announced terminal calculation.
+
+[Read the degree-bound essay](../results/below-125.md){ .md-button .md-button--primary }
+[See the proof and evidence record](../results/evidence-ledger.md#the-announced-plane-degree-bound-125){ .md-button }
+
+## The question now
+
+The surviving problem has a sharper geometric form:
+
+> Can an étale polynomial self-map of the affine plane lose sheets at infinity?
+
+A positive answer requires a boundary configuration that survives every
+local and global compatibility equation. A negative answer requires an
+invariant strong enough to rule out such configurations in every degree.
+
+That is why the plane problem now belongs naturally to the study of
+compactifications, valuations, Newton--Puiseux expansions, and dessins.

@@ -1,6 +1,6 @@
 site_name: "The Jacobian Conjecture: A Guide"
 site_url: https://nmonson1.github.io/guide-to-jacobian-conjecture/
-site_description: A hand-authored guide to the Jacobian conjecture, its counterexample in dimensions at least three, the surviving plane case, and the mathematics around them.
+site_description: A human-directed, owner-edited guide to the Jacobian conjecture, its counterexample in dimensions at least three, the surviving plane case, and the mathematics around them.
 docs_dir: docs
 repo_name: nmonson1/guide-to-jacobian-conjecture
 repo_url: https://github.com/nmonson1/guide-to-jacobian-conjecture
@@ -64,6 +64,7 @@ plugins:
 
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/exposition.css
 
 extra_javascript:
   - assets/javascripts/mathjax.js

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 500" role="img" aria-labelledby="title desc">
+  <title id="title">Newton polygon for y squared equals x cubed plus x</title>
+  <desc id="desc">Exponent points for y squared, x cubed, and x are plotted. The outer edge at infinity from y squared to x cubed has slope minus two thirds and yields the Puiseux exponent three halves.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#183638"/>
+    </marker>
+    <style>
+      .paper{fill:#fbf9f3}.axis{stroke:#183638;stroke-width:2.5;marker-end:url(#arrow)}.grid{stroke:#c7d0cd;stroke-width:1}.edge{stroke:#a63a30;stroke-width:5}.point{fill:#0d6567;stroke:#183638;stroke-width:1.5}.lower{fill:#c9821b;stroke:#183638;stroke-width:1.5}.label{font:600 23px Georgia,serif;fill:#183638}.small{font:500 18px system-ui,sans-serif;fill:#586b6c}.math{font:italic 21px Georgia,serif;fill:#183638}.box{fill:#e6efe9;stroke:#0d6567;stroke-width:2}
+    </style>
+  </defs>
+  <rect class="paper" width="980" height="500" rx="24"/>
+
+  <text class="label" x="65" y="50">exponent diagram at infinity</text>
+  <line class="axis" x1="95" y1="410" x2="520" y2="410"/>
+  <line class="axis" x1="95" y1="410" x2="95" y2="80"/>
+  <text class="small" x="525" y="417">x exponent</text>
+  <text class="small" x="27" y="76">y exponent</text>
+
+  <line class="grid" x1="205" y1="410" x2="205" y2="95"/>
+  <line class="grid" x1="315" y1="410" x2="315" y2="95"/>
+  <line class="grid" x1="425" y1="410" x2="425" y2="95"/>
+  <line class="grid" x1="95" y1="300" x2="500" y2="300"/>
+  <line class="grid" x1="95" y1="190" x2="500" y2="190"/>
+
+  <text class="small" x="200" y="438">1</text>
+  <text class="small" x="310" y="438">2</text>
+  <text class="small" x="420" y="438">3</text>
+  <text class="small" x="70" y="306">1</text>
+  <text class="small" x="70" y="196">2</text>
+
+  <circle class="point" cx="95" cy="190" r="10"/>
+  <text class="math" x="116" y="181">y^2 at (0,2)</text>
+  <circle class="point" cx="425" cy="410" r="10"/>
+  <text class="math" x="380" y="386">x^3 at (3,0)</text>
+  <circle class="lower" cx="205" cy="410" r="9"/>
+  <text class="math" x="168" y="386">x at (1,0)</text>
+  <line class="edge" x1="95" y1="190" x2="425" y2="410"/>
+  <text class="small" x="215" y="257">outer edge at infinity</text>
+  <text class="small" x="253" y="281">slope -2/3</text>
+
+  <rect class="box" x="620" y="110" width="292" height="260" rx="24"/>
+  <text class="label" x="653" y="153">balance along the edge</text>
+  <text class="math" x="675" y="209">y ~ c x^r</text>
+  <text class="math" x="675" y="254">2r = 3</text>
+  <text class="math" x="675" y="299">r = 3/2</text>
+  <text class="math" x="675" y="344">c = ±1</text>
+
+  <text class="small" x="95" y="474">The lower term x affects later coefficients after the leading balance has been fixed.</text>
+</svg>

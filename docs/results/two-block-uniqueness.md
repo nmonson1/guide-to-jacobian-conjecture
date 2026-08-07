@@ -1,76 +1,91 @@
 ---
-title: "Stable uniqueness for nonosculating two-block multiplication charts"
-description: "Among tangent but nonosculating two-block incidence opens, only the cubic (1,2) chart becomes affine space, even after stabilization."
+title: "Why the cubic two-block chart is exceptional"
+description: "Among tangent nonosculating two-block multiplication charts, only the cubic (1,2) case becomes affine space, even after stabilization."
 ---
 
-# Stable uniqueness for nonosculating two-block multiplication charts
+# Why the cubic two-block chart is exceptional
 
-!!! info "Reading level"
-    The first section gives the geometric conclusion. The precise statement
-    is written for readers comfortable with projective varieties and divisor
-    class groups.
+<p class="byline">A project theorem of Nathaniel Monson</p>
 
-## What is true and why
+The marked-cubic example can be built by multiplying a linear binary form by
+a quadratic one, then deleting the common-root divisor and the pullback of a
+specially chosen tangent hyperplane. The same recipe exists for larger block
+sizes \((a,b)\). Global invariants isolate the first cubic chart as the only
+stably affine member of this nonosculating family.
 
-The marked-cubic example can be described by multiplying a linear binary
-form by a quadratic one, then deleting the locus where the factors share a
-root and one tangent hyperplane. The same recipe makes a family of spaces
-from block sizes \((a,b)\). Class-group and Hodge-theoretic obstructions show
-that none of the larger nonosculating cases can become affine space after
-multiplying by an affine-space factor.
+## The multiplication construction
 
-## Precise result
-
-Let
+Let \(V_d\) be the vector space of binary forms of degree \(d\), and consider
 
 \[
 \mu_{a,b}\colon
 \mathbf P(V_a)\times\mathbf P(V_b)
-\longrightarrow\mathbf P(V_{a+b}),
-\qquad ([L],[Q])\longmapsto[LQ],
+\longrightarrow
+\mathbf P(V_{a+b}),
+\qquad
+([L],[Q])\longmapsto[LQ].
 \]
 
-where \(V_d\) is the space of binary forms of degree \(d\). Delete the
-resultant divisor and the pullback of a hyperplane tangent, but not
-osculating, to the rational normal curve. Call the resulting open
-\(U_{a,b,H}\).
+Delete two divisors:
 
-Then
+1. the resultant divisor, where \(L\) and \(Q\) share a root;
+2. the pullback of a hyperplane tangent and nonosculating to the rational
+   normal curve.
+
+Write \(U_{a,b,H}\) for the resulting open variety. The case
+\(\{a,b\}=\{1,2\}\) is the affine three-space underlying the first
+counterexample.
+
+## The stable classification
+
+For some \(r\ge0\), suppose
 
 \[
-U_{a,b,H}\times\mathbf A^r\simeq\mathbf A^{a+b+r}
+U_{a,b,H}\times\mathbf A^r
+\simeq
+\mathbf A^{a+b+r}.
 \]
 
-for some \(r\ge0\) if and only if
+Then
 
 \[
 \{a,b\}=\{1,2\}.
 \]
 
-The surviving case is already \(\mathbf A^3\) without stabilization.
+Conversely, the \((1,2)\) case is already \(\mathbf A^3\) before any
+stabilization.
 
-## Proof architecture
+## Two different obstructions
 
-The divisor classes of the two deleted loci first rule out nonadjacent block
-sizes. For larger adjacent sizes, a deficit in the Hodge–Deligne polynomial
-survives multiplication by every affine-space factor. The positive
-\((1,2)\) case is closed by an explicit coordinate isomorphism that includes
-the retained section at infinity.
+The proof separates the larger cases in two stages.
 
-The argument is scheme-theoretic and does not assume that all roots are
-simple.
+First, the divisor classes of the resultant and tangent loci rule out
+nonadjacent block sizes. Their complement has the wrong class-group behavior
+to become affine space after multiplication by \(\mathbf A^r\).
 
-## What it does not prove
+For the remaining adjacent block sizes, a deficit in the Hodge--Deligne
+polynomial survives every affine-space factor. The stable cohomological
+signature still disagrees with affine space.
 
-This is uniqueness inside the tangent-but-nonosculating part of the two-block
-multiplication-incidence construction. It says nothing about osculating
-hyperplanes and is not a uniqueness theorem for all cubic Keller
-presentations or all possible routes to affine space.
+The positive \((1,2)\) case is verified by an explicit coordinate
+isomorphism, including the retained section at infinity. The argument is
+scheme-theoretic and does not require all roots to be simple.
 
-## Proof source and status
+## Why this is surprising
 
-- [Working manuscript source, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/01-cubic-incidence/main.tex)
-- [Working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/01-cubic-marked-root-covers-2026-07-29-v13.pdf)
+Multiplication of binary forms gives an abundant family of finite incidence
+covers. Tangency removes ramification in a geometrically natural way. One
+might expect affine examples to occur sporadically in larger degrees. Instead,
+the cubic chart is isolated by two robust global invariants.
 
-This is a theorem of the project, authored by Nathaniel Monson. The linked
-working manuscript contains the proof and its computational checker.
+The affine-space requirement is therefore much more restrictive than finding
+an étale open inside a finite cover. Any broader construction of Keller maps
+must solve an affineness problem of comparable strength.
+
+## Where the classification stops
+
+The theorem covers tangent nonosculating hyperplanes in the stated two-block
+multiplication construction. Osculating hyperplanes and other incidence
+constructions remain outside its scope.
+
+[Proof and status](evidence-ledger.md#the-cubic-two-block-chart){ .evidence-link }

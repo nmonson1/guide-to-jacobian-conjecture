@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" role="img" aria-labelledby="title desc">
+  <title id="title">A sheet leaving the affine source</title>
+  <desc id="desc">A sequence of points in the affine source X approaches the deleted boundary D inside a completion Z, while their images approach one finite point in the target Y.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0d6567"/>
+    </marker>
+    <style>
+      .paper{fill:#fbf9f3}.complete{fill:#e6efe9;stroke:#0d6567;stroke-width:3}.affine{fill:#d8ecea;stroke:#0d6567;stroke-width:2}.boundary{fill:#f5cfc8;stroke:#a63a30;stroke-width:3;stroke-dasharray:9 7}.target{fill:#f4e5cc;stroke:#a63a30;stroke-width:3}.map{fill:none;stroke:#586b6c;stroke-width:2.2;marker-end:url(#arrow)}.label{font:600 24px Georgia,serif;fill:#183638}.small{font:500 18px system-ui,sans-serif;fill:#586b6c}.point{fill:#0d6567}.limit{fill:#a63a30}.trail{fill:none;stroke:#c9821b;stroke-width:4;stroke-dasharray:7 7;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="paper" width="980" height="470" rx="24"/>
+
+  <rect class="complete" x="55" y="65" width="470" height="325" rx="30"/>
+  <text class="label" x="83" y="105">completion Z</text>
+  <rect class="affine" x="92" y="128" width="342" height="214" rx="45"/>
+  <text class="label" x="112" y="171">affine source X</text>
+  <path class="boundary" d="M451 119 C500 160,503 284,447 350"/>
+  <text class="small" x="440" y="382">boundary D</text>
+
+  <circle class="point" cx="165" cy="270" r="8"/>
+  <circle class="point" cx="230" cy="250" r="8"/>
+  <circle class="point" cx="295" cy="225" r="8"/>
+  <circle class="point" cx="355" cy="195" r="8"/>
+  <circle class="point" cx="408" cy="160" r="8"/>
+  <circle class="limit" cx="458" cy="134" r="11"/>
+  <path class="trail" d="M166 270 C245 262,342 215,447 142"/>
+  <text class="small" x="145" y="309">x1, x2, x3, ...</text>
+  <text class="small" x="393" y="112">limit in D</text>
+
+  <rect class="target" x="690" y="135" width="225" height="205" rx="48"/>
+  <text class="label" x="744" y="180">target Y</text>
+  <circle class="limit" cx="802" cy="244" r="12"/>
+  <circle class="point" cx="765" cy="268" r="6"/>
+  <circle class="point" cx="779" cy="258" r="6"/>
+  <circle class="point" cx="791" cy="250" r="6"/>
+  <text class="small" x="821" y="251">y</text>
+  <text class="small" x="735" y="300">F(xk) tends to y</text>
+
+  <path class="map" d="M515 222 C585 204,620 208,680 225"/>
+  <text class="small" x="579" y="188">F</text>
+  <text class="small" x="58" y="430">The points leave every compact subset of X, while their images converge in Y.</text>
+</svg>

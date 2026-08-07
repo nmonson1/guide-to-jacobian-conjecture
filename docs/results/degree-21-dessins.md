@@ -1,79 +1,113 @@
 ---
 title: "Five degree-21 dessins on the last supports below 125"
-description: "The exact Belyi-map classification forced by the two surviving Newton supports."
+description: "How the two surviving Newton supports force one Belyi passport with exactly five connected dessins."
 ---
 
 # Five degree-21 dessins on the last supports below 125
 
-!!! info "Reading level"
-    This is a specialist, computer-assisted boundary classification. Read
-    [dessins d'enfants](../ideas/dessins.md) for the permutation picture and
-    [Newton--Puiseux expansions](../ideas/newton-puiseux.md) for why a plane
-    polynomial map produces boundary data.
+<p class="byline">A project theorem of Nathaniel Monson</p>
 
-## What is true and why
+The two Newton supports left by the published degree-below-125 reduction force
+the same leading-face differential equation. That equation can be integrated
+into a Belyi map. The resulting ramification passport is rigid enough to
+classify every connected dessin.
 
-The two Newton supports left by the published below-125 reduction force the
-same leading-face differential equation. Rewriting it as the derivative of
-a rational function produces a Belyi map. Its ramification passport is so
-restrictive that the corresponding permutation triples can be completely
-enumerated.
+## From the Jacobian equation to a Belyi map
 
-## Precise result
-
-For either support, the leading face has the form
+For either support, the leading faces have the form
 
 \[
 P_{\mathrm{face}}=Xp(z),
 \qquad
 Q_{\mathrm{face}}=X^2Yq(z),
-\qquad z=XY^2,
+\qquad
+z=XY^2,
 \]
 
-with \(\deg p=7\), \(\deg q=10\), and
+with
+
+\[
+\deg p=7,
+\qquad
+\deg q=10.
+\]
+
+The constant-Jacobian equation on the face becomes
 
 \[
 pq+2zpq'-3zp'q=1.
 \]
 
-Consequently
+Now set
 
 \[
-\tau(z)=z\frac{q(z)^2}{p(z)^3}
+\tau(z)=z\frac{q(z)^2}{p(z)^3}.
 \]
 
-is a degree-21 Belyi map with passport
+The revealing calculation is logarithmic:
 
 \[
-(2^{10}1),\qquad(3^7),\qquad(17\,1^4).
+\frac{\tau'}{\tau}
+=\frac1z+2\frac{q'}q-3\frac{p'}p
+=\frac{pq+2zpq'-3zp'q}{zpq}
+=\frac1{zpq}.
 \]
 
-There are exactly five connected dessins with this passport. They form one
-arithmetic orbit over an irreducible quintic field, have trivial deck group,
-and have monodromy group \(A_{21}\).
+Hence
 
-## Why it matters
+\[
+\tau'=\frac{q}{p^4}.
+\]
 
-An apparently infinite coefficient problem has become a list of five exact
-boundary models. Those five are candidate inputs for terminal globalization
-calculations; this classification does not supply the still-unpublished
-terminal proof announced by ratto3423. The residue degree also distinguishes
-this boundary from a previously proposed degree-16 “Three-dessin” model.
+This one identity contains the ramification data. Comparing vanishing
+orders on the two sides shows first that every root of \(p\) and \(q\) is
+simple. The roots of \(q\) give double zeros of \(\tau\), the roots of
+\(p\) give triple poles, and \(z=0\) supplies one additional simple zero.
+At \(z=\infty\), the derivative vanishes to order sixteen in the local
+coordinate \(1/z\), so
+the ramification index is seventeen. After scaling the third branch value to
+\(1\), the passport is
 
-## What it does not prove
+\[
+(2^{10}1),
+\qquad
+(3^7),
+\qquad
+(17\,1^4).
+\]
 
-A face solution need not extend to a global polynomial Keller pair. The
-theorem classifies the forced lower face; later layer equations are required
-to exclude the two full supports.
+The coefficient problem has become a finite permutation problem.
 
-## Proof source and status
+## The five dessins
 
-- [Certificate manuscript, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/06-plane-boundary/appendices/degree-twenty-one-certificates.tex)
-- [Plane-boundary working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/06-plane-boundary-obstructions-2026-07-29-v13.pdf)
-- [Exact computational supplement, pinned ZIP](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/docs-v56-converged-research-20260804j/assets/technical-materials/06-plane-boundary-computational-supplement.zip)
+There are exactly five connected dessins with this passport. They have:
 
-This is an exact computer-assisted theorem of the project, authored by
-Nathaniel Monson. Its enumeration, coefficient reconstruction, and replay
-certificates are part of the linked public source snapshot. In the ZIP,
-begin with `COMPUTATION.md`; the degree-21 replay is documented in
-`computational-supplement/degree-twenty-one/README.md`.
+- trivial deck group;
+- monodromy group \(A_{21}\);
+- one arithmetic orbit over an irreducible quintic field.
+
+The enumeration is exhaustive: every transitive permutation triple with the
+stated cycle data appears and belongs to this single orbit.
+
+## Why the compression matters
+
+Before the Belyi reformulation, one faces polynomial coefficients in two
+Newton supports and a nonlinear differential identity. Afterward, the leading
+boundary layer is represented by five discrete objects.
+
+This is precisely the kind of compression one hopes for in the plane problem:
+continuous coefficient data become finite combinatorics, and exact arithmetic
+reconstructs the corresponding maps.
+
+## The remaining globalization problem
+
+Each dessin controls the forced leading face. To globalize it, one must solve
+every higher Puiseux layer and fill out the full polynomial supports. The five
+dessins are therefore exact inputs to the terminal equations; globalization
+still requires all later compatibility conditions.
+
+The announced degree-bound computation states that the two full supports have
+no solutions. The dessin theorem explains the leading geometry inside those
+supports and supplies a finite list on which later equations can act.
+
+[Proof, certificates, and status](evidence-ledger.md#five-degree-21-dessins){ .evidence-link }

@@ -6,7 +6,7 @@ description: "A reader's guide to the counterexample in three variables, the sur
 <div class="hero" markdown>
 <div class="hero-copy" markdown>
 
-<p class="eyebrow">A hand-authored mathematical guide</p>
+<p class="eyebrow">A mathematical guide</p>
 
 # The conjecture failed in three dimensions. The plane case did not.
 
@@ -24,20 +24,32 @@ dimension at least three. The two-dimensional problem remains open.
 ## The shortest version
 
 There is an explicit polynomial map
-\(F\colon \mathbf C^3\to\mathbf C^3\) such that
+\(F\colon \mathbf C^3\to\mathbf C^3\) with
 
 \[
 \det DF=-2,
 \]
 
-but three distinct points have the same image. The derivative is invertible
-everywhere; the map itself is not.
+and three distinct points have the same image. Every derivative is invertible.
+A generic target value still has three preimages.
 
-The extra variable is essential to the known construction. Nothing here
-turns it into a counterexample in the plane.
+The construction uses the third variable in an essential way. The plane
+problem asks for new geometry.
 
 </div>
 </div>
+
+## Where the story turns
+
+The Jacobian determinant controls the map near each finite source point. The
+counterexample exploits what that local calculation cannot see: several
+separate sheets can cover the same target region, and some sheets can escape
+through infinity without creating a finite critical point.
+
+The useful object is therefore larger than the displayed formula. It consists
+of a finite cover, an affine open inside that cover, and the boundary removed
+to obtain the open. Once those pieces are visible, the determinant identity
+becomes structural and the surviving plane problem comes into focus.
 
 ## Choose a route
 
@@ -45,10 +57,10 @@ turns it into a counterexample in the plane.
 
 <div class="story-card" markdown>
 
-### See the map
+### Verify the map
 
-Read the formula, the two finite checks, the construction behind them, and
-the exact limits of the result.
+Read the formula, a short structural determinant computation, the explicit
+collision, and the exact conclusion.
 
 [Read the counterexample](start/counterexample.md)
 
@@ -56,10 +68,22 @@ the exact limits of the result.
 
 <div class="story-card" markdown>
 
-### Understand the geometry
+### See the three pictures
 
-Mark one root of a binary cubic and then forget which root was marked. That
-picture explains both local regularity and global collision.
+Move from the polynomial formula to the marked-root cover and then to the
+finite completion with its deleted boundary.
+
+[Read three views of the example](start/three-views.md)
+
+</div>
+
+<div class="story-card" markdown>
+
+### Understand the construction
+
+Mark one root of a binary cubic and then forget which root was marked. Simple
+roots explain local regularity; the three possible markings explain the
+global collision.
 
 [See the marked-root construction](background/marked-root-geometry.md)
 
@@ -69,38 +93,31 @@ picture explains both local regularity and global collision.
 
 ### Follow the plane problem
 
-The two-variable conjecture is still open. Learn what is known below degree
-125 and why a three-dimensional example does not descend by taking a slice.
+The two-variable conjecture is still open. See why slicing loses the
+required polynomial and Jacobian structure, what a plane counterexample would
+have to do at infinity, and where the current degree frontier lies.
 
 [Read about the plane case](background/plane-case.md)
 
 </div>
 
-<div class="story-card" markdown>
-
-### Read Tao's digestion
-
-Terence Tao's essay reconstructs the example from geometric first
-principles. This guide republishes it in full, with credit and a link to the
-canonical edition.
-
-[Read Tao's essay](start/tao-digestion.md)
-
 </div>
 
-</div>
+## From explanation to research
 
-## Beyond the announcement
+The [six mathematical ideas](ideas/index.md) develop the concepts that the
+example naturally asks for: properness, monodromy, discriminants,
+normalization, Puiseux expansions, and dessins. The [four research
+fronts](fronts/index.md) are short essays about the questions that connect
+those ideas.
 
-The [mathematical ideas](ideas/index.md) are short bridges into covers,
-monodromy, discriminants, normalization, Newton--Puiseux expansions, and
-dessins. The [four research fronts](fronts/index.md) organize questions by
-mathematical dependence rather than by project history. The [major-results
-shelf](results/index.md) is selective; the [external-developments ledger](developments/index.md)
-is deliberately inclusive.
+The [major-result pages](results/index.md) explain selected theorems and
+computations. Their proof locations, source forms, verification scope, and
+publication status live separately in the [proof and evidence
+ledger](results/evidence-ledger.md), so the mathematical narrative can remain
+readable without hiding how each claim is supported.
 
-This is a public working draft by **Nathaniel Monson**. Every page is written
-for a human reader. A page can be shared by direct URL while under editorial
-review, but only an exact owner-approved version enters ordinary navigation,
-search, and the sitemap. See the [editorial policy](about/editorial-policy.md)
-and [AI-assistance note](about/ai-assistance.md).
+For a longer reconstruction from geometric first principles, read
+[Terence Tao's digestion](start/tao-digestion.md). For books and notes, the
+[background reading guide](background/background-reading.md) recommends what
+to pick up when a particular idea becomes necessary.

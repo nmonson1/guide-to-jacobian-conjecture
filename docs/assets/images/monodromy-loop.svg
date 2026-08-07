@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 480" role="img" aria-labelledby="title desc">
+  <title id="title">Monodromy permutes three sheets</title>
+  <desc id="desc">A loop around an exceptional value in the target lifts to paths on three sheets and cyclically permutes the labels one, two, and three.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0d6567"/>
+    </marker>
+    <style>
+      .paper{fill:#fbf9f3}.disk{fill:#f4e5cc;stroke:#a63a30;stroke-width:3}.loop{fill:none;stroke:#0d6567;stroke-width:4;marker-end:url(#arrow)}.sheet1{fill:#d8ecea;stroke:#0d6567;stroke-width:2}.sheet2{fill:#f0e3ba;stroke:#c9821b;stroke-width:2}.sheet3{fill:#f5d4cf;stroke:#a63a30;stroke-width:2}.lift{fill:none;stroke-width:4;marker-end:url(#arrow)}.label{font:600 24px Georgia,serif;fill:#183638}.small{font:500 18px system-ui,sans-serif;fill:#586b6c}.point{fill:#183638}.puncture{fill:#a63a30}
+    </style>
+  </defs>
+  <rect class="paper" width="980" height="480" rx="24"/>
+
+  <text class="label" x="85" y="55">a loop in the target</text>
+  <circle class="disk" cx="225" cy="240" r="145"/>
+  <circle class="puncture" cx="225" cy="240" r="12"/>
+  <text class="small" x="170" y="276">exceptional value</text>
+  <circle class="point" cx="335" cy="240" r="8"/>
+  <text class="small" x="252" y="190">base point w</text>
+  <path class="loop" d="M335 240 C335 128,113 128,113 240 C113 352,335 352,335 255"/>
+
+  <text class="label" x="525" y="55">the lifted paths on three sheets</text>
+  <rect class="sheet1" x="530" y="90" width="350" height="82" rx="34"/>
+  <rect class="sheet2" x="530" y="199" width="350" height="82" rx="34"/>
+  <rect class="sheet3" x="530" y="308" width="350" height="82" rx="34"/>
+  <text class="label" x="557" y="140">sheet 1</text>
+  <text class="label" x="557" y="249">sheet 2</text>
+  <text class="label" x="557" y="358">sheet 3</text>
+  <circle class="point" cx="795" cy="131" r="9"/>
+  <circle class="point" cx="795" cy="240" r="9"/>
+  <circle class="point" cx="795" cy="349" r="9"/>
+
+  <path class="lift" d="M795 131 C914 144,914 215,805 236" stroke="#0d6567"/>
+  <path class="lift" d="M795 240 C914 253,914 324,805 345" stroke="#c9821b"/>
+  <path class="lift" d="M795 349 C925 390,925 73,805 127" stroke="#a63a30"/>
+
+  <text class="small" x="562" y="425">After the loop closes: sheet 1 goes to 2,</text>
+  <text class="small" x="610" y="452">sheet 2 to 3, and sheet 3 to 1.</text>
+</svg>

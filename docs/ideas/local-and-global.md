@@ -1,39 +1,83 @@
 ---
 title: "Local invertibility is not global invertibility"
-description: "The precise gap between an invertible Jacobian matrix and a polynomial inverse."
+description: "What an invertible Jacobian matrix controls, why properness forces one sheet, and how the counterexample escapes through infinity."
 ---
 
 # Local invertibility is not global invertibility
 
-If \(\det DF(p)\ne0\), the inverse-function theorem says that \(F\) is
-one-to-one near \(p\) and has a local analytic inverse near \(F(p)\). If the
-determinant is nonzero everywhere, this is true near every source point.
+If \(\det DF(p)\ne0\), the inverse-function theorem gives a neighborhood of
+\(p\) on which \(F\) is one-to-one. When the determinant never vanishes, this
+is true near every source point.
 
-None of that compares two far-apart source points. A global collision
-\(F(p)=F(q)\) with \(p\ne q\) is compatible with local invertibility as long
-as the two local sheets remain separate near \(p\) and \(q\).
+The theorem compares nearby points. A global collision compares points that
+may lie very far apart.
 
-## Why properness bridges the gap
+<figure class="math-figure">
+  <img src="../assets/images/local-sheets.svg" alt="Three disjoint source neighborhoods mapping isomorphically onto the same target neighborhood.">
+  <figcaption>Three local inverse branches can coexist over one target neighborhood.</figcaption>
+</figure>
 
-A map is proper when inverse images of compact sets are compact. For
-polynomial maps of complex affine space, properness prevents points in a
-bounded target region from being reached by source points running off to
-infinity.
+If \(F(p)=F(q)\) with \(p\ne q\), choose disjoint neighborhoods of \(p\) and
+\(q\). Each may map isomorphically onto the same small neighborhood of the
+common image. No local folding is required.
 
-A proper local homeomorphism is a covering map. Because \(\mathbf C^n\) is
-simply connected, a connected covering of \(\mathbf C^n\) has one sheet. In
-the polynomial setting, that one-sheeted map has a polynomial inverse.
+## Properness forces the sheets to stay
 
-Thus a noninvertible Keller map must fail properness. In the 2026 example,
-the generic fiber has three points, and exceptional fibers lose points
-through infinity. There is no finite critical point to announce the loss.
+A map is proper when inverse images of compact sets are compact. For a
+polynomial map of complex affine space, properness prevents a sequence from
+running to infinity while its image remains in a bounded region.
 
-## A useful reformulation
+A proper local homeomorphism is a covering map. Since \(\mathbf C^n\) is
+simply connected, every connected covering of \(\mathbf C^n\) has one sheet.
+For a Keller map, properness would therefore force global invertibility.
 
-After the counterexample, “constant Jacobian” should be heard as a statement
-about **local geometry**. The missing global hypothesis is control at
-infinity. This reformulation points directly toward compactifications,
-nonproperness loci, discriminants, and boundary valuations.
+The implication is a practical diagnostic:
+
+\[
+\text{noninvertible Keller map}
+\quad\Longrightarrow\quad
+\text{nonproper map}.
+\]
+
+## How a sheet disappears
+
+In the three-dimensional example, a typical target value has three
+preimages. Near an exceptional target value, one or more of those preimages
+can move farther and farther out in the affine source. Their images
+converge, while the source points have no affine limit.
+
+After compactifying the source, the escaping sequence approaches the boundary:
+
+<figure class="math-figure">
+  <img src="../assets/images/escape-to-infinity.svg" alt="A sequence in affine space approaching the boundary of a compactification while its images converge to a finite target point.">
+  <figcaption>Nonproperness lets a finite target value be approached by source points escaping to infinity.</figcaption>
+</figure>
+
+The finite completion restores the missing limit point. In the marked-root
+model, that point is a repeated marked root, and the completed finite cover
+ramifies there. The affine source omits it, so the affine derivative remains
+invertible everywhere.
+
+<div class="mental-model" markdown>
+
+**The useful reformulation.** Constant Jacobian controls local geometry.
+Global invertibility depends on whether the sheets remain inside the affine
+chart.
+
+</div>
+
+## Why this changes the subject
+
+Before the counterexample, it was natural to search for ever stronger local
+consequences of the Jacobian identity. The example redirects attention to
+objects that record infinity: compactifications, nonproperness loci,
+boundary divisors, valuations, and discriminants.
+
+The first invariant to study is monodromy. Before any sheet reaches the
+boundary, continuation around loops records how the generic sheets are
+connected.
+
+[Next: covers and monodromy](monodromy.md){ .md-button .md-button--primary }
 
 ## Sources
 

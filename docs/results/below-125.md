@@ -1,61 +1,88 @@
 ---
-title: "Guccione–Guccione–Horruitiner–Valqui and ratto3423 (2022/2026): the announced plane degree bound 125"
-description: "The published reduction and announced terminal calculation behind the current characteristic-zero plane degree bound."
+title: "The announced plane degree bound 125"
+description: "How geometry at infinity reduces every lower-degree plane candidate to two explicit supports, followed by an announced terminal calculation."
 ---
 
-# Guccione–Guccione–Horruitiner–Valqui and ratto3423 (2022/2026): the announced plane degree bound 125
+# The announced plane degree bound 125
 
 <p class="byline">Global reduction by Jorge A. Guccione, Juan J. Guccione,
 Rodrigo Horruitiner, and Christian Valqui · terminal calculation announced by
 MathOverflow user ratto3423</p>
 
-## What is true and why
+A plane counterexample of bounded degree has only finitely many possible
+shapes at infinity. The degree-bound argument turns that principle into a
+chain of exact reductions, ending with two explicit Newton-support systems.
+An announced computer calculation eliminates those last systems.
 
-A plane counterexample of small degree would have only a limited number of
-possible configurations at infinity. The 2022 paper eliminates all but one
-degree pair and reduces that pair to two explicit Newton-support systems. On
-23 July 2026, ratto3423 announced a computer-assisted calculation eliminating
-both systems. The answer says that a full write-up is in preparation; it
-does not yet expose the terminal calculation.
+## From degree to boundary shape
 
-## Precise result
-
-The announced theorem is: let
-\(F=(P,Q)\colon\mathbf C^2\to\mathbf C^2\) satisfy
-\(\det D(P,Q)\in\mathbf C^\times\). If \(F\) is not a polynomial
-automorphism, then
+Let
 
 \[
-\max\{\deg P,\deg Q\}\ge125.
+F=(P,Q)\colon\mathbf C^2\longrightarrow\mathbf C^2
 \]
 
-The claim excludes degrees **strictly below** 125. It does not exclude
-degree 125.
+satisfy \(\det D(P,Q)\in\mathbf C^\times\). If \(F\) is nonproper, an
+escaping branch at infinity produces valuations and Newton polygons for
+\(P\) and \(Q\). The Jacobian identity constrains their leading faces.
 
-## What is public now
+The published 2022 analysis shows that every counterexample with
 
-The published 2022 reduction proves that a counterexample below 125 would
-have degree pair \((72,108)\) or \((108,72)\). Its case table has two
-degree-108 possibilities, called \((9,27)\) and \((8,28)\). The paper
-eliminates the first and reduces the second to two precise Laurent-support
-configurations.
+\[
+\max\{\deg P,\deg Q\}<125
+\]
 
-The MathOverflow answer states that a computer-assisted calculation
-eliminates both remaining supports, but does not give the detailed equations,
-certificates, or a linked preprint. The mathematical claim is therefore
-publicly announced, while the complete proof is not yet publicly inspectable
-from the credited source. This guide will link the write-up when it appears.
+would have degree pair
 
-Separately, the [degree-21 dessins page](degree-21-dessins.md) explains a
-publicly archived project calculation on the same two supports. It is not
-used here to alter credit for ratto3423's earlier announcement.
+\[
+(72,108)\quad\text{or}\quad(108,72).
+\]
 
-## Sources and status
+Its case analysis eliminates the \((9,27)\) possibility and reduces the
+remaining \((8,28)\) case to two precise Laurent-support configurations.
+This is the global part of the theorem: every lower-degree candidate is
+forced into one of two terminal systems.
 
-- [Guccione–Guccione–Horruitiner–Valqui, arXiv:2204.14178](https://arxiv.org/abs/2204.14178)
-- [ratto3423, MathOverflow answer](https://mathoverflow.net/a/513493)
+## The announced terminal step
 
-This page records an announced computer-assisted theorem, not a claim that
-the two-line MathOverflow answer is a complete proof. The guide credits the
-result to the earlier external announcement and does not claim priority for
-later project work on the same bound.
+On 23 July 2026, ratto3423 announced that a computer-assisted calculation
+eliminates both remaining supports. The resulting statement is:
+
+> **Announced theorem.** If a characteristic-zero plane Keller map is not a
+> polynomial automorphism, then
+> \[
+> \max\{\deg P,\deg Q\}\ge125.
+> \]
+
+The threshold begins at \(125\); the statement excludes degrees strictly
+below it.
+
+## Why the architecture matters
+
+A terminal contradiction proves a degree bound only after the global
+reduction has shown that every candidate reaches the terminal equations. The
+argument therefore has two qualitatively different parts:
+
+1. geometry at infinity compresses all maps in the degree range to two
+   supports;
+2. a terminal exact calculation must show that neither support admits the
+   required later layers.
+
+The global reduction is published, and the terminal elimination has been
+publicly announced. The [proof and evidence
+ledger](evidence-ledger.md#the-announced-plane-degree-bound-125) records the
+source form and present evidence for each stage.
+
+## The frontier after 125
+
+Even a complete proof of the announced theorem would leave the plane
+conjecture open. It rules out a large finite degree range and clarifies the
+shape of the obstruction machinery. A full solution must either construct a
+boundary configuration at some higher degree or find an invariant that
+excludes all degrees at once.
+
+The [degree-21 dessins](degree-21-dessins.md) arise inside the same two
+supports and show how sharply the leading boundary layer can already be
+classified.
+
+[Proof, sources, and current status](evidence-ledger.md#the-announced-plane-degree-bound-125){ .evidence-link }

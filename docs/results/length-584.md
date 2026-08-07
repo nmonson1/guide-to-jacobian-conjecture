@@ -1,84 +1,94 @@
 ---
 title: "A transverse local algebra of length 584"
-description: "The bounded degree-seven deformation slice is reduced-isolated but carries a precisely computed nonreduced thickening."
+description: "The fixed degree-seven counterexample is reduced-isolated in a bounded slice and surrounded by a precisely computed nilpotent neighborhood."
 ---
 
 # A transverse local algebra of length 584
 
-!!! info "Reading level"
-    This is a specialist, computer-assisted result about the local geometry
-    of a bounded coefficient scheme. The conceptual point is in the first
-    and third sections; the numerical statement uses local algebra.
+<p class="byline">An exact computer-assisted project theorem of Nathaniel
+Monson</p>
 
-## What is true and why
+A point can be isolated after reduction and still carry many infinitesimal
+directions. That is what happens to the fixed counterexample inside one
+normalized degree-at-most-seven coefficient scheme.
 
-To ask whether the fixed counterexample belongs to a nearby family, one must
-say which degrees and coordinate changes are allowed. In the scheme of
-degree-at-most-seven Keller maps, quotient by the normalized affine source
-action and take a transverse slice through the fixed map. The reduced slice
-is a single point, but its equations meet there with high multiplicity.
+The reduced geometry is a single point. Around it sits a nilpotent
+neighborhood of length \(584\).
 
-## Precise result
+## The deformation slice
 
-Before imposing the Keller equations, the chosen affine slice has dimension
-337. At the fixed map its Zariski tangent space has dimension ten, and the
-completed local ring has a Kuranishi presentation
+Begin with polynomial maps of degree at most seven satisfying the Keller
+equations. Quotient by a normalized affine source action and choose a
+transverse slice through the fixed map.
+
+Before the Keller equations are imposed, this affine slice has dimension
+\(337\). At the counterexample, its Zariski tangent space has dimension ten.
+The completed local ring has a Kuranishi presentation
 
 \[
-R\cong \mathbf C[[u_1,\ldots,u_{10}]]/I.
+R\cong\mathbf C[[u_1,\ldots,u_{10}]]/I.
 \]
 
-Then
+The exact calculation gives
 
 \[
 \operatorname{length}R=584,
 \qquad
-\mathfrak m^9=0\ne\mathfrak m^8,
+\mathfrak m^9=0\ne\mathfrak m^8.
 \]
 
-and its Hilbert–Samuel function is
+Its Hilbert--Samuel function is
 
 \[
 (1,10,44,108,157,145,86,30,3).
 \]
 
-The Macaulay inverse system has 60 minimal contraction generators. The
-Kuranishi ideal has 36 minimal generators: 11 quadratic, 13 cubic, 11
-quartic, and one sextic. In particular, \(R\) is neither Gorenstein nor
-level.
+The Kuranishi ideal has 36 minimal generators: 11 quadratic, 13 cubic, 11
+quartic, and one sextic. The Macaulay inverse system has 60 minimal
+contraction generators. In particular, \(R\) is neither Gorenstein nor level.
 
-## What the number means
+## What the number measures
 
-The reduced point says there is no genuine nearby family in this normalized
-bounded-degree slice. The nilpotents record infinitesimal deformations that
-survive for several orders before the equations obstruct them. The number
-584 is the scheme-theoretic transverse multiplicity—not a count of nearby
-maps and not a global count of counterexamples.
+The reduced point says that no actual nearby family appears in this chosen
+bounded-degree slice. The ten tangent directions are first-order motions that
+survive the linearized equations. Higher-order equations successively obstruct
+them, leaving a finite nonreduced local scheme.
 
-## Proof architecture
+The length \(584\) is the scheme-theoretic multiplicity of that infinitesimal
+neighborhood. The slice has no other reduced points. The number measures the
+nilpotent thickness concentrated at the fixed map.
 
-The calculation constructs the Kuranishi equations exactly over
-\(\mathbf Q\), determines the inverse system through degree eight, and
-proves that no degree-nine dual class exists. A border basis with 584
-standard monomials and ten commuting rational multiplication matrices gives
-a finite exact presentation and checks the lower-bound calculation from the
-opposite direction.
+<div class="mental-model" markdown>
 
-## What it does not prove
+**A useful picture.** The counterexample is an isolated point surrounded by a
+thick cloud of infinitesimal motions. The local algebra has nonzero terms
+through order eight and none in order nine.
 
-The result is local, degree-bounded, and relative to a specified affine
-quotient and slice. It does not say that the counterexample is isolated under
-arbitrary polynomial equivalence or among maps of unbounded degree.
+</div>
 
-## Proof source and status
+## How the exact calculation closes
 
-- [Working manuscript source, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscript-sources-v1-20260803d/sources/03-local-rigidity/main.tex)
-- [Working manuscript PDF, pinned public revision](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/data/manuscripts-v13/03-filtered-rigidity-2026-07-29-v13.pdf)
-- [Exact computational supplement, pinned ZIP](https://github.com/nmonson1/guide-to-jacobian-conjecture/blob/b2d4bb0/docs-v56-converged-research-20260804j/assets/technical-materials/03-local-rigidity-computational-supplement.zip)
+The computation constructs the Kuranishi equations over \(\mathbf Q\), then
+uses two complementary descriptions of the local algebra.
 
-This is an exact computer-assisted theorem of the project, authored by
-Nathaniel Monson. The linked manuscript states the slice conventions and
-certificate contract. In the ZIP, begin with `COMPUTATION.md`; the independent
-border-basis replay is documented in
-`code/border-basis/REPRODUCIBILITY.md`. This is not presented as journal peer
-review.
+1. The inverse-system calculation determines all dual classes through degree
+   eight and proves that no degree-nine class survives.
+2. A border basis supplies \(584\) standard monomials and ten commuting
+   rational multiplication matrices.
+
+The first route gives the upper structure of the dual space. The second gives
+a finite exact algebra of the same length and checks the lower bound from the
+opposite direction. Agreement between the two presentations is the central
+certificate.
+
+## What remains open
+
+The theorem concerns one degree bound, one affine quotient, and one transverse
+slice. A coordinate change of unbounded degree or a deformation through maps
+of higher degree lies outside this local model.
+
+The broader question is whether an intrinsic deformation theory of the finite
+cover and its boundary explains this nilpotent algebra and compares it with
+unrestricted polynomial equivalence.
+
+[Proof, exact supplement, and status](evidence-ledger.md#the-length-584-local-algebra){ .evidence-link }

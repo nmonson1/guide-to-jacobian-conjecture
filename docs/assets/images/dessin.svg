@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 450" role="img" aria-labelledby="title desc">
+  <title id="title">The dessin and permutation triple for z squared</title>
+  <desc id="desc">The preimage of the interval from zero to one under z squared is a line segment with one black central vertex over zero and two white endpoint vertices over one. The associated monodromy permutations are a transposition, the identity, and a transposition.</desc>
+  <defs>
+    <style>
+      .paper{fill:#fbf9f3}.sphere{fill:#e6efe9;stroke:#0d6567;stroke-width:3}.edge{stroke:#0d6567;stroke-width:8;stroke-linecap:round}.black{fill:#183638}.white{fill:#fbf9f3;stroke:#183638;stroke-width:4}.label{font:600 24px Georgia,serif;fill:#183638}.small{font:500 18px system-ui,sans-serif;fill:#586b6c}.math{font:italic 22px Georgia,serif;fill:#183638}.box{fill:#f4e5cc;stroke:#a63a30;stroke-width:3}
+    </style>
+  </defs>
+  <rect class="paper" width="980" height="450" rx="24"/>
+
+  <text class="label" x="74" y="54">dessin of z squared</text>
+  <ellipse class="sphere" cx="305" cy="235" rx="225" ry="142"/>
+  <line class="edge" x1="165" y1="235" x2="445" y2="235"/>
+  <circle class="white" cx="165" cy="235" r="18"/>
+  <circle class="black" cx="305" cy="235" r="18"/>
+  <circle class="white" cx="445" cy="235" r="18"/>
+  <text class="small" x="147" y="278">-1</text>
+  <text class="small" x="298" y="278">0</text>
+  <text class="small" x="441" y="278">1</text>
+  <text class="small" x="178" y="343">black lies over 0; white lies over 1</text>
+
+  <rect class="box" x="610" y="105" width="300" height="260" rx="26"/>
+  <text class="label" x="654" y="151">permutation triple</text>
+  <text class="math" x="681" y="210">sigma_0 = (12)</text>
+  <text class="math" x="681" y="257">sigma_1 = identity</text>
+  <text class="math" x="681" y="304">sigma_inf = (12)</text>
+  <text class="small" x="649" y="340">their product is the identity</text>
+
+  <text class="small" x="75" y="417">The embedded graph and the three monodromy permutations encode the same connected cover.</text>
+</svg>

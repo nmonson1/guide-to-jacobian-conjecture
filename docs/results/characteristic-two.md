@@ -1,31 +1,47 @@
 ---
-title: "Huq-Kuruvilla and Mondello (July 2026): the separable conjecture fails in characteristic two"
+title: "The separable conjecture fails in characteristic two"
 description: "Explicit generic-degree-three counterexamples in characteristic two, first in dimension three and then in the plane."
 ---
 
-# Huq-Kuruvilla and Mondello (July 2026): the separable conjecture fails in characteristic two
+# The separable conjecture fails in characteristic two
 
 <p class="byline">Three-dimensional construction by Irit Huq-Kuruvilla,
-23 July · plane construction by Romy Mondello, 29 July</p>
+23 July 2026 · plane construction by Romy Mondello, 29 July 2026</p>
 
-## What is true and why
+Positive characteristic changes the meaning of the Jacobian condition. The
+derivative cannot see \(p\)-th powers, so maps involving Frobenius give
+immediate inseparable failures. A natural repair is to require the induced
+function-field extension to be separable, often with degree prime to the
+characteristic.
 
-In positive characteristic, the naive Jacobian statement has obvious
-inseparable failures: derivatives cannot see \(p\)-th powers. A standard
-repair asks that the induced function-field extension be separable, often
-also requiring its degree to be prime to the characteristic. These examples
-show that even this repair fails in characteristic two—and it already fails
-in two variables.
+Characteristic two defeats that repair as well.
 
-## Precise results
+## Why separability looked promising
 
-Huq-Kuruvilla constructed an explicit map
-\(F\colon\mathbf A_k^3\to\mathbf A_k^3\) over any field \(k\) of
-characteristic two with Jacobian determinant one, a separable function-field
-extension of degree three, and a collision. Stabilization gives examples in
-all dimensions at least three.
+For a dominant map \(F\colon\mathbf A^n_k\to\mathbf A^n_k\), a nonzero
+Jacobian determinant implies that the induced extension of function fields is
+separable. Requiring separability removes the most obvious Frobenius
+pathologies and restores much of the differential intuition familiar from
+characteristic zero.
 
-Mondello then gave the plane map over \(k=\overline{\mathbf F}_2\)
+One might therefore hope that a separable Keller map of degree prime to
+\(p\) has the global rigidity of a finite étale cover. The new examples
+remain étale at finite points while losing properness at infinity.
+
+## Two explicit counterexamples
+
+Huq-Kuruvilla constructed a map
+
+\[
+F\colon\mathbf A_k^3\longrightarrow\mathbf A_k^3
+\]
+
+over every field \(k\) of characteristic two with Jacobian determinant one,
+a separable function-field extension of degree three, and an explicit
+collision. Stabilization gives examples in all dimensions at least three.
+
+Mondello then produced the plane map over
+\(k=\overline{\mathbf F}_2\):
 
 \[
 \begin{aligned}
@@ -34,22 +50,39 @@ Q&=y+x^5+x^6y+x^7y^2+x^8y^3.
 \end{aligned}
 \]
 
-It has Jacobian determinant one, and \((0,1)\), \((1,0)\), and \((1,1)\)
-have the same image. Moreover
-\([k(x,y):k(P,Q)]=3\), and the extension is separable.
+It satisfies
 
-## Discussion
+\[
+\det D(P,Q)=1,
+\]
 
-Because \(3\) is prime to \(2\), these are not Frobenius artifacts. Mondello
-derives the plane map from a coordinate-permuted form of Huq-Kuruvilla's
-three-variable example and proves its degree using a hidden cubic and an
-irreducibility argument over the actual target field.
+and the three points
 
-This does **not** affect the characteristic-zero plane conjecture. It does
-show that a positive-characteristic transfer argument must preserve much
-more than separability and generic degree.
+\[
+(0,1),\qquad(1,0),\qquad(1,1)
+\]
 
-## Sources
+have the same image. Moreover,
 
-- [Irit Huq-Kuruvilla, arXiv:2607.20968](https://arxiv.org/abs/2607.20968)
-- [Romy Mondello, arXiv:2608.02634](https://arxiv.org/abs/2608.02634)
+\[
+[k(x,y):k(P,Q)]=3,
+\]
+
+and the extension is separable. The striking number is three: it is prime to
+two, so the ordinary Frobenius mechanism cannot account for the sheets.
+
+## What characteristic two teaches
+
+Mondello derives the plane example from a coordinate-permuted form of the
+three-variable construction and proves its degree through a hidden cubic and
+an irreducibility argument over the actual target field. The same global
+mechanism appears again: local differential regularity coexists with several
+sheets and nonproper behavior.
+
+The characteristic-zero plane problem remains separate; its compactification
+and arithmetic constraints are different. The positive-characteristic
+examples show, however, that a transfer argument must control the boundary
+geometry itself. Separability and generic degree alone carry too little
+global information.
+
+[Proof, sources, and verification](evidence-ledger.md#characteristic-two-counterexamples){ .evidence-link }

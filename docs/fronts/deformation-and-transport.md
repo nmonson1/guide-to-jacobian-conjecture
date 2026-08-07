@@ -1,47 +1,97 @@
 ---
-title: "Front III: deformation and presentation transport"
-description: "Which structures survive deformations, stabilization, and passage to classical normal forms?"
+title: "Which deformations are genuine?"
+description: "How to separate new Keller maps from coordinate motion, degree-cutoff artifacts, and changes introduced by stabilization or normal forms."
 ---
 
-# Front III: deformation and presentation transport
+# Which deformations are genuine?
 
-!!! info "For researchers"
-    This page compares several equivalence relations. The result pages state
-    their degree bounds, slices, and stabilization conventions precisely.
+<p class="dek">Change one coefficient of a Keller map. Have we found a nearby
+map, merely rewritten the old one in new coordinates, or produced an
+infinitesimal motion that later becomes obstructed?</p>
 
-The same generic cover can be written by many polynomial maps. Adding
-identity coordinates, changing source and target coordinates, or suspending
-to a cubic-homogeneous map may preserve some structures and destroy others.
-This front asks for a disciplined account of what moves with the map.
+## A specimen tangent question
 
-## The story so far
+Let \(F_t\) be a first-order family
 
-Unrestricted infinitesimal Keller deformations are closely related to
-volume-preserving source changes, but an ordinary degree bound cuts that
-coordinate orbit nontransversely. For the fixed degree-seven map, a specified
-bounded-degree transverse slice is reduced-isolated and has a nonreduced
-local algebra of length 584.
+\[
+F_t=F+tG+O(t^2)
+\]
 
-Elsewhere, boundary geometry supplies invariants under arbitrary stable
-left–right equivalence. In a concrete cubic-frame family, the parameter
-\(q\) survives even after adjoining any number of identity variables. At the
-same time, classical suspensions carry the counterexample into
-cubic-homogeneous and Hessian forms.
+through a fixed Keller map \(F\). Differentiating the constant-Jacobian
+condition gives a linear equation on \(G\). Many solutions arise from
+infinitesimal source or target coordinate changes. Those directions move the
+presentation without changing the underlying map up to equivalence.
 
-## The main open question
+The first deformation problem is therefore a quotient problem:
 
-Can intrinsic deformation objects be compared cleanly with finite,
-degree-bounded coefficient schemes? A result about a chosen slice is not
-automatically a statement about unrestricted deformations. A formal
-equivalence may also require degrees that grow with the order and therefore
-fail to produce one polynomial equivalence.
+\[
+\frac{\text{infinitesimal Keller deformations}}
+     {\text{infinitesimal coordinate motion}}.
+\]
 
-## Places to enter
+The quotient depends on which coordinate changes are allowed and whether a
+degree bound has been imposed.
+
+## Why degree bounds distort the picture
+
+An unrestricted formal coordinate change may require terms of increasing
+degree at successive orders. Inside the finite-dimensional scheme of maps of
+degree at most seven, only part of that coordinate orbit is visible. The
+orbit can meet the coefficient scheme nontransversely, creating nilpotent
+structure in a chosen slice.
+
+For the fixed degree-seven counterexample, one normalized transverse slice has
+a single reduced point and a completed local algebra of length \(584\). Its
+ten-dimensional tangent space records many first-order motions. Higher-order
+equations obstruct every genuine nearby point in that bounded slice.
+
+The geometry is vivid: the map is isolated after reduction, yet surrounded by
+a thick infinitesimal neighborhood.
+
+## Stabilization and normal forms
+
+Other operations change the ambient presentation more radically:
+
+- adjoining identity coordinates;
+- polynomial left--right coordinate changes;
+- passing through Bass--Connell--Wright or Yagzhev reductions;
+- suspending to cubic-homogeneous or Hessian form.
+
+Each operation preserves some invariants and forgets others. Generic degree
+survives polynomial equivalence. A boundary modulus in the cubic-frame family
+survives arbitrary stabilization. Ordinary degree and sparsity may change
+dramatically under normal-form reduction.
+
+The resulting transport problem is to follow an intrinsic feature through
+the construction and state exactly which equivalence relation preserves it.
+
+<div class="mental-model" markdown>
+
+**The question behind the calculations.** Which infinitesimal directions move
+the underlying cover or boundary, and which merely move the coordinates used
+to display them?
+
+</div>
+
+## Two complementary test cases
 
 - [A transverse local algebra of length 584](../results/length-584.md)
 - [Stable cubic-frame classification](../results/stable-cubic-frames.md)
 - [The cubic-homogeneous normal form](../results/cubic-homogeneous.md)
 
-The immediate target is a comparison theorem between an intrinsic
-deformation object and a finite coefficient scheme, with the equivalence
-relation, degree bound, and filtration made explicit.
+## The missing comparison theorem
+
+The missing theorem should build an intrinsic deformation object from the
+finite cover and its boundary, then compare it with explicit finite-degree
+coefficient schemes. Such a theorem should explain:
+
+1. which tangent directions come from coordinate motion;
+2. which directions survive after quotienting;
+3. where higher-order obstructions appear;
+4. how the answer changes under stabilization and normal-form transport.
+
+The length-584 calculation and the stable cubic-frame modulus are complementary
+test cases. The first is local and degree-bounded. The second detects a global
+boundary invariant after arbitrarily many identity variables are added. A
+comparison theorem should explain both phenomena in one language.
+

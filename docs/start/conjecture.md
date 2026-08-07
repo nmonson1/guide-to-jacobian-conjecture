@@ -1,6 +1,6 @@
 ---
 title: "The Jacobian conjecture"
-description: "What the classical conjecture said, why the Jacobian condition is local, and what remains open after 2026."
+description: "What the classical conjecture said, why the Jacobian condition is local, and where global failure can hide."
 ---
 
 # The Jacobian conjecture
@@ -11,42 +11,77 @@ Let
 F=(F_1,\ldots,F_n)\colon \mathbf C^n\longrightarrow\mathbf C^n
 \]
 
-be a polynomial map. Its Jacobian matrix \(DF\) records the first-order
-change of the output when the input moves. If \(\det DF\) never vanishes,
-the inverse-function theorem gives a local inverse near every point.
+be a polynomial map. Its Jacobian matrix \(DF(p)\) is the best linear
+approximation to \(F\) near a point \(p\). When \(\det DF(p)\ne0\), the
+inverse-function theorem gives neighborhoods
 
-The classical conjecture asked whether this local condition forces a single
-global polynomial inverse:
+\[
+p\in U,\qquad F(p)\in V,
+\]
+
+on which \(F\colon U\to V\) is an analytic isomorphism.
+
+The classical conjecture promoted this local statement to a global one:
 
 > **Classical Jacobian conjecture.** If \(\det DF\) is a nonzero constant,
 > then \(F\) is a polynomial automorphism.
 
-The words *nonzero constant* are not an extra restriction over \(\mathbf C\):
-if the determinant of a polynomial Jacobian never vanishes, it is already a
-nonzero constant.
+Over \(\mathbf C\), a polynomial with no zeros is constant, so “the Jacobian
+determinant never vanishes” is equivalent to the hypothesis above.
 
-## Why the question was plausible
+## What the derivative can see
 
-An everywhere-invertible derivative rules out ordinary folding and
-ramification. In one variable it settles the problem immediately: a
-polynomial with nonzero constant derivative is linear. Many important
-special classes in higher dimensions are also known to be invertible.
+An invertible derivative rules out folding, ramification, and infinitesimal
+collapse at every finite point. It says nothing directly about two distant
+source points. Distinct neighborhoods may each map isomorphically onto the
+same target neighborhood:
 
-What the derivative does **not** control is behavior at infinity. Distinct
-points can have the same image without a finite critical point if sheets of
-the map separate and reconnect through infinity. That is precisely the
-loophole used by the three-dimensional counterexample.
+<figure class="math-figure">
+  <img src="../assets/images/local-sheets.svg" alt="Three disjoint source neighborhoods mapping isomorphically onto one target neighborhood.">
+  <figcaption>Each sheet is locally perfect. The collision is a relation among different sheets.</figcaption>
+</figure>
 
-## The status now
+In one variable, the condition forces \(F'\) to be constant, hence \(F\) is
+linear. In higher dimensions, many important special classes are also known
+to be invertible. The conjecture remained plausible because every finite
+local test pointed in the right direction.
 
-- The conjecture is **false for every \(n\ge 3\)**: take the explicit
-  three-dimensional counterexample and add unused coordinates.
-- The conjecture is **open for \(n=2\)**.
-- It is true for \(n=1\).
+## The missing global condition
 
-So there is no longer one Jacobian conjecture with a uniform yes-or-no
-answer. There is a solved negative problem in dimensions at least three and
-a surviving plane problem with its own geometry.
+Properness closes the gap. A map is proper when inverse images of compact
+sets are compact. A proper local homeomorphism is a covering map; since
+\(\mathbf C^n\) is simply connected, a connected covering of
+\(\mathbf C^n\) has one sheet. In the algebraic setting, the resulting
+finite étale map of degree one is an isomorphism.
+
+A noninvertible Keller map must therefore fail properness. There must be a
+sequence \(x_k\) escaping to infinity while \(F(x_k)\) remains bounded. After
+compactifying the source and passing to a subsequence, the escaping points
+approach the boundary. This is where global noninvertibility becomes visible.
+
+<div class="mental-model" markdown>
+
+**The picture to keep.** The Jacobian condition controls every finite
+microscope view of the map. Properness controls whether pieces of the source
+can disappear through infinity.
+
+</div>
+
+## What changed in 2026
+
+The explicit three-dimensional example has constant determinant \(-2\) and a
+three-point collision. It is locally invertible everywhere, generically
+three-to-one, and nonproper. Adding unused coordinates gives counterexamples
+in every dimension \(n\ge3\).
+
+The status is now:
+
+- \(n=1\): true;
+- \(n=2\): open;
+- \(n\ge3\): false.
+
+The plane problem now has its own geometric form: does the geometry of the
+affine plane prevent the same escape mechanism?
 
 [See the counterexample](counterexample.md){ .md-button .md-button--primary }
 [Continue to the plane case](../background/plane-case.md){ .md-button }

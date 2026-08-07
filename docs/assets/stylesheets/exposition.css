@@ -1,0 +1,103 @@
+.math-figure {
+  background: var(--jac-surface);
+  border: 1px solid var(--jac-line);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(26, 50, 51, 0.06);
+  margin: 2rem 0 2.2rem;
+  max-width: 58rem;
+  padding: clamp(0.7rem, 2.2vw, 1.15rem);
+}
+
+.math-figure img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.math-figure figcaption {
+  color: var(--jac-muted);
+  font-size: 0.73rem;
+  line-height: 1.55;
+  margin: 0.8rem auto 0.1rem;
+  max-width: 48rem;
+  text-align: center;
+}
+
+.mental-model,
+.pause-check,
+.viewpoint-summary {
+  border-radius: 0.8rem;
+  line-height: 1.65;
+  margin: 1.8rem 0 2rem;
+  max-width: 52rem;
+  padding: 1rem 1.15rem;
+}
+
+.mental-model {
+  background: color-mix(in srgb, var(--jac-teal) 9%, var(--jac-surface));
+  border-left: 4px solid var(--jac-teal);
+}
+
+.pause-check {
+  background: color-mix(in srgb, var(--jac-gold) 11%, var(--jac-surface));
+  border-left: 4px solid var(--jac-gold);
+}
+
+.viewpoint-summary {
+  background: var(--jac-surface);
+  border: 1px solid var(--jac-line);
+}
+
+.mental-model p,
+.pause-check p,
+.viewpoint-summary p {
+  margin: 0;
+}
+
+.md-typeset .evidence-link {
+  align-items: center;
+  border: 1px solid var(--jac-line);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 760;
+  gap: 0.35rem;
+  margin-top: 1.4rem;
+  padding: 0.55rem 0.85rem;
+  text-decoration: none;
+}
+
+.md-typeset .evidence-link::before {
+  content: "→";
+  font-size: 0.9rem;
+}
+
+.md-typeset .evidence-link:hover {
+  background: var(--jac-surface);
+  border-color: var(--jac-coral);
+  text-decoration: none;
+}
+
+.md-typeset table {
+  line-height: 1.55;
+}
+
+.md-typeset table th {
+  white-space: nowrap;
+}
+
+@media (max-width: 42rem) {
+  .math-figure {
+    border-radius: 0.7rem;
+    margin-left: -0.35rem;
+    margin-right: -0.35rem;
+    padding: 0.45rem;
+  }
+
+  .math-figure figcaption {
+    padding: 0 0.55rem 0.35rem;
+    text-align: left;
+  }
+}
