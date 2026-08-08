@@ -11,7 +11,7 @@ certificate. It is not a claim-by-claim export of the research repository.
 
 ## External results
 
-- [**A counterexample in three variables**](../start/counterexample.md) —
+- [**A counterexample in three variables**](../start/conjecture.md) —
   Alpöge and Fable, July 2026.
 - [**Keller maps of every generic degree**](every-generic-degree.md) —
   contemporaneous constructions in Alexis Gallagher's article and the

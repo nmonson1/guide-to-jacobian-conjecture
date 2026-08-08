@@ -33,7 +33,6 @@
     "results/two-block-uniqueness.md": {"status": "unread", "reviewed_at": null, "reviewed_sha256": null},
     "review/index.md": {"status": "unread", "reviewed_at": null, "reviewed_sha256": null},
     "start/conjecture.md": {"status": "unread", "reviewed_at": null, "reviewed_sha256": null},
-    "start/counterexample.md": {"status": "unread", "reviewed_at": null, "reviewed_sha256": null},
     "start/tao-digestion.md": {"status": "unread", "reviewed_at": null, "reviewed_sha256": null}
   }
 }

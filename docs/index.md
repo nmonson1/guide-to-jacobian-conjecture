@@ -15,8 +15,7 @@ with nonzero constant Jacobian determinant must have a polynomial inverse. An
 explicit counterexample announced in July 2026 answers **no** in every
 dimension at least three. The two-dimensional problem remains open.
 
-[See the counterexample](start/counterexample.md){ .md-button .md-button--primary }
-[Start with the conjecture](start/conjecture.md){ .md-button }
+[Read the introduction](start/conjecture.md){ .md-button .md-button--primary }
 
 </div>
 <div class="hero-panel" markdown>
@@ -50,7 +49,7 @@ turns it into a counterexample in the plane.
 Read the formula, the two finite checks, the construction behind them, and
 the exact limits of the result.
 
-[Read the counterexample](start/counterexample.md)
+[Read the conjecture and counterexample](start/conjecture.md)
 
 </div>
 

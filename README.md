@@ -32,7 +32,7 @@ This is owner editorial review, not mathematical peer review.
 
 ```bash
 python scripts/review_pages.py status
-python scripts/review_pages.py approve docs/start/counterexample.md
+python scripts/review_pages.py approve docs/start/conjecture.md
 python scripts/review_pages.py needs-revision docs/fronts/index.md
 ```
 

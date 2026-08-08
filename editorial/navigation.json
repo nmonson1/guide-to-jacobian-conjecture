@@ -5,8 +5,7 @@
       "title": "Start",
       "pages": [
         {"title": "Guide home", "path": "index.md"},
-        {"title": "The conjecture", "path": "start/conjecture.md"},
-        {"title": "The counterexample", "path": "start/counterexample.md"},
+        {"title": "Conjecture and counterexample", "path": "start/conjecture.md"},
         {"title": "How the counterexample works", "path": "background/marked-root-geometry.md"},
         {"title": "The plane case", "path": "background/plane-case.md"},
         {"title": "Tao's digestion", "path": "start/tao-digestion.md"}
